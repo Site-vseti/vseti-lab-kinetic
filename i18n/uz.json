@@ -252,5 +252,16 @@
  "Наш": "Bizning",
  "хит": "hit",
  "Имя": "Ism",
- "мы": "biz"
+ "мы": "biz",
+ "\\n\\nОтправлено с vseti-site.ru": "\\n\\nvseti-site.ru dan yuborildi",
+ "\\nКонтакт:": "\\nAloqa:",
+ "\\nСайт или задача:": "\\nSayt yoki vazifa:",
+ "Быстрее — в Telegram": "Tezroq — Telegram orqali",
+ "Заявка с сайта —": "Saytdan so'rov —",
+ "Имя:": "Ism:",
+ "Кнопка «Отправить почтой» откроет ваш почтовый клиент с уже заполненным письмом. Если почтового клиента нет — напишите нам в Telegram, ответим быстрее. Данные не передаются третьим лицам.": "«Pochta orqali yuborish» tugmasi allaqachon to'ldirilgan xat bilan pochta klientingizni ochadi. Agar pochta klienti bo'lmasa — bizga Telegram'da yozing, tezroq javob beramiz. Ma'lumotlar uchinchi shaxslarga berilmaydi.",
+ "Отправить почтой": "Pochta orqali yuborish",
+ "Редизайн и подготовка к AI-поиску, боты, каналы и оплата. Веб-агентство «в сети».": "Qayta dizayn va AI-qidiruvga tayyorlash, botlar, kanallar va to'lov. «в сети» veb-agentligi.",
+ "Редизайн сайта и подготовка к поиску в нейросетях: вас находят в Яндексе, Google и в ответах ChatGPT, Алисы, Gemini. Онлайн-запись, боты, каналы, оплата, шесть языков.": "Saytni qayta dizayn qilish va neyrotarmoqlarda topilishga tayyorlash: sizni Яндекс, Google'da va ChatGPT, Алиса, Gemini javoblarida topishadi. Onlayn yozilish, botlar, kanallar, to'lov, olti til.",
+ "в сети — сайты, которые находят клиенты и нейросети": "в сети — mijozlar va neyrotarmoqlar topadigan saytlar"
 }

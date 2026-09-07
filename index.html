@@ -121,13 +121,13 @@ html.rm #intro{display:none}
 .btn:hover .arr{transform:translateX(5px)}
 
 /* ---------- hero ---------- */
-.hero{position:relative;min-height:100svh;display:grid;align-items:center;padding:140px 0 120px;overflow:hidden;isolation:isolate}
+.hero{--hs:1;position:relative;min-height:100svh;display:grid;align-items:center;padding:140px 0 120px;overflow:hidden;isolation:isolate}
 .hero-bg{position:absolute;inset:-10%;z-index:-2;opacity:.55}
 .hero-bg img{width:100%;height:100%;object-fit:cover}
 .hero-veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,26,24,.2) 0%,rgba(7,26,24,.55) 55%,var(--bg) 100%),radial-gradient(60% 50% at 20% 60%,rgba(27,82,76,.55),transparent 70%)}
 .ghost{position:absolute;left:-2vw;bottom:-4vw;z-index:-1;font-family:var(--disp);font-variation-settings:"wght" 800;font-size:26vw;line-height:.8;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1px rgba(132,244,234,.14);pointer-events:none;user-select:none;white-space:nowrap}
 .hero .eyebrow{margin-bottom:28px}
-.h1{font-family:var(--disp);font-size:clamp(1.85rem,6.2vw,6.2rem);line-height:1.02;letter-spacing:-.025em;--w:650;max-width:16ch}
+.h1{font-family:var(--disp);font-size:calc(clamp(1.85rem,6.2vw,6.2rem)*var(--hs,1));line-height:1.02;letter-spacing:-.025em;--w:650;max-width:16ch}
 .h1 em{font-style:normal;color:var(--tif)}
 .h1 .ch{--w:650}
 .hero .lead{margin:32px 0 40px}
@@ -371,28 +371,24 @@ html.light .tbtn .moon{display:none}
 /* пока экран не широкий, знак встаёт под фразой — так вокруг него остаётся место
    для подписей и они не жмутся к краю */
 @media (max-width:1100px){.hline{flex-direction:column;gap:clamp(14px,3vw,26px)}}
-.phrase{font-family:var(--disp);font-variation-settings:"wght" 800;line-height:1.05;font-size:clamp(1.5rem,4.2vw,3.4rem);white-space:nowrap}
+.phrase{font-family:var(--disp);font-variation-settings:"wght" 800;line-height:1.05;font-size:calc(clamp(1.5rem,4.2vw,3.4rem)*var(--hs,1));white-space:nowrap}
 .phrase .pw{display:inline-block;white-space:nowrap;margin-right:.26em}
 .phrase .pc{display:inline-block;transition:color .5s var(--ease),text-shadow .5s var(--ease);
   text-shadow:0 1px 0 #2c7d74,0 2px 0 #256d65,0 3px 0 #1e5d56,0 4px 0 #175048,0 7px 16px rgba(0,0,0,.8)}
 .phrase.lit .pc{color:#fff;text-shadow:0 0 10px var(--tif),0 0 30px var(--tif),0 4px 0 #175048,0 9px 24px rgba(0,0,0,.85)}
-.mark{position:relative;flex:none;width:clamp(190px,19vw,250px);aspect-ratio:1}
+.mark{position:relative;flex:none;width:calc(clamp(190px,19vw,250px)*var(--hs,1));aspect-ratio:1}
 .mark .halo{position:absolute;inset:-14%;border-radius:50%;background:radial-gradient(circle,rgba(132,244,234,.3),transparent 62%);filter:blur(16px)}
 .mark .lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 18px 44px rgba(0,0,0,.75))}
 .orb{position:absolute;left:50%;top:50%;width:0;height:0}
-.orb .sp{position:absolute;left:0;top:0;animation:orbspin var(--dur,54s) linear infinite}
-.chip{opacity:1;transition:opacity .45s var(--ease);position:absolute;transform:translate(-50%,-50%);font-family:var(--disp);font-size:clamp(9px,1vw,12px);letter-spacing:.05em;color:var(--tif);background:rgba(7,26,24,.8);border:1px solid rgba(132,244,234,.32);border-radius:999px;padding:5px 11px;white-space:nowrap;box-shadow:0 8px 22px -10px rgba(0,0,0,.9);animation:orbback var(--dur,54s) linear infinite}
-@keyframes orbspin{to{transform:rotate(360deg)}}
-@keyframes orbback{to{transform:translate(-50%,-50%) rotate(-360deg)}}
-html.rm .orb .sp,html.rm .chip{animation:none}
+.chip{opacity:1;transition:opacity .45s var(--ease);position:absolute;left:0;top:0;transform:translate(-50%,-50%);font-family:var(--disp);font-size:clamp(9px,1vw,12px);letter-spacing:.05em;color:var(--tif);background:rgba(7,26,24,.8);border:1px solid rgba(132,244,234,.32);border-radius:999px;padding:5px 11px;white-space:nowrap;box-shadow:0 8px 22px -10px rgba(0,0,0,.9)}
 @media (max-width:700px){.phrase{white-space:normal}.chip{font-size:9px;padding:4px 8px;letter-spacing:.02em}}
 
 /* первый экран должен помещаться в экран целиком: размеры считаются и от высоты окна */
 @media (max-width:900px){
  .hero{padding:96px 0 64px}
- .h1{font-size:min(clamp(1.6rem,6.2vw,3rem),4.4svh)}
- .phrase{font-size:min(clamp(1.25rem,6.8vw,2.2rem),3.9svh)}
- .mark{width:min(58vw,24svh,220px)}
+ .h1{font-size:calc(min(clamp(1.6rem,6.2vw,3rem),4.4svh)*var(--hs,1))}
+ .phrase{font-size:calc(min(clamp(1.25rem,6.8vw,2.2rem),3.9svh)*var(--hs,1))}
+ .mark{width:calc(min(46vw,18svh,180px)*var(--hs,1))}
  .hline{margin-top:12px}
  .hero .lead{margin:16px auto 18px;font-size:15px}
  .hero .eyebrow{margin-bottom:14px}
@@ -401,24 +397,24 @@ html.rm .orb .sp,html.rm .chip{animation:none}
  .hero-foot .ai-chips{display:none}   /* названия и так летают вокруг знака */
 }
 @media (max-width:900px) and (max-height:720px){
- .hero{padding:76px 0 40px}
- .h1{font-size:min(clamp(1.5rem,6vw,3rem),4.1svh)}
- .phrase{font-size:min(clamp(1.15rem,6.4vw,2.2rem),3.6svh)}
- .mark{width:min(50vw,19.5svh,190px)}
+ .hero{padding:64px 0 30px}
+ .h1{font-size:calc(min(clamp(1.5rem,6vw,3rem),4.1svh)*var(--hs,1))}
+ .phrase{font-size:calc(min(clamp(1.15rem,6.4vw,2.2rem),3.6svh)*var(--hs,1))}
+ .mark{width:calc(min(42vw,15.5svh,160px)*var(--hs,1))}
  .hero .lead{font-size:14px;margin:11px auto 13px}
  .hero .eyebrow{margin-bottom:10px;font-size:11px}
  .hero-foot{display:none}
 }
 @media (max-width:900px) and (max-height:600px){
  .hero{padding:66px 0 32px}
- .mark{width:min(46vw,17svh,170px)}
+ .mark{width:calc(min(38vw,13svh,140px)*var(--hs,1))}
  .hero .lead{display:none}
 }
 @media (min-width:901px){
  .hero{padding:120px 0 92px}
- .h1{font-size:min(clamp(1.85rem,6.2vw,6.2rem),7.4svh)}
- .phrase{font-size:min(clamp(1.5rem,4.2vw,3.4rem),5.4svh)}
- .mark{width:min(19vw,26svh,250px)}
+ .h1{font-size:calc(min(clamp(1.85rem,6.2vw,6.2rem),7.4svh)*var(--hs,1))}
+ .phrase{font-size:calc(min(clamp(1.5rem,4.2vw,3.4rem),5.4svh)*var(--hs,1))}
+ .mark{width:calc(min(19vw,20svh,230px)*var(--hs,1))}
  .hero .lead{margin:22px auto 26px}
 }
 @media (min-width:901px) and (max-height:940px){
@@ -426,11 +422,12 @@ html.rm .orb .sp,html.rm .chip{animation:none}
  .hero-foot{display:none}     /* иначе кнопки наезжают на нижнюю строку */
 }
 @media (min-width:901px) and (max-height:820px){
- .hero{padding:84px 0 46px}
- .h1{font-size:min(clamp(1.85rem,6.2vw,6.2rem),6.6svh)}
- .phrase{font-size:min(clamp(1.5rem,4.2vw,3.4rem),4.8svh)}
- .mark{width:min(19vw,21.5svh,250px)}
- .hero .lead{margin:16px auto 20px}
+ .hero{padding:70px 0 36px}
+ .h1{font-size:calc(min(clamp(1.85rem,6.2vw,6.2rem),6.6svh)*var(--hs,1))}
+ .phrase{font-size:calc(min(clamp(1.5rem,4.2vw,3.4rem),4.8svh)*var(--hs,1))}
+ .mark{width:calc(min(19vw,17svh,230px)*var(--hs,1))}
+ .hero .lead{margin:13px auto 16px;font-size:15px}
+ .hero .eyebrow{margin-bottom:12px}
 }
 
 /* --- плашки «0 ошибок» / «9 из 9»: подъём и свечение ×2 --- */
@@ -1424,72 +1421,97 @@ if(lg){
 
 /* --- первый экран: названия кружат по внешней оболочке вокруг знака --- */
 var NAMES=['Яндекс','Google','ChatGPT','Алиса','Gemini','Perplexity','Claude','DeepSeek','Grok','GigaChat','Copilot','Bing'];
-var SPEED=[54,61,47,72,58,66,50,78,63,44,69,56];
+// Названия плывут вокруг знака по двум вытянутым оболочкам: вширь места много,
+// вверх и вниз — мало, поэтому орбита эллиптическая, а не круглая. Внутри одной
+// оболочки скорость общая (подписи не догоняют друг друга), между оболочками разная.
+var SHELLS=[{ax:1.45,ay:1.06,dur:56},{ax:2.15,ay:1.32,dur:73}];
+var orbState=[];
 function buildOrbits(){
+  orbState=[];
   var marks=document.querySelectorAll('[data-orbit]');
   for(var mi=0;mi<marks.length;mi++){
     var m=marks[mi];
     var old=m.querySelectorAll('.orb');for(var oi=0;oi<old.length;oi++)old[oi].remove();
+    m.style.margin='0';
     var w=m.clientWidth||200, R=w/2, n=NAMES.length;
-    // ширина самой длинной подписи — считаем на живом элементе, а не на глаз
     var probe=document.createElement('span');probe.className='chip';probe.style.visibility='hidden';
-    probe.style.left='0';probe.style.top='0';probe.style.animation='none';
-    probe.textContent='Perplexity';m.appendChild(probe);
-    var half=probe.offsetWidth/2+6, ph=probe.offsetHeight; probe.remove();
+    probe.style.left='50%';probe.style.top='50%';probe.textContent='Perplexity';
+    var holder=document.createElement('div');holder.className='orb';holder.appendChild(probe);m.appendChild(holder);
+    var half=probe.offsetWidth/2+7, ph=probe.offsetHeight; holder.remove();
     var box=m.getBoundingClientRect();
-    var room=Math.min(box.left, innerWidth-box.right)+R;   // до края экрана от центра знака
-    var rMin=R*1.04, rMax=Math.max(rMin, Math.min(room-half, R*1.75));
-    var gap=Math.max(ph+16, 42);
-    // сколько оболочек помещается в свободный поясок
-    var shells=Math.max(1, Math.min(3, Math.floor((rMax-rMin)/gap)+1));
-    var DUR=[52,67,44];            // у каждой оболочки своя скорость
-    // считаем, сколько подписей физически помещается по длине каждой окружности,
-    // лишние не рисуем — иначе они наезжают друг на друга
-    var rads=[],caps=[],total=0;
-    for(var sh=0; sh<shells; sh++){
-      var rad = shells===1 ? rMin : rMin + (rMax-rMin)*sh/(shells-1);
-      var cap = Math.max(3, Math.floor(2*Math.PI*rad/(half*2+14)));
-      rads.push(rad);caps.push(cap);total+=cap;
+    var roomX=Math.min(box.left, innerWidth-box.right)+R;      // до края экрана
+    var orb=document.createElement('div');orb.className='orb';
+    var rings=[], idx=0, caps=[];
+    for(var sh=0; sh<SHELLS.length; sh++){
+      var ax=Math.min(R*SHELLS[sh].ax, roomX-half);
+      var ay=R*SHELLS[sh].ay;
+      if(ax<R*1.05) ax=R*1.05;
+      // периметр эллипса (приближение Рамануджана) — по нему считаем вместимость
+      var per=Math.PI*(3*(ax+ay)-Math.sqrt((3*ax+ay)*(ax+3*ay)));
+      caps.push({ax:ax,ay:ay,dur:SHELLS[sh].dur,cap:Math.max(2,Math.floor(per/(half*2+14)))});
     }
-    var show=Math.min(n,total), idx=0;
-    // раскладываем поровну между оболочками, не превышая вместимость
-    var give=new Array(shells).fill(0), left=show;
-    while(left>0){ var moved=false;
-      for(var sh2=0; sh2<shells && left>0; sh2++){ if(give[sh2]<caps[sh2]){give[sh2]++;left--;moved=true;} }
-      if(!moved) break; }
-    for(var sh3=0; sh3<shells; sh3++){
-      var cnt=give[sh3]; if(cnt<=0) continue;
-      var o=document.createElement('div');o.className='orb';
-      var sp=document.createElement('div');sp.className='sp';
-      var dur=DUR[sh3%DUR.length];
-      sp.style.setProperty('--dur',dur+'s');
+    var total=caps[0].cap+caps[1].cap, show=Math.min(n,total);
+    var give=[0,0], left=show;
+    while(left>0){var moved=false;
+      for(var g=0; g<2 && left>0; g++){ if(give[g]<caps[g].cap){give[g]++;left--;moved=true;} }
+      if(!moved)break;}
+    for(var sh2=0; sh2<2; sh2++){
+      var cnt=give[sh2]; if(!cnt) continue;
+      var items=[];
       for(var k=0;k<cnt;k++){
-        // внутри одной оболочки подписи стоят на равных углах и НИКОГДА не догоняют
-        // друг друга: скорость у оболочки одна. Разные скорости — между оболочками.
-        var ang=((k+(sh3%2?0.5:0))/cnt)*Math.PI*2 - Math.PI/2;
         var c=document.createElement('span');c.className='chip';c.textContent=NAMES[idx++];
-        c.style.setProperty('--dur',dur+'s');
-        c.style.left=(Math.cos(ang)*rads[sh3])+'px';
-        c.style.top=(Math.sin(ang)*rads[sh3])+'px';
-        sp.appendChild(c);
+        orb.appendChild(c);
+        items.push({el:c, ang0:((k+(sh2?0.5:0))/cnt)*Math.PI*2 - Math.PI/2});
       }
-      o.appendChild(sp);m.appendChild(o);
+      rings.push({ax:caps[sh2].ax, ay:caps[sh2].ay, dur:caps[sh2].dur, items:items});
+    }
+    m.appendChild(orb);
+    // раздвигаем соседний текст ровно на вылет подписей
+    var maxAY=0,maxAX=0;
+    for(var r2=0;r2<rings.length;r2++){maxAY=Math.max(maxAY,rings[r2].ay);maxAX=Math.max(maxAX,rings[r2].ax);}
+    var overY=Math.max(0, maxAY+ph/2+4-R);
+    var overX=Math.max(0, maxAX+half+4-R);
+    var par=m.parentElement, row=par?getComputedStyle(par).flexDirection==='row':false;
+    var maxX=par?Math.max(0,(par.clientWidth-w)/2-8):0;
+    m.style.margin=overY+'px '+(row?Math.min(overX,maxX):0)+'px';
+    orbState.push({rings:rings});
+  }
+  placeChips(0);
+}
+function placeChips(t){
+  for(var i=0;i<orbState.length;i++){
+    var rings=orbState[i].rings;
+    for(var r=0;r<rings.length;r++){
+      var ring=rings[r], k=2*Math.PI*(t/1000)/ring.dur;
+      for(var j=0;j<ring.items.length;j++){
+        var it=ring.items[j], a=it.ang0+k;
+        it.el.style.transform='translate(-50%,-50%) translate('+(Math.cos(a)*ring.ax).toFixed(1)+'px,'+(Math.sin(a)*ring.ay).toFixed(1)+'px)';
+      }
     }
   }
 }
-buildOrbits();
-if(document.fonts&&document.fonts.ready)document.fonts.ready.then(buildOrbits);
-addEventListener('load',function(){setTimeout(buildOrbits,140);});
-var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(buildOrbits,150);});
+function fitHero(){
+  var hero=document.querySelector('.hero'); if(!hero) return;
+  var hs=1; hero.style.setProperty('--hs','1');
+  for(var i=0;i<9;i++){
+    if(hero.getBoundingClientRect().height<=innerHeight+2) break;
+    hs-=0.05; if(hs<0.62) break;
+    hero.style.setProperty('--hs',hs.toFixed(2));
+  }
+}
+function refreshHero(){ fitHero(); buildOrbits(); }
+refreshHero();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(refreshHero);
+addEventListener('load',function(){setTimeout(refreshHero,140);});
+var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(refreshHero,150);});
 
-/* подписи иногда догоняют друг друга — та, что оказалась позади, притухает,
-   чтобы название не превращалось в кашу из двух наложенных слов */
+/* движение и притухание подписи, которая зашла за соседнюю */
 (function(){
-  if(RM) return;
-  var last=0;
+  var t0=performance.now(), last=0;
   function tick(now){
     requestAnimationFrame(tick);
-    if(now-last<140) return; last=now;
+    if(!RM) placeChips(now-t0);
+    if(now-last<160) return; last=now;
     var chips=document.querySelectorAll('.mark .chip');
     if(!chips.length) return;
     var n=chips.length, box=new Array(n), hide=new Array(n);
@@ -1500,7 +1522,7 @@ var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(build
       var oh=Math.min(A.bottom,B.bottom)-Math.max(A.top,B.top);
       if(ow>2&&oh>2){
         var q=(ow*oh)/Math.min(A.width*A.height,B.width*B.height);
-        if(q>0.18) hide[b]=true;                 // уходит за соседнюю только при заметном наложении
+        if(q>0.18) hide[b]=true;
       }
     }
     for(var k=0;k<n;k++) chips[k].style.opacity = hide[k]?'.08':'1';
@@ -1551,8 +1573,8 @@ if(box){
   });
   var rows=[].slice.call(box.querySelectorAll('.rw'));
   rows.forEach(function(r){
-    var base=parseFloat(r.style.transitionDelay)||0;
-    [].forEach.call(r.querySelectorAll('.mk path'),function(pth,j){pth.style.transitionDelay=(base*1000+120+j*90)+'ms';});
+    var base=parseFloat(r.style.transitionDelay)||0;   // значение уже в миллисекундах
+    [].forEach.call(r.querySelectorAll('.mk path'),function(pth,j){pth.style.transitionDelay=(base+120+j*90)+'ms';});
   });
   if('IntersectionObserver' in window && !RM){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('on',e.isIntersecting);});},{threshold:.4});

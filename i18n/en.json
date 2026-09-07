@@ -252,5 +252,16 @@
  "Наш": "Our",
  "хит": "hit",
  "Имя": "Name",
- "мы": "we"
+ "мы": "we",
+ "\\n\\nОтправлено с vseti-site.ru": "\\n\\nSent from vseti-site.ru",
+ "\\nКонтакт:": "\\nContact:",
+ "\\nСайт или задача:": "\\nSite or task:",
+ "Быстрее — в Telegram": "Faster — in Telegram",
+ "Заявка с сайта —": "Request from the site —",
+ "Имя:": "Name:",
+ "Кнопка «Отправить почтой» откроет ваш почтовый клиент с уже заполненным письмом. Если почтового клиента нет — напишите нам в Telegram, ответим быстрее. Данные не передаются третьим лицам.": "The «Send by email» button will open your email client with the message already filled in. If you don't have an email client — message us on Telegram, we'll reply faster. Your data is not shared with third parties.",
+ "Отправить почтой": "Send by email",
+ "Редизайн и подготовка к AI-поиску, боты, каналы и оплата. Веб-агентство «в сети».": "Redesign and AI-search readiness, bots, channels, and payments. «в сети» web agency.",
+ "Редизайн сайта и подготовка к поиску в нейросетях: вас находят в Яндексе, Google и в ответах ChatGPT, Алисы, Gemini. Онлайн-запись, боты, каналы, оплата, шесть языков.": "Website redesign and AI-search readiness: found in Yandex, Google, and in the answers of ChatGPT, Alice, and Gemini. Online booking, bots, channels, payments, six languages.",
+ "в сети — сайты, которые находят клиенты и нейросети": "«в сети» — websites found by clients and AI"
 }

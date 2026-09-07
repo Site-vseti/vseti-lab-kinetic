@@ -1,0 +1,138 @@
+<!doctype html><html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Утверждённый набор — «в сети»</title>
+<style>
+@font-face{font-family:'Unbounded';font-weight:200 900;font-display:swap;src:url(../assets/fonts/Unbounded-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Unbounded';font-weight:200 900;font-display:swap;src:url(../assets/fonts/Unbounded-latin.woff2) format('woff2')}
+@font-face{font-family:'Roboto Flex';font-weight:100 1000;font-stretch:25% 151%;font-display:swap;src:url(../assets/fonts/RobotoFlex-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Roboto Flex';font-weight:100 1000;font-stretch:25% 151%;font-display:swap;src:url(../assets/fonts/RobotoFlex-latin.woff2) format('woff2')}
+:root{--tif:#84f4ea;--g1:#1b524c;--g2:#12403c;--g3:#0e332f;--gold:#c9a227;--gold2:#e8c766;--bg:#071a18;--ink:#eafffd;--mute:rgba(234,255,253,.62);--dim:rgba(234,255,253,.32);--line:rgba(132,244,234,.14);--disp:'Unbounded',system-ui,sans-serif;--body:'Roboto Flex',system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);padding:clamp(16px,4vw,48px);line-height:1.5}
+h1{font-family:var(--disp);font-size:clamp(22px,4vw,34px);font-weight:700;margin-bottom:6px}
+.lead{color:var(--mute);max-width:72ch;margin-bottom:34px;font-size:15px}
+h2{font-family:var(--disp);font-size:clamp(17px,2.6vw,22px);font-weight:600;margin:46px 0 4px;color:var(--tif)}
+.sub{color:var(--mute);font-size:14px;margin-bottom:18px;max-width:80ch}
+.row{display:flex;flex-wrap:wrap;gap:18px}
+.demo{flex:1 1 320px;min-width:290px;border:1px solid var(--line);border-radius:16px;padding:18px;background:linear-gradient(160deg,var(--g1),var(--g2) 55%,var(--g3));position:relative;overflow:hidden}
+.tag{font-family:var(--disp);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--tif);margin-bottom:12px;display:block}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+.stage{min-height:118px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px}
+.hint{position:fixed;right:14px;bottom:14px;background:rgba(7,26,24,.92);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:12px;color:var(--tif);z-index:99}
+
+/* A8 неон */
+.nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.nav a{color:var(--ink);text-decoration:none;font-size:15px;padding:9px 14px;border-radius:10px;white-space:nowrap;display:inline-block;transition:transform .34s var(--ease),color .34s,text-shadow .34s}
+.nav a:hover{transform:scale(1.2);color:#fff;text-shadow:0 0 8px var(--tif),0 0 22px var(--tif),0 0 44px rgba(132,244,234,.7)}
+
+/* B ×2 */
+.badge{border:1px solid var(--line);border-radius:16px;padding:20px 22px;background:rgba(7,26,24,.5);min-width:230px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:default;
+  transition:transform .42s var(--ease),box-shadow .42s,border-color .42s,background .42s}
+.badge:hover{transform:translateY(-9px);border-color:var(--tif);background:rgba(132,244,234,.07);box-shadow:0 18px 60px -10px rgba(132,244,234,.95),0 0 0 1px rgba(132,244,234,.55) inset}
+.badge .num{font-family:var(--disp);font-size:32px;font-weight:700;color:var(--tif);line-height:1.05;white-space:nowrap;transition:text-shadow .42s}
+.badge:hover .num{text-shadow:0 0 14px rgba(132,244,234,.9),0 0 40px rgba(132,244,234,.55)}
+.badge .cap{font-size:13px;color:var(--mute);margin-top:8px;max-width:24ch}
+
+/* C: постоянный штамп + подсветка как C6 */
+.plan{border:2px solid var(--line);border-radius:18px;padding:22px;padding-top:26px;background:linear-gradient(165deg,var(--g1),var(--g2) 60%,var(--g3));flex:1 1 250px;min-width:246px;position:relative;perspective:900px;
+  transition:transform .45s var(--ease),border-color .45s,box-shadow .45s,background .45s}
+.plan:hover{transform:translateY(-8px);border-color:#bafff8;background:linear-gradient(165deg,#22635c,#154b45 60%,#0e332f);box-shadow:0 26px 74px -14px rgba(132,244,234,.85)}
+.plan h3{font-family:var(--disp);font-size:19px;font-weight:600;margin-bottom:12px}
+.stamp{position:absolute;top:-1px;right:14px;font-family:var(--disp);font-size:13px;font-weight:700;color:#071a18;background:var(--gold2);border-radius:0 0 10px 10px;padding:5px 11px;box-shadow:0 6px 18px -6px rgba(232,199,102,.8)}
+.old{white-space:nowrap;display:inline-block;font-size:15px;color:var(--dim);position:relative;transition:opacity .45s,transform .45s var(--ease)}
+.old::after{content:"";position:absolute;left:-2px;right:-2px;top:52%;height:2px;background:var(--gold2)}
+.plan:hover .old{opacity:.4;transform:translateX(-5px) scale(.92)}
+.price{white-space:nowrap;font-family:var(--disp);font-size:27px;font-weight:700;color:var(--tif);line-height:1.15;display:inline-block;transition:transform .45s var(--ease),text-shadow .45s}
+.plan:hover .price{transform:translateZ(48px) scale(1.16);text-shadow:0 0 22px rgba(132,244,234,.9)}
+.keep{font-size:13px;color:var(--mute);margin-top:10px}
+.keep b{color:var(--ink);font-weight:600;white-space:nowrap}
+
+/* D объём умеренный, слова не рвутся */
+.big{font-family:var(--disp);font-weight:800;font-size:clamp(24px,4.2vw,38px);line-height:1.14;cursor:default;padding:6px 0;text-align:center}
+.big .w{display:inline-block;white-space:nowrap;margin-right:.32em}
+.big .ch{display:inline-block;transition:color .45s var(--ease),text-shadow .45s var(--ease),transform .45s var(--ease);
+  text-shadow:0 1px 0 #2c7d74,0 2px 0 #256d65,0 3px 0 #1e5d56,0 4px 0 #175048,0 6px 12px rgba(0,0,0,.75)}
+
+/* E карусель — стилизованный телефон */
+.carou{height:360px;display:flex;align-items:center;justify-content:center;perspective:1100px;position:relative}
+.phone{position:absolute;width:172px;height:330px;border-radius:30px;padding:9px;background:linear-gradient(160deg,#2b6b64,#0d302c);border:1px solid rgba(132,244,234,.25);
+  box-shadow:0 22px 52px -18px rgba(0,0,0,.9),0 0 0 1px rgba(0,0,0,.5) inset;transition:transform .7s var(--ease),opacity .7s,box-shadow .7s}
+.phone .scr{width:100%;height:100%;border-radius:23px;background:linear-gradient(175deg,#0b2724,#071a18);overflow:hidden;position:relative;display:flex;flex-direction:column}
+.phone .notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:52px;height:5px;border-radius:99px;background:rgba(0,0,0,.65);z-index:3}
+.phone .top{padding:18px 12px 10px;text-align:center;border-bottom:1px solid rgba(132,244,234,.12)}
+.phone .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:14px;color:#071a18;margin:0 auto 7px}
+.phone .pn{font-family:var(--disp);font-size:13px;font-weight:600}
+.phone .li{display:flex;align-items:center;gap:8px;padding:9px 11px;font-size:11px;color:var(--mute);border-bottom:1px solid rgba(132,244,234,.07);text-align:left}
+.phone .li i{width:16px;height:16px;border-radius:5px;background:rgba(132,244,234,.22);flex:none}
+.phone .li b{color:var(--ink);font-weight:600}
+.phone.on{box-shadow:0 26px 62px -16px rgba(0,0,0,.9),0 0 0 2px var(--tif),0 0 44px -6px rgba(132,244,234,.55)}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--dim);cursor:pointer;transition:background .3s,transform .3s}
+.dots i.on{background:var(--tif);transform:scale(1.3)}
+</style></head><body>
+
+<h1>Утверждённый набор</h1>
+<p class="lead">Собрал то, что вы выбрали, с правками. Дальше ставлю это на сам сайт.</p>
+
+<h2>Меню — A8, неон</h2>
+<div class="row"><div class="demo" style="flex:1 1 100%"><span class="tag">принято</span>
+<div class="stage"><nav class="nav"><a href="#">Услуги</a><a href="#">AI-поиск</a><a href="#">Кейсы</a><a href="#">Тарифы</a><a href="#">FAQ</a></nav></div></div></div>
+
+<h2>Плашки — яркость ×2, со счётчиком</h2>
+<div class="row"><div class="demo" style="flex:1 1 100%"><span class="tag">принято</span>
+<div class="stage"><div class="badge"><div class="num">0 ошибок</div><div class="cap">проверка Google пройдена</div></div><div class="badge"><div class="num">9 из 9</div><div class="cap">ботов видят сайт</div></div></div></div></div>
+
+<h2>Тарифы — штамп виден всегда, подсветка при наведении</h2>
+<p class="sub">Зачёркнутая старая цена и золотой штамп со скидкой стоят постоянно, без наведения. При наведении карточка загорается и новая цена выходит вперёд — как в C6.</p>
+<div class="row">
+  <div class="plan"><span class="stamp">−30%</span><h3>Старт</h3><span class="old">50 000 ₽</span><div class="price">35 000 ₽</div><p class="keep">Ведение <b>6 000 ₽/мес</b> — при необходимости</p></div>
+  <div class="plan"><span class="stamp">−40%</span><h3>Бизнес</h3><span class="old">100 000 ₽</span><div class="price">60 000 ₽</div><p class="keep">Ведение <b>12 000 ₽/мес</b> — при необходимости</p></div>
+  <div class="plan"><span class="stamp">−33%</span><h3>Всё включено</h3><span class="old">180 000 ₽</span><div class="price">120 000 ₽</div><p class="keep">Ведение — при необходимости</p></div>
+</div>
+<p class="note">Проценты посчитаны по вашим ценам и потому разные: 50→35 это 30%, 100→60 это 40%, 180→120 это 33%. Скажите, если хотите везде ровно «−30%» — тогда подгоню старые цены.</p>
+
+<h2>Заголовок — объём умеренный, слова не рвутся</h2>
+<div class="row"><div class="demo" style="flex:1 1 100%"><span class="tag">принято</span>
+<div class="stage"><div class="big" data-glow>Часто задаваемые вопросы</div></div>
+<p class="note">Слова теперь переносятся целиком: «вопросы» не разорвётся ни на каком экране.</p></div></div>
+
+<h2>Карусель — стилизована под телефон</h2>
+<p class="sub">Подписи «канал», «чат-бот», «оплата» оставил — по ним сразу понятно, что мы делаем на каждой площадке.</p>
+<div class="row"><div class="demo" style="flex:1 1 100%">
+<div class="carou" id="e1"></div><div class="dots" id="d1"></div></div></div>
+
+<div class="hint">наведите курсор на примеры</div>
+
+<script>
+document.querySelectorAll('.badge').forEach(b=>{
+  const n=b.querySelector('.num'),full=n.textContent,m=full.match(/^(\d+)/);if(!m)return;
+  const target=+m[1],rest=full.slice(m[1].length);
+  b.addEventListener('mouseenter',()=>{const st=performance.now();
+    (function t(now){const p=Math.min(1,(now-st)/650);n.textContent=Math.round(target*(1-Math.pow(1-p,3)))+rest;if(p<1)requestAnimationFrame(t)})(st)});
+});
+document.querySelectorAll('[data-glow]').forEach(el=>{
+  const words=el.textContent.split(' ');el.textContent='';const chars=[];let k=0;
+  words.forEach(w=>{const ws=document.createElement('span');ws.className='w';
+    [...w].forEach(c=>{const s=document.createElement('span');s.className='ch';s.textContent=c;s.style.transitionDelay=(k++*26)+'ms';ws.appendChild(s);chars.push(s)});
+    el.appendChild(ws)});
+  const on=()=>chars.forEach(s=>{s.style.color='#fff';s.style.textShadow='0 0 10px var(--tif),0 0 26px var(--tif),0 4px 0 #175048,0 8px 22px rgba(0,0,0,.8)';s.style.transform='translateY(-2px)'});
+  const off=()=>chars.forEach(s=>{s.style.color='';s.style.textShadow='';s.style.transform=''});
+  el.addEventListener('mouseenter',on);el.addEventListener('mouseleave',off);el.addEventListener('touchstart',on,{passive:true});
+});
+const CH=[{n:'Telegram',c:'#2aabee',k:'TG',r:['<b>Канал</b> — посты по расписанию','<b>Чат-бот</b> — отвечает 24/7','<b>Оплата</b> — ЮKassa и СБП','Автопостинг и рассылки']},
+          {n:'MAX',c:'#84f4ea',k:'MAX',r:['<b>Канал</b> — витрина бизнеса','<b>Чат-бот</b> — приём заказов','<b>Оплата</b> — ЮKassa и СБП','Подписки и напоминания']},
+          {n:'ВКонтакте',c:'#ffd45e',k:'VK',r:['<b>Сообщество</b> — контент и акции','<b>Чат-бот</b> — заявки из личных','<b>Оплата</b> — товары ВК','Рассылки по подписчикам']}];
+(function(){const host=document.getElementById('e1'),dots=document.getElementById('d1');
+  const els=CH.map(o=>{const p=document.createElement('div');p.className='phone';
+    p.innerHTML='<div class="notch"></div><div class="scr"><div class="top"><div class="ic" style="background:'+o.c+'">'+o.k+'</div><div class="pn">'+o.n+'</div></div>'+
+      o.r.map(t=>'<div class="li"><i></i><span>'+t+'</span></div>').join('')+'</div>';
+    host.appendChild(p);return p});
+  CH.forEach((_,i)=>{const d=document.createElement('i');d.onclick=()=>{cur=i;draw()};dots.appendChild(d)});
+  let cur=0;
+  function draw(){els.forEach((p,i)=>{const k=(i-cur+CH.length)%CH.length;
+    p.style.transform= k===0?'translateX(0) scale(1)':(k===1?'translateX(142px) scale(.78) rotateY(-26deg)':'translateX(-142px) scale(.78) rotateY(26deg)');
+    p.style.opacity=k===0?1:.45;p.style.zIndex=k===0?3:1;p.classList.toggle('on',k===0)});
+    [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===cur))}
+  draw();setInterval(()=>{cur=(cur+1)%CH.length;draw()},2800)})();
+</script></body></html>

@@ -45,7 +45,7 @@ h2{font-family:var(--disp);font-size:clamp(18px,3vw,26px);font-weight:700;margin
 </style></head><body>
 
 <h1>Сравнение: обычный сайт и наш</h1>
-<p class="lead">Галочки зажигаются по очереди, пока вы листаете страницу вниз. Прокрутите — и посмотрите, как это выглядит. Кнопка внизу проиграет ещё раз.</p>
+<p class="lead">Листаете вниз — галочки зажигаются по очереди. Листаете обратно вверх — гаснут. Работает в обе стороны, можно играться.</p>
 
 <div class="spacer">↓ листайте вниз</div>
 
@@ -83,7 +83,7 @@ ROWS.forEach(([txt,a,b],i)=>{
 });
 const rows=[...box.querySelectorAll('.rw')];
 rows.forEach(r=>r.querySelectorAll('.mk path').forEach((p,j)=>p.style.transitionDelay=(r.style.transitionDelay.replace('ms','')/1+120+j*90)+'ms'));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.4});
+const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('on',e.isIntersecting)),{threshold:.4});
 rows.forEach(r=>io.observe(r));
 document.getElementById('again').onclick=()=>{rows.forEach(r=>r.classList.remove('on'));
   setTimeout(()=>rows.forEach(r=>{if(r.getBoundingClientRect().top<innerHeight*.9)r.classList.add('on')}),60)};

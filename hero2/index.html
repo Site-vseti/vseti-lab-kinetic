@@ -40,8 +40,8 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1
 .mark .halo{position:absolute;inset:-14%;border-radius:50%;background:radial-gradient(circle,rgba(132,244,234,.3),transparent 62%);filter:blur(16px)}
 .mark .lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 18px 44px rgba(0,0,0,.75))}
 .orb{position:absolute;left:50%;top:50%;width:0;height:0}
-.orb .sp{position:absolute;left:0;top:0;animation:spin var(--dur,34s) linear infinite}
-.chip{position:absolute;transform:translate(-50%,-50%);font-family:var(--disp);font-size:clamp(9px,1vw,12px);letter-spacing:.05em;color:var(--tif);background:rgba(7,26,24,.8);border:1px solid rgba(132,244,234,.32);border-radius:999px;padding:5px 11px;white-space:nowrap;box-shadow:0 8px 22px -10px rgba(0,0,0,.9);animation:spinback var(--dur,34s) linear infinite}
+.orb .sp{position:absolute;left:0;top:0;animation:spin var(--dur,54s) linear infinite;animation-direction:var(--dir,normal)}
+.chip{position:absolute;transform:translate(-50%,-50%);font-family:var(--disp);font-size:clamp(9px,1vw,12px);letter-spacing:.05em;color:var(--tif);background:rgba(7,26,24,.8);border:1px solid rgba(132,244,234,.32);border-radius:999px;padding:5px 11px;white-space:nowrap;box-shadow:0 8px 22px -10px rgba(0,0,0,.9);animation:spinback var(--dur,54s) linear infinite;animation-direction:var(--dir,normal)}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes spinback{to{transform:translate(-50%,-50%) rotate(-360deg)}}
 
@@ -80,7 +80,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1
 
 <div class="intro">
 <h1>Первый экран — круг 2</h1>
-<p>Как понял вашу мысль: сверху рабочий слоган с золотым «находят», под ним фраза <b>«Все находят вас»</b>, которая не заканчивается словами — она перетекает в наш логотип. Логотип вдвое меньше прежнего, вокруг него по орбитам плывут поисковики и нейросети, теперь их двенадцать. Фон логотипа больше не квадрат — вырезал.</p>
+<p><b>Выбран вариант C.</b> Названия теперь кружат только по внешней оболочке, каждое со своей скоростью — знак они не закрывают.<br>Как понял вашу мысль: сверху рабочий слоган с золотым «находят», под ним фраза <b>«Все находят вас»</b>, которая не заканчивается словами — она перетекает в наш логотип. Логотип вдвое меньше прежнего, вокруг него по орбитам плывут поисковики и нейросети, теперь их двенадцать. Фон логотипа больше не квадрат — вырезал.</p>
 </div>
 
 <!-- A -->
@@ -118,7 +118,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1
 </section>
 
 <!-- C -->
-<div class="lbl">Вариант C · всё по центру, знак под фразой<small>Симметрично: слоган, под ним фраза, знак замыкает её по центру. Лучше всего садится на телефон — ничего не уезжает вбок.</small></div>
+<div class="lbl">Вариант C · ВЫБРАН Сергеем · всё по центру, знак под фразой<small>Симметрично: слоган, под ним фраза, знак замыкает её по центру. Лучше всего садится на телефон — ничего не уезжает вбок.</small></div>
 <section class="hero vC">
   <div class="bg"><img src="../assets/depth/bg-base.jpg" alt=""></div><div class="veil"></div>
   <div class="wrap">
@@ -137,32 +137,35 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1
 
 <script>
 const NAMES=['Яндекс','Google','ChatGPT','Алиса','Gemini','Perplexity','Claude','DeepSeek','Grok','GigaChat','Copilot','Bing'];
-function ringPlan(){
-  // на узком экране орбиты уже и названий меньше, чтобы ничего не срезалось краем
-  if(innerWidth<560) return [{r:.72,dur:34,items:[0,1,2,3]},{r:1.02,dur:50,items:[4,5,6]}];
-  if(innerWidth<900) return [{r:.68,dur:34,items:[0,1,2,3,4]},{r:.98,dur:50,items:[5,6,7,8]}];
-  return [{r:.62,dur:34,items:[0,1,2,3,4]},{r:.86,dur:48,items:[5,6,7,8]},{r:1.06,dur:62,items:[9,10,11]}];
-}
+// Названия кружат ТОЛЬКО по внешней оболочке вокруг знака — логотип не заслоняют.
+// У каждого своя скорость, поэтому строй всё время меняется.
+const SPEED=[54,61,47,72,58,66,50,78,63,44,69,56];
 function buildOrbits(){
   document.querySelectorAll('[data-orbit]').forEach(m=>{
     m.querySelectorAll('.orb').forEach(o=>o.remove());
-    const w=m.clientWidth||200;
-    // предельный радиус: чтобы самая дальняя подпись не вышла за экран
+    const w=m.clientWidth||200, R=w/2;
     const box=m.getBoundingClientRect();
-    const room=Math.min(box.left, innerWidth-box.right)+w/2;
-    ringPlan().forEach(ring=>{
-      const rad=Math.min(ring.r*w/2, Math.max(w/2*.62, room-64));
+    // сколько места до края экрана от центра знака
+    const room=Math.min(box.left, innerWidth-box.right)+R;
+    const narrow=innerWidth<560;
+    const pad=narrow?52:64;            // запас под ширину самой длинной подписи
+    const outer=Math.max(R*1.02, Math.min(R*1.30, room-pad));
+    const inner=Math.max(R*1.02, outer-(narrow?20:30));
+    const n=NAMES.length;
+    NAMES.forEach((name,i)=>{
+      const rad=(i%2? outer : inner);          // оболочка с толщиной: соседи не липнут
+      const ang=(i/n)*Math.PI*2 - Math.PI/2;
       const o=document.createElement('div');o.className='orb';
-      const sp=document.createElement('div');sp.className='sp';sp.style.setProperty('--dur',ring.dur+'s');
-      ring.items.forEach((idx,i)=>{
-        const ang=(i/ring.items.length)*Math.PI*2 + (ring.r);
-        const c=document.createElement('span');c.className='chip';c.textContent=NAMES[idx];
-        c.style.setProperty('--dur',ring.dur+'s');
-        c.style.left=(Math.cos(ang)*rad)+'px';
-        c.style.top=(Math.sin(ang)*rad)+'px';
-        sp.appendChild(c);
-      });
-      o.appendChild(sp);m.appendChild(o);
+      const sp=document.createElement('div');sp.className='sp';
+      const dur=SPEED[i%SPEED.length];
+      sp.style.setProperty('--dur',dur+'s');
+      sp.style.animationDelay=(-dur*(i/n))+'s';
+      const c=document.createElement('span');c.className='chip';c.textContent=name;
+      c.style.setProperty('--dur',dur+'s');
+      c.style.animationDelay=(-dur*(i/n))+'s';
+      c.style.left=(Math.cos(ang)*rad)+'px';
+      c.style.top=(Math.sin(ang)*rad)+'px';
+      sp.appendChild(c);o.appendChild(sp);m.appendChild(o);
     });
   });
 }

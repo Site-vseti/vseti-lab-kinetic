@@ -308,7 +308,232 @@ html.rm #intro{display:none}
 html.rm .cur,html.rm .cur-ring,html.rm .scrollhint i{display:none;animation:none}
 html.rm .ln>span,html.rm .ch{transform:none!important}
 html.rm .statement .big .w,html.rm .contact .bigline .w{--w:650!important}
+
+/* ================= ПРАВКИ СЕРГЕЯ 07.09 ================= */
+
+/* --- меню: A8 «неон» (вместо съезжающей надписи, которая ломалась на две строки) --- */
+.nav a{overflow:visible;white-space:nowrap;transition:transform .34s var(--ease),color .34s}
+.nav a span{transition:color .34s,text-shadow .34s}
+.nav a span::after{display:none}
+.nav a:hover{transform:scale(1.16);color:#fff}
+.nav a:hover span{color:var(--ink);text-shadow:0 0 8px var(--tif),0 0 22px var(--tif),0 0 44px rgba(132,244,234,.7)}
+
+/* --- переключатели темы и языка в шапке --- */
+.hdr-tools{display:flex;align-items:center;gap:8px}
+.tbtn{width:40px;height:40px;border-radius:999px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);transition:border-color .3s,color .3s,background .3s}
+.tbtn:hover{border-color:var(--tif);color:var(--tif)}
+.tbtn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tbtn .sun{display:none}
+html.light .tbtn .sun{display:block}
+html.light .tbtn .moon{display:none}
+.lang{position:relative}
+.lang>button{height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);display:flex;align-items:center;gap:7px;font-family:var(--disp);font-size:13px;color:var(--ink);transition:border-color .3s,color .3s}
+.lang>button:hover{border-color:var(--tif);color:var(--tif)}
+.lang .list{position:absolute;right:0;top:calc(100% + 8px);min-width:186px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:6px;display:none;box-shadow:0 20px 50px -18px rgba(0,0,0,.8);z-index:60}
+.lang.on .list{display:block}
+.lang .list a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 12px;border-radius:9px;font-size:14px;color:var(--ink);transition:background .25s,color .25s}
+.lang .list a:hover{background:rgba(132,244,234,.1);color:var(--tif)}
+.lang .list a small{color:var(--dim);font-size:12px}
+.lang .list a[aria-current]{color:var(--tif)}
+@media (max-width:900px){.hdr-tools .lang>button span.nm{display:none}.lang>button{padding:0 12px}}
+
+/* --- первый экран: вариант C, всё по центру --- */
+.hero .wrap{text-align:center;display:grid;justify-items:center}
+.hero .eyebrow{justify-content:center}
+.hero .eyebrow::before{display:none}
+.h1{max-width:20ch}
+.h1 em{color:var(--gold2)}
+.hero .lead{margin-inline:auto}
+.cta{justify-content:center}
+.hline{display:flex;align-items:center;justify-content:center;gap:clamp(10px,2vw,26px);flex-wrap:wrap;margin-top:clamp(16px,2.6vw,30px)}
+.phrase{font-family:var(--disp);font-variation-settings:"wght" 800;line-height:1.05;font-size:clamp(1.5rem,4.2vw,3.4rem);white-space:nowrap}
+.phrase .pw{display:inline-block;white-space:nowrap;margin-right:.26em}
+.phrase .pc{display:inline-block;transition:color .5s var(--ease),text-shadow .5s var(--ease);
+  text-shadow:0 1px 0 #2c7d74,0 2px 0 #256d65,0 3px 0 #1e5d56,0 4px 0 #175048,0 7px 16px rgba(0,0,0,.8)}
+.phrase.lit .pc{color:#fff;text-shadow:0 0 10px var(--tif),0 0 30px var(--tif),0 4px 0 #175048,0 9px 24px rgba(0,0,0,.85)}
+.mark{position:relative;flex:none;width:clamp(150px,19vw,250px);aspect-ratio:1}
+.mark .halo{position:absolute;inset:-14%;border-radius:50%;background:radial-gradient(circle,rgba(132,244,234,.3),transparent 62%);filter:blur(16px)}
+.mark .lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 18px 44px rgba(0,0,0,.75))}
+.orb{position:absolute;left:50%;top:50%;width:0;height:0}
+.orb .sp{position:absolute;left:0;top:0;animation:orbspin var(--dur,54s) linear infinite}
+.chip{position:absolute;transform:translate(-50%,-50%);font-family:var(--disp);font-size:clamp(9px,1vw,12px);letter-spacing:.05em;color:var(--tif);background:rgba(7,26,24,.8);border:1px solid rgba(132,244,234,.32);border-radius:999px;padding:5px 11px;white-space:nowrap;box-shadow:0 8px 22px -10px rgba(0,0,0,.9);animation:orbback var(--dur,54s) linear infinite}
+@keyframes orbspin{to{transform:rotate(360deg)}}
+@keyframes orbback{to{transform:translate(-50%,-50%) rotate(-360deg)}}
+html.rm .orb .sp,html.rm .chip{animation:none}
+@media (max-width:700px){.phrase{white-space:normal;font-size:clamp(1.4rem,7vw,2.2rem)}.mark{width:min(54vw,210px)}}
+
+/* --- плашки «0 ошибок» / «9 из 9»: подъём и свечение ×2 --- */
+.proof .p{cursor:default;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:transform .42s var(--ease),box-shadow .42s,border-color .42s,background .42s}
+.proof .p:hover{transform:translateY(-9px);border-color:var(--tif);background:linear-gradient(160deg,rgba(132,244,234,.1),rgba(14,51,47,.2));box-shadow:0 18px 60px -10px rgba(132,244,234,.95),0 0 0 1px rgba(132,244,234,.55) inset}
+.proof .n{white-space:nowrap;transition:text-shadow .42s}
+.proof .p:hover .n{text-shadow:0 0 14px rgba(132,244,234,.9),0 0 40px rgba(132,244,234,.55)}
+.proof .t{margin-left:auto;margin-right:auto}
+.proof .chips{justify-content:center}
+
+/* --- тарифы: штамп и старая цена видны всегда, при наведении карточка загорается --- */
+.plan{perspective:900px;transition:transform .45s var(--ease),border-color .45s,box-shadow .45s,background .45s}
+.plan:hover{transform:translateY(-8px);border-color:#bafff8;background:linear-gradient(165deg,rgba(34,99,92,.75),rgba(14,51,47,.5));box-shadow:0 26px 74px -14px rgba(132,244,234,.85)}
+.plan .stamp{position:absolute;top:0;right:22px;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:13px;color:#071a18;background:var(--gold2);border-radius:0 0 10px 10px;padding:5px 11px;box-shadow:0 6px 18px -6px rgba(232,199,102,.8);z-index:2}
+.plan.hit .stamp{right:auto;left:22px}
+.plan .old{white-space:nowrap;display:inline-block;font-size:16px;color:var(--dim);position:relative;margin-top:16px;transition:opacity .45s,transform .45s var(--ease)}
+.plan .old::after{content:"";position:absolute;left:-2px;right:-2px;top:52%;height:2px;background:var(--gold2)}
+.plan:hover .old{opacity:.4;transform:translateX(-5px) scale(.92)}
+.plan .pr{white-space:nowrap;margin-top:4px;color:var(--tif);display:inline-block;transition:transform .45s var(--ease),text-shadow .45s}
+.plan:hover .pr{transform:translateZ(48px) scale(1.1);text-shadow:0 0 22px rgba(132,244,234,.9)}
+.plan .pr small{white-space:nowrap}
+.plan .mo{white-space:normal}
+.plan .mo b{color:var(--ink);font-weight:600;white-space:nowrap}
+
+/* --- FAQ: заголовок с бегущим светом, крестик без мигающей палочки --- */
+.faqhead{font-family:var(--disp);font-variation-settings:"wght" 800;font-size:clamp(1.9rem,5vw,4.2rem);line-height:1.12;letter-spacing:-.02em;text-align:left;margin:14px 0 26px}
+.faqhead .fw{display:inline-block;white-space:nowrap;margin-right:.3em}
+.faqhead .fc{display:inline-block;transition:color .45s var(--ease),text-shadow .45s var(--ease),transform .45s var(--ease);
+  text-shadow:0 1px 0 #2c7d74,0 2px 0 #256d65,0 3px 0 #1e5d56,0 4px 0 #175048,0 6px 12px rgba(0,0,0,.75)}
+.faqhead .fc.lit{color:#fff;text-shadow:0 0 10px var(--tif),0 0 26px var(--tif),0 4px 0 #175048,0 8px 22px rgba(0,0,0,.8);transform:translateY(-2px)}
+.faq summary i{position:relative;font-size:0}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:13px;height:2px;border-radius:2px;background:var(--tif);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] summary i{transform:rotate(45deg);background:rgba(132,244,234,.12)}
+
+/* --- сравнение «обычный сайт / наш»: галочки зажигаются при прокрутке --- */
+.cmp2{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(165deg,rgba(27,82,76,.45),rgba(14,51,47,.25))}
+.cmp2 .hd,.cmp2 .rw{display:grid;grid-template-columns:1fr 108px 108px;align-items:center;gap:10px;padding:15px clamp(14px,2.4vw,26px)}
+.cmp2 .hd{border-bottom:1px solid var(--line);background:rgba(7,26,24,.45)}
+.cmp2 .hd .t{font-family:var(--disp);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);text-align:center}
+.cmp2 .hd .t.us{color:var(--tif)}
+.cmp2 .hd .cr{font-family:var(--disp);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.cmp2 .rw{border-bottom:1px solid rgba(132,244,234,.07);opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease),background .4s}
+.cmp2 .rw.on{opacity:1;transform:none}
+.cmp2 .rw:hover{background:rgba(132,244,234,.05)}
+.cmp2 .rw:last-child{border-bottom:0}
+.cmp2 .cr{font-size:clamp(13px,1.7vw,15.5px)}
+.cmp2 .cell{display:grid;place-items:center}
+.cmp2 .mk{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;border:1px solid transparent;transition:background .45s,border-color .45s,box-shadow .45s,transform .45s var(--ease)}
+.cmp2 .mk svg{width:19px;height:19px;overflow:visible}
+.cmp2 .mk path{fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:44;stroke-dashoffset:44;transition:stroke-dashoffset .55s var(--ease)}
+.cmp2 .mk.no{background:rgba(255,128,128,.08);border-color:rgba(255,128,128,.2)}
+.cmp2 .mk.no path{stroke:#ff8080}
+.cmp2 .mk.yes{background:rgba(132,244,234,.1);border-color:rgba(132,244,234,.28)}
+.cmp2 .mk.yes path{stroke:var(--tif)}
+.cmp2 .rw.on .mk path{stroke-dashoffset:0}
+.cmp2 .rw.on .mk.yes{box-shadow:0 0 26px -4px rgba(132,244,234,.75);transform:scale(1.06)}
+.cmp2 .rw.on .mk.no{opacity:.75}
+@media (max-width:560px){.cmp2 .hd,.cmp2 .rw{grid-template-columns:1fr 56px 56px;gap:6px;padding:13px 14px}.cmp2 .mk{width:30px;height:30px}}
+html.rm .cmp2 .rw{opacity:1;transform:none}
+html.rm .cmp2 .mk path{stroke-dashoffset:0}
+
+/* --- кейсы: небольшие плитки --- */
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.tile{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:var(--bg2);transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
+.tile:hover{transform:translateY(-6px);border-color:rgba(132,244,234,.45);box-shadow:0 20px 50px -22px rgba(132,244,234,.8)}
+.tile .av{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:15px;color:#071a18;background:linear-gradient(140deg,var(--tif),#3fd6c9)}
+.tile .av.g{background:linear-gradient(140deg,var(--gold2),var(--gold));color:#1b1300}
+.tile b{display:block;font-family:var(--disp);font-variation-settings:"wght" 500;font-size:15px;line-height:1.2}
+.tile small{display:block;color:var(--mute);font-size:13px;margin-top:3px}
+.tile .arr{margin-left:auto;color:var(--tif);transition:transform .4s var(--ease)}
+.tile:hover .arr{transform:translate(4px,-4px)}
+.tiles-note{color:var(--dim);font-size:14px;margin-top:18px}
+
+/* --- блок «языки» --- */
+.langs{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:center}
+.langs .flags{display:flex;flex-wrap:wrap;gap:10px}
+.langs .flags span{border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-family:var(--disp);font-size:14px;color:var(--ink);background:rgba(132,244,234,.05);transition:transform .35s var(--ease),border-color .35s,box-shadow .35s}
+.langs .flags span:hover{transform:translateY(-4px);border-color:var(--tif);box-shadow:0 14px 34px -16px rgba(132,244,234,.9)}
+.langs .src{color:var(--dim);font-size:13px;margin-top:18px;max-width:60ch}
+.langs .src a{color:var(--mute);text-decoration:underline;text-underline-offset:3px}
+@media (max-width:900px){.langs{grid-template-columns:1fr}}
+
+/* --- блок «каналы, боты, оплата» с каруселью телефонов --- */
+.chan{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.chan ul{list-style:none;display:grid;gap:14px;margin-top:26px}
+.chan li{padding-left:26px;position:relative;color:var(--mute);font-size:16px}
+.chan li b{color:var(--ink);font-weight:600}
+.chan li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:4px;background:rgba(132,244,234,.2);border:1px solid rgba(132,244,234,.5)}
+.carou{height:380px;display:flex;align-items:center;justify-content:center;perspective:1100px;position:relative}
+.phone{position:absolute;width:178px;height:342px;border-radius:30px;padding:9px;background:linear-gradient(160deg,#2b6b64,#0d302c);border:1px solid rgba(132,244,234,.25);
+  box-shadow:0 22px 52px -18px rgba(0,0,0,.9),0 0 0 1px rgba(0,0,0,.5) inset;transition:transform .7s var(--ease),opacity .7s,box-shadow .7s}
+.phone .scr{width:100%;height:100%;border-radius:23px;background:linear-gradient(175deg,#0b2724,#071a18);overflow:hidden;position:relative;display:flex;flex-direction:column}
+.phone .notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:52px;height:5px;border-radius:99px;background:rgba(0,0,0,.65);z-index:3}
+.phone .top{padding:18px 12px 10px;text-align:center;border-bottom:1px solid rgba(132,244,234,.12)}
+.phone .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:14px;color:#071a18;margin:0 auto 7px}
+.phone .pn{font-family:var(--disp);font-variation-settings:"wght" 600;font-size:13px;color:#eafffd}
+.phone .li{display:flex;align-items:center;gap:8px;padding:9px 11px;font-size:11px;color:rgba(234,255,253,.62);border-bottom:1px solid rgba(132,244,234,.07);text-align:left}
+.phone .li i{width:16px;height:16px;border-radius:5px;background:rgba(132,244,234,.22);flex:none}
+.phone .li b{color:#eafffd;font-weight:600}
+.phone.on{box-shadow:0 26px 62px -16px rgba(0,0,0,.9),0 0 0 2px var(--tif),0 0 44px -6px rgba(132,244,234,.55)}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:16px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--dim);cursor:pointer;transition:background .3s,transform .3s}
+.dots i.on{background:var(--tif);transform:scale(1.3)}
+@media (max-width:900px){.chan{grid-template-columns:1fr}}
+@media (max-width:420px){.phone{width:162px;height:318px}}
+
+/* ================= СВЕТЛАЯ ТЕМА ================= */
+html.light{
+  --tif:#0c7d74; --tif2:#0a6a63;
+  --g1:#dff2ef; --g2:#e9f6f4; --g3:#f3fbfa;
+  --gold:#8a6a12; --gold2:#7a5d0f;
+  --bg:#f4fbfa; --bg2:#e9f6f4;
+  --ink:#07211f; --mute:rgba(7,33,31,.68); --dim:rgba(7,33,31,.42);
+  --line:rgba(9,86,79,.2);
+}
+html.light body{color:var(--ink)}
+html.light ::selection{background:var(--tif);color:#fff}
+html.light .hdr.scrolled{background:rgba(244,251,250,.82);border-bottom:1px solid var(--line)}
+html.light .hero-bg{opacity:.22}
+html.light .hero-veil{background:linear-gradient(180deg,rgba(244,251,250,.55) 0%,rgba(244,251,250,.72) 55%,var(--bg) 100%),radial-gradient(60% 50% at 20% 60%,rgba(12,125,116,.12),transparent 70%)}
+html.light .ghost{-webkit-text-stroke:1px rgba(9,86,79,.14)}
+html.light .phrase .pc{text-shadow:0 1px 0 #b9e4e0,0 2px 0 #a6dcd7,0 3px 0 #93d3cd,0 4px 0 #7fcac3,0 7px 14px rgba(7,33,31,.25)}
+html.light .phrase.lit .pc{color:#04322e;text-shadow:0 0 10px rgba(12,125,116,.6),0 0 26px rgba(12,125,116,.4),0 4px 0 #7fcac3}
+html.light .faqhead .fc{text-shadow:0 1px 0 #b9e4e0,0 2px 0 #a6dcd7,0 3px 0 #93d3cd,0 4px 0 #7fcac3,0 6px 12px rgba(7,33,31,.25)}
+html.light .faqhead .fc.lit{color:#04322e;text-shadow:0 0 10px rgba(12,125,116,.55),0 0 24px rgba(12,125,116,.35),0 4px 0 #7fcac3}
+html.light .chip{color:#04332f;background:rgba(255,255,255,.9);border-color:rgba(9,86,79,.28);box-shadow:0 8px 22px -12px rgba(7,33,31,.5)}
+html.light .mark .halo{background:radial-gradient(circle,rgba(12,125,116,.2),transparent 62%)}
+html.light .mark .lg{filter:drop-shadow(0 14px 30px rgba(7,33,31,.3))}
+html.light .marq{background:linear-gradient(90deg,var(--bg),var(--bg2),var(--bg))}
+html.light .marq .row.o .item{-webkit-text-stroke:1px rgba(7,33,31,.45)}
+html.light .proof .p{background:linear-gradient(160deg,rgba(255,255,255,.9),rgba(233,246,244,.7))}
+html.light .proof .p:hover{background:linear-gradient(160deg,rgba(12,125,116,.1),rgba(255,255,255,.9));box-shadow:0 18px 50px -14px rgba(12,125,116,.55),0 0 0 1px rgba(12,125,116,.35) inset}
+html.light .proof .p::after{background:radial-gradient(circle,rgba(12,125,116,.1),transparent 65%)}
+html.light .morph{background:linear-gradient(180deg,var(--bg) 0%,var(--g1) 50%,var(--bg) 100%)}
+html.light .mghost{-webkit-text-stroke:1px rgba(9,86,79,.09)}
+html.light .step .big{-webkit-text-stroke:1px rgba(9,86,79,.35)}
+html.light .case .shot{background:#dceceb}
+html.light .cmp2{background:linear-gradient(165deg,rgba(255,255,255,.9),rgba(233,246,244,.75))}
+html.light .cmp2 .hd{background:rgba(255,255,255,.7)}
+html.light .cmp2 .mk.no{background:rgba(200,60,60,.08);border-color:rgba(200,60,60,.25)}
+html.light .cmp2 .mk.no path{stroke:#c33}
+html.light .cmp2 .mk.yes{background:rgba(12,125,116,.1);border-color:rgba(12,125,116,.3)}
+html.light .cmp2 .rw.on .mk.yes{box-shadow:0 0 22px -6px rgba(12,125,116,.6)}
+html.light .plan{background:linear-gradient(170deg,rgba(255,255,255,.92),rgba(233,246,244,.7))}
+html.light .plan.hit{border-color:rgba(138,106,18,.5);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85))}
+html.light .plan:hover{border-color:var(--tif);background:linear-gradient(165deg,#fff,rgba(223,242,239,.95));box-shadow:0 26px 60px -20px rgba(12,125,116,.6)}
+html.light .plan:hover .pr{text-shadow:0 0 18px rgba(12,125,116,.45)}
+html.light .plan .stamp{color:#fff;background:var(--gold2)}
+html.light .tile{background:rgba(255,255,255,.85)}
+html.light .tile .av{color:#fff;background:linear-gradient(140deg,#0c7d74,#0a6a63)}
+html.light .tile .av.g{color:#fff;background:linear-gradient(140deg,#8a6a12,#6f5410)}
+html.light .langs .flags span{background:rgba(12,125,116,.06)}
+html.light .phone{background:linear-gradient(160deg,#0f4a45,#0a302c)}
+html.light .form{background:rgba(255,255,255,.8)}
+html.light .form input,html.light .form textarea{background:rgba(255,255,255,.9);color:var(--ink)}
+html.light .form input:focus,html.light .form textarea:focus{background:#fff;border-color:var(--tif)}
+html.light .contact{background:linear-gradient(180deg,var(--bg) 0%,var(--g1) 100%)}
+html.light .ftr{background:var(--g1)}
+html.light .mmenu{background:var(--bg)}
+html.light .lang .list{background:#fff;box-shadow:0 20px 50px -22px rgba(7,33,31,.45)}
+html.light .btn-gold{background:linear-gradient(120deg,#c9a227,#a5811a);color:#fff}
+html.light .btn-gold:hover{color:#04322e}
+html.light .btn::before{background:var(--tif)}
+html.light .btn-ghost:hover,html.light .btn-gold:hover{color:#fff}
+html.light .nav a:hover span{color:var(--tif);text-shadow:0 0 10px rgba(12,125,116,.5)}
+html.light .svc .c{background:var(--bg)}
+html.light .svc .c:hover{background:#fff}
+html.light .proc{background:var(--bg2)}
+html.light .case{background:rgba(255,255,255,.85)}
+
 </style>
+<script>try{var _t=localStorage.getItem('vseti-theme');if(_t==='light')document.documentElement.classList.add('light');}catch(e){}</script>
 </head>
 <body>
 
@@ -332,8 +557,29 @@ html.rm .statement .big .w,html.rm .contact .bigline .w{--w:650!important}
     <a href="#plans"><span data-t="Тарифы">Тарифы</span></a>
     <a href="#faq"><span data-t="FAQ">FAQ</span></a>
   </nav>
-  <a class="btn btn-gold magnetic" href="#contact">Обсудить проект <span class="arr">→</span></a>
-  <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i></button>
+  <div class="hdr-tools">
+    <div class="lang" id="lang">
+      <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Язык сайта">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 3 2.6 15 0 18M12 3c-2.6 3-2.6 15 0 18"/></svg>
+        <span class="nm">RU</span>
+      </button>
+      <div class="list" role="menu">
+        <a href="/" aria-current="true">Русский <small>RU</small></a>
+        <a href="/en/">English <small>EN</small></a>
+        <a href="/uz/">O‘zbekcha <small>UZ</small></a>
+        <a href="/tg/">Тоҷикӣ <small>TG</small></a>
+        <a href="/ky/">Кыргызча <small>KY</small></a>
+        <a href="/az/">Azərbaycanca <small>AZ</small></a>
+        <a href="/zh/">中文 <small>ZH</small></a>
+      </div>
+    </div>
+    <button class="tbtn" id="theme" type="button" aria-label="Светлая или тёмная тема" title="Светлая или тёмная тема">
+      <svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/></svg>
+    </button>
+    <a class="btn btn-gold magnetic" href="#contact">Обсудить проект <span class="arr">→</span></a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i></button>
+  </div>
 </header>
 <div class="mmenu" id="mmenu">
   <a href="#svc"><span>Услуги</span></a>
@@ -359,7 +605,11 @@ html.rm .statement .big .w,html.rm .contact .bigline .w{--w:650!important}
       <span class="ln"><span>которые <em>находят</em></span></span>
       <span class="ln"><span>клиенты и нейросети</span></span>
     </h1>
-    <p class="lead hero-in">Редизайн + подготовка к AI-поиску. Ваш бизнес видят в Яндексе, Google — и в ответах ChatGPT, Алисы и Gemini.</p>
+    <div class="hline hero-in">
+      <div class="phrase" id="phrase">Все находят вас</div>
+      <div class="mark" data-orbit><div class="halo"></div><img class="lg" src="assets/logo_alpha.png" alt="в сети" width="250" height="250"></div>
+    </div>
+    <p class="lead hero-in">Редизайн и подготовка к AI-поиску: вас находят в Яндексе и Google — и в ответах ChatGPT, Алисы, Gemini, DeepSeek, GigaChat.</p>
     <div class="cta hero-in">
       <a class="btn btn-gold magnetic" href="#contact">Обсудить проект <span class="arr">→</span></a>
       <a class="btn btn-ghost magnetic" href="#cases">Смотреть кейсы</a>
@@ -367,7 +617,7 @@ html.rm .statement .big .w,html.rm .contact .bigline .w{--w:650!important}
   </div>
   <div class="hero-foot hero-in">
     <div class="scrollhint"><i></i><span>листайте</span></div>
-    <div class="ai-chips"><span>Яндекс</span><span>Google</span><span>ChatGPT</span><span>Алиса</span><span>Gemini</span></div>
+    <div class="ai-chips"><span>Яндекс</span><span>Google</span><span>ChatGPT</span><span>Алиса</span><span>Gemini</span><span>DeepSeek</span><span>GigaChat</span></div>
   </div>
 </section>
 
@@ -381,16 +631,16 @@ html.rm .statement .big .w,html.rm .contact .bigline .w{--w:650!important}
 <section class="sec quiet" id="proof">
   <div class="wrap statement">
     <h2 class="big" id="stmt">Сайт сегодня находят <span class="tif">не только в Яндексе</span> — его читают нейросети.</h2>
-    <p class="sub rv">Люди спрашивают у ChatGPT, Алисы и Gemini: «какой нотариус рядом», «где хорошая стоматология». Нейросеть отвечает по данным с сайтов — если сайт устроен так, что робот его понимает.</p>
+    <p class="sub rv">Люди спрашивают у ChatGPT и других нейросетей — Алисы, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok: «какой нотариус рядом», «где хорошая стоматология». Нейросеть отвечает по данным с сайтов — но только с тех, которые нейросети понимают.</p>
     <div class="proof">
       <div class="p rv">
         <div class="n"><span data-count="0">0</span><small>ошибок</small></div>
-        <p class="t">Валидатор структурированных данных <b>Google</b> — ноль ошибок на наших сайтах. Schema.org, llms.txt, robots.txt настроены.</p>
+        <p class="t">Google проверяет сайт своим инструментом и не находит ни одной ошибки. Значит поисковики и нейросети точно понимают, <b>кто вы, где вы и что делаете</b> — и не путают ваш бизнес с чужим.</p>
       </div>
       <div class="p rv">
-        <div class="n"><span data-count="9">0</span><small>из 9 роботов</small></div>
-        <p class="t">Все поисковые и AI-роботы получают страницу <b>целиком</b> — контент читается без JavaScript и обходных путей.</p>
-        <div class="chips"><span>Яндекс</span><span>Google</span><span>GPTBot</span><span>Алиса</span><span>Gemini</span><span>Perplexity</span><span>Claude</span></div>
+        <div class="n"><span data-count="9">0</span><small>из 9 ботов</small></div>
+        <p class="t">Каждый поисковый и AI-бот получает страницу <b>целиком</b>, со всем текстом. Ему не нужно ничего доделывать за сайт — значит ваш ответ попадёт в выдачу и в ответ нейросети.</p>
+        <div class="chips"><span>Яндекс</span><span>Google</span><span>GPTBot</span><span>Алиса</span><span>Gemini</span><span>Perplexity</span><span>Claude</span><span>DeepSeek</span><span>GigaChat</span></div>
       </div>
     </div>
   </div>
@@ -402,7 +652,7 @@ html.rm .statement .big .w,html.rm .contact .bigline .w{--w:650!important}
     <div class="mghost" id="mghost" aria-hidden="true">01</div>
     <p class="eyebrow">что вы получаете</p>
     <div class="mword" id="mword" aria-live="polite">сайт</div>
-    <p class="msub" id="msub">Быстрый, адаптивный, с тёмной и светлой темой. Такой, который не стыдно показать.</p>
+    <p class="msub" id="msub">Быстрый, удобный на телефоне, с переключением светлой и тёмной темы — как удобно вашему клиенту. Сайт, который легко находить и удобно читать.</p>
     <div class="mdots" aria-hidden="true"><i id="md0"></i><i id="md1"></i><i id="md2"></i></div>
   </div>
 </section>
@@ -416,12 +666,15 @@ html.rm .statement .big .w,html.rm .contact .bigline .w{--w:650!important}
       <p class="lead rv">Шесть направлений, которые работают как один механизм — от первого клика до повторного обращения.</p>
     </div>
     <div class="svc">
-      <div class="c rv"><span class="num">01</span><h3>Редизайн сайта</h3><p>Адаптив под любой экран, HTTPS, скорость в зелёной зоне, тёмная и светлая тема. Сайт, который не стыдно показать — и который работает.</p></div>
+      <div class="c rv"><span class="num">01</span><h3>Редизайн сайта</h3><p>Ровно открывается на любом экране, быстро грузится, светлую и тёмную тему клиент переключает сам. Сайт, который легко находить и удобно читать.</p></div>
       <div class="c rv"><span class="num">02</span><h3>Умные сайты</h3><p>Онлайн-запись с уведомлениями, калькуляторы стоимости, светофор загруженности, личные кабинеты. Клиент сам оставляет заявку — без звонков.</p></div>
-      <div class="c rv"><span class="tag">наш козырь</span><span class="num">03</span><h3>AI-видимость</h3><p>llms.txt, Schema.org, открытый доступ AI-роботам, структура под генеративный поиск. Чтобы нейросети понимали и цитировали ваш бизнес.</p></div>
-      <div class="c rv"><span class="num">04</span><h3>Автоматизация</h3><p>Формы с мгновенными уведомлениями в Telegram, приём оплаты, интеграция с CRM, авто-ответы. Сайт работает, пока вы заняты делом.</p></div>
+      <div class="c rv"><span class="tag">наш козырь</span><span class="num">03</span><h3>AI-видимость</h3><p>Прописываем на сайте специальные коды и настройки, по которым AI-боты находят его, читают целиком и подставляют ваш ответ пользователю. Без этого для аудитории нейросетей вас просто нет.</p></div>
+      <div class="c rv"><span class="num">04</span><h3>Автоматизация</h3><p>Форма с мгновенными уведомлениями в Telegram и MAX, приём оплаты, расписание, светофор очереди. Заявки обрабатываются сами, пока вы заняты делом.</p></div>
       <div class="c rv"><span class="num">05</span><h3>Боты и чат-боты</h3><p>Telegram и MAX, чат-боты на сайте, в том числе с ИИ. Отвечают, принимают заказы, консультируют 24/7.</p></div>
       <div class="c rv"><span class="num">06</span><h3>Ведение и соцсети</h3><p>Регулярный контент, SEO-тексты, акции. ВКонтакте, Telegram, MAX: стиль, сторис-шаблоны, авторассылки — без вашей ежедневной работы.</p></div>
+      <div class="c rv"><span class="num">07</span><h3>Логотип и фирменный стиль</h3><p>Нарисуем логотип с нуля или приведём в порядок существующий: аккуратные линии, читаемость на вывеске и в мессенджере, версии для тёмного и светлого фона, иконка и аватарки для каналов.</p></div>
+      <div class="c rv"><span class="num">08</span><h3>Сайт на шести языках</h3><p>Английский, узбекский, таджикский, киргизский, азербайджанский, китайский. Человек находит вашу страницу на родном языке — и понимает, что вы предлагаете.</p></div>
+      <div class="c rv"><span class="num">09</span><h3>Каналы, боты и оплата</h3><p>Telegram, MAX, ВКонтакте: канал, чат-бот, приём оплаты через ЮKassa и СБП. Настроим с нуля, свяжем с сайтом и научим этим пользоваться.</p></div>
     </div>
   </div>
 </section>
@@ -450,8 +703,8 @@ html.rm .statement .big .w,html.rm .contact .bigline .w{--w:650!important}
 <section class="sec quiet">
   <div class="wrap">
     <div class="stats">
-      <div class="s rv"><div class="n"><span data-count="0">0</span></div><p class="t">ошибок в валидаторе структурированных данных Google</p></div>
-      <div class="s rv"><div class="n"><i><span data-count="9">0</span></i><small>/9</small></div><p class="t">поисковых и AI-роботов получают страницу целиком</p></div>
+      <div class="s rv"><div class="n"><span data-count="0">0</span></div><p class="t">ошибок при проверке сайта инструментом Google</p></div>
+      <div class="s rv"><div class="n"><i><span data-count="9">0</span></i><small>/9</small></div><p class="t">поисковых и AI-ботов получают страницу целиком</p></div>
       <div class="s rv"><div class="n"><span data-count="14">0</span><small>дней</small></div><p class="t">минимальный срок запуска — тариф «Старт»</p></div>
       <div class="s rv"><div class="n"><i><span data-count="24">0</span></i><small>/7</small></div><p class="t">бот отвечает клиентам, когда вы заняты</p></div>
     </div>
@@ -463,26 +716,21 @@ html.rm .statement .big .w,html.rm .contact .bigline .w{--w:650!important}
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">кейсы</p>
-        <h2 class="h2 split-ln"><span class="ln"><span>Было</span></span><span class="ln"><span><span class="tif">→ стало</span></span></span></h2></div>
-      <p class="lead rv">Живые сайты, которые можно открыть прямо сейчас. Нотариальные конторы Санкт-Петербурга.</p>
+        <h2 class="h2 split-ln"><span class="ln"><span>Сайты, которые</span></span><span class="ln"><span>мы <span class="tif">сделали</span></span></span></h2></div>
+      <p class="lead rv">Все они живые — откройте любой и посмотрите, как он работает на вашем телефоне.</p>
     </div>
-    <div class="cases">
-      <a class="case rv tilt" href="https://kristall2002-art.github.io/notary-tarakanovsky/" target="_blank" rel="noopener">
-        <div class="shot"><img src="assets/case_tarakanovsky.jpg" alt="Сайт нотариуса Таракановского" loading="lazy"><div class="bar"><i></i><i></i><i></i></div></div>
-        <div class="body"><h3>Нотариус Таракановский <span class="arr">↗</span></h3><p class="sub">Невский проспект · редизайн + онлайн-запись + AI-подготовка</p>
-          <div class="ba"><div class="was"><b>без</b>Schema.org, llms.txt, онлайн-записи</div><div class="now"><b>с</b>Schema.org, llms.txt, запись, тёмная тема, 2 языка</div></div></div>
-      </a>
-      <a class="case rv tilt" href="https://kristall2002-art.github.io/notary-kornilov/" target="_blank" rel="noopener">
-        <div class="shot"><img src="assets/case_kornilov.jpg" alt="Сайт нотариуса Корнилова" loading="lazy"><div class="bar"><i></i><i></i><i></i></div></div>
-        <div class="body"><h3>Нотариус Корнилов <span class="arr">↗</span></h3><p class="sub">Проспект Большевиков · редизайн + онлайн-запись + AI-подготовка</p>
-          <div class="ba"><div class="was"><b>без</b>Schema.org, llms.txt, онлайн-записи</div><div class="now"><b>с</b>Schema.org, llms.txt, запись, тёмная тема, 2 языка</div></div></div>
-      </a>
-      <a class="case rv tilt" href="https://kristall2002-art.github.io/notary-burchalkin/" target="_blank" rel="noopener">
-        <div class="shot"><img src="assets/case_burchalkin.jpg" alt="Сайт нотариуса Бурчалкина" loading="lazy"><div class="bar"><i></i><i></i><i></i></div></div>
-        <div class="body"><h3>Нотариус Бурчалкин <span class="arr">↗</span></h3><p class="sub">Лермонтовский проспект · редизайн + онлайн-запись + AI-подготовка</p>
-          <div class="ba"><div class="was"><b>без</b>Schema.org, llms.txt, онлайн-записи</div><div class="now"><b>с</b>Schema.org, llms.txt, запись, тёмная тема, 2 языка</div></div></div>
-      </a>
+    <div class="tiles">
+      <a class="tile rv" href="https://elinarihter.ru/" target="_blank" rel="noopener"><span class="av g">ЭР</span><span><b>Элина Рихтер</b><small>певица · сайт-визитка</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://rinazolotareva.ru/" target="_blank" rel="noopener"><span class="av">РЗ</span><span><b>Рина Золотарёва</b><small>психолог · запись и оплата</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/avatar-park-map/" target="_blank" rel="noopener"><span class="av">КП</span><span><b>Карта парка Аватар</b><small>карта и продажа PDF</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/egrn-plan-spb/" target="_blank" rel="noopener"><span class="av">ЕГ</span><span><b>ЕГРН: план квартиры</b><small>заказ выписки онлайн</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/kgiop-spravki/" target="_blank" rel="noopener"><span class="av">КГ</span><span><b>Справки КГИОП</b><small>услуга с оплатой в боте</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/keo-insolyacia-site/" target="_blank" rel="noopener"><span class="av">ИН</span><span><b>Инсоляция и КЕО</b><small>расчёты для проектов</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/sonnik-web/" target="_blank" rel="noopener"><span class="av g">СН</span><span><b>Сонник</b><small>контент-проект и бот</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/tsena-dnya-site/" target="_blank" rel="noopener"><span class="av g">ЦД</span><span><b>Цена Дня · WB</b><small>подборки товаров, канал</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/gotovyplan/" target="_blank" rel="noopener"><span class="av">БП</span><span><b>БП24</b><small>бизнес-план онлайн</small></span><span class="arr">↗</span></a>
     </div>
+    <p class="tiles-note">Это лишь примеры работ — их больше. Покажем то, что ближе к вашей задаче.</p>
   </div>
 </section>
 
@@ -492,18 +740,52 @@ html.rm .statement .big .w,html.rm .contact .bigline .w{--w:650!important}
     <div class="sec-head">
       <div><p class="eyebrow">почему «в сети»</p>
         <h2 class="h2 split-ln"><span class="ln"><span>Обычный сайт</span></span><span class="ln"><span>и сайт <span class="tif">от нас</span></span></span></h2></div>
-      <p class="lead rv">Простое сравнение по восьми пунктам. Разница — в том, кто вас видит.</p>
+      <p class="lead rv">Сравниваем с типовым сайтом, каким его делают сейчас: он есть, он открывается — и на этом всё.</p>
     </div>
-    <div class="cmp">
-      <div class="r rv"><div class="h">Критерий</div><div class="h no">Обычный сайт</div><div class="h yes">Сайт от «в сети» ✦</div></div>
-      <div class="r rv"><div>Находят в Яндексе / Google</div><div class="no">Редко, низкие позиции</div><div class="yes">SEO настроен, структура понятна роботам</div></div>
-      <div class="r rv"><div>Читают нейросети<small>ChatGPT, Алиса, Gemini</small></div><div class="no">Нет — сайт невидим для ИИ</div><div class="yes">Да — llms.txt, Schema.org, открытые AI-роботы</div></div>
-      <div class="r rv"><div>Мобильная версия</div><div class="no">Часто съезжает на телефоне</div><div class="yes">Идеально на любом экране</div></div>
-      <div class="r rv"><div>Скорость загрузки</div><div class="no">Медленно — клиенты уходят</div><div class="yes">Быстро — Core Web Vitals в зелёной зоне</div></div>
-      <div class="r rv"><div>Онлайн-запись / автоматизация</div><div class="no">Только телефон или e-mail</div><div class="yes">Запись, формы, уведомления в Telegram</div></div>
-      <div class="r rv"><div>Боты (Telegram / MAX)</div><div class="no">Нужен отдельный подрядчик</div><div class="yes">Включено — бот отвечает 24/7</div></div>
-      <div class="r rv"><div>Тёмная / светлая тема</div><div class="no">Нет</div><div class="yes">Переключается одной кнопкой</div></div>
-      <div class="r rv"><div>Актуальность / ведение</div><div class="no">Сделали — забыли</div><div class="yes">Регулярно обновляем и ведём</div></div>
+    <div class="cmp2" id="cmp2">
+      <div class="hd"><div class="cr">Что получает клиент</div><div class="t">Обычный сайт</div><div class="t us">Наш сайт</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ЯЗЫКИ -->
+<section class="sec quiet" id="langs">
+  <div class="wrap">
+    <div class="langs">
+      <div>
+        <p class="eyebrow">кто вас не находит</p>
+        <h2 class="h2 split-ln"><span class="ln"><span>Ищут не только</span></span><span class="ln"><span><span class="tif">по-русски</span></span></span></h2>
+        <p class="lead rv" style="max-width:52ch">В России живёт и работает много людей, которым проще искать на родном языке — узбекском, таджикском, киргизском, азербайджанском. Сайт только на русском они пролистывают мимо: непонятно, что вы предлагаете и подойдёте ли вы им.</p>
+        <p class="lead rv" style="max-width:52ch;margin-top:20px">Мы переводим сайт целиком, а не кнопкой-переводчиком. Поисковик и нейросеть показывают человеку сразу понятную ему версию — и он доходит до вас.</p>
+      </div>
+      <div class="rv">
+        <div class="flags"><span>Русский</span><span>English</span><span>O‘zbekcha</span><span>Тоҷикӣ</span><span>Кыргызча</span><span>Azərbaycanca</span><span>中文</span></div>
+        <p class="langs-fact" style="color:var(--mute);margin-top:26px;font-size:16px">На 1 сентября 2024 года в России находилось <b style="color:var(--ink)">1,79 млн</b> граждан Узбекистана, <b style="color:var(--ink)">1,23 млн</b> граждан Таджикистана и <b style="color:var(--ink)">263 тысячи</b> граждан Киргизии, а всего иностранных граждан — свыше <b style="color:var(--ink)">6 миллионов</b>.</p>
+        <p class="langs-fact" style="color:var(--mute);margin-top:14px;font-size:16px">Осенью 2025 года экзамен по русскому языку сдавали 275 609 человек, и <b style="color:var(--ink)">13% не сдали</b> его с первой попытки. Это и есть та часть аудитории, которая ваш русский сайт просто не прочитает.</p>
+        <p class="src">Источники: данные МВД России на 01.09.2024 и за 2024 год; данные Минобрнауки России по тестированию за III квартал 2025 года. Цифры приведены как есть, без округлений в свою пользу.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- КАНАЛЫ, БОТЫ, ОПЛАТА -->
+<section class="sec" id="channels">
+  <div class="wrap">
+    <div class="chan">
+      <div>
+        <p class="eyebrow">не только сайт</p>
+        <h2 class="h2 split-ln"><span class="ln"><span>Каналы, боты</span></span><span class="ln"><span>и <span class="gold">оплата</span></span></span></h2>
+        <ul class="rv">
+          <li><b>Каналы на всех площадках</b> — Telegram, MAX, ВКонтакте. Оформим, наполним и свяжем с сайтом.</li>
+          <li><b>Чат-боты, в том числе в MAX</b> — отвечают на вопросы, принимают заказы и записывают клиентов круглосуточно.</li>
+          <li><b>Приём оплаты официально</b> — ЮKassa и СБП: и на сайте, и в канале, и прямо в боте. С чеком, как требует закон.</li>
+          <li><b>Настроим с нуля</b> — если у вас ничего этого нет, заведём и покажем, как этим пользоваться.</li>
+        </ul>
+      </div>
+      <div class="rv">
+        <div class="carou" id="carou"></div>
+        <div class="dots" id="carouDots"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -518,45 +800,52 @@ html.rm .statement .big .w,html.rm .contact .bigline .w{--w:650!important}
     </div>
     <div class="plans">
       <div class="plan rv">
+        <span class="stamp">−30%</span>
         <div class="nm">Старт</div>
+        <div class="old">50 000 ₽</div>
         <div class="pr">35 000 ₽<small>разово</small></div>
-        <div class="mo">+ 6 000 ₽/мес ведение</div>
-        <ul><li>Адаптивный сайт до 7 страниц</li><li>Тёмная/светлая тема</li><li>HTTPS + скорость</li><li>Базовый SEO + Schema.org</li><li>llms.txt + robots.txt для AI</li><li>1 форма обратной связи</li><li>Ведение: 2 обновления/мес</li></ul>
+        <div class="mo">Ведение <b>6 000 ₽/мес</b> — при необходимости</div>
+        <ul><li>Адаптивный сайт до 7 страниц</li><li>Светлая и тёмная тема</li><li>Защищённое соединение и скорость</li><li>Настройка под поиск Яндекса и Google</li><li>Настройка под ответы нейросетей</li><li>Форма заявки с уведомлением</li><li>Ведение: 2 обновления/мес</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Заказать <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
         <span class="badge">хит</span>
+        <span class="stamp">−40%</span>
         <div class="nm">Бизнес</div>
+        <div class="old">100 000 ₽</div>
         <div class="pr">60 000 ₽<small>разово</small></div>
-        <div class="mo">+ 12 000 ₽/мес ведение</div>
-        <ul><li>Всё из тарифа Старт</li><li>До 15 страниц</li><li>Полная AI/GEO-оптимизация</li><li>Онлайн-запись / калькулятор</li><li>Telegram-бот для заявок</li><li>Светофор загруженности</li><li>Ведение: 6 обновлений/мес + контент</li><li>Отчёт по позициям ежемесячно</li></ul>
+        <div class="mo">Ведение <b>12 000 ₽/мес</b> — при необходимости</div>
+        <ul><li>Всё из тарифа Старт</li><li>До 15 страниц</li><li>Полная подготовка к AI-поиску</li><li>Онлайн-запись / калькулятор</li><li>Telegram-бот для заявок</li><li>Светофор загруженности</li><li>Ведение: 6 обновлений/мес + контент</li><li>Отчёт по позициям ежемесячно</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Заказать <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
+        <span class="stamp">−33%</span>
         <div class="nm">Всё включено</div>
+        <div class="old">180 000 ₽</div>
         <div class="pr">120 000 ₽<small>разово</small></div>
-        <div class="mo">+ 25 000 ₽/мес ведение</div>
-        <ul><li>Всё из тарифа Бизнес</li><li>Без ограничений по страницам</li><li>Полный комплекс AI/GEO</li><li>Telegram-канал + боты MAX</li><li>SMM: ВК + Telegram</li><li>Сторис-шаблоны и посты</li><li>Ведение без ограничений</li><li>Выделенный менеджер</li><li>Приоритетная поддержка 24/7</li></ul>
+        <div class="mo">Ведение — при необходимости</div>
+        <ul><li>Всё из тарифа Бизнес</li><li>Без ограничений по страницам</li><li>Полная подготовка к AI-поиску</li><li>Telegram-канал + боты MAX</li><li>SMM: ВК + Telegram</li><li>Сторис-шаблоны и посты</li><li>Ведение без ограничений</li><li>Выделенный менеджер</li><li>Приоритетная поддержка 24/7</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Заказать <span class="arr">→</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ (quiet) -->
+<!-- FAQ -->
 <section class="sec" id="faq">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">частые вопросы</p>
-        <h2 class="h2 split-ln"><span class="ln"><span>Сняли</span></span><span class="ln"><span><span class="tif">возражения</span></span></span></h2></div>
+        <h2 class="faqhead" id="faqHead">Часто задаваемые вопросы</h2></div>
     </div>
     <div class="faq">
-      <details class="rv"><summary>Сколько времени займёт редизайн? <i>+</i></summary><div class="a">Тариф «Старт» — от 14 дней, «Бизнес» — от 21 дня, «Всё включено» — от 30 дней. Сроки фиксируются в договоре. Задержка по нашей вине — компенсация из абонентской платы.</div></details>
-      <details class="rv"><summary>Что такое AI-поиск и зачем он мне? <i>+</i></summary><div class="a">Когда пользователь спрашивает у ChatGPT или Алисы «лучший нотариус рядом», ИИ отвечает по данным из интернета. Если сайт правильно структурирован — llms.txt, Schema.org, открытый robots.txt для AI-роботов — нейросеть может его прочитать и опереться на него. Без этого бизнес просто не существует для аудитории, которая спрашивает у ИИ, а не у поисковика.</div></details>
-      <details class="rv"><summary>У меня уже есть сайт — нужен ли редизайн? <i>+</i></summary><div class="a">Не всегда. Начнём с бесплатного аудита: скорость, адаптив, SEO, AI-видимость. Если сайт технически здоров — возможна точечная настройка без полного редизайна. Честно скажем, что нужно, а что — нет.</div></details>
-      <details class="rv"><summary>Есть ли гарантии результата? <i>+</i></summary><div class="a">Гарантируем техническое качество: Core Web Vitals в зелёной зоне, корректная Schema.org, работающий llms.txt, адаптив на всех устройствах — закреплено в договоре. Позиции в поиске и упоминания в ответах ИИ зависят от рынка и конкурентов — их мы не обещаем.</div></details>
-      <details class="rv"><summary>Работаете ли вы с бизнесом в других городах? <i>+</i></summary><div class="a">Да, работаем по всей России и за рубежом — полностью удалённо. Договор, брифинг, приёмка — в мессенджере или по видеосвязи.</div></details>
-      <details class="rv"><summary>Что происходит после окончания договора ведения? <i>+</i></summary><div class="a">Сайт остаётся вашим — вы получаете исходники, доступы к хостингу и домену. Можете продолжить самостоятельно или с другим подрядчиком. Без скрытых зависимостей.</div></details>
+      <details class="rv"><summary>Сколько времени займёт редизайн? <i></i></summary><div class="a">Тариф «Старт» — от 14 дней, «Бизнес» — от 21 дня, «Всё включено» — от 30 дней. Сроки фиксируются в договоре. Задержка по нашей вине — компенсация из абонентской платы.</div></details>
+      <details class="rv"><summary>Что такое AI-поиск и зачем он мне? <i></i></summary><div class="a">Всё больше людей спрашивают не поисковик, а нейросеть: ChatGPT, Алису, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok. Нейросеть отвечает по данным с сайтов. Мы прописываем на вашем сайте специальные коды и настройки, по которым AI-боты находят его, читают целиком и подставляют ваш ответ пользователю. Без этого для той аудитории, которая спрашивает у нейросети, вашего бизнеса просто не существует.</div></details>
+      <details class="rv"><summary>У меня уже есть сайт — нужен ли редизайн? <i></i></summary><div class="a">Не всегда. Начнём с бесплатного аудита: скорость, удобство на телефоне, поиск, видимость для нейросетей. Если сайт технически здоров — возможна точечная настройка без полного редизайна. Честно скажем, что нужно, а что — нет.</div></details>
+      <details class="rv"><summary>Есть ли гарантии результата? <i></i></summary><div class="a">Гарантируем техническое качество и закрепляем его в договоре: сайт быстро грузится, ровно открывается на любом телефоне, показатели скорости в зелёной зоне, поисковые и AI-боты получают страницу целиком и правильно понимают, кто вы и что делаете. С этого момента сайт начинает показываться в выдаче. Конкретные места в поиске и упоминания в ответах нейросетей зависят от рынка и конкурентов — их не обещает никто, и мы тоже не будем.</div></details>
+      <details class="rv"><summary>Какая у вас география работы? <i></i></summary><div class="a">Работаем по всей России и за границей — полностью удалённо. Договор, брифинг, приёмка — в мессенджере или по видеосвязи. Часовой пояс значения не имеет.</div></details>
+      <details class="rv"><summary>На какие языки вы переводите сайт? <i></i></summary><div class="a">Английский, узбекский, таджикский, киргизский, азербайджанский и китайский — плюс русский. Перевод делает человек, а не кнопка-переводчик, и каждая версия открывается по своему адресу, поэтому её видят поисковики.</div></details>
+      <details class="rv"><summary>Что происходит после окончания договора ведения? <i></i></summary><div class="a">Сайт остаётся вашим — вы получаете исходники, доступы к хостингу и домену. Можете продолжить самостоятельно или с другим подрядчиком. Без скрытых зависимостей.</div></details>
     </div>
   </div>
 </section>
@@ -666,7 +955,7 @@ burger.addEventListener('click',()=>{
 });
 
 /* ---------- marquee ---------- */
-const words=['Редизайн сайта','AI-видимость','Schema.org','llms.txt','Telegram-боты','MAX-боты','Онлайн-запись','Адаптив','Тёмная тема','Скорость','Ведение сайта','Соцсети'];
+const words=['Редизайн сайта','Видимость в нейросетях','Онлайн-запись','Чат-боты 24/7','Telegram и MAX','Приём оплаты','Автоматизация расписания','Светофор очереди','Шесть языков','Логотип и фирменный стиль','Светлая и тёмная тема','Скорость загрузки','Ведение сайта','Каналы и соцсети'];
 function fillRow(row,list){
   const html=list.map(w=>`<span class="item">${w}</span>`).join('');
   row.innerHTML=html+html;
@@ -786,9 +1075,9 @@ if(hasGsap && !RM){
   // morph pinned section
   const mword=$('#mword'), msub=$('#msub'), mghost=$('#mghost');
   const STATES=[
-    {w:'сайт',s:'Быстрый, адаптивный, с тёмной и светлой темой. Такой, который не стыдно показать.',cls:''},
-    {w:'клиенты',s:'Онлайн-запись, формы с уведомлениями в Telegram, бот, который отвечает 24/7. Заявки приходят сами.',cls:'g'},
-    {w:'видимость',s:'Яндекс, Google — и нейросети: ChatGPT, Алиса, Gemini читают ваш сайт целиком и могут на него опереться.',cls:'g2'}
+    {w:'сайт',s:'Быстрый, удобный на телефоне, с переключением светлой и тёмной темы — как удобно вашему клиенту. Сайт, который легко находить и удобно читать.',cls:''},
+    {w:'клиенты',s:'Онлайн-запись, формы с уведомлениями в Telegram и MAX, чат-бот отвечает на вопросы 24/7. Заявки приходят и обрабатываются сами.',cls:'g'},
+    {w:'видимость',s:'Яндекс, Google, Opera, Edge — и нейросети: ChatGPT, Алиса, Gemini, GigaChat, DeepSeek, Perplexity. Мы настраиваем сайт так, чтобы каждый из них нашёл вас и правильно рассказал о вас клиенту.',cls:'g2'}
   ];
   const ALPHA='АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЫЭЮЯ';
   let cur=0, scrambling=null;
@@ -867,6 +1156,142 @@ if(hasGsap && !RM){
   // no motion: make sure nothing stays hidden
   $$('.rv,.ln>span,.hero-in').forEach(el=>{el.style.opacity='';el.style.transform='';});
   $('#mword').textContent='сайт';
+}
+})();
+</script>
+
+<script>
+/* ===== правки 07.09: орбиты, свечение, сравнение, карусель, тема, язык ===== */
+(function(){
+'use strict';
+var RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* --- тема --- */
+var tb=document.getElementById('theme');
+if(tb) tb.addEventListener('click',function(){
+  var light=document.documentElement.classList.toggle('light');
+  try{localStorage.setItem('vseti-theme',light?'light':'dark');}catch(e){}
+});
+
+/* --- выпадающий список языков --- */
+var lg=document.getElementById('lang');
+if(lg){
+  var lb=lg.querySelector('button');
+  lb.addEventListener('click',function(e){e.stopPropagation();var on=lg.classList.toggle('on');lb.setAttribute('aria-expanded',on?'true':'false');});
+  document.addEventListener('click',function(){lg.classList.remove('on');lb.setAttribute('aria-expanded','false');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lg.classList.remove('on');});
+}
+
+/* --- первый экран: названия кружат по внешней оболочке вокруг знака --- */
+var NAMES=['Яндекс','Google','ChatGPT','Алиса','Gemini','Perplexity','Claude','DeepSeek','Grok','GigaChat','Copilot','Bing'];
+var SPEED=[54,61,47,72,58,66,50,78,63,44,69,56];
+function buildOrbits(){
+  var marks=document.querySelectorAll('[data-orbit]');
+  for(var mi=0;mi<marks.length;mi++){
+    var m=marks[mi];
+    var old=m.querySelectorAll('.orb');for(var oi=0;oi<old.length;oi++)old[oi].remove();
+    var w=m.clientWidth||200, R=w/2, n=NAMES.length, nodes=[];
+    for(var i=0;i<n;i++){
+      var o=document.createElement('div');o.className='orb';
+      var sp=document.createElement('div');sp.className='sp';
+      var dur=SPEED[i%SPEED.length], delay=(-dur*(i/n))+'s';
+      sp.style.setProperty('--dur',dur+'s');sp.style.animationDelay=delay;
+      var c=document.createElement('span');c.className='chip';c.textContent=NAMES[i];
+      c.style.setProperty('--dur',dur+'s');c.style.animationDelay=delay;
+      sp.appendChild(c);o.appendChild(sp);m.appendChild(o);nodes.push(c);
+    }
+    var half=0;for(var j=0;j<nodes.length;j++)half=Math.max(half,nodes[j].offsetWidth);half=half/2+6;
+    var box=m.getBoundingClientRect();
+    var room=Math.min(box.left, innerWidth-box.right)+R;
+    var outer=Math.max(R*1.02, Math.min(R*1.30, room-half));
+    var inner=Math.max(R*1.02, outer-(innerWidth<560?20:30));
+    for(var k=0;k<nodes.length;k++){
+      var rad=(k%2? outer:inner), ang=(k/n)*Math.PI*2 - Math.PI/2;
+      nodes[k].style.left=(Math.cos(ang)*rad)+'px';
+      nodes[k].style.top=(Math.sin(ang)*rad)+'px';
+    }
+  }
+}
+buildOrbits();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(buildOrbits);
+addEventListener('load',function(){setTimeout(buildOrbits,140);});
+var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(buildOrbits,150);});
+
+/* --- свечение фразы «Все находят вас» и заголовка вопросов --- */
+function glow(el,wcls,ccls,step){
+  if(!el)return;
+  var words=el.textContent.split(' ');el.textContent='';var chars=[],k=0;
+  words.forEach(function(w){
+    var ws=document.createElement('span');ws.className=wcls;
+    [].forEach.call(w,function(c){var sp=document.createElement('span');sp.className=ccls;sp.textContent=c;sp.style.transitionDelay=(k++*step)+'ms';ws.appendChild(sp);chars.push(sp);});
+    el.appendChild(ws);
+  });
+  var on=function(){el.classList.add('lit');chars.forEach(function(c){c.classList.add('lit');});};
+  var off=function(){el.classList.remove('lit');chars.forEach(function(c){c.classList.remove('lit');});};
+  el.addEventListener('mouseenter',on);el.addEventListener('mouseleave',off);
+  el.addEventListener('touchstart',on,{passive:true});
+  if('IntersectionObserver' in window) new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){on();setTimeout(off,1900);}});
+  },{threshold:.5}).observe(el);
+}
+glow(document.getElementById('phrase'),'pw','pc',30);
+glow(document.getElementById('faqHead'),'fw','fc',26);
+
+/* --- сравнение: галочки зажигаются при прокрутке --- */
+var ROWS=[
+ ['Удобно открывается на телефоне, без увеличения пальцами',0,1],
+ ['Сайт целиком видят поисковые и AI-боты',0,1],
+ ['Нейросети понимают, кто вы, где вы и что делаете',0,1],
+ ['Есть версии на шести языках',0,1],
+ ['Светлая и тёмная тема на выбор',0,1],
+ ['Онлайн-запись с уведомлением в Telegram и MAX',0,1],
+ ['Чат-бот отвечает клиентам круглосуточно',0,1],
+ ['Приём оплаты и на сайте, и в каналах',0,1],
+ ['Скорость загрузки в зелёной зоне',0,1],
+ ['Открывается у всех в России без сбоев',0,1]];
+var CHECK='M4 11 L9 16 L18 5', CROSS='M5 5 L17 17 M17 5 L5 17';
+var box=document.getElementById('cmp2');
+if(box){
+  ROWS.forEach(function(r,i){
+    var row=document.createElement('div');row.className='rw';row.style.transitionDelay=(i*70)+'ms';
+    var mk=function(v){return '<div class="cell"><div class="mk '+(v?'yes':'no')+'"><svg viewBox="0 0 22 22" aria-hidden="true"><path d="'+(v?CHECK:CROSS)+'"/></svg></div></div>';};
+    row.innerHTML='<div class="cr">'+r[0]+'</div>'+mk(r[1])+mk(r[2]);
+    box.appendChild(row);
+  });
+  var rows=[].slice.call(box.querySelectorAll('.rw'));
+  rows.forEach(function(r){
+    var base=parseFloat(r.style.transitionDelay)||0;
+    [].forEach.call(r.querySelectorAll('.mk path'),function(pth,j){pth.style.transitionDelay=(base*1000+120+j*90)+'ms';});
+  });
+  if('IntersectionObserver' in window && !RM){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('on',e.isIntersecting);});},{threshold:.4});
+    rows.forEach(function(r){io.observe(r);});
+  } else rows.forEach(function(r){r.classList.add('on');});
+}
+
+/* --- карусель телефонов: Telegram / MAX / ВКонтакте --- */
+var CH=[{n:'Telegram',c:'#2aabee',k:'TG',r:['<b>Канал</b> — посты по расписанию','<b>Чат-бот</b> — отвечает 24/7','<b>Оплата</b> — ЮKassa и СБП','Автопостинг и рассылки']},
+        {n:'MAX',c:'#84f4ea',k:'MAX',r:['<b>Канал</b> — витрина бизнеса','<b>Чат-бот</b> — приём заказов','<b>Оплата</b> — ЮKassa и СБП','Подписки и напоминания']},
+        {n:'ВКонтакте',c:'#ffd45e',k:'VK',r:['<b>Сообщество</b> — контент и акции','<b>Чат-бот</b> — заявки из личных','<b>Оплата</b> — товары ВК','Рассылки по подписчикам']}];
+var host=document.getElementById('carou'), dots=document.getElementById('carouDots');
+if(host&&dots){
+  var els=CH.map(function(o){
+    var ph=document.createElement('div');ph.className='phone';
+    ph.innerHTML='<div class="notch"></div><div class="scr"><div class="top"><div class="ic" style="background:'+o.c+'">'+o.k+'</div><div class="pn">'+o.n+'</div></div>'+
+      o.r.map(function(t){return '<div class="li"><i></i><span>'+t+'</span></div>';}).join('')+'</div>';
+    host.appendChild(ph);return ph;});
+  CH.forEach(function(_,i){var d=document.createElement('i');d.onclick=function(){cur=i;draw();};dots.appendChild(d);});
+  var cur=0;
+  function draw(){
+    els.forEach(function(ph,i){
+      var k=(i-cur+CH.length)%CH.length;
+      ph.style.transform= k===0?'translateX(0) scale(1)':(k===1?'translateX(142px) scale(.78) rotateY(-26deg)':'translateX(-142px) scale(.78) rotateY(26deg)');
+      ph.style.opacity=k===0?1:.45;ph.style.zIndex=k===0?3:1;ph.classList.toggle('on',k===0);
+    });
+    [].forEach.call(dots.children,function(d,i){d.classList.toggle('on',i===cur);});
+  }
+  draw();
+  if(!RM) setInterval(function(){cur=(cur+1)%CH.length;draw();},3000);
 }
 })();
 </script>

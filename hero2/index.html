@@ -144,32 +144,35 @@ function buildOrbits(){
   document.querySelectorAll('[data-orbit]').forEach(m=>{
     m.querySelectorAll('.orb').forEach(o=>o.remove());
     const w=m.clientWidth||200, R=w/2;
-    const box=m.getBoundingClientRect();
-    // сколько места до края экрана от центра знака
-    const room=Math.min(box.left, innerWidth-box.right)+R;
-    const narrow=innerWidth<560;
-    const pad=narrow?52:64;            // запас под ширину самой длинной подписи
-    const outer=Math.max(R*1.02, Math.min(R*1.30, room-pad));
-    const inner=Math.max(R*1.02, outer-(narrow?20:30));
-    const n=NAMES.length;
+    const n=NAMES.length, nodes=[];
+    // 1) создаём подписи в центре и меряем реальную ширину самой длинной
     NAMES.forEach((name,i)=>{
-      const rad=(i%2? outer : inner);          // оболочка с толщиной: соседи не липнут
-      const ang=(i/n)*Math.PI*2 - Math.PI/2;
       const o=document.createElement('div');o.className='orb';
       const sp=document.createElement('div');sp.className='sp';
-      const dur=SPEED[i%SPEED.length];
-      sp.style.setProperty('--dur',dur+'s');
-      sp.style.animationDelay=(-dur*(i/n))+'s';
+      const dur=SPEED[i%SPEED.length], delay=(-dur*(i/n))+'s';
+      sp.style.setProperty('--dur',dur+'s');sp.style.animationDelay=delay;
       const c=document.createElement('span');c.className='chip';c.textContent=name;
-      c.style.setProperty('--dur',dur+'s');
-      c.style.animationDelay=(-dur*(i/n))+'s';
+      c.style.setProperty('--dur',dur+'s');c.style.animationDelay=delay;
+      sp.appendChild(c);o.appendChild(sp);m.appendChild(o);nodes.push(c);
+    });
+    const half=Math.max(...nodes.map(c=>c.offsetWidth))/2 + 6;
+    // 2) сколько места от центра знака до края экрана
+    const box=m.getBoundingClientRect();
+    const room=Math.min(box.left, innerWidth-box.right)+R;
+    const outer=Math.max(R*1.02, Math.min(R*1.30, room-half));
+    const inner=Math.max(R*1.02, outer-(innerWidth<560?20:30));
+    // 3) раскладываем по внешней оболочке
+    nodes.forEach((c,i)=>{
+      const rad=(i%2? outer : inner);
+      const ang=(i/n)*Math.PI*2 - Math.PI/2;
       c.style.left=(Math.cos(ang)*rad)+'px';
       c.style.top=(Math.sin(ang)*rad)+'px';
-      sp.appendChild(c);o.appendChild(sp);m.appendChild(o);
     });
   });
 }
 buildOrbits();
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(()=>buildOrbits());
+addEventListener('load',()=>setTimeout(buildOrbits,120));
 let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(buildOrbits,150)});
 // свечение фразы
 document.querySelectorAll('[data-glow]').forEach(el=>{

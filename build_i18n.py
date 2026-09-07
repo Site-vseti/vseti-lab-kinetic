@@ -54,27 +54,100 @@ def extract():
               ensure_ascii=False, indent=1)
     print('строк:', len(st), '| знаков:', sum(len(x) for x in st))
 
-def translate_html(src, table, code, htmllang, name):
-    # 1) подменяем строки через плейсхолдеры, чтобы не переводить дважды
-    keys = [k for k in sorted(table, key=len, reverse=True) if table[k]]
+
+# Имена и бренды, которые в латинских версиях пишутся латиницей.
+# В таджикской и киргизской версиях кириллица остаётся как есть.
+LATIN_BRANDS = {
+ 'Яндекс': 'Yandex', 'Алиса': 'Alice', 'ВКонтакте': 'VKontakte',
+ 'ЮKassa': 'YooKassa', 'СБП': 'SBP',
+ 'Элина Рихтер': 'Elina Rikhter', 'Рина Золотарёва': 'Rina Zolotareva',
+ 'Сонник': 'Sonnik', 'Цена Дня · WB': 'Tsena Dnya · WB',
+ 'ЕГРН: план квартиры': 'EGRN: apartment plan',
+ 'Справки КГИОП': 'KGIOP certificates', 'Карта парка Аватар': 'Avatar Park map',
+ 'Инсоляция и КЕО': 'Insolation and daylight',
+}
+LATIN_LANGS = {'en', 'uz', 'az', 'zh'}
+
+def esc_html(t):
+    return t.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;')
+
+def esc_js(t):
+    return t.replace('\\', '\\\\').replace("'", "\\'").replace('\n', ' ')
+
+def substitute(chunk, keys, table, esc):
+    """Подмена через плейсхолдеры: длинные строки первыми, ничего не переводится дважды."""
     tok = {}
     for i, k in enumerate(keys):
-        t = '\x00%d\x00' % i
-        if k in src:
-            src = src.replace(k, t)
-            tok[t] = table[k]
+        if k in chunk:
+            t = '\x00%d\x00' % i
+            chunk = chunk.replace(k, t)
+            tok[t] = esc(table[k])
     for t, v in tok.items():
-        src = src.replace(t, v)
-    # 2) язык документа и относительные пути
+        chunk = chunk.replace(t, v)
+    return chunk
+
+def translate_html(src, table, code, htmllang, name):
+    keys = [k for k in sorted(table, key=len, reverse=True) if table[k]]
+    # разметку Schema.org и Open Graph НЕ переводим построчно: их русский текст не
+    # входит в словарь и словам достались бы куски перевода. Вырезаем и собираем заново.
+    src = re.sub(r'<script type="application/ld\+json">.*?</script>\n?', '', src, flags=re.S)
+    src = re.sub(r'<meta (?:property="og:|name="twitter:)[^>]*>\n?', '', src)
+    # скрипты и разметка переводятся раздельно: в скриптах апостроф надо экранировать,
+    # в разметке — амперсанд и кавычки, иначе ломается либо JS, либо HTML
+    out, pos = [], 0
+    for m in re.finditer(r'<script\b.*?</script>', src, flags=re.S):
+        out.append(substitute(src[pos:m.start()], keys, table, esc_html))
+        out.append(substitute(m.group(0), keys, table, esc_js))
+        pos = m.end()
+    out.append(substitute(src[pos:], keys, table, esc_html))
+    src = ''.join(out)
+    # язык документа и относительные пути
     src = src.replace('<html lang="ru">', '<html lang="%s">' % htmllang, 1)
     src = re.sub(r'(src|href)="assets/', r'\1="../assets/', src)
     src = re.sub(r'url\(assets/', 'url(../assets/', src)
     for pg in ('oferta.html', 'politika.html', 'rekvizity.html'):
         src = src.replace('href="%s"' % pg, 'href="../%s"' % pg)
-    # 3) отметка текущего языка в переключателе
+    # канонический адрес и Open Graph — свои у каждой версии
+    src = src.replace('<link rel="canonical" href="https://vseti-site.ru/">',
+                      '<link rel="canonical" href="https://vseti-site.ru/%s/">' % code, 1)
+    src = src.replace('<meta property="og:url" content="https://vseti-site.ru/">',
+                      '<meta property="og:url" content="https://vseti-site.ru/%s/">' % code, 1)
+    src = src.replace('"inLanguage":"ru"', '"inLanguage":"%s"' % htmllang, 1)
+    # отметка текущего языка в переключателе
     src = src.replace('<a href="/" aria-current="true">', '<a href="/">', 1)
     src = src.replace('<a href="/%s/">' % code, '<a href="/%s/" aria-current="true">' % code, 1)
     src = re.sub(r'(<span class="nm">)RU(</span>)', r'\g<1>%s\g<2>' % code.upper(), src, count=1)
+    if code in LATIN_LANGS:
+        for a, b in sorted(LATIN_BRANDS.items(), key=lambda kv: -len(kv[0])):
+            src = src.replace(a, b)
+    # заголовок и описание уже переведены — на них и строим Open Graph и Schema.org
+    t = re.search(r'<title>(.*?)</title>', src, flags=re.S)
+    d = re.search(r'<meta name="description" content="([^"]*)"', src)
+    title = t.group(1).strip() if t else 'в сети'
+    desc = d.group(1).strip() if d else ''
+    url = 'https://vseti-site.ru/%s/' % code
+    og = ('<meta property="og:type" content="website">\n'
+          '<meta property="og:site_name" content="в сети">\n'
+          '<meta property="og:title" content="%s">\n'
+          '<meta property="og:description" content="%s">\n'
+          '<meta property="og:url" content="%s">\n'
+          '<meta property="og:image" content="https://vseti-site.ru/assets/logo.png">\n'
+          '<meta name="twitter:card" content="summary_large_image">\n'
+          '<meta name="twitter:title" content="%s">\n'
+          '<meta name="twitter:description" content="%s">\n'
+          '<meta name="twitter:image" content="https://vseti-site.ru/assets/logo.png">\n') % (title, desc, url, title, desc)
+    ld = {"@context": "https://schema.org", "@type": "ProfessionalService",
+          "@id": "https://vseti-site.ru/#org", "name": "в сети", "url": url,
+          "logo": "https://vseti-site.ru/assets/logo.png", "description": desc,
+          "email": "site_vseti@mail.ru", "telephone": "+79119261617",
+          "priceRange": "35000-120000 RUB",
+          "address": {"@type": "PostalAddress", "addressCountry": "RU", "addressLocality": "Izhevsk"},
+          "areaServed": [{"@type": "Country", "name": "Russia"}],
+          "knowsLanguage": ["ru", "en", "uz", "tg", "ky", "az", "zh"],
+          "sameAs": ["https://t.me/vseti_site", "https://t.me/vseti_agency_bot"],
+          "inLanguage": htmllang}
+    block = og + '<script type="application/ld+json">\n' + json.dumps(ld, ensure_ascii=False, indent=1) + '\n</script>\n'
+    src = src.replace('</head>', block + '</head>', 1)
     return src
 
 def hreflangs():

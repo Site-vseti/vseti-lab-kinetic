@@ -159,7 +159,9 @@ html.rm #intro{display:none}
 /* statement (variable weight scrub) */
 .statement{text-align:center}
 .statement .big{font-family:var(--disp);font-size:clamp(1.7rem,5.6vw,5.4rem);line-height:1.1;letter-spacing:-.02em;max-width:22ch;margin:0 auto}
-.statement .big .w{--w:200;font-variation-settings:"wght" var(--w);transition:none}
+.statement .big .w{--w:200;font-variation-settings:"wght" var(--w);color:var(--mute);transition:color .45s var(--ease)}
+.statement .big .w.on{color:var(--ink)}
+.statement .big .tif .w.on{color:var(--tif)}
 .statement .big .w.tif{color:var(--tif)}
 .statement .sub{margin:36px auto 0;max-width:60ch;color:var(--mute);font-size:clamp(1rem,1.3vw,1.2rem)}
 .proof{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:clamp(50px,7vw,90px)}
@@ -187,10 +189,18 @@ html.rm #intro{display:none}
 .mghost{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 900;font-size:42vw;color:transparent;-webkit-text-stroke:1px rgba(132,244,234,.07);pointer-events:none;letter-spacing:-.05em}
 
 /* services */
-.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:26px;overflow:hidden}
-.svc .c{background:var(--bg);padding:36px 30px 40px;position:relative;min-height:300px;display:flex;flex-direction:column;gap:14px;overflow:hidden;transition:background .5s}
-.svc .c:hover{background:var(--bg2)}
-.svc .c::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,var(--tif),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.svc-sec{position:relative;isolation:isolate;overflow:hidden}
+.svc-sec::before{content:"";position:absolute;inset:0;z-index:-2;background:url(assets/depth/bg-base.jpg) center/cover no-repeat;opacity:.3}
+.svc-sec::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--bg) 0%,rgba(7,26,24,.82) 30%,rgba(7,26,24,.86) 70%,var(--bg) 100%)}
+html.light .svc-sec::before{opacity:.14}
+html.light .svc-sec::after{background:linear-gradient(180deg,var(--bg) 0%,rgba(244,251,250,.86) 30%,rgba(244,251,250,.9) 70%,var(--bg) 100%)}
+html.light .svc .c{background:linear-gradient(165deg,rgba(255,255,255,.92),rgba(233,246,244,.75))}
+html.light .svc .c:hover{background:linear-gradient(165deg,#fff,rgba(223,242,239,.92));box-shadow:0 26px 56px -24px rgba(12,125,116,.6)}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc .c{background:linear-gradient(165deg,rgba(27,82,76,.45),rgba(14,51,47,.3));border:1px solid var(--line);border-radius:22px;padding:32px 28px 36px;position:relative;min-height:290px;display:flex;flex-direction:column;gap:14px;overflow:hidden;
+  transition:transform .45s var(--ease),border-color .45s,box-shadow .45s,background .45s}
+.svc .c:hover{transform:translateY(-8px);border-color:rgba(132,244,234,.5);background:linear-gradient(165deg,rgba(34,99,92,.6),rgba(14,51,47,.4));box-shadow:0 26px 60px -22px rgba(132,244,234,.75)}
+.svc .c::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--tif),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
 .svc .c:hover::after{transform:none}
 .svc .num{font-family:var(--disp);font-variation-settings:"wght" 300;font-size:13px;letter-spacing:.2em;color:var(--tif)}
 .svc h3{font-family:var(--disp);font-variation-settings:"wght" 500;font-size:clamp(1.25rem,1.7vw,1.55rem);line-height:1.15;letter-spacing:-.01em;transition:font-variation-settings .5s var(--ease),letter-spacing .5s}
@@ -751,6 +761,14 @@ html.light .case{background:rgba(255,255,255,.85)}
  "@context": "https://schema.org"
 }
 </script>
+<link rel="alternate" hreflang="ru" href="https://vseti-site.ru/">
+<link rel="alternate" hreflang="en" href="https://vseti-site.ru/en/">
+<link rel="alternate" hreflang="uz" href="https://vseti-site.ru/uz/">
+<link rel="alternate" hreflang="tg" href="https://vseti-site.ru/tg/">
+<link rel="alternate" hreflang="ky" href="https://vseti-site.ru/ky/">
+<link rel="alternate" hreflang="az" href="https://vseti-site.ru/az/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vseti-site.ru/zh/">
+<link rel="alternate" hreflang="x-default" href="https://vseti-site.ru/">
 </head>
 <body>
 
@@ -812,7 +830,7 @@ html.light .case{background:rgba(255,255,255,.85)}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" id="heroBg"><img src="assets/bokeh.jpg" alt=""></div>
+  <div class="hero-bg" id="heroBg"><img src="assets/depth/bg-base.jpg" alt=""></div>
   <div class="hero-veil"></div>
   <div class="ghost" id="ghost" aria-hidden="true">ВСЕТИ</div>
   <div class="wrap">
@@ -875,7 +893,7 @@ html.light .case{background:rgba(255,255,255,.85)}
 </section>
 
 <!-- SERVICES -->
-<section class="sec" id="svc">
+<section class="sec svc-sec" id="svc">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">что мы делаем</p>
@@ -1081,14 +1099,15 @@ html.light .case{background:rgba(255,255,255,.85)}
           <a class="rv" href="mailto:site_vseti@mail.ru"><span>site_vseti@mail.ru<small>почта · договор, бриф, документы</small></span><span class="arr">→</span></a>
         </div>
       </div>
-      <form class="form rv" action="mailto:site_vseti@mail.ru" method="post" enctype="text/plain">
+      <form class="form rv" id="leadForm" action="mailto:site_vseti@mail.ru" method="post" enctype="text/plain">
         <h3>Оставить заявку</h3>
         <p>Напишем в удобный мессенджер или на почту.</p>
         <label for="fn">Имя</label><input id="fn" name="Имя" placeholder="Как к вам обращаться" required>
         <label for="fc">Контакт</label><input id="fc" name="Контакт" placeholder="Telegram или телефон" required>
         <label for="fm">Сайт или задача</label><textarea id="fm" name="Задача" placeholder="Ссылка на текущий сайт, что хочется изменить"></textarea>
-        <button class="btn btn-gold magnetic" type="submit">Отправить <span class="arr">→</span></button>
-        <p class="fine">Нажимая «Отправить», вы соглашаетесь на обратную связь по указанным контактам. Данные не передаются третьим лицам.</p>
+        <button class="btn btn-gold magnetic" type="submit">Отправить почтой <span class="arr">→</span></button>
+        <a class="btn btn-ghost magnetic" id="leadTg" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener" style="margin-top:12px;width:100%;justify-content:center">Быстрее — в Telegram <span class="arr">→</span></a>
+        <p class="fine">Кнопка «Отправить почтой» откроет ваш почтовый клиент с уже заполненным письмом. Если почтового клиента нет — напишите нам в Telegram, ответим быстрее. Данные не передаются третьим лицам.</p>
       </form>
     </div>
   </div>
@@ -1345,7 +1364,11 @@ if(hasGsap && !RM){
   });
   // statement: variable weight scrub, word by word
   const sw=splitWords($('#stmt'));
-  gsap.fromTo(sw,{'--w':200},{'--w':800,ease:'none',stagger:.35,scrollTrigger:{trigger:'#stmt',start:'top 85%',end:'bottom 35%',scrub:.4}});
+  // жирность и цвет набираются раньше — уже когда строка в середине экрана
+  gsap.fromTo(sw,{'--w':200},{'--w':800,ease:'none',stagger:.3,scrollTrigger:{trigger:'#stmt',start:'top 95%',end:'bottom 60%',scrub:.4}});
+  // цвет набирается слово за словом; сами цвета живут в CSS, поэтому светлая тема не ломается
+  ScrollTrigger.create({trigger:'#stmt',start:'top 95%',end:'bottom 60%',scrub:.3,
+    onUpdate:self=>{const k=self.progress*(sw.length+2);sw.forEach((w,i)=>w.classList.toggle('on',i<k));}});
 
   // contact bigline: lines mask + weight
   const bl=$('#bigline');
@@ -1536,6 +1559,17 @@ if(box){
     rows.forEach(function(r){io.observe(r);});
   } else rows.forEach(function(r){r.classList.add('on');});
 }
+
+/* --- заявка: собираем письмо сами, чтобы ничего не терялось --- */
+var lf=document.getElementById('leadForm');
+if(lf) lf.addEventListener('submit',function(e){
+  e.preventDefault();
+  var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+  var name=v('fn'), contact=v('fc'), task=v('fm');
+  if(!name||!contact){ lf.reportValidity&&lf.reportValidity(); return; }
+  var body='Имя: '+name+'\nКонтакт: '+contact+'\nСайт или задача: '+(task||'—')+'\n\nОтправлено с vseti-site.ru';
+  location.href='mailto:site_vseti@mail.ru?subject='+encodeURIComponent('Заявка с сайта — '+name)+'&body='+encodeURIComponent(body);
+});
 
 /* --- карусель телефонов: Telegram / MAX / ВКонтакте --- */
 var CH=[{n:'Telegram',c:'#2aabee',k:'TG',r:['<b>Канал</b> — посты по расписанию','<b>Чат-бот</b> — отвечает 24/7','<b>Оплата</b> — ЮKassa и СБП','Автопостинг и рассылки']},

@@ -254,7 +254,7 @@ html.rm #intro{display:none}
 .plan .badge{position:absolute;top:22px;right:22px;background:linear-gradient(120deg,var(--gold2),var(--gold));color:#1b1300;font-family:var(--disp);font-variation-settings:"wght" 600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
 .plan .nm{font-family:var(--disp);font-variation-settings:"wght" 400;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--tif)}
 .plan .pr{font-family:var(--disp);font-variation-settings:"wght" 700;font-size:clamp(2.2rem,3.4vw,3.2rem);letter-spacing:-.03em;line-height:1;margin-top:14px}
-.plan .pr small{font-size:.42em;color:var(--mute);font-variation-settings:"wght" 300;letter-spacing:0;margin-left:.3em}
+.plan .pr small{display:block;font-size:.34em;color:var(--mute);font-variation-settings:"wght" 300;letter-spacing:.02em;margin:6px 0 0}
 .plan .mo{color:var(--gold2);font-size:15px;margin-top:6px}
 .plan ul{list-style:none;margin:24px 0 28px;display:grid;gap:10px;color:var(--mute);font-size:15px}
 .plan li{padding-left:22px;position:relative}
@@ -346,21 +346,70 @@ html.light .tbtn .moon{display:none}
 .hero .lead{margin-inline:auto}
 .cta{justify-content:center}
 .hline{display:flex;align-items:center;justify-content:center;gap:clamp(10px,2vw,26px);flex-wrap:wrap;margin-top:clamp(16px,2.6vw,30px)}
+/* пока экран не широкий, знак встаёт под фразой — так вокруг него остаётся место
+   для подписей и они не жмутся к краю */
+@media (max-width:1100px){.hline{flex-direction:column;gap:clamp(14px,3vw,26px)}}
 .phrase{font-family:var(--disp);font-variation-settings:"wght" 800;line-height:1.05;font-size:clamp(1.5rem,4.2vw,3.4rem);white-space:nowrap}
 .phrase .pw{display:inline-block;white-space:nowrap;margin-right:.26em}
 .phrase .pc{display:inline-block;transition:color .5s var(--ease),text-shadow .5s var(--ease);
   text-shadow:0 1px 0 #2c7d74,0 2px 0 #256d65,0 3px 0 #1e5d56,0 4px 0 #175048,0 7px 16px rgba(0,0,0,.8)}
 .phrase.lit .pc{color:#fff;text-shadow:0 0 10px var(--tif),0 0 30px var(--tif),0 4px 0 #175048,0 9px 24px rgba(0,0,0,.85)}
-.mark{position:relative;flex:none;width:clamp(150px,19vw,250px);aspect-ratio:1}
+.mark{position:relative;flex:none;width:clamp(190px,19vw,250px);aspect-ratio:1}
 .mark .halo{position:absolute;inset:-14%;border-radius:50%;background:radial-gradient(circle,rgba(132,244,234,.3),transparent 62%);filter:blur(16px)}
 .mark .lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 18px 44px rgba(0,0,0,.75))}
 .orb{position:absolute;left:50%;top:50%;width:0;height:0}
 .orb .sp{position:absolute;left:0;top:0;animation:orbspin var(--dur,54s) linear infinite}
-.chip{position:absolute;transform:translate(-50%,-50%);font-family:var(--disp);font-size:clamp(9px,1vw,12px);letter-spacing:.05em;color:var(--tif);background:rgba(7,26,24,.8);border:1px solid rgba(132,244,234,.32);border-radius:999px;padding:5px 11px;white-space:nowrap;box-shadow:0 8px 22px -10px rgba(0,0,0,.9);animation:orbback var(--dur,54s) linear infinite}
+.chip{opacity:1;transition:opacity .45s var(--ease);position:absolute;transform:translate(-50%,-50%);font-family:var(--disp);font-size:clamp(9px,1vw,12px);letter-spacing:.05em;color:var(--tif);background:rgba(7,26,24,.8);border:1px solid rgba(132,244,234,.32);border-radius:999px;padding:5px 11px;white-space:nowrap;box-shadow:0 8px 22px -10px rgba(0,0,0,.9);animation:orbback var(--dur,54s) linear infinite}
 @keyframes orbspin{to{transform:rotate(360deg)}}
 @keyframes orbback{to{transform:translate(-50%,-50%) rotate(-360deg)}}
 html.rm .orb .sp,html.rm .chip{animation:none}
-@media (max-width:700px){.phrase{white-space:normal;font-size:clamp(1.4rem,7vw,2.2rem)}.mark{width:min(54vw,210px)}}
+@media (max-width:700px){.phrase{white-space:normal}.chip{font-size:9px;padding:4px 8px;letter-spacing:.02em}}
+
+/* первый экран должен помещаться в экран целиком: размеры считаются и от высоты окна */
+@media (max-width:900px){
+ .hero{padding:96px 0 64px}
+ .h1{font-size:min(clamp(1.6rem,6.2vw,3rem),4.4svh)}
+ .phrase{font-size:min(clamp(1.25rem,6.8vw,2.2rem),3.9svh)}
+ .mark{width:min(58vw,24svh,220px)}
+ .hline{margin-top:12px}
+ .hero .lead{margin:16px auto 18px;font-size:15px}
+ .hero .eyebrow{margin-bottom:14px}
+ .hero .cta .btn{padding:13px 22px;font-size:14px}
+ .hero-foot{bottom:18px}
+ .hero-foot .ai-chips{display:none}   /* названия и так летают вокруг знака */
+}
+@media (max-width:900px) and (max-height:720px){
+ .hero{padding:76px 0 40px}
+ .h1{font-size:min(clamp(1.5rem,6vw,3rem),4.1svh)}
+ .phrase{font-size:min(clamp(1.15rem,6.4vw,2.2rem),3.6svh)}
+ .mark{width:min(50vw,19.5svh,190px)}
+ .hero .lead{font-size:14px;margin:11px auto 13px}
+ .hero .eyebrow{margin-bottom:10px;font-size:11px}
+ .hero-foot{display:none}
+}
+@media (max-width:900px) and (max-height:600px){
+ .hero{padding:66px 0 32px}
+ .mark{width:min(46vw,17svh,170px)}
+ .hero .lead{display:none}
+}
+@media (min-width:901px){
+ .hero{padding:120px 0 92px}
+ .h1{font-size:min(clamp(1.85rem,6.2vw,6.2rem),7.4svh)}
+ .phrase{font-size:min(clamp(1.5rem,4.2vw,3.4rem),5.4svh)}
+ .mark{width:min(19vw,26svh,250px)}
+ .hero .lead{margin:22px auto 26px}
+}
+@media (min-width:901px) and (max-height:940px){
+ .hero{padding:104px 0 58px}
+ .hero-foot{display:none}     /* иначе кнопки наезжают на нижнюю строку */
+}
+@media (min-width:901px) and (max-height:820px){
+ .hero{padding:84px 0 46px}
+ .h1{font-size:min(clamp(1.85rem,6.2vw,6.2rem),6.6svh)}
+ .phrase{font-size:min(clamp(1.5rem,4.2vw,3.4rem),4.8svh)}
+ .mark{width:min(19vw,21.5svh,250px)}
+ .hero .lead{margin:16px auto 20px}
+}
 
 /* --- плашки «0 ошибок» / «9 из 9»: подъём и свечение ×2 --- */
 .proof .p{cursor:default;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -419,7 +468,11 @@ html.rm .orb .sp,html.rm .chip{animation:none}
 .cmp2 .rw.on .mk path{stroke-dashoffset:0}
 .cmp2 .rw.on .mk.yes{box-shadow:0 0 26px -4px rgba(132,244,234,.75);transform:scale(1.06)}
 .cmp2 .rw.on .mk.no{opacity:.75}
-@media (max-width:560px){.cmp2 .hd,.cmp2 .rw{grid-template-columns:1fr 56px 56px;gap:6px;padding:13px 14px}.cmp2 .mk{width:30px;height:30px}}
+.cmp2 .hd .t .shrt{display:none}
+@media (max-width:640px){.cmp2 .hd,.cmp2 .rw{grid-template-columns:1fr 66px 66px;gap:6px;padding:13px 12px}.cmp2 .mk{width:30px;height:30px}
+ .cmp2 .hd .t{font-size:9px;letter-spacing:.01em;line-height:1.15}
+ .cmp2 .hd .t .full{display:none}.cmp2 .hd .t .shrt{display:inline}
+ .cmp2 .hd .cr{font-size:10px;letter-spacing:.02em}}
 html.rm .cmp2 .rw{opacity:1;transform:none}
 html.rm .cmp2 .mk path{stroke-dashoffset:0}
 
@@ -743,7 +796,7 @@ html.light .case{background:rgba(255,255,255,.85)}
       <p class="lead rv">Сравниваем с типовым сайтом, каким его делают сейчас: он есть, он открывается — и на этом всё.</p>
     </div>
     <div class="cmp2" id="cmp2">
-      <div class="hd"><div class="cr">Что получает клиент</div><div class="t">Обычный сайт</div><div class="t us">Наш сайт</div></div>
+      <div class="hd"><div class="cr">Что получает клиент</div><div class="t"><span class="full">Обычный сайт</span><span class="shrt">Обычный</span></div><div class="t us"><span class="full">Наш сайт</span><span class="shrt">Наш</span></div></div>
     </div>
   </div>
 </section>
@@ -1190,25 +1243,50 @@ function buildOrbits(){
   for(var mi=0;mi<marks.length;mi++){
     var m=marks[mi];
     var old=m.querySelectorAll('.orb');for(var oi=0;oi<old.length;oi++)old[oi].remove();
-    var w=m.clientWidth||200, R=w/2, n=NAMES.length, nodes=[];
-    for(var i=0;i<n;i++){
+    var w=m.clientWidth||200, R=w/2, n=NAMES.length;
+    // ширина самой длинной подписи — считаем на живом элементе, а не на глаз
+    var probe=document.createElement('span');probe.className='chip';probe.style.visibility='hidden';
+    probe.style.left='0';probe.style.top='0';probe.style.animation='none';
+    probe.textContent='Perplexity';m.appendChild(probe);
+    var half=probe.offsetWidth/2+6, ph=probe.offsetHeight; probe.remove();
+    var box=m.getBoundingClientRect();
+    var room=Math.min(box.left, innerWidth-box.right)+R;   // до края экрана от центра знака
+    var rMin=R*1.04, rMax=Math.max(rMin, Math.min(room-half, R*1.75));
+    var gap=Math.max(ph+16, 42);
+    // сколько оболочек помещается в свободный поясок
+    var shells=Math.max(1, Math.min(3, Math.floor((rMax-rMin)/gap)+1));
+    var DUR=[52,67,44];            // у каждой оболочки своя скорость
+    // считаем, сколько подписей физически помещается по длине каждой окружности,
+    // лишние не рисуем — иначе они наезжают друг на друга
+    var rads=[],caps=[],total=0;
+    for(var sh=0; sh<shells; sh++){
+      var rad = shells===1 ? rMin : rMin + (rMax-rMin)*sh/(shells-1);
+      var cap = Math.max(3, Math.floor(2*Math.PI*rad/(half*2+14)));
+      rads.push(rad);caps.push(cap);total+=cap;
+    }
+    var show=Math.min(n,total), idx=0;
+    // раскладываем поровну между оболочками, не превышая вместимость
+    var give=new Array(shells).fill(0), left=show;
+    while(left>0){ var moved=false;
+      for(var sh2=0; sh2<shells && left>0; sh2++){ if(give[sh2]<caps[sh2]){give[sh2]++;left--;moved=true;} }
+      if(!moved) break; }
+    for(var sh3=0; sh3<shells; sh3++){
+      var cnt=give[sh3]; if(cnt<=0) continue;
       var o=document.createElement('div');o.className='orb';
       var sp=document.createElement('div');sp.className='sp';
-      var dur=SPEED[i%SPEED.length], delay=(-dur*(i/n))+'s';
-      sp.style.setProperty('--dur',dur+'s');sp.style.animationDelay=delay;
-      var c=document.createElement('span');c.className='chip';c.textContent=NAMES[i];
-      c.style.setProperty('--dur',dur+'s');c.style.animationDelay=delay;
-      sp.appendChild(c);o.appendChild(sp);m.appendChild(o);nodes.push(c);
-    }
-    var half=0;for(var j=0;j<nodes.length;j++)half=Math.max(half,nodes[j].offsetWidth);half=half/2+6;
-    var box=m.getBoundingClientRect();
-    var room=Math.min(box.left, innerWidth-box.right)+R;
-    var outer=Math.max(R*1.02, Math.min(R*1.30, room-half));
-    var inner=Math.max(R*1.02, outer-(innerWidth<560?20:30));
-    for(var k=0;k<nodes.length;k++){
-      var rad=(k%2? outer:inner), ang=(k/n)*Math.PI*2 - Math.PI/2;
-      nodes[k].style.left=(Math.cos(ang)*rad)+'px';
-      nodes[k].style.top=(Math.sin(ang)*rad)+'px';
+      var dur=DUR[sh3%DUR.length];
+      sp.style.setProperty('--dur',dur+'s');
+      for(var k=0;k<cnt;k++){
+        // внутри одной оболочки подписи стоят на равных углах и НИКОГДА не догоняют
+        // друг друга: скорость у оболочки одна. Разные скорости — между оболочками.
+        var ang=((k+(sh3%2?0.5:0))/cnt)*Math.PI*2 - Math.PI/2;
+        var c=document.createElement('span');c.className='chip';c.textContent=NAMES[idx++];
+        c.style.setProperty('--dur',dur+'s');
+        c.style.left=(Math.cos(ang)*rads[sh3])+'px';
+        c.style.top=(Math.sin(ang)*rads[sh3])+'px';
+        sp.appendChild(c);
+      }
+      o.appendChild(sp);m.appendChild(o);
     }
   }
 }
@@ -1216,6 +1294,32 @@ buildOrbits();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(buildOrbits);
 addEventListener('load',function(){setTimeout(buildOrbits,140);});
 var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(buildOrbits,150);});
+
+/* подписи иногда догоняют друг друга — та, что оказалась позади, притухает,
+   чтобы название не превращалось в кашу из двух наложенных слов */
+(function(){
+  if(RM) return;
+  var last=0;
+  function tick(now){
+    requestAnimationFrame(tick);
+    if(now-last<140) return; last=now;
+    var chips=document.querySelectorAll('.mark .chip');
+    if(!chips.length) return;
+    var n=chips.length, box=new Array(n), hide=new Array(n);
+    for(var i=0;i<n;i++){ box[i]=chips[i].getBoundingClientRect(); hide[i]=false; }
+    for(var a=0;a<n;a++)for(var b=a+1;b<n;b++){
+      var A=box[a],B=box[b];
+      var ow=Math.min(A.right,B.right)-Math.max(A.left,B.left);
+      var oh=Math.min(A.bottom,B.bottom)-Math.max(A.top,B.top);
+      if(ow>2&&oh>2){
+        var q=(ow*oh)/Math.min(A.width*A.height,B.width*B.height);
+        if(q>0.18) hide[b]=true;                 // уходит за соседнюю только при заметном наложении
+      }
+    }
+    for(var k=0;k<n;k++) chips[k].style.opacity = hide[k]?'.08':'1';
+  }
+  requestAnimationFrame(tick);
+})();
 
 /* --- свечение фразы «Все находят вас» и заголовка вопросов --- */
 function glow(el,wcls,ccls,step){

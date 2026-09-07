@@ -1,0 +1,257 @@
+<!doctype html><html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Варианты анимаций — круг 2</title>
+<style>
+@font-face{font-family:'Unbounded';font-weight:200 900;font-display:swap;src:url(../assets/fonts/Unbounded-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Unbounded';font-weight:200 900;font-display:swap;src:url(../assets/fonts/Unbounded-latin.woff2) format('woff2')}
+@font-face{font-family:'Roboto Flex';font-weight:100 1000;font-stretch:25% 151%;font-display:swap;src:url(../assets/fonts/RobotoFlex-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Roboto Flex';font-weight:100 1000;font-stretch:25% 151%;font-display:swap;src:url(../assets/fonts/RobotoFlex-latin.woff2) format('woff2')}
+:root{--tif:#84f4ea;--tif2:#3fd6c9;--g1:#1b524c;--g2:#12403c;--g3:#0e332f;--gold:#c9a227;--gold2:#e8c766;--bg:#071a18;--ink:#eafffd;--mute:rgba(234,255,253,.62);--dim:rgba(234,255,253,.32);--line:rgba(132,244,234,.14);--disp:'Unbounded',system-ui,sans-serif;--body:'Roboto Flex',system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);padding:clamp(16px,4vw,48px);line-height:1.5}
+h1{font-family:var(--disp);font-size:clamp(22px,4vw,34px);font-weight:700;margin-bottom:6px}
+.lead{color:var(--mute);max-width:72ch;margin-bottom:34px;font-size:15px}
+h2{font-family:var(--disp);font-size:clamp(17px,2.6vw,22px);font-weight:600;margin:46px 0 4px;color:var(--tif)}
+.sub{color:var(--mute);font-size:14px;margin-bottom:18px;max-width:80ch}
+.ok{display:inline-block;font-size:12px;font-family:var(--disp);letter-spacing:.08em;text-transform:uppercase;color:#071a18;background:var(--tif);border-radius:999px;padding:3px 11px;margin-left:8px;vertical-align:middle}
+.row{display:flex;flex-wrap:wrap;gap:18px}
+.demo{flex:1 1 320px;min-width:290px;border:1px solid var(--line);border-radius:16px;padding:18px;background:linear-gradient(160deg,var(--g1),var(--g2) 55%,var(--g3));position:relative;overflow:hidden}
+.tag{font-family:var(--disp);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--tif);opacity:.9;margin-bottom:12px;display:block}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+.stage{min-height:118px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px}
+.hint{position:fixed;right:14px;bottom:14px;background:rgba(7,26,24,.92);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:12px;color:var(--tif);z-index:99}
+
+/* ===== A. МЕНЮ — 5 новых ===== */
+.nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;position:relative}
+.nav a{color:var(--ink);text-decoration:none;font-size:15px;padding:9px 14px;border-radius:10px;white-space:nowrap;display:inline-block;position:relative}
+/* A4 магнит */
+.a4 a{transition:transform .3s var(--ease),background .3s,color .3s}
+.a4 a:hover{background:rgba(132,244,234,.12);color:var(--tif)}
+/* A5 капсула-бегунок */
+.a5{padding:4px}
+.a5 .pill{position:absolute;top:0;height:100%;border-radius:12px;background:rgba(132,244,234,.16);border:1px solid rgba(132,244,234,.5);transition:left .42s var(--ease),width .42s var(--ease),opacity .3s;opacity:0;pointer-events:none}
+.a5 a{transition:transform .32s var(--ease),color .32s;z-index:2}
+.a5 a:hover{color:var(--tif);transform:scale(1.14)}
+/* A6 разрядка букв */
+.a6 a{transition:transform .38s var(--ease),letter-spacing .38s var(--ease),color .38s}
+.a6 a:hover{transform:scale(1.1);letter-spacing:.14em;color:var(--tif)}
+.a6 a::after{content:"";position:absolute;left:50%;bottom:2px;width:5px;height:5px;border-radius:50%;background:var(--tif);transform:translate(-50%,6px) scale(0);transition:transform .38s var(--ease)}
+.a6 a:hover::after{transform:translate(-50%,0) scale(1)}
+/* A7 объём вперёд */
+.a7{perspective:700px}
+.a7 a{transition:transform .38s var(--ease),color .38s,text-shadow .38s,background .38s;transform-style:preserve-3d}
+.a7 a:hover{transform:translateZ(34px) rotateX(-10deg);color:var(--tif);background:rgba(132,244,234,.1);text-shadow:0 6px 18px rgba(0,0,0,.7)}
+/* A8 неон */
+.a8 a{transition:transform .34s var(--ease),color .34s,text-shadow .34s}
+.a8 a:hover{transform:scale(1.2);color:#fff;text-shadow:0 0 8px var(--tif),0 0 22px var(--tif),0 0 44px rgba(132,244,234,.7)}
+/* A9 рамка-скобки */
+.a9 a{transition:transform .34s var(--ease),color .34s}
+.a9 a span.br{position:absolute;width:9px;height:9px;border:2px solid var(--tif);opacity:0;transition:all .34s var(--ease)}
+.a9 a .b1{top:2px;left:2px;border-right:0;border-bottom:0;transform:translate(6px,6px)}
+.a9 a .b2{bottom:2px;right:2px;border-left:0;border-top:0;transform:translate(-6px,-6px)}
+.a9 a:hover{transform:scale(1.16);color:var(--tif)}
+.a9 a:hover span.br{opacity:1;transform:translate(0,0)}
+
+/* ===== B. ПЛАШКИ — финал ===== */
+.badge{border:1px solid var(--line);border-radius:16px;padding:20px 22px;background:rgba(7,26,24,.5);min-width:230px;text-align:center;position:relative;overflow:hidden;cursor:default;
+  display:flex;flex-direction:column;align-items:center;justify-content:center}
+.badge .num{font-family:var(--disp);font-size:32px;font-weight:700;color:var(--tif);line-height:1.05;text-align:center;white-space:nowrap}
+.badge .cap{font-size:13px;color:var(--mute);margin-top:8px;text-align:center;max-width:24ch}
+.bx{transition:transform .42s var(--ease),box-shadow .42s,border-color .42s,background .42s}
+.bx:hover{transform:translateY(-9px);border-color:var(--tif);background:rgba(132,244,234,.07)}
+.bx .num{transition:text-shadow .42s,transform .42s var(--ease)}
+/* яркость ×2 */
+.bright:hover{box-shadow:0 18px 60px -10px rgba(132,244,234,.95),0 0 0 1px rgba(132,244,234,.55) inset}
+.bright:hover .num{text-shadow:0 0 14px rgba(132,244,234,.9),0 0 40px rgba(132,244,234,.55)}
+/* ещё ярче ×3 */
+.bright2:hover{box-shadow:0 22px 80px -6px rgba(132,244,234,1),0 0 0 2px rgba(132,244,234,.8) inset;border-color:#bafff8}
+.bright2:hover .num{color:#fff;text-shadow:0 0 10px var(--tif),0 0 28px var(--tif),0 0 66px rgba(132,244,234,.85);transform:scale(1.06)}
+
+/* ===== C. ЦЕНА — 5 новых ===== */
+.plan{border:2px solid var(--line);border-radius:18px;padding:22px;background:linear-gradient(165deg,var(--g1),var(--g2) 60%,var(--g3));flex:1 1 240px;min-width:236px;position:relative;transform-style:preserve-3d}
+.plan h3{font-family:var(--disp);font-size:19px;font-weight:600;margin-bottom:12px}
+.price{white-space:nowrap;font-family:var(--disp);font-size:26px;font-weight:700;color:var(--tif);line-height:1.15}
+.old{white-space:nowrap;display:inline-block;font-size:15px;color:var(--dim);font-family:var(--body);font-weight:400;position:relative}
+.keep{font-size:13px;color:var(--mute);margin-top:10px}
+.keep b{color:var(--ink);font-weight:600;white-space:nowrap}
+/* C4 штамп скидки + линия зачёркивания прочерчивается */
+.c4{transition:transform .4s var(--ease),border-color .4s}
+.c4:hover{transform:translateY(-7px);border-color:var(--tif)}
+.c4 .old::after{content:"";position:absolute;left:0;top:52%;height:2px;width:100%;background:var(--gold2);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.c4:hover .old::after{transform:scaleX(1)}
+.c4 .stamp{position:absolute;top:12px;right:12px;font-family:var(--disp);font-size:13px;font-weight:700;color:#071a18;background:var(--gold2);border-radius:999px;padding:4px 10px;transform:scale(0) rotate(-25deg);transition:transform .45s cubic-bezier(.34,1.7,.5,1) .2s}
+.c4:hover .stamp{transform:scale(1) rotate(-9deg)}
+/* C5 счётчик отматывает цену вниз */
+.c5{transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
+.c5:hover{transform:translateY(-7px);border-color:var(--tif);box-shadow:0 18px 50px -18px rgba(132,244,234,.7)}
+.c5 .old{text-decoration:line-through}
+/* C6 карточка вспыхивает, цена выходит вперёд */
+.c6{perspective:900px;transition:transform .45s var(--ease),border-color .45s,box-shadow .45s,background .45s}
+.c6:hover{border-color:#bafff8;background:linear-gradient(165deg,#22635c,#154b45 60%,#0e332f);box-shadow:0 24px 70px -14px rgba(132,244,234,.85)}
+.c6 .price{transition:transform .45s var(--ease),text-shadow .45s;display:inline-block}
+.c6:hover .price{transform:translateZ(46px) scale(1.14);text-shadow:0 0 22px rgba(132,244,234,.9)}
+.c6 .old{text-decoration:line-through;transition:opacity .45s,transform .45s var(--ease)}
+.c6:hover .old{opacity:.35;transform:translateX(-6px) scale(.92)}
+/* C7 переворот карточки */
+.c7w{flex:1 1 240px;min-width:236px;perspective:1200px}
+.c7{width:100%;height:100%;position:relative;transition:transform .7s var(--ease);transform-style:preserve-3d;border:0;padding:0;background:none;min-height:186px}
+.c7w:hover .c7{transform:rotateY(180deg)}
+.c7 .face{position:absolute;inset:0;backface-visibility:hidden;border:2px solid var(--line);border-radius:18px;padding:22px;background:linear-gradient(165deg,var(--g1),var(--g2) 60%,var(--g3))}
+.c7 .back{transform:rotateY(180deg);border-color:var(--tif);background:linear-gradient(165deg,#22635c,#12403c);display:flex;flex-direction:column;justify-content:center}
+/* C8 старая рассыпается, новая собирается */
+.c8{transition:transform .4s var(--ease),border-color .4s}
+.c8:hover{transform:translateY(-7px);border-color:var(--tif)}
+.c8 .pw{position:relative;height:64px}
+.c8 .oldwrap,.c8 .newwrap{position:absolute;left:0;top:0;transition:opacity .45s,transform .5s var(--ease)}
+.c8 .newwrap{opacity:0;transform:translateY(14px) scale(.9)}
+.c8:hover .oldwrap{opacity:0;transform:translateY(-16px) scale(.86);filter:blur(3px)}
+.c8:hover .newwrap{opacity:1;transform:none}
+
+/* ===== D. ЗАГОЛОВОК ===== */
+.big{font-family:var(--disp);font-weight:800;font-size:clamp(24px,4.2vw,38px);line-height:1.12;cursor:default;padding:6px 0}
+.big .ch{display:inline-block;white-space:pre;transition:color .45s var(--ease),text-shadow .45s var(--ease),transform .45s var(--ease)}
+.vol .ch{text-shadow:0 1px 0 #2c7d74,0 2px 0 #256d65,0 3px 0 #1e5d56,0 4px 0 #175048,0 6px 12px rgba(0,0,0,.75)}
+.vol2 .ch{text-shadow:0 1px 0 #38a094,0 2px 0 #2f8b81,0 3px 0 #26766d,0 4px 0 #1e625a,0 5px 0 #164e47,0 8px 20px rgba(0,0,0,.85),0 0 30px rgba(132,244,234,.25)}
+
+/* ===== E. КАРУСЕЛЬ ===== */
+.carou{height:330px;display:flex;align-items:center;justify-content:center;perspective:1100px;position:relative}
+.phone{position:absolute;width:152px;height:292px;border-radius:26px;border:2px solid var(--line);background:linear-gradient(170deg,var(--g1),var(--g3));box-shadow:0 20px 46px -18px rgba(0,0,0,.85);transition:transform .7s var(--ease),opacity .7s,border-color .7s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:15px;text-align:center}
+.phone .pn{font-family:var(--disp);font-size:14px;font-weight:600}
+.phone .pd{font-size:11px;color:var(--mute);line-height:1.35}
+.phone .ic{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:15px;color:#071a18}
+.phone.on{border-color:var(--tif);box-shadow:0 22px 60px -16px rgba(132,244,234,.5)}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--dim);cursor:pointer;transition:background .3s,transform .3s}
+.dots i.on{background:var(--tif);transform:scale(1.3)}
+</style></head><body>
+
+<h1>Варианты анимаций — круг 2</h1>
+<p class="lead">Учёл ваши замечания: меню и цена — новые варианты на выбор; плашки стали ярче, с центровкой и счётчиком; заголовок — объёмные светящиеся буквы. Карусель уже утверждена, показана в финальном виде.</p>
+
+<h2>A. Меню — пять новых</h2>
+<p class="sub">A1 «увеличение» из первого круга остаётся в запасе. Наведите на пункты.</p>
+<div class="row">
+  <div class="demo"><span class="tag">A4 · магнит</span><div class="stage"><nav class="nav a4" data-magnet><a href="#">Услуги</a><a href="#">AI-поиск</a><a href="#">Кейсы</a><a href="#">Тарифы</a></nav></div><p class="note">Пункт сам тянется к курсору и слегка вырастает — попасть по нему почти невозможно промахнуться.</p></div>
+  <div class="demo"><span class="tag">A5 · капсула-бегунок</span><div class="stage"><nav class="nav a5" id="a5"><span class="pill"></span><a href="#">Услуги</a><a href="#">AI-поиск</a><a href="#">Кейсы</a><a href="#">Тарифы</a></nav></div><p class="note">Одна подсветка переезжает между пунктами и подстраивается под ширину. Дорого и спокойно.</p></div>
+  <div class="demo"><span class="tag">A6 · разрядка букв</span><div class="stage"><nav class="nav a6"><a href="#">Услуги</a><a href="#">AI-поиск</a><a href="#">Кейсы</a><a href="#">Тарифы</a></nav></div><p class="note">Слово увеличивается и раздвигает буквы, снизу загорается точка. Аккуратно, без прыжков.</p></div>
+  <div class="demo"><span class="tag">A7 · выходит вперёд</span><div class="stage"><nav class="nav a7"><a href="#">Услуги</a><a href="#">AI-поиск</a><a href="#">Кейсы</a><a href="#">Тарифы</a></nav></div><p class="note">Пункт выезжает из плоскости на зрителя с наклоном и тенью. Самое объёмное.</p></div>
+  <div class="demo"><span class="tag">A8 · неон</span><div class="stage"><nav class="nav a8"><a href="#">Услуги</a><a href="#">AI-поиск</a><a href="#">Кейсы</a><a href="#">Тарифы</a></nav></div><p class="note">Увеличение плюс яркое бирюзовое свечение букв. Заметнее всех.</p></div>
+  <div class="demo"><span class="tag">A9 · прицел-скобки</span><div class="stage"><nav class="nav a9" id="a9"><a href="#">Услуги</a><a href="#">AI-поиск</a><a href="#">Кейсы</a><a href="#">Тарифы</a></nav></div><p class="note">По углам пункта сходятся уголки, как прицел. Технично, в духе «AI-видимости».</p></div>
+</div>
+
+<h2>B. Плашки<span class="ok">B1 принят</span></h2>
+<p class="sub">Свечение усилено, цифры пересчитываются, содержимое выровнено ровно по центру рамки. Две степени яркости — скажите, какая.</p>
+<div class="row">
+  <div class="demo"><span class="tag">Яркость ×2</span><div class="stage"><div class="badge bx bright"><div class="num" data-to="0">0 ошибок</div><div class="cap">проверка Google пройдена</div></div><div class="badge bx bright"><div class="num" data-to="9">9 из 9</div><div class="cap">ботов видят сайт</div></div></div><p class="note">Ровно вдвое ярче принятого варианта: рамка загорается, вокруг плашки бирюзовое зарево.</p></div>
+  <div class="demo"><span class="tag">Яркость ×3 — максимум</span><div class="stage"><div class="badge bx bright2"><div class="num" data-to="0">0 ошибок</div><div class="cap">проверка Google пройдена</div></div><div class="badge bx bright2"><div class="num" data-to="9">9 из 9</div><div class="cap">ботов видят сайт</div></div></div><p class="note">Цифра белеет и светится насквозь, рамка почти белая. Если это перебор — берём ×2.</p></div>
+</div>
+
+<h2>C. Цена — пять новых</h2>
+<p class="sub">C2 «перещёлкивание» из первого круга остаётся в запасе. Сумма и «₽» везде жёстко в одну строку.</p>
+<div class="row">
+  <div class="demo" style="flex:1 1 100%"><span class="tag">C4 · штамп скидки и зачёркивание на глазах</span>
+    <div class="row" style="margin-top:6px">
+      <div class="plan c4"><span class="stamp">−30%</span><h3>Старт</h3><span class="old">50 000 ₽</span><div class="price">35 000 ₽</div><p class="keep">Ведение <b>6 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c4"><span class="stamp">−40%</span><h3>Бизнес</h3><span class="old">100 000 ₽</span><div class="price">60 000 ₽</div><p class="keep">Ведение <b>12 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c4"><span class="stamp">−33%</span><h3>Всё включено</h3><span class="old">180 000 ₽</span><div class="price">120 000 ₽</div><p class="keep">Ведение — при необходимости</p></div>
+    </div><p class="note">Старую цену перечёркивает золотая линия прямо на глазах, сверху шлёпается штамп с процентом. Выгода видна сразу.</p></div>
+
+  <div class="demo" style="flex:1 1 100%"><span class="tag">C5 · цена отматывается вниз счётчиком</span>
+    <div class="row" style="margin-top:6px">
+      <div class="plan c5"><h3>Старт</h3><span class="old">50 000 ₽</span><div class="price" data-from="50000" data-to="35000">35 000 ₽</div><p class="keep">Ведение <b>6 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c5"><h3>Бизнес</h3><span class="old">100 000 ₽</span><div class="price" data-from="100000" data-to="60000">60 000 ₽</div><p class="keep">Ведение <b>12 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c5"><h3>Всё включено</h3><span class="old">180 000 ₽</span><div class="price" data-from="180000" data-to="120000">120 000 ₽</div><p class="keep">Ведение — при необходимости</p></div>
+    </div><p class="note">Цена быстро отматывается со старой суммы до новой, как счётчик. Тот же приём, что в плашке «9 из 9».</p></div>
+
+  <div class="demo" style="flex:1 1 100%"><span class="tag">C6 · карточка вспыхивает, цена выходит вперёд</span>
+    <div class="row" style="margin-top:6px">
+      <div class="plan c6"><h3>Старт</h3><span class="old">50 000 ₽</span><div class="price">35 000 ₽</div><p class="keep">Ведение <b>6 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c6"><h3>Бизнес</h3><span class="old">100 000 ₽</span><div class="price">60 000 ₽</div><p class="keep">Ведение <b>12 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c6"><h3>Всё включено</h3><span class="old">180 000 ₽</span><div class="price">120 000 ₽</div><p class="keep">Ведение — при необходимости</p></div>
+    </div><p class="note">Вся карточка светлеет и загорается, новая цена выезжает из плоскости вперёд, старая уходит в тень.</p></div>
+
+  <div class="demo" style="flex:1 1 100%"><span class="tag">C7 · карточка переворачивается</span>
+    <div class="row" style="margin-top:6px">
+      <div class="c7w"><div class="c7"><div class="face"><h3>Старт</h3><span class="old">50 000 ₽</span><p class="keep">наведите — покажу цену</p></div><div class="face back"><div class="price">35 000 ₽</div><p class="keep">Ведение <b>6 000 ₽/мес</b> — при необходимости</p></div></div></div>
+      <div class="c7w"><div class="c7"><div class="face"><h3>Бизнес</h3><span class="old">100 000 ₽</span><p class="keep">наведите — покажу цену</p></div><div class="face back"><div class="price">60 000 ₽</div><p class="keep">Ведение <b>12 000 ₽/мес</b> — при необходимости</p></div></div></div>
+      <div class="c7w"><div class="c7"><div class="face"><h3>Всё включено</h3><span class="old">180 000 ₽</span><p class="keep">наведите — покажу цену</p></div><div class="face back"><div class="price">120 000 ₽</div><p class="keep">Ведение — при необходимости</p></div></div></div>
+    </div><p class="note">Карточка переворачивается: на лице старая цена, на обороте новая. Эффектно, но цену видно не сразу — на телефоне спорно.</p></div>
+
+  <div class="demo" style="flex:1 1 100%"><span class="tag">C8 · старая рассыпается, новая собирается</span>
+    <div class="row" style="margin-top:6px">
+      <div class="plan c8"><h3>Старт</h3><div class="pw"><div class="oldwrap"><span class="old">50 000 ₽</span></div><div class="newwrap"><div class="price">35 000 ₽</div></div></div><p class="keep">Ведение <b>6 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c8"><h3>Бизнес</h3><div class="pw"><div class="oldwrap"><span class="old">100 000 ₽</span></div><div class="newwrap"><div class="price">60 000 ₽</div></div></div><p class="keep">Ведение <b>12 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c8"><h3>Всё включено</h3><div class="pw"><div class="oldwrap"><span class="old">180 000 ₽</span></div><div class="newwrap"><div class="price">120 000 ₽</div></div></div><p class="keep">Ведение — при необходимости</p></div>
+    </div><p class="note">Старая цена растворяется вверх с размытием, новая всплывает снизу на её место. Мягко и без резких движений.</p></div>
+</div>
+
+<h2>D. Заголовок FAQ<span class="ok">D3 принят</span></h2>
+<p class="sub">Бегущий свет сохранён, буквы стали объёмными — с выступом и подсветкой. Две глубины на выбор.</p>
+<div class="row">
+  <div class="demo"><span class="tag">Объём умеренный</span><div class="stage"><div class="big vol" data-glow>Часто задаваемые вопросы</div></div><p class="note">Буквы выступают из плоскости, по ним пробегает бирюзовый свет.</p></div>
+  <div class="demo"><span class="tag">Объём глубокий</span><div class="stage"><div class="big vol2" data-glow>Часто задаваемые вопросы</div></div><p class="note">Выступ заметно глубже, за буквами лёгкое зарево. Сильнее, но и тяжелее.</p></div>
+</div>
+
+<h2>E. Карусель каналов<span class="ok">E1 принят</span></h2>
+<p class="sub">Финальный вид. Тот же кадр пойдёт в презентацию отдельным слайдом — статичным, но с теми же тремя телефонами.</p>
+<div class="row">
+  <div class="demo" style="flex:1 1 100%"><div class="carou" id="e1"></div><div class="dots" id="d1"></div><p class="note">Внутрь телефонов поставим настоящие снимки наших каналов, когда они будут.</p></div>
+</div>
+
+<div class="hint">наведите курсор на примеры</div>
+
+<script>
+// A4 магнит
+document.querySelectorAll('[data-magnet] a').forEach(a=>{
+  a.addEventListener('mousemove',e=>{const r=a.getBoundingClientRect();
+    const x=(e.clientX-r.left-r.width/2)/r.width, y=(e.clientY-r.top-r.height/2)/r.height;
+    a.style.transform='translate('+(x*14).toFixed(1)+'px,'+(y*9).toFixed(1)+'px) scale(1.18)'});
+  a.addEventListener('mouseleave',()=>a.style.transform='');
+});
+// A5 капсула
+(function(){const n=document.getElementById('a5'),p=n.querySelector('.pill');
+  n.querySelectorAll('a').forEach(a=>{a.addEventListener('mouseenter',()=>{
+    p.style.opacity=1;p.style.left=a.offsetLeft+'px';p.style.width=a.offsetWidth+'px'})});
+  n.addEventListener('mouseleave',()=>p.style.opacity=0)})();
+// A9 скобки
+document.querySelectorAll('#a9 a').forEach(a=>{a.insertAdjacentHTML('beforeend','<span class="br b1"></span><span class="br b2"></span>')});
+// B счётчик
+document.querySelectorAll('.badge').forEach(b=>{
+  const n=b.querySelector('.num'),full=n.textContent,m=full.match(/^(\d+)/);if(!m)return;
+  const target=+m[1],rest=full.slice(m[1].length);
+  b.addEventListener('mouseenter',()=>{const st=performance.now();
+    (function t(now){const p=Math.min(1,(now-st)/650);n.textContent=Math.round(target*(1-Math.pow(1-p,3)))+rest;if(p<1)requestAnimationFrame(t)})(st)});
+});
+// C5 счётчик цены
+const fmt=v=>v.toLocaleString('ru-RU').replace(/ /g,' ')+' ₽';
+document.querySelectorAll('.c5').forEach(c=>{
+  const el=c.querySelector('.price'),from=+el.dataset.from,to=+el.dataset.to;
+  c.addEventListener('mouseenter',()=>{const st=performance.now();
+    (function t(now){const p=Math.min(1,(now-st)/700),e=1-Math.pow(1-p,3);
+      el.textContent=fmt(Math.round((from+(to-from)*e)/1000)*1000);if(p<1)requestAnimationFrame(t)})(st)});
+  c.addEventListener('mouseleave',()=>el.textContent=fmt(to));
+});
+// D бегущий свет по объёмным буквам
+document.querySelectorAll('[data-glow]').forEach(el=>{
+  const t=el.textContent;el.textContent='';
+  const chars=[...t].map((c,i)=>{const s=document.createElement('span');s.className='ch';s.textContent=c;s.style.transitionDelay=(i*26)+'ms';el.appendChild(s);return s});
+  const on=()=>chars.forEach(s=>{s.style.color='#ffffff';s.style.textShadow='0 0 10px var(--tif),0 0 26px var(--tif),0 4px 0 #175048,0 8px 22px rgba(0,0,0,.8)';s.style.transform='translateY(-2px)'});
+  const off=()=>chars.forEach(s=>{s.style.color='';s.style.textShadow='';s.style.transform=''});
+  el.addEventListener('mouseenter',on);el.addEventListener('mouseleave',off);el.addEventListener('touchstart',on,{passive:true});
+});
+// E карусель
+const CH=[{n:'Telegram',d:'канал, чат-бот, автопостинг, приём оплаты',c:'#2aabee',k:'TG'},
+          {n:'MAX',d:'канал, бот, оплата через ЮKassa и СБП',c:'#84f4ea',k:'MAX'},
+          {n:'ВКонтакте',d:'сообщество, рассылки, товары',c:'#ffd45e',k:'VK'}];
+(function(){const host=document.getElementById('e1'),dots=document.getElementById('d1');
+  const els=CH.map(o=>{const p=document.createElement('div');p.className='phone';
+    p.innerHTML='<div class="ic" style="background:'+o.c+'">'+o.k+'</div><div class="pn">'+o.n+'</div><div class="pd">'+o.d+'</div>';host.appendChild(p);return p});
+  CH.forEach((_,i)=>{const d=document.createElement('i');d.onclick=()=>{cur=i;draw()};dots.appendChild(d)});
+  let cur=0;
+  function draw(){els.forEach((p,i)=>{const k=(i-cur+CH.length)%CH.length;
+    p.style.transform= k===0?'translateX(0) scale(1)':(k===1?'translateX(128px) scale(.78) rotateY(-26deg)':'translateX(-128px) scale(.78) rotateY(26deg)');
+    p.style.opacity=k===0?1:.42;p.style.zIndex=k===0?3:1;p.classList.toggle('on',k===0)});
+    [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===cur))}
+  draw();setInterval(()=>{cur=(cur+1)%CH.length;draw()},2600)})();
+</script></body></html>

@@ -1,0 +1,157 @@
+<!doctype html><html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Первый экран — варианты</title>
+<style>
+@font-face{font-family:'Unbounded';font-weight:200 900;font-display:swap;src:url(../assets/fonts/Unbounded-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Unbounded';font-weight:200 900;font-display:swap;src:url(../assets/fonts/Unbounded-latin.woff2) format('woff2')}
+@font-face{font-family:'Roboto Flex';font-weight:100 1000;font-stretch:25% 151%;font-display:swap;src:url(../assets/fonts/RobotoFlex-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Roboto Flex';font-weight:100 1000;font-stretch:25% 151%;font-display:swap;src:url(../assets/fonts/RobotoFlex-latin.woff2) format('woff2')}
+:root{--tif:#84f4ea;--g1:#1b524c;--g2:#12403c;--g3:#0e332f;--gold2:#e8c766;--bg:#071a18;--ink:#eafffd;--mute:rgba(234,255,253,.66);--dim:rgba(234,255,253,.3);--line:rgba(132,244,234,.16);--disp:'Unbounded',system-ui,sans-serif;--body:'Roboto Flex',system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.5}
+.lbl{padding:22px clamp(16px,4vw,48px) 0;font-family:var(--disp);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tif)}
+.lbl small{display:block;font-family:var(--body);letter-spacing:0;text-transform:none;color:var(--mute);font-size:13px;margin-top:6px;max-width:70ch}
+.intro{padding:clamp(20px,4vw,44px) clamp(16px,4vw,48px)}
+.intro h1{font-family:var(--disp);font-size:clamp(22px,4vw,32px);font-weight:700;margin-bottom:8px}
+.intro p{color:var(--mute);max-width:72ch}
+
+.hero{position:relative;min-height:86svh;display:flex;align-items:center;overflow:hidden;border-top:1px solid var(--line)}
+.hero .bg{position:absolute;inset:0;z-index:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;opacity:.5}
+.hero .veil{position:absolute;inset:0;z-index:1;background:radial-gradient(120% 90% at 20% 40%,rgba(7,26,24,.55),rgba(7,26,24,.93) 70%)}
+.wrap{position:relative;z-index:2;width:100%;padding:clamp(28px,5vw,64px) clamp(16px,4vw,48px);display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,4vw,48px);align-items:center}
+.eyebrow{font-family:var(--disp);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--tif);margin-bottom:16px}
+h2.head{font-family:var(--disp);font-weight:800;line-height:1.08;font-size:clamp(1.9rem,4.6vw,4rem);margin-bottom:18px}
+h2.head .w{display:inline-block;white-space:nowrap;margin-right:.28em}
+h2.head .ch{display:inline-block;text-shadow:0 1px 0 #2c7d74,0 2px 0 #256d65,0 3px 0 #1e5d56,0 4px 0 #175048,0 7px 16px rgba(0,0,0,.8);transition:color .5s var(--ease),text-shadow .5s var(--ease)}
+h2.head .lit .ch{color:#fff;text-shadow:0 0 10px var(--tif),0 0 30px var(--tif),0 4px 0 #175048,0 9px 24px rgba(0,0,0,.85)}
+.sub{color:var(--mute);font-size:clamp(15px,1.7vw,18px);max-width:52ch;margin-bottom:26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{font-family:var(--disp);font-size:14px;font-weight:600;border-radius:999px;padding:13px 24px;text-decoration:none;display:inline-block;transition:transform .3s var(--ease),box-shadow .3s}
+.btn.p{background:var(--tif);color:#071a18}
+.btn.p:hover{transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(132,244,234,.9)}
+.btn.s{color:var(--ink);border:1px solid var(--line)}
+.btn.s:hover{border-color:var(--tif);color:var(--tif)}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;font-size:13px;color:var(--mute);background:rgba(9,34,31,.5);box-shadow:inset 0 0 0 1px rgba(132,244,234,.25)}
+.chip b{font-family:var(--disp);color:var(--gold2);font-size:13px}
+.chip .dot{width:7px;height:7px;border-radius:50%;background:var(--tif);box-shadow:0 0 10px var(--tif)}
+
+/* правая колонка — логотип */
+.vis{position:relative;aspect-ratio:1;width:100%;max-width:520px;justify-self:center}
+.vis .lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 26px 60px rgba(0,0,0,.7))}
+.halo{position:absolute;inset:-6%;border-radius:50%;background:radial-gradient(circle,rgba(132,244,234,.3),transparent 62%);filter:blur(18px)}
+.orbit{position:absolute;inset:0;animation:spin 34s linear infinite}
+.orbit.rev{animation-direction:reverse;animation-duration:46s}
+@keyframes spin{to{transform:rotate(360deg)}}
+.float{position:absolute;font-size:12px;font-family:var(--disp);letter-spacing:.06em;color:var(--tif);background:rgba(7,26,24,.72);border:1px solid rgba(132,244,234,.3);border-radius:999px;padding:6px 13px;white-space:nowrap;box-shadow:0 8px 24px -10px rgba(0,0,0,.9)}
+.orbit .float{animation:spin 34s linear infinite reverse}
+.orbit.rev .float{animation:spin 46s linear infinite}
+
+/* вариант 2 — логотип внутри фразы */
+.v2 .wrap{grid-template-columns:1fr;text-align:center;place-items:center}
+.v2 h2.head{font-size:clamp(1.8rem,5.6vw,4.6rem);max-width:20ch}
+.v2 .inl{display:inline-block;height:1.05em;vertical-align:-.16em;margin:0 .06em;filter:drop-shadow(0 0 20px rgba(132,244,234,.55))}
+.v2 .sub{margin-left:auto;margin-right:auto}
+.v2 .cta{justify-content:center}
+.v2 .chips{justify-content:center}
+
+/* вариант 3 — логотип во весь правый край */
+.v3 .wrap{grid-template-columns:1fr;padding-right:clamp(16px,34vw,560px)}
+.v3 .edge{position:absolute;right:-9%;top:50%;transform:translateY(-50%);width:min(74vh,700px);aspect-ratio:1;z-index:1;opacity:.96}
+.v3 .edge img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 30px 70px rgba(0,0,0,.8))}
+.v3 .edgeglow{position:absolute;inset:-10%;border-radius:50%;background:radial-gradient(circle,rgba(132,244,234,.28),transparent 60%);filter:blur(26px)}
+
+.tick{position:relative;z-index:3;border-top:1px solid var(--line);background:rgba(7,26,24,.75);overflow:hidden;padding:11px 0}
+.tick .run{display:inline-flex;gap:34px;white-space:nowrap;animation:run 26s linear infinite;font-size:13px;color:var(--mute)}
+.tick .run span b{color:var(--tif);font-family:var(--disp);font-size:12px}
+@keyframes run{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+@media(max-width:880px){
+ .wrap{grid-template-columns:1fr;gap:26px}
+ .vis{max-width:330px;order:-1}
+ .v3 .wrap{padding-right:clamp(16px,4vw,48px)}
+ .v3 .edge{position:relative;right:auto;top:auto;transform:none;width:min(62vw,330px);margin:0 auto 8px}
+}
+</style></head><body>
+
+<div class="intro">
+<h1>Первый экран — три варианта</h1>
+<p>Во всех трёх: наш логотип крупно, объёмные светящиеся буквы вместо жёлтых, надпись про то, что вас находят. Ниже под каждым — как он читается. Скажите номер и какую надпись берём.</p>
+</div>
+
+<!-- ВАРИАНТ 1 -->
+<div class="lbl">Вариант 1 · логотип-планета справа, подписи по орбите<small>Ближе всего к тому, что вам понравилось: крупный знак справа, вокруг него по кругу плывут названия поисковиков и нейросетей.</small></div>
+<section class="hero v1">
+  <div class="bg"><img src="../assets/depth/bg-base.jpg" alt=""></div><div class="veil"></div>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">веб-агентство «в сети»</p>
+      <h2 class="head" data-glow>Видят все, что вы в сети</h2>
+      <p class="sub">Делаем сайты, которые находят клиенты и нейросети. Редизайн плюс подготовка к AI-поиску: вас видят в Яндексе, Google — и в ответах ChatGPT, Алисы, Gemini.</p>
+      <div class="cta"><a class="btn p" href="#">Обсудить проект →</a><a class="btn s" href="#">Смотреть работы</a></div>
+      <div class="chips"><span class="chip"><i class="dot"></i><b>0</b> ошибок · проверка Google</span><span class="chip"><i class="dot"></i><b>9 из 9</b> ботов видят сайт</span></div>
+    </div>
+    <div class="vis">
+      <div class="halo"></div>
+      <img class="lg" src="../assets/logo.png" alt="Логотип «в сети»">
+      <div class="orbit"><span class="float" style="left:-4%;top:16%">ChatGPT</span><span class="float" style="right:-6%;top:38%">Яндекс</span><span class="float" style="left:8%;bottom:8%">Gemini</span></div>
+      <div class="orbit rev"><span class="float" style="right:2%;bottom:18%">Алиса</span><span class="float" style="left:-2%;top:62%">Perplexity</span><span class="float" style="right:10%;top:4%">Google</span></div>
+    </div>
+  </div>
+</section>
+<div class="tick"><div class="run"><span><b>сайты</b> · чат-боты · автоматизация расписаний · светофор очереди · онлайн-запись · приём оплаты · каналы в Telegram, MAX, ВКонтакте · AI-видимость · шесть языков &nbsp;&nbsp;&nbsp;</span><span><b>сайты</b> · чат-боты · автоматизация расписаний · светофор очереди · онлайн-запись · приём оплаты · каналы в Telegram, MAX, ВКонтакте · AI-видимость · шесть языков &nbsp;&nbsp;&nbsp;</span></div></div>
+
+<!-- ВАРИАНТ 2 -->
+<div class="lbl">Вариант 2 · логотип внутри самой фразы<small>Слово «в сети» заменено знаком — фраза читается «Все находят вас <em>в сети</em>». Логотип работает как часть предложения, а не украшением.</small></div>
+<section class="hero v2">
+  <div class="bg"><img src="../assets/bokeh.jpg" alt=""></div><div class="veil"></div>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">веб-агентство «в сети»</p>
+      <h2 class="head"><span data-glow2>Все находят вас</span> <img class="inl" src="../assets/logo.png" alt="в сети"></h2>
+      <p class="sub">Клиенты, Яндекс, Google — и нейросети. Делаем сайты, которые находят и люди, и машины.</p>
+      <div class="cta"><a class="btn p" href="#">Обсудить проект →</a><a class="btn s" href="#">Смотреть работы</a></div>
+      <div class="chips"><span class="chip"><i class="dot"></i><b>0</b> ошибок · проверка Google</span><span class="chip"><i class="dot"></i><b>9 из 9</b> ботов видят сайт</span><span class="chip"><i class="dot"></i><b>6</b> языков</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ВАРИАНТ 3 -->
+<div class="lbl">Вариант 3 · логотип во весь правый край<small>Знак уходит за край экрана и держит всю правую половину. Самый крупный логотип из трёх, текст стоит слева свободно.</small></div>
+<section class="hero v3">
+  <div class="bg"><img src="../assets/depth/bg-base.jpg" alt=""></div><div class="veil"></div>
+  <div class="edge"><div class="edgeglow"></div><img src="../assets/logo.png" alt="Логотип «в сети»"></div>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">веб-агентство «в сети»</p>
+      <h2 class="head" data-glow>Делаем сайты, которые находят клиенты и нейросети</h2>
+      <p class="sub">Видят все, что вы в сети. Редизайн, AI-видимость, боты и оплата — от первого клика до повторного обращения.</p>
+      <div class="cta"><a class="btn p" href="#">Обсудить проект →</a><a class="btn s" href="#">Смотреть работы</a></div>
+      <div class="chips"><span class="chip"><i class="dot"></i><b>0</b> ошибок · проверка Google</span><span class="chip"><i class="dot"></i><b>9 из 9</b> ботов видят сайт</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="intro"><p style="color:var(--mute);font-size:14px">Переключатель светлой и тёмной темы и выбор из шести языков встанут в шапку — здесь шапка не показана, чтобы не мешала смотреть на первый экран.</p></div>
+
+<script>
+// объёмные буквы, слова не рвутся; свет пробегает волной
+function split(el){
+  const words=el.textContent.split(' ');el.textContent='';const chars=[];let k=0;
+  words.forEach(w=>{const ws=document.createElement('span');ws.className='w';
+    [...w].forEach(c=>{const s=document.createElement('span');s.className='ch';s.textContent=c;s.style.transitionDelay=(k++*28)+'ms';ws.appendChild(s);chars.push(s)});
+    el.appendChild(ws)});
+  return chars;
+}
+document.querySelectorAll('[data-glow],[data-glow2]').forEach(el=>{
+  const chars=split(el);
+  const on=()=>el.classList.add('lit'), off=()=>el.classList.remove('lit');
+  const host=el.closest('.head')||el;
+  host.addEventListener('mouseenter',on);host.addEventListener('mouseleave',off);
+  host.addEventListener('touchstart',on,{passive:true});
+  // разовая волна при появлении экрана
+  new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){on();setTimeout(off,1600)}}),{threshold:.5}).observe(host);
+});
+</script></body></html>

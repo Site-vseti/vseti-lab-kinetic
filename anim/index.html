@@ -1,0 +1,219 @@
+<!doctype html><html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Варианты анимаций — «в сети»</title>
+<style>
+@font-face{font-family:'Unbounded';font-weight:200 900;font-display:swap;src:url(../assets/fonts/Unbounded-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Unbounded';font-weight:200 900;font-display:swap;src:url(../assets/fonts/Unbounded-latin.woff2) format('woff2')}
+@font-face{font-family:'Roboto Flex';font-weight:100 1000;font-stretch:25% 151%;font-display:swap;src:url(../assets/fonts/RobotoFlex-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Roboto Flex';font-weight:100 1000;font-stretch:25% 151%;font-display:swap;src:url(../assets/fonts/RobotoFlex-latin.woff2) format('woff2')}
+:root{--tif:#84f4ea;--tif2:#3fd6c9;--g1:#1b524c;--g2:#12403c;--g3:#0e332f;--gold:#c9a227;--gold2:#e8c766;--bg:#071a18;--bg2:#0a2523;--ink:#eafffd;--mute:rgba(234,255,253,.62);--dim:rgba(234,255,253,.32);--line:rgba(132,244,234,.14);--disp:'Unbounded',system-ui,sans-serif;--body:'Roboto Flex',system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);padding:clamp(16px,4vw,48px);line-height:1.5}
+h1{font-family:var(--disp);font-size:clamp(22px,4vw,34px);font-weight:700;margin-bottom:6px}
+.lead{color:var(--mute);max-width:70ch;margin-bottom:34px;font-size:15px}
+h2{font-family:var(--disp);font-size:clamp(17px,2.6vw,22px);font-weight:600;margin:44px 0 4px;color:var(--tif)}
+.sub{color:var(--mute);font-size:14px;margin-bottom:18px}
+.row{display:flex;flex-wrap:wrap;gap:18px}
+.demo{flex:1 1 300px;min-width:280px;border:1px solid var(--line);border-radius:16px;padding:18px;background:linear-gradient(160deg,var(--g1),var(--g2) 55%,var(--g3));position:relative;overflow:hidden}
+.tag{font-family:var(--disp);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--tif);opacity:.85;margin-bottom:12px;display:block}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+.stage{min-height:120px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px}
+.hint{position:fixed;right:14px;bottom:14px;background:rgba(7,26,24,.9);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:12px;color:var(--tif);z-index:99}
+
+/* ── A. МЕНЮ ── */
+.nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.nav a{color:var(--ink);text-decoration:none;font-size:15px;padding:9px 14px;border-radius:10px;white-space:nowrap;display:inline-block;position:relative}
+/* A1 — увеличение + подсветка */
+.a1 a{transition:transform .32s var(--ease),background .32s,color .32s;transform-origin:center}
+.a1 a:hover{transform:scale(1.22);background:rgba(132,244,234,.12);color:var(--tif)}
+/* A2 — буквы подпрыгивают по очереди */
+.a2 a{transition:background .3s}
+.a2 a:hover{background:rgba(132,244,234,.1)}
+.a2 .ch{display:inline-block;transition:transform .3s var(--ease),color .3s}
+.a2 a:hover .ch{transform:translateY(-7px) scale(1.18);color:var(--tif)}
+/* A3 — надпись перещёлкивается снизу вверх */
+.a3 a{overflow:hidden;height:38px;line-height:20px}
+.a3 .flip{display:block;transition:transform .34s var(--ease)}
+.a3 .flip b{display:block;font-weight:400}
+.a3 .flip b+b{color:var(--tif);font-weight:600}
+.a3 a:hover .flip{transform:translateY(-20px)}
+.a3 a::after{content:"";position:absolute;left:14px;right:14px;bottom:5px;height:2px;background:var(--tif);transform:scaleX(0);transform-origin:left;transition:transform .34s var(--ease)}
+.a3 a:hover::after{transform:scaleX(1)}
+
+/* ── B. ПЛАШКИ ── */
+.badge{border:1px solid var(--line);border-radius:14px;padding:16px 20px;background:rgba(7,26,24,.45);min-width:210px;position:relative;overflow:hidden;cursor:default}
+.badge .num{font-family:var(--disp);font-size:30px;font-weight:700;color:var(--tif);line-height:1}
+.badge .cap{font-size:13px;color:var(--mute);margin-top:6px}
+/* B1 — подъём + свечение рамки */
+.b1{transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
+.b1:hover{transform:translateY(-8px);border-color:var(--tif);box-shadow:0 14px 40px -12px rgba(132,244,234,.55)}
+/* B2 — заливка снизу + цифра перекатывается */
+.b2::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(132,244,234,.22),transparent);transform:translateY(100%);transition:transform .45s var(--ease)}
+.b2:hover::before{transform:translateY(0)}
+.b2 .num{transition:transform .45s var(--ease)}
+.b2:hover .num{transform:translateY(-4px) scale(1.12)}
+/* B3 — луч пробегает по рамке + счётчик пересчитывается */
+.b3{transition:border-color .3s}
+.b3:hover{border-color:var(--tif)}
+.b3::after{content:"";position:absolute;top:0;left:-60%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(132,244,234,.3),transparent);transition:left .7s var(--ease)}
+.b3:hover::after{left:110%}
+
+/* ── C. ТАРИФЫ ── */
+.plan{border:2px solid var(--line);border-radius:18px;padding:22px;background:linear-gradient(165deg,var(--g1),var(--g2) 60%,var(--g3));flex:1 1 240px;min-width:230px;position:relative;transform-style:preserve-3d}
+.plan h3{font-family:var(--disp);font-size:19px;font-weight:600;margin-bottom:12px}
+.price{white-space:nowrap;font-family:var(--disp);font-size:26px;font-weight:700;color:var(--tif);line-height:1.15}
+.old{white-space:nowrap;display:block;font-size:15px;color:var(--dim);text-decoration:line-through;font-family:var(--body);font-weight:400;margin-bottom:2px}
+.keep{font-size:13px;color:var(--mute);margin-top:10px}
+.keep b{color:var(--ink);font-weight:600;white-space:nowrap}
+/* C1 — карточка поворачивается к курсору (3D) */
+.c1{transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
+.c1:hover{transform:perspective(900px) rotateY(-7deg) rotateX(4deg) translateY(-6px);border-color:var(--tif);box-shadow:0 22px 50px -18px rgba(0,0,0,.7)}
+/* C2 — цена перещёлкивается со старой на новую */
+.c2 .pw{position:relative;height:60px;overflow:hidden}
+.c2 .pin{transition:transform .45s var(--ease)}
+.c2:hover .pin{transform:translateY(-19px)}
+.c2{transition:transform .4s var(--ease),border-color .4s}
+.c2:hover{transform:translateY(-8px);border-color:var(--tif)}
+/* C3 — рамка обводится по контуру */
+.c3{transition:transform .4s var(--ease)}
+.c3:hover{transform:translateY(-6px)}
+.c3 svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.c3 rect{fill:none;stroke:var(--tif);stroke-width:2;rx:18;stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset .9s var(--ease)}
+.c3:hover rect{stroke-dashoffset:0}
+
+/* ── D. ЗАГОЛОВОК FAQ ── */
+.big{font-family:var(--disp);font-weight:700;font-size:clamp(24px,4.4vw,40px);line-height:1.1;cursor:default}
+.big .ch{display:inline-block;white-space:pre}
+.d1 .ch{transition:transform .5s var(--ease),color .5s}
+.d2 .ch{transition:transform .55s var(--ease),opacity .55s,filter .55s}
+.d3 .ch{transition:color .45s var(--ease),text-shadow .45s}
+
+/* ── E. КАРУСЕЛЬ ── */
+.carou{height:330px;display:flex;align-items:center;justify-content:center;perspective:1100px;position:relative}
+.phone{position:absolute;width:150px;height:290px;border-radius:26px;border:2px solid var(--line);background:linear-gradient(170deg,var(--g1),var(--g3));box-shadow:0 20px 46px -18px rgba(0,0,0,.8);transition:transform .7s var(--ease),opacity .7s,border-color .7s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:14px;text-align:center}
+.phone .pn{font-family:var(--disp);font-size:14px;font-weight:600}
+.phone .pd{font-size:11px;color:var(--mute);line-height:1.35}
+.phone .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:16px;color:#071a18}
+.phone.on{border-color:var(--tif)}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--dim);cursor:pointer;transition:background .3s,transform .3s}
+.dots i.on{background:var(--tif);transform:scale(1.3)}
+/* E2 — стопка карт */
+.stackC .phone{transition:transform .6s var(--ease),opacity .6s}
+</style></head><body>
+
+<h1>Варианты анимаций для сайта «в сети»</h1>
+<p class="lead">Наведите курсор (на телефоне — коснитесь) на каждый пример. Выберите номер в каждом разделе — дальше сделаю на сайте только выбранное. Это черновая витрина, не страница сайта.</p>
+
+<h2>A. Пункты меню</h2>
+<p class="sub">Задача: убрать разрыв «Услуги» на две строки и сделать наведение крупным и удобным для попадания.</p>
+<div class="row">
+  <div class="demo"><span class="tag">Вариант A1 · увеличение</span><div class="stage"><nav class="nav a1"><a href="#">Услуги</a><a href="#">AI-поиск</a><a href="#">Кейсы</a><a href="#">Тарифы</a></nav></div><p class="note">Пункт плавно вырастает и подсвечивается. Самый спокойный и надёжный: попасть легко, ничего не прыгает.</p></div>
+  <div class="demo"><span class="tag">Вариант A2 · буквы подпрыгивают</span><div class="stage"><nav class="nav a2" id="navA2"><a href="#">Услуги</a><a href="#">AI-поиск</a><a href="#">Кейсы</a><a href="#">Тарифы</a></nav></div><p class="note">Буквы взлетают одна за другой волной и меняют цвет. Живее всего, но заметнее.</p></div>
+  <div class="demo"><span class="tag">Вариант A3 · перещёлкивание</span><div class="stage"><nav class="nav a3"><a href="#"><span class="flip"><b>Услуги</b><b>Услуги</b></span></a><a href="#"><span class="flip"><b>AI-поиск</b><b>AI-поиск</b></span></a><a href="#"><span class="flip"><b>Кейсы</b><b>Кейсы</b></span></a><a href="#"><span class="flip"><b>Тарифы</b><b>Тарифы</b></span></a></nav></div><p class="note">Надпись уезжает вверх, снизу выходит её цветной двойник, снизу подчёркивание. Строго и дорого.</p></div>
+</div>
+
+<h2>B. Плашки «0 ошибок» и «9 из 9»</h2>
+<p class="sub">Тексты здесь ещё черновые — переписываю их отдельно по вашему замечанию. Смотрим только на движение.</p>
+<div class="row">
+  <div class="demo"><span class="tag">Вариант B1 · подъём и свечение</span><div class="stage"><div class="badge b1"><div class="num">0 ошибок</div><div class="cap">проверка Google пройдена</div></div><div class="badge b1"><div class="num">9 из 9</div><div class="cap">ботов видят сайт</div></div></div><p class="note">Плашка приподнимается, рамка загорается бирюзой. Тихо и уместно.</p></div>
+  <div class="demo"><span class="tag">Вариант B2 · заливка снизу</span><div class="stage"><div class="badge b2"><div class="num">0 ошибок</div><div class="cap">проверка Google пройдена</div></div><div class="badge b2"><div class="num">9 из 9</div><div class="cap">ботов видят сайт</div></div></div><p class="note">Снизу наливается свет, цифра подаётся вперёд. Хорошо читается как «результат».</p></div>
+  <div class="demo"><span class="tag">Вариант B3 · луч и пересчёт</span><div class="stage"><div class="badge b3" data-count="0 ошибок"><div class="num">0 ошибок</div><div class="cap">проверка Google пройдена</div></div><div class="badge b3" data-count="9 из 9"><div class="num">9 из 9</div><div class="cap">ботов видят сайт</div></div></div><p class="note">По плашке пробегает световой луч, цифра быстро пересчитывается с нуля. Самое заметное.</p></div>
+</div>
+
+<h2>C. Карточки тарифов</h2>
+<p class="sub">Цены уже ваши, старая зачёркнута. Сумма и «₽» жёстко в одной строке — не переносятся ни на каком экране.</p>
+<div class="row">
+  <div class="demo" style="flex:1 1 100%"><span class="tag">Вариант C1 · поворот к курсору</span>
+    <div class="row" style="margin-top:6px">
+      <div class="plan c1"><h3>Старт</h3><span class="old">50 000 ₽</span><div class="price">35 000 ₽</div><p class="keep">Ведение <b>6 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c1"><h3>Бизнес</h3><span class="old">100 000 ₽</span><div class="price">60 000 ₽</div><p class="keep">Ведение <b>12 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c1"><h3>Всё включено</h3><span class="old">180 000 ₽</span><div class="price">120 000 ₽</div><p class="keep">Ведение — при необходимости</p></div>
+    </div><p class="note">Карточка разворачивается к курсору в объёме и всплывает. Ощущение живого предмета.</p></div>
+
+  <div class="demo" style="flex:1 1 100%"><span class="tag">Вариант C2 · цена перещёлкивается</span>
+    <div class="row" style="margin-top:6px">
+      <div class="plan c2"><h3>Старт</h3><div class="pw"><div class="pin"><span class="old">50 000 ₽</span><div class="price">35 000 ₽</div></div></div><p class="keep">Ведение <b>6 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c2"><h3>Бизнес</h3><div class="pw"><div class="pin"><span class="old">100 000 ₽</span><div class="price">60 000 ₽</div></div></div><p class="keep">Ведение <b>12 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c2"><h3>Всё включено</h3><div class="pw"><div class="pin"><span class="old">180 000 ₽</span><div class="price">120 000 ₽</div></div></div><p class="keep">Ведение — при необходимости</p></div>
+    </div><p class="note">При наведении старая цена уезжает вверх, новая встаёт на её место. Скидка читается сама.</p></div>
+
+  <div class="demo" style="flex:1 1 100%"><span class="tag">Вариант C3 · рамка обводится</span>
+    <div class="row" style="margin-top:6px">
+      <div class="plan c3"><svg><rect x="1" y="1" width="98%" height="98%"/></svg><h3>Старт</h3><span class="old">50 000 ₽</span><div class="price">35 000 ₽</div><p class="keep">Ведение <b>6 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c3"><svg><rect x="1" y="1" width="98%" height="98%"/></svg><h3>Бизнес</h3><span class="old">100 000 ₽</span><div class="price">60 000 ₽</div><p class="keep">Ведение <b>12 000 ₽/мес</b> — при необходимости</p></div>
+      <div class="plan c3"><svg><rect x="1" y="1" width="98%" height="98%"/></svg><h3>Всё включено</h3><span class="old">180 000 ₽</span><div class="price">120 000 ₽</div><p class="keep">Ведение — при необходимости</p></div>
+    </div><p class="note">Бирюзовая линия обводит карточку по контуру, как подпись. Строго, без прыжков.</p></div>
+</div>
+
+<h2>D. Заголовок «Часто задаваемые вопросы»</h2>
+<p class="sub">Вместо непонятного «снимаем возражения». Наведите на надпись.</p>
+<div class="row">
+  <div class="demo"><span class="tag">Вариант D1 · буквы собираются</span><div class="stage"><div class="big d1" data-anim="gather">Часто задаваемые вопросы</div></div><p class="note">Буквы разбросаны и при наведении встают в слово.</p></div>
+  <div class="demo"><span class="tag">Вариант D2 · проявление волной</span><div class="stage"><div class="big d2" data-anim="wave">Часто задаваемые вопросы</div></div><p class="note">Буквы выплывают из размытия одна за другой слева направо.</p></div>
+  <div class="demo"><span class="tag">Вариант D3 · бегущий свет</span><div class="stage"><div class="big d3" data-anim="glow">Часто задаваемые вопросы</div></div><p class="note">По надписи пробегает бирюзовое свечение. Самое спокойное.</p></div>
+</div>
+
+<h2>E. Карусель телефонов — каналы и боты</h2>
+<p class="sub">Для сайта и для слайда презентации: Telegram, MAX, ВКонтакте. Внутри потом будут настоящие скриншоты наших каналов.</p>
+<div class="row">
+  <div class="demo"><span class="tag">Вариант E1 · по кругу</span><div class="carou" id="e1"></div><div class="dots" id="d1"></div><p class="note">Телефоны едут по кругу, передний крупный и в фокусе. Крутится сам, можно листать.</p></div>
+  <div class="demo"><span class="tag">Вариант E2 · стопка карт</span><div class="carou stackC" id="e2"></div><div class="dots" id="d2"></div><p class="note">Карточки лежат стопкой, верхняя уходит вбок и открывает следующую.</p></div>
+</div>
+
+<div class="hint">наведите курсор на примеры</div>
+
+<script>
+// A2 — разбить на буквы с задержкой волны
+document.querySelectorAll('#navA2 a').forEach(a=>{
+  const t=a.textContent;a.textContent='';
+  [...t].forEach((c,i)=>{const s=document.createElement('span');s.className='ch';s.style.transitionDelay=(i*35)+'ms';s.textContent=c===' '?' ':c;a.appendChild(s)})
+});
+// B3 — пересчёт цифры
+document.querySelectorAll('.b3').forEach(b=>{
+  const n=b.querySelector('.num'),full=n.textContent,m=full.match(/^(\d+)/);
+  if(!m)return;const target=+m[1],rest=full.slice(m[1].length);
+  b.addEventListener('mouseenter',()=>{let v=0;const st=performance.now();
+    (function tick(now){const p=Math.min(1,(now-st)/600);n.textContent=Math.round(target*p)+rest;if(p<1)requestAnimationFrame(tick)})(st)});
+});
+// D — буквы
+document.querySelectorAll('.big').forEach(el=>{
+  const t=el.textContent,mode=el.dataset.anim;el.textContent='';
+  const chars=[...t].map((c,i)=>{const s=document.createElement('span');s.className='ch';s.textContent=c;el.appendChild(s);return s});
+  const reset=()=>chars.forEach((s,i)=>{
+    if(mode==='gather'){s.style.transitionDelay=(i*16)+'ms';s.style.transform='translate('+((Math.random()*2-1)*26).toFixed(1)+'px,'+((Math.random()*2-1)*22).toFixed(1)+'px) rotate('+((Math.random()*2-1)*12).toFixed(1)+'deg)';s.style.opacity=.45}
+    if(mode==='wave'){s.style.transitionDelay=(i*22)+'ms';s.style.transform='translateY(10px)';s.style.opacity=.35;s.style.filter='blur(3px)'}
+    if(mode==='glow'){s.style.transitionDelay=(i*24)+'ms';s.style.color='';s.style.textShadow=''}
+  });
+  const on=()=>chars.forEach((s,i)=>{
+    if(mode==='gather'){s.style.transform='none';s.style.opacity=1}
+    if(mode==='wave'){s.style.transform='none';s.style.opacity=1;s.style.filter='none'}
+    if(mode==='glow'){s.style.color='var(--tif)';s.style.textShadow='0 0 16px rgba(132,244,234,.8)'}
+  });
+  reset();el.addEventListener('mouseenter',on);el.addEventListener('mouseleave',reset);
+  el.addEventListener('touchstart',on,{passive:true});
+});
+// E — карусели
+const CH=[{n:'Telegram',d:'канал, чат-бот, автопостинг, оплата',c:'#2aabee',k:'TG'},
+          {n:'MAX',d:'канал, бот, приём оплаты по СБП',c:'#84f4ea',k:'MAX'},
+          {n:'ВКонтакте',d:'сообщество, рассылки, товары',c:'#ffd45e',k:'VK'}];
+function phone(o){const p=document.createElement('div');p.className='phone';
+  p.innerHTML='<div class="ic" style="background:'+o.c+'">'+o.k+'</div><div class="pn">'+o.n+'</div><div class="pd">'+o.d+'</div>';return p}
+function build(hostId,dotId,kind){
+  const host=document.getElementById(hostId),dots=document.getElementById(dotId);
+  const els=CH.map(o=>{const p=phone(o);host.appendChild(p);return p});
+  CH.forEach((_,i)=>{const d=document.createElement('i');d.onclick=()=>{cur=i;draw()};dots.appendChild(d)});
+  let cur=0;
+  function draw(){els.forEach((p,i)=>{
+    let k=(i-cur+CH.length)%CH.length;
+    if(kind==='ring'){const a=[0,1,-1][k]!==undefined?[0,1,-1][k]:0;
+      p.style.transform= k===0?'translateX(0) scale(1)':(k===1?'translateX(120px) scale(.78) rotateY(-26deg)':'translateX(-120px) scale(.78) rotateY(26deg)');
+      p.style.opacity=k===0?1:.42;p.style.zIndex=k===0?3:1}
+    else{p.style.transform='translate('+(k*16)+'px,'+(k*10)+'px) scale('+(1-k*.07)+')';
+      p.style.opacity=k===0?1:.5;p.style.zIndex=9-k}
+    p.classList.toggle('on',k===0)});
+    [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===cur))}
+  draw();setInterval(()=>{cur=(cur+1)%CH.length;draw()},2600)}
+build('e1','d1','ring');build('e2','d2','stack');
+</script></body></html>

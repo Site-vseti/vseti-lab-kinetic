@@ -137,30 +137,37 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1
 
 <script>
 const NAMES=['Яндекс','Google','ChatGPT','Алиса','Gemini','Perplexity','Claude','DeepSeek','Grok','GigaChat','Copilot','Bing'];
-document.querySelectorAll('[data-orbit]').forEach(m=>{
-  const rings=[{r:.62,dur:34,items:[0,1,2,3,4]},{r:.86,dur:48,items:[5,6,7,8]},{r:1.06,dur:62,items:[9,10,11]}];
-  rings.forEach(ring=>{
-    const o=document.createElement('div');o.className='orb';
-    const sp=document.createElement('div');sp.className='sp';sp.style.setProperty('--dur',ring.dur+'s');
-    ring.items.forEach((idx,i)=>{
-      const ang=(i/ring.items.length)*Math.PI*2;
-      const c=document.createElement('span');c.className='chip';c.textContent=NAMES[idx];
-      c.style.setProperty('--dur',ring.dur+'s');
-      c.style.left=(Math.cos(ang)*ring.r*50)+'%';c.style.top=(Math.sin(ang)*ring.r*50)+'%';
-      // проценты считаются от нулевого блока .orb, потому переводим в пиксели через transform-обёртку
-      c.style.left=(Math.cos(ang)*ring.r*m.clientWidth/2)+'px';
-      c.style.top=(Math.sin(ang)*ring.r*m.clientWidth/2)+'px';
-      sp.appendChild(c);
+function ringPlan(){
+  // на узком экране орбиты уже и названий меньше, чтобы ничего не срезалось краем
+  if(innerWidth<560) return [{r:.72,dur:34,items:[0,1,2,3]},{r:1.02,dur:50,items:[4,5,6]}];
+  if(innerWidth<900) return [{r:.68,dur:34,items:[0,1,2,3,4]},{r:.98,dur:50,items:[5,6,7,8]}];
+  return [{r:.62,dur:34,items:[0,1,2,3,4]},{r:.86,dur:48,items:[5,6,7,8]},{r:1.06,dur:62,items:[9,10,11]}];
+}
+function buildOrbits(){
+  document.querySelectorAll('[data-orbit]').forEach(m=>{
+    m.querySelectorAll('.orb').forEach(o=>o.remove());
+    const w=m.clientWidth||200;
+    // предельный радиус: чтобы самая дальняя подпись не вышла за экран
+    const box=m.getBoundingClientRect();
+    const room=Math.min(box.left, innerWidth-box.right)+w/2;
+    ringPlan().forEach(ring=>{
+      const rad=Math.min(ring.r*w/2, Math.max(w/2*.62, room-64));
+      const o=document.createElement('div');o.className='orb';
+      const sp=document.createElement('div');sp.className='sp';sp.style.setProperty('--dur',ring.dur+'s');
+      ring.items.forEach((idx,i)=>{
+        const ang=(i/ring.items.length)*Math.PI*2 + (ring.r);
+        const c=document.createElement('span');c.className='chip';c.textContent=NAMES[idx];
+        c.style.setProperty('--dur',ring.dur+'s');
+        c.style.left=(Math.cos(ang)*rad)+'px';
+        c.style.top=(Math.sin(ang)*rad)+'px';
+        sp.appendChild(c);
+      });
+      o.appendChild(sp);m.appendChild(o);
     });
-    o.appendChild(sp);m.appendChild(o);
   });
-});
-// пересчёт орбит при изменении ширины
-addEventListener('resize',()=>{document.querySelectorAll('[data-orbit]').forEach(m=>{
-  const w=m.clientWidth;const rs=[.62,.86,1.06];
-  m.querySelectorAll('.orb').forEach((o,ri)=>{const items=[...o.querySelectorAll('.chip')];
-    items.forEach((c,i)=>{const ang=(i/items.length)*Math.PI*2;
-      c.style.left=(Math.cos(ang)*rs[ri]*w/2)+'px';c.style.top=(Math.sin(ang)*rs[ri]*w/2)+'px'})})})});
+}
+buildOrbits();
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(buildOrbits,150)});
 // свечение фразы
 document.querySelectorAll('[data-glow]').forEach(el=>{
   const words=el.textContent.split(' ');el.textContent='';let k=0;

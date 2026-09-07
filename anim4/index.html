@@ -1,0 +1,90 @@
+<!doctype html><html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Сравнение — «в сети»</title>
+<style>
+@font-face{font-family:'Unbounded';font-weight:200 900;font-display:swap;src:url(../assets/fonts/Unbounded-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Unbounded';font-weight:200 900;font-display:swap;src:url(../assets/fonts/Unbounded-latin.woff2) format('woff2')}
+@font-face{font-family:'Roboto Flex';font-weight:100 1000;font-stretch:25% 151%;font-display:swap;src:url(../assets/fonts/RobotoFlex-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Roboto Flex';font-weight:100 1000;font-stretch:25% 151%;font-display:swap;src:url(../assets/fonts/RobotoFlex-latin.woff2) format('woff2')}
+:root{--tif:#84f4ea;--g1:#1b524c;--g2:#12403c;--g3:#0e332f;--gold2:#e8c766;--bad:#ff8080;--bg:#071a18;--ink:#eafffd;--mute:rgba(234,255,253,.62);--dim:rgba(234,255,253,.3);--line:rgba(132,244,234,.14);--disp:'Unbounded',system-ui,sans-serif;--body:'Roboto Flex',system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);padding:clamp(16px,4vw,48px);line-height:1.5}
+h1{font-family:var(--disp);font-size:clamp(22px,4vw,34px);font-weight:700;margin-bottom:6px}
+.lead{color:var(--mute);max-width:72ch;margin-bottom:26px;font-size:15px}
+h2{font-family:var(--disp);font-size:clamp(18px,3vw,26px);font-weight:700;margin:44px 0 6px}
+.sub{color:var(--mute);font-size:14px;margin-bottom:20px;max-width:80ch}
+.spacer{height:55vh;display:grid;place-items:center;color:var(--dim);font-size:13px}
+
+.cmp{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:linear-gradient(165deg,var(--g1),var(--g2) 55%,var(--g3))}
+.hd,.rw{display:grid;grid-template-columns:1fr 108px 108px;align-items:center;gap:10px;padding:14px clamp(14px,2.4vw,24px)}
+.hd{border-bottom:1px solid var(--line);background:rgba(7,26,24,.45);position:sticky;top:0;z-index:5;backdrop-filter:blur(6px)}
+.hd .t{font-family:var(--disp);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);text-align:center}
+.hd .t.us{color:var(--tif)}
+.hd .cr{font-size:13px;color:var(--mute);text-transform:none;letter-spacing:0;font-family:var(--body)}
+.rw{border-bottom:1px solid rgba(132,244,234,.07);opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease),background .4s}
+.rw.on{opacity:1;transform:none}
+.rw:hover{background:rgba(132,244,234,.05)}
+.rw:last-child{border-bottom:0}
+.cr{font-size:clamp(13px,1.7vw,15px)}
+.cell{display:grid;place-items:center}
+.mk{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;border:1px solid transparent;transition:background .45s,border-color .45s,box-shadow .45s,transform .45s var(--ease)}
+.mk svg{width:19px;height:19px;overflow:visible}
+.mk path{fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:44;stroke-dashoffset:44;transition:stroke-dashoffset .55s var(--ease)}
+.mk.no{background:rgba(255,128,128,.08);border-color:rgba(255,128,128,.2)}
+.mk.no path{stroke:var(--bad)}
+.mk.yes{background:rgba(132,244,234,.1);border-color:rgba(132,244,234,.28)}
+.mk.yes path{stroke:var(--tif)}
+.rw.on .mk path{stroke-dashoffset:0}
+.rw.on .mk.yes{box-shadow:0 0 26px -4px rgba(132,244,234,.75);transform:scale(1.06)}
+.rw.on .mk.no{opacity:.75}
+.foot{padding:16px clamp(14px,2.4vw,24px);font-size:13px;color:var(--mute);border-top:1px solid var(--line);background:rgba(7,26,24,.35)}
+.btnrow{margin-top:20px}
+.btn{font-family:var(--disp);font-size:13px;font-weight:600;color:#071a18;background:var(--tif);border:0;border-radius:999px;padding:11px 22px;cursor:pointer}
+@media(max-width:560px){.hd,.rw{grid-template-columns:1fr 62px 62px;gap:6px}.mk{width:30px;height:30px}}
+</style></head><body>
+
+<h1>Сравнение: обычный сайт и наш</h1>
+<p class="lead">Галочки зажигаются по очереди, пока вы листаете страницу вниз. Прокрутите — и посмотрите, как это выглядит. Кнопка внизу проиграет ещё раз.</p>
+
+<div class="spacer">↓ листайте вниз</div>
+
+<h2>Что вы получаете вместо обычного сайта</h2>
+<p class="sub">Сравниваем с типовым сайтом, каким его делают сейчас: он есть, он открывается — и на этом всё.</p>
+
+<div class="cmp" id="cmp">
+  <div class="hd"><div class="cr" style="font-family:var(--disp);text-transform:uppercase;letter-spacing:.08em;font-size:12px">Критерий</div><div class="t">Обычный сайт</div><div class="t us">Наш сайт</div></div>
+</div>
+
+<div class="btnrow"><button class="btn" id="again">Проиграть ещё раз</button></div>
+
+<div class="spacer">конец</div>
+
+<script>
+const ROWS=[
+ ['Удобно открывается на телефоне, без увеличения пальцами',0,1],
+ ['Сайт целиком видят поисковые и AI-боты',0,1],
+ ['Нейросети понимают, кто вы, где вы и что делаете',0,1],
+ ['Есть версии на шести языках',0,1],
+ ['Светлая и тёмная тема на выбор',0,1],
+ ['Онлайн-запись с уведомлением в Telegram и MAX',0,1],
+ ['Чат-бот отвечает клиентам круглосуточно',0,1],
+ ['Приём оплаты и на сайте, и в каналах',0,1],
+ ['Скорость загрузки в зелёной зоне',0,1],
+ ['Открывается у всех в России без сбоев',0,1]
+];
+const CHECK='M4 11 L9 16 L18 5', CROSS='M5 5 L17 17 M17 5 L5 17';
+const box=document.getElementById('cmp');
+ROWS.forEach(([txt,a,b],i)=>{
+  const r=document.createElement('div');r.className='rw';r.style.transitionDelay=(i*70)+'ms';
+  const mk=(v)=>'<div class="cell"><div class="mk '+(v?'yes':'no')+'"><svg viewBox="0 0 22 22"><path d="'+(v?CHECK:CROSS)+'"/></svg></div></div>';
+  r.innerHTML='<div class="cr">'+txt+'</div>'+mk(a)+mk(b);
+  box.appendChild(r);
+});
+const rows=[...box.querySelectorAll('.rw')];
+rows.forEach(r=>r.querySelectorAll('.mk path').forEach((p,j)=>p.style.transitionDelay=(r.style.transitionDelay.replace('ms','')/1+120+j*90)+'ms'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.4});
+rows.forEach(r=>io.observe(r));
+document.getElementById('again').onclick=()=>{rows.forEach(r=>r.classList.remove('on'));
+  setTimeout(()=>rows.forEach(r=>{if(r.getBoundingClientRect().top<innerHeight*.9)r.classList.add('on')}),60)};
+</script></body></html>

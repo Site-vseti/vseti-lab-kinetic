@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Melvin Cavellino</title>
+  <meta name="description" content="Curriculum Vitae — Melvin Cavellino, Supervisor Legal Process Documentation" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --accent: #8a2be2;
+      --accent-light: #b34bff;
+      --text-primary: #1a1a2e;
+      --text-secondary: #4a4a5a;
+      --text-muted: #777;
+      --border: #e8e0f0;
+      --bg-light: #f9f7fc;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background: #f3f0f7;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* Print Button Bar (hidden when printing) */
+    .print-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--text-primary);
+      color: #fff;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .print-bar span {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .print-bar button {
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s;
+    }
+
+    .print-bar button:hover { transform: translateY(-2px); }
+
+    .print-bar a {
+      color: #ccc;
+      font-size: 0.85rem;
+      margin-left: 16px;
+    }
+
+    .print-bar a:hover { color: #fff; }
+
+    /* CV Paper */
+    .cv-paper {
+      max-width: 900px;
+      margin: 90px auto 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 60px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .cv-header {
+      background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 100%);
+      color: #fff;
+      padding: 50px 60px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .cv-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.15);
+      object-fit: cover;
+    }
+
+    .cv-name {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      background: linear-gradient(135deg, #fff 0%, #d880ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cv-role {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #c8b8db;
+      margin-bottom: 16px;
+    }
+
+    .cv-contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .cv-contact-row span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: #d8cce8;
+    }
+
+    .cv-contact-row i {
+      color: var(--accent-light);
+      font-size: 0.9rem;
+    }
+
+    /* Sections */
+    .cv-section {
+      padding: 36px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-section:last-child { border-bottom: none; }
+
+    .cv-section-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cv-section-title i {
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    .cv-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+      margin-left: 6px;
+    }
+
+    /* About */
+    .cv-about p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    .cv-about-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .cv-about-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--bg-light);
+      padding: 16px 18px;
+      border-radius: 12px;
+    }
+
+    .cv-about-item i {
+      color: var(--accent);
+      font-size: 1rem;
+      margin-top: 3px;
+    }
+
+    .cv-about-item h4 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .cv-about-item p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Timeline */
+    .cv-timeline { position: relative; }
+
+    .cv-timeline-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .cv-timeline-date {
+      text-align: right;
+    }
+
+    .cv-timeline-date .year {
+      display: block;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--accent);
+    }
+
+    .cv-timeline-date .duration {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .cv-timeline-body {
+      border-left: 2px solid var(--border);
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .cv-timeline-body::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border: 3px solid var(--accent);
+      border-radius: 50%;
+    }
+
+    .cv-timeline-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .cv-timeline-body .company {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cv-timeline-body .company i { color: var(--accent); font-size: 0.8rem; }
+
+    .cv-timeline-body ul {
+      list-style: none;
+    }
+
+    .cv-timeline-body li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .cv-timeline-body li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 5px;
+      height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .cv-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .cv-tags span {
+      font-size: 0.78rem;
+      font-weight: 500;
+      background: var(--bg-light);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 50px;
+      border: 1px solid var(--border);
+    }
+
+    /* Skills */
+    .cv-skills-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+    }
+
+    .cv-skills-col h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cv-skills-col h4 i { color: var(--accent); }
+
+    .cv-skill-bar {
+      margin-bottom: 16px;
+    }
+
+    .cv-skill-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+    }
+
+    .cv-skill-info span:first-child { font-weight: 500; }
+    .cv-skill-info span:last-child { font-weight: 700; color: var(--accent); }
+
+    .cv-skill-track {
+      width: 100%;
+      height: 7px;
+      background: #ede8f3;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .cv-skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      border-radius: 10px;
+    }
+
+    .cv-soft-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cv-soft-tags span {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    /* Highlights */
+    .cv-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .cv-highlight-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .cv-highlight-card i {
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .cv-highlight-card h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .cv-highlight-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Contact */
+    .cv-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .cv-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      padding: 16px 18px;
+      border-radius: 12px;
+    }
+
+    .cv-contact-item i {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
+      color: #fff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .cv-contact-item span {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1px;
+    }
+
+    .cv-contact-item p {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* Footer note */
+    .cv-footer-note {
+      text-align: center;
+      padding: 20px 60px 30px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* ============ PRINT ============ */
+    @media print {
+      @page { margin: 0; size: auto; }
+
+      body {
+        background: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .print-bar { display: none !important; }
+
+      .cv-paper {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+      }
+
+      .cv-section {
+        padding: 28px 50px;
+        page-break-inside: avoid;
+      }
+
+      .cv-timeline-item {
+        page-break-inside: avoid;
+      }
+
+      .cv-highlight-card,
+      .cv-about-item,
+      .cv-contact-item {
+        page-break-inside: avoid;
+      }
+    }
+
+    /* Responsive preview */
+    @media (max-width: 768px) {
+      .cv-header { grid-template-columns: 1fr; text-align: center; padding: 36px 30px; }
+      .cv-photo { margin: 0 auto; }
+      .cv-contact-row { justify-content: center; }
+      .cv-section { padding: 28px 30px; }
+      .cv-timeline-item { grid-template-columns: 1fr; gap: 8px; }
+      .cv-timeline-date { text-align: left; }
+      .cv-skills-grid { grid-template-columns: 1fr; }
+      .cv-highlights { grid-template-columns: 1fr; }
+      .cv-contact-grid { grid-template-columns: 1fr; }
+      .cv-about-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Print Bar -->
+  <div class="print-bar">
+    <div>
+      <span>📄 Preview CV — Melvin Cavellino</span>
+      <a href="index.html">← Kembali ke Website</a>
+    </div>
+    <button onclick="window.print()">
+      <i class="fa-solid fa-download"></i> Simpan sebagai PDF
+    </button>
+  </div>
+
+  <!-- CV Paper -->
+  <div class="cv-paper">
+
+    <!-- Header -->
+    <div class="cv-header">
+      <img src="assets/images/personal.png" alt="Foto Profil" class="cv-photo" />
+      <div>
+        <h1 class="cv-name">Melvin Cavellino</h1>
+        <p class="cv-role">Supervisor Legal Process Documentation</p>
+        <div class="cv-contact-row">
+          <span><i class="fa-solid fa-location-dot"></i> Samarinda, Kalimantan Timur</span>
+          <span><i class="fa-solid fa-envelope"></i> melvincavellino19@gmail.com</span>
+          <span><i class="fa-brands fa-linkedin-in"></i> linkedin.com/in/melvin-cavellino</span>
+          <span><i class="fa-brands fa-whatsapp"></i> 0851-5926-1355</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="cv-section cv-about">
+      <h2 class="cv-section-title"><i class="fa-solid fa-user"></i> Profil Profesional</h2>
+      <p>
+        Profesional berpengalaman di bidang dokumentasi proses legal & compliance dalam industri pertambangan.
+        Memiliki keahlian dalam manajemen dokumen hukum, perizinan, dan regulasi pertambangan di Kalimantan.
+        Mampu mengelola siklus hidup dokumen legal mulai dari pembuatan, review, approval, hingga arsip digital dengan sistematis.
+      </p>
+      <div class="cv-about-grid">
+        <div class="cv-about-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <h4>Legal Compliance</h4>
+            <p>Memastikan operasional mematuhi regulasi pemerintah dan standar hukum pertambangan.</p>
+          </div>
+        </div>
+        <div class="cv-about-item">
+          <i class="fa-solid fa-file-contract"></i>
+          <div>
+            <h4>Document Control</h4>
+            <p>Mengelola siklus hidup dokumen hukum secara sistematis dan terdigitalisasi.</p>
+          </div>
+        </div>
+        <div class="cv-about-item">
+          <i class="fa-solid fa-landmark"></i>
+          <div>
+            <h4>Permitting & Licensing</h4>
+            <p>Memfasilitasi proses perizinan tambang dan koordinasi dengan instansi terkait.</p>
+          </div>
+        </div>
+        <div class="cv-about-item">
+          <i class="fa-solid fa-users-gear"></i>
+          <div>
+            <h4>Stakeholder Management</h4>
+            <p>Membangun hubungan baik dengan pemerintah, masyarakat, dan mitra bisnis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="cv-section">
+      <h2 class="cv-section-title"><i class="fa-solid fa-briefcase"></i> Pengalaman Kerja</h2>
+      <div class="cv-timeline">
+
+        <div class="cv-timeline-item">
+          <div class="cv-timeline-date">
+            <span class="year">2019 — Sekarang</span>
+            <span class="duration">7+ Tahun</span>
+          </div>
+          <div class="cv-timeline-body">
+            <h3>Supervisor Legal Process Documentation</h3>
+            <div class="company"><i class="fa-solid fa-building"></i> Kalimantan Tambang Mandiri</div>
+            <ul>
+              <li>Memimpin tim dokumentasi legal dalam mengelola seluruh dokumen perizinan dan kontrak perusahaan.</li>
+              <li>Mengembangkan sistem filing digital yang meningkatkan efisiensi tracking dokumen hingga 80%.</li>
+              <li>Mengkoordinasikan pengurusan dokumen perizinan dengan Dinas Pertambangan dan instansi pemerintah terkait.</li>
+              <li>Memastikan kepatuhan penuh terhadap UU Minerba No. 3 Tahun 2020 dan regulasi turunannya.</li>
+            </ul>
+            <div class="cv-tags">
+              <span>Legal Compliance</span><span>Document Control</span><span>Permitting</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-timeline-item">
+          <div class="cv-timeline-date">
+            <span class="year">2016 — 2019</span>
+            <span class="duration">3 Tahun</span>
+          </div>
+          <div class="cv-timeline-body">
+            <h3>Legal Document Specialist — Freelance</h3>
+            <div class="company"><i class="fa-solid fa-globe"></i> Upwork (Remote)</div>
+            <ul>
+              <li>Menyusun dan mereview dokumen hukum, kontrak, dan NDA untuk klien internasional melalui platform Upwork.</li>
+              <li>Mengelola dokumentasi digital proyek legal dengan sistem cloud-based untuk klien di berbagai zona waktu.</li>
+              <li>Mendampingi proses due diligence dan legal research untuk startup teknologi dan bisnis kecil.</li>
+            </ul>
+            <div class="cv-tags">
+              <span>Freelance</span><span>Legal Research</span><span>Document Review</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-timeline-item">
+          <div class="cv-timeline-date">
+            <span class="year">2014 — 2016</span>
+            <span class="duration">2 Tahun</span>
+          </div>
+          <div class="cv-timeline-body">
+            <h3>Freelance Legal Researcher</h3>
+            <div class="company"><i class="fa-solid fa-globe"></i> Fiverr & Remote Projects</div>
+            <ul>
+              <li>Melakukan riset regulasi pertambangan, hukum bisnis, dan kekayaan intelektual untuk klien global.</li>
+              <li>Membantu penyusunan dokumen legal dasar seperti Terms of Service, Privacy Policy, dan MOU untuk UMKM.</li>
+              <li>Mengelola proyek dokumentasi legal secara mandiri dengan standar deadline dan kualitas tinggi.</li>
+            </ul>
+            <div class="cv-tags">
+              <span>Remote Work</span><span>Legal Writing</span><span>Research</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="cv-section">
+      <h2 class="cv-section-title"><i class="fa-solid fa-layer-group"></i> Keahlian</h2>
+      <div class="cv-skills-grid">
+        <div class="cv-skills-col">
+          <h4><i class="fa-solid fa-briefcase"></i> Technical Skills</h4>
+          <div class="cv-skill-bar">
+            <div class="cv-skill-info"><span>Legal Document Management</span><span>95%</span></div>
+            <div class="cv-skill-track"><div class="cv-skill-fill" style="width:95%"></div></div>
+          </div>
+          <div class="cv-skill-bar">
+            <div class="cv-skill-info"><span>Perizinan Pertambangan (ESDM)</span><span>92%</span></div>
+            <div class="cv-skill-track"><div class="cv-skill-fill" style="width:92%"></div></div>
+          </div>
+          <div class="cv-skill-bar">
+            <div class="cv-skill-info"><span>Contract Drafting & Review</span><span>88%</span></div>
+            <div class="cv-skill-track"><div class="cv-skill-fill" style="width:88%"></div></div>
+          </div>
+          <div class="cv-skill-bar">
+            <div class="cv-skill-info"><span>Regulatory Compliance</span><span>90%</span></div>
+            <div class="cv-skill-track"><div class="cv-skill-fill" style="width:90%"></div></div>
+          </div>
+          <div class="cv-skill-bar">
+            <div class="cv-skill-info"><span>Digital Archiving System</span><span>85%</span></div>
+            <div class="cv-skill-track"><div class="cv-skill-fill" style="width:85%"></div></div>
+          </div>
+        </div>
+        <div class="cv-skills-col">
+          <h4><i class="fa-solid fa-user"></i> Soft Skills</h4>
+          <div class="cv-soft-tags">
+            <span>Leadership</span>
+            <span>Attention to Detail</span>
+            <span>Problem Solving</span>
+            <span>Negotiation</span>
+            <span>Time Management</span>
+            <span>Communication</span>
+            <span>Analytical Thinking</span>
+            <span>Team Collaboration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Highlights -->
+    <div class="cv-section">
+      <h2 class="cv-section-title"><i class="fa-solid fa-star"></i> Pencapaian Profesional</h2>
+      <div class="cv-highlights">
+        <div class="cv-highlight-card">
+          <i class="fa-solid fa-clipboard-check"></i>
+          <h4>Zero Compliance Violation</h4>
+          <p>Kepatuhan penuh regulasi pertambangan 7+ tahun tanpa temuan fatal.</p>
+        </div>
+        <div class="cv-highlight-card">
+          <i class="fa-solid fa-bolt"></i>
+          <h4>Efisiensi +80%</h4>
+          <p>Sistem filing digital mempercepat tracking & retrieval dokumen.</p>
+        </div>
+        <div class="cv-highlight-card">
+          <i class="fa-solid fa-folder-open"></i>
+          <h4>500+ Dokumen Legal</h4>
+          <p>Ribuan dokumen perizinan & kontrak berhasil dikelola.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="cv-section">
+      <h2 class="cv-section-title"><i class="fa-solid fa-address-card"></i> Kontak</h2>
+      <div class="cv-contact-grid">
+        <div class="cv-contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <span>Lokasi</span>
+            <p>Samarinda, Kalimantan Timur</p>
+          </div>
+        </div>
+        <div class="cv-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <span>Email</span>
+            <p>melvincavellino19@gmail.com</p>
+          </div>
+        </div>
+        <div class="cv-contact-item">
+          <i class="fa-brands fa-linkedin-in"></i>
+          <div>
+            <span>LinkedIn</span>
+            <p>linkedin.com/in/melvin-cavellino</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-footer-note">
+      CV ini dapat diakses secara online melalui website personal branding saya.
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta name="robots" content="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaunchForge — Bootstrap Landing Page Template</title>
+    <!-- Icon import -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Compiled Boostrsp css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .text-primary {
+            color: #6C4BF4 !important;
+        }
+
+        .bg-primary {
+            background-color: #6C4BF4 !important;
+        }
+
+        .text-secondary {
+            color: #ff865e !important;
+        }
+
+        .bg-secondary {
+            background-color: #ff865e !important;
+        }
+
+        /* Optional: Overrides button colors if you use btn-primary */
+        .btn-primary {
+            padding: 1rem;
+            background-color: #6C4BF4 !important;
+            border-color: #6C4BF4 !important;
+        }
+
+        .btn-secondary {
+            padding: 1rem;
+            background-color: #ff865e !important;
+            border-color: #ff865e !important;
+        }
+
+        .btn-outline-primary {
+            padding: 1rem;
+            color: #6C4BF4 !important;
+            border-color: #6C4BF4 !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #5840cf !important;
+            border-color: #5840cf !important;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e66f4a !important;
+            border-color: #e66f4a !important;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #6C4BF4 !important;
+            color: white !important;
+        }
+
+        .border-primary {
+            border-color: #6C4BF4 !important;
+        }
+
+        .cfs-1 {
+            font-size: 4rem;
+        }
+
+        .step-badge {
+            width: 30px;
+            height: 30px;
+            border-radius: 50% !important;
+            background-color: #6C4BF4 !important;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+        }
+
+        .phone-mockup {
+            width: 50rem;
+            position: absolute;
+            top: 0;
+            /* translate: 0 -50%; */
+        }
+
+        #for-you {
+            background-image: url("./assets/images/abstract.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-blend-mode: soft-light;
+        }
+
+        /* Template-specific responsive fixes */
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image {
+            max-height: 560px;
+            object-fit: contain;
+        }
+
+        .service-image {
+            height: 320px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 991.98px) {
+            #for-you {
+                background-attachment: scroll;
+                height: auto !important;
+            }
+
+            .phone-mockup {
+                position: static;
+                width: min(100%, 28rem);
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .cfs-1 {
+                font-size: 2.5rem;
+            }
+
+            #for-you {
+                padding-bottom: 4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex gap-1 text-danger" href="#hero">
+                <img src="./assets/icons/handbag-fill.svg" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top img-fluid">
+                <span class="fw-medium fs-3 text-primary">LaunchForge</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#how-it-works">How it Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#safety">Safety</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download">For You</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main id="main" class="col">
+        <section id="hero" class="container py-5">
+            <div class="row">
+                <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 align-content-center hero-copy">
+                    <span class="fs-6 border rounded-3 bg-body-tertiary d-inline-block mb-2 p-2">App's Tagline</span>
+                    <h1 class="fs-1 fw-bolder">Ask for it. <br> Let offers find you.</h1>
+                    <p class="fs-5 mb-4">Post what you need once. Relevant sellers respond with offers, you compare
+                        options,
+                        chat directly, and agree the deal without scrolling through endless listings.</p>
+                    <div class="row">
+                        <!-- <div class="col"><button type="button" class="btn btn-outline-primary w-100">SignUp</button>
+                        </div> -->
+                        <div class="col"><a href="#download" class="btn btn-primary w-100 fs-5">Download App</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 align-content-center">
+                    <img src="./assets/images/phone-mockup.png" class="img-fluid hero-image" alt="Mobile app preview">
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section id="how-it-works" class="container py-5">
+            <h1 class="text-center fs-1 fw-bold">How <span class="text-primary ">It</span> Works</h1>
+            <p class="fs-5 text-center">A cleaner way to move from need to offer.</p>
+
+            <div class="row align-items-center justify-content-evenly g-4 position-relative mt-4">
+
+                <div class=" border border-3 border-primary position-absolute d-none d-lg-block z-0 w-75"></div>
+
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="bg-body-tertiary border border-3 border-primary rounded-3 shadow position-relative p-3">
+                        <i class="bi bi-send-fill fs-1 text-secondary"></i>
+                        <div class="step-badge bg-primary text-white text-center rounded-circle">1</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet nibh. </p>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="bg-body-tertiary border border-3 border-primary rounded-3 shadow position-relative p-3">
+                        <i class="bi bi-gift-fill fs-1 text-secondary"></i>
+                        <div class="step-badge bg-primary text-white text-center rounded-circle">2</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet nibh. </p>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="bg-body-tertiary border border-3 border-primary rounded-3 shadow position-relative p-3">
+                        <i class="bi bi-wechat fs-1 text-secondary"></i>
+                        <div class="step-badge bg-primary text-white text-center rounded-circle">3</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet nibh. </p>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="bg-body-tertiary border border-3 border-primary rounded-3 shadow position-relative p-3">
+                        <i class="bi bi-cash-stack fs-1 text-secondary"></i>
+                        <div class="step-badge bg-primary text-white text-center rounded-circle">4</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet
+                            nibh. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features-->
+        <section id="features" class="container py-5">
+
+            <h1 class="text-center fw-bold text-primary">Features</h1>
+            <p class="text-center">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                velit...
+            </p>
+            <div class="row g-3">
+                <div class="col col-md col-sm-12 col-12 h-100">
+                    <div class="category-header">
+                        <h5 class="text-uppercase bg-primary p-3 text-white">Active</h5>
+                    </div>
+
+                    <ul class="list-group">
+                        <li class="list-group-item">Phasellus mattis justo elementum, mollis urna ut, suscipit magna.
+                            <ul>
+                                <li>Phasellus vestibulum</li>
+                                <li>Nulla posuere</li>
+                                <li>Donec lobortis</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Proin dignissim dui quis dui consequat imperdiet.
+                            <ul>
+                                <li>Morbi a velit vehicula</li>
+                                <li>Nullam nec sem</li>
+                                <li>Nunc non ligula</li>
+                                <li>Sed vitae libero</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Nulla semper erat ut ante auctor, malesuada efficitur augue
+                            vulputate.</li>
+                        <li class="list-group-item">Vestibulum at sapien id arcu vestibulum mattis in a velit.</li>
+                    </ul>
+                </div>
+                <div class="col col-md col-sm-12 col-12 h-100">
+                    <div class="category-header">
+                        <h5 class="text-uppercase bg-primary p-3 text-white">Coming soon</h5>
+                    </div>
+
+                    <ul class="list-group">
+                        <li class="list-group-item">Donec cursus mauris a risus molestie vulputate.</li>
+                        <li class="list-group-item">Aliquam id eros et orci pellentesque placerat.</li>
+                        <li class="list-group-item">Mauris dapibus odio a gravida rutrum.</li>
+                        <li class="list-group-item">Aliquam hendrerit nunc nec tellus mattis, eu tristique ante
+                            venenatis.</li>
+                        <li class="list-group-item">Nam at enim vitae sem fringilla porttitor ut sed tortor.</li>
+                        <li class="list-group-item">Praesent sollicitudin libero sit amet dictum suscipit.</li>
+                        <li class="list-group-item">Praesent condimentum dolor ac purus ornare lobortis.</li>
+                        <li class="list-group-item">Vivamus id turpis nec dui posuere iaculis pharetra nec ligula.</li>
+                        <li class="list-group-item">Vivamus id turpis nec dui posuere iaculis pharetra nec ligula.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="container-fluid py-5 bg-body-tertiary">
+
+            <h1 class="text-center fw-bold">Lorem <span class="text-primary">ipsum dolor. </span>?</h1>
+            <p class="text-center">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                velit...</p>
+            <div class="row g-4 p-4">
+                <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
+                    <!-- Added h-100 to make the card take full row height -->
+                    <div class="card h-100">
+                        <!-- Added inline styles to lock image height and crop nicely -->
+                        <img src="./assets/images/mob-1.jpg" class="card-img-top service-image" loading="lazy"
+                            alt="Feature preview">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum</h5>
+                            <p class="card-text">Etiam porta turpis pretium, porttitor neque nec, aliquam enim.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="card h-100">
+                        <img src="./assets/images/mob-2.jpg" class="card-img-top service-image" loading="lazy" alt="Feature preview">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum</h5>
+                            <p class="card-text">Etiam porta turpis pretium, porttitor neque nec, aliquam enim.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="card h-100">
+                        <img src="./assets/images/mob-3.jpg" class="card-img-top service-image" loading="lazy"
+                            alt="Feature preview">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum</h5>
+                            <p class="card-text">Etiam porta turpis pretium, porttitor neque nec, aliquam enim.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- Safty & Security -->
+        <section id="safety" class="container py-5">
+            <h1 class="text-center fw-bold"><span class="text-primary">Lorem</span>, ipsum dolor</h1>
+            <p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+            <div class="row g-4 mb-5">
+                <div class="col col-12 col-xl-4 col-lg-4">
+                    <div class="card rounded-3 shadow">
+                        <div class="card-body">
+                            <h5 class="card-subtitle text-secondary">Lorem ipsum</h5>
+                            <h3 class="card-title fw-bold">Lorem ipsum dolor</h3>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry. Lorem Ipsum has
+                                been
+                                the industry's standard dummy text ever since 1966, when designers at Letraset and James
+                                Mosley.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-12 col-xl-4 col-lg-4">
+                    <div class="card rounded-3 shadow">
+                        <div class="card-body">
+                            <h5 class="card-subtitle text-secondary">Lorem ipsum</h5>
+                            <h3 class="card-title fw-bold">Lorem ipsum dolor</h3>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry. Lorem Ipsum has
+                                been
+                                the industry's standard dummy text ever since 1966, when designers at Letraset and James
+                                Mosley.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-12 col-xl-4 col-lg-4">
+                    <div class="card rounded-3 shadow">
+                        <div class="card-body">
+                            <h5 class="card-subtitle text-secondary">Lorem ipsum</h5>
+                            <h3 class="card-title fw-bold">Lorem ipsum dolor</h3>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry. Lorem Ipsum has
+                                been
+                                the industry's standard dummy text ever since 1966, when designers at Letraset and James
+                                Mosley.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="container-fluid  py-5 bg-primary position-relative" style="height: 30rem;">
+            <div class="row py-5  h-100">
+                <div class="col col-xl-6 d-none d-xl-block">
+                    <img src="./assets/images/phone mockup-2.png" class="phone-mockup" alt="Phone mockup">
+                </div>
+                <div class="col">
+                    <div>
+                        <h1 class="fw-bold text-white">Download Our Mobile App</h1>
+                        <p class="text-white mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at
+                            Letraset and James Mosley, the librarian at St Bride Printing Library in London, </p>
+                        <a href="#download" class="btn btn-secondary">Download Mobile App</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="container py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#how-it-works" class="nav-link px-2 text-body-secondary">How it Works</a>
+                </li>
+                <li class="nav-item"><a href="#features" class="nav-link px-2 text-body-secondary">Features</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link px-2 text-body-secondary">Services</a></li>
+                <li class="nav-item"><a href="#safety" class="nav-link px-2 text-body-secondary">Safety</a></li>
+                <li class="nav-item"><a href="#download" class="nav-link px-2 text-body-secondary">For You</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">© 2026 LaunchForge</p>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

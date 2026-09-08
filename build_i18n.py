@@ -150,7 +150,7 @@ def translate_html(src, table, code, htmllang, name):
           "address": {"@type": "PostalAddress", "addressCountry": "RU", "addressLocality": "Izhevsk"},
           "areaServed": [{"@type": "Country", "name": "Russia"}],
           "knowsLanguage": ["ru", "en", "uz", "tg", "ky", "az", "zh"],
-          "sameAs": ["https://t.me/vseti_site", "https://t.me/vseti_agency_bot"],
+          "sameAs": ["https://t.me/vseti_site", "https://max.ru/id183474446770_4_bot"],
           "inLanguage": htmllang}
     block = og + '<script type="application/ld+json">\n' + json.dumps(ld, ensure_ascii=False, indent=1) + '\n</script>\n'
     src = src.replace('</head>', block + '</head>', 1)

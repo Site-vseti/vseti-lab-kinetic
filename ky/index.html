@@ -166,7 +166,7 @@ html.rm #intro{display:none}
 
 /* morph (pinned) */
 .morph{position:relative;background:linear-gradient(180deg,var(--bg) 0%,var(--g3) 50%,var(--bg) 100%)}
-.morph-pin{height:82svh;min-height:520px;display:grid;align-content:center;justify-items:center;text-align:center;padding:0 var(--pad);overflow:hidden;position:relative}
+.morph-pin{height:76svh;min-height:430px;display:grid;align-content:center;justify-items:center;text-align:center;padding:0 var(--pad);overflow:hidden;position:relative}
 .morph-pin .eyebrow{justify-content:center}.morph-pin .eyebrow::before{display:none}
 .mword{font-family:var(--disp);font-variation-settings:"wght" 800;font-size:clamp(2.6rem,10.5vw,11rem);white-space:nowrap;line-height:1;letter-spacing:-.04em;margin:18px 0 26px;color:var(--ink);min-height:1em}
 .mword .ch{font-variation-settings:"wght" var(--w,800)}
@@ -211,7 +211,8 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 .step p{color:var(--mute);max-width:36ch}
 .step .lbl{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--tif);margin-bottom:14px}
 .proc .sec-head{padding:0;margin-bottom:clamp(24px,4vh,50px)}
-@media (max-width:899px){.proc-pin{height:auto;display:block}.proc-wrap{height:auto;padding:clamp(90px,12vw,150px) 0}.proc .sec-head{margin-bottom:50px}.proc-track{flex-direction:column;gap:60px;padding-left:var(--pad);padding-right:var(--pad)}.step{width:auto;min-height:0;padding-top:110px}.step .big{font-size:6.5rem}}
+@media (max-width:899px){.morph-pin{height:auto;min-height:0;padding:54px var(--pad) 46px}
+.proc-pin{height:auto;display:block}.proc-wrap{height:auto;padding:clamp(90px,12vw,150px) 0}.proc .sec-head{margin-bottom:50px}.proc-track{flex-direction:column;gap:60px;padding-left:var(--pad);padding-right:var(--pad)}.step{width:auto;min-height:0;padding-top:110px}.step .big{font-size:6.5rem}}
 
 /* stats */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -319,6 +320,9 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 @media(max-width:640px){.revs{grid-template-columns:1fr}.rev{padding:22px}}
 .form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .form .btn[disabled]{opacity:.6;pointer-events:none}
+.form .agree{display:flex;align-items:flex-start;gap:10px;margin-top:14px;font-size:13px;line-height:1.45;color:var(--mute);cursor:pointer}
+.form .agree input{width:18px;height:18px;flex:none;margin:1px 0 0;accent-color:var(--tif);cursor:pointer}
+.form .agree a{color:var(--tif);text-decoration:underline}
 .lead-msg{font-size:13.5px;margin:12px 0 0;min-height:18px;color:var(--mute)}
 .lead-msg.good{color:var(--tif)}
 .lead-msg.bad{color:#ffb4a2}
@@ -497,6 +501,20 @@ html.light .tbtn .moon{display:none}
  .cmp2 .hd .t{font-size:9px;letter-spacing:.01em;line-height:1.15}
  .cmp2 .hd .t .full{display:none}.cmp2 .hd .t .shrt{display:inline}
  .cmp2 .hd .cr{font-size:10px;letter-spacing:.02em}}
+@media (hover:none){
+ .svc .c.hot{transform:translateY(-8px);border-color:rgba(132,244,234,.5);background:linear-gradient(165deg,rgba(34,99,92,.6),rgba(14,51,47,.4));box-shadow:0 26px 60px -22px rgba(132,244,234,.75)}
+ .svc .c.hot::after{transform:none}
+ .svc .c.hot h3{font-variation-settings:"wght" 800;letter-spacing:0}
+ html.light .svc .c.hot{background:linear-gradient(165deg,rgba(132,244,234,.55),rgba(255,255,255,.96));border-color:rgba(12,125,116,.85);box-shadow:0 26px 60px -18px rgba(12,125,116,.9),0 0 0 2px rgba(12,125,116,.55) inset}
+ .proof .p.hot{transform:translateY(-9px);border-color:var(--tif);background:linear-gradient(160deg,rgba(132,244,234,.3),rgba(14,51,47,.25));box-shadow:0 0 90px -6px rgba(132,244,234,1),0 18px 70px -6px rgba(132,244,234,.9),0 0 0 2px rgba(132,244,234,.9) inset}
+ .proof .p.hot .n{text-shadow:0 0 14px rgba(132,244,234,.9),0 0 40px rgba(132,244,234,.55)}
+ html.light .proof .p.hot{background:linear-gradient(160deg,rgba(132,244,234,.55),rgba(255,255,255,.95));box-shadow:0 0 80px -8px rgba(12,125,116,.85),0 18px 60px -10px rgba(12,125,116,.8),0 0 0 2px rgba(12,125,116,.75) inset}
+ .tile.hot{transform:translateY(-6px);border-color:rgba(132,244,234,.5);box-shadow:0 22px 50px -22px rgba(132,244,234,.6)}
+ .tile.hot .shot img{transform:scale(1.05)}
+ .rev.hot{border-color:rgba(132,244,234,.45);transform:translateY(-5px)}
+ .cmp2 .rw.hot{background:rgba(132,244,234,.08)}
+ .plan.hot{transform:translateY(-8px);border-color:rgba(232,199,102,.6)}
+}
 html.rm .cmp2 .rw{opacity:1;transform:none}
 html.rm .cmp2 .mk path{stroke-dashoffset:0}
 
@@ -708,7 +726,7 @@ html.light .case{background:rgba(255,255,255,.85)}
       <div class="list" role="menu">
         <a href="/">Русский <small>RU</small></a>
         <a href="/en/">English <small>EN</small></a>
-        <a href="/uz/">O‘zbekcha <small>UZ</small></a>
+        <a href="/uz/">Oʻzbekcha <small>UZ</small></a>
         <a href="/tg/">Тоҷикӣ <small>TG</small></a>
         <a href="/ky/" aria-current="true">Кыргызча <small>KY</small></a>
         <a href="/az/">Azərbaycanca <small>AZ</small></a>
@@ -921,7 +939,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <p class="lead rv" style="max-width:52ch;margin-top:20px">Биз сайтты кнопка-котормочу менен эмес, толугу менен которобуз. Издөө системасы жана нейрожели адамга дароо түшүнүктүү версияны көрсөтөт — жана ал сизге жетет.</p>
       </div>
       <div class="rv">
-        <div class="flags"><span>Русский</span><span>English</span><span>O‘zbekcha</span><span>Тоҷикӣ</span><span>Кыргызча</span><span>Azərbaycanca</span><span>中文</span></div>
+        <div class="flags"><span>Русский</span><span>English</span><span>Oʻzbekcha</span><span>Тоҷикӣ</span><span>Кыргызча</span><span>Azərbaycanca</span><span>中文</span></div>
         <p class="langs-fact" style="color:var(--mute);margin-top:26px;font-size:16px">2024-жылдын 1-сентябрына Россияда болгон <b style="color:var(--ink)">1,79 млн</b> Өзбекстан жараны, <b style="color:var(--ink)">1,23 млн</b> Тажикстан жараны жана <b style="color:var(--ink)">263 миң</b> Кыргызстан жараны, ал эми жалпы чет өлкөлүк жарандар — андан ашык <b style="color:var(--ink)">6 миллион</b>.</p>
         <p class="langs-fact" style="color:var(--mute);margin-top:14px;font-size:16px">2025-жылдын күзүндө орус тили боюнча экзаменди 275 609 адам тапшырды, жана <b style="color:var(--ink)">13% аны биринчи аракеттен эле тапшырган жок.</b> Так ушул — орусча сайтыңызды жөн эле окуй албай турган аудиториянын бөлүгү.</p>
         <p class="src">Булактар: Россия ИИМинин 01.09.2024-жылга жана 2024-жыл боюнча маалыматтары; Россия Билим жана илим министрлигинин 2025-жылдын III кварталы боюнча тестирлөө маалыматтары. Сандар өзгөртүлбөй, өз пайдасына тегеректелбей берилген.</p>
@@ -1037,7 +1055,8 @@ html.light .case{background:rgba(255,255,255,.85)}
         <button class="btn btn-gold magnetic" id="leadBtn" type="submit">Өтүнмө жөнөтүү <span class="arr">→</span></button>
         <p class="lead-msg" id="leadMsg" role="status" aria-live="polite"></p>
         <a class="btn btn-ghost magnetic" id="leadTg" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener" style="margin-top:12px;width:100%;justify-content:center">Тезирээк — Telegram аркылуу <span class="arr">→</span></a>
-        <p class="fine">Өтүнмө бизге дароо келет — бир күндүн ичинде жооп беребиз. Мессенджер ыңгайлуу болсо, Telegramга жазыңыз. Маалыматтар үчүнчү жактарга берилбейт. Өтүнмөнү жөнөтүү менен сиз жеке маалыматтарды иштетүүгө макул болосуз — <a href="../politika.html">саясат</a>.</p>
+        <label class="agree" for="fok"><input type="checkbox" id="fok" name="agree"><span>Мен жеке маалыматтарымды иштетүүгө макул болом — <a href="../politika.html">саясат</a>.</span></label>
+        <p class="fine">Өтүнмө бизге дароо келет — бир күндүн ичинде жооп беребиз. Мессенджер ыңгайлуу болсо, Telegramга жазыңыз. Маалыматтар үчүнчү жактарга берилбейт.</p>
       </form>
     </div>
   </div>
@@ -1265,7 +1284,7 @@ if(hasGsap && !RM){
     msub.textContent=st.s;
   }
   ScrollTrigger.create({
-    trigger:'#morph',start:'top top',end:'+=220%',pin:'#morphPin',scrub:true,anticipatePin:1,
+    trigger:'#morph',start:'top top',end:(window.innerWidth<900?'+=150%':'+=200%'),pin:'#morphPin',scrub:true,anticipatePin:1,
     onUpdate:self=>{
       const p=self.progress; const i=Math.min(2,Math.floor(p*3));
       if(i!==cur){cur=i;setWord(i);}
@@ -1483,6 +1502,19 @@ function glow(el,wcls,ccls,step){
 glow(document.getElementById('phrase'),'pw','pc',30);
 glow(document.getElementById('faqHead'),'fw','fc',26);
 
+/* --- на телефоне подсветку даёт не курсор, а попадание карточки в середину экрана --- */
+(function(){
+  if(!window.matchMedia||!matchMedia('(hover:none)').matches) return;
+  if(!('IntersectionObserver' in window)) return;
+  var sel='.svc .c, .proof .p, #cases .tile, .rev, .cmp2 .rw, .plan';
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ e.target.classList.toggle('hot', e.isIntersecting); });
+  },{rootMargin:'-42% 0px -42% 0px',threshold:0});
+  var watch=function(){ document.querySelectorAll(sel).forEach(function(el){ if(!el.__hot){ el.__hot=1; io.observe(el); } }); };
+  watch();
+  setTimeout(watch,1200); setTimeout(watch,3000);
+})();
+
 /* --- сравнение: галочки зажигаются при прокрутке --- */
 var ROWS=[
  ['Телефондо манжа менен чоңойтпой эле ыңгайлуу ачылат',0,1],
@@ -1524,8 +1556,10 @@ if(lf) lf.addEventListener('submit',function(e){
   var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var name=v('fn'), contact=v('fc'), task=v('fm'), trap=v('fcomp');
   var msg=document.getElementById('leadMsg'), btn=document.getElementById('leadBtn');
+  var ok=document.getElementById('fok');
   var say=function(t,cls){ if(msg){ msg.textContent=t; msg.className='lead-msg '+(cls||''); } };
   if(!name||!contact){ say('Атыңызды жана байланышыңызды толтуруңуз — болбосо жооп бере албайбыз.','bad'); return; }
+  if(ok&&!ok.checked){ say('Маалыматтарды иштетүүгө макулдугуңузду белгилеңиз — ансыз биз өтүнмөнү кабыл алууга акыбыз жок.','bad'); return; }
   if(btn){ btn.disabled=true; }
   say('Жөнөтүлүүдө…','');
   var done=function(ok,err){

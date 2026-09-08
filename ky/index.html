@@ -83,7 +83,7 @@ html.rm #intro{display:none}
 .nav a{padding:10px 14px;font-size:14px;letter-spacing:.04em;color:var(--mute);position:relative;overflow:hidden}
 .nav a span{display:block;transition:transform .45s var(--ease)}
 .nav a span::after{content:attr(data-t);position:absolute;left:0;top:100%;color:var(--tif);padding:inherit}
-.nav a:hover span{transform:translateY(-100%)}
+.nav a:hover span{transform:none}
 .hdr .btn{padding:11px 20px;font-size:14px}
 .burger{display:none;width:44px;height:44px;place-items:center;position:relative}
 .burger i{display:block;width:22px;height:2px;background:var(--ink);position:absolute;transition:transform .4s var(--ease)}
@@ -139,8 +139,8 @@ html.rm #intro{display:none}
 .marq .row.o .item::after{color:var(--tif);-webkit-text-stroke:0}
 
 /* ---------- sections ---------- */
-.sec{padding:clamp(90px,12vw,170px) 0;position:relative}
-.sec.quiet{padding:clamp(120px,16vw,220px) 0}
+.sec{padding:clamp(52px,6.5vw,92px) 0;position:relative}
+.sec.quiet{padding:clamp(62px,8vw,116px) 0}
 .sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,80px)}
 .sec-head .lead{margin:0}
 @media (max-width:900px){.sec-head{grid-template-columns:1fr}}
@@ -166,7 +166,7 @@ html.rm #intro{display:none}
 
 /* morph (pinned) */
 .morph{position:relative;background:linear-gradient(180deg,var(--bg) 0%,var(--g3) 50%,var(--bg) 100%)}
-.morph-pin{height:100svh;display:grid;align-content:center;justify-items:center;text-align:center;padding:0 var(--pad);overflow:hidden;position:relative}
+.morph-pin{height:82svh;min-height:520px;display:grid;align-content:center;justify-items:center;text-align:center;padding:0 var(--pad);overflow:hidden;position:relative}
 .morph-pin .eyebrow{justify-content:center}.morph-pin .eyebrow::before{display:none}
 .mword{font-family:var(--disp);font-variation-settings:"wght" 800;font-size:clamp(2.6rem,10.5vw,11rem);white-space:nowrap;line-height:1;letter-spacing:-.04em;margin:18px 0 26px;color:var(--ink);min-height:1em}
 .mword .ch{font-variation-settings:"wght" var(--w,800)}
@@ -175,7 +175,7 @@ html.rm #intro{display:none}
 .mdots{display:flex;gap:10px;margin-top:38px}
 .mdots i{width:44px;height:2px;background:var(--line);position:relative;overflow:hidden}
 .mdots i::after{content:"";position:absolute;inset:0;background:var(--tif);transform:scaleX(var(--p,0));transform-origin:left}
-.mghost{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 900;font-size:42vw;color:transparent;-webkit-text-stroke:1px rgba(132,244,234,.07);pointer-events:none;letter-spacing:-.05em}
+.mghost{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 900;font-size:42vw;color:transparent;-webkit-text-stroke:2px rgba(132,244,234,.22);pointer-events:none;letter-spacing:-.05em}
 
 /* services */
 .svc-sec{position:relative;isolation:isolate;overflow:hidden}
@@ -184,7 +184,7 @@ html.rm #intro{display:none}
 html.light .svc-sec::before{opacity:.14}
 html.light .svc-sec::after{background:linear-gradient(180deg,var(--bg) 0%,rgba(244,251,250,.86) 30%,rgba(244,251,250,.9) 70%,var(--bg) 100%)}
 html.light .svc .c{background:linear-gradient(165deg,rgba(255,255,255,.92),rgba(233,246,244,.75))}
-html.light .svc .c:hover{background:linear-gradient(165deg,#fff,rgba(223,242,239,.92));box-shadow:0 26px 56px -24px rgba(12,125,116,.6)}
+html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45),rgba(255,255,255,.96));border-color:rgba(12,125,116,.8);box-shadow:0 26px 60px -18px rgba(12,125,116,.9),0 0 0 1px rgba(12,125,116,.5) inset}
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .svc .c{background:linear-gradient(165deg,rgba(27,82,76,.45),rgba(14,51,47,.3));border:1px solid var(--line);border-radius:22px;padding:32px 28px 36px;position:relative;min-height:290px;display:flex;flex-direction:column;gap:14px;overflow:hidden;
   transition:transform .45s var(--ease),border-color .45s,box-shadow .45s,background .45s}
@@ -307,8 +307,8 @@ html.light .svc .c:hover{background:linear-gradient(165deg,#fff,rgba(223,242,239
 .form textarea{min-height:110px;resize:vertical}
 .form .btn{margin-top:22px;width:100%;justify-content:center}
 .form .fine{font-size:12px;color:var(--dim);margin:14px 0 0}
-.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.rev{margin:0;border:1px solid var(--line);border-radius:22px;padding:26px;background:var(--bg2);display:flex;flex-direction:column;gap:18px;transition:border-color .4s,transform .5s var(--ease)}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rev{margin:0;border:1px solid var(--line);border-radius:22px;padding:20px 22px;background:var(--bg2);display:flex;flex-direction:column;gap:13px;transition:border-color .4s,transform .5s var(--ease)}
 .rev:hover{border-color:rgba(132,244,234,.45);transform:translateY(-4px)}
 .rev blockquote{margin:0;font-size:15px;line-height:1.62;color:var(--ink);position:relative;padding-top:20px}
 .rev blockquote::before{content:"\201C";position:absolute;top:-6px;left:-2px;font-family:var(--disp);font-size:44px;line-height:1;color:var(--tif);opacity:.5}
@@ -338,10 +338,10 @@ html.rm .statement .big .w,html.rm .contact .bigline .w{--w:650!important}
 /* ================= ПРАВКИ СЕРГЕЯ 07.09 ================= */
 
 /* --- меню: A8 «неон» (вместо съезжающей надписи, которая ломалась на две строки) --- */
-.nav a{overflow:visible;white-space:nowrap;transition:transform .34s var(--ease),color .34s}
+.nav a{overflow:visible;white-space:nowrap;transform-origin:50% 50%;transition:transform .34s var(--ease),color .34s}
 .nav a span{transition:color .34s,text-shadow .34s}
 .nav a span::after{display:none}
-.nav a:hover{transform:scale(1.16);color:#fff}
+.nav a:hover{transform:scale(1.22);color:#fff}
 .nav a:hover span{color:var(--ink);text-shadow:0 0 8px var(--tif),0 0 22px var(--tif),0 0 44px rgba(132,244,234,.7)}
 
 /* --- переключатели тебиз и языка в шапке --- */
@@ -380,9 +380,9 @@ html.light .tbtn .moon{display:none}
 .phrase .pc{display:inline-block;transition:color .5s var(--ease),text-shadow .5s var(--ease);
   text-shadow:0 1px 0 #2c7d74,0 2px 0 #256d65,0 3px 0 #1e5d56,0 4px 0 #175048,0 7px 16px rgba(0,0,0,.8)}
 .phrase.lit .pc{color:#fff;text-shadow:0 0 10px var(--tif),0 0 30px var(--tif),0 4px 0 #175048,0 9px 24px rgba(0,0,0,.85)}
-.mark{position:relative;flex:none;width:calc(clamp(190px,19vw,250px)*var(--hs,1));aspect-ratio:1}
+.mark{position:relative;flex:none;width:calc(clamp(240px,26vw,380px)*max(.8,var(--hs,1)));aspect-ratio:1}
 .mark .halo{position:absolute;inset:-14%;border-radius:50%;background:radial-gradient(circle,rgba(132,244,234,.3),transparent 62%);filter:blur(16px)}
-.mark .lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 18px 44px rgba(0,0,0,.75))}
+.mark .lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;clip-path:circle(48.5% at 50% 50%);filter:drop-shadow(0 18px 44px rgba(0,0,0,.75))}
 .orb{position:absolute;left:50%;top:50%;width:0;height:0}
 .chip{opacity:1;transition:opacity .45s var(--ease);position:absolute;left:0;top:0;transform:translate(-50%,-50%);font-family:var(--disp);font-size:clamp(9px,1vw,12px);letter-spacing:.05em;color:var(--tif);background:rgba(7,26,24,.8);border:1px solid rgba(132,244,234,.32);border-radius:999px;padding:5px 11px;white-space:nowrap;box-shadow:0 8px 22px -10px rgba(0,0,0,.9)}
 @media (max-width:700px){.phrase{white-space:normal}.chip{font-size:9px;padding:4px 8px;letter-spacing:.02em}}
@@ -392,7 +392,7 @@ html.light .tbtn .moon{display:none}
  .hero{padding:96px 0 64px}
  .h1{font-size:calc(min(clamp(1.6rem,6.2vw,3rem),4.4svh)*var(--hs,1))}
  .phrase{font-size:calc(min(clamp(1.25rem,6.8vw,2.2rem),3.9svh)*var(--hs,1))}
- .mark{width:calc(min(46vw,18svh,180px)*var(--hs,1))}
+ .mark{width:calc(min(58vw,25svh,250px)*var(--hs,1))}
  .hline{margin-top:12px}
  .hero .lead{margin:16px auto 18px;font-size:15px}
  .hero .eyebrow{margin-bottom:14px}
@@ -404,32 +404,32 @@ html.light .tbtn .moon{display:none}
  .hero{padding:64px 0 30px}
  .h1{font-size:calc(min(clamp(1.5rem,6vw,3rem),4.1svh)*var(--hs,1))}
  .phrase{font-size:calc(min(clamp(1.15rem,6.4vw,2.2rem),3.6svh)*var(--hs,1))}
- .mark{width:calc(min(42vw,15.5svh,160px)*var(--hs,1))}
+ .mark{width:calc(min(52vw,21svh,215px)*var(--hs,1))}
  .hero .lead{font-size:14px;margin:11px auto 13px}
  .hero .eyebrow{margin-bottom:10px;font-size:11px}
  .hero-foot{display:none}
 }
 @media (max-width:900px) and (max-height:600px){
  .hero{padding:66px 0 32px}
- .mark{width:calc(min(38vw,13svh,140px)*var(--hs,1))}
+ .mark{width:calc(min(46vw,18svh,185px)*var(--hs,1))}
  .hero .lead{display:none}
 }
 @media (min-width:901px){
- .hero{padding:120px 0 92px}
+ .hero{padding:96px 0 56px}
  .h1{font-size:calc(min(clamp(1.85rem,6.2vw,6.2rem),7.4svh)*var(--hs,1))}
  .phrase{font-size:calc(min(clamp(1.5rem,4.2vw,3.4rem),5.4svh)*var(--hs,1))}
- .mark{width:calc(min(19vw,20svh,230px)*var(--hs,1))}
- .hero .lead{margin:22px auto 26px}
+ .mark{width:calc(min(27vw,28svh,330px)*var(--hs,1))}
+ .hero .lead{margin:16px auto 18px}
 }
 @media (min-width:901px) and (max-height:940px){
- .hero{padding:104px 0 58px}
+ .hero{padding:78px 0 34px}
  .hero-foot{display:none}     /* иначе кнопки наезжают на нижнюю строку */
 }
 @media (min-width:901px) and (max-height:820px){
  .hero{padding:70px 0 36px}
  .h1{font-size:calc(min(clamp(1.85rem,6.2vw,6.2rem),6.6svh)*var(--hs,1))}
  .phrase{font-size:calc(min(clamp(1.5rem,4.2vw,3.4rem),4.8svh)*var(--hs,1))}
- .mark{width:calc(min(19vw,17svh,230px)*var(--hs,1))}
+ .mark{width:calc(min(27vw,24svh,330px)*var(--hs,1))}
  .hero .lead{margin:13px auto 16px;font-size:15px}
  .hero .eyebrow{margin-bottom:12px}
 }
@@ -437,7 +437,7 @@ html.light .tbtn .moon{display:none}
 /* --- плашки «0 ката» / «9 из 9»: подъём и свечение ×2 --- */
 .proof .p{cursor:default;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;
   transition:transform .42s var(--ease),box-shadow .42s,border-color .42s,background .42s}
-.proof .p:hover{transform:translateY(-9px);border-color:var(--tif);background:linear-gradient(160deg,rgba(132,244,234,.1),rgba(14,51,47,.2));box-shadow:0 18px 60px -10px rgba(132,244,234,.95),0 0 0 1px rgba(132,244,234,.55) inset}
+.proof .p:hover{transform:translateY(-9px);border-color:var(--tif);background:linear-gradient(160deg,rgba(132,244,234,.3),rgba(14,51,47,.25));box-shadow:0 0 90px -6px rgba(132,244,234,1),0 18px 70px -6px rgba(132,244,234,.9),0 0 0 2px rgba(132,244,234,.9) inset}
 .proof .n{white-space:nowrap;transition:text-shadow .42s}
 .proof .p:hover .n{text-shadow:0 0 14px rgba(132,244,234,.9),0 0 40px rgba(132,244,234,.55)}
 .proof .t{margin-left:auto;margin-right:auto}
@@ -449,7 +449,8 @@ html.light .tbtn .moon{display:none}
 .plan .stamp{position:absolute;top:0;right:22px;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:13px;color:#071a18;background:var(--gold2);border-radius:0 0 10px 10px;padding:5px 11px;box-shadow:0 6px 18px -6px rgba(232,199,102,.8);z-index:2}
 .plan.hit .stamp{right:auto;left:22px}
 .plan .old{white-space:nowrap;display:inline-block;font-size:16px;color:var(--dim);position:relative;margin-top:16px;transition:opacity .45s,transform .45s var(--ease)}
-.plan .old::after{content:"";position:absolute;left:-2px;right:-2px;top:52%;height:2px;background:var(--gold2)}
+.plan .old i{font-style:normal;position:relative}
+.plan .old i::after{content:"";position:absolute;left:0;right:0;top:52%;height:2px;background:var(--gold2)}
 .plan:hover .old{opacity:.4;transform:translateX(-5px) scale(.92)}
 .plan .pr{white-space:nowrap;margin-top:4px;color:var(--tif);display:inline-block;transition:transform .45s var(--ease),text-shadow .45s}
 .plan:hover .pr{transform:translateZ(48px) scale(1.1);text-shadow:0 0 22px rgba(132,244,234,.9)}
@@ -469,8 +470,8 @@ html.light .tbtn .moon{display:none}
 .faq details[open] summary i{transform:rotate(45deg);background:rgba(132,244,234,.12)}
 
 /* --- сравнение «обычный сайт / наш»: галочки зажигаются при прокрутке --- */
-.cmp2{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(165deg,rgba(27,82,76,.45),rgba(14,51,47,.25))}
-.cmp2 .hd,.cmp2 .rw{display:grid;grid-template-columns:1fr 108px 108px;align-items:center;gap:10px;padding:15px clamp(14px,2.4vw,26px)}
+.cmp2{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(165deg,rgba(27,82,76,.45),rgba(14,51,47,.25));max-width:800px;margin:0 auto}
+.cmp2 .hd,.cmp2 .rw{display:grid;grid-template-columns:1fr 92px 92px;align-items:center;gap:8px;padding:10px clamp(12px,1.8vw,20px)}
 .cmp2 .hd{border-bottom:1px solid var(--line);background:rgba(7,26,24,.45)}
 .cmp2 .hd .t{font-family:var(--disp);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);text-align:center}
 .cmp2 .hd .t.us{color:var(--tif)}
@@ -500,8 +501,14 @@ html.rm .cmp2 .rw{opacity:1;transform:none}
 html.rm .cmp2 .mk path{stroke-dashoffset:0}
 
 /* --- кейстер: небольшие плитки --- */
-.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
-.tile{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:var(--bg2);transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tile .shot{display:block;border-radius:12px;overflow:hidden;background:rgba(7,26,24,.5);border:1px solid var(--line);aspect-ratio:16/10}
+.tile .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .6s var(--ease)}
+.tile:hover .shot img{transform:scale(1.05)}
+.tile .cap{display:flex;align-items:center;gap:12px;width:100%}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.tiles{grid-template-columns:1fr}}
+.tile{display:flex;flex-direction:column;align-items:stretch;gap:12px;padding:12px;border:1px solid var(--line);border-radius:18px;background:var(--bg2);transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
 .tile:hover{transform:translateY(-6px);border-color:rgba(132,244,234,.45);box-shadow:0 20px 50px -22px rgba(132,244,234,.8)}
 .tile .av,.rev .av{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:15px;color:#071a18;background:linear-gradient(140deg,var(--tif),#3fd6c9)}
 .tile .av.g,.rev .av.g{background:linear-gradient(140deg,var(--gold2),var(--gold));color:#1b1300}
@@ -532,7 +539,8 @@ html.rm .cmp2 .mk path{stroke-dashoffset:0}
 .phone .scr{width:100%;height:100%;border-radius:23px;background:linear-gradient(175deg,#0b2724,#071a18);overflow:hidden;position:relative;display:flex;flex-direction:column}
 .phone .notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:52px;height:5px;border-radius:99px;background:rgba(0,0,0,.65);z-index:3}
 .phone .top{padding:18px 12px 10px;text-align:center;border-bottom:1px solid rgba(132,244,234,.12)}
-.phone .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:14px;color:#071a18;margin:0 auto 7px}
+.phone .ic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:14px;color:#071a18;margin:0 auto 7px;overflow:hidden}
+.phone .ic.plain{border-radius:0;background:transparent}
 .phone .pn{font-family:var(--disp);font-variation-settings:"wght" 600;font-size:13px;color:#eafffd}
 .phone .li{display:flex;align-items:center;gap:8px;padding:9px 11px;font-size:11px;color:rgba(234,255,253,.62);border-bottom:1px solid rgba(132,244,234,.07);text-align:left}
 .phone .li i{width:16px;height:16px;border-radius:5px;background:rgba(132,244,234,.22);flex:none}
@@ -569,10 +577,10 @@ html.light .mark .lg{filter:drop-shadow(0 14px 30px rgba(7,33,31,.3))}
 html.light .marq{background:linear-gradient(90deg,var(--bg),var(--bg2),var(--bg))}
 html.light .marq .row.o .item{-webkit-text-stroke:1px rgba(7,33,31,.45)}
 html.light .proof .p{background:linear-gradient(160deg,rgba(255,255,255,.9),rgba(233,246,244,.7))}
-html.light .proof .p:hover{background:linear-gradient(160deg,rgba(12,125,116,.1),rgba(255,255,255,.9));box-shadow:0 18px 50px -14px rgba(12,125,116,.55),0 0 0 1px rgba(12,125,116,.35) inset}
+html.light .proof .p:hover{background:linear-gradient(160deg,rgba(132,244,234,.55),rgba(255,255,255,.95));box-shadow:0 0 80px -8px rgba(12,125,116,.85),0 18px 60px -10px rgba(12,125,116,.8),0 0 0 2px rgba(12,125,116,.75) inset}
 html.light .proof .p::after{background:radial-gradient(circle,rgba(12,125,116,.1),transparent 65%)}
 html.light .morph{background:linear-gradient(180deg,var(--bg) 0%,var(--g1) 50%,var(--bg) 100%)}
-html.light .mghost{-webkit-text-stroke:1px rgba(9,86,79,.09)}
+html.light .mghost{-webkit-text-stroke:2px rgba(9,86,79,.26)}
 html.light .step .big{-webkit-text-stroke:1px rgba(9,86,79,.35)}
 html.light .case .shot{background:#dceceb}
 html.light .cmp2{background:linear-gradient(165deg,rgba(255,255,255,.9),rgba(233,246,244,.75))}
@@ -604,8 +612,8 @@ html.light .btn-gold:hover{color:#04322e}
 html.light .btn::before{background:var(--tif)}
 html.light .btn-ghost:hover,html.light .btn-gold:hover{color:#fff}
 html.light .nav a:hover span{color:var(--tif);text-shadow:0 0 10px rgba(12,125,116,.5)}
-html.light .svc .c{background:var(--bg)}
-html.light .svc .c:hover{background:#fff}
+html.light .svc .c{background:linear-gradient(165deg,rgba(255,255,255,.95),rgba(233,246,244,.8))}
+html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.55),rgba(255,255,255,.96));border-color:rgba(12,125,116,.85);box-shadow:0 26px 60px -18px rgba(12,125,116,.9),0 0 0 2px rgba(12,125,116,.55) inset}
 html.light .proc{background:var(--bg2)}
 html.light .case{background:rgba(255,255,255,.85)}
 
@@ -689,7 +697,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <a href="#proof"><span data-t="AI-издөө">AI-издөө</span></a>
     <a href="#cases"><span data-t="Кейстер">Кейстер</span></a>
     <a href="#plans"><span data-t="Тарифтер">Тарифтер</span></a>
-    <a href="#faq"><span data-t="FAQ">FAQ</span></a>
+    <a href="#faq"><span data-t="Суроо-жооп">Суроо-жооп</span></a>
   </nav>
   <div class="hdr-tools">
     <div class="lang" id="lang">
@@ -720,7 +728,7 @@ html.light .case{background:rgba(255,255,255,.85)}
   <a href="#proof"><span>AI-издөө</span></a>
   <a href="#cases"><span>Кейстер</span></a>
   <a href="#plans"><span>Тарифтер</span></a>
-  <a href="#faq"><span>FAQ</span></a>
+  <a href="#faq"><span>Суроо-жооп</span></a>
   <a href="#contact"><span>Байланыштар</span></a>
   <div class="mc"><span>site_vseti@mail.ru</span><span>@vseti_agency_bot · @vseti_site</span></div>
 </div>
@@ -854,15 +862,15 @@ html.light .case{background:rgba(255,255,255,.85)}
       <p class="lead rv">Алардын баары иштейт — каалаганын ачып, телефонуңузда кантип иштээрин көрүңүз.</p>
     </div>
     <div class="tiles">
-      <a class="tile rv" href="https://elinarihter.ru/" target="_blank" rel="noopener"><span class="av g">ЭР</span><span><b>Элина Рихтер</b><small>ырчы · визит-сайт</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://rinazolotareva.ru/" target="_blank" rel="noopener"><span class="av">РЗ</span><span><b>Рина Золотарёва</b><small>психолог · жазылуу жана төлөм</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://kristall2002-art.github.io/avatar-park-map/" target="_blank" rel="noopener"><span class="av">КП</span><span><b>Аватар паркынын картасы</b><small>карта жана PDF сатуу</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://kristall2002-art.github.io/egrn-plan-spb/" target="_blank" rel="noopener"><span class="av">ЕГ</span><span><b>ЕГРН: план квартиры</b><small>көчүрмөнү онлайн заказдоо</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://kristall2002-art.github.io/kgiop-spravki/" target="_blank" rel="noopener"><span class="av">КГ</span><span><b>КГИОП справкалары</b><small>ботто төлөнүүчү кызмат</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://kristall2002-art.github.io/keo-insolyacia-site/" target="_blank" rel="noopener"><span class="av">ИН</span><span><b>Инсоляция жана КЕО</b><small>долбоорлор үчүн эсептөөлөр</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://kristall2002-art.github.io/sonnik-web/" target="_blank" rel="noopener"><span class="av g">СН</span><span><b>Сонник</b><small>контент-долбоор жана бот</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://kristall2002-art.github.io/tsena-dnya-site/" target="_blank" rel="noopener"><span class="av g">ЦД</span><span><b>Цена Дня · WB</b><small>товар тандамалары, канал</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://kristall2002-art.github.io/gotovyplan/" target="_blank" rel="noopener"><span class="av">БП</span><span><b>БП24</b><small>онлайн бизнес-план</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://elinarihter.ru/" target="_blank" rel="noopener"><span class="shot"><img src="../assets/cases/elina.jpg" alt="Сайттын биринчи экраны: Элина Рихтер" width="640" height="400" loading="lazy" decoding="async"></span><span class="cap"><span><b>Элина Рихтер</b><small>ырчы · визит-сайт</small></span><span class="arr">↗</span></span></a>
+      <a class="tile rv" href="https://rinazolotareva.ru/" target="_blank" rel="noopener"><span class="shot"><img src="../assets/cases/rina.jpg" alt="Сайттын биринчи экраны: Рина Золотарёва" width="640" height="400" loading="lazy" decoding="async"></span><span class="cap"><span><b>Рина Золотарёва</b><small>психолог · жазылуу жана төлөм</small></span><span class="arr">↗</span></span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/avatar-park-map/" target="_blank" rel="noopener"><span class="shot"><img src="../assets/cases/avatar.jpg" alt="Сайттын биринчи экраны: Аватар паркынын картасы" width="640" height="400" loading="lazy" decoding="async"></span><span class="cap"><span><b>Аватар паркынын картасы</b><small>карта жана PDF сатуу</small></span><span class="arr">↗</span></span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/egrn-plan-spb/" target="_blank" rel="noopener"><span class="shot"><img src="../assets/cases/egrn.jpg" alt="Сайттын биринчи экраны: ЕГРН: план квартиры" width="640" height="400" loading="lazy" decoding="async"></span><span class="cap"><span><b>ЕГРН: план квартиры</b><small>көчүрмөнү онлайн заказдоо</small></span><span class="arr">↗</span></span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/kgiop-spravki/" target="_blank" rel="noopener"><span class="shot"><img src="../assets/cases/kgiop.jpg" alt="Сайттын биринчи экраны: КГИОП справкалары" width="640" height="400" loading="lazy" decoding="async"></span><span class="cap"><span><b>КГИОП справкалары</b><small>ботто төлөнүүчү кызмат</small></span><span class="arr">↗</span></span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/keo-insolyacia-site/" target="_blank" rel="noopener"><span class="shot"><img src="../assets/cases/keo.jpg" alt="Сайттын биринчи экраны: Инсоляция жана КЕО" width="640" height="400" loading="lazy" decoding="async"></span><span class="cap"><span><b>Инсоляция жана КЕО</b><small>долбоорлор үчүн эсептөөлөр</small></span><span class="arr">↗</span></span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/sonnik-web/" target="_blank" rel="noopener"><span class="shot"><img src="../assets/cases/sonnik.jpg" alt="Сайттын биринчи экраны: Сонник" width="640" height="400" loading="lazy" decoding="async"></span><span class="cap"><span><b>Сонник</b><small>контент-долбоор жана бот</small></span><span class="arr">↗</span></span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/notary-tarakanovsky/" target="_blank" rel="noopener"><span class="shot"><img src="../assets/cases/notary.jpg" alt="Сайттын биринчи экраны: нотариус" width="640" height="400" loading="lazy" decoding="async"></span><span class="cap"><span><b>Нотариалдык контора</b><small>сайтты которуу, алты тил</small></span><span class="arr">↗</span></span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/gotovyplan/" target="_blank" rel="noopener"><span class="shot"><img src="../assets/cases/bp24.jpg" alt="Сайттын биринчи экраны: БП24" width="640" height="400" loading="lazy" decoding="async"></span><span class="cap"><span><b>БП24</b><small>онлайн бизнес-план</small></span><span class="arr">↗</span></span></a>
     </div>
     <p class="tiles-note">Бул — иштердин мисалдары гана, алар дагы бар. Тапшырмаңызга жакыныраагын көрсөтөбүз.</p>
   </div>
@@ -956,7 +964,7 @@ html.light .case{background:rgba(255,255,255,.85)}
       <div class="plan rv">
         <span class="stamp">−30%</span>
         <div class="nm">Старт</div>
-        <div class="old">50 000 ₽</div>
+        <div class="old"><i>50 000</i> ₽</div>
         <div class="pr">35 000 ₽<small>бир жолу</small></div>
         <div class="mo">Жүргүзүү <b>6 000 ₽/ай</b> — керек болсо</div>
         <ul><li>7 барака чейин адаптивдүү сайт</li><li>Ачык жана күңүрт тема</li><li>Корголгон туташуу жана ылдамдык</li><li>Яндекс менен Google издөөсүнө тууралоо</li><li>Нейрожелилердин жоопторуна тууралоо</li><li>Билдирүүлүү өтүнмө формасы</li><li>Жүргүзүү: айына 2 жаңылоо</li></ul>
@@ -966,7 +974,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <span class="badge">хит</span>
         <span class="stamp">−40%</span>
         <div class="nm">Бизнес</div>
-        <div class="old">100 000 ₽</div>
+        <div class="old"><i>100 000</i> ₽</div>
         <div class="pr">60 000 ₽<small>бир жолу</small></div>
         <div class="mo">Жүргүзүү <b>12 000 ₽/ай</b> — керек болсо</div>
         <ul><li>«Старт» тарифинин баары</li><li>15 баракка чейин</li><li>AI-издөөгө толук даярдоо</li><li>Онлайн-жазылуу / калькулятор</li><li>Өтүнмөлөр үчүн Telegram-бот</li><li>Жүктөлүү светофору</li><li>Жүргүзүү: айына 6 жаңылоо + контент</li><li>Позициялар боюнча ай сайын отчёт</li></ul>
@@ -975,7 +983,7 @@ html.light .case{background:rgba(255,255,255,.85)}
       <div class="plan rv">
         <span class="stamp">−33%</span>
         <div class="nm">Баары кирет</div>
-        <div class="old">180 000 ₽</div>
+        <div class="old"><i>180 000</i> ₽</div>
         <div class="pr">120 000 ₽<small>бир жолу</small></div>
         <div class="mo">Жүргүзүү — керек болсо</div>
         <ul><li>«Бизнес» тарифинин баары</li><li>Барактар боюнча чектөөсүз</li><li>AI-издөөгө толук даярдоо</li><li>Telegram-канал + MAX боттору</li><li>SMM: ВК + Telegram</li><li>Сторис-үлгүлөр жана посттор</li><li>Чектөөсүз жүргүзүү</li><li>Дайындалган менеджер</li><li>Артыкчылыктуу колдоо 24/7</li></ul>
@@ -1039,9 +1047,9 @@ html.light .case{background:rgba(255,255,255,.85)}
 
 <footer class="ftr">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="../assets/logo.png" alt="" width="32" height="32" style="width:32px;height:32px"><b>в <i>сети</i></b></a>
+    <a class="brand" href="#top"><img src="../assets/logo_alpha.png" alt="" width="32" height="32" style="width:32px;height:32px"><b>в <i>сети</i></b></a>
     <span>Бизнесиңиз «в сети». Баары көрөт.</span>
-    <span>© 2026 «в сети» · site_vseti@mail.ru</span>
+    <span>2021-жылдан бери иштейбиз · © 2026 «в сети» · site_vseti@mail.ru</span>
     <span><a href="../oferta.html">Оферта</a> · <a href="../politika.html">Купуялык саясаты</a> · <a href="../rekvizity.html">Реквизиттер</a></span>
   </div>
 </footer>
@@ -1478,6 +1486,7 @@ glow(document.getElementById('faqHead'),'fw','fc',26);
 /* --- сравнение: галочки зажигаются при прокрутке --- */
 var ROWS=[
  ['Телефондо манжа менен чоңойтпой эле ыңгайлуу ачылат',0,1],
+ ['Telegram, MAX жана ВКонтактеде каналдарды ачабыз жана тууралайбыз',0,1],
  ['Сайтты толугу менен издөө жана AI-боттору көрөт',0,1],
  ['Нейрожелилер ким, кайда экениңизди жана эмне кылганыңызды түшүнөт',0,1],
  ['Алты тилде версиялары бар',0,1],
@@ -1550,14 +1559,18 @@ if(lf) lf.addEventListener('submit',function(e){
 });
 
 /* --- карусель телефонов: Telegram / MAX / ВБайланыше --- */
+var LOGO={
+ TG:'<svg viewBox="0 0 24 24" width="26" height="26" fill="#fff" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>',
+ VK:'<svg viewBox="0 0 24 24" width="26" height="26" fill="#fff" aria-hidden="true"><path d="m9.489.004.729-.003h3.564l.73.003.914.01.433.007.418.011.403.014.388.016.374.021.36.025.345.03.333.033c1.74.196 2.933.616 3.833 1.516.9.9 1.32 2.092 1.516 3.833l.034.333.029.346.025.36.02.373.025.588.012.41.013.644.009.915.004.98-.001 3.313-.003.73-.01.914-.007.433-.011.418-.014.403-.016.388-.021.374-.025.36-.03.345-.033.333c-.196 1.74-.616 2.933-1.516 3.833-.9.9-2.092 1.32-3.833 1.516l-.333.034-.346.029-.36.025-.373.02-.588.025-.41.012-.644.013-.915.009-.98.004-3.313-.001-.73-.003-.914-.01-.433-.007-.418-.011-.403-.014-.388-.016-.374-.021-.36-.025-.345-.03-.333-.033c-1.74-.196-2.933-.616-3.833-1.516-.9-.9-1.32-2.092-1.516-3.833l-.034-.333-.029-.346-.025-.36-.02-.373-.025-.588-.012-.41-.013-.644-.009-.915-.004-.98.001-3.313.003-.73.01-.914.007-.433.011-.418.014-.403.016-.388.021-.374.025-.36.03-.345.033-.333c.196-1.74.616-2.933 1.516-3.833.9-.9 2.092-1.32 3.833-1.516l.333-.034.346-.029.36-.025.373-.02.588-.025.41-.012.644-.013.915-.009ZM6.79 7.3H4.05c.13 6.24 3.25 9.99 8.72 9.99h.31v-3.57c2.01.2 3.53 1.67 4.14 3.57h2.84c-.78-2.84-2.83-4.41-4.11-5.01 1.28-.74 3.08-2.54 3.51-4.98h-2.58c-.56 1.98-2.22 3.78-3.8 3.95V7.3H10.5v6.92c-1.6-.4-3.62-2.34-3.71-6.92Z"/></svg>',
+ MAX:'<img src="../assets/icons/max.png" width="30" height="30" alt="" style="width:30px;height:30px;display:block">'};
 var CH=[{n:'Telegram',c:'#2aabee',k:'TG',r:['<b>Канал</b> — тартип боюнча посттор','<b>Чат-бот</b> — 24/7 жооп берет','<b>Төлөм</b> — ЮKassa жана СБП','Автопостинг жана таратуу']},
         {n:'MAX',c:'#84f4ea',k:'MAX',r:['<b>Канал</b> — бизнестин витринасы','<b>Чат-бот</b> — заказ кабыл алуу','<b>Төлөм</b> — ЮKassa жана СБП','Жазылуулар жана эскертүүлөр']},
-        {n:'ВБайланыше',c:'#ffd45e',k:'VK',r:['<b>Коомчулук</b> — контент жана акциялар','<b>Чат-бот</b> — жеке билдирүүлөрдөн өтүнмөлөр','<b>Төлөм</b> — ВК товарлары','Жазылуучуларга таратуу']}];
+        {n:'ВБайланыше',c:'#0077ff',k:'VK',r:['<b>Коомчулук</b> — контент жана акциялар','<b>Чат-бот</b> — жеке билдирүүлөрдөн өтүнмөлөр','<b>Төлөм</b> — ВК товарлары','Жазылуучуларга таратуу']}];
 var host=document.getElementById('carou'), dots=document.getElementById('carouDots');
 if(host&&dots){
   var els=CH.map(function(o){
     var ph=document.createElement('div');ph.className='phone';
-    ph.innerHTML='<div class="notch"></div><div class="scr"><div class="top"><div class="ic" style="background:'+o.c+'">'+o.k+'</div><div class="pn">'+o.n+'</div></div>'+
+    ph.innerHTML='<div class="notch"></div><div class="scr"><div class="top"><div class="ic'+(o.k==='MAX'?' plain':'')+'" style="background:'+(o.k==='MAX'?'transparent':o.c)+'">'+(LOGO[o.k]||o.k)+'</div><div class="pn">'+o.n+'</div></div>'+
       o.r.map(function(t){return '<div class="li"><i></i><span>'+t+'</span></div>';}).join('')+'</div>';
     host.appendChild(ph);return ph;});
   CH.forEach(function(_,i){var d=document.createElement('i');d.onclick=function(){cur=i;draw();};dots.appendChild(d);});

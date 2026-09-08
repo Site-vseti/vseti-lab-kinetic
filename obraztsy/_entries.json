@@ -397,18 +397,6 @@
   "stars": 42
  },
  {
-  "id": "bingo-agency",
-  "name": "Bingo (ThemeFisher)",
-  "genre": "Рекламное агентство",
-  "structure": "Агентство: несколько вариантов одностраничной и многостраничной вёрстки со слайдером и портфолио работ; HTML в theme/",
-  "zip": "https://github.com/themefisher/bingo-bootstrap/archive/refs/heads/main.zip",
-  "demo": null,
-  "license": "MIT",
-  "attribution": false,
-  "source": "https://github.com/themefisher/bingo-bootstrap",
-  "stars": 19
- },
- {
   "id": "educenter-education",
   "name": "Educenter (ThemeFisher)",
   "genre": "Образование (учебный центр)",
@@ -588,5 +576,95 @@
   "attribution": false,
   "source": "https://github.com/XevenTech/traveler-travel-agency-website",
   "stars": 3
+ },
+ {
+  "id": "our-elinarihter",
+  "name": "Элина Рихтер — певица",
+  "genre": "Личный сайт артиста",
+  "structure": "Тёмная афиша во весь экран, разделы перелистываются, музыка и контакты",
+  "live": "https://elinarihter.ru/",
+  "ours": true,
+  "license": "наша работа"
+ },
+ {
+  "id": "our-rinazolotareva",
+  "name": "Рина Золотарёва — психолог",
+  "genre": "Частная практика",
+  "structure": "Светлый сайт специалиста: услуги, цены, форма записи",
+  "live": "https://rinazolotareva.ru/",
+  "ours": true,
+  "license": "наша работа"
+ },
+ {
+  "id": "our-avatar-park-map",
+  "name": "Карта парка «Аватар»",
+  "genre": "Карта-путеводитель",
+  "structure": "Интерактивная карта с точками и маршрутами",
+  "live": "https://kristall2002-art.github.io/avatar-park-map/",
+  "ours": true,
+  "license": "наша работа"
+ },
+ {
+  "id": "our-sonnik",
+  "name": "Сонник",
+  "genre": "Справочник / контент-проект",
+  "structure": "Поиск по толкованиям, карточки статей",
+  "live": "https://kristall2002-art.github.io/sonnik-web/",
+  "ours": true,
+  "license": "наша работа"
+ },
+ {
+  "id": "our-kgiop-spravki",
+  "name": "Справки КГИОП",
+  "genre": "Услуга с онлайн-заказом",
+  "structure": "Одностраничник услуги: что входит, сроки, цена, заказ через бота",
+  "live": "https://kristall2002-art.github.io/kgiop-spravki/",
+  "ours": true,
+  "license": "наша работа"
+ },
+ {
+  "id": "our-egrn-plan",
+  "name": "Планы ЕГРН",
+  "genre": "Услуга с онлайн-заказом",
+  "structure": "Одностраничник услуги с расчётом и оплатой",
+  "live": "https://kristall2002-art.github.io/egrn-plan-spb/",
+  "ours": true,
+  "license": "наша работа"
+ },
+ {
+  "id": "our-keo-insolyacia",
+  "name": "КЕО и инсоляция",
+  "genre": "Инженерная услуга",
+  "structure": "Сайт расчётов: что считаем, для чего нужно, заявка",
+  "live": "https://kristall2002-art.github.io/keo-insolyacia-site/",
+  "ours": true,
+  "license": "наша работа"
+ },
+ {
+  "id": "our-gotovyplan",
+  "name": "Готовый план",
+  "genre": "Услуга с онлайн-заказом",
+  "structure": "Витрина готовых планов с примерами",
+  "live": "https://kristall2002-art.github.io/gotovyplan/",
+  "ours": true,
+  "license": "наша работа"
+ },
+ {
+  "id": "our-krestetskaya",
+  "name": "Курс «Крестецкая строчка»",
+  "genre": "Онлайн-курс",
+  "structure": "Продающая страница курса: программа, автор, запись",
+  "live": "https://kristall2002-art.github.io/krestetskaya-strochka-course/",
+  "ours": true,
+  "license": "наша работа"
+ },
+ {
+  "id": "our-vseti",
+  "name": "Веб-агентство «в сети»",
+  "genre": "Сайт агентства",
+  "structure": "Разделы перелистываются, шесть языковых версий, приём заявок",
+  "live": "https://vseti-site.ru/",
+  "ours": true,
+  "license": "наша работа"
  }
 ]

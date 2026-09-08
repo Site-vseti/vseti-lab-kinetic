@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinique vétérinaire de Sauvabelin — Lausanne</title>
+<meta name="description" content="Clinique vétérinaire de proximité à Lausanne. Consultations chiens, chats, NAC, oiseaux et reptiles. Chirurgie, imagerie, laboratoire. Urgences 24h/24.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2334506B'/%3E%3Cg fill='%23F5F3EF'%3E%3Ccircle cx='11' cy='11.5' r='2.6'/%3E%3Ccircle cx='21' cy='11.5' r='2.6'/%3E%3Cpath d='M16 15c4 0 6.5 2.6 6.5 5.4S20 24.5 16 24.5 9.5 23.2 9.5 20.4 12 15 16 15z'/%3E%3C/g%3E%3C/svg%3E">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<!-- ══ UTILITY BAR ══ -->
+<div class="utilbar">
+  <div class="shell utilbar__in">
+    <p class="utilbar__item">Route du Pavement 61 · 1018 Lausanne</p>
+    <p class="utilbar__item utilbar__item--hide"><a href="tel:+41216473280">+41 21 647 32 80</a></p>
+    <p class="utilbar__item utilbar__spacer" id="statut-bandeau" data-statut-court>
+      <span class="pastille" aria-hidden="true"></span><span data-statut-texte>Horaires</span>
+    </p>
+  </div>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header class="entete" id="entete">
+  <div class="shell entete__in">
+    <a class="marque" href="#contenu" aria-label="Clinique vétérinaire de Sauvabelin, accueil">
+      <svg class="marque__signe" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="7"/>
+        <g class="marque__pattes">
+          <circle cx="10.4" cy="11" r="2.5"/><circle cx="21.6" cy="11" r="2.5"/>
+          <path d="M16 14.6c4.1 0 6.8 2.7 6.8 5.6s-2.7 4.3-6.8 4.3-6.8-1.4-6.8-4.3 2.7-5.6 6.8-5.6z"/>
+        </g>
+      </svg>
+      <span class="marque__mots">
+        <strong>Sauvabelin</strong>
+        <em>Clinique vétérinaire · Lausanne</em>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#clinique">La clinique</a>
+      <a href="#consultations">Consultations</a>
+      <a href="#equipe">Équipe</a>
+      <a href="#pratique">Infos pratiques</a>
+      <a href="#urgences">Urgences</a>
+    </nav>
+
+    <div class="entete__actions">
+      <a class="btn btn--plein" href="#rdv">Prendre rendez-vous</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="contenu">
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="shell hero__grille">
+
+    <div class="hero__texte">
+      <p class="etiquette anim" style="--d:0ms">Consultations sur rendez-vous — depuis 2007</p>
+      <h1 class="hero__titre">
+        <span class="anim" style="--d:60ms">Une médecine</span>
+        <span class="anim" style="--d:130ms">vétérinaire calme,</span>
+        <span class="anim" style="--d:200ms">précise et <em>de quartier</em>.</span>
+      </h1>
+      <p class="hero__chapo anim" style="--d:280ms">
+        Du chiot au lapin nain, nous suivons vos animaux au même endroit, avec la même
+        équipe, sur toute leur vie. Bloc opératoire, imagerie et laboratoire sur place,
+        à quatre minutes de l'arrêt Sallaz.
+      </p>
+      <div class="hero__boutons anim" style="--d:350ms">
+        <a class="btn btn--plein btn--lg" href="#rdv">Prendre rendez-vous</a>
+        <a class="btn btn--fil btn--lg" href="#consultations">Voir les consultations</a>
+      </div>
+    </div>
+
+    <!-- SIGNATURE 1: clinic status, computed live (Zurich time) -->
+    <aside class="etat anim" style="--d:200ms" aria-labelledby="etat-titre">
+      <div class="etat__haut">
+        <h2 class="etat__titre" id="etat-titre">État de la clinique</h2>
+        <time class="etat__horloge" id="horloge" datetime="">--:--</time>
+      </div>
+
+      <p class="etat__statut" id="statut-principal">
+        <span class="pastille pastille--lg" aria-hidden="true"></span>
+        <span class="etat__mot" data-statut-texte>Chargement…</span>
+      </p>
+      <p class="etat__detail" data-statut-detail>Heure de Lausanne</p>
+
+      <dl class="etat__liste">
+        <div class="etat__ligne">
+          <dt>Aujourd'hui</dt>
+          <dd data-horaire-jour>—</dd>
+        </div>
+        <div class="etat__ligne">
+          <dt>Prochain créneau libre</dt>
+          <dd data-prochain-creneau>—</dd>
+        </div>
+        <div class="etat__ligne">
+          <dt>Salle d'attente</dt>
+          <dd>2 patients</dd>
+        </div>
+      </dl>
+
+      <a class="etat__urgence" href="tel:+41216473299">
+        <span class="etat__urgence-lib">Urgences 24h/24</span>
+        <span class="etat__urgence-num">+41 21 647 32 99</span>
+      </a>
+    </aside>
+  </div>
+
+  <div class="shell">
+    <ul class="chiffres">
+      <li><b>3 100</b><span>patients suivis</span></li>
+      <li><b>18 ans</b><span>au même carrefour</span></li>
+      <li><b>4 + 3</b><span>vétérinaires et assistantes ASA</span></li>
+      <li><b>FR DE EN IT</b><span>langues parlées au comptoir</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══ EMERGENCY BAND ══ -->
+<section class="alerte" id="urgences">
+  <div class="shell alerte__in">
+    <p class="alerte__titre">Votre animal va mal maintenant&nbsp;?</p>
+    <p class="alerte__texte">
+      Appelez avant de venir. Nous préparons la salle d'urgence pendant votre trajet.
+      En dehors des heures d'ouverture, la centrale vétérinaire vaudoise vous met en
+      relation avec le vétérinaire de garde.
+    </p>
+    <a class="btn btn--encre btn--lg" href="tel:+41216473299">Appeler le 021 647 32 99</a>
+  </div>
+</section>
+
+<!-- ══ THE CLINIC ══ -->
+<section class="section section--blanc" id="clinique">
+  <div class="shell">
+    <div class="tete">
+      <p class="etiquette">La clinique</p>
+      <h2 class="tete__titre">Tout se fait sur place, dans la même journée.</h2>
+    </div>
+
+    <div class="clinique__grille">
+      <div class="clinique__prose">
+        <p class="lead">
+          Une radio le matin, l'analyse sanguine à midi, le diagnostic avant que vous
+          rentriez du travail. Ne pas déplacer un animal inquiet d'un cabinet à l'autre,
+          c'est la première chose que nous lui devons.
+        </p>
+        <p>
+          Nos deux salles de consultation sont séparées&nbsp;: chiens d'un côté, chats et
+          petits animaux de l'autre, avec leur propre entrée et leur propre salle d'attente.
+          Les chats arrivent moins stressés, et cela se voit sur les constantes.
+        </p>
+        <p>
+          Nous travaillons en partenariat avec le service de garde vaudois et adressons
+          au CHUV vétérinaire de Bern les cas qui demandent un scanner ou une neurochirurgie.
+        </p>
+        <a class="lien-fleche" href="#equipe">Rencontrer l'équipe</a>
+      </div>
+
+      <ul class="equipements">
+        <li>
+          <h3>Imagerie</h3>
+          <p>Radiologie numérique et échographie abdominale et cardiaque, lecture immédiate.</p>
+        </li>
+        <li>
+          <h3>Laboratoire</h3>
+          <p>Hématologie, biochimie et analyse d'urine rendues en moins de 30 minutes.</p>
+        </li>
+        <li>
+          <h3>Bloc opératoire</h3>
+          <p>Chirurgie des tissus mous et orthopédie courante, anesthésie monitorée en continu.</p>
+        </li>
+        <li>
+          <h3>Dentisterie</h3>
+          <p>Détartrage par ultrasons, extractions et radiographie dentaire intra-orale.</p>
+        </li>
+        <li>
+          <h3>Hospitalisation</h3>
+          <p>Six box chauffés, unité féline isolée, perfusion et oxygénothérapie.</p>
+        </li>
+        <li>
+          <h3>Pharmacie</h3>
+          <p>Traitements délivrés directement au comptoir, alimentation thérapeutique en stock.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SIGNATURE 2: CONSULTATIONS BY SPECIES ══ -->
+<section class="section section--fonce" id="consultations">
+  <div class="shell">
+    <div class="tete tete--clair">
+      <p class="etiquette">Consultations</p>
+      <h2 class="tete__titre">Choisissez l'espèce. Le reste s'adapte.</h2>
+      <p class="tete__chapo">
+        Un lapin ne se soigne pas comme un labrador. Nos protocoles, nos tarifs et nos
+        durées de consultation sont propres à chaque espèce&nbsp;: sélectionnez la vôtre.
+      </p>
+    </div>
+
+    <div class="dossier">
+      <div class="dossier__onglets" role="tablist" aria-label="Espèce du patient">
+        <button class="onglet" role="tab" aria-selected="true"  aria-controls="fiche-chien"   id="tab-chien"   data-espece="chien">
+          <span class="onglet__nom">Chiens</span><span class="onglet__note">14 prestations</span>
+        </button>
+        <button class="onglet" role="tab" aria-selected="false" aria-controls="fiche-chat"    id="tab-chat"    data-espece="chat" tabindex="-1">
+          <span class="onglet__nom">Chats</span><span class="onglet__note">entrée séparée</span>
+        </button>
+        <button class="onglet" role="tab" aria-selected="false" aria-controls="fiche-nac"     id="tab-nac"     data-espece="nac" tabindex="-1">
+          <span class="onglet__nom">NAC &amp; rongeurs</span><span class="onglet__note">Dre Mermoud</span>
+        </button>
+        <button class="onglet" role="tab" aria-selected="false" aria-controls="fiche-exotique" id="tab-exotique" data-espece="exotique" tabindex="-1">
+          <span class="onglet__nom">Oiseaux &amp; reptiles</span><span class="onglet__note">sur demande</span>
+        </button>
+      </div>
+
+      <!-- DOGS -->
+      <div class="fiche" id="fiche-chien" role="tabpanel" aria-labelledby="tab-chien">
+        <p class="fiche__entete"><span>Consultation type&nbsp;: 25 min</span><span>Entrée côté route du Pavement</span></p>
+        <ul class="prestations">
+          <li><h3>Consultation générale</h3><p>Examen complet, poids, dents, cœur, articulations. Compte rendu écrit remis le jour même.</p><span class="prix">dès CHF 95</span></li>
+          <li><h3>Vaccination &amp; rappels</h3><p>Protocole adapté au mode de vie, carnet suisse et passeport européen tenus à jour.</p><span class="prix">dès CHF 78</span></li>
+          <li><h3>Puce &amp; enregistrement AMICUS</h3><p>Identification obligatoire et inscription à la banque de données fédérale.</p><span class="prix">CHF 65</span></li>
+          <li><h3>Stérilisation &amp; castration</h3><p>Chirurgie de la journée, retour à la maison le soir, contrôle à dix jours inclus.</p><span class="prix">dès CHF 420</span></li>
+          <li><h3>Boiteries &amp; orthopédie</h3><p>Examen locomoteur, radiographies numériques, prise en charge de la dysplasie.</p><span class="prix">dès CHF 180</span></li>
+          <li><h3>Suivi du chien âgé</h3><p>Bilan sanguin annuel, tension, gestion de l'arthrose et de la douleur chronique.</p><span class="prix">dès CHF 210</span></li>
+        </ul>
+      </div>
+
+      <!-- CATS -->
+      <div class="fiche" id="fiche-chat" role="tabpanel" aria-labelledby="tab-chat" hidden>
+        <p class="fiche__entete"><span>Consultation type&nbsp;: 30 min</span><span>Salle d'attente féline, sans chiens</span></p>
+        <ul class="prestations">
+          <li><h3>Consultation féline</h3><p>Manipulation « low stress », phéromones dans la salle, examen sans contention forcée.</p><span class="prix">dès CHF 95</span></li>
+          <li><h3>Vaccination typhus &amp; coryza</h3><p>Protocole allégé pour les chats d'appartement, leucose pour ceux qui sortent.</p><span class="prix">dès CHF 78</span></li>
+          <li><h3>Castration &amp; stérilisation</h3><p>Anesthésie courte, monitoring continu, sortie en fin d'après-midi.</p><span class="prix">dès CHF 180</span></li>
+          <li><h3>Bilan rénal</h3><p>Dépistage de l'insuffisance rénale chronique dès 7 ans&nbsp;: sang, urine, tension.</p><span class="prix">CHF 240</span></li>
+          <li><h3>Détartrage &amp; dents</h3><p>Ultrasons, radiographie dentaire, extraction des résorptions douloureuses.</p><span class="prix">dès CHF 340</span></li>
+          <li><h3>Troubles du comportement</h3><p>Malpropreté, marquage, cohabitation difficile&nbsp;: consultation longue à domicile possible.</p><span class="prix">CHF 160</span></li>
+        </ul>
+      </div>
+
+      <!-- SMALL PETS -->
+      <div class="fiche" id="fiche-nac" role="tabpanel" aria-labelledby="tab-nac" hidden>
+        <p class="fiche__entete"><span>Consultation type&nbsp;: 30 min</span><span>Lundi, mercredi et vendredi</span></p>
+        <ul class="prestations">
+          <li><h3>Lapins &amp; cochons d'Inde</h3><p>Contrôle dentaire à l'otoscope, transit digestif, ration alimentaire revue ensemble.</p><span class="prix">dès CHF 85</span></li>
+          <li><h3>Limage des dents</h3><p>Malocclusion et pousse continue&nbsp;: limage sous anesthésie gazeuse brève.</p><span class="prix">dès CHF 190</span></li>
+          <li><h3>Furets</h3><p>Vaccination contre la maladie de Carré, dépistage des maladies surrénaliennes.</p><span class="prix">dès CHF 110</span></li>
+          <li><h3>Rats, souris, hamsters</h3><p>Masses cutanées, troubles respiratoires, chirurgie des petites tumeurs mammaires.</p><span class="prix">dès CHF 85</span></li>
+          <li><h3>Stérilisation lapine</h3><p>Prévention des tumeurs utérines, très fréquentes après quatre ans.</p><span class="prix">dès CHF 320</span></li>
+          <li><h3>Conseil d'installation</h3><p>Cage, litière, température, cohabitation&nbsp;: avant l'adoption, pas après.</p><span class="prix">CHF 60</span></li>
+        </ul>
+      </div>
+
+      <!-- EXOTICS -->
+      <div class="fiche" id="fiche-exotique" role="tabpanel" aria-labelledby="tab-exotique" hidden>
+        <p class="fiche__entete"><span>Consultation type&nbsp;: 40 min</span><span>Uniquement sur rendez-vous téléphonique</span></p>
+        <ul class="prestations">
+          <li><h3>Perruches &amp; perroquets</h3><p>Plumage, bec, ongles, sexage ADN et bilan de la ration en graines.</p><span class="prix">dès CHF 105</span></li>
+          <li><h3>Tortues terrestres</h3><p>Sortie d'hibernation, carapace, dépistage des carences en calcium.</p><span class="prix">dès CHF 105</span></li>
+          <li><h3>Serpents &amp; lézards</h3><p>Mues difficiles, refus alimentaire, contrôle du terrarium point par point.</p><span class="prix">dès CHF 120</span></li>
+          <li><h3>Radiographie exotique</h3><p>Cliché sous contention douce, adapté aux très petits gabarits.</p><span class="prix">dès CHF 140</span></li>
+          <li><h3>Certificat CITES</h3><p>Documents d'espèce protégée et attestation sanitaire pour les déplacements.</p><span class="prix">CHF 90</span></li>
+          <li><h3>Second avis</h3><p>Relecture d'un dossier ouvert ailleurs, avec ou sans l'animal.</p><span class="prix">CHF 130</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM ══ -->
+<section class="section" id="equipe">
+  <div class="shell">
+    <div class="tete">
+      <p class="etiquette">Équipe</p>
+      <h2 class="tete__titre">Sept personnes, et vous verrez toujours la même.</h2>
+      <p class="tete__chapo">
+        Chaque animal est attribué à un vétérinaire référent. Vous pouvez en changer
+        quand vous voulez&nbsp;; simplement, personne ne le fera à votre place.
+      </p>
+    </div>
+
+    <ul class="equipe">
+      <li class="soignant">
+        <figure class="portrait">
+          <img src="assets/equipe/baumgartner.jpg" alt="" width="760" height="950" loading="lazy" decoding="async">
+          <figcaption class="portrait__mono" aria-hidden="true">CB</figcaption>
+        </figure>
+        <h3>Dre méd. vét. Camille Baumgartner</h3>
+        <p class="soignant__role">Directrice · Chirurgie des tissus mous</p>
+        <p class="soignant__bio">Diplômée de Berne, dix ans au service de chirurgie de Zurich avant d'ouvrir ici.</p>
+        <p class="soignant__meta">FR · DE · EN</p>
+      </li>
+      <li class="soignant">
+        <figure class="portrait">
+          <img src="assets/equipe/reymond.jpg" alt="" width="760" height="950" loading="lazy" decoding="async">
+          <figcaption class="portrait__mono" aria-hidden="true">JR</figcaption>
+        </figure>
+        <h3>Dr méd. vét. Julien Reymond</h3>
+        <p class="soignant__role">Médecine interne · Imagerie</p>
+        <p class="soignant__bio">Échographie abdominale et cardiologie. Suit les maladies chroniques du chat âgé.</p>
+        <p class="soignant__meta">FR · EN</p>
+      </li>
+      <li class="soignant">
+        <figure class="portrait">
+          <img src="assets/equipe/mermoud.jpg" alt="" width="760" height="950" loading="lazy" decoding="async">
+          <figcaption class="portrait__mono" aria-hidden="true">AM</figcaption>
+        </figure>
+        <h3>Dre méd. vét. Alix Mermoud</h3>
+        <p class="soignant__role">NAC · Oiseaux et reptiles</p>
+        <p class="soignant__bio">Certifiée en médecine des animaux exotiques, consulte aussi pour le zoo de Servion.</p>
+        <p class="soignant__meta">FR · EN · IT</p>
+      </li>
+      <li class="soignant">
+        <figure class="portrait">
+          <img src="assets/equipe/cavalli.jpg" alt="" width="760" height="950" loading="lazy" decoding="async">
+          <figcaption class="portrait__mono" aria-hidden="true">MC</figcaption>
+        </figure>
+        <h3>Dr méd. vét. Marco Cavalli</h3>
+        <p class="soignant__role">Dentisterie · Anesthésie</p>
+        <p class="soignant__bio">Prend en charge les protocoles antidouleur et les patients à risque cardiaque.</p>
+        <p class="soignant__meta">FR · IT · DE</p>
+      </li>
+      <li class="soignant">
+        <figure class="portrait">
+          <img src="assets/equipe/zbinden.jpg" alt="" width="760" height="950" loading="lazy" decoding="async">
+          <figcaption class="portrait__mono" aria-hidden="true">LZ</figcaption>
+        </figure>
+        <h3>Léa Zbinden</h3>
+        <p class="soignant__role">Assistante en médecine vétérinaire ASA</p>
+        <p class="soignant__bio">Prises de sang, hospitalisation, et la personne qui rassure les chiens à l'accueil.</p>
+        <p class="soignant__meta">FR · DE</p>
+      </li>
+      <li class="soignant">
+        <figure class="portrait">
+          <img src="assets/equipe/perrin.jpg" alt="" width="760" height="950" loading="lazy" decoding="async">
+          <figcaption class="portrait__mono" aria-hidden="true">NP</figcaption>
+        </figure>
+        <h3>Nadia Perrin</h3>
+        <p class="soignant__role">Réception · Coordination des urgences</p>
+        <p class="soignant__bio">Trie les appels, ouvre les créneaux d'urgence et vous rappelle après une opération.</p>
+        <p class="soignant__meta">FR · EN · DE</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══ APPOINTMENTS ══ -->
+<section class="section section--papier" id="rdv">
+  <div class="shell rdv">
+    <div class="rdv__intro">
+      <p class="etiquette">Rendez-vous</p>
+      <h2 class="tete__titre">Demandez un créneau.</h2>
+      <p class="lead">
+        Nous confirmons par téléphone dans les deux heures ouvrables. Pour une urgence,
+        n'utilisez pas ce formulaire&nbsp;: appelez.
+      </p>
+      <ul class="rdv__points">
+        <li>Premier rendez-vous&nbsp;: prévoyez le carnet de vaccination et l'ancien dossier.</li>
+        <li>Chats&nbsp;: caisse de transport fermée, couverte d'un linge.</li>
+        <li>Paiement sur place en TWINT, carte ou facture à 30 jours.</li>
+      </ul>
+      <a class="lien-fleche" href="tel:+41216473280">Ou appelez le 021 647 32 80</a>
+    </div>
+
+    <form class="formulaire" id="formulaire" novalidate>
+      <div class="champ">
+        <label for="f-nom">Votre nom</label>
+        <input id="f-nom" name="nom" type="text" autocomplete="name" required placeholder="Marie Rochat">
+      </div>
+      <div class="champ">
+        <label for="f-tel">Téléphone</label>
+        <input id="f-tel" name="tel" type="tel" autocomplete="tel" required placeholder="079 000 00 00">
+      </div>
+      <div class="champ">
+        <label for="f-animal">Nom de l'animal</label>
+        <input id="f-animal" name="animal" type="text" placeholder="Nougat">
+      </div>
+      <div class="champ">
+        <label for="f-espece">Espèce</label>
+        <select id="f-espece" name="espece">
+          <option>Chien</option><option>Chat</option>
+          <option>Lapin ou rongeur</option><option>Furet</option>
+          <option>Oiseau</option><option>Reptile</option>
+        </select>
+      </div>
+      <div class="champ">
+        <label for="f-date">Date souhaitée</label>
+        <input id="f-date" name="date" type="date">
+      </div>
+      <div class="champ">
+        <label for="f-moment">Moment</label>
+        <select id="f-moment" name="moment">
+          <option>Matin (08:00 – 12:00)</option>
+          <option>Après-midi (13:30 – 18:30)</option>
+          <option>Peu importe</option>
+        </select>
+      </div>
+      <div class="champ champ--large">
+        <label for="f-motif">Motif de la visite</label>
+        <textarea id="f-motif" name="motif" rows="4" placeholder="Boite de la patte arrière droite depuis dimanche, mange normalement."></textarea>
+      </div>
+      <div class="champ champ--large formulaire__pied">
+        <button class="btn btn--plein btn--lg" type="submit">Envoyer la demande</button>
+        <p class="formulaire__note" id="formulaire-note" role="status">Réponse par téléphone sous 2 h ouvrables.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ══ PRACTICAL INFO ══ -->
+<section class="section" id="pratique">
+  <div class="shell">
+    <div class="tete">
+      <p class="etiquette">Infos pratiques</p>
+      <h2 class="tete__titre">Venir à la clinique.</h2>
+    </div>
+
+    <div class="pratique">
+      <div class="carte-info">
+        <h3>Horaires d'ouverture</h3>
+        <table class="horaires" data-horaires>
+          <tbody>
+            <tr data-jour="1"><th scope="row">Lundi</th><td>08:00 – 12:00 · 13:30 – 18:30</td></tr>
+            <tr data-jour="2"><th scope="row">Mardi</th><td>08:00 – 12:00 · 13:30 – 18:30</td></tr>
+            <tr data-jour="3"><th scope="row">Mercredi</th><td>08:00 – 12:00 · 13:30 – 18:30</td></tr>
+            <tr data-jour="4"><th scope="row">Jeudi</th><td>08:00 – 12:00 · 13:30 – 20:00</td></tr>
+            <tr data-jour="5"><th scope="row">Vendredi</th><td>08:00 – 12:00 · 13:30 – 18:30</td></tr>
+            <tr data-jour="6"><th scope="row">Samedi</th><td>09:00 – 13:00</td></tr>
+            <tr data-jour="0"><th scope="row">Dimanche</th><td>Fermé · garde vétérinaire</td></tr>
+          </tbody>
+        </table>
+        <p class="carte-info__note">Le jeudi soir est réservé aux personnes qui travaillent en dehors de Lausanne.</p>
+      </div>
+
+      <div class="carte-info">
+        <h3>Accès</h3>
+        <ul class="acces">
+          <li><span>Métro</span><p>m2, arrêt Sallaz, puis 4 minutes à pied vers le nord.</p></li>
+          <li><span>Bus</span><p>Lignes 8 et 16, arrêt Pavement, devant l'entrée.</p></li>
+          <li><span>Voiture</span><p>Six places visiteurs derrière le bâtiment, deux réservées aux urgences.</p></li>
+          <li><span>Accessibilité</span><p>Plain-pied, sans marche, portes automatiques et table élévatrice.</p></li>
+        </ul>
+        <address class="adresse">
+          Clinique vétérinaire de Sauvabelin<br>
+          Route du Pavement 61<br>
+          1018 Lausanne
+        </address>
+      </div>
+
+      <div class="carte-info carte-info--accent">
+        <h3>Ce que ça coûte</h3>
+        <p>
+          Nous affichons nos tarifs de départ à côté de chaque prestation. Avant toute
+          intervention chirurgicale, vous recevez un devis écrit&nbsp;; s'il doit être
+          dépassé, nous vous appelons d'abord.
+        </p>
+        <p>
+          Les assurances animales suisses courantes sont acceptées. Nous remplissons
+          les formulaires de remboursement au comptoir, sans frais.
+        </p>
+        <a class="lien-fleche lien-fleche--encre" href="#rdv">Demander un devis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="section section--serre">
+  <div class="shell">
+    <div class="tete">
+      <p class="etiquette">Ce qu'on nous dit</p>
+    </div>
+    <ul class="avis">
+      <li>
+        <blockquote>« Ma chatte de seize ans s'est laissé examiner sans grogner. C'est la première fois en huit ans de vétérinaires. »</blockquote>
+        <p class="avis__qui">Sandrine M. · Chailly</p>
+      </li>
+      <li>
+        <blockquote>« Opéré un mardi matin, rentré le soir, appelé le lendemain pour prendre des nouvelles. Rien à ajouter. »</blockquote>
+        <p class="avis__qui">Thomas B. · Épalinges</p>
+      </li>
+      <li>
+        <blockquote>« Le seul endroit du canton où on ne m'a pas regardée bizarrement en arrivant avec un rat. »</blockquote>
+        <p class="avis__qui">Inès D. · Lausanne-Flon</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer class="pied">
+  <div class="shell">
+    <div class="pied__haut">
+      <div class="pied__marque">
+        <svg class="marque__signe marque__signe--pied" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="7"/>
+          <g class="marque__pattes">
+            <circle cx="10.4" cy="11" r="2.5"/><circle cx="21.6" cy="11" r="2.5"/>
+            <path d="M16 14.6c4.1 0 6.8 2.7 6.8 5.6s-2.7 4.3-6.8 4.3-6.8-1.4-6.8-4.3 2.7-5.6 6.8-5.6z"/>
+          </g>
+        </svg>
+        <p class="pied__phrase">
+          Clinique vétérinaire de proximité au-dessus de Lausanne,
+          ouverte depuis 2007 aux chiens, chats, NAC, oiseaux et reptiles.
+        </p>
+        <a class="btn btn--fil-clair" href="#rdv">Prendre rendez-vous</a>
+      </div>
+
+      <nav class="pied__cols" aria-label="Pied de page">
+        <div>
+          <h3>Clinique</h3>
+          <ul>
+            <li><a href="#clinique">Notre approche</a></li>
+            <li><a href="#equipe">L'équipe</a></li>
+            <li><a href="#pratique">Horaires et accès</a></li>
+            <li><a href="#pratique">Tarifs et assurances</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Consultations</h3>
+          <ul>
+            <li><a href="#consultations">Chiens</a></li>
+            <li><a href="#consultations">Chats</a></li>
+            <li><a href="#consultations">NAC et rongeurs</a></li>
+            <li><a href="#consultations">Oiseaux et reptiles</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="tel:+41216473280">+41 21 647 32 80</a></li>
+            <li><a href="tel:+41216473299">Urgences 24h/24</a></li>
+            <li><a href="mailto:accueil@vet-sauvabelin.ch">accueil@vet-sauvabelin.ch</a></li>
+            <li><a href="#pratique">Route du Pavement 61, 1018 Lausanne</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="pied__bas">
+      <p class="pied__copy">© 2026 Clinique vétérinaire de Sauvabelin · Membre de la Société des vétérinaires suisses</p>
+      <p class="pied__liens">
+        <a href="#">Mentions légales</a>
+        <a href="#">Protection des données</a>
+      </p>
+      <p class="pied__credit">Designed by <a href="https://studio-alpix.com/" target="_blank" rel="noopener">Studio Alpix</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

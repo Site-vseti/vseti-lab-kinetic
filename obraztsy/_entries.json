@@ -954,6 +954,71 @@
   "source": "https://github.com/teguhrianto/Groceries-Organic-Store"
  },
  {
+  "id": "fx-vet-clinic",
+  "name": "Clinique vétérinaire de Sauvabelin (Studio Alpix)",
+  "genre": "Ветеринарная клиника",
+  "structure": "Одностраничный сайт клиники: шапка с адресом и телефоном, блоки о клинике, услугах (собаки/кошки/НАЖ/птицы/рептилии), команде врачей с фото, практической информации и форма записи на приём",
+  "zip": "https://github.com/AlexIA-24/Template-Veterinaire-CSS/archive/refs/heads/main.zip",
+  "license": "MIT",
+  "attribution": false,
+  "source": "https://github.com/AlexIA-24/Template-Veterinaire-CSS"
+ },
+ {
+  "id": "fx-easybank",
+  "name": "Easybank Landing Page (Younes Benziane)",
+  "genre": "Банк / финансовый консультант",
+  "structure": "Одностраничный лендинг цифрового банка: герой с мокапом приложения, блок преимуществ, форма подписки на рассылку и подвал с соцсетями",
+  "zip": "https://github.com/Jones-6199/easy-bank-landing-page/archive/refs/heads/main.zip",
+  "demo": "https://jones-6199.github.io/easy-bank-landing-page/",
+  "license": "MIT",
+  "attribution": false,
+  "source": "https://github.com/Jones-6199/easy-bank-landing-page"
+ },
+ {
+  "id": "fx-travel-guide-bali",
+  "name": "Travel Guide Flexbox (parisikosto)",
+  "genre": "Туристический гид по городу/региону",
+  "structure": "Одностраничный путеводитель по Бали: герой-баннер, галерея рекомендуемых мест, разделы снаряжения и отзывов, форма связи",
+  "zip": "https://github.com/parisikosto/travel-guide-flexbox_one-page-template/archive/refs/heads/main.zip",
+  "demo": "https://parisikosto.github.io/travel-guide-flexbox_one-page-template/",
+  "license": "MIT",
+  "attribution": false,
+  "source": "https://github.com/parisikosto/travel-guide-flexbox_one-page-template"
+ },
+ {
+  "id": "fx-patisserie-delice",
+  "name": "Pâtisserie Délice (Yasser729)",
+  "genre": "Пекарня-кондитерская",
+  "structure": "Одностраничный сайт кондитерской: шапка-баннер, каталог десертов карточками с фото и ценами, отдельная страница истории/акций (Historique.html)",
+  "zip": "https://github.com/Yasser729/patisserie-site/archive/refs/heads/main.zip",
+  "demo": "https://yasser729.github.io/patisserie-site/",
+  "license": "MIT",
+  "attribution": false,
+  "source": "https://github.com/Yasser729/patisserie-site"
+ },
+ {
+  "id": "fx-barber-black",
+  "name": "Barber Black (Jefferson Luna)",
+  "genre": "Барбершоп",
+  "structure": "Одностраничный сайт барбершопа: герой-текст, таблица цен на стрижку/бороду, галерея работ, отзывы клиентов и форма онлайн-записи с выбором даты",
+  "zip": "https://github.com/JeffersonLuna/projeto-barbearia/archive/refs/heads/main.zip",
+  "demo": "https://jeffersonluna.github.io/projeto-barbearia/",
+  "license": "MIT",
+  "attribution": false,
+  "source": "https://github.com/JeffersonLuna/projeto-barbearia"
+ },
+ {
+  "id": "fx-gratidao-moveis",
+  "name": "Gratidão Móveis (Julio Sabino)",
+  "genre": "Мебельный салон",
+  "structure": "Многостраничный сайт мебельного магазина: главная с акциями недели, разделы по комнатам (гостиная, спальня, кухня, шкафы), отзывы клиентов и карта на странице контактов",
+  "zip": "https://github.com/Julio-Sabino25/Loja-de-moveis/archive/refs/heads/main.zip",
+  "demo": "https://julio-sabino25.github.io/Loja-de-moveis/",
+  "license": "MIT",
+  "attribution": false,
+  "source": "https://github.com/Julio-Sabino25/Loja-de-moveis"
+ },
+ {
   "id": "our-elinarihter",
   "name": "Элина Рихтер — певица",
   "genre": "Личный сайт артиста",

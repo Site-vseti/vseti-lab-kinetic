@@ -1,0 +1,335 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+:root{
+    --destaque: #0D0D0D;
+    --destaque-claro: #292929dc;
+    --texto: #F5F5F5;
+    --dourado: #C9A227;
+
+}
+html {
+    scroll-behavior: smooth;
+}
+main {
+    background-color: var(--destaque-claro);
+    min-height: 100vh;
+    padding-top: 150px;
+    box-shadow: 2px 4px 7px black;
+}
+header {
+    background-color: #272727;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 100%;
+    flex-shrink: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+header ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin-right: 27px;
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+.logo {
+    background-image: url(imagens/barber-black-logo-texto-branco.png);
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    width: 150px;
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+header a {
+    text-decoration: none;
+    color: var(--texto);
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.5s, color 0.7s;
+    padding: 6px;
+    border-radius: 7px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+header a:hover {
+    color: var(--dourado);
+    font-size: 18px;
+}
+.img01 {
+    background-image: url(imagens/VISS-Babearia-Visagista-1400x933.jpg);
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img01 p {
+    color: var(--dourado);
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    font-size: 18px;
+    width: 60%;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.5s;
+    margin-bottom: 20px;
+}
+.img01 .logohero {
+    background-image: url(imagens/barber-black-logo-texto-branco.png);
+    background-size: cover;
+    height: 100px;
+    width: 110px;
+    margin-right: 14px;
+}
+.img01 p:hover {
+    font-size: 20px;
+    width: 70%;
+    cursor: pointer;
+}
+.servicos {
+    color: var(--texto);
+    background-color: var(--destaque-claro);
+}
+.servicos h2 {
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+    color: var(--dourado);
+    text-shadow: 1px 1px 4px black;
+}
+
+.servicos ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.servicos li {
+    font-family: "Rubik", sans-serif;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+    background-color: #0D0D0D;
+    width: 80%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.4s, color 0.5s;
+    cursor: pointer;
+}
+.servicos  li:hover {
+    color: var(--destaque-claro);
+    background-color: #836d23;
+    font-weight: bold;
+    font-size: 17px;
+}
+section.galeria .imagens ul{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 260px 260px;
+    gap: 4px;
+    list-style-type: none;
+}
+.imagens .corte1 {
+    background-image: url(imagens/corte-exemplo1.jpeg);
+    background-size: cover;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border-bottom-right-radius: 8px;
+}
+.imagens .corte2 {
+    background-image: url(imagens/corte-exemplo2.jpeg);
+    background-size: cover;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border-bottom-left-radius: 8px;
+
+}
+.imagens .corte3 {
+    background-image: url(imagens/corte-exemplo3.jpeg);
+    background-size: cover;
+    background-position: right;
+    border-top-right-radius: 8px;
+}
+.imagens .corte4 {
+    background-image: url(imagens/corte-exemplo4.jpeg);
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 8px;
+}
+section.depoimentos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--destaque-claro);
+}
+.depoimentos .cliente {
+    background-color: rgb(231, 231, 231);
+    height: 80%;
+    margin: 4px;
+    padding: 4px;
+    border-radius: 7px;
+}
+.textoagendar {
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+    color: var(--dourado);
+    background-color: var(--destaque-claro);
+}
+.textoagendar h2 {
+    margin-bottom: 15px;
+}
+section.contato {
+    background-color: var(--destaque-claro);
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rubik", sans-serif;
+    color: var(--destaque);
+    background-color: rgb(174, 175, 175);
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    padding: 8px;
+    margin: auto;
+}
+form .formulario {
+    height: auto;
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+input {
+    background-color: rgba(181, 194, 194, 0.61);
+    color: var(--destaque-claro);
+    border-radius: 5px;
+    padding: 4px;
+    margin-top: 6px;
+}
+.caixa {
+    cursor: pointer;
+}
+input:hover{
+    background-color: #c9a3275d;
+}
+.formulario {
+    height: auto;
+    font-weight: bold;
+    color: #2e2e2ee1;
+}
+.formulario p {
+    margin-top: 4px;
+}
+.formulario .enviar {
+    background-color: var(--dourado);
+    width: 30%;
+    height: 15%;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.enviar:hover {
+    width: 40%;
+    background-color: #ffd95c;
+}
+input#itel, input#inome{
+    width: 60%;
+}
+.informacao {
+    color: var(--dourado);
+    margin-top: 40px;
+}
+.informacao p {
+    margin-bottom: 8px;
+}
+footer a{
+    text-decoration: none;
+    color: rgb(1, 167, 111);
+}
+footer p {
+    color: #ffd343;
+}
+footer {
+    height: 20px;
+    background-color: var(--destaque-claro);
+}
+@media screen and (min-width:660px){
+    body {
+       background-color: #a38524;
+    }
+    main {
+        max-width: 800px;
+        margin: auto;
+    }
+    .precos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .servicos ul{
+        width: 90%;
+        display: grid;
+        grid-template-columns: 3fr 3fr;
+        grid-template-rows: 100px 100px;
+        gap: 10px;
+    }
+    .servicos li {
+        width: 96%;
+        height: 70%;
+    }
+}
+@media screen and (min-width:1200px){
+    main {
+        min-width: 100vw;
+    }
+    .precos ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        height: 200px;
+    }
+    .precos ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    form {
+        width: 50%;
+    }
+    section.galeria .imagens ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 600px;
+    }
+    .img01 {
+        margin: auto;
+        background-position: center;
+        width: 60%;
+    }
+    section.hero {
+        background-color: var(--destaque-claro);
+    }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta name="robots" content="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <div class="logo">
+
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#formulario">Agendamento</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="img01">
+                <div class="logohero">
+
+                </div>
+                <p>Na BARBER BLACK, unimos a tradição da navalha às tendências modernas. Somos o espaço ideal para o homem que busca cuidar do visual, relaxar e renovar a autoestima com um atendimento rápido e de qualidade.</p>
+            </div>
+        </section>
+        <section id="servicos" class="servicos">
+            <h2>Tabela de Preços 💈</h2>
+            <div class="precos">
+                <ul>
+                    <li>CORTE <br> R$45</li>
+                    <li>BARBA <br> R$30</li>
+                    <li>CORTE + BARBA <br> R$65</li>
+                    <li>SOBRANCELHA <br> R$15</li>
+                </ul>
+            </div>
+        </section>
+        <section id="galeria" class="galeria">
+            <div class="imagens">
+                <ul>
+                    <li class="corte1"></li>
+                    <li class="corte2"></li>
+                    <li class="corte3"></li>
+                    <li class="corte4"></li>
+                </ul>
+            </div>
+        </section>
+        <section class="depoimentos">
+            <div class="cliente">
+                <div class="comentario1">
+                    <div class="cliente1">
+                        <p>⭐⭐⭐⭐⭐ <br> <br>Ótimo atendimento, os caras são feras! <br></p>
+                    </div>
+                    <br>
+                    <p><strong>-Carlos Miguél</strong></p>
+                </div>
+            </div>
+
+            <div class="cliente">
+                <div class="comentario2">
+                    <div class="cliente2">
+                        <p>⭐⭐⭐⭐⭐ <br> <br>Corte perfeito, barbearia diferenciada!! <br></p>
+                    </div>
+                    <br>
+                    <p><strong>-Bruno Fernandes</strong></p>
+                    
+                </div>
+            </div>
+
+            <div class="cliente">
+                <div class="comentario3">
+                    <div class="cliente3">
+                        <p>⭐⭐⭐⭐⭐ <br> <br>Melhor barbearia, bom demais. <br></p>
+                    </div>
+                    <br>
+                    <p><strong>-Lucas Ribeiro</strong></p>
+
+                </div>
+            </div>
+        </section>
+        <section class="agendar">
+            <div class="textoagendar">
+                <h2>Agendamento</h2>
+                <h3>SEU PRÓXIMO CORTE ESTÁ LOGO ABAIXO!</h3>
+            </div>
+        </section>
+        <section class="contato">
+            <form action="cadastro.php">
+                <div id="formulario" class="formulario">
+                    <p><label for="inome">Nome:<input type="text" name="nome" id="inome" placeholder="Seu nome"></label></p>
+
+                    <p><label for="itel">Telefone:<input type="tel" name="tel" id="itel" placeholder="Seu telefone"></label></p>
+
+                    <p>Preencha os Serviços:</p>
+                        <p><label for="icorte">
+                        <input class="caixa" type="checkbox" name="corte" id="icorte">Corte</label></p>
+                        <p><label for="ibarba">
+                        <input class="caixa" type="checkbox" name="barba" id="ibarba">Barba</label></p>
+
+                        <p><label for="icortebarba"><input class="caixa" type="checkbox" name="cortebarba" id="icortebarba">Corte + Barba</label></p>
+
+                        <p><labelfor="isobran"><input class="caixa" type="checkbox" name="sobran" id="isobran">Sobrancelha</label></p>
+
+                    <p><label for="idata">Data: </label><input type="date" name="data" id="idata" value="2026-09-20"></p>
+
+                    <p><label for="ihora">Horário:</label><input  type="time" name="hora" id="ihora" value="10:20"></p>
+                    <input class="enviar" type="submit" value="Enviar">
+                </div>
+            </form>
+            <div class="informacao">
+                <p>📍 Endereço: Rua jabuticabal, Número 14, CEP:05442287 - Santo Amaro,SP</p>
+                <p>📞 Telefone:(11)990877634</p>
+                <p>🕐 Horário de Funcionamento: 08:00 ás 19:00</p>
+            </div>
+            <footer id="telefone">
+            <p>Barber Black <a href="#" target="_blank">Instagram</a> | <a href="#" target="_blank">WhatsApp</a> | <a href="#" target="_blank">Facebook</a></p>
+        </footer>
+        </section>
+    </main>
+</body>
+</html>

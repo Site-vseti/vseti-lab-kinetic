@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pâtisserie Délice</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Lato', sans-serif; background-color: #fff0f5; }
+
+  header {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 4px 12px rgba(255,105,180,0.3);
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  nav {
+    background-color: #ff85c1;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  nav a.nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+  }
+
+  .btn-historique {
+    background: white;
+    color: #ff1493;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: background 0.2s, transform 0.1s;
+    text-decoration: none;
+  }
+
+  .btn-historique:hover { background: #ffe4f0; transform: scale(1.03); }
+
+  .badge-count {
+    background: #ff1493;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  section {
+    padding: 30px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  section h2 {
+    font-family: 'Playfair Display', serif;
+    color: #cc3377;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+
+  .products { display: flex; gap: 20px; flex-wrap: wrap; }
+
+  .card {
+    background: white;
+    padding: 15px;
+    border-radius: 14px;
+    width: 200px;
+    text-align: center;
+    border: 1px solid #ffb6c1;
+    box-shadow: 0 4px 12px rgba(255,105,180,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(255,105,180,0.25); }
+
+  .card img {
+    width: 100%; border-radius: 8px; margin: 8px 0;
+    height: 140px; object-fit: cover; background: #ffe4f0;
+  }
+
+  .card p { margin: 6px 0; font-weight: 600; color: #444; }
+  .card .price { color: #ff1493; font-size: 1.1rem; font-weight: 700; }
+
+  .btn-add {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white; border: none; padding: 10px 18px;
+    cursor: pointer; border-radius: 8px; width: 100%;
+    font-weight: 700; margin-top: 8px;
+    transition: opacity 0.2s, transform 0.1s;
+    font-family: 'Lato', sans-serif; font-size: 0.95rem;
+  }
+
+  .btn-add:hover { opacity: 0.9; transform: scale(1.02); }
+
+  #cart {
+    background: white; padding: 20px; border-radius: 14px;
+    margin-bottom: 20px; border: 1px solid #ffb6c1; min-height: 60px;
+  }
+
+  .cart-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 0; border-bottom: 1px dashed #ffb6c1; color: #555;
+  }
+
+  .remove-btn {
+    background: none; border: none; color: #ff4488;
+    cursor: pointer; font-size: 1.1rem; padding: 2px 8px;
+    border-radius: 50%; transition: background 0.2s;
+  }
+
+  .remove-btn:hover { background: #ffe4f0; }
+
+  .cart-total { margin-top: 14px; font-size: 1.2rem; font-weight: 700; color: #cc3377; text-align: right; }
+  .cart-empty { color: #aaa; text-align: center; padding: 10px; font-style: italic; }
+
+  .form-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; margin-bottom: 16px;
+  }
+
+  @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+
+  .form-grid input {
+    width: 100%; padding: 12px 14px;
+    border: 1.5px solid #ffb6c1; border-radius: 10px;
+    font-size: 0.95rem; outline: none;
+    transition: border-color 0.2s; font-family: 'Lato', sans-serif;
+  }
+
+  .form-grid input:focus { border-color: #ff69b4; }
+
+  .btn-order {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white; border: none; padding: 14px 32px;
+    cursor: pointer; border-radius: 10px; font-size: 1.05rem;
+    font-weight: 700; letter-spacing: 1px; width: 100%;
+    transition: opacity 0.2s; font-family: 'Lato', sans-serif;
+  }
+
+  .btn-order:hover { opacity: 0.92; }
+
+  #toast {
+    position: fixed; bottom: 30px; right: 30px;
+    background: #22aa55; color: white; padding: 14px 22px;
+    border-radius: 10px; font-weight: 600; font-size: 0.95rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none; z-index: 9999;
+  }
+
+  #toast.show { opacity: 1; transform: translateY(0); }
+
+  footer {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white; text-align: center; padding: 18px; margin-top: 30px;
+    font-family: 'Playfair Display', serif; letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Pâtisserie Délice 🍰</h1>
+</header>
+
+<nav>
+  <a href="index.html" class="nav-link">🏠 Accueil</a>
+  <a href="historique.html" class="btn-historique">
+    📋 Historique des commandes
+    <span class="badge-count" id="badgeCount">0</span>
+  </a>
+</nav>
+
+<section>
+  <h2>Nos Produits</h2>
+  <div class="products">
+
+    <div class="card">
+      <p>🍫 Gâteau Chocolat Fondant</p>
+      <img src="Fondant_Chocolat_Intense.png" alt="Chocolat Fondant">
+      <p class="price">50 DH</p>
+      <button class="btn-add" onclick="addToCart('Gâteau Chocolat Fondant', 50)">Ajouter</button>
+    </div>
+
+    <div class="card">
+      <p>🍓 Gâteau Fraise Délice</p>
+      <img src="Délice_Fraise_Chantilly.png" alt="Fraise Délice">
+      <p class="price">60 DH</p>
+      <button class="btn-add" onclick="addToCart('Gâteau Fraise Délice', 60)">Ajouter</button>
+    </div>
+
+    <div class="card">
+      <p>🍦 Nuage Vanille Crémeux</p>
+      <img src="Nuage_Vanille_Crémeux.png" alt="Vanille Crémeux">
+      <p class="price">45 DH</p>
+      <button class="btn-add" onclick="addToCart('Nuage Vanille Crémeux', 45)">Ajouter</button>
+    </div>
+
+    <div class="card">
+      <p>❤️ Red Velvet Passion</p>
+      <img src="Red_Velvet_Passion.png" alt="Red Velvet">
+      <p class="price">70 DH</p>
+      <button class="btn-add" onclick="addToCart('Red Velvet Passion', 70)">Ajouter</button>
+    </div>
+
+    <div class="card">
+      <p>🍯 Miel & Amandes Douceur</p>
+      <img src="Miel_&_Amandes_Douceur.png" alt="Miel Amandes">
+      <p class="price">65 DH</p>
+      <button class="btn-add" onclick="addToCart('Miel & Amandes Douceur', 65)">Ajouter</button>
+    </div>
+
+    <div class="card">
+      <p>🍮 Caramel Gourmand</p>
+      <img src="Caramel_Gourmand.png" alt="Caramel Gourmand">
+      <p class="price">55 DH</p>
+      <button class="btn-add" onclick="addToCart('Caramel Gourmand', 55)">Ajouter</button>
+    </div>
+
+    <div class="card">
+      <p>🍋 Tarte Citron Meringuée</p>
+      <img src="Tarte_Citron_Meringuée.png" alt="Citron Meringuée">
+      <p class="price">40 DH</p>
+      <button class="btn-add" onclick="addToCart('Tarte Citron Meringuée', 40)">Ajouter</button>
+    </div>
+
+    <div class="card">
+      <p>🥥 Gâteau Coco Exotique</p>
+      <img src="Gâteau_Coco_Exotique.png" alt="Coco Exotique">
+      <p class="price">50 DH</p>
+      <button class="btn-add" onclick="addToCart('Gâteau Coco Exotique', 50)">Ajouter</button>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Panier 🛒</h2>
+  <div id="cart"><p class="cart-empty">Votre panier est vide</p></div>
+
+  <div class="form-grid">
+    <input type="text" id="nom" placeholder="Nom *">
+    <input type="text" id="prenom" placeholder="Prénom">
+    <input type="tel" id="phone" placeholder="Téléphone *">
+    <input type="text" id="ville" placeholder="Ville">
+  </div>
+
+  <button class="btn-order" onclick="sendOrder()">✅ Valider la commande</button>
+</section>
+
+<div id="toast"></div>
+
+<footer>
+  <p>© 2026 Pâtisserie Délice</p>
+</footer>
+
+<script>
+  let cart = [];
+
+  // Charger commandes depuis localStorage
+  function getOrders() {
+    return JSON.parse(localStorage.getItem("patisserie_orders") || "[]");
+  }
+
+  function saveOrders(orders) {
+    localStorage.setItem("patisserie_orders", JSON.stringify(orders));
+  }
+
+  // Mettre à jour le badge
+  function updateBadge() {
+    const count = getOrders().length;
+    document.getElementById("badgeCount").textContent = count;
+  }
+
+  function showToast(msg, color) {
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.style.background = color || "#22aa55";
+    t.classList.add("show");
+    setTimeout(() => t.classList.remove("show"), 3000);
+  }
+
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    showToast("✅ " + name + " ajouté !", "#ff69b4");
+    displayCart();
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    displayCart();
+  }
+
+  function displayCart() {
+    const cartDiv = document.getElementById("cart");
+    if (cart.length === 0) {
+      cartDiv.innerHTML = '<p class="cart-empty">Votre panier est vide</p>';
+      return;
+    }
+    let total = 0;
+    let html = "";
+    cart.forEach((item, i) => {
+      total += item.price;
+      html += `
+        <div class="cart-item">
+          <span>${item.name}</span>
+          <span>
+            <strong>${item.price} DH</strong>
+            <button class="remove-btn" onclick="removeFromCart(${i})">✕</button>
+          </span>
+        </div>`;
+    });
+    html += `<div class="cart-total">Total : ${total} DH</div>`;
+    cartDiv.innerHTML = html;
+  }
+
+  function sendOrder() {
+    const nom    = document.getElementById("nom").value.trim();
+    const prenom = document.getElementById("prenom").value.trim();
+    const phone  = document.getElementById("phone").value.trim();
+    const ville  = document.getElementById("ville").value.trim();
+
+    if (cart.length === 0) { showToast("⚠️ Votre panier est vide !", "#ff8800"); return; }
+    if (!nom || !phone)    { showToast("⚠️ Veuillez remplir Nom et Téléphone !", "#ff8800"); return; }
+
+    const total  = cart.reduce((sum, item) => sum + item.price, 0);
+    const now    = new Date();
+    const dateStr = now.toLocaleDateString('fr-FR') + " " + now.toLocaleTimeString('fr-FR');
+
+    const orders = getOrders();
+    const order = {
+      id: orders.length + 1,
+      nom, prenom, phone, ville,
+      produits: cart.map(i => i.name).join(", "),
+      total,
+      date: dateStr
+    };
+
+    orders.push(order);
+    saveOrders(orders);
+    updateBadge();
+
+    cart = [];
+    displayCart();
+    ["nom","prenom","phone","ville"].forEach(id => document.getElementById(id).value = "");
+
+    showToast("🎉 Commande #" + order.id + " enregistrée !", "#22aa55");
+  }
+
+  // Init
+  updateBadge();
+</script>
+
+</body>
+</html>

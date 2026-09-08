@@ -1,0 +1,35 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  x="0px"
+  y="0px"
+  width="64"
+  height="64"
+  viewBox="0 0 224 224"
+  style="fill: #000000"
+>
+  <g
+    fill="none"
+    fill-rule="nonzero"
+    stroke="none"
+    stroke-width="1"
+    stroke-linecap="butt"
+    stroke-linejoin="miter"
+    stroke-miterlimit="10"
+    stroke-dasharray=""
+    stroke-dashoffset="0"
+    font-family="none"
+    font-weight="none"
+    font-size="none"
+    text-anchor="none"
+    style="mix-blend-mode: normal"
+  >
+    <path d="M0,224v-224h224v224z" fill="none"></path>
+    <g fill="#ffffff">
+      <g id="camera">
+        <path
+          d="M14,49v126h196v-126zM28,63h168v98h-168zM140,70c-23.10547,0 -42,18.89453 -42,42c0,23.10547 18.89453,42 42,42c23.10547,0 42,-18.89453 42,-42c0,-23.10547 -18.89453,-42 -42,-42zM42,77v14h28v-14zM140,84c15.55859,0 28,12.44141 28,28c0,15.55859 -12.44141,28 -28,28c-15.55859,0 -28,-12.44141 -28,-28c0,-15.55859 12.44141,-28 28,-28zM140,91c-11.51172,0 -21,9.48828 -21,21c0,11.51172 9.48828,21 21,21c11.51172,0 21,-9.48828 21,-21c0,-11.51172 -9.48828,-21 -21,-21zM140,105c3.9375,0 7,3.0625 7,7c0,3.9375 -3.0625,7 -7,7c-3.9375,0 -7,-3.0625 -7,-7c0,-3.9375 3.0625,-7 7,-7z"
+        ></path>
+      </g>
+    </g>
+  </g>
+</svg>

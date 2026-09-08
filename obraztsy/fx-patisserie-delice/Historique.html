@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Historique des Commandes — Pâtisserie Délice</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Lato', sans-serif; background-color: #fff0f5; }
+
+  /* ===== ÉCRAN MOT DE PASSE ===== */
+  #loginScreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe4f0, #fff0f5);
+  }
+
+  .login-box {
+    background: white;
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(255,105,180,0.2);
+    border: 1px solid #ffb6c1;
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .login-box .lock-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  .login-box h2 {
+    font-family: 'Playfair Display', serif;
+    color: #cc3377;
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+  }
+
+  .login-box p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+  }
+
+  .password-wrapper {
+    position: relative;
+    margin-bottom: 16px;
+  }
+
+  .password-wrapper input {
+    width: 100%;
+    padding: 13px 46px 13px 16px;
+    border: 1.5px solid #ffb6c1;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    font-family: 'Lato', sans-serif;
+    transition: border-color 0.2s;
+    letter-spacing: 2px;
+  }
+
+  .password-wrapper input:focus { border-color: #ff69b4; }
+
+  .password-wrapper input.error { border-color: #ff4455; animation: shake 0.4s; }
+
+  .toggle-eye {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #ccc;
+    user-select: none;
+  }
+
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+  }
+
+  .error-msg {
+    color: #ff4455;
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+    display: none;
+    font-weight: 600;
+  }
+
+  .btn-login {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    transition: opacity 0.2s, transform 0.1s;
+  }
+
+  .btn-login:hover { opacity: 0.9; }
+  .btn-login:active { transform: scale(0.98); }
+
+  .attempts-msg {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: #bbb;
+  }
+
+  /* ===== PAGE PRINCIPALE (cachée au départ) ===== */
+  #mainContent { display: none; }
+
+  header {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 4px 12px rgba(255,105,180,0.3);
+  }
+
+  header h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; letter-spacing: 2px; }
+  header p { margin-top: 6px; opacity: 0.9; font-size: 0.95rem; }
+
+  nav {
+    background-color: #ff85c1;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .btn-retour {
+    background: white; color: #ff1493; border: none;
+    padding: 9px 20px; border-radius: 25px; font-weight: 700;
+    font-size: 0.9rem; cursor: pointer; font-family: 'Lato', sans-serif;
+    display: flex; align-items: center; gap: 7px;
+    transition: background 0.2s; text-decoration: none;
+  }
+
+  .btn-retour:hover { background: #ffe4f0; }
+
+  .nav-right { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .btn-export {
+    background: white; border: 2px solid white; color: #ff1493;
+    padding: 9px 20px; border-radius: 25px; cursor: pointer;
+    font-weight: 700; font-family: 'Lato', sans-serif;
+    font-size: 0.9rem; transition: background 0.2s;
+  }
+
+  .btn-export:hover { background: #ffe4f0; }
+
+  .btn-logout {
+    background: rgba(255,255,255,0.2); border: 2px solid white;
+    color: white; padding: 9px 18px; border-radius: 25px;
+    cursor: pointer; font-weight: 700; font-family: 'Lato', sans-serif;
+    font-size: 0.85rem; transition: background 0.2s;
+  }
+
+  .btn-logout:hover { background: rgba(255,255,255,0.35); }
+
+  .stats-bar {
+    max-width: 1100px; margin: 24px auto 0;
+    padding: 0 20px; display: flex; gap: 16px; flex-wrap: wrap;
+  }
+
+  .stat-card {
+    background: white; border: 1px solid #ffb6c1; border-radius: 14px;
+    padding: 18px 28px; flex: 1; min-width: 160px; text-align: center;
+    box-shadow: 0 4px 12px rgba(255,105,180,0.08);
+  }
+
+  .stat-card .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: #ff1493; font-weight: 700; }
+  .stat-card .stat-label { color: #999; font-size: 0.85rem; margin-top: 4px; }
+
+  section { padding: 24px 20px; max-width: 1100px; margin: 0 auto; }
+
+  .table-header {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 14px;
+    flex-wrap: wrap; gap: 10px;
+  }
+
+  .table-header h2 { font-family: 'Playfair Display', serif; color: #cc3377; font-size: 1.6rem; }
+
+  .search-input {
+    padding: 10px 16px; border: 1.5px solid #ffb6c1;
+    border-radius: 25px; font-size: 0.9rem; outline: none;
+    font-family: 'Lato', sans-serif; width: 220px;
+    transition: border-color 0.2s;
+  }
+
+  .search-input:focus { border-color: #ff69b4; }
+
+  .table-wrapper {
+    background: white; border-radius: 14px; border: 1px solid #ffb6c1;
+    overflow: auto; box-shadow: 0 4px 12px rgba(255,105,180,0.08);
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 650px; }
+
+  thead th {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white; padding: 14px 16px; text-align: left;
+    font-weight: 700; letter-spacing: 0.5px;
+  }
+
+  tbody td {
+    padding: 12px 16px; border-bottom: 1px solid #ffe4f0;
+    color: #555; vertical-align: middle;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #fff8fb; }
+
+  .badge-id { background: #ffe4f0; color: #cc3377; padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; }
+  .badge-total { background: #e8f8ee; color: #22aa55; padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; }
+
+  .btn-delete {
+    background: none; border: 1.5px solid #ffb6c1; color: #ff4488;
+    cursor: pointer; font-size: 0.85rem; padding: 5px 10px;
+    border-radius: 8px; transition: background 0.2s;
+  }
+
+  .btn-delete:hover { background: #ffe4f0; border-color: #ff4488; }
+
+  .empty-state { text-align: center; padding: 60px 20px; color: #ccc; }
+  .empty-state .emoji { font-size: 3rem; margin-bottom: 12px; }
+  .empty-state p { font-size: 1.1rem; }
+
+  .btn-clear-all {
+    background: none; border: 2px solid #ffb6c1; color: #ff4488;
+    padding: 9px 18px; border-radius: 25px; cursor: pointer;
+    font-weight: 700; font-family: 'Lato', sans-serif;
+    font-size: 0.88rem; transition: background 0.2s;
+  }
+
+  .btn-clear-all:hover { background: #ffe4f0; border-color: #ff4488; }
+
+  #toast {
+    position: fixed; bottom: 30px; right: 30px;
+    color: white; padding: 14px 22px; border-radius: 10px;
+    font-weight: 600; font-size: 0.95rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none; z-index: 9999;
+  }
+
+  #toast.show { opacity: 1; transform: translateY(0); }
+
+  footer {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white; text-align: center; padding: 18px; margin-top: 30px;
+    font-family: 'Playfair Display', serif; letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== ÉCRAN DE CONNEXION ===== -->
+<div id="loginScreen">
+  <div class="login-box">
+    <div class="lock-icon">🔐</div>
+    <h2>Accès Administrateur</h2>
+    <p>Entrez le mot de passe pour accéder à l'historique</p>
+
+    <div class="password-wrapper">
+      <input type="password" id="passwordInput" placeholder="Mot de passe"
+             onkeydown="if(event.key==='Enter') checkPassword()">
+      <span class="toggle-eye" onclick="toggleEye()">👁️</span>
+    </div>
+
+    <div class="error-msg" id="errorMsg">❌ Mot de passe incorrect !</div>
+
+    <button class="btn-login" onclick="checkPassword()">🔓 Entrer</button>
+
+    <p class="attempts-msg" id="attemptsMsg"></p>
+  </div>
+</div>
+
+<!-- ===== CONTENU PRINCIPAL (caché) ===== -->
+<div id="mainContent">
+
+  <header>
+    <h1>📋 Historique des Commandes</h1>
+    <p>Pâtisserie Délice — espace administrateur</p>
+  </header>
+
+  <nav>
+    <a href="index.html" class="btn-retour">⬅️ Retour à la boutique</a>
+    <div class="nav-right">
+      <button class="btn-export" onclick="exportCSV()">⬇️ Exporter CSV</button>
+      <button class="btn-logout" onclick="logout()">🔒 Se déconnecter</button>
+    </div>
+  </nav>
+
+  <div class="stats-bar" id="statsBar"></div>
+
+  <section>
+    <div class="table-header">
+      <h2>Liste des commandes</h2>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <input type="text" class="search-input" id="searchInput" placeholder="🔍 Rechercher..." oninput="filterOrders()">
+        <button class="btn-clear-all" onclick="clearAll()">🗑️ Tout effacer</button>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Téléphone</th>
+            <th>Ville</th>
+            <th>Produits</th>
+            <th>Total</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="ordersBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Pâtisserie Délice</p>
+  </footer>
+
+</div>
+
+<div id="toast"></div>
+
+<script>
+  // ================================================
+  // 🔑 MOT DE PASSE — change "patisserie2026" par le tien
+  // ================================================
+  const MOT_DE_PASSE = "2006";
+  const MAX_ATTEMPTS = 5;
+
+  let attempts = 0;
+  let eyeVisible = false;
+
+  // Vérifier si déjà connecté (session)
+  window.onload = function() {
+    if (sessionStorage.getItem("admin_ok") === "true") {
+      showMain();
+    }
+  };
+
+  function checkPassword() {
+    const input = document.getElementById("passwordInput");
+    const errorMsg = document.getElementById("errorMsg");
+    const attemptsMsg = document.getElementById("attemptsMsg");
+
+    if (attempts >= MAX_ATTEMPTS) {
+      errorMsg.textContent = "🚫 Trop de tentatives. Retournez à la boutique.";
+      errorMsg.style.display = "block";
+      document.querySelector(".btn-login").disabled = true;
+      input.disabled = true;
+      return;
+    }
+
+    if (input.value === MOT_DE_PASSE) {
+      sessionStorage.setItem("admin_ok", "true");
+      showMain();
+    } else {
+      attempts++;
+      input.value = "";
+      input.classList.add("error");
+      setTimeout(() => input.classList.remove("error"), 500);
+
+      const restants = MAX_ATTEMPTS - attempts;
+      errorMsg.textContent = "❌ Mot de passe incorrect !";
+      errorMsg.style.display = "block";
+
+      if (restants > 0) {
+        attemptsMsg.textContent = restants + " tentative(s) restante(s)";
+      } else {
+        errorMsg.textContent = "🚫 Trop de tentatives. Retournez à la boutique.";
+        document.querySelector(".btn-login").disabled = true;
+        input.disabled = true;
+        attemptsMsg.textContent = "";
+      }
+    }
+  }
+
+  function toggleEye() {
+    const input = document.getElementById("passwordInput");
+    eyeVisible = !eyeVisible;
+    input.type = eyeVisible ? "text" : "password";
+  }
+
+  function showMain() {
+    document.getElementById("loginScreen").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+    loadPage();
+  }
+
+  function logout() {
+    sessionStorage.removeItem("admin_ok");
+    document.getElementById("loginScreen").style.display = "flex";
+    document.getElementById("mainContent").style.display = "none";
+    document.getElementById("passwordInput").value = "";
+    document.getElementById("errorMsg").style.display = "none";
+    attempts = 0;
+    document.querySelector(".btn-login").disabled = false;
+    document.getElementById("passwordInput").disabled = false;
+    document.getElementById("attemptsMsg").textContent = "";
+  }
+
+  // ================================================
+  // DONNÉES
+  // ================================================
+  function getOrders() {
+    return JSON.parse(localStorage.getItem("patisserie_orders") || "[]");
+  }
+
+  function saveOrders(orders) {
+    localStorage.setItem("patisserie_orders", JSON.stringify(orders));
+  }
+
+  function showToast(msg, color) {
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.style.background = color || "#22aa55";
+    t.classList.add("show");
+    setTimeout(() => t.classList.remove("show"), 3000);
+  }
+
+  function renderStats(orders) {
+    const total = orders.reduce((s, o) => s + o.total, 0);
+    document.getElementById("statsBar").innerHTML = `
+      <div class="stat-card">
+        <div class="stat-num">${orders.length}</div>
+        <div class="stat-label">Commandes totales</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">${total} DH</div>
+        <div class="stat-label">Chiffre d'affaires</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">${orders.length ? Math.round(total / orders.length) : 0} DH</div>
+        <div class="stat-label">Panier moyen</div>
+      </div>
+    `;
+  }
+
+  function renderTable(orders) {
+    const tbody = document.getElementById("ordersBody");
+    if (orders.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="9"><div class="empty-state"><div class="emoji">🍰</div><p>Aucune commande pour l'instant</p></div></td></tr>`;
+      return;
+    }
+    tbody.innerHTML = orders.map(o => `
+      <tr>
+        <td><span class="badge-id">#${o.id}</span></td>
+        <td><strong>${o.nom}</strong></td>
+        <td>${o.prenom || "—"}</td>
+        <td>${o.phone}</td>
+        <td>${o.ville || "—"}</td>
+        <td style="max-width:220px;word-break:break-word;font-size:0.85rem">${o.produits}</td>
+        <td><span class="badge-total">${o.total} DH</span></td>
+        <td style="font-size:0.8rem;color:#aaa;white-space:nowrap">${o.date}</td>
+        <td><button class="btn-delete" onclick="deleteOrder(${o.id})">🗑️</button></td>
+      </tr>
+    `).join("");
+  }
+
+  function loadPage() {
+    const orders = getOrders();
+    renderStats(orders);
+    renderTable(orders);
+  }
+
+  function filterOrders() {
+    const q = document.getElementById("searchInput").value.toLowerCase();
+    const orders = getOrders().filter(o =>
+      o.nom.toLowerCase().includes(q) ||
+      o.phone.includes(q) ||
+      (o.ville || "").toLowerCase().includes(q) ||
+      o.produits.toLowerCase().includes(q)
+    );
+    renderTable(orders);
+  }
+
+  function deleteOrder(id) {
+    if (!confirm("Supprimer la commande #" + id + " ?")) return;
+    saveOrders(getOrders().filter(o => o.id !== id));
+    loadPage();
+    showToast("🗑️ Commande supprimée", "#ff8800");
+  }
+
+  function clearAll() {
+    if (!confirm("Effacer TOUTES les commandes ?")) return;
+    localStorage.removeItem("patisserie_orders");
+    loadPage();
+    showToast("🗑️ Toutes les commandes effacées", "#ff8800");
+  }
+
+  function exportCSV() {
+    const orders = getOrders();
+    if (orders.length === 0) { showToast("⚠️ Aucune commande !", "#ff8800"); return; }
+    const header = ["#","Nom","Prenom","Telephone","Ville","Produits","Total DH","Date"];
+    const rows = orders.map(o => [o.id, o.nom, o.prenom, o.phone, o.ville, '"'+o.produits+'"', o.total, o.date]);
+    const csv = [header, ...rows].map(r => r.join(";")).join("\n");
+    const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "commandes_patisserie.csv";
+    link.click();
+    showToast("📥 CSV téléchargé !", "#22aa55");
+  }
+</script>
+
+</body>
+</html>

@@ -1052,6 +1052,28 @@
   "source": "https://github.com/KNXKO/HTML_TheatreApollon"
  },
  {
+  "id": "cls2-revenstone-hotel",
+  "name": "The Rivenstone Hotel",
+  "genre": "Бутик-отель",
+  "structure": "Тёмно-синяя (navy) палитра с золотыми обводками кнопок и декоративными «leaf-divider» разделителями между секциями, заголовки Cormorant Garamond, слоган «Timeless London Hospitality», многостраничный сайт (rooms, facilities, contact).",
+  "zip": "https://github.com/alessandro360/the-revenstone-hotel/archive/refs/heads/main.zip",
+  "demo": "https://the-revenstone-hotel.netlify.app/",
+  "license": "MIT",
+  "attribution": false,
+  "source": "https://github.com/alessandro360/the-revenstone-hotel"
+ },
+ {
+  "id": "cls2-midnight-safari-club",
+  "name": "Midnight Safari Club",
+  "genre": "Коктейль-бар / закрытый клуб для членов",
+  "structure": "Чёрный фон с тёплым золотом (#c9a84c/#e2c97e), заголовки шрифтом Cinzel, основной текст Cormorant Garamond, тонкие золотые волосяные линии-разделители и золотая обводка модальных карточек меню коктейлей.",
+  "zip": "https://github.com/alessandro360/midnight-safari-club/archive/refs/heads/main.zip",
+  "demo": "https://midnight-safari-club.netlify.app/",
+  "license": "MIT",
+  "attribution": false,
+  "source": "https://github.com/alessandro360/midnight-safari-club"
+ },
+ {
   "id": "our-elinarihter",
   "name": "Элина Рихтер — певица",
   "genre": "Личный сайт артиста",

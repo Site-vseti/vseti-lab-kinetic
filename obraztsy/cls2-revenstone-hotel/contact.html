@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Booking — The Rivenstone | Marylebone, London</title>
+  <meta name="description" content="Contact The Rivenstone, a four-star hotel in Marylebone, London. Address, phone, email, and a booking enquiry form." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span class="mark">&#10047;</span>The Rivenstone</a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="facilities.html">Facilities</a></li>
+        <li class="nav-cta"><a href="contact.html" class="active">Book Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== Page intro band ===== -->
+    <section class="section section--slate-mist section--compact page-intro" style="text-align: center;">
+      <div class="container--narrow reveal">
+        <span class="eyebrow" style="font-size: 0.95rem; letter-spacing: 0.28em; color: var(--gold);">Get in Touch</span>
+        <h1 style="color: var(--text);">Contact &amp; Booking</h1>
+        <p style="margin: 0.7rem auto 0; color: var(--text);">Send us your dates, and we'll take care of the rest.</p>
+      </div>
+    </section>
+
+    <!-- ===== Contact details + form ===== -->
+    <section class="section">
+      <div class="container contact-grid">
+
+        <!-- Details -->
+        <div class="contact-details reveal">
+          <h3>The Rivenstone</h3>
+
+          <div class="detail-block">
+            <strong>Address</strong>
+            <p>12 Welbeck Mews<br />Marylebone, London W1G 8PQ</p>
+            <img src="assets/hero-exterior.webp" alt="The Rivenstone entrance on a Marylebone street" class="address-thumb" />
+          </div>
+
+          <div class="detail-block">
+            <strong>Phone</strong>
+            <p><a href="tel:+442079460810">+44 (0)20 7946 0810</a></p>
+          </div>
+
+          <div class="detail-block">
+            <strong>Email</strong>
+            <p><a href="mailto:stay@therivenstone.co.uk">stay@therivenstone.co.uk</a></p>
+          </div>
+
+          <div class="detail-block">
+            <strong>Reception</strong>
+            <p>Open 24 hours. Check-in from 2pm, check-out by 11am.</p>
+          </div>
+
+          <div class="map-placeholder" role="img" aria-label="Map showing the location of The Rivenstone in Marylebone, London">
+            Map — Marylebone, London
+          </div>
+        </div>
+
+        <!-- Enquiry form -->
+        <div class="reveal reveal-delay-1">
+          <h3>Book Now</h3>
+          <p style="margin: 0.6rem 0 1.6rem; color: var(--text-light);">Tell us a little about your stay and we'll get back to you the same day. No payment is taken at this stage.</p>
+
+          <form class="booking-form form-grid">
+            <div class="form-grid form-grid--pair">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+            </div>
+
+            <div class="form-grid form-grid--pair">
+              <div class="field">
+                <label for="arrival">Arrival Date</label>
+                <input type="date" id="arrival" name="arrival" required />
+              </div>
+              <div class="field">
+                <label for="departure">Departure Date</label>
+                <input type="date" id="departure" name="departure" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="room-type">Room Type</label>
+              <select id="room-type" name="room-type">
+                <option value="">No preference</option>
+                <option value="classic">Classic Room</option>
+                <option value="deluxe">Deluxe Room</option>
+                <option value="suite">The Rivenstone Suite</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Anything else we should know?"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--solid">Send Enquiry</button>
+
+            <p class="form-success">Thank you — your enquiry has been received. We'll be in touch shortly.</p>
+            <p class="form-note">This is a concept site; enquiries sent here are not delivered to a real hotel.</p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html"><span class="mark">&#10047;</span>The Rivenstone</a>
+        <p>A four-star hotel in Marylebone, London. Timeless hospitality, around the clock.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li>12 Welbeck Mews</li>
+          <li>Marylebone, London W1G 8PQ</li>
+          <li>+44 (0)20 7946 0810</li>
+          <li><a href="mailto:stay@therivenstone.co.uk">stay@therivenstone.co.uk</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="contact.html">Contact &amp; Booking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p>&copy; 2026 The Rivenstone. A fictional hotel concept, designed as a portfolio project.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

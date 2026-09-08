@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Midnight Safari Club — London</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-main">MIDNIGHT SAFARI</span>
+    <span class="nav-logo-sub">&#10022; Club &#10022;</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <a href="index.html" class="active">Home</a>
+  <div class="nav-mobile-rule"></div>
+  <a href="collection.html">Collection</a>
+  <div class="nav-mobile-rule"></div>
+  <a href="about.html">About</a>
+</div>
+
+<!-- HERO IMAGE -->
+<div class="hero-image">
+  <img src="assets/lounge-hero.png" alt="Midnight Safari Club">
+  <div class="hero-overlay-text">
+    <p class="hero-eyebrow">&#10022; &nbsp; London &nbsp; &#10022;</p>
+    <h1 class="hero-title">Midnight<br><em>Safari</em>Club</h1>
+    <p class="hero-tagline">"Where luxury meets the wild."</p>
+  </div>
+</div>
+
+<!-- HERO TEXT -->
+<div class="hero-content">
+  <p class="hero-eyebrow">&#10022; &nbsp; London &nbsp; &#10022;</p>
+  <h1 class="hero-title">Midnight<br><em>Safari</em>Club</h1>
+  <p class="hero-tagline">"Where luxury meets the wild."</p>
+  <div class="hero-buttons">
+    <a href="collection.html" class="btn-primary">Explore Collection</a>
+    <a href="about.html" class="btn-outline">About The Club</a>
+  </div>
+</div>
+
+<!-- FEATURED COCKTAIL — GOLDEN MIRAGE ONLY -->
+<div class="home-featured">
+  <div class="inner">
+    <div class="home-featured-header">
+      <span class="label">Featured Cocktail</span>
+      <h2 class="section-title">This Season's Signature</h2>
+      <div class="gold-rule">&#10022;</div>
+    </div>
+    <div class="home-single-card">
+      <div class="card-img-wrap">
+        <img src="assets/golden-mirage.png" alt="Golden Mirage">
+      </div>
+    </div>
+    <div class="home-single-below">
+      <p class="home-single-desc-below">Honey-hued elegance with saffron warmth and citrus lift. The colour of a savannah at dusk.</p>
+      <a href="collection.html" class="home-card-link">View Full Collection</a>
+    </div>
+  </div>
+</div>
+
+<!-- PORTFOLIO NOTE -->
+<div class="page-portfolio-note">
+  <p>Midnight Safari Club is a fictional luxury hospitality concept created as a design and branding portfolio project.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-main">MIDNIGHT SAFARI</span>
+    <span class="nav-logo-sub">&#10022; Club &#10022;</span>
+  </a>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <div class="footer-right">
+    <p class="footer-copy">Midnight Safari Club</p>
+    <p class="footer-sub">Concept Website</p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <div class="modal-image"><img id="modal-img" src="" alt=""></div>
+    <div class="modal-body">
+      <button class="modal-close" onclick="closeModal()">&#10005;</button>
+      <h2 class="modal-name" id="modal-name"></h2>
+      <p class="modal-desc" id="modal-desc"></p>
+      <div><span class="modal-field-label">Ingredients</span><ul class="modal-ingredients" id="modal-ingredients"></ul></div>
+      <div><span class="modal-field-label">Tasting Notes</span><p class="modal-text" id="modal-tasting"></p></div>
+      <div><span class="modal-field-label">Suggested Pairing</span><p class="modal-pairing" id="modal-pairing"></p></div>
+    </div>
+  </div>
+</div>
+
+<script src="cocktails.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

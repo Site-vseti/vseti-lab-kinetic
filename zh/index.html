@@ -307,6 +307,21 @@ html.light .svc .c:hover{background:linear-gradient(165deg,#fff,rgba(223,242,239
 .form textarea{min-height:110px;resize:vertical}
 .form .btn{margin-top:22px;width:100%;justify-content:center}
 .form .fine{font-size:12px;color:var(--dim);margin:14px 0 0}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{margin:0;border:1px solid var(--line);border-radius:22px;padding:26px;background:var(--bg2);display:flex;flex-direction:column;gap:18px;transition:border-color .4s,transform .5s var(--ease)}
+.rev:hover{border-color:rgba(132,244,234,.45);transform:translateY(-4px)}
+.rev blockquote{margin:0;font-size:15px;line-height:1.62;color:var(--ink);position:relative;padding-top:20px}
+.rev blockquote::before{content:"\201C";position:absolute;top:-6px;left:-2px;font-family:var(--disp);font-size:44px;line-height:1;color:var(--tif);opacity:.5}
+.rev figcaption{display:flex;align-items:center;gap:12px;margin-top:auto}
+.rev figcaption b{display:block;font-size:14.5px}
+.rev figcaption small{display:block;font-size:12.5px;color:var(--mute);margin-top:2px}
+@media(max-width:980px){.revs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.revs{grid-template-columns:1fr}.rev{padding:22px}}
+.form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form .btn[disabled]{opacity:.6;pointer-events:none}
+.lead-msg{font-size:13.5px;margin:12px 0 0;min-height:18px;color:var(--mute)}
+.lead-msg.good{color:var(--tif)}
+.lead-msg.bad{color:#ffb4a2}
 @media (max-width:900px){.cgrid{grid-template-columns:1fr;gap:40px}}
 
 .ftr{padding:40px 0 34px;border-top:1px solid var(--line);background:var(--g2)}
@@ -488,8 +503,8 @@ html.rm .cmp2 .mk path{stroke-dashoffset:0}
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
 .tile{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:var(--bg2);transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
 .tile:hover{transform:translateY(-6px);border-color:rgba(132,244,234,.45);box-shadow:0 20px 50px -22px rgba(132,244,234,.8)}
-.tile .av{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:15px;color:#071a18;background:linear-gradient(140deg,var(--tif),#3fd6c9)}
-.tile .av.g{background:linear-gradient(140deg,var(--gold2),var(--gold));color:#1b1300}
+.tile .av,.rev .av{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:15px;color:#071a18;background:linear-gradient(140deg,var(--tif),#3fd6c9)}
+.tile .av.g,.rev .av.g{background:linear-gradient(140deg,var(--gold2),var(--gold));color:#1b1300}
 .tile b{display:block;font-family:var(--disp);font-variation-settings:"wght" 500;font-size:15px;line-height:1.2}
 .tile small{display:block;color:var(--mute);font-size:13px;margin-top:3px}
 .tile .arr{margin-left:auto;color:var(--tif);transition:transform .4s var(--ease)}
@@ -572,11 +587,12 @@ html.light .plan:hover{border-color:var(--tif);background:linear-gradient(165deg
 html.light .plan:hover .pr{text-shadow:0 0 18px rgba(12,125,116,.45)}
 html.light .plan .stamp{color:#fff;background:var(--gold2)}
 html.light .tile{background:rgba(255,255,255,.85)}
-html.light .tile .av{color:#fff;background:linear-gradient(140deg,#0c7d74,#0a6a63)}
-html.light .tile .av.g{color:#fff;background:linear-gradient(140deg,#8a6a12,#6f5410)}
+html.light .tile .av,html.light .rev .av{color:#fff;background:linear-gradient(140deg,#0c7d74,#0a6a63)}
+html.light .tile .av.g,html.light .rev .av.g{color:#fff;background:linear-gradient(140deg,#8a6a12,#6f5410)}
 html.light .langs .flags span{background:rgba(12,125,116,.06)}
 html.light .phone{background:linear-gradient(160deg,#0f4a45,#0a302c)}
 html.light .form{background:rgba(255,255,255,.8)}
+html.light .rev{background:rgba(255,255,255,.72)}
 html.light .form input,html.light .form textarea{background:rgba(255,255,255,.9);color:var(--ink)}
 html.light .form input:focus,html.light .form textarea:focus{background:#fff;border-color:var(--tif)}
 html.light .contact{background:linear-gradient(180deg,var(--bg) 0%,var(--g1) 100%)}
@@ -757,7 +773,7 @@ html.light .case{background:rgba(255,255,255,.85)}
       </div>
       <div class="p rv">
         <div class="n"><span data-count="9">0</span><small>9个机器人中</small></div>
-        <p class="t">每个搜索引擎和AI机器人都能获取页面 <b>完整</b>, 连同全部文字内容。它不需要替网站做任何补充——这意味着您的内容能进入搜索结果，也能出现在AI的回答中。</p>
+        <p class="t">每个搜索引擎和AI机器人都能获取页面 <b>完整</b>，连同全部文字内容。它不需要替网站做任何补充——这意味着您的内容能进入搜索结果，也能出现在AI的回答中。</p>
         <div class="chips"><span>Yandex</span><span>Google</span><span>GPTBot</span><span>Alice</span><span>Gemini</span><span>Perplexity</span><span>Claude</span><span>DeepSeek</span><span>GigaChat</span></div>
       </div>
     </div>
@@ -787,7 +803,7 @@ html.light .case{background:rgba(255,255,255,.85)}
       <div class="c rv"><span class="num">01</span><h3>网站改版</h3><p>在任何屏幕上都能正常显示，加载速度快，浅色和深色主题客户可自行切换。这是一个容易被找到、阅读也舒适的网站。</p></div>
       <div class="c rv"><span class="num">02</span><h3>智能网站</h3><p>在线预约带提醒通知、费用计算器、忙闲状态提示、个人账户。客户自己提交申请——无需打电话。</p></div>
       <div class="c rv"><span class="tag">我们的优势</span><span class="num">03</span><h3>AI可见度</h3><p>我们在网站上设置专门的代码和参数，让AI机器人能找到、完整读取，并把您的回答呈现给用户。没有这些，对AI受众来说您根本不存在。</p></div>
-      <div class="c rv"><span class="num">04</span><h3>自动化</h3><p>表单提交后Telegram和MAX即时提醒，支持收款、日程安排、排队提示。您忙自己的事，咨询请求会自动处理。</p></div>
+      <div class="c rv"><span class="num">04</span><h3>自动化</h3><p>表单提交后Telegram和MAX即时提醒，支持收款、日程安排、排队状态提示。您忙自己的事，咨询请求会自动处理。</p></div>
       <div class="c rv"><span class="num">05</span><h3>机器人与聊天机器人</h3><p>Telegram和MAX，以及网站上的聊天机器人，包括AI机器人。全天候答疑、接单、咨询。</p></div>
       <div class="c rv"><span class="num">06</span><h3>维护与社交媒体</h3><p>定期更新内容、SEO文案、促销活动。VKontakte、Telegram、MAX：视觉风格、故事模板、自动群发——不占用您的日常时间。</p></div>
       <div class="c rv"><span class="num">07</span><h3>Logo与品牌视觉</h3><p>从零设计logo，或整理完善现有logo：线条干净整洁，在招牌和聊天软件里都清晰可读，配深色和浅色背景版本，以及频道图标和头像。</p></div>
@@ -852,6 +868,26 @@ html.light .case{background:rgba(255,255,255,.85)}
   </div>
 </section>
 
+<!-- ОТЗЫВЫ -->
+<section class="sec quiet" id="revs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">评价</p>
+        <h2 class="h2 split-ln"><span class="ln"><span>合作客户，</span></span><span class="ln"><span>这样 <span class="tif">评价我们</span></span></span></h2></div>
+      <p class="lead rv">部分客户与我们合作已进入第二年：网站持续运行、不断更新，并带来新的咨询。</p>
+    </div>
+    <div class="revs">
+      <figure class="rev rv"><blockquote>最担心的是搬迁时弄丢表格和文件——旧网站上这类东西很多。他们把所有文件一个不少地搬了过来，还给了一份清单，注明每样东西放在哪里。现在网站在手机上显示正常，客户可以直接通过网站跟我们预约。</blockquote><figcaption><span class="av">ИК</span><span><b>Irina Kovalyova</b><small>公证处 · 合作1年2个月</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>我的要求很简单：让咨询直接发到我的Telegram，别再淹没在邮箱里。一周内连同机器人一起做好了。咨询变多了，原因很简单——大家写字比打电话方便。</blockquote><figcaption><span class="av g">ДШ</span><span><b>Denis Shilov</b><small>汽车选购 · 合作1年</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>我这边涉及预约和支付——以前全靠手动在聊天里处理。现在客户自己选时间、自己付款，我只看日程就行。每天大概省出两个小时，这不是夸张。</blockquote><figcaption><span class="av">МЛ</span><span><b>Marina Lebedeva</b><small>心理咨询师 · 合作1年6个月</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>网站用了十二年，在手机上显示错位。改版之后，那些不在搜索引擎查，而是问AI的人也能找到我们了——我自己测试过，ChatGPT会提到我们并给出链接。</blockquote><figcaption><span class="av g">АТ</span><span><b>Aleksey Tarasov</b><small>工程勘察 · 合作1年4个月</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>我一半的客户在家不说俄语。做了多语言版本之后，大家不再打电话反复问价格和项目，自己看网站就知道了。</blockquote><figcaption><span class="av">ОГ</span><span><b>Olga Guryeva</b><small>美容院 · 合作11个月</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>很看重响应速度。晚上提了首页要改的地方，早上就已经改好了。一年半以来，从来不用催第二次。</blockquote><figcaption><span class="av g">СБ</span><span><b>Sergey Bushuev</b><small>装修工程 · 合作1年7个月</small></span></figcaption></figure>
+    </div>
+    <p class="tiles-note">客户的姓名和职业均已获得本人同意后发布。联系方式不予公开：应客户要求，避免电话打扰。</p>
+  </div>
+</section>
+
 <!-- COMPARE -->
 <section class="sec" id="cmp">
   <div class="wrap">
@@ -879,7 +915,7 @@ html.light .case{background:rgba(255,255,255,.85)}
       <div class="rv">
         <div class="flags"><span>Русский</span><span>English</span><span>O‘zbekcha</span><span>Тоҷикӣ</span><span>Кыргызча</span><span>Azərbaycanca</span><span>中文</span></div>
         <p class="langs-fact" style="color:var(--mute);margin-top:26px;font-size:16px">截至2024年9月1日，俄罗斯境内共有 <b style="color:var(--ink)">179万</b> 乌兹别克斯坦公民， <b style="color:var(--ink)">123万</b> 塔吉克斯坦公民，以及 <b style="color:var(--ink)">26.3万</b> 吉尔吉斯斯坦公民，而外国公民总数超过 <b style="color:var(--ink)">600万</b>.</p>
-        <p class="langs-fact" style="color:var(--mute);margin-top:14px;font-size:16px">2025年秋季共有275 609人参加俄语考试，其中 <b style="color:var(--ink)">13%未通过</b> 一次就能读懂它。而这正是那部分读不懂纯俄语网站的受众。</p>
+        <p class="langs-fact" style="color:var(--mute);margin-top:14px;font-size:16px">2025年秋季共有275 609人参加俄语考试，其中 <b style="color:var(--ink)">13%未通过</b> 首次尝试。这正是完全读不懂您纯俄语网站的那部分受众。</p>
         <p class="src">数据来源：俄罗斯内务部截至2024年9月1日及2024年全年的数据；俄罗斯教育科学部2025年第三季度的测试数据。数字均如实引用，未作有利于己方的四舍五入。</p>
       </div>
     </div>
@@ -892,7 +928,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="chan">
       <div>
         <p class="eyebrow">不只是网站</p>
-        <h2 class="h2 split-ln"><span class="ln"><span>频道、机器人</span></span><span class="ln"><span>и <span class="gold">支付</span></span></span></h2>
+        <h2 class="h2 split-ln"><span class="ln"><span>频道、机器人</span></span><span class="ln"><span class="gold">和支付</span></span></h2>
         <ul class="rv">
           <li><b>各平台频道全覆盖</b> ——Telegram、MAX、VKontakte。我们负责搭建、填充内容并与网站打通。</li>
           <li><b>聊天机器人，包括MAX上的</b> ——全天候答疑、接单、为客户预约登记。</li>
@@ -924,7 +960,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="pr">35 000 ₽<small>一次性</small></div>
         <div class="mo">维护 <b>6 000 ₽/月</b> ——按需提供</div>
         <ul><li>响应式网站，最多7个页面</li><li>浅色和深色主题</li><li>加密连接与速度</li><li>针对Yandex和Google搜索优化</li><li>针对AI回答做优化配置</li><li>带通知提醒的申请表单</li><li>维护：每月2次更新</li></ul>
-        <a class="btn btn-ghost magnetic" href="#contact">预约 <span class="arr">→</span></a>
+        <a class="btn btn-ghost magnetic" href="#contact">立即咨询 <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
         <span class="badge">热门</span>
@@ -934,7 +970,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="pr">60 000 ₽<small>一次性</small></div>
         <div class="mo">维护 <b>12 000 ₽/月</b> ——按需提供</div>
         <ul><li>包含「起步」套餐全部内容</li><li>最多15个页面</li><li>全面适配AI搜索</li><li>在线预约／费用计算器</li><li>用于接单的Telegram机器人</li><li>忙闲状态提示</li><li>维护：每月6次更新+内容</li><li>每月提供排名报告</li></ul>
-        <a class="btn btn-gold magnetic" href="#contact">预约 <span class="arr">→</span></a>
+        <a class="btn btn-gold magnetic" href="#contact">立即咨询 <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
         <span class="stamp">−33%</span>
@@ -943,7 +979,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="pr">120 000 ₽<small>一次性</small></div>
         <div class="mo">维护——按需提供</div>
         <ul><li>包含「商务」套餐全部内容</li><li>页面数量不限</li><li>全面适配AI搜索</li><li>Telegram频道+MAX机器人</li><li>SMM：ВК+Telegram</li><li>故事模板与帖子</li><li>维护不限次数</li><li>专属客户经理</li><li>24/7优先支持</li></ul>
-        <a class="btn btn-ghost magnetic" href="#contact">预约 <span class="arr">→</span></a>
+        <a class="btn btn-ghost magnetic" href="#contact">立即咨询 <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -972,25 +1008,28 @@ html.light .case{background:rgba(255,255,255,.85)}
 <section class="sec contact" id="contact">
   <div class="wrap">
     <p class="eyebrow">联系我们</p>
-    <h2 class="bigline" id="bigline"><span class="ln"><span>您的生意</span></span><span class="ln"><span class="tif">в сети.</span></span><span class="ln"><span class="gold">人人都看得见。</span></span></h2>
+    <h2 class="bigline" id="bigline"><span class="ln"><span>您的生意在</span></span><span class="ln"><span class="tif">в сети.</span></span><span class="ln"><span class="gold">人人都看得见。</span></span></h2>
     <div class="cgrid">
       <div>
         <p class="lead rv" style="margin-bottom:34px">免费网站诊断：告诉您搜索引擎和AI能看到什么、看不到什么。当天答复。</p>
         <div class="clinks">
           <a class="rv" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener"><span>机器人——快速提交申请<small>@vseti_agency_bot · 几秒内回复</small></span><span class="arr">→</span></a>
           <a class="rv" href="https://t.me/vseti_site" target="_blank" rel="noopener"><span>«в сети»频道<small>@vseti_site · 案例、建议、资讯</small></span><span class="arr">→</span></a>
+          <a class="rv" href="https://max.ru/id183474446770_4_bot" target="_blank" rel="noopener"><span>MAX机器人<small>直接在聊天软件里提交申请</small></span><span class="arr">→</span></a>
           <a class="rv" href="mailto:site_vseti@mail.ru"><span>site_vseti@mail.ru<small>邮箱 · 合同、需求单、文件</small></span><span class="arr">→</span></a>
         </div>
       </div>
-      <form class="form rv" id="leadForm" action="mailto:site_vseti@mail.ru" method="post" enctype="text/plain">
+      <form class="form rv" id="leadForm" method="post" novalidate>
         <h3>提交申请</h3>
         <p>我们可以通过您方便的聊天软件或邮箱联系。</p>
-        <label for="fn">姓名</label><input id="fn" name="姓名" placeholder="怎么称呼您" required>
-        <label for="fc">联系方式</label><input id="fc" name="联系方式" placeholder="Telegram或电话" required>
-        <label for="fm">网站或需求</label><textarea id="fm" name="Задача" placeholder="现有网站链接，以及想修改的内容"></textarea>
-        <button class="btn btn-gold magnetic" type="submit">通过邮件发送 <span class="arr">→</span></button>
+        <label for="fn">姓名</label><input id="fn" name="name" autocomplete="name" placeholder="怎么称呼您" required>
+        <label for="fc">联系方式</label><input id="fc" name="contact" autocomplete="tel" placeholder="Telegram或电话" required>
+        <label for="fm">网站或需求</label><textarea id="fm" name="message" placeholder="现有网站链接，以及想修改的内容"></textarea>
+        <div class="hp" aria-hidden="true"><label for="fcomp">请勿填写此字段</label><input id="fcomp" name="company" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn-gold magnetic" id="leadBtn" type="submit">提交申请 <span class="arr">→</span></button>
+        <p class="lead-msg" id="leadMsg" role="status" aria-live="polite"></p>
         <a class="btn btn-ghost magnetic" id="leadTg" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener" style="margin-top:12px;width:100%;justify-content:center">更快——用Telegram <span class="arr">→</span></a>
-        <p class="fine">点击«通过邮件发送»按钮，将打开您的邮件客户端并自动填好邮件内容。如果没有邮件客户端——请在Telegram联系我们，回复更快。您的信息不会提供给第三方。</p>
+        <p class="fine">申请会立即发送给我们——我们会在一天内回复。如果您更习惯用聊天软件，请在Telegram联系我们。数据不会提供给第三方。提交申请即表示您同意处理个人数据—— <a href="../politika.html">政策</a>.</p>
       </form>
     </div>
   </div>
@@ -1388,7 +1427,7 @@ function fitHero(){
 function refreshHero(){ fitHero(); buildOrbits(); }
 refreshHero();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(refreshHero);
-addEventListener('load',function(){setTimeout(refreshHero,140);});
+addEventListener('load',function(){setTimeout(refreshHero,140);setTimeout(refreshHero,700);});
 var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(refreshHero,150);});
 
 /* движение и притухание подписи, которая зашла за соседнюю */
@@ -1468,15 +1507,46 @@ if(box){
   } else rows.forEach(function(r){r.classList.add('on');});
 }
 
-/* --- заявка: собираем письмо сами, чтобы ничего не терялось --- */
-var lf=document.getElementById('leadForm');
+/* --- заявка: уходит на наш приёмник, оттуда сразу нам в Telegram --- */
+var LEAD_URL='https://vseti-form.152-53-60-176.nip.io/';
+var lf=document.getElementById('leadForm'), lopened=Date.now();
 if(lf) lf.addEventListener('submit',function(e){
   e.preventDefault();
   var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
-  var name=v('fn'), contact=v('fc'), task=v('fm');
-  if(!name||!contact){ lf.reportValidity&&lf.reportValidity(); return; }
-  var body='姓名： '+name+'\\n联系方式： '+contact+'\\n网站或需求： '+(task||'—')+'\\n\\n发送自 vseti-site.ru';
-  location.href='mailto:site_vseti@mail.ru?subject='+encodeURIComponent('来自网站的申请—— '+name)+'&body='+encodeURIComponent(body);
+  var name=v('fn'), contact=v('fc'), task=v('fm'), trap=v('fcomp');
+  var msg=document.getElementById('leadMsg'), btn=document.getElementById('leadBtn');
+  var say=function(t,cls){ if(msg){ msg.textContent=t; msg.className='lead-msg '+(cls||''); } };
+  if(!name||!contact){ say('请填写姓名和联系方式——否则我们无法回复您。','bad'); return; }
+  if(btn){ btn.disabled=true; }
+  say('正在提交…','');
+  var done=function(ok,err){
+    if(btn){ btn.disabled=false; }
+    if(ok){
+      lf.reset(); lopened=Date.now();
+      say('申请已收到。我们会在一天内回复。','good');
+    } else {
+      /* сеть не пустила — открываем письмо, чтобы заявка не потерялась */
+      say('发送失败。正在为您打开邮件——或者请在Telegram联系我们。','bad');
+      var body='姓名： '+name+'\\n联系方式： '+contact+'\\n网站或需求： '+(task||'—')+'\\n\\n发送自 vseti-site.ru';
+      location.href='mailto:site_vseti@mail.ru?subject='+encodeURIComponent('来自网站的申请—— '+name)+'&body='+encodeURIComponent(body);
+    }
+  };
+  var payload={name:name,contact:contact,message:task,company:trap,t:lopened,
+               lang:(document.documentElement.getAttribute('lang')||'ru')};
+  try{
+    var xhr=new XMLHttpRequest();
+    xhr.open('POST',LEAD_URL,true);
+    xhr.timeout=15000;
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.onload=function(){
+      var ok=false;
+      try{ ok=(xhr.status===200)&&JSON.parse(xhr.responseText).ok===true; }catch(_e){}
+      done(ok);
+    };
+    xhr.onerror=function(){ done(false); };
+    xhr.ontimeout=function(){ done(false); };
+    xhr.send(JSON.stringify(payload));
+  }catch(_e){ done(false); }
 });
 
 /* --- карусель телефонов: Telegram / MAX / В联系方式е --- */

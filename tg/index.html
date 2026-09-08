@@ -307,6 +307,21 @@ html.light .svc .c:hover{background:linear-gradient(165deg,#fff,rgba(223,242,239
 .form textarea{min-height:110px;resize:vertical}
 .form .btn{margin-top:22px;width:100%;justify-content:center}
 .form .fine{font-size:12px;color:var(--dim);margin:14px 0 0}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{margin:0;border:1px solid var(--line);border-radius:22px;padding:26px;background:var(--bg2);display:flex;flex-direction:column;gap:18px;transition:border-color .4s,transform .5s var(--ease)}
+.rev:hover{border-color:rgba(132,244,234,.45);transform:translateY(-4px)}
+.rev blockquote{margin:0;font-size:15px;line-height:1.62;color:var(--ink);position:relative;padding-top:20px}
+.rev blockquote::before{content:"\201C";position:absolute;top:-6px;left:-2px;font-family:var(--disp);font-size:44px;line-height:1;color:var(--tif);opacity:.5}
+.rev figcaption{display:flex;align-items:center;gap:12px;margin-top:auto}
+.rev figcaption b{display:block;font-size:14.5px}
+.rev figcaption small{display:block;font-size:12.5px;color:var(--mute);margin-top:2px}
+@media(max-width:980px){.revs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.revs{grid-template-columns:1fr}.rev{padding:22px}}
+.form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form .btn[disabled]{opacity:.6;pointer-events:none}
+.lead-msg{font-size:13.5px;margin:12px 0 0;min-height:18px;color:var(--mute)}
+.lead-msg.good{color:var(--tif)}
+.lead-msg.bad{color:#ffb4a2}
 @media (max-width:900px){.cgrid{grid-template-columns:1fr;gap:40px}}
 
 .ftr{padding:40px 0 34px;border-top:1px solid var(--line);background:var(--g2)}
@@ -488,8 +503,8 @@ html.rm .cmp2 .mk path{stroke-dashoffset:0}
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
 .tile{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:var(--bg2);transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
 .tile:hover{transform:translateY(-6px);border-color:rgba(132,244,234,.45);box-shadow:0 20px 50px -22px rgba(132,244,234,.8)}
-.tile .av{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:15px;color:#071a18;background:linear-gradient(140deg,var(--tif),#3fd6c9)}
-.tile .av.g{background:linear-gradient(140deg,var(--gold2),var(--gold));color:#1b1300}
+.tile .av,.rev .av{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:15px;color:#071a18;background:linear-gradient(140deg,var(--tif),#3fd6c9)}
+.tile .av.g,.rev .av.g{background:linear-gradient(140deg,var(--gold2),var(--gold));color:#1b1300}
 .tile b{display:block;font-family:var(--disp);font-variation-settings:"wght" 500;font-size:15px;line-height:1.2}
 .tile small{display:block;color:var(--mute);font-size:13px;margin-top:3px}
 .tile .arr{margin-left:auto;color:var(--tif);transition:transform .4s var(--ease)}
@@ -572,11 +587,12 @@ html.light .plan:hover{border-color:var(--tif);background:linear-gradient(165deg
 html.light .plan:hover .pr{text-shadow:0 0 18px rgba(12,125,116,.45)}
 html.light .plan .stamp{color:#fff;background:var(--gold2)}
 html.light .tile{background:rgba(255,255,255,.85)}
-html.light .tile .av{color:#fff;background:linear-gradient(140deg,#0c7d74,#0a6a63)}
-html.light .tile .av.g{color:#fff;background:linear-gradient(140deg,#8a6a12,#6f5410)}
+html.light .tile .av,html.light .rev .av{color:#fff;background:linear-gradient(140deg,#0c7d74,#0a6a63)}
+html.light .tile .av.g,html.light .rev .av.g{color:#fff;background:linear-gradient(140deg,#8a6a12,#6f5410)}
 html.light .langs .flags span{background:rgba(12,125,116,.06)}
 html.light .phone{background:linear-gradient(160deg,#0f4a45,#0a302c)}
 html.light .form{background:rgba(255,255,255,.8)}
+html.light .rev{background:rgba(255,255,255,.72)}
 html.light .form input,html.light .form textarea{background:rgba(255,255,255,.9);color:var(--ink)}
 html.light .form input:focus,html.light .form textarea:focus{background:#fff;border-color:var(--tif)}
 html.light .contact{background:linear-gradient(180deg,var(--bg) 0%,var(--g1) 100%)}
@@ -720,8 +736,8 @@ html.light .case{background:rgba(255,255,255,.85)}
     <p class="eyebrow hero-in">агентии веб «в сети»</p>
     <h1 class="h1" id="h1">
       <span class="ln"><span>Сомонаҳо месозем,</span></span>
-      <span class="ln"><span>ки <em>меёбанд</em></span></span>
-      <span class="ln"><span>мизоҷон ва шабакаҳои нейронӣ</span></span>
+      <span class="ln"><span>ки <em>мизоҷон ва шабакаҳои нейронӣ</em></span></span>
+      <span class="ln"><span>меёбанд</span></span>
     </h1>
     <div class="hline hero-in">
       <div class="phrase" id="phrase">Ҳама шуморо меёбанд.</div>
@@ -749,7 +765,7 @@ html.light .case{background:rgba(255,255,255,.85)}
 <section class="sec quiet" id="proof">
   <div class="wrap statement">
     <h2 class="big" id="stmt">Имрӯз сомонаро на танҳо <span class="tif">дар Яндекс меёбанд</span> — онро шабакаҳои нейронӣ мехонанд.</h2>
-    <p class="sub rv">Одамон аз ChatGPT ва дигар шабакаҳои нейронӣ — Алиса, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok мепурсанд: «нотариуси наздик кадом аст», «дандонпизишкии хуб дар куҷост». Шабакаи нейронӣ бо маълумоти сомонаҳо ҷавоб медиҳад — вале танҳо аз онҳое, ки шабакаҳои нейронӣ мефаҳманд.</p>
+    <p class="sub rv">Одамон аз ChatGPT ва дигар шабакаҳои нейронӣ — Алиса, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok мепурсанд: «кадом нотариус наздик аст», «дандонпизишкии хуб дар куҷост». Шабакаи нейронӣ бо маълумоти сомонаҳо ҷавоб медиҳад — вале танҳо аз онҳое, ки шабакаҳои нейронӣ мефаҳманд.</p>
     <div class="proof">
       <div class="p rv">
         <div class="n"><span data-count="0">0</span><small>хато</small></div>
@@ -852,6 +868,26 @@ html.light .case{background:rgba(255,255,255,.85)}
   </div>
 </section>
 
+<!-- ОТЗЫВЫ -->
+<section class="sec quiet" id="revs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">андешаҳо</p>
+        <h2 class="h2 split-ln"><span class="ln"><span>Онҳое, ки</span></span><span class="ln"><span>бо мо кор мекунанд, <span class="tif">чӣ мегӯянд</span></span></span></h2></div>
+      <p class="lead rv">Қисми мизоҷон бо мо аллакай соли дуюм ҳастанд: сомона зинда аст, навсозӣ мешавад ва дархост меорад.</p>
+    </div>
+    <div class="revs">
+      <figure class="rev rv"><blockquote>Аз ҳама бештар метарсидам, ки ҳангоми кӯчидан бланкҳо ва ҳуҷҷатҳо гум мешаванд — дар сомонаи кӯҳна онҳо хеле зиёд буданд. Ҳама чизро то файли охирин кӯчонданд ва рӯйхат нишон доданд, ки чӣ ба куҷо гузошта шуд. Ҳоло сомона дар телефон хуб кушода мешавад ва аз он бевосита ба назди мо сабти вақт мекунанд.</blockquote><figcaption><span class="av">ИК</span><span><b>Ирина Ковалёва</b><small>идораи нотариалӣ · бо мо 1 сол 2 моҳ</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Чизи содда хоҳиш карда будам: то дархостҳо ба Telegram-и ман биёянд, на дар почта гум шаванд. Дар як ҳафта якҷоя бо бот сохтанд. Дархостҳо бештар шуданд, зеро барои одамон навиштан аз занг задан қулайтар аст.</blockquote><figcaption><span class="av g">ДШ</span><span><b>Денис Шилов</b><small>интихоби мошин · бо мо 1 сол</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Ман сабти вақт ва пардохт дорам — пештар ҳама чиз дастӣ дар мукотиба буд. Ҳоло мизоҷ худаш вақтро интихоб мекунад ва пардохт мекунад, ва ман ҷадвалро мебинам. Тахминан ду соат дар як рӯз озод шуд, ва ин муболиға нест.</blockquote><figcaption><span class="av">МЛ</span><span><b>Марина Лебедева</b><small>равоншинос · бо мо 1 сол 6 моҳ</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Сомона дувоздаҳ сол дошт, дар телефон паҳн мешуд. Аз нав сохтем, ва ҳоло онро касоне меёбанд, ки на дар ҷустуҷӯгар, балки аз шабакаи нейронӣ мепурсанд — худам санҷидам, ChatGPT моро ном мебарад ва пайванд медиҳад.</blockquote><figcaption><span class="av g">АТ</span><span><b>Алексей Тарасов</b><small>тадқиқоти муҳандисӣ · бо мо 1 сол 4 моҳ</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Нисфи мизоҷони ман дар хона на бо забони русӣ гап мезананд. Нусхаҳоро бо якчанд забон сохтем — одамон дигар бо телефон намепурсанд, ки чӣ ва чанд арзиш дорад, худашон мехонанд.</blockquote><figcaption><span class="av">ОГ</span><span><b>Ольга Гурьева</b><small>студияи зебоӣ · бо мо 11 моҳ</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Қадр мекунам, ки ҷавоб медиҳанд. Шом дар бораи ислоҳ дар саҳифаи асосӣ навиштам — субҳ он аллакай гузошта шуда буд. Дар давоми якуним сол ягон бор лозим наомад, ки дубора хотиррасон кунам.</blockquote><figcaption><span class="av g">СБ</span><span><b>Сергей Бушуев</b><small>корҳои ороишӣ · бо мо 1 сол 7 моҳ</small></span></figcaption></figure>
+    </div>
+    <p class="tiles-note">Номҳо ва касбҳо — бо розигии мизоҷон. Тамосро нашр намекунем: хоҳиш карданд, ки бо занг халал нарасонем.</p>
+  </div>
+</section>
+
 <!-- COMPARE -->
 <section class="sec" id="cmp">
   <div class="wrap">
@@ -872,7 +908,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="langs">
       <div>
         <p class="eyebrow">касе ки шуморо намеёбад</p>
-        <h2 class="h2 split-ln"><span class="ln"><span>Меҷӯянд на танҳо</span></span><span class="ln"><span><span class="tif">бо забони русӣ</span></span></span></h2>
+        <h2 class="h2 split-ln"><span class="ln"><span>На танҳо</span></span><span class="ln"><span><span class="tif">бо забони русӣ меҷӯянд</span></span></span></h2>
         <p class="lead rv" style="max-width:52ch">Дар Русия бисёр одамоне зиндагӣ ва кор мекунанд, ки барояшон ҷустуҷӯ бо забони модарӣ — ӯзбекӣ, тоҷикӣ, қирғизӣ, озарбойҷонӣ осонтар аст. Сомонаи танҳо русиро онҳо гузашта мераванд: фаҳмо нест, ки шумо чӣ пешниҳод мекунед ва оё ба онҳо мувофиқ ҳастед.</p>
         <p class="lead rv" style="max-width:52ch;margin-top:20px">Мо сомонаро пурра тарҷума мекунем, на бо тугмаи тарҷумон. Ҷустуҷӯгар ва шабакаи нейронӣ ба инсон дарҳол нусхаи барояш фаҳморо нишон медиҳанд — ва ӯ ба шумо мерасад.</p>
       </div>
@@ -880,7 +916,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="flags"><span>Русский</span><span>English</span><span>O‘zbekcha</span><span>Тоҷикӣ</span><span>Кыргызча</span><span>Azərbaycanca</span><span>中文</span></div>
         <p class="langs-fact" style="color:var(--mute);margin-top:26px;font-size:16px">То 1 сентябри соли 2024 дар Русия буданд <b style="color:var(--ink)">1,79 млн</b> шаҳрвандони Ӯзбекистон, <b style="color:var(--ink)">1,23 млн</b> шаҳрвандони Тоҷикистон ва <b style="color:var(--ink)">263 ҳазор</b> шаҳрвандони Қирғизистон, ва ҳамагӣ шаҳрвандони хориҷӣ — зиёда аз <b style="color:var(--ink)">6 миллион</b>.</p>
         <p class="langs-fact" style="color:var(--mute);margin-top:14px;font-size:16px">Дар тирамоҳи соли 2025 имтиҳони забони русиро 275 609 нафар супориданд, ва <b style="color:var(--ink)">13% нагузаштанд</b> онро аз кӯшиши аввал. Ин маҳз ҳамон қисми аудиторияест, ки сомонаи русии шуморо оддӣ намехонад.</p>
-        <p class="src">Манбаъҳо: маълумоти Вазорати корҳои дохилии Русия аз 01.09.2024 ва барои соли 2024; маълумоти Вазорати маориф ва илми Русия оид ба санҷиш дар семоҳаи III соли 2025. Рақамҳо айнан оварда шудаанд, бе мусоидат ба фоидаи худ.</p>
+        <p class="src">Манбаъҳо: маълумоти Вазорати корҳои дохилии Русия аз 01.09.2024 ва барои соли 2024; маълумоти Вазорати маориф ва илми Русия оид ба санҷиш дар семоҳаи III соли 2025. Рақамҳо айнан оварда шудаанд, бе гирдкунӣ ба фоидаи худ.</p>
       </div>
     </div>
   </div>
@@ -892,7 +928,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="chan">
       <div>
         <p class="eyebrow">на танҳо сомона</p>
-        <h2 class="h2 split-ln"><span class="ln"><span>Каналҳо, ботҳо</span></span><span class="ln"><span>и <span class="gold">пардохт</span></span></span></h2>
+        <h2 class="h2 split-ln"><span class="ln"><span>Каналҳо, ботҳо</span></span><span class="ln"><span class="gold">ва пардохт</span></span></h2>
         <ul class="rv">
           <li><b>Каналҳо дар ҳамаи платформаҳо</b> — Telegram, MAX, ВКонтакте. Тарҳрезӣ мекунем, пур мекунем ва бо сомона мепайвандем.</li>
           <li><b>Чат-ботҳо, аз ҷумла дар MAX</b> — ба саволҳо ҷавоб медиҳанд, фармоишҳоро қабул мекунанд ва мизоҷонро шабонарӯзӣ сабт мекунанд.</li>
@@ -913,7 +949,7 @@ html.light .case{background:rgba(255,255,255,.85)}
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">тарифҳо</p>
-        <h2 class="h2 split-ln"><span class="ln"><span>Шаффоф</span></span><span class="ln"><span><span class="gold">арзиш</span></span></span></h2></div>
+        <h2 class="h2 split-ln"><span class="ln"><span>Арзиши</span></span><span class="ln"><span><span class="gold">шаффоф</span></span></span></h2></div>
       <p class="lead rv">Нархи собити лоиҳа + пуштибонии ҳармоҳа. Бидуни пардохтҳои пинҳонӣ.</p>
     </div>
     <div class="plans">
@@ -954,7 +990,7 @@ html.light .case{background:rgba(255,255,255,.85)}
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">саволҳои зуд-зуд</p>
-        <h2 class="faqhead" id="faqHead">Саволҳои зуд-зуд додашаванда</h2></div>
+        <h2 class="faqhead" id="faqHead">Саволҳои зуд-зуд пурсидашаванда</h2></div>
     </div>
     <div class="faq">
       <details class="rv"><summary>Бозтарроҳӣ чанд вақт мегирад? <i></i></summary><div class="a">Тарифи «Старт» — аз 14 рӯз, «Бизнес» — аз 21 рӯз, «Ҳама дохил» — аз 30 рӯз. Мӯҳлатҳо дар шартнома муайян карда мешаванд. Таъхир аз айби мо — ҷуброн аз ҳаққи обуна.</div></details>
@@ -962,8 +998,8 @@ html.light .case{background:rgba(255,255,255,.85)}
       <details class="rv"><summary>Ман аллакай сомона дорам — оё бозтарроҳӣ лозим аст? <i></i></summary><div class="a">На ҳамеша. Аз аудити ройгон сар мекунем: суръат, қулай будан дар телефон, ҷустуҷӯ, намоёнӣ барои шабакаҳои нейронӣ. Агар сомона аз ҷиҳати техникӣ солим бошад — танзими нуқтагӣ бидуни бозтарроҳии пурра мумкин аст. Ростқавлона мегӯем, ки чӣ лозим асту чӣ не.</div></details>
       <details class="rv"><summary>Оё кафолати натиҷа ҳаст? <i></i></summary><div class="a">Сифати техникиро кафолат медиҳем ва онро дар шартнома мустаҳкам мекунем: сомона зуд бор мешавад, дар ҳар телефон дуруст кушода мешавад, нишондиҳандаҳои суръат дар минтақаи сабз ҳастанд, ҷустуҷӯгарҳо ва ботҳои ҲС саҳифаро пурра мегиранд ва дуруст мефаҳманд, ки шумо кистед ва чӣ мекунед. Аз ҳамин лаҳза сомона дар натиҷаҳои ҷустуҷӯ намоён мешавад. Ҷойҳои мушаххас дар ҷустуҷӯ ва зикр дар ҷавобҳои шабакаҳои нейронӣ аз бозор ва рақибон вобастаанд — инро ҳеҷ кас ваъда намедиҳад, мо ҳам не.</div></details>
       <details class="rv"><summary>Ҷуғрофияи кори шумо чӣ гуна аст? <i></i></summary><div class="a">Мо дар тамоми Русия ва хориҷа комилан аз дур кор мекунем. Шартнома, брифинг, қабул — дар мессенҷер ё видеоалоқа. Минтақаи вақт аҳамият надорад.</div></details>
-      <details class="rv"><summary>Сомонаро ба кадом забонҳо тарҷума мекунед? <i></i></summary><div class="a">Англисӣ, ӯзбекӣ, тоҷикӣ, қирғизӣ, озарбойҷонӣ ва хитойӣ — ба ғайр аз русӣ. Тарҷумаро инсон мекунад, на тугмаи тарҷумон, ва ҳар нусха бо суроғаи худ кушода мешавад, аз ин рӯ ҷустуҷӯгарҳо онро мебинанд.</div></details>
-      <details class="rv"><summary>Пас аз анҷоми шартномаи пуштибонӣ чӣ рӯй медиҳад? <i></i></summary><div class="a">Сомона аз они шумо мемонад — шумо файлҳои асосӣ, дастрасӣ ба хостинг ва доменро мегиред. Метавонед мустақилона ё бо пудратчии дигар идома диҳед. Бидуни вобастагиҳои пинҳонӣ.</div></details>
+      <details class="rv"><summary>Сомонаро ба кадом забонҳо тарҷума мекунед? <i></i></summary><div class="a">Англисӣ, ӯзбекӣ, тоҷикӣ, қирғизӣ, озарбойҷонӣ ва хитойӣ — инчунин русӣ. Тарҷумаро инсон мекунад, на тугмаи тарҷумон, ва ҳар нусха бо суроғаи худ кушода мешавад, аз ин рӯ ҷустуҷӯгарҳо онро мебинанд.</div></details>
+      <details class="rv"><summary>Пас аз анҷоми шартномаи пуштибонӣ чӣ рӯй медиҳад? <i></i></summary><div class="a">Сомона аз они шумо мемонад — шумо файлҳои аслӣ, дастрасӣ ба хостинг ва доменро мегиред. Метавонед мустақилона ё бо пудратчии дигар идома диҳед. Бидуни вобастагиҳои пинҳонӣ.</div></details>
     </div>
   </div>
 </section>
@@ -979,18 +1015,21 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="clinks">
           <a class="rv" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener"><span>Бот — дархости зуд<small>@vseti_agency_bot · дар зарфи чанд сония ҷавоб медиҳад</small></span><span class="arr">→</span></a>
           <a class="rv" href="https://t.me/vseti_site" target="_blank" rel="noopener"><span>Канали «в сети»<small>@vseti_site · кейсҳо, маслиҳатҳо, хабарҳо</small></span><span class="arr">→</span></a>
+          <a class="rv" href="https://max.ru/id183474446770_4_bot" target="_blank" rel="noopener"><span>Бот дар MAX<small>дархост бевосита дар мессенҷер</small></span><span class="arr">→</span></a>
           <a class="rv" href="mailto:site_vseti@mail.ru"><span>site_vseti@mail.ru<small>почта · шартнома, бриф, ҳуҷҷатҳо</small></span><span class="arr">→</span></a>
         </div>
       </div>
-      <form class="form rv" id="leadForm" action="mailto:site_vseti@mail.ru" method="post" enctype="text/plain">
+      <form class="form rv" id="leadForm" method="post" novalidate>
         <h3>Дархост гузоштан</h3>
-        <p>Дар мессенҷери қулай ё ба почта менависем.</p>
-        <label for="fn">Ном</label><input id="fn" name="Ном" placeholder="Шуморо чӣ гуна хитоб кунем" required>
-        <label for="fc">Тамос</label><input id="fc" name="Тамос" placeholder="Telegram ё телефон" required>
-        <label for="fm">Сомона ё вазифа</label><textarea id="fm" name="Задача" placeholder="Истинод ба сомонаи ҳозира, чӣ тағйир додан мехоҳед"></textarea>
-        <button class="btn btn-gold magnetic" type="submit">Бо почта фиристодан <span class="arr">→</span></button>
+        <p>Ба мессенҷери қулай ё ба почта менависем.</p>
+        <label for="fn">Ном</label><input id="fn" name="name" autocomplete="name" placeholder="Шуморо чӣ гуна хитоб кунем" required>
+        <label for="fc">Тамос</label><input id="fc" name="contact" autocomplete="tel" placeholder="Telegram ё телефон" required>
+        <label for="fm">Сомона ё вазифа</label><textarea id="fm" name="message" placeholder="Истинод ба сомонаи ҳозира, чӣ тағйир додан мехоҳед"></textarea>
+        <div class="hp" aria-hidden="true"><label for="fcomp">Ин майдонро пур накунед</label><input id="fcomp" name="company" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn-gold magnetic" id="leadBtn" type="submit">Дархост фиристодан <span class="arr">→</span></button>
+        <p class="lead-msg" id="leadMsg" role="status" aria-live="polite"></p>
         <a class="btn btn-ghost magnetic" id="leadTg" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener" style="margin-top:12px;width:100%;justify-content:center">Тезтар — дар Telegram <span class="arr">→</span></a>
-        <p class="fine">Тугмаи «Фиристодан бо почта» мизоҷи почтаи шуморо бо номаи аллакай пуркардашуда мекушояд. Агар мизоҷи почта набошад — ба мо дар Telegram нависед, зудтар ҷавоб медиҳем. Маълумот ба шахсони сеюм дода намешавад.</p>
+        <p class="fine">Дархост фавран ба мо мерасад — дар давоми як рӯз ҷавоб медиҳем. Агар мессенҷер қулайтар бошад, ба Telegram нависед. Маълумот ба шахсони сеюм дода намешавад. Бо фиристодани дархост шумо ба коркарди маълумоти шахсии худ розӣ мешавед — <a href="../politika.html">сиёсат</a>.</p>
       </form>
     </div>
   </div>
@@ -1388,7 +1427,7 @@ function fitHero(){
 function refreshHero(){ fitHero(); buildOrbits(); }
 refreshHero();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(refreshHero);
-addEventListener('load',function(){setTimeout(refreshHero,140);});
+addEventListener('load',function(){setTimeout(refreshHero,140);setTimeout(refreshHero,700);});
 var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(refreshHero,150);});
 
 /* движение и притухание подписи, которая зашла за соседнюю */
@@ -1468,15 +1507,46 @@ if(box){
   } else rows.forEach(function(r){r.classList.add('on');});
 }
 
-/* --- заявка: собираем письмо сами, чтобы ничего не терялось --- */
-var lf=document.getElementById('leadForm');
+/* --- заявка: уходит на наш приёмник, оттуда сразу нам в Telegram --- */
+var LEAD_URL='https://vseti-form.152-53-60-176.nip.io/';
+var lf=document.getElementById('leadForm'), lopened=Date.now();
 if(lf) lf.addEventListener('submit',function(e){
   e.preventDefault();
   var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
-  var name=v('fn'), contact=v('fc'), task=v('fm');
-  if(!name||!contact){ lf.reportValidity&&lf.reportValidity(); return; }
-  var body='Ном: '+name+'\\nТамос: '+contact+'\\nСомона ё вазифа: '+(task||'—')+'\\n\\nФиристода шуд аз vseti-site.ru';
-  location.href='mailto:site_vseti@mail.ru?subject='+encodeURIComponent('Дархост аз сомона — '+name)+'&body='+encodeURIComponent(body);
+  var name=v('fn'), contact=v('fc'), task=v('fm'), trap=v('fcomp');
+  var msg=document.getElementById('leadMsg'), btn=document.getElementById('leadBtn');
+  var say=function(t,cls){ if(msg){ msg.textContent=t; msg.className='lead-msg '+(cls||''); } };
+  if(!name||!contact){ say('Ном ва тамосро пур кунед — вагарна мо наметавонем ҷавоб диҳем.','bad'); return; }
+  if(btn){ btn.disabled=true; }
+  say('Фиристодан…','');
+  var done=function(ok,err){
+    if(btn){ btn.disabled=false; }
+    if(ok){
+      lf.reset(); lopened=Date.now();
+      say('Дархост назди мо аст. Дар давоми як рӯз ҷавоб медиҳем.','good');
+    } else {
+      /* сеть не пустила — открываем письмо, чтобы заявка не потерялась */
+      say('Фиристодан муяссар нашуд. Номаро мекушоем — ё ба мо дар Telegram нависед.','bad');
+      var body='Ном: '+name+'\\nТамос: '+contact+'\\nСомона ё вазифа: '+(task||'—')+'\\n\\nФиристода шуд аз vseti-site.ru';
+      location.href='mailto:site_vseti@mail.ru?subject='+encodeURIComponent('Дархост аз сомона — '+name)+'&body='+encodeURIComponent(body);
+    }
+  };
+  var payload={name:name,contact:contact,message:task,company:trap,t:lopened,
+               lang:(document.documentElement.getAttribute('lang')||'ru')};
+  try{
+    var xhr=new XMLHttpRequest();
+    xhr.open('POST',LEAD_URL,true);
+    xhr.timeout=15000;
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.onload=function(){
+      var ok=false;
+      try{ ok=(xhr.status===200)&&JSON.parse(xhr.responseText).ok===true; }catch(_e){}
+      done(ok);
+    };
+    xhr.onerror=function(){ done(false); };
+    xhr.ontimeout=function(){ done(false); };
+    xhr.send(JSON.stringify(payload));
+  }catch(_e){ done(false); }
 });
 
 /* --- карусель телефонов: Telegram / MAX / ВТамосе --- */

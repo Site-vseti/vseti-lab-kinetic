@@ -307,6 +307,21 @@ html.light .svc .c:hover{background:linear-gradient(165deg,#fff,rgba(223,242,239
 .form textarea{min-height:110px;resize:vertical}
 .form .btn{margin-top:22px;width:100%;justify-content:center}
 .form .fine{font-size:12px;color:var(--dim);margin:14px 0 0}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{margin:0;border:1px solid var(--line);border-radius:22px;padding:26px;background:var(--bg2);display:flex;flex-direction:column;gap:18px;transition:border-color .4s,transform .5s var(--ease)}
+.rev:hover{border-color:rgba(132,244,234,.45);transform:translateY(-4px)}
+.rev blockquote{margin:0;font-size:15px;line-height:1.62;color:var(--ink);position:relative;padding-top:20px}
+.rev blockquote::before{content:"\201C";position:absolute;top:-6px;left:-2px;font-family:var(--disp);font-size:44px;line-height:1;color:var(--tif);opacity:.5}
+.rev figcaption{display:flex;align-items:center;gap:12px;margin-top:auto}
+.rev figcaption b{display:block;font-size:14.5px}
+.rev figcaption small{display:block;font-size:12.5px;color:var(--mute);margin-top:2px}
+@media(max-width:980px){.revs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.revs{grid-template-columns:1fr}.rev{padding:22px}}
+.form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form .btn[disabled]{opacity:.6;pointer-events:none}
+.lead-msg{font-size:13.5px;margin:12px 0 0;min-height:18px;color:var(--mute)}
+.lead-msg.good{color:var(--tif)}
+.lead-msg.bad{color:#ffb4a2}
 @media (max-width:900px){.cgrid{grid-template-columns:1fr;gap:40px}}
 
 .ftr{padding:40px 0 34px;border-top:1px solid var(--line);background:var(--g2)}
@@ -488,8 +503,8 @@ html.rm .cmp2 .mk path{stroke-dashoffset:0}
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
 .tile{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:var(--bg2);transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
 .tile:hover{transform:translateY(-6px);border-color:rgba(132,244,234,.45);box-shadow:0 20px 50px -22px rgba(132,244,234,.8)}
-.tile .av{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:15px;color:#071a18;background:linear-gradient(140deg,var(--tif),#3fd6c9)}
-.tile .av.g{background:linear-gradient(140deg,var(--gold2),var(--gold));color:#1b1300}
+.tile .av,.rev .av{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:15px;color:#071a18;background:linear-gradient(140deg,var(--tif),#3fd6c9)}
+.tile .av.g,.rev .av.g{background:linear-gradient(140deg,var(--gold2),var(--gold));color:#1b1300}
 .tile b{display:block;font-family:var(--disp);font-variation-settings:"wght" 500;font-size:15px;line-height:1.2}
 .tile small{display:block;color:var(--mute);font-size:13px;margin-top:3px}
 .tile .arr{margin-left:auto;color:var(--tif);transition:transform .4s var(--ease)}
@@ -572,11 +587,12 @@ html.light .plan:hover{border-color:var(--tif);background:linear-gradient(165deg
 html.light .plan:hover .pr{text-shadow:0 0 18px rgba(12,125,116,.45)}
 html.light .plan .stamp{color:#fff;background:var(--gold2)}
 html.light .tile{background:rgba(255,255,255,.85)}
-html.light .tile .av{color:#fff;background:linear-gradient(140deg,#0c7d74,#0a6a63)}
-html.light .tile .av.g{color:#fff;background:linear-gradient(140deg,#8a6a12,#6f5410)}
+html.light .tile .av,html.light .rev .av{color:#fff;background:linear-gradient(140deg,#0c7d74,#0a6a63)}
+html.light .tile .av.g,html.light .rev .av.g{color:#fff;background:linear-gradient(140deg,#8a6a12,#6f5410)}
 html.light .langs .flags span{background:rgba(12,125,116,.06)}
 html.light .phone{background:linear-gradient(160deg,#0f4a45,#0a302c)}
 html.light .form{background:rgba(255,255,255,.8)}
+html.light .rev{background:rgba(255,255,255,.72)}
 html.light .form input,html.light .form textarea{background:rgba(255,255,255,.9);color:var(--ink)}
 html.light .form input:focus,html.light .form textarea:focus{background:#fff;border-color:var(--tif)}
 html.light .contact{background:linear-gradient(180deg,var(--bg) 0%,var(--g1) 100%)}
@@ -753,7 +769,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="proof">
       <div class="p rv">
         <div class="n"><span data-count="0">0</span><small>errors</small></div>
-        <p class="t">Google checks the site with its own tool and doesn't find a single error. That means search engines and AI clearly understand, <b>who you are, where you are, what you do</b> — so no one confuses your business with another's.</p>
+        <p class="t">Google checks the site with its own tool and doesn't find a single error. That means search engines and AI clearly understand, <b>who you are, where you are, and what you do</b> — so no one confuses your business with another's.</p>
       </div>
       <div class="p rv">
         <div class="n"><span data-count="9">0</span><small>out of 9 bots</small></div>
@@ -780,14 +796,14 @@ html.light .case{background:rgba(255,255,255,.85)}
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">what we do</p>
-        <h2 class="h2 split-ln"><span class="ln"><span>Full stack</span></span><span class="ln"><span>of presence <span class="tif">в сети</span></span></span></h2></div>
+        <h2 class="h2 split-ln"><span class="ln"><span>Full-stack</span></span><span class="ln"><span>presence <span class="tif">в сети</span></span></span></h2></div>
       <p class="lead rv">Six areas that work as one mechanism — from the first click to a repeat inquiry.</p>
     </div>
     <div class="svc">
       <div class="c rv"><span class="num">01</span><h3>Site redesign</h3><p>Displays correctly on any screen, loads fast, clients switch between light and dark themes themselves. A site that's easy to find and comfortable to read.</p></div>
       <div class="c rv"><span class="num">02</span><h3>Smart sites</h3><p>Online booking with notifications, price calculators, a load indicator, personal accounts. Clients submit requests themselves — no calls needed.</p></div>
       <div class="c rv"><span class="tag">our edge</span><span class="num">03</span><h3>AI visibility</h3><p>We add special code and settings to the site so AI bots can find it, read it in full, and use your content in their answer. Without this, for the AI audience you simply don't exist.</p></div>
-      <div class="c rv"><span class="num">04</span><h3>Automation</h3><p>A form with instant notifications in Telegram and MAX, payment acceptance, scheduling, a queue-load indicator. Requests handle themselves while you focus on your work.</p></div>
+      <div class="c rv"><span class="num">04</span><h3>Automation</h3><p>A form with instant notifications in Telegram and MAX, payment acceptance, scheduling, a queue indicator. Requests handle themselves while you focus on your work.</p></div>
       <div class="c rv"><span class="num">05</span><h3>Bots and chatbots</h3><p>Telegram and MAX, chatbots on the site, including AI-powered ones. They answer, take orders, and advise 24/7.</p></div>
       <div class="c rv"><span class="num">06</span><h3>Maintenance &amp; social media</h3><p>Regular content, SEO copy, promotions. VKontakte, Telegram, MAX: style, story templates, auto-broadcasts — without your daily involvement.</p></div>
       <div class="c rv"><span class="num">07</span><h3>Logo and brand identity</h3><p>We design a logo from scratch or refine your existing one: clean lines, readable on signage and in messengers, versions for dark and light backgrounds, an icon and avatars for channels.</p></div>
@@ -823,7 +839,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="stats">
       <div class="s rv"><div class="n"><span data-count="0">0</span></div><p class="t">errors when checking the site with Google's tool</p></div>
       <div class="s rv"><div class="n"><i><span data-count="9">0</span></i><small>/9</small></div><p class="t">search engines and AI bots get the full page</p></div>
-      <div class="s rv"><div class="n"><span data-count="14">0</span><small>days</small></div><p class="t">minimum launch time — «Start» plan</p></div>
+      <div class="s rv"><div class="n"><span data-count="14">0</span><small>days</small></div><p class="t">minimum launch time — &quot;Start&quot; plan</p></div>
       <div class="s rv"><div class="n"><i><span data-count="24">0</span></i><small>/7</small></div><p class="t">the bot answers clients when you're busy</p></div>
     </div>
   </div>
@@ -843,12 +859,32 @@ html.light .case{background:rgba(255,255,255,.85)}
       <a class="tile rv" href="https://kristall2002-art.github.io/avatar-park-map/" target="_blank" rel="noopener"><span class="av">КП</span><span><b>Avatar Park Map</b><small>map and PDF sales</small></span><span class="arr">↗</span></a>
       <a class="tile rv" href="https://kristall2002-art.github.io/egrn-plan-spb/" target="_blank" rel="noopener"><span class="av">ЕГ</span><span><b>EGRN: apartment plan</b><small>order an extract online</small></span><span class="arr">↗</span></a>
       <a class="tile rv" href="https://kristall2002-art.github.io/kgiop-spravki/" target="_blank" rel="noopener"><span class="av">КГ</span><span><b>KGIOP Certificates</b><small>service with payment in the bot</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://kristall2002-art.github.io/keo-insolyacia-site/" target="_blank" rel="noopener"><span class="av">ИН</span><span><b>Insolation and KEO</b><small>calculations for projects</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/keo-insolyacia-site/" target="_blank" rel="noopener"><span class="av">ИН</span><span><b>Insolation and Daylight</b><small>calculations for projects</small></span><span class="arr">↗</span></a>
       <a class="tile rv" href="https://kristall2002-art.github.io/sonnik-web/" target="_blank" rel="noopener"><span class="av g">СН</span><span><b>Sonnik</b><small>content project and bot</small></span><span class="arr">↗</span></a>
       <a class="tile rv" href="https://kristall2002-art.github.io/tsena-dnya-site/" target="_blank" rel="noopener"><span class="av g">ЦД</span><span><b>Tsena Dnya · WB</b><small>product collections, channel</small></span><span class="arr">↗</span></a>
       <a class="tile rv" href="https://kristall2002-art.github.io/gotovyplan/" target="_blank" rel="noopener"><span class="av">БП</span><span><b>БП24</b><small>business plan online</small></span><span class="arr">↗</span></a>
     </div>
     <p class="tiles-note">These are just sample projects — there are more. We'll show you what's closest to your task.</p>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section class="sec quiet" id="revs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">reviews</p>
+        <h2 class="h2 split-ln"><span class="ln"><span>What people</span></span><span class="ln"><span>we work with <span class="tif">say</span></span></span></h2></div>
+      <p class="lead rv">Some clients have been with us for over a year now: their site is alive, gets updated, and keeps bringing in requests.</p>
+    </div>
+    <div class="revs">
+      <figure class="rev rv"><blockquote>What I feared most was losing forms and documents in the move — there were a lot of them on the old site. We transferred every single file and showed a list of where everything went. Now the site works fine on the phone, and people book appointments with us right from it.</blockquote><figcaption><span class="av">ИК</span><span><b>Irina Kovalyova</b><small>notary office · with us 1 year 2 months</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>I asked for one simple thing: requests should land in my Telegram, not get lost in email. Done in a week, bot included. We're getting more requests simply because people find it easier to message than to call.</blockquote><figcaption><span class="av g">ДШ</span><span><b>Denis Shilov</b><small>car sourcing · with us 1 year</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>I have booking and payment now — before it was all manual, back and forth in messages. Now the client picks a time and pays on their own, and I just see the schedule. It freed up about two hours a day, and that's not an exaggeration.</blockquote><figcaption><span class="av">МЛ</span><span><b>Marina Lebedeva</b><small>psychologist · with us 1 year 6 months</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>The site was twelve years old and fell apart on the phone. We redid it, and now it's found by people who ask an AI instead of a search engine — I checked myself, ChatGPT names us and gives a link.</blockquote><figcaption><span class="av g">АТ</span><span><b>Aleksey Tarasov</b><small>engineering surveys · with us 1 year 4 months</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Half of my clients don't speak Russian at home. We made versions in several languages — people stopped calling to ask what things cost, they just read it themselves.</blockquote><figcaption><span class="av">ОГ</span><span><b>Olga Guryeva</b><small>beauty studio · with us 11 months</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>What I value is that they respond. I wrote in the evening about a fix on the homepage — by morning it was live. In a year and a half I've never had to ask twice.</blockquote><figcaption><span class="av g">СБ</span><span><b>Sergey Bushuev</b><small>finishing works · with us 1 year 7 months</small></span></figcaption></figure>
+    </div>
+    <p class="tiles-note">Names and occupations are shared with the clients' consent. We don't publish contacts — they asked not to be bothered with calls.</p>
   </div>
 </section>
 
@@ -873,7 +909,7 @@ html.light .case{background:rgba(255,255,255,.85)}
       <div>
         <p class="eyebrow">who can't find you</p>
         <h2 class="h2 split-ln"><span class="ln"><span>They search not only</span></span><span class="ln"><span><span class="tif">in Russian</span></span></span></h2>
-        <p class="lead rv" style="max-width:52ch">Many people living and working in Russia find it easier to search in their native language — Uzbek, Tajik, Kyrgyz, Azerbaijani. A Russian-only site they simply scroll past: it's unclear what you offer or whether you're a fit for them.</p>
+        <p class="lead rv" style="max-width:52ch">Many people living and working in Russia find it easier to search in their native language — Uzbek, Tajik, Kyrgyz, Azerbaijani. They simply scroll past a Russian-only site: it's unclear what you offer or whether you're a fit for them.</p>
         <p class="lead rv" style="max-width:52ch;margin-top:20px">We translate the whole site, not with a translate button. Search engines and AI show people the version they understand right away — and they reach you.</p>
       </div>
       <div class="rv">
@@ -892,7 +928,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="chan">
       <div>
         <p class="eyebrow">not just a site</p>
-        <h2 class="h2 split-ln"><span class="ln"><span>Channels, bots</span></span><span class="ln"><span>и <span class="gold">payment</span></span></span></h2>
+        <h2 class="h2 split-ln"><span class="ln"><span>Channels, bots</span></span><span class="ln"><span class="gold">and payments</span></span></h2>
         <ul class="rv">
           <li><b>Channels on every platform</b> — Telegram, MAX, VKontakte. We'll set it up, fill it with content, and link it to your site.</li>
           <li><b>Chatbots, including in MAX</b> — answer questions, take orders, and book clients around the clock.</li>
@@ -927,7 +963,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <a class="btn btn-ghost magnetic" href="#contact">Order <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
-        <span class="badge">hit</span>
+        <span class="badge">Popular</span>
         <span class="stamp">−40%</span>
         <div class="nm">Business</div>
         <div class="old">100 000 ₽</div>
@@ -958,9 +994,9 @@ html.light .case{background:rgba(255,255,255,.85)}
     </div>
     <div class="faq">
       <details class="rv"><summary>How long will the redesign take? <i></i></summary><div class="a">The &quot;Start&quot; plan — from 14 days, &quot;Business&quot; — from 21 days, &quot;All Inclusive&quot; — from 30 days. Deadlines are fixed in the contract. A delay on our part is compensated from the monthly fee.</div></details>
-      <details class="rv"><summary>What is AI search and why do I need it? <i></i></summary><div class="a">More and more people ask not a search engine but an AI assistant: ChatGPT, Alice, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok. The AI answers using data from websites. We add special code and settings to your site so AI bots can find it, read it in full, and use your content in their answer. Without this, for the audience that asks AI, your business simply doesn't exist.</div></details>
+      <details class="rv"><summary>What is AI search and why do I need it? <i></i></summary><div class="a">More and more people don't ask a search engine — they ask an AI assistant: ChatGPT, Alice, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok. The AI answers using data from websites. We add special code and settings to your site so AI bots can find it, read it in full, and use your content in their answer. Without this, for the audience that asks AI, your business simply doesn't exist.</div></details>
       <details class="rv"><summary>I already have a site — do I need a redesign? <i></i></summary><div class="a">Not always. We start with a free audit: speed, mobile usability, search, AI visibility. If the site is technically sound, targeted fixes may work without a full redesign. We'll tell you honestly what's needed and what isn't.</div></details>
-      <details class="rv"><summary>Are there any result guarantees? <i></i></summary><div class="a">We guarantee technical quality and put it in the contract: the site loads fast, displays correctly on any phone, speed scores stay in the green zone, and search engines and AI bots get the full page and correctly understand who you are and what you do. From that point the site starts appearing in search results. Exact rankings and mentions in AI answers depend on the market and competitors — no one promises those, and neither do we.</div></details>
+      <details class="rv"><summary>Do you guarantee results? <i></i></summary><div class="a">We guarantee technical quality and put it in the contract: the site loads fast, displays correctly on any phone, speed scores stay in the green zone, and search engines and AI bots get the full page and correctly understand who you are and what you do. From that point the site starts appearing in search results. Exact rankings and mentions in AI answers depend on the market and competitors — no one promises those, and neither do we.</div></details>
       <details class="rv"><summary>What's your service area? <i></i></summary><div class="a">We work across Russia and abroad — fully remote. Contract, briefing, sign-off — via messenger or video call. Time zone doesn't matter.</div></details>
       <details class="rv"><summary>What languages do you translate sites into? <i></i></summary><div class="a">English, Uzbek, Tajik, Kyrgyz, Azerbaijani and Chinese — plus Russian. A human translates, not a translate button, and each version has its own address, so search engines can see it.</div></details>
       <details class="rv"><summary>What happens after the maintenance contract ends? <i></i></summary><div class="a">The site stays yours — you get the source files and access to hosting and domain. You can continue on your own or with another contractor. No hidden lock-in.</div></details>
@@ -979,18 +1015,21 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="clinks">
           <a class="rv" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener"><span>Bot — quick request<small>@vseti_agency_bot · replies in seconds</small></span><span class="arr">→</span></a>
           <a class="rv" href="https://t.me/vseti_site" target="_blank" rel="noopener"><span>«в сети» channel<small>@vseti_site · case studies, tips, news</small></span><span class="arr">→</span></a>
+          <a class="rv" href="https://max.ru/id183474446770_4_bot" target="_blank" rel="noopener"><span>Bot in MAX<small>request right in the messenger</small></span><span class="arr">→</span></a>
           <a class="rv" href="mailto:site_vseti@mail.ru"><span>site_vseti@mail.ru<small>email · contract, brief, documents</small></span><span class="arr">→</span></a>
         </div>
       </div>
-      <form class="form rv" id="leadForm" action="mailto:site_vseti@mail.ru" method="post" enctype="text/plain">
+      <form class="form rv" id="leadForm" method="post" novalidate>
         <h3>Submit a request</h3>
         <p>We'll write to a convenient messenger or email.</p>
-        <label for="fn">Name</label><input id="fn" name="Name" placeholder="How should we address you" required>
-        <label for="fc">Contact</label><input id="fc" name="Contact" placeholder="Telegram or phone" required>
-        <label for="fm">Site or task</label><textarea id="fm" name="Задача" placeholder="Link to your current site, what you'd like to change"></textarea>
-        <button class="btn btn-gold magnetic" type="submit">Send by email <span class="arr">→</span></button>
+        <label for="fn">Name</label><input id="fn" name="name" autocomplete="name" placeholder="How should we address you" required>
+        <label for="fc">Contact</label><input id="fc" name="contact" autocomplete="tel" placeholder="Telegram or phone" required>
+        <label for="fm">Site or task</label><textarea id="fm" name="message" placeholder="Link to your current site, what you'd like to change"></textarea>
+        <div class="hp" aria-hidden="true"><label for="fcomp">Leave this field blank</label><input id="fcomp" name="company" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn-gold magnetic" id="leadBtn" type="submit">Submit request <span class="arr">→</span></button>
+        <p class="lead-msg" id="leadMsg" role="status" aria-live="polite"></p>
         <a class="btn btn-ghost magnetic" id="leadTg" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener" style="margin-top:12px;width:100%;justify-content:center">Faster — in Telegram <span class="arr">→</span></a>
-        <p class="fine">The «Send by email» button will open your email client with the message already filled in. If you don't have an email client — message us on Telegram, we'll reply faster. Your data is not shared with third parties.</p>
+        <p class="fine">Your request reaches us instantly — we reply within the day. If a messenger works better for you, write to us on Telegram. Your data is not shared with third parties. By submitting the request, you agree to the processing of personal data — <a href="../politika.html">policy</a>.</p>
       </form>
     </div>
   </div>
@@ -1003,7 +1042,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <a class="brand" href="#top"><img src="../assets/logo.png" alt="" width="32" height="32" style="width:32px;height:32px"><b>в <i>сети</i></b></a>
     <span>Your business «в сети». Seen by all.</span>
     <span>© 2026 «в сети» · site_vseti@mail.ru</span>
-    <span><a href="../oferta.html">Offer</a> · <a href="../politika.html">Privacy Policy</a> · <a href="../rekvizity.html">Company Info</a></span>
+    <span><a href="../oferta.html">Terms</a> · <a href="../politika.html">Privacy Policy</a> · <a href="../rekvizity.html">Company Info</a></span>
   </div>
 </footer>
 
@@ -1388,7 +1427,7 @@ function fitHero(){
 function refreshHero(){ fitHero(); buildOrbits(); }
 refreshHero();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(refreshHero);
-addEventListener('load',function(){setTimeout(refreshHero,140);});
+addEventListener('load',function(){setTimeout(refreshHero,140);setTimeout(refreshHero,700);});
 var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(refreshHero,150);});
 
 /* движение и притухание подписи, которая зашла за соседнюю */
@@ -1468,15 +1507,46 @@ if(box){
   } else rows.forEach(function(r){r.classList.add('on');});
 }
 
-/* --- заявка: собираем письмо сами, чтобы ничего не терялось --- */
-var lf=document.getElementById('leadForm');
+/* --- заявка: уходит на наш приёмник, оттуда сразу нам в Telegram --- */
+var LEAD_URL='https://vseti-form.152-53-60-176.nip.io/';
+var lf=document.getElementById('leadForm'), lopened=Date.now();
 if(lf) lf.addEventListener('submit',function(e){
   e.preventDefault();
   var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
-  var name=v('fn'), contact=v('fc'), task=v('fm');
-  if(!name||!contact){ lf.reportValidity&&lf.reportValidity(); return; }
-  var body='Name: '+name+'\\nContact: '+contact+'\\nSite or task: '+(task||'—')+'\\n\\nSent from vseti-site.ru';
-  location.href='mailto:site_vseti@mail.ru?subject='+encodeURIComponent('Request from the site — '+name)+'&body='+encodeURIComponent(body);
+  var name=v('fn'), contact=v('fc'), task=v('fm'), trap=v('fcomp');
+  var msg=document.getElementById('leadMsg'), btn=document.getElementById('leadBtn');
+  var say=function(t,cls){ if(msg){ msg.textContent=t; msg.className='lead-msg '+(cls||''); } };
+  if(!name||!contact){ say('Fill in your name and contact — otherwise we won\'t be able to reply.','bad'); return; }
+  if(btn){ btn.disabled=true; }
+  say('Sending…','');
+  var done=function(ok,err){
+    if(btn){ btn.disabled=false; }
+    if(ok){
+      lf.reset(); lopened=Date.now();
+      say('Got your request. We\'ll reply within the day.','good');
+    } else {
+      /* сеть не пустила — открываем письмо, чтобы заявка не потерялась */
+      say('Couldn\'t send it. Opening your email client — or write to us on Telegram.','bad');
+      var body='Name: '+name+'\\nContact: '+contact+'\\nSite or task: '+(task||'—')+'\\n\\nSent from vseti-site.ru';
+      location.href='mailto:site_vseti@mail.ru?subject='+encodeURIComponent('Request from the site — '+name)+'&body='+encodeURIComponent(body);
+    }
+  };
+  var payload={name:name,contact:contact,message:task,company:trap,t:lopened,
+               lang:(document.documentElement.getAttribute('lang')||'ru')};
+  try{
+    var xhr=new XMLHttpRequest();
+    xhr.open('POST',LEAD_URL,true);
+    xhr.timeout=15000;
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.onload=function(){
+      var ok=false;
+      try{ ok=(xhr.status===200)&&JSON.parse(xhr.responseText).ok===true; }catch(_e){}
+      done(ok);
+    };
+    xhr.onerror=function(){ done(false); };
+    xhr.ontimeout=function(){ done(false); };
+    xhr.send(JSON.stringify(payload));
+  }catch(_e){ done(false); }
 });
 
 /* --- карусель телефонов: Telegram / MAX / ВContactе --- */

@@ -20,7 +20,10 @@ CYR = re.compile(r'[А-Яа-яЁё]')
 
 # строки, которые НЕ переводятся: имена собственные, бренды, названия языков,
 # инициалы плиток и служебный алфавит анимации
-KEEP = set(['ВСЕТИ', 'в', 'и', 'сети', 'в сети', 'в сети.', 'Русский', 'English', 'O‘zbekcha', 'Тоҷикӣ', 'Кыргызча', 'Azərbaycanca', '中文', 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЫЭЮЯ', 'ЭР', 'РЗ', 'КП', 'ЕГ', 'КГ', 'ИН', 'СН', 'ЦД', 'БП', 'TG', 'MAX', 'VK', 'Яндекс', 'Google', 'ChatGPT', 'Алиса', 'Gemini', 'Perplexity', 'Claude', 'DeepSeek', 'Grok', 'GigaChat', 'Copilot', 'Bing', 'GPTBot', 'Telegram', 'ВКонтакте', 'ЮKassa', 'СБП', 'Schema.org', 'llms.txt', 'robots.txt', 'Элина Рихтер', 'Рина Золотарёва', 'Сонник', 'БП24', 'Цена Дня · WB', 'ЕГРН: план квартиры', 'site_vseti@mail.ru', '@vseti_agency_bot · @vseti_site'])
+KEEP = set(['ВСЕТИ', 'в', 'и', 'сети', 'в сети', 'в сети.', 'Русский', 'English', 'O‘zbekcha', 'Тоҷикӣ', 'Кыргызча', 'Azərbaycanca', '中文', 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЫЭЮЯ', 'ЭР', 'РЗ', 'КП', 'ЕГ', 'КГ', 'ИН', 'СН', 'ЦД', 'БП', 'TG', 'MAX', 'VK', 'Яндекс', 'Google', 'ChatGPT', 'Алиса', 'Gemini', 'Perplexity', 'Claude', 'DeepSeek', 'Grok', 'GigaChat', 'Copilot', 'Bing', 'GPTBot', 'Telegram', 'ВКонтакте', 'ЮKassa', 'СБП', 'Schema.org', 'llms.txt', 'robots.txt', 'Элина Рихтер', 'Рина Золотарёва', 'Сонник', 'БП24', 'Цена Дня · WB', 'ЕГРН: план квартиры', 'site_vseti@mail.ru', '@vseti_agency_bot · @vseti_site',
+# инициалы и имена в отзывах: как и на плитках кейсов, они не переводятся
+'ИК', 'ДШ', 'МЛ', 'АТ', 'ОГ', 'СБ',
+'Ирина Ковалёва', 'Денис Шилов', 'Марина Лебедева', 'Алексей Тарасов', 'Ольга Гурьева', 'Сергей Бушуев'])
 
 
 def strings(src):
@@ -64,6 +67,9 @@ LATIN_BRANDS = {
  'Сонник': 'Sonnik', 'Цена Дня · WB': 'Tsena Dnya · WB',
  'ЕГРН: план квартиры': 'EGRN: apartment plan',
  'Справки КГИОП': 'KGIOP certificates', 'Карта парка Аватар': 'Avatar Park map',
+ 'Ирина Ковалёва': 'Irina Kovalyova', 'Денис Шилов': 'Denis Shilov',
+ 'Марина Лебедева': 'Marina Lebedeva', 'Алексей Тарасов': 'Aleksey Tarasov',
+ 'Ольга Гурьева': 'Olga Guryeva', 'Сергей Бушуев': 'Sergey Bushuev',
  'Инсоляция и КЕО': 'Insolation and daylight',
 }
 LATIN_LANGS = {'en', 'uz', 'az', 'zh'}

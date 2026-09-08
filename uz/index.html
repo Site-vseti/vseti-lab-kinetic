@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>в сети — veb-agentlik. Biznesingiz — в сети. Hammasi ko'radi.</title>
+<title>в сети — veb-agentlik. Biznesingiz — в сети. Hammasi ko‘radi.</title>
 <meta name="description" content="«в сети» veb-agentligi: mijozlar va neyrotarmoqlar — ChatGPT, Alice, Gemini — topadigan saytlarni qayta dizayn qilamiz. Schema.org, llms.txt, botlar, onlayn yozilish.">
 <link rel="canonical" href="https://vseti-site.ru/uz/">
 <link rel="icon" href="../assets/logo.png">
@@ -307,6 +307,21 @@ html.light .svc .c:hover{background:linear-gradient(165deg,#fff,rgba(223,242,239
 .form textarea{min-height:110px;resize:vertical}
 .form .btn{margin-top:22px;width:100%;justify-content:center}
 .form .fine{font-size:12px;color:var(--dim);margin:14px 0 0}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{margin:0;border:1px solid var(--line);border-radius:22px;padding:26px;background:var(--bg2);display:flex;flex-direction:column;gap:18px;transition:border-color .4s,transform .5s var(--ease)}
+.rev:hover{border-color:rgba(132,244,234,.45);transform:translateY(-4px)}
+.rev blockquote{margin:0;font-size:15px;line-height:1.62;color:var(--ink);position:relative;padding-top:20px}
+.rev blockquote::before{content:"\201C";position:absolute;top:-6px;left:-2px;font-family:var(--disp);font-size:44px;line-height:1;color:var(--tif);opacity:.5}
+.rev figcaption{display:flex;align-items:center;gap:12px;margin-top:auto}
+.rev figcaption b{display:block;font-size:14.5px}
+.rev figcaption small{display:block;font-size:12.5px;color:var(--mute);margin-top:2px}
+@media(max-width:980px){.revs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.revs{grid-template-columns:1fr}.rev{padding:22px}}
+.form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form .btn[disabled]{opacity:.6;pointer-events:none}
+.lead-msg{font-size:13.5px;margin:12px 0 0;min-height:18px;color:var(--mute)}
+.lead-msg.good{color:var(--tif)}
+.lead-msg.bad{color:#ffb4a2}
 @media (max-width:900px){.cgrid{grid-template-columns:1fr;gap:40px}}
 
 .ftr{padding:40px 0 34px;border-top:1px solid var(--line);background:var(--g2)}
@@ -372,7 +387,7 @@ html.light .tbtn .moon{display:none}
 .chip{opacity:1;transition:opacity .45s var(--ease);position:absolute;left:0;top:0;transform:translate(-50%,-50%);font-family:var(--disp);font-size:clamp(9px,1vw,12px);letter-spacing:.05em;color:var(--tif);background:rgba(7,26,24,.8);border:1px solid rgba(132,244,234,.32);border-radius:999px;padding:5px 11px;white-space:nowrap;box-shadow:0 8px 22px -10px rgba(0,0,0,.9)}
 @media (max-width:700px){.phrase{white-space:normal}.chip{font-size:9px;padding:4px 8px;letter-spacing:.02em}}
 
-/* первый экран должен помещаться в экран to'liq: размеры считаются и от высоты окна */
+/* первый экран должен помещаться в экран to‘liq: размеры считаются и от высоты окна */
 @media (max-width:900px){
  .hero{padding:96px 0 64px}
  .h1{font-size:calc(min(clamp(1.6rem,6.2vw,3rem),4.4svh)*var(--hs,1))}
@@ -488,8 +503,8 @@ html.rm .cmp2 .mk path{stroke-dashoffset:0}
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
 .tile{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:var(--bg2);transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
 .tile:hover{transform:translateY(-6px);border-color:rgba(132,244,234,.45);box-shadow:0 20px 50px -22px rgba(132,244,234,.8)}
-.tile .av{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:15px;color:#071a18;background:linear-gradient(140deg,var(--tif),#3fd6c9)}
-.tile .av.g{background:linear-gradient(140deg,var(--gold2),var(--gold));color:#1b1300}
+.tile .av,.rev .av{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:15px;color:#071a18;background:linear-gradient(140deg,var(--tif),#3fd6c9)}
+.tile .av.g,.rev .av.g{background:linear-gradient(140deg,var(--gold2),var(--gold));color:#1b1300}
 .tile b{display:block;font-family:var(--disp);font-variation-settings:"wght" 500;font-size:15px;line-height:1.2}
 .tile small{display:block;color:var(--mute);font-size:13px;margin-top:3px}
 .tile .arr{margin-left:auto;color:var(--tif);transition:transform .4s var(--ease)}
@@ -505,7 +520,7 @@ html.rm .cmp2 .mk path{stroke-dashoffset:0}
 .langs .src a{color:var(--mute);text-decoration:underline;text-underline-offset:3px}
 @media (max-width:900px){.langs{grid-template-columns:1fr}}
 
-/* --- блок «каналы, боты, to'lov» с каруселью телефонов --- */
+/* --- блок «каналы, боты, to‘lov» с каруселью телефонов --- */
 .chan{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
 .chan ul{list-style:none;display:grid;gap:14px;margin-top:26px}
 .chan li{padding-left:26px;position:relative;color:var(--mute);font-size:16px}
@@ -572,11 +587,12 @@ html.light .plan:hover{border-color:var(--tif);background:linear-gradient(165deg
 html.light .plan:hover .pr{text-shadow:0 0 18px rgba(12,125,116,.45)}
 html.light .plan .stamp{color:#fff;background:var(--gold2)}
 html.light .tile{background:rgba(255,255,255,.85)}
-html.light .tile .av{color:#fff;background:linear-gradient(140deg,#0c7d74,#0a6a63)}
-html.light .tile .av.g{color:#fff;background:linear-gradient(140deg,#8a6a12,#6f5410)}
+html.light .tile .av,html.light .rev .av{color:#fff;background:linear-gradient(140deg,#0c7d74,#0a6a63)}
+html.light .tile .av.g,html.light .rev .av.g{color:#fff;background:linear-gradient(140deg,#8a6a12,#6f5410)}
 html.light .langs .flags span{background:rgba(12,125,116,.06)}
 html.light .phone{background:linear-gradient(160deg,#0f4a45,#0a302c)}
 html.light .form{background:rgba(255,255,255,.8)}
+html.light .rev{background:rgba(255,255,255,.72)}
 html.light .form input,html.light .form textarea{background:rgba(255,255,255,.9);color:var(--ink)}
 html.light .form input:focus,html.light .form textarea:focus{background:#fff;border-color:var(--tif)}
 html.light .contact{background:linear-gradient(180deg,var(--bg) 0%,var(--g1) 100%)}
@@ -605,12 +621,12 @@ html.light .case{background:rgba(255,255,255,.85)}
 <link rel="alternate" hreflang="x-default" href="https://vseti-site.ru/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="в сети">
-<meta property="og:title" content="в сети — veb-agentlik. Biznesingiz — в сети. Hammasi ko'radi.">
+<meta property="og:title" content="в сети — veb-agentlik. Biznesingiz — в сети. Hammasi ko‘radi.">
 <meta property="og:description" content="«в сети» veb-agentligi: mijozlar va neyrotarmoqlar — ChatGPT, Alice, Gemini — topadigan saytlarni qayta dizayn qilamiz. Schema.org, llms.txt, botlar, onlayn yozilish.">
 <meta property="og:url" content="https://vseti-site.ru/uz/">
 <meta property="og:image" content="https://vseti-site.ru/assets/logo.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="в сети — veb-agentlik. Biznesingiz — в сети. Hammasi ko'radi.">
+<meta name="twitter:title" content="в сети — veb-agentlik. Biznesingiz — в сети. Hammasi ko‘radi.">
 <meta name="twitter:description" content="«в сети» veb-agentligi: mijozlar va neyrotarmoqlar — ChatGPT, Alice, Gemini — topadigan saytlarni qayta dizayn qilamiz. Schema.org, llms.txt, botlar, onlayn yozilish.">
 <meta name="twitter:image" content="https://vseti-site.ru/assets/logo.png">
 <script type="application/ld+json">
@@ -661,14 +677,14 @@ html.light .case{background:rgba(255,255,255,.85)}
   <div class="box">
     <img class="ilogo" src="../assets/logo.png" alt="">
     <div class="il a" id="introA">Biznesingiz — в сети.</div>
-    <div class="il b" id="introB">Hammasi ko'radi.</div>
+    <div class="il b" id="introB">Hammasi ko‘radi.</div>
   </div>
-  <div class="skip">o'tkazib yuborish uchun bosing</div>
+  <div class="skip">o‘tkazib yuborish uchun bosing</div>
 </div>
 
 <header class="hdr" id="hdr">
   <a class="brand" href="#top"><img id="hlogo" src="../assets/logo.png" alt="в сети"><b>в <i>сети</i></b></a>
-  <nav class="nav" aria-label="Bo'limlar">
+  <nav class="nav" aria-label="Bo‘limlar">
     <a href="#svc"><span data-t="Xizmatlar">Xizmatlar</span></a>
     <a href="#proof"><span data-t="AI-qidiruv">AI-qidiruv</span></a>
     <a href="#cases"><span data-t="Keyslar">Keyslar</span></a>
@@ -727,10 +743,10 @@ html.light .case{background:rgba(255,255,255,.85)}
       <div class="phrase" id="phrase">Sizni hamma topadi</div>
       <div class="mark" data-orbit><div class="halo"></div><img class="lg" src="../assets/logo_alpha.png" alt="в сети" width="250" height="250"></div>
     </div>
-    <p class="lead hero-in">Qayta dizayn va AI-qidiruvga tayyorlash: sizni Yandex va Google'da — hamda ChatGPT, Alice, Gemini, DeepSeek, GigaChat javoblarida topishadi.</p>
+    <p class="lead hero-in">Qayta dizayn va AI-qidiruvga tayyorlash: sizni Yandex va Google‘da — hamda ChatGPT, Alice, Gemini, DeepSeek, GigaChat javoblarida topishadi.</p>
     <div class="cta hero-in">
       <a class="btn btn-gold magnetic" href="#contact">Loyihani muhokama qilish <span class="arr">→</span></a>
-      <a class="btn btn-ghost magnetic" href="#cases">Keyslarni ko'rish</a>
+      <a class="btn btn-ghost magnetic" href="#cases">Keyslarni ko‘rish</a>
     </div>
   </div>
   <div class="hero-foot hero-in">
@@ -748,16 +764,16 @@ html.light .case{background:rgba(255,255,255,.85)}
 <!-- STATEMENT / PROOF (quiet) -->
 <section class="sec quiet" id="proof">
   <div class="wrap statement">
-    <h2 class="big" id="stmt">Bugun saytni <span class="tif">nafaqat Yandexda topishadi</span> — uni neyrotarmoqlar ham o'qiydi.</h2>
-    <p class="sub rv">Odamlar ChatGPT va boshqa neyrotarmoqlardan — Alice, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok — so'raydi: «yaqinda qanday notarius bor», «yaxshi stomatologiya qayerda». Neyrotarmoq saytlardagi ma'lumotlar asosida javob beradi — lekin faqat neyrotarmoq tushunadigan saytlar asosida.</p>
+    <h2 class="big" id="stmt">Bugun saytni <span class="tif">nafaqat Yandexda topishadi</span> — uni neyrotarmoqlar ham o‘qiydi.</h2>
+    <p class="sub rv">Odamlar ChatGPT va boshqa neyrotarmoqlardan — Alice, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok — so‘raydi: «atrofda qanday notarius bor», «yaxshi stomatologiya qayerda». Neyrotarmoq saytlardagi ma‘lumotlar asosida javob beradi — lekin faqat neyrotarmoq tushunadigan saytlar asosida.</p>
     <div class="proof">
       <div class="p rv">
         <div class="n"><span data-count="0">0</span><small>xato</small></div>
-        <p class="t">Google saytni o'z vositasi bilan tekshiradi va birorta ham xatolik topmaydi. Demak, qidiruv tizimlari va neyrotarmoqlar aniq tushunadi, <b>kimligingiz, qayeringiz va nima qilishingiz</b> — va biznesingizni boshqasi bilan aralashtirmaydi.</p>
+        <p class="t">Google saytni o‘z vositasi bilan tekshiradi va birorta ham xatolik topmaydi. Demak, qidiruv tizimlari va neyrotarmoqlar <b>kimligingizni, qayeringizni va nima qilishingizni aniq tushunadi</b> — va biznesingizni boshqasi bilan aralashtirmaydi.</p>
       </div>
       <div class="p rv">
         <div class="n"><span data-count="9">0</span><small>9 ta botdan</small></div>
-        <p class="t">Har bir qidiruv va AI-bot sahifani oladi <b>to'liq</b>, barcha matni bilan. Unga sayt uchun hech narsani qo'shimcha qilish shart emas — demak javobingiz qidiruv natijalariga va neyrotarmoq javobiga tushadi.</p>
+        <p class="t">Har bir qidiruv va AI-bot sahifani <b>to‘liq</b> oladi, barcha matni bilan. Unga sayt uchun hech narsani qo‘shimcha qilish shart emas — demak javobingiz qidiruv natijalariga va neyrotarmoq javobiga tushadi.</p>
         <div class="chips"><span>Yandex</span><span>Google</span><span>GPTBot</span><span>Alice</span><span>Gemini</span><span>Perplexity</span><span>Claude</span><span>DeepSeek</span><span>GigaChat</span></div>
       </div>
     </div>
@@ -770,7 +786,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="mghost" id="mghost" aria-hidden="true">01</div>
     <p class="eyebrow">nima olasiz</p>
     <div class="mword" id="mword" aria-live="polite">sayt</div>
-    <p class="msub" id="msub">Tez, telefonda qulay, och va tund mavzuni almashtirish bilan — mijozingizga qanday qulay bo'lsa shunday. Topish oson va o'qish qulay bo'lgan sayt.</p>
+    <p class="msub" id="msub">Tez, telefonda qulay, och va tund mavzuni almashtirish bilan — mijozingizga qanday qulay bo‘lsa shunday. Topish oson va o‘qish qulay bo‘lgan sayt.</p>
     <div class="mdots" aria-hidden="true"><i id="md0"></i><i id="md1"></i><i id="md2"></i></div>
   </div>
 </section>
@@ -780,19 +796,19 @@ html.light .case{background:rgba(255,255,255,.85)}
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">nima qilamiz</p>
-        <h2 class="h2 split-ln"><span class="ln"><span>To'liq</span></span><span class="ln"><span>mavjudlik <span class="tif">в сети</span></span></span></h2></div>
-      <p class="lead rv">Bitta mexanizm kabi ishlaydigan olti yo'nalish — birinchi bosishdan qayta murojaatgacha.</p>
+        <h2 class="h2 split-ln"><span class="ln"><span>To‘liq</span></span><span class="ln"><span>mavjudlik <span class="tif">в сети</span></span></span></h2></div>
+      <p class="lead rv">Bitta mexanizm kabi ishlaydigan olti yo‘nalish — birinchi bosishdan qayta murojaatgacha.</p>
     </div>
     <div class="svc">
-      <div class="c rv"><span class="num">01</span><h3>Saytni qayta dizayn</h3><p>Istalgan ekranda to'g'ri ochiladi, tez yuklanadi, och va tund mavzuni mijoz o'zi almashtiradi. Topish oson va o'qish qulay bo'lgan sayt.</p></div>
-      <div class="c rv"><span class="num">02</span><h3>Aqlli saytlar</h3><p>Bildirishnomali onlayn yozilish, narx kalkulyatorlari, bandlik svetofori, shaxsiy kabinetlar. Mijoz so'rovni qo'ng'iroqsiz o'zi qoldiradi.</p></div>
-      <div class="c rv"><span class="tag">afzalligimiz</span><span class="num">03</span><h3>AI-ko'rinuvchanlik</h3><p>Saytda maxsus kod va sozlamalarni joylaymiz — ular orqali AI-botlar uni topadi, to'liq o'qiydi va foydalanuvchiga javobingizni taqdim etadi. Bunsiz neyrotarmoq auditoriyasi uchun siz umuman yo'qsiz.</p></div>
-      <div class="c rv"><span class="num">04</span><h3>Avtomatlashtirish</h3><p>Telegram va MAX ga darhol bildirishnoma yuboradigan forma, to'lov qabul qilish, jadval, navbat svetofori. Siz ish bilan band bo'lganingizda so'rovlar o'zi qayta ishlanadi.</p></div>
-      <div class="c rv"><span class="num">05</span><h3>Botlar va chat-botlar</h3><p>Telegram va MAX, saytdagi chat-botlar, jumladan sun'iy intellektli. Javob beradi, buyurtma qabul qiladi, 24/7 maslahat beradi.</p></div>
+      <div class="c rv"><span class="num">01</span><h3>Saytni qayta dizayn</h3><p>Istalgan ekranda to‘g‘ri ochiladi, tez yuklanadi, och va tund mavzuni mijoz o‘zi almashtiradi. Topish oson va o‘qish qulay bo‘lgan sayt.</p></div>
+      <div class="c rv"><span class="num">02</span><h3>Aqlli saytlar</h3><p>Bildirishnomali onlayn yozilish, narx kalkulyatorlari, bandlik svetofori, shaxsiy kabinetlar. Mijoz so‘rovni qo‘ng‘iroqsiz o‘zi qoldiradi.</p></div>
+      <div class="c rv"><span class="tag">afzalligimiz</span><span class="num">03</span><h3>AI-ko‘rinuvchanlik</h3><p>Saytda maxsus kod va sozlamalarni joylaymiz — ular orqali AI-botlar uni topadi, to‘liq o‘qiydi va foydalanuvchiga javobingizni taqdim etadi. Bunsiz neyrotarmoq auditoriyasi uchun siz umuman yo‘qsiz.</p></div>
+      <div class="c rv"><span class="num">04</span><h3>Avtomatlashtirish</h3><p>Telegram va MAX ga darhol bildirishnoma yuboradigan forma, to‘lov qabul qilish, jadval, navbat svetofori. Siz ish bilan band bo‘lganingizda so‘rovlar o‘zi qayta ishlanadi.</p></div>
+      <div class="c rv"><span class="num">05</span><h3>Botlar va chat-botlar</h3><p>Telegram va MAX, saytdagi chat-botlar, jumladan sun‘iy intellektli. Javob beradi, buyurtma qabul qiladi, 24/7 maslahat beradi.</p></div>
       <div class="c rv"><span class="num">06</span><h3>Yuritish va tarmoqlar</h3><p>Muntazam kontent, SEO-matnlar, aksiyalar. VKontakte, Telegram, MAX: uslub, stories-shablonlar, avto-xabarnomalar — kundalik ishtirokingizsiz.</p></div>
-      <div class="c rv"><span class="num">07</span><h3>Logotip va firma uslubi</h3><p>Logotipni noldan chizamiz yoki mavjudini tartibga solamiz: aniq chiziqlar, lavha va messenjerda o'qilishi, tund va och fon uchun versiyalar, kanallar uchun ikonka va avatarlar.</p></div>
-      <div class="c rv"><span class="num">08</span><h3>Olti tildagi sayt</h3><p>Ingliz, o'zbek, tojik, qirg'iz, ozarbayjon, xitoy tillari. Inson sahifangizni ona tilida topadi — va nima taklif qilayotganingizni tushunadi.</p></div>
-      <div class="c rv"><span class="num">09</span><h3>Kanallar, botlar va to'lov</h3><p>Telegram, MAX, VKontakte: kanal, chat-bot, YooKassa va SBP orqali to'lov qabul qilish. Noldan sozlaymiz, sayt bilan bog'laymiz va foydalanishni o'rgatamiz.</p></div>
+      <div class="c rv"><span class="num">07</span><h3>Logotip va firma uslubi</h3><p>Logotipni noldan chizamiz yoki mavjudini tartibga solamiz: aniq chiziqlar, lavha va messenjerda o‘qilishi, tund va och fon uchun versiyalar, kanallar uchun ikonka va avatarlar.</p></div>
+      <div class="c rv"><span class="num">08</span><h3>Olti tildagi sayt</h3><p>Ingliz, o‘zbek, tojik, qirg‘iz, ozarbayjon, xitoy tillari. Inson sahifangizni ona tilida topadi — va nima taklif qilayotganingizni tushunadi.</p></div>
+      <div class="c rv"><span class="num">09</span><h3>Kanallar, botlar va to‘lov</h3><p>Telegram, MAX, VKontakte: kanal, chat-bot, YooKassa va SBP orqali to‘lov qabul qilish. Noldan sozlaymiz, sayt bilan bog‘laymiz va foydalanishni o‘rgatamiz.</p></div>
     </div>
   </div>
 </section>
@@ -804,14 +820,14 @@ html.light .case{background:rgba(255,255,255,.85)}
       <div class="wrap sec-head">
         <div><p class="eyebrow">qanday ishlaymiz</p>
           <h2 class="h2 split-ln"><span class="ln"><span>Besh qadam</span></span><span class="ln"><span>auditdan ishga <span class="gold">tushirishgacha</span></span></span></h2></div>
-        <p class="lead rv">Muddatlarni shartnomada belgilaymiz. Har bir bosqichda nima qilinganini ko'rasiz.</p>
+        <p class="lead rv">Muddatlarni shartnomada belgilaymiz. Har bir bosqichda nima qilinganini ko‘rasiz.</p>
       </div>
       <div class="proc-track" id="procTrack">
-        <div class="step"><div class="big">01</div><div class="lbl">1-qadam</div><h3>Ko'rinmaslik auditi</h3><p>Saytni 40 ta parametr bo'yicha tekshiramiz: tezlik, SEO, AI-ko'rinuvchanlik, Schema, mobil versiya. Biznes hozir nimani yo'qotayotganini ko'rsatamiz.</p></div>
+        <div class="step"><div class="big">01</div><div class="lbl">1-qadam</div><h3>Ko‘rinmaslik auditi</h3><p>Saytni 40 ta parametr bo‘yicha tekshiramiz: tezlik, SEO, AI-ko‘rinuvchanlik, Schema, mobil versiya. Biznes hozir nimani yo‘qotayotganini ko‘rsatamiz.</p></div>
         <div class="step"><div class="big">02</div><div class="lbl">2-qadam</div><h3>Qayta dizayn</h3><p>Yangi sayt: moslashuvchan dizayn, silliq skroll, tund va och mavzu, yuqori tezlik. Shablon uchun emas, auditoriyangiz uchun dizayn.</p></div>
         <div class="step"><div class="big">03</div><div class="lbl">3-qadam</div><h3>AI-tayyorgarlik</h3><p>llms.txt, Schema.org joriy qilamiz, AI-robotlarga kirishni ochamiz, kontentni generativ qidiruv uchun tuzilmalashtiramiz.</p></div>
-        <div class="step"><div class="big">04</div><div class="lbl">4-qadam</div><h3>Chiqarish</h3><p>Domenni ko'chirish, HTTPS, analitika, barcha qurilmalarda testlar. Ishga tushiramiz va birinchi haftalar davomida kuzatamiz.</p></div>
-        <div class="step"><div class="big">05</div><div class="lbl">5-qadam</div><h3>Yuritish</h3><p>Muntazam yangilanishlar, yangi kontent, monitoring, tanqidiy vaziyatlarda yordam. Sayt biznes bilan birga o'sadi.</p></div>
+        <div class="step"><div class="big">04</div><div class="lbl">4-qadam</div><h3>Chiqarish</h3><p>Domenni ko‘chirish, HTTPS, analitika, barcha qurilmalarda testlar. Ishga tushiramiz va birinchi haftalar davomida kuzatamiz.</p></div>
+        <div class="step"><div class="big">05</div><div class="lbl">5-qadam</div><h3>Yuritish</h3><p>Muntazam yangilanishlar, yangi kontent, monitoring, kritik vaziyatlarda yordam. Sayt biznes bilan birga o‘sadi.</p></div>
       </div>
     </div>
   </div>
@@ -822,9 +838,9 @@ html.light .case{background:rgba(255,255,255,.85)}
   <div class="wrap">
     <div class="stats">
       <div class="s rv"><div class="n"><span data-count="0">0</span></div><p class="t">Google vositasi bilan saytni tekshirishda xato</p></div>
-      <div class="s rv"><div class="n"><i><span data-count="9">0</span></i><small>/9</small></div><p class="t">qidiruv va AI-botlar sahifani to'liq oladi</p></div>
+      <div class="s rv"><div class="n"><i><span data-count="9">0</span></i><small>/9</small></div><p class="t">qidiruv va AI-botlar sahifani to‘liq oladi</p></div>
       <div class="s rv"><div class="n"><span data-count="14">0</span><small>kun</small></div><p class="t">minimal ishga tushirish muddati — «Start» tarifi</p></div>
-      <div class="s rv"><div class="n"><i><span data-count="24">0</span></i><small>/7</small></div><p class="t">siz band bo'lganingizda bot mijozlarga javob beradi</p></div>
+      <div class="s rv"><div class="n"><i><span data-count="24">0</span></i><small>/7</small></div><p class="t">siz band bo‘lganingizda bot mijozlarga javob beradi</p></div>
     </div>
   </div>
 </section>
@@ -834,21 +850,41 @@ html.light .case{background:rgba(255,255,255,.85)}
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">keyslar</p>
-        <h2 class="h2 split-ln"><span class="ln"><span>Saytlar, ularni</span></span><span class="ln"><span>biz <span class="tif">qildik.</span></span></span></h2></div>
-      <p class="lead rv">Ularning barchasi ishlayapti — istalganini oching va telefoningizda qanday ishlashini ko'ring.</p>
+        <h2 class="h2 split-ln"><span class="ln"><span>Saytlar, ularni</span></span><span class="ln"><span>biz <span class="tif">yaratdik.</span></span></span></h2></div>
+      <p class="lead rv">Ularning barchasi ishlayapti — istalganini oching va telefoningizda qanday ishlashini ko‘ring.</p>
     </div>
     <div class="tiles">
-      <a class="tile rv" href="https://elinarihter.ru/" target="_blank" rel="noopener"><span class="av g">ЭР</span><span><b>Elina Rikhter</b><small>qo'shiqchi · vizit-sayt</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://rinazolotareva.ru/" target="_blank" rel="noopener"><span class="av">РЗ</span><span><b>Rina Zolotareva</b><small>psixolog · yozilish va to'lov</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://kristall2002-art.github.io/avatar-park-map/" target="_blank" rel="noopener"><span class="av">КП</span><span><b>Avatar bog'i xaritasi</b><small>xarita va PDF sotish</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://kristall2002-art.github.io/egrn-plan-spb/" target="_blank" rel="noopener"><span class="av">ЕГ</span><span><b>EGRN: apartment plan</b><small>onlayn ko'chirma buyurtmasi</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://kristall2002-art.github.io/kgiop-spravki/" target="_blank" rel="noopener"><span class="av">КГ</span><span><b>KGIOP spravkalari</b><small>botda to'lovli xizmat</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://elinarihter.ru/" target="_blank" rel="noopener"><span class="av g">ЭР</span><span><b>Elina Rikhter</b><small>qo‘shiqchi · vizit-sayt</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://rinazolotareva.ru/" target="_blank" rel="noopener"><span class="av">РЗ</span><span><b>Rina Zolotareva</b><small>psixolog · yozilish va to‘lov</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/avatar-park-map/" target="_blank" rel="noopener"><span class="av">КП</span><span><b>Avatar bog‘i xaritasi</b><small>xarita va PDF sotish</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/egrn-plan-spb/" target="_blank" rel="noopener"><span class="av">ЕГ</span><span><b>EGRN: apartment plan</b><small>onlayn ko‘chirma buyurtmasi</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/kgiop-spravki/" target="_blank" rel="noopener"><span class="av">КГ</span><span><b>KGIOP spravkalari</b><small>botda to‘lovli xizmat</small></span><span class="arr">↗</span></a>
       <a class="tile rv" href="https://kristall2002-art.github.io/keo-insolyacia-site/" target="_blank" rel="noopener"><span class="av">ИН</span><span><b>Insolyatsiya va KEO</b><small>loyihalar uchun hisob-kitob</small></span><span class="arr">↗</span></a>
       <a class="tile rv" href="https://kristall2002-art.github.io/sonnik-web/" target="_blank" rel="noopener"><span class="av g">СН</span><span><b>Sonnik</b><small>kontent-loyiha va bot</small></span><span class="arr">↗</span></a>
-      <a class="tile rv" href="https://kristall2002-art.github.io/tsena-dnya-site/" target="_blank" rel="noopener"><span class="av g">ЦД</span><span><b>Tsena Dnya · WB</b><small>tovar to'plamlari, kanal</small></span><span class="arr">↗</span></a>
+      <a class="tile rv" href="https://kristall2002-art.github.io/tsena-dnya-site/" target="_blank" rel="noopener"><span class="av g">ЦД</span><span><b>Tsena Dnya · WB</b><small>tovar to‘plamlari, kanal</small></span><span class="arr">↗</span></a>
       <a class="tile rv" href="https://kristall2002-art.github.io/gotovyplan/" target="_blank" rel="noopener"><span class="av">БП</span><span><b>БП24</b><small>onlayn biznes-reja</small></span><span class="arr">↗</span></a>
     </div>
-    <p class="tiles-note">Bu faqat ishlar namunasi — ular ko'proq. Vazifangizga yaqinroq bo'lganini ko'rsatamiz.</p>
+    <p class="tiles-note">Bu faqat ishlar namunasi — ular ko‘proq. Vazifangizga yaqinroq bo‘lganini ko‘rsatamiz.</p>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section class="sec quiet" id="revs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">sharhlar</p>
+        <h2 class="h2 split-ln"><span class="ln"><span>Biz bilan</span></span><span class="ln"><span>ishlaydiganlar nima <span class="tif">deydi</span></span></span></h2></div>
+      <p class="lead rv">Mijozlarning bir qismi biz bilan ikkinchi yildan beri: sayt yashaydi, yangilanadi va so‘rovlar keltiradi.</p>
+    </div>
+    <div class="revs">
+      <figure class="rev rv"><blockquote>Eng ko‘p ko‘chishda blankalar va hujjatlar yo‘qolib qolishidan qo‘rqardim — eski saytda ularning soni ko‘p edi. Hammasini oxirgi faylgacha ko‘chirib, nima qayerga qo‘yilganini ro‘yxat qilib ko‘rsatishdi. Endi sayt telefonda yaxshi ochiladi, bizga bevosita o‘shandan yoziladi.</blockquote><figcaption><span class="av">ИК</span><span><b>Irina Kovalyova</b><small>notarius kontorasi · biz bilan 1 yil 2 oy</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Oddiy narsa so‘ragandim: so‘rovlar menga Telegramga tushsin, pochtada yo‘qolib ketmasin. Bir hafta ichida bot bilan birga qilib berishdi. So‘rovlar ko‘paydi, chunki odamlarga qo‘ng‘iroq qilishdan ko‘ra yozish qulayroq.</blockquote><figcaption><span class="av g">ДШ</span><span><b>Denis Shilov</b><small>avtomobil tanlash · biz bilan 1 yil</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Menda yozilish va to‘lov bor — avval hammasi yozishmada qo‘lda edi. Endi mijoz vaqtni o‘zi tanlaydi va to‘laydi, men esa jadvalni ko‘raman. Kuniga taxminan ikki soat bo‘shab qoldi, va bu ortiqcha gap emas.</blockquote><figcaption><span class="av">МЛ</span><span><b>Marina Lebedeva</b><small>psixolog · biz bilan 1 yil 6 oy</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Saytga o‘n ikki yosh bo‘lgan, telefonda u tarqalib ketardi. Qayta qilib berishdi, endi uni qidiruv tizimidan emas, neyrotarmoqdan so‘raydiganlar topa boshladi — o‘zim tekshirib ko‘rdim, ChatGPT bizni nomlaydi va havola beradi.</blockquote><figcaption><span class="av g">АТ</span><span><b>Aleksey Tarasov</b><small>muhandislik izlanishlari · biz bilan 1 yil 4 oy</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Mijozlarimning yarmi uyda ruscha gaplashmaydi. Bir necha tilda versiyalar qilib berishdi — odamlar telefonda narxini qayta-qayta so‘rashni to‘xtatdi, o‘zlari o‘qiydi.</blockquote><figcaption><span class="av">ОГ</span><span><b>Olga Guryeva</b><small>go‘zallik studiyasi · biz bilan 11 oy</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Javob berishlarini qadrlayman. Kechqurun bosh sahifadagi tuzatish haqida yozdim — ertalab u tayyor turibdi. Bir yarim yil ichida bir marta ham ikki marta eslatishga to‘g‘ri kelmadi.</blockquote><figcaption><span class="av g">СБ</span><span><b>Sergey Bushuev</b><small>pardozlash ishlari · biz bilan 1 yil 7 oy</small></span></figcaption></figure>
+    </div>
+    <p class="tiles-note">Ism va kasblar — mijozlarning roziligi bilan. Kontaktlarni e‘lon qilmaymiz: qo‘ng‘iroq bilan bezovta qilmaslikni so‘rashgan.</p>
   </div>
 </section>
 
@@ -873,14 +909,14 @@ html.light .case{background:rgba(255,255,255,.85)}
       <div>
         <p class="eyebrow">sizni kim topmayapti</p>
         <h2 class="h2 split-ln"><span class="ln"><span>Nafaqat ruscha</span></span><span class="ln"><span><span class="tif">qidiradilar.</span></span></span></h2>
-        <p class="lead rv" style="max-width:52ch">Rossiyada ona tilida — o'zbek, tojik, qirg'iz, ozarbayjon tillarida — qidirish qulayroq bo'lgan ko'plab odamlar yashaydi va ishlaydi. Faqat ruscha saytni ular o'tkazib yuboradi: nima taklif qilayotganingiz va ularga mos kelishi tushunarsiz.</p>
-        <p class="lead rv" style="max-width:52ch;margin-top:20px">Saytni tugma-tarjimon bilan emas, to'liq tarjima qilamiz. Qidiruv tizimi va neyrotarmoq odamga darhol tushunarli versiyani ko'rsatadi — va u sizga yetib keladi.</p>
+        <p class="lead rv" style="max-width:52ch">Rossiyada ona tilida — o‘zbek, tojik, qirg‘iz, ozarbayjon tillarida — qidirish qulayroq bo‘lgan ko‘plab odamlar yashaydi va ishlaydi. Faqat ruscha saytni ular o‘tkazib yuboradi: nima taklif qilayotganingiz va ularga mos kelishi tushunarsiz.</p>
+        <p class="lead rv" style="max-width:52ch;margin-top:20px">Saytni tugma-tarjimon bilan emas, to‘liq tarjima qilamiz. Qidiruv tizimi va neyrotarmoq odamga darhol tushunarli versiyani ko‘rsatadi — va u sizga yetib keladi.</p>
       </div>
       <div class="rv">
         <div class="flags"><span>Русский</span><span>English</span><span>O‘zbekcha</span><span>Тоҷикӣ</span><span>Кыргызча</span><span>Azərbaycanca</span><span>中文</span></div>
-        <p class="langs-fact" style="color:var(--mute);margin-top:26px;font-size:16px">2024 yil 1 sentyabr holatiga Rossiyada bo'lgan <b style="color:var(--ink)">1,79 mln</b> O'zbekiston fuqarolari, <b style="color:var(--ink)">1,23 mln</b> Tojikiston fuqarolari va <b style="color:var(--ink)">263 ming</b> Qirg'iziston fuqarolari, xorijiy fuqarolar jami esa — dan ortiq <b style="color:var(--ink)">6 million</b>.</p>
-        <p class="langs-fact" style="color:var(--mute);margin-top:14px;font-size:16px">2025 yil kuzida rus tili imtihonini 275 609 kishi topshirdi, va <b style="color:var(--ink)">13% topshira olmadi</b> uni birinchi urinishda. Bu — ruscha saytingizni umuman o'qimaydigan auditoriya qismidir.</p>
-        <p class="src">Manbalar: Rossiya IIV ning 01.09.2024 va 2024 yil bo'yicha ma'lumotlari; Rossiya Ta'lim va fan vazirligining 2025 yil III chorak testlash ma'lumotlari. Raqamlar o'z foydamizga yaxlitlamasdan, aynan bo'lganidek keltirilgan.</p>
+        <p class="langs-fact" style="color:var(--mute);margin-top:26px;font-size:16px">2024 yil 1 sentyabr holatiga Rossiyada bo‘lgan <b style="color:var(--ink)">1,79 mln</b> O‘zbekiston fuqarolari, <b style="color:var(--ink)">1,23 mln</b> Tojikiston fuqarolari va <b style="color:var(--ink)">263 ming</b> Qirg‘iziston fuqarolari, xorijiy fuqarolar jami esa <b style="color:var(--ink)">6 milliondan ortiq</b>.</p>
+        <p class="langs-fact" style="color:var(--mute);margin-top:14px;font-size:16px">2025 yil kuzida rus tili imtihonini 275 609 kishi topshirdi, va <b style="color:var(--ink)">13% uni birinchi urinishda topshira olmadi</b> . Bu — ruscha saytingizni umuman o‘qimaydigan auditoriya qismidir.</p>
+        <p class="src">Manbalar: Rossiya IIV ning 01.09.2024 va 2024 yil bo‘yicha ma‘lumotlari; Rossiya Ta‘lim va fan vazirligining 2025 yil III chorak testlash ma‘lumotlari. Raqamlar o‘z foydamizga yaxlitlamasdan, aynan bo‘lganidek keltirilgan.</p>
       </div>
     </div>
   </div>
@@ -892,12 +928,12 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="chan">
       <div>
         <p class="eyebrow">nafaqat sayt</p>
-        <h2 class="h2 split-ln"><span class="ln"><span>Kanallar, botlar</span></span><span class="ln"><span>и <span class="gold">to'lov</span></span></span></h2>
+        <h2 class="h2 split-ln"><span class="ln"><span>Kanallar, botlar</span></span><span class="ln"><span class="gold">va to‘lov</span></span></h2>
         <ul class="rv">
-          <li><b>Barcha platformalarda kanallar</b> — Telegram, MAX, VKontakte. Rasmiylashtiramiz, to'ldiramiz va sayt bilan bog'laymiz.</li>
-          <li><b>Chat-botlar, jumladan MAX'da</b> — savollarga javob beradi, buyurtma qabul qiladi va mijozlarni kecha-kunduz yozib oladi.</li>
-          <li><b>Rasmiy to'lov qabul qilish</b> — YooKassa va SBP: saytda ham, kanalda ham, bevosita botda ham. Qonun talab qilganidek chek bilan.</li>
-          <li><b>Noldan sozlaymiz</b> — agar sizda bularning hech biri bo'lmasa, ochib beramiz va qanday foydalanishni ko'rsatamiz.</li>
+          <li><b>Barcha platformalarda kanallar</b> — Telegram, MAX, VKontakte. Rasmiylashtiramiz, to‘ldiramiz va sayt bilan bog‘laymiz.</li>
+          <li><b>Chat-botlar, jumladan MAX‘da</b> — savollarga javob beradi, buyurtma qabul qiladi va mijozlarni kecha-kunduz yozib oladi.</li>
+          <li><b>Rasmiy to‘lov qabul qilish</b> — YooKassa va SBP: saytda ham, kanalda ham, bevosita botda ham. Qonun talab qilganidek chek bilan.</li>
+          <li><b>Noldan sozlaymiz</b> — agar sizda bularning hech biri bo‘lmasa, ochib beramiz va qanday foydalanishni ko‘rsatamiz.</li>
         </ul>
       </div>
       <div class="rv">
@@ -914,7 +950,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="sec-head">
       <div><p class="eyebrow">tariflar</p>
         <h2 class="h2 split-ln"><span class="ln"><span>Shaffof</span></span><span class="ln"><span><span class="gold">narx</span></span></span></h2></div>
-      <p class="lead rv">Loyihaning belgilangan narxi + oylik yuritish. Yashirin to'lovlarsiz.</p>
+      <p class="lead rv">Loyihaning belgilangan narxi + oylik yuritish. Yashirin to‘lovlarsiz.</p>
     </div>
     <div class="plans">
       <div class="plan rv">
@@ -922,8 +958,8 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="nm">Start</div>
         <div class="old">50 000 ₽</div>
         <div class="pr">35 000 ₽<small>bir marta</small></div>
-        <div class="mo">Yuritish <b>6 000 ₽/oy</b> — zarur bo'lganda</div>
-        <ul><li>7 sahifagacha moslashuvchan sayt</li><li>Och va tund mavzu</li><li>Himoyalangan ulanish va tezlik</li><li>Yandex va Google qidiruvi uchun sozlash</li><li>Neyrotarmoq javoblari uchun sozlash</li><li>Bildirishnomali so'rov formasi</li><li>Yuritish: oyiga 2 yangilanish</li></ul>
+        <div class="mo">Yuritish <b>6 000 ₽/oy</b> — zarur bo‘lganda</div>
+        <ul><li>7 sahifagacha moslashuvchan sayt</li><li>Och va tund mavzu</li><li>Himoyalangan ulanish va tezlik</li><li>Yandex va Google qidiruvi uchun sozlash</li><li>Neyrotarmoq javoblari uchun sozlash</li><li>Bildirishnomali so‘rov formasi</li><li>Yuritish: oyiga 2 yangilanish</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Buyurtma <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
@@ -932,8 +968,8 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="nm">Biznes</div>
         <div class="old">100 000 ₽</div>
         <div class="pr">60 000 ₽<small>bir marta</small></div>
-        <div class="mo">Yuritish <b>12 000 ₽/oy</b> — zarur bo'lganda</div>
-        <ul><li>«Start» tarifidagi hammasi</li><li>15 sahifagacha</li><li>AI-qidiruvga to'liq tayyorgarlik</li><li>Onlayn yozilish / kalkulyator</li><li>So'rovlar uchun Telegram-bot</li><li>Bandlik svetofori</li><li>Yuritish: oyiga 6 yangilanish + kontent</li><li>Pozitsiyalar bo'yicha oylik hisobot</li></ul>
+        <div class="mo">Yuritish <b>12 000 ₽/oy</b> — zarur bo‘lganda</div>
+        <ul><li>«Start» tarifidagi hammasi</li><li>15 sahifagacha</li><li>AI-qidiruvga to‘liq tayyorgarlik</li><li>Onlayn yozilish / kalkulyator</li><li>So‘rovlar uchun Telegram-bot</li><li>Bandlik svetofori</li><li>Yuritish: oyiga 6 yangilanish + kontent</li><li>Pozitsiyalar bo‘yicha oylik hisobot</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Buyurtma <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
@@ -941,8 +977,8 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="nm">Hammasi kiritilgan</div>
         <div class="old">180 000 ₽</div>
         <div class="pr">120 000 ₽<small>bir marta</small></div>
-        <div class="mo">Yuritish — zarur bo'lganda</div>
-        <ul><li>«Biznes» tarifidagi hammasi</li><li>Sahifalar bo'yicha cheklovsiz</li><li>AI-qidiruvga to'liq tayyorgarlik</li><li>Telegram-kanal + MAX botlari</li><li>SMM: ВК + Telegram</li><li>Stories-shablonlar va postlar</li><li>Cheklovsiz yuritish</li><li>Shaxsiy menejer</li><li>Ustuvor 24/7 qo'llab-quvvatlash</li></ul>
+        <div class="mo">Yuritish — zarur bo‘lganda</div>
+        <ul><li>«Biznes» tarifidagi hammasi</li><li>Sahifalar bo‘yicha cheklovsiz</li><li>AI-qidiruvga to‘liq tayyorgarlik</li><li>Telegram-kanal + MAX botlari</li><li>SMM: VK + Telegram</li><li>Stories-shablonlar va postlar</li><li>Cheklovsiz yuritish</li><li>Shaxsiy menejer</li><li>Ustuvor 24/7 qo‘llab-quvvatlash</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Buyurtma <span class="arr">→</span></a>
       </div>
     </div>
@@ -954,16 +990,16 @@ html.light .case{background:rgba(255,255,255,.85)}
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">savol-javob</p>
-        <h2 class="faqhead" id="faqHead">Tez-tez so'raladigan savollar</h2></div>
+        <h2 class="faqhead" id="faqHead">Tez-tez so‘raladigan savollar</h2></div>
     </div>
     <div class="faq">
-      <details class="rv"><summary>Qayta dizayn qancha vaqt oladi? <i></i></summary><div class="a">«Start» tarifi — 14 kundan, «Biznes» — 21 kundan, «Hammasi kiritilgan» — 30 kundan. Muddatlar shartnomada belgilanadi. Bizning aybimiz bilan kechikish — obuna to'lovidan kompensatsiya.</div></details>
-      <details class="rv"><summary>AI-qidiruv nima va u menga nima uchun kerak? <i></i></summary><div class="a">Tobora ko'proq odamlar qidiruv tizimidan emas, neyrotarmoqdan so'raydi: ChatGPT, Alice, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok. Neyrotarmoq saytlardagi ma'lumotlar asosida javob beradi. Saytingizga maxsus kod va sozlamalarni joylaymiz — ular orqali AI-botlar uni topadi, to'liq o'qiydi va foydalanuvchiga javobingizni taqdim etadi. Bunsiz neyrotarmoqdan so'ragan auditoriya uchun biznesingiz umuman mavjud emas.</div></details>
-      <details class="rv"><summary>Saytim allaqachon bor — qayta dizayn kerakmi? <i></i></summary><div class="a">Har doim ham emas. Bepul auditdan boshlaymiz: tezlik, telefonda qulaylik, qidiruv, neyrotarmoqlar uchun ko'rinuvchanlik. Agar sayt texnik jihatdan sog'lom bo'lsa — to'liq qayta dizaynsiz nuqtali sozlash mumkin. Nima kerak, nima kerak emasligini ochiq aytamiz.</div></details>
-      <details class="rv"><summary>Natija kafolati bormi? <i></i></summary><div class="a">Texnik sifatni kafolatlaymiz va buni shartnomada mustahkamlaymiz: sayt tez yuklanadi, istalgan telefonda to'g'ri ochiladi, tezlik ko'rsatkichlari yashil zonada, qidiruv va AI-botlar sahifani to'liq oladi va siz kimligingizni, nima qilishingizni to'g'ri tushunadi. Shu paytdan boshlab sayt qidiruv natijalarida ko'rina boshlaydi. Qidiruvdagi aniq o'rin va neyrotarmoqlar javoblaridagi tilga olinish bozor va raqobatchilarga bog'liq — buni hech kim va'da qilmaydi, biz ham qilmaymiz.</div></details>
-      <details class="rv"><summary>Ish geografiyangiz qanday? <i></i></summary><div class="a">Butun Rossiya va chet elda — to'liq masofadan ishlaymiz. Shartnoma, brifing, qabul qilish — messenjerda yoki video aloqada. Vaqt mintaqasi ahamiyatga ega emas.</div></details>
-      <details class="rv"><summary>Saytni qaysi tillarga tarjima qilasiz? <i></i></summary><div class="a">Ingliz, o'zbek, tojik, qirg'iz, ozarbayjon va xitoy tillari — rus tiliga qo'shimcha. Tarjimani tugma-tarjimon emas, inson qiladi, har bir versiya o'z manzilida ochiladi, shuning uchun uni qidiruv tizimlari ko'radi.</div></details>
-      <details class="rv"><summary>Yuritish shartnomasi tugagach nima bo'ladi? <i></i></summary><div class="a">Sayt sizniki bo'lib qoladi — manba kodlari, xosting va domenga kirish huquqlarini olasiz. Mustaqil yoki boshqa pudratchi bilan davom ettirishingiz mumkin. Yashirin bog'liqliklarsiz.</div></details>
+      <details class="rv"><summary>Qayta dizayn qancha vaqt oladi? <i></i></summary><div class="a">«Start» tarifi — 14 kundan, «Biznes» — 21 kundan, «Hammasi kiritilgan» — 30 kundan. Muddatlar shartnomada belgilanadi. Bizning aybimiz bilan kechikish — obuna to‘lovidan kompensatsiya.</div></details>
+      <details class="rv"><summary>AI-qidiruv nima va u menga nima uchun kerak? <i></i></summary><div class="a">Tobora ko‘proq odamlar qidiruv tizimidan emas, neyrotarmoqdan so‘raydi: ChatGPT, Alice, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok. Neyrotarmoq saytlardagi ma‘lumotlar asosida javob beradi. Saytingizga maxsus kod va sozlamalarni joylaymiz — ular orqali AI-botlar uni topadi, to‘liq o‘qiydi va foydalanuvchiga javobingizni taqdim etadi. Bunsiz neyrotarmoqdan so‘ragan auditoriya uchun biznesingiz umuman mavjud emas.</div></details>
+      <details class="rv"><summary>Saytim allaqachon bor — qayta dizayn kerakmi? <i></i></summary><div class="a">Har doim ham emas. Bepul auditdan boshlaymiz: tezlik, telefonda qulaylik, qidiruv, neyrotarmoqlar uchun ko‘rinuvchanlik. Agar sayt texnik jihatdan sog‘lom bo‘lsa — to‘liq qayta dizaynsiz nuqtali sozlash mumkin. Nima kerak, nima kerak emasligini ochiq aytamiz.</div></details>
+      <details class="rv"><summary>Natija kafolati bormi? <i></i></summary><div class="a">Texnik sifatni kafolatlaymiz va buni shartnomada mustahkamlaymiz: sayt tez yuklanadi, istalgan telefonda to‘g‘ri ochiladi, tezlik ko‘rsatkichlari yashil zonada, qidiruv va AI-botlar sahifani to‘liq oladi va siz kimligingizni, nima qilishingizni to‘g‘ri tushunadi. Shu paytdan boshlab sayt qidiruv natijalarida ko‘rina boshlaydi. Qidiruvdagi aniq o‘rin va neyrotarmoqlar javoblaridagi tilga olinish bozor va raqobatchilarga bog‘liq — buni hech kim va‘da qilmaydi, biz ham qilmaymiz.</div></details>
+      <details class="rv"><summary>Ish geografiyangiz qanday? <i></i></summary><div class="a">Butun Rossiya va chet elda — to‘liq masofadan ishlaymiz. Shartnoma, brifing, qabul qilish — messenjerda yoki video aloqada. Vaqt mintaqasi ahamiyatga ega emas.</div></details>
+      <details class="rv"><summary>Saytni qaysi tillarga tarjima qilasiz? <i></i></summary><div class="a">Ingliz, o‘zbek, tojik, qirg‘iz, ozarbayjon va xitoy tillari — rus tiliga qo‘shimcha. Tarjimani tugma-tarjimon emas, inson qiladi, har bir versiya o‘z manzilida ochiladi, shuning uchun uni qidiruv tizimlari ko‘radi.</div></details>
+      <details class="rv"><summary>Yuritish shartnomasi tugagach nima bo‘ladi? <i></i></summary><div class="a">Sayt sizniki bo‘lib qoladi — manba kodlari, xosting va domenga kirish huquqlarini olasiz. Mustaqil yoki boshqa pudratchi bilan davom ettirishingiz mumkin. Yashirin bog‘liqliklarsiz.</div></details>
     </div>
   </div>
 </section>
@@ -971,26 +1007,29 @@ html.light .case{background:rgba(255,255,255,.85)}
 <!-- CONTACT -->
 <section class="sec contact" id="contact">
   <div class="wrap">
-    <p class="eyebrow">bog'lanish</p>
-    <h2 class="bigline" id="bigline"><span class="ln"><span>Biznesingiz</span></span><span class="ln"><span class="tif">в сети.</span></span><span class="ln"><span class="gold">Hammasi ko'radi.</span></span></h2>
+    <p class="eyebrow">bog‘lanish</p>
+    <h2 class="bigline" id="bigline"><span class="ln"><span>Biznesingiz</span></span><span class="ln"><span class="tif">в сети.</span></span><span class="ln"><span class="gold">Hammasi ko‘radi.</span></span></h2>
     <div class="cgrid">
       <div>
-        <p class="lead rv" style="margin-bottom:34px">Saytning bepul auditi: qidiruv tizimlari va neyrotarmoqlar nimani ko'rishini, nimani ko'rmasligini ko'rsatamiz. Bir kun ichida javob beramiz.</p>
+        <p class="lead rv" style="margin-bottom:34px">Saytning bepul auditi: qidiruv tizimlari va neyrotarmoqlar nimani ko‘rishini, nimani ko‘rmasligini ko‘rsatamiz. Bir kun ichida javob beramiz.</p>
         <div class="clinks">
-          <a class="rv" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener"><span>Bot — tezkor so'rov<small>@vseti_agency_bot · soniyalarda javob beradi</small></span><span class="arr">→</span></a>
+          <a class="rv" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener"><span>Bot — tezkor so‘rov<small>@vseti_agency_bot · soniyalarda javob beradi</small></span><span class="arr">→</span></a>
           <a class="rv" href="https://t.me/vseti_site" target="_blank" rel="noopener"><span>«в сети» kanali<small>@vseti_site · keyslar, maslahatlar, yangiliklar</small></span><span class="arr">→</span></a>
+          <a class="rv" href="https://max.ru/id183474446770_4_bot" target="_blank" rel="noopener"><span>MAX‘dagi bot<small>so‘rov bevosita messenjerda</small></span><span class="arr">→</span></a>
           <a class="rv" href="mailto:site_vseti@mail.ru"><span>site_vseti@mail.ru<small>pochta · shartnoma, brif, hujjatlar</small></span><span class="arr">→</span></a>
         </div>
       </div>
-      <form class="form rv" id="leadForm" action="mailto:site_vseti@mail.ru" method="post" enctype="text/plain">
-        <h3>So'rov qoldirish</h3>
+      <form class="form rv" id="leadForm" method="post" novalidate>
+        <h3>So‘rov qoldirish</h3>
         <p>Qulay messenjerga yoki pochtaga yozamiz.</p>
-        <label for="fn">Ism</label><input id="fn" name="Ism" placeholder="Sizga qanday murojaat qilsak" required>
-        <label for="fc">Kontakt</label><input id="fc" name="Kontakt" placeholder="Telegram yoki telefon" required>
-        <label for="fm">Sayt yoki vazifa</label><textarea id="fm" name="Задача" placeholder="Joriy saytga havola, nimani o'zgartirmoqchisiz"></textarea>
-        <button class="btn btn-gold magnetic" type="submit">Pochta orqali yuborish <span class="arr">→</span></button>
+        <label for="fn">Ism</label><input id="fn" name="name" autocomplete="name" placeholder="Sizga qanday murojaat qilsak" required>
+        <label for="fc">Kontakt</label><input id="fc" name="contact" autocomplete="tel" placeholder="Telegram yoki telefon" required>
+        <label for="fm">Sayt yoki vazifa</label><textarea id="fm" name="message" placeholder="Joriy saytga havola, nimani o‘zgartirmoqchisiz"></textarea>
+        <div class="hp" aria-hidden="true"><label for="fcomp">Bu maydonni to‘ldirmang</label><input id="fcomp" name="company" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn-gold magnetic" id="leadBtn" type="submit">So‘rov yuborish <span class="arr">→</span></button>
+        <p class="lead-msg" id="leadMsg" role="status" aria-live="polite"></p>
         <a class="btn btn-ghost magnetic" id="leadTg" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener" style="margin-top:12px;width:100%;justify-content:center">Tezroq — Telegram orqali <span class="arr">→</span></a>
-        <p class="fine">«Pochta orqali yuborish» tugmasi allaqachon to'ldirilgan xat bilan pochta klientingizni ochadi. Agar pochta klienti bo'lmasa — bizga Telegram'da yozing, tezroq javob beramiz. Ma'lumotlar uchinchi shaxslarga berilmaydi.</p>
+        <p class="fine">So‘rov bizga darhol yetib boradi — bir kun ichida javob beramiz. Messenjer qulayroq bo‘lsa, Telegramga yozing. Ma‘lumotlar uchinchi shaxslarga berilmaydi. So‘rovni yuborib, siz shaxsiy ma‘lumotlaringizni qayta ishlashga rozilik bildirasiz — <a href="../politika.html">siyosat</a>.</p>
       </form>
     </div>
   </div>
@@ -1001,7 +1040,7 @@ html.light .case{background:rgba(255,255,255,.85)}
 <footer class="ftr">
   <div class="wrap">
     <a class="brand" href="#top"><img src="../assets/logo.png" alt="" width="32" height="32" style="width:32px;height:32px"><b>в <i>сети</i></b></a>
-    <span>Biznesingiz — в сети. Hammasi ko'radi.</span>
+    <span>Biznesingiz — в сети. Hammasi ko‘radi.</span>
     <span>© 2026 «в сети» · site_vseti@mail.ru</span>
     <span><a href="../oferta.html">Oferta</a> · <a href="../politika.html">Maxfiylik siyosati</a> · <a href="../rekvizity.html">Rekvizitlar</a></span>
   </div>
@@ -1074,7 +1113,7 @@ burger.addEventListener('click',()=>{
 });
 
 /* ---------- marquee ---------- */
-const words=['Saytni qayta dizayn','Neyrotarmoqlarda ko\'rinuvchanlik','Onlayn yozilish','Chat-botlar 24/7','Telegram va MAX','To\'lov qabul qilish','Jadvalni avtomatlashtirish','Navbat svetofori','Olti til','Logotip va firma uslubi','Och va tund mavzu','Yuklanish tezligi','Saytni yuritish','Kanallar va tarmoqlar'];
+const words=['Saytni qayta dizayn','Neyrotarmoqlarda ko‘rinuvchanlik','Onlayn yozilish','Chat-botlar 24/7','Telegram va MAX','To‘lov qabul qilish','Jadvalni avtomatlashtirish','Navbat svetofori','Olti til','Logotip va firma uslubi','Och va tund mavzu','Yuklanish tezligi','Saytni yuritish','Kanallar va tarmoqlar'];
 function fillRow(row,list){
   const html=list.map(w=>`<span class="item">${w}</span>`).join('');
   row.innerHTML=html+html;
@@ -1194,9 +1233,9 @@ if(hasGsap && !RM){
   // morph pinned section
   const mword=$('#mword'), msub=$('#msub'), mghost=$('#mghost');
   const STATES=[
-    {w:'sayt',s:'Tez, telefonda qulay, och va tund mavzuni almashtirish bilan — mijozingizga qanday qulay bo\'lsa shunday. Topish oson va o\'qish qulay bo\'lgan sayt.',cls:''},
-    {w:'mijozlar',s:'Onlayn yozilish, Telegram va MAX ga bildirishnomali formalar, chat-bot savollarga 24/7 javob beradi. So\'rovlar o\'zi keladi va qayta ishlanadi.',cls:'g'},
-    {w:'ko\'rinish',s:'Yandex, Google, Opera, Edge — va neyrotarmoqlar: ChatGPT, Alice, Gemini, GigaChat, DeepSeek, Perplexity. Saytni shunday sozlaymizki, ularning har biri sizni topadi va mijozga siz haqingizda to\'g\'ri gapiradi.',cls:'g2'}
+    {w:'sayt',s:'Tez, telefonda qulay, och va tund mavzuni almashtirish bilan — mijozingizga qanday qulay bo‘lsa shunday. Topish oson va o‘qish qulay bo‘lgan sayt.',cls:''},
+    {w:'mijozlar',s:'Onlayn yozilish, Telegram va MAX ga bildirishnomali formalar, chat-bot savollarga 24/7 javob beradi. So‘rovlar o‘zi keladi va qayta ishlanadi.',cls:'g'},
+    {w:'ko‘rinish',s:'Yandex, Google, Opera, Edge — va neyrotarmoqlar: ChatGPT, Alice, Gemini, GigaChat, DeepSeek, Perplexity. Saytni shunday sozlaymizki, ularning har biri sizni topadi va mijozga siz haqingizda to‘g‘ri gapiradi.',cls:'g2'}
   ];
   const ALPHA='АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЫЭЮЯ';
   let cur=0, scrambling=null;
@@ -1388,7 +1427,7 @@ function fitHero(){
 function refreshHero(){ fitHero(); buildOrbits(); }
 refreshHero();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(refreshHero);
-addEventListener('load',function(){setTimeout(refreshHero,140);});
+addEventListener('load',function(){setTimeout(refreshHero,140);setTimeout(refreshHero,700);});
 var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(refreshHero,150);});
 
 /* движение и притухание подписи, которая зашла за соседнюю */
@@ -1439,13 +1478,13 @@ glow(document.getElementById('faqHead'),'fw','fc',26);
 /* --- сравнение: галочки зажигаются при прокрутке --- */
 var ROWS=[
  ['Telefonda qulay ochiladi, barmoq bilan kattalashtirmasdan',0,1],
- ['Saytni to\'liq qidiruv va AI-botlar ko\'radi',0,1],
+ ['Saytni to‘liq qidiruv va AI-botlar ko‘radi',0,1],
  ['Neyrotarmoqlar kimligingizni, qayeringizni va nima qilishingizni tushunadi',0,1],
  ['Olti tilda versiyalari bor',0,1],
  ['Tanlov uchun och va tund mavzu',0,1],
  ['Telegram va MAX ga bildirishnomali onlayn yozilish',0,1],
  ['Chat-bot mijozlarga kecha-kunduz javob beradi',0,1],
- ['To\'lovni saytda ham, kanallarda ham qabul qilish',0,1],
+ ['To‘lovni saytda ham, kanallarda ham qabul qilish',0,1],
  ['Yuklanish tezligi yashil zonada',0,1],
  ['Rossiyada hammada uzilishsiz ochiladi',0,1]];
 var CHECK='M4 11 L9 16 L18 5', CROSS='M5 5 L17 17 M17 5 L5 17';
@@ -1468,21 +1507,52 @@ if(box){
   } else rows.forEach(function(r){r.classList.add('on');});
 }
 
-/* --- заявка: собираем письмо сами, чтобы ничего не терялось --- */
-var lf=document.getElementById('leadForm');
+/* --- заявка: уходит на наш приёмник, оттуда сразу нам в Telegram --- */
+var LEAD_URL='https://vseti-form.152-53-60-176.nip.io/';
+var lf=document.getElementById('leadForm'), lopened=Date.now();
 if(lf) lf.addEventListener('submit',function(e){
   e.preventDefault();
   var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
-  var name=v('fn'), contact=v('fc'), task=v('fm');
-  if(!name||!contact){ lf.reportValidity&&lf.reportValidity(); return; }
-  var body='Ism: '+name+'\\nAloqa: '+contact+'\\nSayt yoki vazifa: '+(task||'—')+'\\n\\nvseti-site.ru dan yuborildi';
-  location.href='mailto:site_vseti@mail.ru?subject='+encodeURIComponent('Saytdan so\'rov — '+name)+'&body='+encodeURIComponent(body);
+  var name=v('fn'), contact=v('fc'), task=v('fm'), trap=v('fcomp');
+  var msg=document.getElementById('leadMsg'), btn=document.getElementById('leadBtn');
+  var say=function(t,cls){ if(msg){ msg.textContent=t; msg.className='lead-msg '+(cls||''); } };
+  if(!name||!contact){ say('Ism va kontaktni to‘ldiring — aks holda javob bera olmaymiz.','bad'); return; }
+  if(btn){ btn.disabled=true; }
+  say('Yuborilmoqda…','');
+  var done=function(ok,err){
+    if(btn){ btn.disabled=false; }
+    if(ok){
+      lf.reset(); lopened=Date.now();
+      say('So‘rovingiz bizda. Bir kun ichida javob beramiz.','good');
+    } else {
+      /* сеть не пустила — открываем письмо, чтобы заявка не потерялась */
+      say('Yuborib bo‘lmadi. Xatni ochamiz — yoki bizga Telegramga yozing.','bad');
+      var body='Ism: '+name+'\\nAloqa: '+contact+'\\nSayt yoki vazifa: '+(task||'—')+'\\n\\nvseti-site.ru dan yuborildi';
+      location.href='mailto:site_vseti@mail.ru?subject='+encodeURIComponent('Saytdan so‘rov — '+name)+'&body='+encodeURIComponent(body);
+    }
+  };
+  var payload={name:name,contact:contact,message:task,company:trap,t:lopened,
+               lang:(document.documentElement.getAttribute('lang')||'ru')};
+  try{
+    var xhr=new XMLHttpRequest();
+    xhr.open('POST',LEAD_URL,true);
+    xhr.timeout=15000;
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.onload=function(){
+      var ok=false;
+      try{ ok=(xhr.status===200)&&JSON.parse(xhr.responseText).ok===true; }catch(_e){}
+      done(ok);
+    };
+    xhr.onerror=function(){ done(false); };
+    xhr.ontimeout=function(){ done(false); };
+    xhr.send(JSON.stringify(payload));
+  }catch(_e){ done(false); }
 });
 
 /* --- карусель телефонов: Telegram / MAX / ВKontaktе --- */
-var CH=[{n:'Telegram',c:'#2aabee',k:'TG',r:['<b>Kanal</b> — jadval bo\'yicha postlar','<b>Chat-bot</b> — 24/7 javob beradi','<b>To\'lov</b> — YooKassa va SBP','Avto-posting va xabarnomalar']},
-        {n:'MAX',c:'#84f4ea',k:'MAX',r:['<b>Kanal</b> — biznes vitrinasi','<b>Chat-bot</b> — buyurtma qabul qilish','<b>To\'lov</b> — YooKassa va SBP','Obunalar va eslatmalar']},
-        {n:'ВKontaktе',c:'#ffd45e',k:'VK',r:['<b>Hamjamiyat</b> — kontent va aksiyalar','<b>Chat-bot</b> — shaxsiy xabarlardan so\'rovlar','<b>To\'lov</b> — VK tovarlari','Obunachilarga xabarnomalar']}];
+var CH=[{n:'Telegram',c:'#2aabee',k:'TG',r:['<b>Kanal</b> — jadval bo‘yicha postlar','<b>Chat-bot</b> — 24/7 javob beradi','<b>To‘lov</b> — YooKassa va SBP','Avto-posting va xabarnomalar']},
+        {n:'MAX',c:'#84f4ea',k:'MAX',r:['<b>Kanal</b> — biznes vitrinasi','<b>Chat-bot</b> — buyurtma qabul qilish','<b>To‘lov</b> — YooKassa va SBP','Obunalar va eslatmalar']},
+        {n:'ВKontaktе',c:'#ffd45e',k:'VK',r:['<b>Hamjamiyat</b> — kontent va aksiyalar','<b>Chat-bot</b> — shaxsiy xabarlardan so‘rovlar','<b>To‘lov</b> — VK tovarlari','Obunachilarga xabarnomalar']}];
 var host=document.getElementById('carou'), dots=document.getElementById('carouDots');
 if(host&&dots){
   var els=CH.map(function(o){

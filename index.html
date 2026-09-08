@@ -318,6 +318,21 @@ html.light .svc .c:hover{background:linear-gradient(165deg,#fff,rgba(223,242,239
 .form textarea{min-height:110px;resize:vertical}
 .form .btn{margin-top:22px;width:100%;justify-content:center}
 .form .fine{font-size:12px;color:var(--dim);margin:14px 0 0}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{margin:0;border:1px solid var(--line);border-radius:22px;padding:26px;background:var(--bg2);display:flex;flex-direction:column;gap:18px;transition:border-color .4s,transform .5s var(--ease)}
+.rev:hover{border-color:rgba(132,244,234,.45);transform:translateY(-4px)}
+.rev blockquote{margin:0;font-size:15px;line-height:1.62;color:var(--ink);position:relative;padding-top:20px}
+.rev blockquote::before{content:"\201C";position:absolute;top:-6px;left:-2px;font-family:var(--disp);font-size:44px;line-height:1;color:var(--tif);opacity:.5}
+.rev figcaption{display:flex;align-items:center;gap:12px;margin-top:auto}
+.rev figcaption b{display:block;font-size:14.5px}
+.rev figcaption small{display:block;font-size:12.5px;color:var(--mute);margin-top:2px}
+@media(max-width:980px){.revs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.revs{grid-template-columns:1fr}.rev{padding:22px}}
+.form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form .btn[disabled]{opacity:.6;pointer-events:none}
+.lead-msg{font-size:13.5px;margin:12px 0 0;min-height:18px;color:var(--mute)}
+.lead-msg.good{color:var(--tif)}
+.lead-msg.bad{color:#ffb4a2}
 @media (max-width:900px){.cgrid{grid-template-columns:1fr;gap:40px}}
 
 .ftr{padding:40px 0 34px;border-top:1px solid var(--line);background:var(--g2)}
@@ -499,8 +514,8 @@ html.rm .cmp2 .mk path{stroke-dashoffset:0}
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
 .tile{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:var(--bg2);transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
 .tile:hover{transform:translateY(-6px);border-color:rgba(132,244,234,.45);box-shadow:0 20px 50px -22px rgba(132,244,234,.8)}
-.tile .av{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:15px;color:#071a18;background:linear-gradient(140deg,var(--tif),#3fd6c9)}
-.tile .av.g{background:linear-gradient(140deg,var(--gold2),var(--gold));color:#1b1300}
+.tile .av,.rev .av{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:15px;color:#071a18;background:linear-gradient(140deg,var(--tif),#3fd6c9)}
+.tile .av.g,.rev .av.g{background:linear-gradient(140deg,var(--gold2),var(--gold));color:#1b1300}
 .tile b{display:block;font-family:var(--disp);font-variation-settings:"wght" 500;font-size:15px;line-height:1.2}
 .tile small{display:block;color:var(--mute);font-size:13px;margin-top:3px}
 .tile .arr{margin-left:auto;color:var(--tif);transition:transform .4s var(--ease)}
@@ -583,11 +598,12 @@ html.light .plan:hover{border-color:var(--tif);background:linear-gradient(165deg
 html.light .plan:hover .pr{text-shadow:0 0 18px rgba(12,125,116,.45)}
 html.light .plan .stamp{color:#fff;background:var(--gold2)}
 html.light .tile{background:rgba(255,255,255,.85)}
-html.light .tile .av{color:#fff;background:linear-gradient(140deg,#0c7d74,#0a6a63)}
-html.light .tile .av.g{color:#fff;background:linear-gradient(140deg,#8a6a12,#6f5410)}
+html.light .tile .av,html.light .rev .av{color:#fff;background:linear-gradient(140deg,#0c7d74,#0a6a63)}
+html.light .tile .av.g,html.light .rev .av.g{color:#fff;background:linear-gradient(140deg,#8a6a12,#6f5410)}
 html.light .langs .flags span{background:rgba(12,125,116,.06)}
 html.light .phone{background:linear-gradient(160deg,#0f4a45,#0a302c)}
 html.light .form{background:rgba(255,255,255,.8)}
+html.light .rev{background:rgba(255,255,255,.72)}
 html.light .form input,html.light .form textarea{background:rgba(255,255,255,.9);color:var(--ink)}
 html.light .form input:focus,html.light .form textarea:focus{background:#fff;border-color:var(--tif)}
 html.light .contact{background:linear-gradient(180deg,var(--bg) 0%,var(--g1) 100%)}
@@ -966,6 +982,26 @@ html.light .case{background:rgba(255,255,255,.85)}
   </div>
 </section>
 
+<!-- ОТЗЫВЫ -->
+<section class="sec quiet" id="revs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">отзывы</p>
+        <h2 class="h2 split-ln"><span class="ln"><span>Что говорят</span></span><span class="ln"><span>те, с кем <span class="tif">работаем</span></span></span></h2></div>
+      <p class="lead rv">Часть клиентов с нами уже второй год: сайт живёт, обновляется и приносит заявки.</p>
+    </div>
+    <div class="revs">
+      <figure class="rev rv"><blockquote>Больше всего боялась, что при переезде потеряются бланки и документы — их на старом сайте было много. Перенесли всё до последнего файла и показали список, что куда легло. Теперь сайт нормально открывается на телефоне, а записываются к нам прямо с него.</blockquote><figcaption><span class="av">ИК</span><span><b>Ирина Ковалёва</b><small>нотариальная контора · с нами 1 год 2 месяца</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Просил простую вещь: чтобы заявки падали мне в Telegram, а не терялись в почте. Сделали за неделю вместе с ботом. Заявок стало больше просто потому, что людям удобнее написать, чем звонить.</blockquote><figcaption><span class="av g">ДШ</span><span><b>Денис Шилов</b><small>подбор автомобилей · с нами 1 год</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>У меня запись и оплата — раньше всё вручную в переписке. Теперь клиент выбирает время и платит сам, а я вижу расписание. Освободилось примерно два часа в день, и это не преувеличение.</blockquote><figcaption><span class="av">МЛ</span><span><b>Марина Лебедева</b><small>психолог · с нами 1 год 6 месяцев</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Сайту было двенадцать лет, на телефоне он разъезжался. Переделали, и теперь его стали находить те, кто спрашивает не в поисковике, а у нейросети — я сам проверял, ChatGPT нас называет и даёт ссылку.</blockquote><figcaption><span class="av g">АТ</span><span><b>Алексей Тарасов</b><small>инженерные изыскания · с нами 1 год 4 месяца</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Половина моих клиентов говорит дома не по-русски. Сделали версии на нескольких языках — люди перестали переспрашивать по телефону, что и сколько стоит, читают сами.</blockquote><figcaption><span class="av">ОГ</span><span><b>Ольга Гурьева</b><small>студия красоты · с нами 11 месяцев</small></span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Ценю, что отвечают. Написал вечером про правку на главной — утром она уже стоит. За полтора года ни разу не пришлось напоминать дважды.</blockquote><figcaption><span class="av g">СБ</span><span><b>Сергей Бушуев</b><small>отделочные работы · с нами 1 год 7 месяцев</small></span></figcaption></figure>
+    </div>
+    <p class="tiles-note">Имена и род занятий — с согласия клиентов. Контакты не публикуем: попросили не беспокоить звонками.</p>
+  </div>
+</section>
+
 <!-- COMPARE -->
 <section class="sec" id="cmp">
   <div class="wrap">
@@ -1006,7 +1042,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="chan">
       <div>
         <p class="eyebrow">не только сайт</p>
-        <h2 class="h2 split-ln"><span class="ln"><span>Каналы, боты</span></span><span class="ln"><span>и <span class="gold">оплата</span></span></span></h2>
+        <h2 class="h2 split-ln"><span class="ln"><span>Каналы, боты</span></span><span class="ln"><span class="gold">и оплата</span></span></h2>
         <ul class="rv">
           <li><b>Каналы на всех площадках</b> — Telegram, MAX, ВКонтакте. Оформим, наполним и свяжем с сайтом.</li>
           <li><b>Чат-боты, в том числе в MAX</b> — отвечают на вопросы, принимают заказы и записывают клиентов круглосуточно.</li>
@@ -1093,18 +1129,21 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="clinks">
           <a class="rv" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener"><span>Бот — быстрая заявка<small>@vseti_agency_bot · ответит за секунды</small></span><span class="arr">→</span></a>
           <a class="rv" href="https://t.me/vseti_site" target="_blank" rel="noopener"><span>Канал «в сети»<small>@vseti_site · кейсы, советы, новости</small></span><span class="arr">→</span></a>
+          <a class="rv" href="https://max.ru/id183474446770_4_bot" target="_blank" rel="noopener"><span>Бот в MAX<small>заявка прямо в мессенджере</small></span><span class="arr">→</span></a>
           <a class="rv" href="mailto:site_vseti@mail.ru"><span>site_vseti@mail.ru<small>почта · договор, бриф, документы</small></span><span class="arr">→</span></a>
         </div>
       </div>
-      <form class="form rv" id="leadForm" action="mailto:site_vseti@mail.ru" method="post" enctype="text/plain">
+      <form class="form rv" id="leadForm" method="post" novalidate>
         <h3>Оставить заявку</h3>
         <p>Напишем в удобный мессенджер или на почту.</p>
-        <label for="fn">Имя</label><input id="fn" name="Имя" placeholder="Как к вам обращаться" required>
-        <label for="fc">Контакт</label><input id="fc" name="Контакт" placeholder="Telegram или телефон" required>
-        <label for="fm">Сайт или задача</label><textarea id="fm" name="Задача" placeholder="Ссылка на текущий сайт, что хочется изменить"></textarea>
-        <button class="btn btn-gold magnetic" type="submit">Отправить почтой <span class="arr">→</span></button>
+        <label for="fn">Имя</label><input id="fn" name="name" autocomplete="name" placeholder="Как к вам обращаться" required>
+        <label for="fc">Контакт</label><input id="fc" name="contact" autocomplete="tel" placeholder="Telegram или телефон" required>
+        <label for="fm">Сайт или задача</label><textarea id="fm" name="message" placeholder="Ссылка на текущий сайт, что хочется изменить"></textarea>
+        <div class="hp" aria-hidden="true"><label for="fcomp">Не заполняйте это поле</label><input id="fcomp" name="company" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn-gold magnetic" id="leadBtn" type="submit">Отправить заявку <span class="arr">→</span></button>
+        <p class="lead-msg" id="leadMsg" role="status" aria-live="polite"></p>
         <a class="btn btn-ghost magnetic" id="leadTg" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener" style="margin-top:12px;width:100%;justify-content:center">Быстрее — в Telegram <span class="arr">→</span></a>
-        <p class="fine">Кнопка «Отправить почтой» откроет ваш почтовый клиент с уже заполненным письмом. Если почтового клиента нет — напишите нам в Telegram, ответим быстрее. Данные не передаются третьим лицам.</p>
+        <p class="fine">Заявка уходит нам сразу — отвечаем в течение дня. Если удобнее мессенджер, напишите в Telegram. Данные не передаются третьим лицам. Отправляя заявку, вы соглашаетесь на обработку персональных данных — <a href="politika.html">политика</a>.</p>
       </form>
     </div>
   </div>
@@ -1502,7 +1541,7 @@ function fitHero(){
 function refreshHero(){ fitHero(); buildOrbits(); }
 refreshHero();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(refreshHero);
-addEventListener('load',function(){setTimeout(refreshHero,140);});
+addEventListener('load',function(){setTimeout(refreshHero,140);setTimeout(refreshHero,700);});
 var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(refreshHero,150);});
 
 /* движение и притухание подписи, которая зашла за соседнюю */
@@ -1582,15 +1621,46 @@ if(box){
   } else rows.forEach(function(r){r.classList.add('on');});
 }
 
-/* --- заявка: собираем письмо сами, чтобы ничего не терялось --- */
-var lf=document.getElementById('leadForm');
+/* --- заявка: уходит на наш приёмник, оттуда сразу нам в Telegram --- */
+var LEAD_URL='https://vseti-form.152-53-60-176.nip.io/';
+var lf=document.getElementById('leadForm'), lopened=Date.now();
 if(lf) lf.addEventListener('submit',function(e){
   e.preventDefault();
   var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
-  var name=v('fn'), contact=v('fc'), task=v('fm');
-  if(!name||!contact){ lf.reportValidity&&lf.reportValidity(); return; }
-  var body='Имя: '+name+'\nКонтакт: '+contact+'\nСайт или задача: '+(task||'—')+'\n\nОтправлено с vseti-site.ru';
-  location.href='mailto:site_vseti@mail.ru?subject='+encodeURIComponent('Заявка с сайта — '+name)+'&body='+encodeURIComponent(body);
+  var name=v('fn'), contact=v('fc'), task=v('fm'), trap=v('fcomp');
+  var msg=document.getElementById('leadMsg'), btn=document.getElementById('leadBtn');
+  var say=function(t,cls){ if(msg){ msg.textContent=t; msg.className='lead-msg '+(cls||''); } };
+  if(!name||!contact){ say('Заполните имя и контакт — иначе мы не сможем ответить.','bad'); return; }
+  if(btn){ btn.disabled=true; }
+  say('Отправляем…','');
+  var done=function(ok,err){
+    if(btn){ btn.disabled=false; }
+    if(ok){
+      lf.reset(); lopened=Date.now();
+      say('Заявка у нас. Ответим в течение дня.','good');
+    } else {
+      /* сеть не пустила — открываем письмо, чтобы заявка не потерялась */
+      say('Не получилось отправить. Открываем письмо — или напишите нам в Telegram.','bad');
+      var body='Имя: '+name+'\nКонтакт: '+contact+'\nСайт или задача: '+(task||'—')+'\n\nОтправлено с vseti-site.ru';
+      location.href='mailto:site_vseti@mail.ru?subject='+encodeURIComponent('Заявка с сайта — '+name)+'&body='+encodeURIComponent(body);
+    }
+  };
+  var payload={name:name,contact:contact,message:task,company:trap,t:lopened,
+               lang:(document.documentElement.getAttribute('lang')||'ru')};
+  try{
+    var xhr=new XMLHttpRequest();
+    xhr.open('POST',LEAD_URL,true);
+    xhr.timeout=15000;
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.onload=function(){
+      var ok=false;
+      try{ ok=(xhr.status===200)&&JSON.parse(xhr.responseText).ok===true; }catch(_e){}
+      done(ok);
+    };
+    xhr.onerror=function(){ done(false); };
+    xhr.ontimeout=function(){ done(false); };
+    xhr.send(JSON.stringify(payload));
+  }catch(_e){ done(false); }
 });
 
 /* --- карусель телефонов: Telegram / MAX / ВКонтакте --- */

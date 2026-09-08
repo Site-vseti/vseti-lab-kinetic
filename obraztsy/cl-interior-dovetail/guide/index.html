@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+  document.documentElement.classList.add('js');
+  try { var t = localStorage.getItem('dovetail-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<title>How Dovetail was built — Parable build guide</title>
+<meta name="description" content="A build guide for Dovetail: the idea, the stack, the canvas orthographic rotating drawing with material-swatch swap, the details that matter, and how to ship it on GitHub Pages." />
+<meta name="robots" content="index,follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  .doc { width: min(100% - 2.4rem, 820px); margin: 2rem auto 5rem; position: relative; z-index: 1; }
+  .doc-back { display: inline-flex; align-items: center; gap: .4rem; color: var(--dim); text-decoration: none; font-size: .86rem; margin-bottom: 1.6rem; }
+  .doc-back:hover { color: var(--ink); }
+  .doc h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin: .4rem 0 .3rem; }
+  .doc .lede { margin-bottom: 2.4rem; }
+  .doc h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin: 2.6rem 0 .6rem; }
+  .doc p { color: var(--dim); margin: .7rem 0; }
+  .doc p strong { color: var(--ink); font-weight: 600; }
+  .doc ul { color: var(--dim); padding-left: 1.1rem; margin: .7rem 0; }
+  .doc li { margin: .35rem 0; }
+  .doc a.inl { color: var(--accent); }
+  pre { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; overflow-x: auto; margin: 1rem 0; }
+  code { font-family: var(--font-m); font-size: .82rem; }
+  pre code { color: var(--ink); line-height: 1.6; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.2rem 0; }
+  .tag-row span { font-family: var(--font-m); font-size: .72rem; padding: .3rem .6rem; border: 1px solid var(--line); border-radius: 999px; color: var(--dim); }
+  .callout { border-left: 3px solid var(--accent); background: color-mix(in oklab, var(--accent) 6%, transparent); padding: .9rem 1.1rem; border-radius: 0 10px 10px 0; margin: 1.4rem 0; }
+  .callout p { margin: 0; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="film" aria-hidden="true"></div>
+<main class="doc">
+  <a class="doc-back" href="../">← Back to Dovetail</a>
+  <p class="eyebrow mono">[ Parable build guide ]</p>
+  <h1>How Dovetail was built</h1>
+  <p class="lede">A furniture studio, drawn the way a cabinetmaker draws. The signature is a
+    <strong>canvas orthographic line-drawing</strong> of a lounge chair that rotates front → 3/4 →
+    side as you scroll or drag — no textures, no 3D library, ~120 lines of vanilla JS.</p>
+
+  <div class="tag-row">
+    <span>static · no build step</span><span>canvas 2D</span><span>Fraunces / Inter / Space Mono</span><span>light + dark</span><span>reduced-motion aware</span>
+  </div>
+
+  <h2>The idea</h2>
+  <p>Furniture photography flatters. A drawing tells the truth — it can't hide a proportion or a joint
+    behind soft light. Dovetail leans all the way into that: the whole site is styled like a sheet of
+    drawing paper, blueprint grid and all, and the hero is a dimensioned elevation rather than a hero
+    shot. The promise is <em>precision</em>, so the site had to <em>look</em> measured.</p>
+
+  <h2>The stack</h2>
+  <p>Deliberately plain. One <code>index.html</code>, one <code>styles.css</code>, one
+    <code>main.js</code>. No framework, no bundler, no CDN — the rotating drawing is hand-rolled canvas
+    2D, so the page has zero runtime dependencies and ships straight to GitHub Pages. Type is Fraunces
+    (a warm, high-contrast serif with a craftsman's confidence) for display, Inter for body, and
+    Space&nbsp;Mono for the technical meta a furniture drawing lives in — millimetres, Janka numbers,
+    plate references.</p>
+
+  <h2>Signature technique — the rotating elevation</h2>
+  <p>The lounge chair is a tiny <strong>3D wireframe</strong> — a seat slab, a reclined back and four
+    splayed legs, built from boxes and prisms as arrays of edges. To draw it as a draughtsman would, we
+    rotate every point about the vertical axis and project it flat with <strong>no perspective</strong>:
+    drop nothing, foreshorten nothing, just spin and read off <code>x</code> and <code>y</code>. At 0°
+    you see the front elevation; at 90°, the side.</p>
+  <pre><code>// spin about the vertical (Y) axis, then project orthographically
+const project = (p, s, c) =&gt; ({
+  x: p[0] * c + p[2] * s,     // s = sin(angle), c = cos(angle)
+  y: p[1],                    // height is untouched -> H is constant
+  depth: -p[0] * s + p[2] * c // kept only to fade far lines
+});
+
+// scroll maps the section's progress to the target angle...
+target = p * (Math.PI * 0.56);          // 0deg -> ~101deg
+// ...and every frame eases toward it (a soft-close drawer):
+angle += (target - angle) * 0.12;</code></pre>
+  <p>Because height is never rotated, the overall-height dimension on the left stays a constant
+    <code>820&nbsp;mm</code>, while the bottom dimension recomputes the projected width live — so the
+    read-out ticks up from the chair's width toward its full depth as it turns. The four material chips
+    swap the stroke colour (theme-aware, so walnut never disappears on a dark ground) and rewrite the
+    spec caption underneath.</p>
+
+  <h2>Details that matter</h2>
+  <ul>
+    <li><strong>Cost, not vanity.</strong> Device-pixel-ratio is capped at 1.5 and the loop is throttled
+      — line-drawing is cheap, and when the angle has settled there's nothing to redraw.</li>
+    <li><strong>It pauses when unseen.</strong> An <code>IntersectionObserver</code> stops the render
+      loop the instant the drawing scrolls out of view, and restarts it on the way back.</li>
+    <li><strong>Reduced motion shows one clean elevation.</strong> Under <code>prefers-reduced-motion</code>
+      there is no loop and no scroll rotation: the chair is drawn once as a still side elevation, and the
+      material swap still works — instantly, with no transition.</li>
+    <li><strong>Content is never hidden without JS.</strong> The hero rise and scroll reveals are gated
+      behind a <code>.js</code> class set synchronously in <code>&lt;head&gt;</code>, and the hero's own
+      elevation is a plain inline SVG — kill JavaScript and the page is still fully legible.</li>
+    <li><strong>Two drawings, one language.</strong> The hero is a hand-built SVG side elevation; the
+      joinery section is the live canvas. They share the same grid, ticks and mono labels, so the site
+      reads as one drawing set.</li>
+  </ul>
+
+  <div class="callout"><p>The commission form is a demo — it validates and confirms in-place but sends
+    nothing. Wire it to your own endpoint (Formspree, a serverless function, an email service) before
+    taking real orders.</p></div>
+
+  <h2>Ship it on GitHub Pages</h2>
+  <p>Nothing to build. Push the folder and point Pages at the root.</p>
+  <pre><code>gh repo create bswxyz/dovetail --public --source . --push
+gh api --method POST /repos/bswxyz/dovetail/pages -f 'source[branch]=main' -f 'source[path]=/'</code></pre>
+  <p>Relative paths and a <code>.nojekyll</code> file mean it serves from the project subpath without a
+    single config change. That's the whole point of the static build — the drawing does the work.</p>
+
+  <a class="doc-back" href="../" style="margin-top:2.6rem">← Back to Dovetail</a>
+</main>
+</body>
+</html>

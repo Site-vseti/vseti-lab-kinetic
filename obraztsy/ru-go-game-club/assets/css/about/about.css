@@ -1,0 +1,20 @@
+.about {
+    padding: 50px 0;
+  }
+
+  .about__text {
+    margin: 0 0 78px;
+  }
+
+  .about__paragraph {
+    margin: 0 0 28px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+  }
+
+  .about__paragraph:last-child {
+    margin-bottom: 0;
+  }
+

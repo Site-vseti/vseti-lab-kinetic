@@ -1,0 +1,18 @@
+{
+  "name": "L'Étoile Restaurant",
+  "short_name": "L'Étoile",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#C9A227",
+  "description": "Where absolute culinary standards meet contemporary spatial design.",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23C9A227'>★</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+  document.documentElement.classList.add('js');
+  try { var t = localStorage.getItem('dovetail-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<title>Dovetail — bench-made furniture &amp; industrial design</title>
+<meta name="description" content="Dovetail is a one-workshop furniture studio making bespoke, made-to-order pieces in solid oak, walnut and blackened steel. Every piece drawn as an orthographic elevation and cut to hand-fit joinery." />
+<meta name="theme-color" content="#efe8dc" />
+<meta name="color-scheme" content="light dark" />
+<meta property="og:title" content="Dovetail — bench-made furniture &amp; industrial design" />
+<meta property="og:description" content="Bespoke furniture in solid oak, walnut and blackened steel. Drawn to the tenth of a millimetre, joined by hand, made to outlast the room." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<div class="film" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="brand" href="./" aria-label="Dovetail home">
+    <svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true" focusable="false">
+      <path d="M3 22 L9 8 L13 8 L11 22 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M27 22 L21 8 L17 8 L19 22 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M11 22 L19 22 M11 8 L19 8" stroke="currentColor" stroke-width="1.2" opacity=".45"/>
+    </svg>
+    <span class="brand-word">Dovetail</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#collection">Collection</a>
+    <a href="#joinery">Joinery</a>
+    <a href="#materials">Materials</a>
+    <a href="./guide/">Guide</a>
+    <a class="nav-cta" href="#commission">Commission</a>
+    <button id="themeBtn" class="theme-btn" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Toggle light / dark">
+      <svg class="ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><g stroke-linecap="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></g></svg>
+      <svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ hero — the piece (orthographic blueprint) ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow mono">[ Bench-made · Est. 2011 · one workshop ]</p>
+        <h1 id="hero-title" class="hero-title">
+          <span class="line"><span>Cut to the grain.</span></span>
+          <span class="line"><span>Joined to the <em>tenth</em></span></span>
+          <span class="line"><span>of a millimetre.</span></span>
+        </h1>
+        <p class="hero-sub">Bespoke, made-to-order furniture in solid oak, walnut and blackened steel.
+          Every piece is drawn as an orthographic elevation, cut to hand-fit joinery, and made to
+          outlast the room it was ordered for.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#collection">See the collection</a>
+          <a class="btn btn-ghost" href="#joinery">Watch it turn →</a>
+        </div>
+        <dl class="hero-facts">
+          <div><dt class="mono">Bench-made since</dt><dd>2011</dd></div>
+          <div><dt class="mono">Pieces / year</dt><dd><span class="c-num" data-to="90">0</span></dd></div>
+          <div><dt class="mono">Tolerance</dt><dd>±0.2&thinsp;mm</dd></div>
+        </dl>
+      </div>
+
+      <figure class="hero-fig">
+        <svg class="blueprint" viewBox="0 0 700 560" role="img" aria-labelledby="bp-title bp-desc" preserveAspectRatio="xMidYMid meet">
+          <title id="bp-title">Orthographic side-elevation drawing of the Halyard Lounge chair</title>
+          <desc id="bp-desc">A draughtsman's line drawing of a mid-century lounge chair in white oak, dimensioned in millimetres on a blueprint grid.</desc>
+          <defs>
+            <pattern id="bpGrid" width="28" height="28" patternUnits="userSpaceOnUse">
+              <path d="M28 0 L0 0 0 28" fill="none" stroke="var(--grid)" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect class="bp-frame" x="24" y="24" width="652" height="512" fill="url(#bpGrid)" stroke="var(--line)" stroke-width="1"/>
+
+          <!-- ground -->
+          <line class="bp-ground" x1="120" y1="452" x2="600" y2="452"/>
+
+          <!-- far side (hidden lines, drawn behind) -->
+          <g class="bp-hidden" aria-hidden="true">
+            <path d="M300 262 L262 456"/>            <!-- far back leg -->
+            <path d="M470 250 L502 456"/>            <!-- far front leg -->
+            <path d="M266 250 L468 236"/>            <!-- far seat top edge -->
+          </g>
+
+          <!-- chair — near side elevation (all stroke, no fill) -->
+          <g class="bp" aria-hidden="true">
+            <!-- seat slab -->
+            <path d="M250 252 L452 238 L452 262 L250 276 Z"/>
+            <!-- reclined back slab -->
+            <path d="M250 252 L200 104 L224 116 L274 250 Z"/>
+            <path d="M200 104 L224 116"/>
+            <!-- near legs -->
+            <path d="M268 272 L240 452"/>            <!-- back leg -->
+            <path d="M452 260 L484 452"/>            <!-- front leg -->
+            <!-- seat / back cushion (upholstery, dashed) -->
+          </g>
+          <g class="bp-soft" aria-hidden="true">
+            <path d="M262 244 L446 231"/>            <!-- seat cushion -->
+            <path d="M244 250 L214 138"/>            <!-- back cushion -->
+          </g>
+
+          <!-- dimension: overall height -->
+          <g class="bp-dim" aria-hidden="true">
+            <line x1="150" y1="452" x2="150" y2="104"/>
+            <path d="M146 448 L154 456 M146 108 L154 100"/>
+            <line class="bp-ext" x1="150" y1="452" x2="238" y2="452"/>
+            <line class="bp-ext" x1="150" y1="104" x2="200" y2="104"/>
+          </g>
+          <text class="bp-txt bp-txt--accent" x="140" y="282" transform="rotate(-90 140 282)">820</text>
+
+          <!-- dimension: overall length -->
+          <g class="bp-dim" aria-hidden="true">
+            <line x1="240" y1="500" x2="484" y2="500"/>
+            <path d="M236 496 L244 504 M480 496 L488 504"/>
+            <line class="bp-ext" x1="240" y1="452" x2="240" y2="500"/>
+            <line class="bp-ext" x1="484" y1="452" x2="484" y2="500"/>
+          </g>
+          <text class="bp-txt bp-txt--accent" x="362" y="518" text-anchor="middle">760</text>
+
+          <!-- dimension: seat height -->
+          <g class="bp-dim" aria-hidden="true">
+            <line x1="548" y1="452" x2="548" y2="256"/>
+            <path d="M544 448 L552 456 M544 260 L552 252"/>
+            <line class="bp-ext" x1="452" y1="256" x2="548" y2="256"/>
+          </g>
+          <text class="bp-txt" x="558" y="358" transform="rotate(-90 558 358)">440</text>
+
+          <!-- title block -->
+          <g class="bp-block" aria-hidden="true">
+            <rect x="470" y="66" width="196" height="84" fill="none" stroke="var(--line)" stroke-width="1"/>
+            <line x1="470" y1="92" x2="666" y2="92" stroke="var(--line)" stroke-width="1"/>
+            <text class="bp-txt bp-txt--head" x="482" y="85">DOVETAIL</text>
+            <text class="bp-txt" x="482" y="112">HALYARD LOUNGE — SIDE</text>
+            <text class="bp-txt" x="482" y="132">PLATE 01 · 1:10 · WHITE OAK</text>
+          </g>
+        </svg>
+        <figcaption class="hero-cap mono">
+          <span>PLATE 01 — Halyard Lounge, side elevation</span>
+          <span>solid white oak · Belgian linen</span>
+        </figcaption>
+      </figure>
+    </div>
+    <p class="hero-scroll mono" aria-hidden="true">scroll — into the workshop</p>
+  </section>
+
+  <!-- ============ the collection ============ -->
+  <section id="collection" class="collection">
+    <span class="wm" aria-hidden="true">GRAIN</span>
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker mono reveal">[ The collection ]</p>
+        <h2 class="reveal">Four pieces, made to order.</h2>
+        <p class="lede reveal">Nothing is held in stock. Each piece is drawn, quoted and cut to your
+          room — the same joints, the same tolerances, whichever timber you choose. Prices are a
+          starting point; the grain has the final word.</p>
+      </div>
+
+      <div class="piece-grid">
+        <article class="piece reveal">
+          <div class="piece-art">
+            <svg viewBox="0 0 220 150" aria-hidden="true" focusable="false">
+              <path d="M40 118 L52 62 M96 118 L88 62 M150 118 L134 60 M176 118 L152 58"/>
+              <path d="M50 66 L138 60 L156 60 L70 68 Z"/>
+              <path d="M70 68 L60 24 L74 28 L84 66 Z"/>
+              <path d="M60 24 L74 28"/>
+            </svg>
+          </div>
+          <div class="piece-info">
+            <div class="piece-top"><h3>Halyard Lounge</h3><span class="piece-price mono">£2,400</span></div>
+            <p class="piece-spec mono">solid white oak · Belgian linen · oiled</p>
+            <p class="piece-note">A low, reclined lounge with a slung linen seat. The one you sink into and forget the time.</p>
+            <span class="piece-tag tag--soon mono">3–4 wk lead</span>
+          </div>
+        </article>
+
+        <article class="piece reveal">
+          <div class="piece-art">
+            <svg viewBox="0 0 220 150" aria-hidden="true" focusable="false">
+              <path d="M28 58 L192 58 L192 70 L28 70 Z"/>
+              <path d="M44 70 L44 120 M176 70 L176 120"/>
+              <path d="M44 120 L36 120 M176 120 L184 120"/>
+              <path d="M44 96 L176 96"/>
+              <path d="M60 70 L60 58 M160 70 L160 58"/>
+            </svg>
+          </div>
+          <div class="piece-info">
+            <div class="piece-top"><h3>Tolerance Table</h3><span class="piece-price mono">£3,850</span></div>
+            <p class="piece-spec mono">American walnut · blackened steel trestle</p>
+            <p class="piece-note">A ten-foot top on a welded steel frame. Draw-bored joinery, so it never racks — seats eight without a wobble.</p>
+            <span class="piece-tag tag--low mono">made to order</span>
+          </div>
+        </article>
+
+        <article class="piece reveal">
+          <div class="piece-art">
+            <svg viewBox="0 0 220 150" aria-hidden="true" focusable="false">
+              <path d="M34 78 L186 74 L186 86 L34 90 Z"/>
+              <path d="M48 90 L48 122 M170 86 L170 122"/>
+              <path d="M48 122 L40 122 M170 122 L178 122"/>
+              <path d="M48 108 L170 106"/>
+            </svg>
+          </div>
+          <div class="piece-info">
+            <div class="piece-top"><h3>Mortise Bench</h3><span class="piece-price mono">£1,180</span></div>
+            <p class="piece-spec mono">steam-bent ash · bridle joints · waxed</p>
+            <p class="piece-note">A hallway bench with a single continuous grain line front to back. Through-tenons, wedged and proud.</p>
+            <span class="piece-tag tag--ok mono">in the shop</span>
+          </div>
+        </article>
+
+        <article class="piece reveal">
+          <div class="piece-art">
+            <svg viewBox="0 0 220 150" aria-hidden="true" focusable="false">
+              <path d="M54 40 L166 40 L166 116 L54 116 Z"/>
+              <path d="M54 65 L166 65 M54 90 L166 90"/>
+              <circle cx="110" cy="52" r="3"/><circle cx="110" cy="77" r="3"/><circle cx="110" cy="103" r="3"/>
+              <path d="M60 116 L52 130 M160 116 L168 130"/>
+            </svg>
+          </div>
+          <div class="piece-info">
+            <div class="piece-top"><h3>Keeled Chest</h3><span class="piece-price mono">£2,950</span></div>
+            <p class="piece-spec mono">quarter-sawn oak · hand-cut dovetails · brass</p>
+            <p class="piece-note">Three graduated drawers, each corner joined by hand. The pins are ours — thin, angled, unmistakable.</p>
+            <span class="piece-tag tag--soon mono">6 wk lead</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ the joinery — signature: rotating orthographic drawing ============ -->
+  <section id="joinery" class="joinery">
+    <div class="wrap">
+      <div class="sec-head sec-head--center">
+        <p class="kicker mono reveal">[ The joinery ]</p>
+        <h2 class="reveal">Drawn before it's cut.</h2>
+        <p class="lede reveal">No piece leaves the bench that wasn't first a drawing. Scroll to turn the
+          Halyard Lounge through its elevations — front, three-quarter, side — then choose a material to
+          see the piece, and its spec, change with it.</p>
+      </div>
+
+      <div class="draw-wrap reveal">
+        <figure class="draw-stage" aria-label="Rotating orthographic drawing of the Halyard Lounge">
+          <canvas id="piece" class="draw-canvas"></canvas>
+          <noscript><p class="draw-noscript mono">Enable JavaScript to rotate the drawing. A static side elevation of this piece is shown in the hero above.</p></noscript>
+        </figure>
+
+        <div class="draw-panel">
+          <div class="swatches" role="group" aria-label="Choose a material">
+            <button class="swatch is-active" type="button" data-mat="oak" aria-pressed="true">
+              <span class="sw-chip" data-mat="oak" aria-hidden="true"></span>Oak
+            </button>
+            <button class="swatch" type="button" data-mat="walnut" aria-pressed="false">
+              <span class="sw-chip" data-mat="walnut" aria-hidden="true"></span>Walnut
+            </button>
+            <button class="swatch" type="button" data-mat="steel" aria-pressed="false">
+              <span class="sw-chip" data-mat="steel" aria-hidden="true"></span>Blackened steel
+            </button>
+            <button class="swatch" type="button" data-mat="linen" aria-pressed="false">
+              <span class="sw-chip" data-mat="linen" aria-hidden="true"></span>Linen
+            </button>
+          </div>
+          <p class="spec-cap mono" id="specCap" aria-live="polite">OAK — rift-sawn white oak · hard-wax oil · Janka 1360 · moves 0.3%/RH</p>
+          <p class="draw-hint mono" id="drawHint">scroll to rotate · drag to inspect</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ materials — the material story ============ -->
+  <section id="materials" class="materials">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker mono reveal">[ Materials ]</p>
+        <h2 class="reveal">We buy the tree, not the board.</h2>
+        <p class="lede reveal">Timber is bought in the log, air-dried three years under cover, then
+          finished in the kiln to furniture moisture. We work four materials, and we work them honestly —
+          no veneer, no stain pretending to be another wood, no filler in the grain.</p>
+      </div>
+
+      <div class="mat-grid">
+        <article class="mat reveal">
+          <div class="mat-head"><span class="sw-chip sw-chip--lg" data-mat="oak" aria-hidden="true"></span><h3>White oak</h3></div>
+          <p class="mat-spec mono">rift &amp; quarter-sawn · Janka 1360 · 0.3%/RH</p>
+          <p>Cut on the quarter so the medullary rays flash silver across the face. The most stable
+            timber we work — a drawer front in oak barely moves through a wet winter.</p>
+        </article>
+        <article class="mat reveal">
+          <div class="mat-head"><span class="sw-chip sw-chip--lg" data-mat="walnut" aria-hidden="true"></span><h3>American walnut</h3></div>
+          <p class="mat-spec mono">plain-sawn · Janka 1010 · oiled, never stained</p>
+          <p>Chocolate heartwood that lightens toward honey with age and daylight. We book-match the
+            boards so a tabletop reads as one mirrored sheet of grain, not a run of planks.</p>
+        </article>
+        <article class="mat reveal">
+          <div class="mat-head"><span class="sw-chip sw-chip--lg" data-mat="steel" aria-hidden="true"></span><h3>Blackened steel</h3></div>
+          <p class="mat-spec mono">3 mm hot-rolled · TIG-welded · wax-inhibited</p>
+          <p>Frames and trestles are cut from hot-rolled plate, welded, ground flush, then blackened
+            with heat and oil rather than paint. It ages to a soft graphite, and a scratch just adds to it.</p>
+        </article>
+        <article class="mat reveal">
+          <div class="mat-head"><span class="sw-chip sw-chip--lg" data-mat="linen" aria-hidden="true"></span><h3>Belgian linen</h3></div>
+          <p class="mat-spec mono">480 g/m² flax · loose cushion · washable</p>
+          <p>Upholstery is heavyweight Belgian flax over latex and feather. Every cover is loose and
+            zipped, so a spilt glass of red is a wash, not a re-upholstery.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ commission ============ -->
+  <section id="commission" class="commission">
+    <div class="wrap comm-grid">
+      <div class="comm-info">
+        <p class="kicker kicker--rust mono reveal">[ Commission ]</p>
+        <h2 class="reveal">Tell us the room.</h2>
+        <p class="comm-sub reveal">Every commission starts with the space, not the catalogue. The wall
+          it sits against, the light it gets, who's going to sit in it and how tall they are. We draw it,
+          quote it, and put you in the book.</p>
+        <ul class="comm-list mono">
+          <li>A measured drawing before a penny changes hands</li>
+          <li>Deposit holds your slot — balance on delivery</li>
+          <li>6–12 week lead depending on the queue and the timber</li>
+        </ul>
+      </div>
+      <div class="comm-form reveal" aria-live="polite">
+        <form id="commForm" novalidate>
+          <div class="field">
+            <label class="mono" for="cName">Name</label>
+            <input id="cName" name="name" type="text" required autocomplete="name" placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label class="mono" for="cEmail">Email</label>
+            <input id="cEmail" name="email" type="email" required autocomplete="email" placeholder="you@example.com" />
+          </div>
+          <div class="field">
+            <label class="mono" for="cWhat">What are we making?</label>
+            <textarea id="cWhat" name="what" rows="3" placeholder="A dining table for a low-ceilinged kitchen / a lounge chair in walnut / …"></textarea>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Put me in the book</button>
+          <p class="comm-fine mono" id="commFine">Demo form — no message is sent. See the README.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-top">
+    <span class="foot-brand">Dovetail</span>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#collection">Collection</a><a href="#joinery">Joinery</a><a href="#materials">Materials</a><a href="#commission">Commission</a><a href="./guide/">Guide</a>
+    </nav>
+  </div>
+  <div class="wrap foot-bottom mono">
+    <span>© 2026 Dovetail — a design-showcase concept, not a working studio. Prices, lead times and plate numbers are fiction.</span>
+    <span>Designed &amp; built by Parable · <a href="./guide/">How this was built →</a></span>
+  </div>
+</footer>
+
+<script src="./main.js" defer></script>
+</body>
+</html>

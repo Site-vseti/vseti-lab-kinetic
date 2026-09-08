@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="L'Étoile Gallery - Explore our culinary artistry, fine dining atmosphere, chef creations, and luxury restaurant experience through immersive visuals.">
+    <title>Gallery | L'Étoile Restaurant</title>
+    
+    <!-- Premium Inline SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23C9A227'>★</text></svg>">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-gallery-content" style="position:absolute; left:-9999px; background:var(--primary-gold); color:var(--bg-dark); padding:0.5rem 1rem; z-index:10000;" onfocus="this.style.left='10px'" onblur="this.style.left='-9999px'">Skip to Content</a>
+
+    <!-- Header / Navbar -->
+    <header role="banner">
+        <div class="logo">
+            <a href="../index.html" aria-label="L'Étoile Home">L'ÉTOILE<span>.</span></a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation">
+            <a href="../index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="reservation.html">Reservation</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="reservation.html" class="btn-gold nav-reserve-btn">Reserve A Table</a>
+            <button class="menu-toggle" id="mobile-menu-btn" aria-haspopup="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-nav" role="navigation" aria-label="Mobile Navigation">
+        <a href="../index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="reservation.html">Reservation</a>
+        <a href="contact.html">Contact</a>
+        <a href="reservation.html" class="btn-gold" style="margin-top: 2rem;">Reserve A Table</a>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <main id="main-gallery-content">
+        
+        <!-- Luxury Hero Section -->
+        <section class="hero-section flex-center" aria-label="Gallery Page Header">
+            <div class="hero-bg-wrapper parallax-img-wrapper">
+                <img src="../assets/images/hero_bg.jpg" alt="Elegant luxury restaurant interior with ambient lighting">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="hero-content container gsap-reveal-element" style="margin-top: 80px;">
+                <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                    <a href="../index.html">Home</a> &nbsp;/&nbsp; <span style="color: var(--primary-gold);">Gallery</span>
+                </nav>
+                <h1 class="hero-title" style="font-size: 4rem; margin-bottom: 1rem;">Gallery</h1>
+                <p class="hero-subtitle" style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Visual narratives of culinary excellence, atmospheric elegance, and memorable dining experiences.</p>
+            </div>
+            
+            <div class="scroll-indicator gsap-reveal-element" role="presentation">
+                <div class="scroll-indicator-mouse" style="width: 16px; height: 26px; border-radius: 8px; padding-top: 3px;">
+                    <div class="scroll-indicator-wheel" style="width: 3px; height: 6px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Introduction -->
+        <section class="section-padding container" aria-label="Gallery Introduction">
+            <div class="section-title-wrapper gsap-fade-in">
+                <span class="subtitle-gold">Visual Journey</span>
+                <h2 class="section-title">Culinary Artistry in Motion</h2>
+            </div>
+            
+            <div class="intro-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
+                    Every photograph in our gallery tells a story of passion, precision, and the pursuit of perfection. From the meticulous preparation in our kitchen to the elegant presentation at your table, each image captures a moment in the culinary journey we create for our guests. Explore the artistry behind our dishes, the atmosphere of our dining halls, and the experiences that make L'Étoile a destination for discerning diners.
+                </p>
+            </div>
+        </section>
+
+        <!-- Category Filter -->
+        <section class="section-padding container" aria-label="Gallery Category Filters">
+            <div class="category-filter-wrapper">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="signature">Signature Dishes</button>
+                <button class="filter-btn" data-filter="dining">Fine Dining</button>
+                <button class="filter-btn" data-filter="interior">Interior</button>
+                <button class="filter-btn" data-filter="kitchen">Kitchen</button>
+                <button class="filter-btn" data-filter="desserts">Desserts</button>
+                <button class="filter-btn" data-filter="drinks">Drinks</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+            </div>
+        </section>
+
+        <!-- Premium Masonry Gallery -->
+        <section class="section-padding container" aria-label="Masonry Gallery">
+            <div class="masonry-gallery" id="masonry-gallery">
+                <!-- Gallery items will be dynamically populated -->
+            </div>
+        </section>
+
+        <!-- Featured Experience -->
+        <section class="section-padding section-bordered" aria-label="Featured Experience">
+            <div class="container">
+                <div class="section-title-wrapper gsap-fade-in">
+                    <span class="subtitle-gold">Spotlight</span>
+                    <h2 class="section-title">Featured Experience</h2>
+                </div>
+                
+                <div class="featured-experience-split">
+                    <div class="featured-img-col parallax-img-wrapper">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" alt="Chef preparing signature dish with precision and artistry">
+                    </div>
+                    <div class="featured-text-col gsap-fade-in">
+                        <span class="subtitle-gold">Chef's Table Experience</span>
+                        <h3>An Intimate Culinary Journey</h3>
+                        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+                            Experience the artistry of our kitchen up close with our exclusive Chef's Table. Watch as our culinary team crafts each course with meticulous precision, while our sommelier pairs each dish with rare vintages from our extensive collection. This immersive experience offers a behind-the-scenes glimpse into the passion and technique that defines L'Étoile.
+                        </p>
+                        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+                            Limited to six guests per evening, the Chef's Table includes a personalized tasting menu, wine pairings, and direct interaction with our Executive Chef and sommelier throughout the evening.
+                        </p>
+                        <a href="reservation.html" class="btn-gold btn-filled">Reserve Chef's Table</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Showcase -->
+        <section class="section-padding container" aria-label="Instagram Gallery Showcase">
+            <div class="section-title-wrapper gsap-fade-in">
+                <span class="subtitle-gold">Social</span>
+                <h2 class="section-title">Follow Our Journey</h2>
+            </div>
+            
+            <div class="insta-showcase-grid gsap-stagger-grid">
+                <div class="insta-showcase-item">
+                    <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Chef plating signature dish">
+                    <div class="insta-overlay" role="button" aria-label="View on Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>@letoile_restaurant</span>
+                    </div>
+                </div>
+                <div class="insta-showcase-item">
+                    <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Fine wine selection">
+                    <div class="insta-overlay" role="button" aria-label="View on Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>@letoile_restaurant</span>
+                    </div>
+                </div>
+                <div class="insta-showcase-item">
+                    <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Fresh ingredients display">
+                    <div class="insta-overlay" role="button" aria-label="View on Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>@letoile_restaurant</span>
+                    </div>
+                </div>
+                <div class="insta-showcase-item">
+                    <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80" alt="Elegant dining setup">
+                    <div class="insta-overlay" role="button" aria-label="View on Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>@letoile_restaurant</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="javascript:void(0)" class="btn-gold">
+                    <i class="fa-brands fa-instagram" style="margin-right: 0.5rem;"></i>
+                    Follow @letoile_restaurant
+                </a>
+            </div>
+        </section>
+
+        <!-- Customer Moments -->
+        <section class="section-padding section-bordered" aria-label="Customer Moments Gallery">
+            <div class="container">
+                <div class="section-title-wrapper gsap-fade-in">
+                    <span class="subtitle-gold">Guest Experiences</span>
+                    <h2 class="section-title">Memorable Moments</h2>
+                </div>
+                
+                <div class="customer-moments-grid gsap-stagger-grid">
+                    <div class="customer-moment-card">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Guests enjoying anniversary dinner">
+                        <div class="moment-overlay">
+                            <p>Anniversary Celebration</p>
+                        </div>
+                    </div>
+                    <div class="customer-moment-card">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80" alt="Business dinner gathering">
+                        <div class="moment-overlay">
+                            <p>Business Dinner</p>
+                        </div>
+                    </div>
+                    <div class="customer-moment-card">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80" alt="Family celebration meal">
+                        <div class="moment-overlay">
+                            <p>Family Gathering</p>
+                        </div>
+                    </div>
+                    <div class="customer-moment-card">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80" alt="Romantic dinner for two">
+                        <div class="moment-overlay">
+                            <p>Romantic Evening</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Photography -->
+        <section class="section-padding container" aria-label="Awards and Recognition Gallery">
+            <div class="section-title-wrapper gsap-fade-in">
+                <span class="subtitle-gold">Achievements</span>
+                <h2 class="section-title">Awards & Recognition</h2>
+            </div>
+            
+            <div class="awards-gallery-grid gsap-stagger-grid">
+                <div class="award-photo-card">
+                    <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" alt="Michelin Star award ceremony">
+                    <div class="award-badge">Michelin Star</div>
+                </div>
+                <div class="award-photo-card">
+                    <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80" alt="Chef competition trophy">
+                    <div class="award-badge">Chef Excellence</div>
+                </div>
+                <div class="award-photo-card">
+                    <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Wine Spectator Grand Award">
+                    <div class="award-badge">Wine Excellence</div>
+                </div>
+                <div class="award-photo-card">
+                    <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Best Fine Dining award">
+                    <div class="award-badge">Best Fine Dining</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation CTA -->
+        <section class="section-padding flex-center reservation-cta-section" aria-label="Reservation Call To Action">
+            <div class="parallax-img-wrapper hero-bg-wrapper">
+                <img src="../assets/images/hero_bg.jpg" alt="Luxury dining hall ambiance">
+                <div class="bg-overlay"></div>
+            </div>
+            
+            <div class="container content gsap-fade-in">
+                <span class="subtitle-gold">Experience It Live</span>
+                <h2>Reserve Your Table</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem auto;">
+                    The gallery captures moments, but the true experience awaits you at our table. Make your reservation today and become part of our story.
+                </p>
+                <a href="reservation.html" class="btn-gold btn-filled">Make A Reservation</a>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Global Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3>L'ÉTOILE<span>.</span></h3>
+                    <p>Where absolute culinary standards meet contemporary spatial design. Enjoy curated gastronomy in the heart of the city.</p>
+                    <div class="footer-socials">
+                        <a href="javascript:void(0)" aria-label="L'Étoile Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0)" aria-label="L'Étoile Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0)" aria-label="L'Étoile Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0)" aria-label="L'Étoile TripAdvisor"><i class="fa-brands fa-tripadvisor" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4>Discover</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="menu.html">Our Menu</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-hours">
+                    <h4>Opening Hours</h4>
+                    <p>Monday - Friday<br><span style="color: var(--text-white);">17:00 - 23:00</span></p>
+                    <p>Saturday - Sunday<br><span style="color: var(--text-white);">12:00 - 23:30</span></p>
+                </div>
+                <div class="footer-col footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to receive menus, private tastings, and chef announcements.</p>
+                    <form class="newsletter-form" aria-label="Newsletter Subscription Form">
+                        <input type="email" placeholder="Your Email Address" aria-label="Email address for newsletter" required>
+                        <button type="submit">Join</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 L'Étoile Restaurant. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="javascript:void(0)">Privacy Policy</a>
+                    <a href="javascript:void(0)">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Gallery Lightbox Modal -->
+    <div class="lightbox-modal" id="gallery-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightbox-title">
+        <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close Lightbox"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev-btn" aria-label="Previous Image"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="lightbox-nav-btn lightbox-next" id="lightbox-next-btn" aria-label="Next Image"><i class="fa-solid fa-chevron-right"></i></button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="Gallery image">
+            </div>
+            <div class="lightbox-details">
+                <span class="lightbox-category" id="lightbox-category">Category</span>
+                <h3 id="lightbox-title">Image Title</h3>
+                <p id="lightbox-description">Image description</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Library Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/gallery.js"></script>
+    
+</body>
+</html>

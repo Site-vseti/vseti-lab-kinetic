@@ -1,0 +1,30 @@
+.banner {
+  padding: 146px 0 50px;
+  }
+
+.banner__container {
+  display: block;
+  background-image: url(../banner/img-banner/banner.png);
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: right bottom;
+  min-height: 823px;
+}
+
+.banner__title {
+  font-size: 150px;
+  font-weight: 900;
+  line-height: 150px;
+  letter-spacing: -0.1em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.banner__subtitle {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 50px;
+  padding-left: 100px;
+  text-align: left;
+}

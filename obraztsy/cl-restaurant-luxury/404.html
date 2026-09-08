@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="404 - Page Not Found | L'Étoile Restaurant. The requested page could not be located in our salon database.">
+    <title>Page Not Found | L'Étoile Restaurant</title>
+    
+    <!-- Premium Inline SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23C9A227'>★</text></svg>">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-404-content" style="position:absolute; left:-9999px; background:var(--primary-gold); color:var(--bg-dark); padding:0.5rem 1rem; z-index:10000;" onfocus="this.style.left='10px'" onblur="this.style.left='-9999px'">Skip to Content</a>
+
+    <!-- Header / Navbar -->
+    <header role="banner">
+        <div class="logo">
+            <a href="index.html" aria-label="L'Étoile Home">L'ÉTOILE<span>.</span></a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation">
+            <a href="index.html">Home</a>
+            <a href="pages/menu.html">Menu</a>
+            <a href="pages/about.html">About</a>
+            <a href="pages/gallery.html">Gallery</a>
+            <a href="pages/reservation.html">Reservation</a>
+            <a href="pages/contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="pages/reservation.html" class="btn-gold nav-reserve-btn">Reserve A Table</a>
+            <button class="menu-toggle" id="mobile-menu-btn" aria-haspopup="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-nav" role="navigation" aria-label="Mobile Navigation">
+        <a href="index.html">Home</a>
+        <a href="pages/menu.html">Menu</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/gallery.html">Gallery</a>
+        <a href="pages/reservation.html">Reservation</a>
+        <a href="pages/contact.html">Contact</a>
+        <a href="pages/reservation.html" class="btn-gold" style="margin-top: 2rem;">Reserve A Table</a>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <main id="main-404-content">
+        
+        <!-- Luxury 404 Hero Section -->
+        <section class="hero-section flex-center" aria-label="404 Page Error Content" style="min-height: 100vh;">
+            <!-- Parallax Background Image -->
+            <div class="hero-bg-wrapper parallax-img-wrapper">
+                <img src="assets/images/hero_bg.jpg" alt="Interior look of L'Étoile dining tables overlayed in dark shadows">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <!-- Hero Content -->
+            <div class="hero-content container gsap-reveal-element" style="z-index: 10;">
+                <span class="subtitle-gold" style="font-size: 1.5rem; letter-spacing: 5px; margin-bottom: 1.5rem; display: block;">404</span>
+                <h1 class="hero-title" style="font-size: 3.5rem; margin-bottom: 1.5rem; font-family: var(--font-headings);">Culinary Detour</h1>
+                <p class="hero-subtitle" style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem auto; line-height: 1.8;">
+                    The page you requested does not exist on our menu list. Please return to the main salon to continue your experience.
+                </p>
+                <div class="hero-cta">
+                    <a href="index.html" class="btn-gold btn-filled magnetic" style="padding: 1.2rem 2.5rem; font-size: 0.85rem; letter-spacing: 2px;">Return to Main Salon</a>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Library Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

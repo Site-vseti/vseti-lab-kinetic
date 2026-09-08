@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/images/og-*
+
+Sitemap: https://maisonrouge.com/sitemap.xml

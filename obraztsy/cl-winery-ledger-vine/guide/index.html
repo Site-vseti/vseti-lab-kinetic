@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How Ledger &amp; Vine was built — the guide</title>
+<meta name="description" content="Build notes for Ledger & Vine: a layered vineyard parallax over one generated photograph, and an SVG pour animation for the wine-club tiers." />
+<meta name="theme-color" content="#2a0a14" />
+<meta name="color-scheme" content="dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#2a0a14;--panel:#3a0f1d;--ink:#f3e9dd;--dim:#c9a9a2;--faint:#8a6a63;--gold:#c9a24b;
+  --gold-2:#e0be6f;--line:rgba(243,233,221,.12);--max:760px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;line-height:1.65;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--gold-2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:clamp(28px,6vw,80px) clamp(18px,5vw,32px)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:3rem;
+  font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.top a{color:var(--dim)}.top a:hover{color:var(--gold-2)}
+h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(2.3rem,6vw,3.8rem);line-height:1.04;margin-bottom:.6rem}
+h1 em{color:var(--gold-2);font-style:italic}
+.sub{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--dim);font-size:1.25rem;margin-bottom:3rem}
+h2{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(1.6rem,3.6vw,2.1rem);margin:3rem 0 1rem}
+h2 em{color:var(--gold-2)}
+.ey{font-family:"DM Mono",monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+  display:block;margin-bottom:2.2rem}
+p{color:#e2d3c6;margin:1rem 0}
+strong{color:var(--ink);font-weight:600}
+ul{margin:1rem 0 1rem 1.15rem;color:#e2d3c6}li{margin:.45rem 0}
+pre{background:#20060f;border:1px solid var(--line);border-radius:6px;padding:16px 18px;overflow-x:auto;
+  margin:1.2rem 0;font-family:"DM Mono",monospace;font-size:.8rem;line-height:1.7;color:#e2d3c6}
+code{font-family:"DM Mono",monospace;font-size:.88em;color:var(--gold-2)}
+pre code{color:inherit}
+.rule{height:5px;border-top:1px solid var(--line);border-bottom:1px solid rgba(243,233,221,.06);
+  background:none;margin:3rem 0;border-left:0;border-right:0}
+figure{margin:1.8rem 0}
+figure img{width:100%;height:auto;border-radius:6px;border:1px solid var(--line)}
+figcaption{font-family:"DM Mono",monospace;font-size:.66rem;color:var(--faint);margin-top:.6rem;
+  letter-spacing:.08em;text-transform:uppercase}
+.back{display:inline-block;margin-top:2.4rem;font-family:"DM Mono",monospace;font-size:.78rem;letter-spacing:.08em}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a href="../">← Ledger &amp; Vine</a>
+    <span>The guide · how it was built</span>
+  </div>
+
+  <span class="ey">Design showcase · build notes</span>
+  <h1>A vineyard in layers, <em>a pour</em> in one property.</h1>
+  <p class="sub">Ledger &amp; Vine is one HTML file, one stylesheet and one script. The cinema is a
+    photograph pulled apart into parallax planes; the charm is a wine glass that fills itself.</p>
+
+  <figure>
+    <img src="../assets/hero.jpg" width="1376" height="768" loading="lazy"
+      alt="The generated golden-hour vineyard photograph used as the deep layer of the hero." />
+    <figcaption>The one photograph on the site — the deep layer of the hero stack.</figcaption>
+  </figure>
+
+  <h2>The idea</h2>
+  <p>A boutique winery sells restraint: few wines, small numbers, no urgency. The site's job is to
+    make scarcity feel like luxury rather than absence. So the design system is old-world — burgundy
+    so dark it reads as black, cream instead of white, gold reserved for accents — and the typography
+    does the "estate" work: <strong>Cormorant Garamond</strong> for display (its italic stands in for
+    a script face without the costume-party feel), <strong>Inter</strong> for body, and
+    <strong>DM Mono</strong> for the things wineries actually print in fixed-width: lot numbers, pH,
+    ABV, barrel counts. The conceit that ties it together is the ledger — wines named
+    <em>Double Entry</em> and <em>Carried Forward</em>, sections ruled like an account book.</p>
+
+  <h2>The stack</h2>
+  <ul>
+    <li><strong>Plain HTML/CSS/JS</strong> — no framework, no build. The whole site is a page,
+      a stylesheet and ~130 lines of script.</li>
+    <li><strong>GSAP 3.12 + ScrollTrigger</strong> (CDN, deferred) — used for exactly one thing:
+      scrubbing the hero's parallax layers to scroll. Everything else is IntersectionObserver
+      and CSS transitions.</li>
+    <li><strong>One image.</strong> The golden-hour vineyard photograph (AI-generated, 1376×768,
+      ~440&nbsp;KB). Every other visual — hills, vine rows, bottles, glasses — is inline SVG.</li>
+  </ul>
+
+  <h2>Signature technique #1 — the layered vineyard parallax</h2>
+  <p>The hero is a six-layer sandwich, back to front: the photograph, a gold "light ray" gradient
+    wash (<code>mix-blend-mode:screen</code>), a burgundy scrim for text contrast, a far-hills SVG
+    silhouette, a near vine-rows SVG silhouette, and the wordmark. The SVG silhouettes are two paths
+    with a few stroked curves following the hillside — drawn to continue the photograph's geometry,
+    so the seam between photo and vector disappears into the dusk.</p>
+  <p>Each layer then gets one scrubbed tween. Depth is nothing more than different signs and
+    magnitudes of <code>yPercent</code>:</p>
+  <pre><code>gsap.registerPlugin(ScrollTrigger);
+const scrub = (sel, vars) =&gt; gsap.to(sel, {
+  ease: 'none', ...vars,
+  scrollTrigger: { trigger: hero, start: 'top top',
+                   end: 'bottom top', scrub: true }
+});
+scrub('.ph-photo', { yPercent: 16 });                // deep layer, slowest
+scrub('.ph-rays',  { yPercent: 26, opacity: 0.15 }); // light thins out
+scrub('.ph-hills', { yPercent: -7 });                // far silhouette
+scrub('.ph-rows',  { yPercent: -16 });               // near rows, fastest
+scrub('.hero-copy',{ yPercent: -30, autoAlpha: 0 }); // wordmark lifts away</code></pre>
+  <p>The photo's container is inset <code>-14%</code> at the top so the tween never exposes an edge.
+    With JavaScript disabled — or <code>prefers-reduced-motion</code> set — none of these tweens run
+    and the hero is simply a well-composed still: photograph, rays, silhouettes, wordmark.</p>
+
+  <h2>Signature technique #2 — the pour</h2>
+  <p>Each club tier's glass is a small inline SVG: a bowl path used twice (once as a
+    <code>clipPath</code>, once stroked as the outline), a stem, a foot — and inside the clip, a
+    rectangle of wine. The pour is <strong>one animated property</strong>. The rectangle starts
+    crushed to the bottom of the bowl and scales up to the tier's fill level, which lives in a CSS
+    custom property on the card:</p>
+  <pre><code>&lt;article class="tier" style="--fill:.62"&gt; … &lt;/article&gt;
+
+.wine-fill{
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transform: scaleY(.001);                    /* empty (JS present) */
+  transition: transform 2s var(--ease) .25s;  /* the decant */
+}
+.tier.poured .wine-fill{ transform: scaleY(var(--fill)) }</code></pre>
+  <p>The fill level is doing quiet information design: 3, 6 and 12 bottles a quarter become a third
+    of a glass, two thirds, and nearly full. A second element — the meniscus ellipse — rides up in
+    sync with <code>translateY(calc(var(--fill) * -96px))</code>, and a "stream" line runs a short
+    keyframe animation while the glass fills. An IntersectionObserver adds <code>.poured</code> when
+    a card scrolls into view (staggered 260&nbsp;ms per card); hovering a card drains and re-pours
+    it. Reduced motion? The stylesheet forces every glass to render already filled — composition
+    intact, theatre skipped.</p>
+
+  <h2>Details that matter</h2>
+  <ul>
+    <li><strong>Mobbin-grounded patterns.</strong> The tier row (emphasized middle card with a badge)
+      follows Patreon/MasterClass pricing grammar; the vintage cards follow Blue Apron Wine's
+      spec-sheet PDP (varietal + vintage sub-line, mono data row, structured notes); the visit
+      section borrows OpenTable's party/date/time-slot chip grid — including a greyed-out
+      "15:00 · full" slot, because scarcity should be visible, not claimed.</li>
+    <li><strong>The ledger rule.</strong> Sections are separated by a double hairline — one strong
+      line over one faint — the way columns are ruled off in an account book.</li>
+    <li><strong>A signature ease.</strong> Everything settles on
+      <code>cubic-bezier(.5,.02,.16,1)</code> — deliberately slow into the curve, like a decant.
+      Two-second pours, 1.4-second line reveals. Nothing on this site is in a hurry.</li>
+    <li><strong>Gold is an accent, cream is the voice.</strong> Gold (#c9a24b) is reserved for large
+      display type, kickers and controls where its contrast is comfortable; body text is always
+      cream on burgundy (≈13:1).</li>
+    <li><strong>Progressive enhancement.</strong> A <code>.js</code> class gates every hidden state.
+      No script → the hero reads, the glasses are full, the booking card is a legible menu of
+      options. The booking CTA is honest, too: it tells you no table was reserved.</li>
+  </ul>
+
+  <h2>Ship it on GitHub Pages</h2>
+  <p>Relative paths, no build step, one <code>.nojekyll</code>:</p>
+  <pre><code>gh repo create bswxyz/ledger-and-vine --public --source . --push
+gh api --method POST /repos/bswxyz/ledger-and-vine/pages \
+  -f 'source[branch]=main' -f 'source[path]=/'
+# live at https://bswxyz.github.io/ledger-and-vine/ in ~2 min</code></pre>
+
+  <hr class="rule" />
+  <p style="color:var(--faint);font-size:.9rem">Ledger &amp; Vine is a design-showcase concept — the
+    estate, the wines and the club are fictional, and the booking card reserves nothing. See the
+    repository README for the full demo-vs-real map.</p>
+  <a class="back" href="../">← Back to Ledger &amp; Vine</a>
+</div>
+</body>
+</html>

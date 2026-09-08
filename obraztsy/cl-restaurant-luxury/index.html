@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="L'Étoile - Premium Luxury Fine Dining Restaurant. Experience Michelin-star culinary art, luxury ambiance, and exquisite tastes.">
+    <title>L'Étoile | Premium Luxury Restaurant & Fine Dining</title>
+    
+    <!-- Premium Inline SVG Favicon (Gold Star for L'Étoile) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23C9A227'>★</text></svg>">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Accessibilty Skip Link -->
+    <a href="#main-content" style="position:absolute; left:-9999px; background:var(--primary-gold); color:var(--bg-dark); padding:0.5rem 1rem; z-index:10000;" onfocus="this.style.left='10px'" onblur="this.style.left='-9999px'">Skip to Content</a>
+
+    <!-- Transparent & Sticky Header / Navbar -->
+    <header role="banner">
+        <div class="logo">
+            <a href="index.html" aria-label="L'Étoile Home">L'ÉTOILE<span>.</span></a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="pages/menu.html">Menu</a>
+            <a href="pages/about.html">About</a>
+            <a href="pages/gallery.html">Gallery</a>
+            <a href="pages/reservation.html">Reservation</a>
+            <a href="pages/contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="javascript:void(0)" class="btn-gold nav-reserve-btn">Reserve A Table</a>
+            <button class="menu-toggle" id="mobile-menu-btn" aria-haspopup="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-nav" role="navigation" aria-label="Mobile Navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="pages/menu.html">Menu</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/gallery.html">Gallery</a>
+        <a href="pages/reservation.html">Reservation</a>
+        <a href="pages/contact.html">Contact</a>
+        <a href="pages/reservation.html" class="btn-gold" style="margin-top: 2rem;">Reserve A Table</a>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <main id="main-content">
+        
+        <!-- Hero Section -->
+        <section class="hero-section flex-center" aria-label="Welcome Banner">
+            <!-- Parallax Background Image -->
+            <div class="hero-bg-wrapper parallax-img-wrapper">
+                <img src="assets/images/hero_bg.jpg" alt="Luxury restaurant ambiance with warm glowing lamps">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <!-- Hero Content Overlay Card -->
+            <div class="hero-content container gsap-reveal-element">
+                <p class="subtitle-gold hero-subtitle">Gastronomy & Elegance</p>
+                <h1 class="hero-title">
+                    Culinary Artistry <br><span class="text-gold">Redefined</span>
+                </h1>
+                <div class="hero-cta">
+                    <a href="pages/menu.html" class="btn-gold btn-filled">Explore Menu</a>
+                    <a href="javascript:void(0)" class="btn-gold">Book Table</a>
+                </div>
+            </div>
+            
+            <!-- Scroll Down Indicator -->
+            <div class="scroll-indicator gsap-reveal-element" role="presentation">
+                <span>Scroll</span>
+                <div class="scroll-indicator-mouse">
+                    <div class="scroll-indicator-wheel"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurant Story Section -->
+        <section class="section-padding container story-container" id="story-section" aria-label="Restaurant Story">
+            <div class="story-text-col gsap-fade-in">
+                <span class="subtitle-gold">Our Legacy</span>
+                <h2>A Heritage of Taste & Precision</h2>
+                <p>
+                    Founded with a vision to merge classical French culinary techniques with modern avant-garde innovation, L'Étoile has established itself as a beacon of gastronomy. Every plate we serve tells a story of meticulous curation, sustainably sourced rare ingredients, and unmatched artistic vision.
+                </p>
+                <p>
+                    Our kitchen, overseen by world-renowned culinary minds, operates as an atelier where flavor profiles are studied and elevated. We invite you to sit back and embark on an unforgettable sensory journey.
+                </p>
+                <a href="javascript:void(0)" class="btn-gold">Read Our Story</a>
+            </div>
+            <div class="story-img-col parallax-img-wrapper">
+                <img class="shimmer-placeholder" src="assets/images/chef_exec.jpg" alt="Executive Chef styling a gourmet plate in a dimly lit luxury kitchen">
+            </div>
+        </section>
+
+        <!-- Chef's Special / Featured Dish Section -->
+        <section class="section-padding section-bordered" aria-label="Chef's Special Showcase">
+            <div class="container special-section-container">
+                <div class="special-img-col parallax-img-wrapper">
+                    <img class="shimmer-placeholder" src="assets/images/dish_wagyu.jpg" alt="Exquisite sliced A5 Wagyu beef steak with gold flakes and microgreens">
+                </div>
+                <div class="special-info-col gsap-fade-in">
+                    <div class="special-info-card">
+                        <span class="subtitle-gold">Chef's Signature Selection</span>
+                        <h2>A5 Wagyu Strip Steak</h2>
+                        <p>
+                            Genuine Kagoshima A5 Wagyu beef sear-crusted to perfection, paired with absolute black winter truffles, roasted sunchoke purée, and a delicate veal bone jus reduction infused with 25-year-old aged balsamic.
+                        </p>
+                        <div class="special-details-row">
+                            <div class="special-detail-item">
+                                <span>Preparation Time</span>
+                                <span class="font-numbers">25 Min</span>
+                            </div>
+                            <div class="special-detail-item">
+                                <span>Nutritional Value</span>
+                                <span class="font-numbers">720 Kcal</span>
+                            </div>
+                            <div class="special-detail-item">
+                                <span>Price</span>
+                                <span class="font-numbers special-price">$180</span>
+                            </div>
+                        </div>
+                        <a href="pages/menu.html" class="btn-gold btn-filled" style="width: 100%; text-align: center;">View Full Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signature Dishes Section -->
+        <section class="section-padding container" aria-label="Signature Dishes">
+            <div class="section-title-wrapper">
+                <span class="subtitle-gold">Culinary Creations</span>
+                <h2 class="section-title">The Signature Dishes</h2>
+            </div>
+            
+            <div class="signature-grid gsap-stagger-grid">
+                <!-- Dish 1 -->
+                <article class="dish-card glass-panel gold-glow-hover">
+                    <div class="dish-card-img-wrapper">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Imperial Osetra Caviar served with warm house blinis">
+                    </div>
+                    <div class="dish-card-info">
+                        <span class="font-numbers text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; display:block;">Appetizer</span>
+                        <h3>Imperial Osetra Caviar</h3>
+                        <p>
+                            Served chilled on mother-of-pearl spoons with warm house blinis, traditional accoutrements, and a glass of vintage Dom Pérignon.
+                        </p>
+                        <div class="dish-card-meta">
+                            <span class="dish-price">$140</span>
+                            <a href="pages/menu.html" class="details-link text-gold">Details <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Dish 2 -->
+                <article class="dish-card glass-panel gold-glow-hover">
+                    <div class="dish-card-img-wrapper">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" alt="White Truffle Tagliolini pasta finished with Alba truffles">
+                    </div>
+                    <div class="dish-card-info">
+                        <span class="font-numbers text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; display:block;">Main Course</span>
+                        <h3>White Truffle Tagliolini</h3>
+                        <p>
+                            House-rolled egg pasta tossed in a luxurious alpine butter emulsion, generously topped with shaved white Alba truffles.
+                        </p>
+                        <div class="dish-card-meta">
+                            <span class="dish-price">$95</span>
+                            <a href="pages/menu.html" class="details-link text-gold">Details <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Dish 3 -->
+                <article class="dish-card glass-panel gold-glow-hover">
+                    <div class="dish-card-img-wrapper">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Grand Marnier Souffle French dessert served warm">
+                    </div>
+                    <div class="dish-card-info">
+                        <span class="font-numbers text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; display:block;">Dessert</span>
+                        <h3>Grand Marnier Soufflé</h3>
+                        <p>
+                            Light and airy French soufflé flavored with Grand Marnier, served warm with Madagascar vanilla bean crème anglaise pour-over.
+                        </p>
+                        <div class="dish-card-meta">
+                            <span class="dish-price">$32</span>
+                            <a href="pages/menu.html" class="details-link text-gold">Details <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Featured Menu Preview -->
+        <section class="section-padding section-bordered" aria-label="Evening Menu Preview">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="subtitle-gold">Exquisite Taste</span>
+                    <h2 class="section-title">The Evening Preview</h2>
+                </div>
+                
+                <div class="menu-preview-wrapper gsap-stagger-grid">
+                    <!-- Column 1 -->
+                    <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+                        <article class="menu-item-row">
+                            <div class="info-col">
+                                <h4>
+                                    <span>Pan-Seared Foie Gras</span>
+                                    <span class="dots" role="presentation"></span>
+                                    <span class="preview-price">$58</span>
+                                </h4>
+                                <p>Caramelized heirloom apples, toasted brioche, port wine gastrique.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu-item-row">
+                            <div class="info-col">
+                                <h4>
+                                    <span>Brittany Lobster Thermidor</span>
+                                    <span class="dots" role="presentation"></span>
+                                    <span class="preview-price">$110</span>
+                                </h4>
+                                <p>Creamy cognac-infused mustard sauce, Gruyère cheese crust.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu-item-row">
+                            <div class="info-col">
+                                <h4>
+                                    <span>Roasted Duck Breast</span>
+                                    <span class="dots" role="presentation"></span>
+                                    <span class="preview-price">$72</span>
+                                </h4>
+                                <p>Spiced lavender honey glaze, parsnip purée, sour cherry compote.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+                        <article class="menu-item-row">
+                            <div class="info-col">
+                                <h4>
+                                    <span>Truffle Burrata</span>
+                                    <span class="dots" role="presentation"></span>
+                                    <span class="preview-price">$38</span>
+                                </h4>
+                                <p>Heirloom cherry tomatoes, wild arugula, cold-pressed olive oil, fresh winter truffle.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu-item-row">
+                            <div class="info-col">
+                                <h4>
+                                    <span>Mediterranean Sea Bass</span>
+                                    <span class="dots" role="presentation"></span>
+                                    <span class="preview-price">$85</span>
+                                </h4>
+                                <p>Lemon herb emulsion, crushed baby potatoes, wild sea beans.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu-item-row">
+                            <div class="info-col">
+                                <h4>
+                                    <span>Valrhona Chocolate Dome</span>
+                                    <span class="dots" role="presentation"></span>
+                                    <span class="preview-price">$28</span>
+                                </h4>
+                                <p>Hot salted caramel reduction, gold leaf, hazelnut praline mousse.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 5rem;">
+                    <a href="pages/menu.html" class="btn-gold">View The Full Menu</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Slider Section -->
+        <section class="section-padding container" aria-label="Guest Reviews">
+            <div class="section-title-wrapper">
+                <span class="subtitle-gold">Guest Experience</span>
+                <h2 class="section-title">Critics & Appraisals</h2>
+            </div>
+            
+            <div class="swiper testimonials-slider">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide testimonial-slide-content">
+                        <div class="testimonial-quote-icon">
+                            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The A5 Wagyu is an absolute revelation. From the smooth Lenis scroll of the online booking process to the first bite at the table, L'Étoile proves that absolute luxury is in the details."
+                        </p>
+                        <div class="testimonial-rating" aria-label="Rating: 5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="testimonial-author">The New York Times</h4>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide testimonial-slide-content">
+                        <div class="testimonial-quote-icon">
+                            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "An exceptional addition to the dining landscape. The harmony of French culinary fundamentals and contemporary design choices makes every second here feel high premium."
+                        </p>
+                        <div class="testimonial-rating" aria-label="Rating: 5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="testimonial-author">Michelin Guide Review</h4>
+                    </div>
+                </div>
+                <!-- Swiper Navigation/Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Instagram Gallery Section -->
+        <section class="section-padding section-bordered" aria-label="Instagram Gallery Feed">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="subtitle-gold">Visual Narratives</span>
+                    <h2 class="section-title">The Instagram Gallery</h2>
+                </div>
+                
+                <div class="insta-grid gsap-stagger-grid">
+                    <!-- Insta 1 -->
+                    <div class="insta-item">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Executive chef meticulously preparing wagyu steak in the kitchen">
+                        <div class="insta-overlay" role="button" aria-label="View L'Étoile Instagram Photo 1">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!-- Insta 2 -->
+                    <div class="insta-item">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Exquisite glass of fine red wine in a luxury environment">
+                        <div class="insta-overlay" role="button" aria-label="View L'Étoile Instagram Photo 2">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!-- Insta 3 -->
+                    <div class="insta-item">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Colorful plated gourmet vegetarian summer salad">
+                        <div class="insta-overlay" role="button" aria-label="View L'Étoile Instagram Photo 3">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!-- Insta 4 -->
+                    <div class="insta-item">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80" alt="Hokkaido sea scallops plate plated with sweet corn cream">
+                        <div class="insta-overlay" role="button" aria-label="View L'Étoile Instagram Photo 4">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation CTA Section -->
+        <section class="section-padding flex-center reservation-cta-section" aria-label="Reservation Call To Action">
+            <div class="parallax-img-wrapper hero-bg-wrapper">
+                <img src="assets/images/hero_bg.jpg" alt="Dimly lit elegant dining hall overview">
+                <div class="bg-overlay"></div>
+            </div>
+            
+            <div class="container content gsap-fade-in">
+                <span class="subtitle-gold">Secure A Dining Table</span>
+                <h2>Experience Culinary Grandeur</h2>
+                <p>
+                    Reservations are highly recommended. Walk-ins are accommodated based on availability. For group dining and private ateliers, please contact our events conciergerie.
+                </p>
+                <a href="javascript:void(0)" class="btn-gold btn-filled">Make A Reservation</a>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Global Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3>L'ÉTOILE<span>.</span></h3>
+                    <p>Where absolute culinary standards meet contemporary spatial design. Enjoy curated gastronomy in the heart of the city.</p>
+                    <div class="footer-socials">
+                        <a href="javascript:void(0)" aria-label="L'Étoile Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0)" aria-label="L'Étoile Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0)" aria-label="L'Étoile Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0)" aria-label="L'Étoile TripAdvisor"><i class="fa-brands fa-tripadvisor" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4>Discover</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/menu.html">Our Menu</a></li>
+                        <li><a href="javascript:void(0)">The Atelier</a></li>
+                        <li><a href="javascript:void(0)">Concierge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-hours">
+                    <h4>Opening Hours</h4>
+                    <p>Monday - Friday<br><span style="color: var(--text-white);">17:00 - 23:00</span></p>
+                    <p>Saturday - Sunday<br><span style="color: var(--text-white);">12:00 - 23:30</span></p>
+                </div>
+                <div class="footer-col footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to receive menus, private tastings, and chef announcements.</p>
+                    <form class="newsletter-form" aria-label="Newsletter Subscription Form">
+                        <input type="email" placeholder="Your Email Address" aria-label="Email address for newsletter" required>
+                        <button type="submit">Join</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 L'Étoile Restaurant. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="javascript:void(0)">Privacy Policy</a>
+                    <a href="javascript:void(0)">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Library Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    
+    <!-- Initialize Swiper Testimonial Slider -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof Swiper !== 'undefined') {
+                new Swiper('.testimonials-slider', {
+                    loop: true,
+                    speed: 1000,
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction: false
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    },
+                    effect: 'fade',
+                    fadeEffect: {
+                        crossFade: true
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

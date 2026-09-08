@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+  document.documentElement.classList.add('js');
+  try { var t = localStorage.getItem('selvedge-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<title>Selvedge — a bespoke tailoring house</title>
+<meta name="description" content="Selvedge is a made-to-measure tailoring house on Sackville Court. Full-canvas coats, hand-padded lapels and cloth chosen from the mill book — one figure, one pattern, one suit at a time." />
+<meta name="theme-color" content="#efe9de" />
+<meta name="color-scheme" content="light dark" />
+<meta property="og:title" content="Selvedge — a bespoke tailoring house" />
+<meta property="og:description" content="Full-canvas made-to-measure since 1911. Cut to the man, never the mannequin." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<div class="weave" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- shared woven-cloth pattern defs (referenced by the fabric bolts + the hero jacket) -->
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="weave-chalk" width="26" height="8" patternUnits="userSpaceOnUse">
+      <rect width="26" height="8" fill="#1b1f28"/>
+      <line x1="3" y1="0" x2="3" y2="8" stroke="#cfc9ba" stroke-width="1.5" stroke-dasharray="1.4 2.2" opacity=".75"/>
+    </pattern>
+    <pattern id="weave-herring" width="22" height="12" patternUnits="userSpaceOnUse">
+      <rect width="22" height="12" fill="#3b3f45"/>
+      <path d="M0 12 L11 4 L22 12 M0 4 L11 -4 L22 4 M0 20 L11 12 L22 20" fill="none" stroke="#6a6f77" stroke-width="1.3"/>
+    </pattern>
+    <pattern id="weave-birdseye" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#454b53"/>
+      <circle cx="2.5" cy="2.5" r="1.15" fill="#c9c3b4"/>
+      <circle cx="7.5" cy="7.5" r="1.15" fill="#c9c3b4"/>
+    </pattern>
+    <pattern id="weave-glen" width="44" height="44" patternUnits="userSpaceOnUse">
+      <rect width="44" height="44" fill="#c6bda6"/>
+      <g stroke="#6f6555" stroke-width="1">
+        <path d="M0 11 H44 M0 22 H44 M0 33 H44 M11 0 V44 M22 0 V44 M33 0 V44"/>
+      </g>
+      <g fill="#6f6555" opacity=".28">
+        <rect x="0" y="0" width="11" height="11"/><rect x="22" y="22" width="11" height="11"/>
+      </g>
+      <path d="M0 0 H44 M0 44 H44 M0 0 V44 M44 0 V44" stroke="#6e1f2e" stroke-width="1.3" opacity=".85"/>
+    </pattern>
+    <pattern id="jacket-stripe" width="14" height="6" patternUnits="userSpaceOnUse">
+      <rect width="14" height="6" fill="var(--panel)"/>
+      <line x1="2" y1="0" x2="2" y2="6" stroke="var(--ink)" stroke-width="1" stroke-dasharray="1 1.6" opacity=".22"/>
+    </pattern>
+  </defs>
+</svg>
+
+<header class="nav">
+  <a class="brand" href="./" aria-label="Selvedge home">
+    <svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true" focusable="false">
+      <path d="M6 3 L6 25 M22 3 L22 25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M6 3 C 13 7, 15 7, 22 3 M6 25 C 13 21, 15 21, 22 25" stroke="currentColor" stroke-width="1.6" fill="none"/>
+      <path d="M10 9 L18 19 M18 9 L10 19" stroke="currentColor" stroke-width="1" opacity=".45"/>
+    </svg>
+    <span class="brand-word">Selvedge</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#cloth">The cloth</a>
+    <a href="#measure">Your measure</a>
+    <a href="#making">The making</a>
+    <a href="./guide/">Guide</a>
+    <a class="nav-cta" href="#fitting">Book a fitting</a>
+    <button id="themeBtn" class="theme-btn" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Toggle light / dark">
+      <svg class="ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><g stroke-linecap="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></g></svg>
+      <svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ hero — the suit ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow mono">[ Est. 1911 · No. 9 Sackville Court · by appointment ]</p>
+        <h1 id="hero-title" class="hero-title">
+          <span class="line"><span>Cut to the</span></span>
+          <span class="line"><span>man, <em>never</em></span></span>
+          <span class="line"><span>the mannequin.</span></span>
+        </h1>
+        <p class="hero-sub">Selvedge is a made-to-measure house on Sackville Court. Full-canvas coats,
+          hand-padded lapels and cloth drawn from the mill book — cut one figure, one pattern and one
+          suit at a time, the way the trade was learned upstairs from us.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#cloth">See the cloth</a>
+          <a class="btn btn-ghost" href="#fitting">Book a fitting →</a>
+        </div>
+        <dl class="hero-facts">
+          <div><dt class="mono">Bench hours / suit</dt><dd><span class="c-num" data-to="68">68</span></dd></div>
+          <div><dt class="mono">Fittings</dt><dd><span class="c-num" data-to="4">4</span></dd></div>
+          <div><dt class="mono">Cloth books</dt><dd><span class="c-num" data-to="40">40</span></dd></div>
+        </dl>
+      </div>
+
+      <figure class="suit-fig" aria-labelledby="suit-cap">
+        <div class="suit-frame">
+          <svg class="suit-svg" viewBox="0 0 380 500" role="img" aria-label="Line drawing of a single-breasted, peak-lapel jacket cut in the house chalk-stripe cloth">
+            <!-- body silhouette, filled with the house chalk-stripe -->
+            <path class="jk-body" d="M92 66 C 120 54, 150 56, 168 62 L 190 82 L 212 62 C 230 56, 260 54, 288 66
+              L 306 138 L 300 468 L 80 468 L 74 138 Z"/>
+            <!-- shoulders / sleeve seams -->
+            <path class="jk-line" d="M92 66 L74 138 M288 66 L306 138" />
+            <!-- left & right lapels (peak) -->
+            <path class="jk-lapel" d="M168 62 L150 96 L128 150 L150 158 L176 108 L190 96 Z"/>
+            <path class="jk-lapel" d="M212 62 L230 96 L252 150 L230 158 L204 108 L190 96 Z"/>
+            <!-- collar roll -->
+            <path class="jk-line" d="M168 62 L190 74 L212 62" />
+            <!-- shirt V + tie -->
+            <path class="jk-shirt" d="M176 108 L190 96 L204 108 L200 150 L180 150 Z"/>
+            <path class="jk-tie" d="M190 100 L198 118 L194 168 L190 178 L186 168 L182 118 Z"/>
+            <!-- front seam + buttons -->
+            <path class="jk-line" d="M190 178 L190 452" opacity=".5"/>
+            <circle class="jk-btn" cx="190" cy="212" r="3.4"/>
+            <circle class="jk-btn" cx="190" cy="262" r="3.4"/>
+            <!-- welt pockets -->
+            <path class="jk-line" d="M120 300 L166 292 M214 292 L260 300 M126 316 L168 308 M212 308 L254 316"/>
+            <!-- chest pocket + pocket square -->
+            <path class="jk-line" d="M214 150 L250 156"/>
+            <path class="jk-square" d="M222 150 L228 140 L236 152 L244 142 L248 156 Z"/>
+            <!-- sheen sweep (one-shot, gated) -->
+            <path class="jk-sheen" d="M96 70 L300 452" aria-hidden="true"/>
+          </svg>
+        </div>
+        <figcaption id="suit-cap" class="suit-cap mono">
+          <span>PLATE — “Sackville” two-piece</span>
+          <span>house chalk-stripe · 13 oz</span>
+        </figcaption>
+      </figure>
+    </div>
+    <p class="hero-scroll mono" aria-hidden="true">scroll — to the mill book</p>
+  </section>
+
+  <!-- ============ the cloth — fabric-bolt unroll ============ -->
+  <section id="cloth" class="cloth-sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker mono reveal">[ The cloth ]</p>
+        <h2 class="reveal">Chosen by the yard, off&nbsp;the mill book.</h2>
+        <p class="lede reveal">We hold no cloth we would not wear ourselves. Four mills supply the bench;
+          every length is sponged, rested and cut by eye before a shear is trusted to it. Roll each bolt
+          to read the weave.</p>
+      </div>
+
+      <div class="cloths">
+
+        <figure class="cloth reveal" style="--roll: linear-gradient(180deg,#2b2f3a,#12151d 60%,#20242e);">
+          <div class="cloth-strip">
+            <div class="cloth-reveal">
+              <svg viewBox="0 0 900 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="900" height="150" fill="url(#weave-chalk)"/></svg>
+            </div>
+            <span class="cloth-roll" aria-hidden="true"><i></i></span>
+          </div>
+          <figcaption class="cloth-meta">
+            <div class="cm-name">
+              <h3>Midnight Chalk</h3>
+              <span class="cm-tag mono">house cloth</span>
+            </div>
+            <p class="cm-spec mono">Fox Brothers, Somerset · 13 oz worsted · super&nbsp;100s</p>
+            <p class="cm-note">A true blue-black that reads charcoal under a boardroom light, drawn through
+              with a soft chalk stripe. The one we cut most, and the one we married in.</p>
+            <span class="cm-price mono">cloth from £180 / m</span>
+          </figcaption>
+        </figure>
+
+        <figure class="cloth reveal" style="--roll: linear-gradient(180deg,#54595f,#2c3035 60%,#3b3f45);">
+          <div class="cloth-strip">
+            <div class="cloth-reveal">
+              <svg viewBox="0 0 900 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="900" height="150" fill="url(#weave-herring)"/></svg>
+            </div>
+            <span class="cloth-roll" aria-hidden="true"><i></i></span>
+          </div>
+          <figcaption class="cloth-meta">
+            <div class="cm-name">
+              <h3>Ludlow Herringbone</h3>
+              <span class="cm-tag mono">country weight</span>
+            </div>
+            <p class="cm-spec mono">Abraham Moon, Yorkshire · 15 oz woollen · broken&nbsp;herringbone</p>
+            <p class="cm-note">A heavier cloth with a broken herringbone that catches the light in weather.
+              The coat for grey months and long platforms.</p>
+            <span class="cm-price mono">cloth from £145 / m</span>
+          </figcaption>
+        </figure>
+
+        <figure class="cloth reveal" style="--roll: linear-gradient(180deg,#5b616a,#333941 60%,#454b53);">
+          <div class="cloth-strip">
+            <div class="cloth-reveal">
+              <svg viewBox="0 0 900 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="900" height="150" fill="url(#weave-birdseye)"/></svg>
+            </div>
+            <span class="cloth-roll" aria-hidden="true"><i></i></span>
+          </div>
+          <figcaption class="cloth-meta">
+            <div class="cm-name">
+              <h3>Sackville Birdseye</h3>
+              <span class="cm-tag mono">everyday grey</span>
+            </div>
+            <p class="cm-spec mono">Fox Brothers, Somerset · 11 oz worsted · pin&nbsp;birdseye</p>
+            <p class="cm-note">A quiet mid-grey speckled with a white pin at each intersection. The suit that
+              never announces itself and never wears out its welcome.</p>
+            <span class="cm-price mono">cloth from £160 / m</span>
+          </figcaption>
+        </figure>
+
+        <figure class="cloth reveal" style="--roll: linear-gradient(180deg,#d6cdb6,#b3a98f 60%,#c6bda6);">
+          <div class="cloth-strip">
+            <div class="cloth-reveal">
+              <svg viewBox="0 0 900 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="900" height="150" fill="url(#weave-glen)"/></svg>
+            </div>
+            <span class="cloth-roll" aria-hidden="true"><i></i></span>
+          </div>
+          <figcaption class="cloth-meta">
+            <div class="cm-name">
+              <h3>Prince’s Glen</h3>
+              <span class="cm-tag mono">a little colour</span>
+            </div>
+            <p class="cm-spec mono">Lovat Mill, Hawick · 12 oz · glen check, burgundy&nbsp;overcheck</p>
+            <p class="cm-note">Glen check crossed by a single burgundy line — as much colour as a gentleman
+              needs, and no more. For the man who wants the room to notice slowly.</p>
+            <span class="cm-price mono">cloth from £170 / m</span>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ your measure — interactive mannequin ============ -->
+  <section id="measure" class="measure-sec">
+    <span class="wm" aria-hidden="true">MEASURE</span>
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker mono reveal">[ Your measure ]</p>
+        <h2 class="reveal">Nineteen measures. One&nbsp;of you.</h2>
+        <p class="lede reveal">A pattern begins as numbers taken by hand — over the shirt, two fingers of
+          ease, the tape reading the figure and not the fashion. Move across the figure to see the five
+          that most shape the coat.</p>
+      </div>
+
+      <div class="measure-grid">
+        <figure class="mannequin reveal" aria-label="Interactive measuring figure. Five measurement points can be focused with the keyboard.">
+          <svg class="fig-svg" viewBox="0 0 440 640" role="group" aria-labelledby="fig-title">
+            <title id="fig-title">A tailor’s measuring figure with five points: shoulder, chest, sleeve, waist and inseam</title>
+
+            <!-- figure line-art -->
+            <g class="fig" aria-hidden="true">
+              <ellipse cx="220" cy="66" rx="27" ry="31"/>
+              <path d="M204 92 Q210 106 202 118 M236 92 Q230 106 238 118"/>
+              <path d="M150 136 Q182 120 202 118 M238 118 Q258 120 290 136"/>
+              <!-- torso + legs -->
+              <path d="M150 136 C 150 210, 172 250, 178 316
+                       C 180 336, 168 346, 168 358 L 190 470 L 198 598 L 214 598 L 216 380
+                       Q 220 372 224 380 L 226 598 L 242 598 L 250 470 L 272 358
+                       C 272 346, 260 336, 262 316 C 268 250, 290 210, 290 136"/>
+              <!-- arms -->
+              <path d="M150 136 C 132 180, 124 240, 128 300 Q 136 312 146 302 C 150 258, 160 208, 176 172"/>
+              <path d="M290 136 C 308 180, 316 240, 312 300 Q 304 312 294 302 C 290 258, 280 208, 264 172"/>
+              <!-- chalk centre line -->
+              <path class="fig-chalk" d="M220 120 L220 372"/>
+            </g>
+
+            <!-- measurement points -->
+            <g class="mp mp--shoulder" data-key="shoulder" tabindex="0" role="button"
+               aria-label="Shoulder, eighteen and a quarter inches">
+              <path class="cal-line" pathLength="1" d="M150 104 L290 104"/>
+              <path class="cal-tick" pathLength="1" d="M150 98 L150 116 M290 98 L290 116"/>
+              <path class="cal-lead" pathLength="1" d="M290 104 L326 82"/>
+              <g class="cal-label" transform="translate(330 78)">
+                <text class="cal-t">SHOULDER</text><text class="cal-v" y="20">18¼″</text>
+              </g>
+              <circle class="mp-dot" cx="220" cy="104" r="6.5"/>
+            </g>
+
+            <g class="mp mp--chest" data-key="chest" tabindex="0" role="button"
+               aria-label="Chest, forty-one and a half inches">
+              <path class="cal-line" pathLength="1" d="M156 196 L284 196"/>
+              <path class="cal-tick" pathLength="1" d="M156 188 L156 204 M284 188 L284 204"/>
+              <path class="cal-lead" pathLength="1" d="M284 196 L326 196"/>
+              <g class="cal-label" transform="translate(330 190)">
+                <text class="cal-t">CHEST</text><text class="cal-v" y="20">41½″</text>
+              </g>
+              <circle class="mp-dot" cx="220" cy="196" r="6.5"/>
+            </g>
+
+            <g class="mp mp--sleeve" data-key="sleeve" tabindex="0" role="button"
+               aria-label="Sleeve, twenty-five and three quarter inches">
+              <path class="cal-line" pathLength="1" d="M301 152 L313 296"/>
+              <path class="cal-tick" pathLength="1" d="M294 153 L308 150 M306 297 L320 294"/>
+              <path class="cal-lead" pathLength="1" d="M313 226 L350 246"/>
+              <g class="cal-label" transform="translate(354 242)">
+                <text class="cal-t">SLEEVE</text><text class="cal-v" y="20">25¾″</text>
+              </g>
+              <circle class="mp-dot" cx="307" cy="224" r="6.5"/>
+            </g>
+
+            <g class="mp mp--waist" data-key="waist" tabindex="0" role="button"
+               aria-label="Waist, thirty-four inches">
+              <path class="cal-line" pathLength="1" d="M168 316 L272 316"/>
+              <path class="cal-tick" pathLength="1" d="M168 308 L168 324 M272 308 L272 324"/>
+              <path class="cal-lead" pathLength="1" d="M168 316 L114 316"/>
+              <g class="cal-label cal-label--left" transform="translate(110 310)">
+                <text class="cal-t">WAIST</text><text class="cal-v" y="20">34″</text>
+              </g>
+              <circle class="mp-dot" cx="220" cy="316" r="6.5"/>
+            </g>
+
+            <g class="mp mp--inseam" data-key="inseam" tabindex="0" role="button"
+               aria-label="Inseam, thirty-one and a half inches">
+              <path class="cal-line" pathLength="1" d="M224 384 L232 592"/>
+              <path class="cal-tick" pathLength="1" d="M216 385 L232 383 M224 593 L240 591"/>
+              <path class="cal-lead" pathLength="1" d="M228 488 L114 488"/>
+              <g class="cal-label cal-label--left" transform="translate(110 482)">
+                <text class="cal-t">INSEAM</text><text class="cal-v" y="20">31½″</text>
+              </g>
+              <circle class="mp-dot" cx="228" cy="488" r="6.5"/>
+            </g>
+          </svg>
+        </figure>
+
+        <div class="readout reveal" aria-live="polite">
+          <p class="kicker mono">[ On the tape ]</p>
+          <p class="ro-title" id="roTitle">Chest</p>
+          <p class="ro-val mono" id="roVal">41½″</p>
+          <p class="ro-note" id="roNote">Taken over the shirt with two fingers of ease. This is where the
+            drape lives — get it wrong and the whole coat fights the wearer.</p>
+          <p class="ro-hint mono">Hover a point on the figure, or tab through them, to read each measure.</p>
+          <p class="ro-fine mono">Illustrative figures for a 40 Regular. Yours are taken at the first fitting
+            and kept in the house ledger for life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ the making — numbered fitting stages ============ -->
+  <section id="making" class="making">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker mono reveal">[ The making ]</p>
+        <h2 class="reveal">Four fittings, a hundred hours.</h2>
+        <p class="lede reveal">Nothing here is rushed and nothing is glued. A Selvedge coat is built on
+          horsehair canvas, floated by hand and returned to you across four visits — because a suit worn
+          for thirty years can afford to take ten weeks.</p>
+      </div>
+
+      <ol class="stages" id="stages">
+        <li class="stage reveal">
+          <span class="stage-no mono">01</span>
+          <div class="stage-body">
+            <h3>The consultation</h3>
+            <p>Cloth, cut and the way you actually stand. We watch you walk, note the drop of a shoulder,
+              and pull bolts from the book until one is obviously right.</p>
+            <span class="stage-meta mono">≈ 90 minutes · no charge</span>
+          </div>
+        </li>
+        <li class="stage reveal">
+          <span class="stage-no mono">02</span>
+          <div class="stage-body">
+            <h3>The pattern</h3>
+            <p>Your figures become a paper pattern cut to you alone — never a block resized. It is filed
+              under your name and kept for every suit that follows.</p>
+            <span class="stage-meta mono">cut by hand · kept for life</span>
+          </div>
+        </li>
+        <li class="stage reveal">
+          <span class="stage-no mono">03</span>
+          <div class="stage-body">
+            <h3>The baste fitting</h3>
+            <p>The coat in skeleton — held together with white basting thread. Chalk in hand, we take it
+              apart on your back and mark every correction the pattern cannot predict.</p>
+            <span class="stage-meta mono">≈ 3 weeks in</span>
+          </div>
+        </li>
+        <li class="stage reveal stage--key">
+          <span class="stage-no mono">04</span>
+          <div class="stage-body">
+            <h3>The forward fitting</h3>
+            <p>Canvas set, sleeves hung, the balance corrected. This is where a made-to-measure coat
+              becomes yours — the collar hugging, the chest clean, the drape at rest.</p>
+            <span class="stage-meta mono">≈ 6 weeks in</span>
+          </div>
+        </li>
+        <li class="stage reveal">
+          <span class="stage-no mono">05</span>
+          <div class="stage-body">
+            <h3>The finish</h3>
+            <p>Hand-felled linings, worked buttonholes, a soft roll pressed into the lapel — and your name
+              stitched inside the breast pocket, where only you will find it.</p>
+            <span class="stage-meta mono">≈ 10 weeks · pressed &amp; delivered</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ book a fitting ============ -->
+  <section id="fitting" class="fitting">
+    <div class="wrap fit-grid">
+      <div class="fit-info">
+        <p class="kicker kicker--wine mono reveal">[ Book a fitting ]</p>
+        <h2 class="reveal">Come and be measured.</h2>
+        <p class="fit-sub reveal">First fittings are by appointment, Tuesday to Saturday, on Sackville
+          Court. Tell us a little of what you have in mind and we will write back to arrange a time — and
+          set aside a cloth book worth turning.</p>
+        <ul class="fit-list mono">
+          <li>No charge for the first consultation</li>
+          <li>Cloth &amp; canvas discussed in the room</li>
+          <li>Your pattern kept in the ledger for life</li>
+        </ul>
+      </div>
+      <div class="fit-form reveal" aria-live="polite">
+        <form id="fitForm" novalidate>
+          <div class="field">
+            <label class="mono" for="fName">Name</label>
+            <input id="fName" name="name" type="text" required autocomplete="name" placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label class="mono" for="fEmail">Email</label>
+            <input id="fEmail" name="email" type="email" required autocomplete="email" placeholder="you@example.com" />
+          </div>
+          <div class="field">
+            <label class="mono" for="fWhat">What are you having made?</label>
+            <textarea id="fWhat" name="what" rows="3" placeholder="A navy two-piece for work / a wedding coat / a country tweed …"></textarea>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Request an appointment</button>
+          <p class="fit-fine mono" id="fitFine">Demo form — nothing is sent. See the README.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-top">
+    <span class="foot-brand">Selvedge</span>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#cloth">The cloth</a><a href="#measure">Your measure</a><a href="#making">The making</a><a href="#fitting">Book a fitting</a><a href="./guide/">Guide</a>
+    </nav>
+  </div>
+  <div class="wrap foot-bottom mono">
+    <span>© 2026 Selvedge — a design-showcase concept, not a real tailor. The house, the mills quoted, the prices and the ledger are fiction.</span>
+    <span>Designed &amp; built by Parable · <a href="./guide/">How this was built →</a></span>
+  </div>
+</footer>
+
+<script src="./main.js" defer></script>
+</body>
+</html>

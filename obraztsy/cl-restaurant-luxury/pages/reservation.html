@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reserve your table at L'Étoile - Experience Michelin-star fine dining in an elegant luxury setting. Book your culinary journey today.">
+    <title>Reserve Your Table | L'Étoile Restaurant</title>
+    
+    <!-- Premium Inline SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23C9A227'>★</text></svg>">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-reservation-content" style="position:absolute; left:-9999px; background:var(--primary-gold); color:var(--bg-dark); padding:0.5rem 1rem; z-index:10000;" onfocus="this.style.left='10px'" onblur="this.style.left='-9999px'">Skip to Content</a>
+
+    <!-- Header / Navbar -->
+    <header role="banner">
+        <div class="logo">
+            <a href="../index.html" aria-label="L'Étoile Home">L'ÉTOILE<span>.</span></a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation">
+            <a href="../index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="reservation.html" class="active">Reservation</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="reservation.html" class="btn-gold nav-reserve-btn">Reserve A Table</a>
+            <button class="menu-toggle" id="mobile-menu-btn" aria-haspopup="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-nav" role="navigation" aria-label="Mobile Navigation">
+        <a href="../index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reservation.html" class="active">Reservation</a>
+        <a href="contact.html">Contact</a>
+        <a href="reservation.html" class="btn-gold" style="margin-top: 2rem;">Reserve A Table</a>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <main id="main-reservation-content">
+        
+        <!-- Luxury Hero Section -->
+        <section class="hero-section flex-center" aria-label="Reservation Page Header">
+            <div class="hero-bg-wrapper parallax-img-wrapper">
+                <img src="../assets/images/hero_bg.jpg" alt="Elegant luxury dining hall with warm ambient lighting">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="hero-content container gsap-reveal-element" style="margin-top: 80px;">
+                <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                    <a href="../index.html">Home</a> &nbsp;/&nbsp; <span style="color: var(--primary-gold);">Reservation</span>
+                </nav>
+                <h1 class="hero-title" style="font-size: 4rem; margin-bottom: 1rem;">Reserve Your Table</h1>
+                <p class="hero-subtitle" style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Begin your culinary journey at L'Étoile. Secure your place for an unforgettable dining experience.</p>
+            </div>
+            
+            <div class="scroll-indicator gsap-reveal-element" role="presentation">
+                <div class="scroll-indicator-mouse" style="width: 16px; height: 26px; border-radius: 8px; padding-top: 3px;">
+                    <div class="scroll-indicator-wheel" style="width: 3px; height: 6px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation Introduction -->
+        <section class="section-padding container" aria-label="Reservation Introduction">
+            <div class="section-title-wrapper gsap-fade-in">
+                <span class="subtitle-gold">Welcome</span>
+                <h2 class="section-title">Begin Your Culinary Journey</h2>
+            </div>
+            
+            <div class="intro-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    At L'Étoile, we believe every meal should be a celebration. Our reservation system is designed to ensure your dining experience is perfectly tailored to your preferences. Whether you're joining us for an intimate dinner or a special celebration, we are committed to providing exceptional service from the moment you book.
+                </p>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; border-top: 1px solid var(--glass-border); padding-top: 3rem;">
+                    <div>
+                        <i class="fa-solid fa-clock" style="color: var(--primary-gold); font-size: 1.5rem; margin-bottom: 1rem;"></i>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Average Duration</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">2.5 - 3 Hours</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-calendar-check" style="color: var(--primary-gold); font-size: 1.5rem; margin-bottom: 1rem;"></i>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Advance Booking</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Recommended 2 Weeks</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-utensils" style="color: var(--primary-gold); font-size: 1.5rem; margin-bottom: 1rem;"></i>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Cancellation Policy</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">24 Hours Notice</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Reservation Form -->
+        <section class="section-padding section-bordered" aria-label="Reservation Booking Form">
+            <div class="container">
+                <div class="section-title-wrapper gsap-fade-in">
+                    <span class="subtitle-gold">Booking Details</span>
+                    <h2 class="section-title">Complete Your Reservation</h2>
+                </div>
+                
+                <form class="reservation-form" id="reservation-form" aria-label="Reservation Booking Form">
+                    <div class="form-grid">
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 2rem; color: var(--text-white);">Personal Information</h3>
+                            
+                            <div class="form-group">
+                                <input type="text" id="full-name" name="fullName" required aria-required="true">
+                                <label for="full-name">Full Name *</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required aria-required="true">
+                                <label for="email">Email Address *</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" required aria-required="true">
+                                <label for="phone">Phone Number *</label>
+                            </div>
+                        </div>
+                        
+                        <!-- Reservation Details -->
+                        <div class="form-section">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 2rem; color: var(--text-white);">Reservation Details</h3>
+                            
+                            <div class="form-group">
+                                <input type="date" id="reservation-date" name="date" required aria-required="true">
+                                <label for="reservation-date">Reservation Date *</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" id="reservation-time" name="time" required aria-required="true" readonly>
+                                <label for="reservation-time">Reservation Time *</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" id="guest-count-display" name="guests" required aria-required="true" readonly value="2 Guests">
+                                <label for="guest-count-display">Number of Guests *</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive Guest Selector -->
+                    <div class="guest-selector-wrapper" style="margin: 3rem 0;">
+                        <label style="display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 1rem;">Select Number of Guests</label>
+                        <div class="guest-selector">
+                            <button type="button" class="guest-btn guest-decrease" aria-label="Decrease guests">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <span class="guest-count" id="guest-count">2</span>
+                            <button type="button" class="guest-btn guest-increase" aria-label="Increase guests">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive Time Selection -->
+                    <div class="time-selection-wrapper" style="margin: 3rem 0;">
+                        <label style="display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 1rem;">Select Time Slot</label>
+                        <div class="time-slots-grid" id="time-slots">
+                            <button type="button" class="time-slot" data-time="17:30" data-display="5:30 PM">5:30 PM</button>
+                            <button type="button" class="time-slot" data-time="18:00" data-display="6:00 PM">6:00 PM</button>
+                            <button type="button" class="time-slot" data-time="18:30" data-display="6:30 PM">6:30 PM</button>
+                            <button type="button" class="time-slot" data-time="19:00" data-display="7:00 PM">7:00 PM</button>
+                            <button type="button" class="time-slot" data-time="19:30" data-display="7:30 PM">7:30 PM</button>
+                            <button type="button" class="time-slot" data-time="20:00" data-display="8:00 PM">8:00 PM</button>
+                            <button type="button" class="time-slot" data-time="20:30" data-display="8:30 PM">8:30 PM</button>
+                            <button type="button" class="time-slot" data-time="21:00" data-display="9:00 PM">9:00 PM</button>
+                            <button type="button" class="time-slot disabled" disabled>9:30 PM</button>
+                            <button type="button" class="time-slot disabled" disabled>10:00 PM</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Table Preference -->
+                    <div class="table-preference-wrapper" style="margin: 3rem 0;">
+                        <label style="display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 1rem;">Table Preference</label>
+                        <div class="preference-cards-grid" id="table-preferences">
+                            <button type="button" class="preference-card" data-value="indoor">
+                                <i class="fa-solid fa-building"></i>
+                                <span>Indoor Dining</span>
+                            </button>
+                            <button type="button" class="preference-card" data-value="outdoor">
+                                <i class="fa-solid fa-tree"></i>
+                                <span>Outdoor Garden</span>
+                            </button>
+                            <button type="button" class="preference-card" data-value="window">
+                                <i class="fa-solid fa-window-maximize"></i>
+                                <span>Window Table</span>
+                            </button>
+                            <button type="button" class="preference-card" data-value="private">
+                                <i class="fa-solid fa-door-closed"></i>
+                                <span>Private Dining</span>
+                            </button>
+                            <button type="button" class="preference-card" data-value="vip">
+                                <i class="fa-solid fa-crown"></i>
+                                <span>VIP Experience</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Occasion Selection -->
+                    <div class="occasion-wrapper" style="margin: 3rem 0;">
+                        <label style="display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 1rem;">Special Occasion</label>
+                        <div class="occasion-cards-grid" id="occasion-cards">
+                            <button type="button" class="occasion-card" data-value="birthday">
+                                <i class="fa-solid fa-cake-candles"></i>
+                                <span>Birthday</span>
+                            </button>
+                            <button type="button" class="occasion-card" data-value="anniversary">
+                                <i class="fa-solid fa-heart"></i>
+                                <span>Anniversary</span>
+                            </button>
+                            <button type="button" class="occasion-card" data-value="date-night">
+                                <i class="fa-solid fa-champagne-glasses"></i>
+                                <span>Date Night</span>
+                            </button>
+                            <button type="button" class="occasion-card" data-value="business">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span>Business Dinner</span>
+                            </button>
+                            <button type="button" class="occasion-card" data-value="family">
+                                <i class="fa-solid fa-users"></i>
+                                <span>Family Gathering</span>
+                            </button>
+                            <button type="button" class="occasion-card" data-value="celebration">
+                                <i class="fa-solid fa-star"></i>
+                                <span>Celebration</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Special Requests -->
+                    <div class="form-section" style="margin-top: 3rem;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 2rem; color: var(--text-white);">Additional Information</h3>
+                        
+                        <div class="form-group">
+                            <textarea id="dietary-requirements" name="dietary" rows="3" aria-label="Dietary requirements"></textarea>
+                            <label for="dietary-requirements">Dietary Requirements</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="special-requests" name="requests" rows="3" aria-label="Special requests"></textarea>
+                            <label for="special-requests">Special Requests</label>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <button type="submit" class="btn-gold btn-filled" style="min-width: 250px;">
+                            <span class="btn-text">Confirm Reservation</span>
+                            <span class="btn-loading" style="display: none;">
+                                <i class="fa-solid fa-spinner fa-spin"></i> Processing...
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Live Reservation Summary -->
+        <div class="reservation-summary" id="reservation-summary">
+            <div class="summary-header">
+                <h4>Reservation Summary</h4>
+                <button class="summary-toggle" id="summary-toggle" aria-label="Toggle summary">
+                    <i class="fa-solid fa-chevron-up"></i>
+                </button>
+            </div>
+            <div class="summary-content">
+                <div class="summary-item">
+                    <span class="summary-label">Guest Name</span>
+                    <span class="summary-value" id="summary-name">--</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Date</span>
+                    <span class="summary-value" id="summary-date">--</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Time</span>
+                    <span class="summary-value" id="summary-time">--</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Guests</span>
+                    <span class="summary-value" id="summary-guests">--</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Table</span>
+                    <span class="summary-value" id="summary-table">--</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Occasion</span>
+                    <span class="summary-value" id="summary-occasion">--</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Restaurant Information -->
+        <section class="section-padding container" aria-label="Restaurant Information">
+            <div class="section-title-wrapper gsap-fade-in">
+                <span class="subtitle-gold">Essential Information</span>
+                <h2 class="section-title">Before You Visit</h2>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card glass-panel">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>Opening Hours</h4>
+                    <p>Monday - Friday: 17:00 - 23:00</p>
+                    <p>Saturday - Sunday: 12:00 - 23:30</p>
+                </div>
+                
+                <div class="info-card glass-panel">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>Address</h4>
+                    <p>123 Gastronomy Avenue</p>
+                    <p>Luxury District, City 10001</p>
+                </div>
+                
+                <div class="info-card glass-panel">
+                    <i class="fa-solid fa-phone"></i>
+                    <h4>Contact</h4>
+                    <p>+1 (555) 123-4567</p>
+                    <p>reservations@letoile.com</p>
+                </div>
+                
+                <div class="info-card glass-panel">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <h4>Dress Code</h4>
+                    <p>Smart Casual</p>
+                    <p>No shorts or flip-flops</p>
+                </div>
+                
+                <div class="info-card glass-panel">
+                    <i class="fa-solid fa-car"></i>
+                    <h4>Parking</h4>
+                    <p>Valet parking available</p>
+                    <p>Complimentary for guests</p>
+                </div>
+                
+                <div class="info-card glass-panel">
+                    <i class="fa-solid fa-ban"></i>
+                    <h4>Cancellation</h4>
+                    <p>24 hours notice required</p>
+                    <p>Late cancellations charged</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-padding section-bordered" aria-label="Frequently Asked Questions">
+            <div class="container">
+                <div class="section-title-wrapper gsap-fade-in">
+                    <span class="subtitle-gold">Questions</span>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+                
+                <div class="faq-accordion" id="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What is your cancellation policy?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We require at least 24 hours' notice for cancellations. Cancellations made less than 24 hours before the reservation time may incur a fee of $50 per person. No-shows will be charged the full amount of the tasting menu.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do you accommodate children?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Children aged 12 and above are welcome in our main dining room. For families with younger children, we recommend our private dining options where we can provide a more relaxed atmosphere. High chairs are available upon request.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Is parking available?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Complimentary valet parking is available for all dinner guests. For lunch service, validated parking is available at the adjacent luxury parking garage. Both options are wheelchair accessible.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What is the dress code?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our dress code is smart casual. Gentlemen are encouraged to wear collared shirts and dress pants. Ladies typically wear dresses or elegant separates. We respectfully request no shorts, athletic wear, or flip-flops.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Are pets allowed?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>With the exception of certified service animals, pets are not permitted inside the restaurant. However, we welcome well-behaved pets on our outdoor garden terrace, weather permitting.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Can I host private events?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer private dining rooms for events ranging from intimate gatherings to corporate receptions. Our events team can customize menus and experiences for groups of 8-40 guests. Please contact our events concierge for availability and pricing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation CTA -->
+        <section class="section-padding flex-center reservation-cta-section" aria-label="Alternative Reservation Methods">
+            <div class="parallax-img-wrapper hero-bg-wrapper">
+                <img src="../assets/images/hero_bg.jpg" alt="Luxury restaurant interior">
+                <div class="bg-overlay"></div>
+            </div>
+            
+            <div class="container content gsap-fade-in">
+                <span class="subtitle-gold">Alternative Options</span>
+                <h2>Prefer to Call?</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem auto;">
+                    Our reservations team is available to assist you with your booking. For immediate assistance or special requests, please contact us directly.
+                </p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="tel:+15551234567" class="btn-gold btn-filled">
+                        <i class="fa-solid fa-phone" style="margin-right: 0.5rem;"></i>
+                        Call Us Now
+                    </a>
+                    <a href="javascript:void(0)" class="btn-gold">
+                        <i class="fa-brands fa-whatsapp" style="margin-right: 0.5rem;"></i>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Global Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3>L'ÉTOILE<span>.</span></h3>
+                    <p>Where absolute culinary standards meet contemporary spatial design. Enjoy curated gastronomy in the heart of the city.</p>
+                    <div class="footer-socials">
+                        <a href="javascript:void(0)" aria-label="L'Étoile Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0)" aria-label="L'Étoile Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0)" aria-label="L'Étoile Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0)" aria-label="L'Étoile TripAdvisor"><i class="fa-brands fa-tripadvisor" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4>Discover</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="menu.html">Our Menu</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="reservation.html">Reservations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-hours">
+                    <h4>Opening Hours</h4>
+                    <p>Monday - Friday<br><span style="color: var(--text-white);">17:00 - 23:00</span></p>
+                    <p>Saturday - Sunday<br><span style="color: var(--text-white);">12:00 - 23:30</span></p>
+                </div>
+                <div class="footer-col footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to receive menus, private tastings, and chef announcements.</p>
+                    <form class="newsletter-form" aria-label="Newsletter Subscription Form">
+                        <input type="email" placeholder="Your Email Address" aria-label="Email address for newsletter" required>
+                        <button type="submit">Join</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 L'Étoile Restaurant. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="javascript:void(0)">Privacy Policy</a>
+                    <a href="javascript:void(0)">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reservation Success Modal -->
+    <div class="lightbox-modal" id="success-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="success-modal-title">
+        <button class="lightbox-close-btn" id="success-modal-close" aria-label="Close Success Modal"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <div class="success-modal-content">
+            <div class="success-animation">
+                <div class="success-circle">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+            <h2 id="success-modal-title">Reservation Confirmed</h2>
+            <p class="success-message">Thank you for choosing L'Étoile. Your reservation has been successfully received.</p>
+            
+            <div class="success-summary">
+                <div class="success-summary-item">
+                    <span class="summary-label">Name</span>
+                    <span class="summary-value" id="success-name">--</span>
+                </div>
+                <div class="success-summary-item">
+                    <span class="summary-label">Date</span>
+                    <span class="summary-value" id="success-date">--</span>
+                </div>
+                <div class="success-summary-item">
+                    <span class="summary-label">Time</span>
+                    <span class="summary-value" id="success-time">--</span>
+                </div>
+                <div class="success-summary-item">
+                    <span class="summary-label">Guests</span>
+                    <span class="summary-value" id="success-guests">--</span>
+                </div>
+            </div>
+            
+            <div class="success-actions">
+                <a href="../index.html" class="btn-gold btn-filled">Return Home</a>
+                <a href="menu.html" class="btn-gold">View Menu</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Library Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/reservation.js"></script>
+    
+</body>
+</html>

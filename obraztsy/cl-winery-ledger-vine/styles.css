@@ -1,0 +1,273 @@
+/* ============================================================
+   Ledger & Vine — old-world burgundy design system
+   Tokens first. Cormorant Garamond / Inter / DM Mono.
+   ============================================================ */
+:root{
+  --bg:#2a0a14;            /* burgundy-black */
+  --panel:#3a0f1d;         /* raised surface */
+  --panel-2:#330d1a;
+  --ink:#f3e9dd;           /* cream */
+  --dim:#c9a9a2;
+  --faint:#8a6a63;
+  --gold:#c9a24b;
+  --gold-2:#e0be6f;        /* brighter gold for hover / large numerals */
+  --wine:#7c1f38;          /* the pour */
+  --wine-2:#a63b52;
+  --line:rgba(243,233,221,.12);
+  --line-2:rgba(243,233,221,.06);
+  --max:1200px;
+  --ease:cubic-bezier(.5,.02,.16,1);       /* "the decant" — slow, stately settle */
+  --ease-soft:cubic-bezier(.3,.65,.25,1);
+  --r:4px;                                  /* old-world: nearly square corners */
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:"Inter",system-ui,sans-serif;font-weight:400;line-height:1.6;font-size:1rem;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+em{font-style:italic}
+::selection{background:var(--gold);color:#2a1503}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;top:-60px;left:16px;z-index:100;background:var(--gold);color:#2a1503;
+  padding:10px 18px;border-radius:var(--r);font-weight:500;transition:top .3s var(--ease)}
+.skip:focus-visible{top:14px}
+
+/* ---------- type ---------- */
+.eyebrow,.kicker,.lot,.wine-data,.book-lbl,.n-lbl,.hero-meta,.foot-mono,.status{
+  font-family:"DM Mono",monospace;letter-spacing:.18em;text-transform:uppercase}
+.eyebrow,.kicker{font-size:.72rem;color:var(--gold)}
+h1,h2,h3,.closer-line,.estate-pull,.p-num,.n-val,.foot-brand{
+  font-family:"Cormorant Garamond",Georgia,serif;font-weight:500}
+h2{font-size:clamp(2.1rem,5vw,3.6rem);line-height:1.04;letter-spacing:.005em}
+h2 em,.closer-line em{color:var(--gold);font-weight:500}
+h3{font-size:1.9rem;line-height:1.1}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;
+  padding:20px clamp(18px,4vw,48px);
+  background:linear-gradient(180deg,rgba(20,3,10,.75),rgba(20,3,10,0));backdrop-filter:blur(2px)}
+.brand{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.35rem;letter-spacing:.02em}
+.brand em,.foot-brand em{color:var(--gold);font-style:italic;padding:0 .08em}
+.nav-links{display:flex;gap:clamp(14px,2.4vw,30px);align-items:center;font-size:.88rem;color:var(--dim)}
+.nav-links a{transition:color .35s var(--ease)}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{border:1px solid rgba(201,162,75,.5);border-radius:var(--r);padding:9px 18px;color:var(--ink)!important;
+  transition:background .35s,border-color .35s}
+.nav-cta:hover{border-color:var(--gold);background:rgba(201,162,75,.12)}
+@media(max-width:840px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:var(--r);padding:14px 28px;
+  font-size:.9rem;font-weight:500;letter-spacing:.02em;border:1px solid var(--line);cursor:pointer;
+  transition:transform .5s var(--ease),background .35s,border-color .35s,color .35s,box-shadow .5s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--gold);color:#2a1503;border-color:var(--gold)}
+.btn-primary:hover{background:var(--gold-2);box-shadow:0 14px 40px -14px rgba(201,162,75,.55)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-2)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:100svh;min-height:620px;overflow:hidden;display:grid;place-items:center}
+.ph{position:absolute;pointer-events:none}
+.ph-photo{inset:-14% 0 0 0;z-index:1;will-change:transform}
+.ph-photo img{width:100%;height:100%;object-fit:cover}
+.ph-rays{inset:0;z-index:2;mix-blend-mode:screen;opacity:.75;will-change:transform,opacity;background:
+  linear-gradient(112deg,transparent 34%,rgba(201,162,75,.28) 44%,transparent 52%),
+  linear-gradient(100deg,transparent 55%,rgba(224,190,111,.18) 64%,transparent 72%)}
+.js .ph-rays{animation:rayglow 9s var(--ease-soft) infinite alternate}
+@keyframes rayglow{from{opacity:.55}to{opacity:.9}}
+.ph-scrim{inset:0;z-index:3;background:
+  linear-gradient(180deg,rgba(42,10,20,.42),rgba(42,10,20,.08) 34%,rgba(42,10,20,.28) 62%,rgba(42,10,20,.92) 88%,var(--bg))}
+.ph-hills{left:0;right:0;bottom:-4%;height:38%;width:100%;z-index:4;will-change:transform}
+.ph-rows{left:0;right:0;bottom:-6%;height:30%;width:100%;z-index:5;will-change:transform}
+.hero-copy{position:relative;z-index:6;text-align:center;padding:0 18px;transform:translateY(-4vh)}
+.hero-title{font-size:clamp(3.4rem,12vw,9rem);font-weight:500;line-height:.94;letter-spacing:.01em;
+  text-shadow:0 2px 40px rgba(20,3,10,.5)}
+.hero-title em{color:var(--gold-2);font-style:italic;font-weight:400;margin-right:.06em}
+.hero-sub{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.2rem,2.4vw,1.6rem);
+  color:var(--dim);margin-top:1.2rem}
+.eyebrow{margin-bottom:1.6rem}
+.hero .eyebrow{color:var(--gold-2);text-shadow:0 1px 4px rgba(20,3,10,.95),0 2px 22px rgba(20,3,10,.8)}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:2.4rem}
+.hero-meta{position:absolute;bottom:26px;z-index:6;font-size:.64rem;color:var(--dim);letter-spacing:.22em}
+.hero-meta-l{left:clamp(18px,4vw,48px)}
+.hero-meta-r{right:clamp(18px,4vw,48px)}
+@media(max-width:700px){.hero-meta{display:none}}
+.scroll-cue{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:6;width:1px;height:52px;overflow:hidden}
+.scroll-cue span{display:block;width:1px;height:100%;background:linear-gradient(180deg,transparent,var(--gold))}
+.js .scroll-cue span{animation:cue 2.6s var(--ease) infinite}
+@keyframes cue{from{transform:translateY(-100%)}60%{transform:translateY(0)}to{transform:translateY(100%)}}
+
+/* ---------- section shell + ledger rules ---------- */
+section{padding:clamp(80px,12vh,150px) clamp(18px,4vw,48px)}
+.section-head{max-width:var(--max);margin:0 auto 3.4rem}
+.kicker{margin-bottom:1.2rem}
+.lede{max-width:58ch;margin-top:1.2rem;color:var(--dim);font-size:1.06rem}
+/* double ledger rule between sections */
+.wines,.club,.estate,.visit{position:relative}
+.wines::before,.club::before,.estate::before,.visit::before{content:"";position:absolute;top:0;
+  left:clamp(18px,4vw,48px);right:clamp(18px,4vw,48px);height:5px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line-2)}
+
+/* ---------- wines ---------- */
+.wine-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:760px){.wine-grid{grid-template-columns:repeat(2,1fr)}}
+.wine-card{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,3vw,30px);align-items:center;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+  padding:clamp(22px,3.4vw,34px);transition:transform .6s var(--ease),border-color .4s,background .4s}
+.wine-card:hover{transform:translateY(-4px);border-color:rgba(201,162,75,.45);background:var(--panel-2)}
+.bottle{width:52px;height:172px;flex:none}
+.b-glass{stroke:rgba(243,233,221,.25);stroke-width:1.2}
+.w-pinot{fill:#4d1024}.w-chenin{fill:#8a6b26}.w-syrah{fill:#380a1c}.w-rose{fill:#a0475a}
+.b-label{fill:rgba(243,233,221,.88)}
+.b-line{fill:rgba(42,10,20,.55)}
+.lot{font-size:.62rem;color:var(--faint);letter-spacing:.2em;margin-bottom:.7rem}
+.wine-card h3{margin-bottom:.15rem}
+.wine-sub{font-family:"DM Mono",monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.9rem}
+.notes{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.18rem;line-height:1.4;
+  color:var(--dim);max-width:34ch}
+.wine-data{font-size:.68rem;color:var(--dim);letter-spacing:.14em;margin-top:1rem}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:.62rem;letter-spacing:.16em;
+  margin-top:1.1rem;padding:7px 12px;border:1px solid var(--line);border-radius:var(--r);color:var(--dim)}
+.status .dot{width:6px;height:6px;border-radius:50%;flex:none}
+.s-open .dot{background:var(--gold-2);box-shadow:0 0 8px rgba(224,190,111,.7)}
+.s-allocated .dot{background:var(--ink)}
+.s-cellar{border-color:rgba(201,162,75,.45);color:var(--gold-2)}
+.s-cellar .dot{background:var(--gold)}
+.s-out{color:var(--faint)}
+.s-out .dot{background:var(--faint)}
+@media(max-width:480px){.wine-card{grid-template-columns:1fr}.bottle{display:none}}
+
+/* ---------- club tiers + the pour ---------- */
+.tier-row{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr;gap:20px;align-items:stretch}
+@media(min-width:900px){.tier-row{grid-template-columns:repeat(3,1fr)}.tier-mid{transform:translateY(-14px)}}
+.tier{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+  padding:clamp(28px,3.4vw,40px) clamp(20px,2.6vw,30px) clamp(24px,3vw,32px);
+  transition:border-color .4s,box-shadow .6s var(--ease)}
+.tier:hover{border-color:rgba(201,162,75,.4)}
+.tier-mid{border-color:rgba(201,162,75,.55);background:linear-gradient(180deg,#421224,var(--panel));
+  box-shadow:0 30px 70px -40px rgba(0,0,0,.8)}
+.tier-badge{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);
+  font-family:"DM Mono",monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  background:var(--gold);color:#2a1503;padding:6px 14px;border-radius:var(--r);white-space:nowrap}
+.glass{width:104px;height:164px;margin-bottom:1.2rem;overflow:visible}
+.glass-line{fill:none;stroke:rgba(243,233,221,.55);stroke-width:1.6;stroke-linecap:round}
+.glass-shine{stroke:rgba(243,233,221,.14);stroke-width:2;stroke-linecap:round}
+.wine-fill{fill:var(--wine);transform:scaleY(var(--fill,.6));transform-box:fill-box;transform-origin:center bottom}
+.wine-surface{fill:var(--wine-2);opacity:.9;transform:translateY(calc(var(--fill,.6) * -96px))}
+.stream{stroke:var(--wine-2);stroke-width:3;stroke-linecap:round;opacity:0;
+  transform-box:fill-box;transform-origin:center top}
+/* JS pours: start empty, fill on .poured */
+.js .tier .wine-fill{transform:scaleY(.001);transition:transform 2s var(--ease) .25s}
+.js .tier .wine-surface{transform:translateY(0);opacity:0;transition:transform 2s var(--ease) .25s,opacity .5s .35s}
+.js .tier.poured .wine-fill{transform:scaleY(var(--fill,.6))}
+.js .tier.poured .wine-surface{transform:translateY(calc(var(--fill,.6) * -96px));opacity:.9}
+.js .tier.pouring .stream{animation:pour 1.5s var(--ease-soft) forwards}
+@keyframes pour{
+  0%{opacity:0;transform:scaleY(0)}
+  12%{opacity:.95;transform:scaleY(1)}
+  78%{opacity:.95;transform:scaleY(1)}
+  100%{opacity:0;transform:scaleY(1)}
+}
+.tier h3{color:var(--gold-2)}
+.tier-who{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.12rem;color:var(--dim);margin:.3rem 0 1.3rem}
+.tier-price{display:flex;align-items:baseline;gap:8px;margin-bottom:1.4rem}
+.p-num{font-size:2.9rem;line-height:1;color:var(--ink)}
+.p-per{font-family:"DM Mono",monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.tier-feats{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-bottom:1.8rem;
+  font-size:.92rem;color:var(--dim)}
+.tier-feats li::before{content:"—";color:var(--gold);margin-right:.55em}
+.tier-btn{margin-top:auto;width:100%;justify-content:center}
+.club-note{max-width:var(--max);margin:2.6rem auto 0;text-align:center;
+  font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.1rem;color:var(--faint)}
+
+/* ---------- estate ---------- */
+.estate-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,70px)}
+@media(min-width:880px){.estate-grid{grid-template-columns:1fr 1.1fr}}
+.estate-pull{font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.2;color:var(--gold-2)}
+.estate-copy p{color:var(--dim);font-size:1.05rem;max-width:58ch}
+.estate-copy p+p{margin-top:1.2rem}
+.estate-copy em{color:var(--ink)}
+.nums{max-width:var(--max);margin:clamp(48px,7vh,80px) auto 0;display:grid;grid-template-columns:repeat(2,1fr);
+  gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+@media(min-width:760px){.nums{grid-template-columns:repeat(4,1fr)}}
+.num{padding:clamp(22px,3vw,34px) 18px;border-left:1px solid var(--line-2)}
+.num:first-child{border-left:0}
+@media(max-width:759px){.num:nth-child(3){border-left:0}.num:nth-child(n+3){border-top:1px solid var(--line-2)}}
+.n-val{display:block;font-size:clamp(2.6rem,5vw,3.8rem);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.n-lbl{display:block;margin-top:.7rem;font-size:.62rem;color:var(--faint);letter-spacing:.18em}
+
+/* ---------- visit / booking teaser ---------- */
+.book{max-width:720px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+  padding:clamp(24px,3.6vw,40px)}
+.book-row{display:grid;grid-template-columns:1fr;gap:10px;padding:16px 0;border-bottom:1px solid var(--line-2)}
+@media(min-width:640px){.book-row{grid-template-columns:120px 1fr;align-items:center}}
+.book-lbl{font-size:.64rem;color:var(--faint);letter-spacing:.2em}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{font-family:"DM Mono",monospace;font-size:.78rem;letter-spacing:.06em;color:var(--dim);
+  background:transparent;border:1px solid var(--line);border-radius:var(--r);padding:9px 16px;cursor:pointer;
+  transition:color .3s,border-color .3s,background .3s}
+.chip:hover{color:var(--ink);border-color:rgba(201,162,75,.5)}
+.chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#2a1503}
+.chip.is-booked{opacity:.38;cursor:not-allowed;text-decoration:line-through;text-decoration-color:var(--faint)}
+.book-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:22px}
+.book-sum{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.25rem;color:var(--ink)}
+.book-note{margin-top:14px;font-size:.85rem;color:var(--gold-2);min-height:1.3em}
+.book-note:empty{margin-top:0}
+
+/* ---------- closer ---------- */
+.closer{text-align:center;padding-block:clamp(100px,18vh,200px)}
+.closer-line{font-size:clamp(2.4rem,7vw,5.4rem);line-height:1.08;margin-bottom:2.2rem}
+
+/* ---------- footer ---------- */
+.footer{border-top:1px solid var(--line);padding:clamp(44px,7vh,72px) clamp(18px,4vw,48px) 34px;
+  background:linear-gradient(180deg,var(--bg),#20060f)}
+.foot-grid{max-width:var(--max);margin:0 auto 2.6rem;display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+.foot-brand{font-size:1.7rem;font-weight:600}
+.foot-tag{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--dim);margin-top:.4rem}
+.foot-mono{font-size:.7rem;color:var(--dim);letter-spacing:.12em;line-height:1.9}
+.foot-mono p+p{margin-top:1rem}
+.foot-links{display:flex;flex-direction:column;gap:.6rem;font-size:.9rem;color:var(--dim)}
+.foot-links a{transition:color .3s}
+.foot-links a:hover{color:var(--gold-2)}
+.foot-bottom{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  border-top:1px solid var(--line-2);padding-top:22px;
+  font-family:"DM Mono",monospace;font-size:.68rem;color:var(--faint);letter-spacing:.04em}
+.foot-bottom a{color:var(--dim)}
+.foot-bottom a:hover{color:var(--gold-2)}
+
+/* ---------- reveal + hero intro ---------- */
+.js .reveal{opacity:0;transform:translateY(26px)}
+.js .reveal.is-in{opacity:1;transform:none;transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.js .hero-title .line{overflow:hidden;display:block}
+.js .hero-title .line>span{display:inline-block;transform:translateY(114%);transition:transform 1.4s var(--ease)}
+.hero.loaded .hero-title .line>span{transform:translateY(0)}
+.js .hero.loaded .reveal{opacity:1;transform:none;transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+.hero .eyebrow{transition-delay:.1s}
+.hero .line:nth-child(1)>span{transition-delay:.25s}
+.hero .line:nth-child(2)>span{transition-delay:.42s}
+.hero .hero-sub{transition-delay:.75s}
+.hero .hero-actions{transition-delay:.95s}
+
+/* ---------- focus ---------- */
+a:focus-visible,.btn:focus-visible,.chip:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* ---------- reduced motion: static composition, filled glasses ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .reveal,.reveal{opacity:1!important;transform:none!important}
+  .js .hero-title .line>span{transform:none!important}
+  .js .tier .wine-fill,.wine-fill{transform:scaleY(var(--fill,.6))!important}
+  .js .tier .wine-surface,.wine-surface{transform:translateY(calc(var(--fill,.6) * -96px))!important;opacity:.9!important}
+  .stream{opacity:0!important}
+  .scroll-cue{display:none}
+  .tier-mid{transform:none}
+}

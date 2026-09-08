@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+  document.documentElement.classList.add('js');
+  try { var t = localStorage.getItem('selvedge-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<title>How this was built — Selvedge</title>
+<meta name="description" content="A colophon for the Selvedge showcase: hand-written HTML, CSS and a little JavaScript, cut like a coat — progressive enhancement, token-flipped theming, motion that keeps its manners." />
+<meta name="theme-color" content="#efe9de" />
+<meta name="color-scheme" content="light dark" />
+<meta property="og:title" content="How this was built — Selvedge" />
+<meta property="og:description" content="The making of the Selvedge showcase — no framework, no build step, cut to the browser." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  /* ---- guide-only layout; leans on the house tokens so both themes flip for free ---- */
+  .guide { padding: clamp(2.4rem, 6vw, 4.2rem) 0 clamp(3rem, 7vw, 5rem); }
+  .guide-head { max-width: 62ch; margin-bottom: clamp(2.4rem, 6vw, 3.6rem); }
+  .guide-title { font-size: clamp(2.6rem, 7vw, 4.6rem); letter-spacing: -.005em; margin: .2rem 0 0; }
+  .guide-lede { color: var(--dim); font-size: clamp(1.04rem, 1.5vw, 1.22rem); margin: 1.2rem 0 0; max-width: 54ch; }
+
+  .prose { max-width: 64ch; }
+  .prose h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); margin: 0; }
+  .prose p { color: var(--dim); margin: 1rem 0 0; }
+  .prose p + p { margin-top: .8rem; }
+  .block { padding: clamp(2.4rem, 6vw, 4rem) 0; border-top: 1px solid var(--line); }
+  .block:first-of-type { border-top: 0; }
+
+  /* the material spec — echoes a cloth ticket */
+  .spec { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: 0; max-width: 60ch; }
+  .spec div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; padding: .85rem 0; border-top: 1px solid var(--line-2); align-items: baseline; }
+  .spec div:first-child { border-top: 0; }
+  .spec dt { font-family: var(--font-m); font-size: .64rem; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); }
+  .spec dd { margin: 0; color: var(--ink); font-size: .94rem; }
+  @media (max-width: 520px) { .spec div { grid-template-columns: 1fr; gap: .25rem; } }
+
+  code, .chip {
+    font-family: var(--font-m); font-size: .82em; color: var(--accent-ink);
+    background: color-mix(in oklab, var(--accent) 9%, transparent);
+    border: 1px solid color-mix(in oklab, var(--accent) 26%, var(--line));
+    padding: .08em .42em; border-radius: 6px; white-space: nowrap;
+  }
+
+  .sig-note { color: var(--faint); font-size: .72rem; margin: 1.1rem 0 0; }
+  .back { margin-top: clamp(2.4rem, 6vw, 3.4rem); display: flex; flex-wrap: wrap; gap: .7rem; }
+</style>
+</head>
+<body>
+<div class="weave" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="brand" href="../" aria-label="Selvedge home">
+    <svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true" focusable="false">
+      <path d="M6 3 L6 25 M22 3 L22 25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M6 3 C 13 7, 15 7, 22 3 M6 25 C 13 21, 15 21, 22 25" stroke="currentColor" stroke-width="1.6" fill="none"/>
+      <path d="M10 9 L18 19 M18 9 L10 19" stroke="currentColor" stroke-width="1" opacity=".45"/>
+    </svg>
+    <span class="brand-word">Selvedge</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="../#cloth">The cloth</a>
+    <a href="../#measure">Your measure</a>
+    <a href="../#making">The making</a>
+    <a href="./" aria-current="page">Guide</a>
+    <a class="nav-cta" href="../#fitting">Book a fitting</a>
+    <button id="themeBtn" class="theme-btn" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Toggle light / dark">
+      <svg class="ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><g stroke-linecap="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></g></svg>
+      <svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="guide">
+    <div class="wrap">
+
+      <header class="guide-head">
+        <p class="eyebrow mono">[ Colophon · how this was built ]</p>
+        <h1 class="guide-title">Cut to the browser,<br />never the framework.</h1>
+        <p class="guide-lede">Selvedge is a design-showcase concept — a fictional tailoring house dressed
+          in real code. It is made the way the site claims its suits are: by hand, from honest materials,
+          with nothing glued that could be sewn. This page is the ticket sewn into the breast pocket —
+          what it is cut from, and how the two signatures actually work.</p>
+      </header>
+
+      <div class="prose">
+
+        <section class="block reveal">
+          <h2>The brief</h2>
+          <p>One page, two rooms. Light is the fitting room — chalk paper and charcoal ink. Dark is the
+            cutting room after hours — charcoal cloth and chalk ink. The whole palette is a single set of
+            custom properties that flip on <code>:root[data-theme]</code>; there is no second stylesheet
+            and no duplicated markup. Choose a room once and every surface, line and label follows.</p>
+          <p>The one thread of colour is a burgundy — <code>--accent</code> for fills and buttons, and a
+            lightened <code>--accent-ink</code> so the same colour stays readable as text once the lights
+            go down.</p>
+        </section>
+
+        <section class="block reveal">
+          <h2>The two signatures</h2>
+          <p>Every showcase earns its keep with something you can only do on the web. Selvedge has two,
+            and both are driven by CSS state rather than a per-frame JavaScript loop — so they stay smooth,
+            survive with scripting off, and fall still the moment a visitor asks for less motion.</p>
+
+          <h3 style="font-family:var(--font-d);font-weight:600;font-size:clamp(1.3rem,2.4vw,1.7rem);margin:1.8rem 0 0;">The measuring figure</h3>
+          <p>Hover — or tab — across the tailor's dummy and a caliper draws itself in: a rule, two ticks,
+            a lead line and a reading. The lines animate by pulling <code>stroke-dashoffset</code> from
+            <code>1</code> to <code>0</code> over a normalised <code>pathLength</code>, so one length of
+            SVG handles any screen size. A short script only swaps the readout text and keeps the keyboard
+            and pointer in step; the drawing itself is pure stylesheet.</p>
+
+          <h3 style="font-family:var(--font-d);font-weight:600;font-size:clamp(1.3rem,2.4vw,1.7rem);margin:1.8rem 0 0;">The bolt of cloth</h3>
+          <p>Each fabric card unrolls as it scrolls into view. A rolled bolt-end travels left to right while
+            a <code>clip-path</code> inset opens the weave behind it — the cloth appears to play off the
+            roll. An <code>IntersectionObserver</code> adds one class to start it; the movement, timing and
+            easing all live in CSS, tuned on a house easing curve named for <em>the draw of the needle</em>.</p>
+          <p class="sig-note mono">With JavaScript off, every bolt shows fully unrolled and every caliper is
+            drawn in one honest frame — the page is never blank, only quieter.</p>
+        </section>
+
+        <section class="block reveal">
+          <h2>Built like a coat</h2>
+          <p>Five principles held the build together — the same five, more or less, that hold a jacket
+            together.</p>
+          <ol class="stages" style="margin-top:1.6rem;">
+            <li class="stage reveal">
+              <span class="stage-no mono">01</span>
+              <div class="stage-body">
+                <h3>Cut by hand</h3>
+                <p>No framework, no bundler, no build step. Three files — markup, one stylesheet, one small
+                  script — that a browser reads directly. Nothing to compile means nothing to rot.</p>
+                <span class="stage-meta mono">html · css · vanilla js</span>
+              </div>
+            </li>
+            <li class="stage reveal">
+              <span class="stage-no mono">02</span>
+              <div class="stage-body">
+                <h3>One pattern, two rooms</h3>
+                <p>Colour, line and shadow are all tokens. The dark room is not a repaint — it is the same
+                  pattern with the numbers flipped, including a text-safe accent so nothing dims into the
+                  cloth.</p>
+                <span class="stage-meta mono">css custom properties</span>
+              </div>
+            </li>
+            <li class="stage reveal">
+              <span class="stage-no mono">03</span>
+              <div class="stage-body">
+                <h3>Enhanced, not required</h3>
+                <p>The content reads in full before a line of script runs. Every reveal and animation is
+                  gated behind a <code>.js</code> class, so the no-script visitor gets the finished
+                  garment, not a fitting in progress.</p>
+                <span class="stage-meta mono">progressive enhancement</span>
+              </div>
+            </li>
+            <li class="stage reveal stage--key">
+              <span class="stage-no mono">04</span>
+              <div class="stage-body">
+                <h3>Motion with manners</h3>
+                <p>Everything that moves respects <code>prefers-reduced-motion</code>. Ask for less and the
+                  bolts sit unrolled, the calipers stand still, and the hero settles without a sweep — the
+                  same information, none of the theatre.</p>
+                <span class="stage-meta mono">prefers-reduced-motion</span>
+              </div>
+            </li>
+            <li class="stage reveal">
+              <span class="stage-no mono">05</span>
+              <div class="stage-body">
+                <h3>Fitted to everyone</h3>
+                <p>A skip link, visible focus rings, real button semantics on the measuring points, live
+                  regions on the readout and the form, and colour contrast checked in both rooms so every
+                  label clears the tape.</p>
+                <span class="stage-meta mono">wcag aa · keyboard first</span>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="block reveal">
+          <h2>The materials</h2>
+          <p>The whole ticket, if you like to read the selvedge:</p>
+          <dl class="spec mono">
+            <div><dt>Markup</dt><dd>Hand-written semantic HTML — one page, plus this colophon.</dd></div>
+            <div><dt>Style</dt><dd>A single stylesheet, themed with CSS custom properties.</dd></div>
+            <div><dt>Behaviour</dt><dd>~110 lines of dependency-free JavaScript, deferred.</dd></div>
+            <div><dt>Motion</dt><dd>CSS transitions on <code>clip-path</code> &amp; <code>stroke-dashoffset</code>; one <code>IntersectionObserver</code>.</dd></div>
+            <div><dt>Type</dt><dd>Cormorant for display, Inter for text, Space&nbsp;Mono for the tape.</dd></div>
+            <div><dt>Build</dt><dd>None. Copy the folder to any static host and it serves.</dd></div>
+          </dl>
+        </section>
+
+        <section class="block reveal">
+          <h2>The house</h2>
+          <p>Selvedge is fiction — the address, the mills, the prices and the ledger are invented for the
+            showcase. What is real is the cloth it is cut from: the markup, the stylesheet and the script
+            you are reading now. Designed &amp; built by Parable.</p>
+          <div class="back">
+            <a class="btn btn-primary" href="../">Back to the house</a>
+            <a class="btn btn-ghost" href="../#fitting">Book a fitting →</a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-top">
+    <span class="foot-brand">Selvedge</span>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="../#cloth">The cloth</a><a href="../#measure">Your measure</a><a href="../#making">The making</a><a href="../#fitting">Book a fitting</a><a href="./" aria-current="page">Guide</a>
+    </nav>
+  </div>
+  <div class="wrap foot-bottom mono">
+    <span>© 2026 Selvedge — a design-showcase concept, not a real tailor. The house, the mills quoted, the prices and the ledger are fiction.</span>
+    <span>Designed &amp; built by Parable · <a href="../">Back to the house →</a></span>
+  </div>
+</footer>
+
+<script src="../main.js" defer></script>
+</body>
+</html>

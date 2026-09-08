@@ -1,0 +1,181 @@
+/* Базовые переменные */
+:root {
+  --bg-base: #12161c;
+  --glow-color: rgba(0, 255, 174, 0.15);
+  --text-color: #ffffffde;
+  --accent-color: #00ffae;
+  --accent-hover: #00e19a;
+  --box-dark: #1f2329;
+  --box-darker: #2c3137;
+  --radius: 12px;
+  --font-main: 'Geologica', sans-serif;
+}
+
+/* Основной фон и глобальные стили */
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-base);
+  color: var(--text-color);
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Фоновое свечение */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Контент поверх свечения */
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Заголовок */
+.header {
+  text-align: center;
+  padding: 20px 0;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/* Герой */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.1rem;
+  color: #ffffffb3;
+}
+
+/* Кнопка */
+.cta {
+  text-align: center;
+  margin: 40px 0;
+}
+.btn-primary {
+  padding: 14px 28px;
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Блок преимуществ */
+.features {
+  background-color: var(--box-dark);
+  padding: 50px 20px;
+}
+.features h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.feature-item {
+  background-color: var(--box-darker);
+  padding: 20px;
+  border-radius: var(--radius);
+  width: 260px;
+  text-align: center;
+}
+.feature-item h3 {
+  color: var(--accent-color);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.feature-item p {
+  color: #cccccc;
+  font-size: 1rem;
+}
+
+/* Бонусный блок */
+.bonus {
+  text-align: center;
+  padding: 60px 20px;
+}
+.bonus h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.bonus p {
+  font-size: 1.2rem;
+  color: #ffffffcc;
+  margin-bottom: 30px;
+}
+.highlight {
+  color: var(--accent-color);
+}
+.btn-secondary {
+  padding: 12px 25px;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  background-color: transparent;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background-color: var(--accent-color);
+  color: #000;
+}
+
+/* Подвал */
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  background-color: #0f1217;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .feature-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-item {
+    width: 100%;
+    max-width: 300px;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}

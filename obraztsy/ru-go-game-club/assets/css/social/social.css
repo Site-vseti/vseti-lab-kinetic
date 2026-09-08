@@ -1,0 +1,38 @@
+.social__list {
+  font-size: 0;
+}
+
+.social__item {
+  display: inline-block;
+  margin-right: 26px;
+}
+
+.social__item:last-child {
+  margin-right: 0;
+}
+
+.social__link {
+  display: block;
+  width: 50px;
+  height: 50px;
+  outline: 1px solid transparent;
+  outline-offset: 3px;
+  border-radius: 50%;
+  transition-property: color, outline-color;
+  transition-duration: 0.3s, 0.2s;
+  transition-timing-function: ease-in-out;
+  color: aliceblue;
+}
+
+.social__link:hover {
+  color: #CD06FF;
+}
+
+.social__link:active {
+  color: #840AA3;
+}
+
+.social__link:focus {
+  outline-color: #CD06FF;
+}
+

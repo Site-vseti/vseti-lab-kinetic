@@ -1,0 +1,11 @@
+@import "normalize.css";
+@import "global.css";
+@import "../css/banner/banner.css";
+@import "../css/halls/halls.css";
+@import "../css/booking/booking.css";
+@import "../css/about/about.css";
+@import "../css/faq/faq.css";
+@import "../css/address/address.css";
+@import "../css/blockquote/blockquote.css";
+@import "../css/social/social.css";
+@import "../css/contacts/contacts.css";

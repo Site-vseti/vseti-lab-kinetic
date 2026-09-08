@@ -1,0 +1,147 @@
+/* ==========================================================================
+   ANIMATIONS.CSS - CSS Keyframes and Transition Utilities
+   ========================================================================== */
+
+/* 1. Reveal Animations */
+.reveal-text {
+    overflow: hidden;
+    position: relative;
+}
+
+.reveal-text > span {
+    display: inline-block;
+    transform: translateY(100%);
+    transition: transform 0.8s cubic-bezier(0.15, 0.85, 0.3, 1);
+}
+
+.reveal-text.active > span {
+    transform: translateY(0);
+}
+
+/* 2. Fade In Up */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fade-in-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. Image Reveal with Mask */
+.img-reveal-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.img-reveal-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-secondary);
+    transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+    transform-origin: right;
+}
+
+.img-reveal-wrapper.active::after {
+    transform: scaleX(0);
+}
+
+.img-reveal-wrapper img {
+    transform: scale(1.2);
+    transition: transform 1.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.img-reveal-wrapper.active img {
+    transform: scale(1);
+}
+
+/* 4. Gold Border Glow Animation */
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                    0 0 0 rgba(201, 162, 39, 0);
+    }
+    50% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                    0 0 15px rgba(201, 162, 39, 0.3);
+    }
+    100% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                    0 0 0 rgba(201, 162, 39, 0);
+    }
+}
+
+.gold-glow-hover {
+    transition: var(--transition-smooth);
+}
+
+.gold-glow-hover:hover {
+    border-color: rgba(201, 162, 39, 0.4) !important;
+    animation: borderGlow 2s infinite ease-in-out;
+}
+
+/* 5. Heart Interaction Pulse */
+@keyframes heartPulse {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.3);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.heart-pulse {
+    animation: heartPulse 0.4s ease-in-out;
+}
+
+/* 6. Scroll Indicator Mouse Wheel */
+@keyframes scrollWheel {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(10px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.scroll-indicator-wheel {
+    animation: scrollWheel 1.8s infinite ease-in-out;
+}
+
+/* 7. Shimmer Effect for Loading / Skeleton */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer-bg {
+    background: linear-gradient(90deg, #1e1e1e 25%, #2a2a2a 50%, #1e1e1e 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+}

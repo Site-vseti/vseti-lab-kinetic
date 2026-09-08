@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ormecia | Ownership of History</title>
+  <meta name="description" content="Ormecia — A private institution for rare antiques, historical masterpieces, and auction-grade heritage objects. Curating the legacy of civilisation for discerning collectors." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ NAVIGATION ═══════════════════════════════ -->
+  <nav class="nav" id="main-nav" role="navigation" aria-label="Primary Navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Ormecia Home">Ormecia</a>
+      <ul class="nav__links" role="list">
+        <li><a href="#collections" class="nav__link">Collections</a></li>
+        <li><a href="#provenance" class="nav__link">Provenance</a></li>
+        <li><a href="#authentication" class="nav__link">Authentication</a></li>
+        <li><a href="#private-client" class="nav__link">Private Client</a></li>
+      </ul>
+      <button class="nav__menu-toggle" id="menu-toggle" aria-label="Open Navigation Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobile-menu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#collections" class="nav__link">Collections</a></li>
+        <li><a href="#provenance" class="nav__link">Provenance</a></li>
+        <li><a href="#authentication" class="nav__link">Authentication</a></li>
+        <li><a href="#private-client" class="nav__link">Private Client</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+    <section class="hero" aria-label="Hero — Ormecia Brand Introduction">
+      <div class="hero__backdrop">
+        <div class="hero__overlay"></div>
+        <div class="hero__grain"></div>
+      </div>
+      <div class="hero__content fade-in">
+        <p class="hero__eyebrow">Est. MCMXLVII · Geneva · London · Florence</p>
+        <h1 class="hero__wordmark">Ormecia</h1>
+        <div class="hero__divider-line" aria-hidden="true"></div>
+        <p class="hero__tagline">Ownership of History.</p>
+        <p class="hero__descriptor">A private institution for rare antiquities and heritage masterpieces,<br>curated for discerning collectors of extraordinary culture.</p>
+        <a href="#collections" class="btn btn--primary hero__cta">Explore the Collection</a>
+      </div>
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span class="hero__scroll-line"></span>
+        <span class="hero__scroll-label">Scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ TAXONOMY BAR ═══════════════════════════════ -->
+    <section class="taxonomy" id="categories" aria-label="Antique Category Navigation">
+      <div class="container">
+        <nav class="taxonomy__nav" role="navigation" aria-label="Category Filter">
+          <button class="taxonomy__item active" data-category="all">All Eras</button>
+          <button class="taxonomy__item" data-category="renaissance">Renaissance</button>
+          <button class="taxonomy__item" data-category="orient">Imperial Orient</button>
+          <button class="taxonomy__item" data-category="victorian">Victorian</button>
+          <button class="taxonomy__item" data-category="antiquity">Classical Antiquity</button>
+          <button class="taxonomy__item" data-category="islamic">Islamic Golden Age</button>
+          <button class="taxonomy__item" data-category="edo">Edo Japan</button>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ CURATED COLLECTIONS ═══════════════════════════════ -->
+    <section class="collections" id="collections" aria-labelledby="collections-heading">
+      <div class="container">
+        <header class="section-header fade-in">
+          <p class="section-label">Curated Collections</p>
+          <h2 class="section-title" id="collections-heading">Where Heritage<br>Finds its Collector</h2>
+        </header>
+        <div class="collections__grid">
+          <article class="collection-card fade-in" data-category="renaissance">
+            <a href="collection.html" class="collection-card__link" aria-label="View Renaissance Masters Collection">
+              <div class="collection-card__image-wrap">
+                <div class="collection-card__image collection-card__image--renaissance"></div>
+                <div class="collection-card__hover-overlay" aria-hidden="true"></div>
+              </div>
+              <div class="collection-card__body">
+                <p class="collection-card__number">01</p>
+                <h3 class="collection-card__title">Renaissance Masters</h3>
+                <p class="collection-card__desc">Florentine court objects, papal commissions & Medici-era metalwork from 1400–1600.</p>
+                <span class="collection-card__link-text">View Collection <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </article>
+
+          <article class="collection-card fade-in collection-card--tall" data-category="orient">
+            <a href="collection.html" class="collection-card__link" aria-label="View Imperial Orient Collection">
+              <div class="collection-card__image-wrap">
+                <div class="collection-card__image collection-card__image--orient"></div>
+                <div class="collection-card__hover-overlay" aria-hidden="true"></div>
+              </div>
+              <div class="collection-card__body">
+                <p class="collection-card__number">02</p>
+                <h3 class="collection-card__title">Imperial Orient</h3>
+                <p class="collection-card__desc">Ming dynasty bronzes, Qing imperial porcelain & Mughal court treasures of unparalleled provenance.</p>
+                <span class="collection-card__link-text">View Collection <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </article>
+
+          <article class="collection-card fade-in" data-category="victorian">
+            <a href="collection.html" class="collection-card__link" aria-label="View Victorian Grandeur Collection">
+              <div class="collection-card__image-wrap">
+                <div class="collection-card__image collection-card__image--victorian"></div>
+                <div class="collection-card__hover-overlay" aria-hidden="true"></div>
+              </div>
+              <div class="collection-card__body">
+                <p class="collection-card__number">03</p>
+                <h3 class="collection-card__title">Victorian Grandeur</h3>
+                <p class="collection-card__desc">English estate furniture, Staffordshire enamelware & empire-era silver from 1837–1901.</p>
+                <span class="collection-card__link-text">View Collection <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ HERITAGE NARRATIVE ═══════════════════════════════ -->
+    <section class="heritage" id="provenance" aria-label="Heritage Narrative">
+      <div class="heritage__inner">
+        <div class="heritage__accent-line" aria-hidden="true"></div>
+        <div class="heritage__content fade-in">
+          <p class="section-label">Our Philosophy</p>
+          <blockquote class="heritage__quote">
+            "Each piece carries<br>the weight of centuries."
+          </blockquote>
+          <p class="heritage__body">
+            Ormecia was founded upon a singular belief: that the most profound objects ever created by human hands deserve more than a transaction. They deserve a reckoning. We do not simply sell antiques — we restore their rightful place in the narrative of civilisation, connecting each artifact with a collector worthy of its legacy.
+          </p>
+          <p class="heritage__body">
+            Our curators work with the world's leading archivists, metallurgists, and art historians to ensure every piece in the Ormecia collection arrives with complete, verifiable provenance documentation — spanning from its creation to its current moment of acquisition.
+          </p>
+          <a href="#authentication" class="btn btn--secondary">Our Authentication Process</a>
+        </div>
+        <div class="heritage__stat-column fade-in">
+          <div class="heritage__stat">
+            <span class="heritage__stat-number">1,200<span class="heritage__stat-plus">+</span></span>
+            <span class="heritage__stat-label">Artifacts Authenticated</span>
+          </div>
+          <div class="heritage__stat">
+            <span class="heritage__stat-number">78<span class="heritage__stat-plus">+</span></span>
+            <span class="heritage__stat-label">Years of Curatorial Excellence</span>
+          </div>
+          <div class="heritage__stat">
+            <span class="heritage__stat-number">43</span>
+            <span class="heritage__stat-label">Countries of Origin</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ MASTERPIECE SPOTLIGHT ═══════════════════════════════ -->
+    <section class="spotlight" aria-label="Signature Masterpiece Spotlight">
+      <div class="container">
+        <header class="section-header fade-in">
+          <p class="section-label">Signature Masterpiece</p>
+          <h2 class="section-title" id="spotlight-heading">The Collector's<br>Choice This Season</h2>
+        </header>
+        <div class="spotlight__layout">
+          <div class="spotlight__image-column fade-in">
+            <div class="spotlight__image-frame">
+              <div class="spotlight__image spotlight__image--clock"></div>
+              <div class="spotlight__image-caption" aria-hidden="true">
+                <span>LOT 0031</span>
+                <span>The Versailles Mantle Clock, c. 1774</span>
+              </div>
+            </div>
+            <div class="spotlight__auth-badge" aria-label="Ormecia Authentication Badge">
+              <div class="auth-badge">
+                <span class="auth-badge__seal" aria-hidden="true">◈</span>
+                <div class="auth-badge__text">
+                  <span class="auth-badge__title">Ormecia Certified</span>
+                  <span class="auth-badge__sub">Authentication No. ORM-2024-0031</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="spotlight__content-column fade-in">
+            <p class="spotlight__lot">Lot 0031 · French Empire</p>
+            <h3 class="spotlight__title">The Versailles<br>Mantle Clock</h3>
+            <p class="spotlight__era">Paris, c. 1774 · Attrib. to Pierre-Philippe Thomire</p>
+            <p class="spotlight__story">
+              Acquired from a private château in the Loire Valley, this exceptional ormolu and patinated bronze mantle clock bears all hallmarks of the Royal Manufacture period. Its movement, signed by the horologist Berthoud, has been conserved to full working condition. A document chain links this piece to the household of the Duchess of Orléans, establishing one of the most complete provenances in Ormecia's modern history.
+            </p>
+            <dl class="spotlight__details">
+              <div class="spotlight__detail-row">
+                <dt>Medium</dt><dd>Ormolu, Patinated Bronze, White Marble</dd>
+              </div>
+              <div class="spotlight__detail-row">
+                <dt>Dimensions</dt><dd>52 × 34 × 18 cm</dd>
+              </div>
+              <div class="spotlight__detail-row">
+                <dt>Condition</dt><dd>Museum Grade — Fully Operational</dd>
+              </div>
+              <div class="spotlight__detail-row">
+                <dt>Provenance</dt><dd>Château de la Brêtesche, Loire Valley</dd>
+              </div>
+            </dl>
+            <div class="spotlight__acquisition">
+              <p class="spotlight__price-label">Acquisition Price</p>
+              <p class="spotlight__price">Upon Request</p>
+              <a href="product.html" class="btn btn--primary">Private Collector Inquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ CRAFTSMANSHIP EDITORIAL ═══════════════════════════════ -->
+    <section class="craftsmanship" aria-label="Craftsmanship Process Editorial">
+      <div class="container">
+        <header class="section-header fade-in">
+          <p class="section-label">The Ormecia Method</p>
+          <h2 class="section-title">Authentication &amp;<br>Curation Process</h2>
+        </header>
+        <div class="craftsmanship__steps">
+          <div class="craftsmanship__step fade-in">
+            <div class="craftsmanship__step-number" aria-hidden="true">I</div>
+            <h3 class="craftsmanship__step-title">Discovery &amp; Acquisition</h3>
+            <p class="craftsmanship__step-body">Our international network of scholars, estate curators, and auction specialists surface objects of exceptional rarity from private collections, dormant estates, and institutional deaccessions across five continents.</p>
+          </div>
+          <div class="craftsmanship__step fade-in">
+            <div class="craftsmanship__step-number" aria-hidden="true">II</div>
+            <h3 class="craftsmanship__step-title">Forensic Authentication</h3>
+            <p class="craftsmanship__step-body">Every artifact undergoes metallurgical analysis, dendrochronology, pigment spectroscopy, and X-ray fluorescence examination — methods reserved for the world's foremost museum institutions.</p>
+          </div>
+          <div class="craftsmanship__step fade-in">
+            <div class="craftsmanship__step-number" aria-hidden="true">III</div>
+            <h3 class="craftsmanship__step-title">Archival Research</h3>
+            <p class="craftsmanship__step-body">Provenance investigators document the complete ownership chain — from commission or excavation through every subsequent collection, auction, and private transfer — creating an irrefutable historical record.</p>
+          </div>
+          <div class="craftsmanship__step fade-in">
+            <div class="craftsmanship__step-number" aria-hidden="true">IV</div>
+            <h3 class="craftsmanship__step-title">Collector Acquisition</h3>
+            <p class="craftsmanship__step-body">Acquisition is conducted through our Private Client Service — a discreet, white-glove transaction process including independent legal transfer, customs clearance, and specialist installation services.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ AUCTION LISTINGS ═══════════════════════════════ -->
+    <section class="listings" id="listings" aria-labelledby="listings-heading">
+      <div class="container">
+        <header class="section-header fade-in">
+          <p class="section-label">Current Listings</p>
+          <h2 class="section-title" id="listings-heading">Available for<br>Acquisition</h2>
+        </header>
+        <div class="listings__grid">
+
+          <article class="listing-card fade-in" aria-label="Lot 0047 — The Medici Ceremonial Ewer">
+            <a href="product.html" class="listing-card__link">
+              <div class="listing-card__image listing-card__image--ewer"></div>
+              <div class="listing-card__body">
+                <div class="listing-card__meta">
+                  <span class="listing-card__lot">Lot 0047</span>
+                  <span class="listing-card__era-tag">Italian Renaissance</span>
+                </div>
+                <h3 class="listing-card__title">The Medici Ceremonial Ewer</h3>
+                <p class="listing-card__origin">Florence, c. 1465</p>
+                <div class="listing-card__estimate">
+                  <span class="listing-card__estimate-label">Estimate</span>
+                  <span class="listing-card__estimate-value">£180,000 – £240,000</span>
+                </div>
+                <div class="listing-card__timer" data-end="2025-04-15T18:00:00Z" aria-live="polite">
+                  <span class="listing-card__timer-label">Bidding closes in</span>
+                  <span class="listing-card__timer-value" id="timer-0047">Calculating...</span>
+                </div>
+                <span class="listing-card__cta">Bid Now <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </article>
+
+          <article class="listing-card fade-in" aria-label="Lot 0048 — Attic Red-Figure Hydria">
+            <a href="product.html" class="listing-card__link">
+              <div class="listing-card__image listing-card__image--hydria"></div>
+              <div class="listing-card__body">
+                <div class="listing-card__meta">
+                  <span class="listing-card__lot">Lot 0048</span>
+                  <span class="listing-card__era-tag">Classical Antiquity</span>
+                </div>
+                <h3 class="listing-card__title">Attic Red-Figure Hydria</h3>
+                <p class="listing-card__origin">Athens, c. 420 BCE</p>
+                <div class="listing-card__estimate">
+                  <span class="listing-card__estimate-label">Estimate</span>
+                  <span class="listing-card__estimate-value">£95,000 – £130,000</span>
+                </div>
+                <div class="listing-card__timer" data-end="2025-04-22T18:00:00Z" aria-live="polite">
+                  <span class="listing-card__timer-label">Bidding closes in</span>
+                  <span class="listing-card__timer-value" id="timer-0048">Calculating...</span>
+                </div>
+                <span class="listing-card__cta">Bid Now <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </article>
+
+          <article class="listing-card fade-in" aria-label="Lot 0049 — 15th Century Milanese Gauntlet">
+            <a href="product.html" class="listing-card__link">
+              <div class="listing-card__image listing-card__image--gauntlet"></div>
+              <div class="listing-card__body">
+                <div class="listing-card__meta">
+                  <span class="listing-card__lot">Lot 0049</span>
+                  <span class="listing-card__era-tag">Medieval Armour</span>
+                </div>
+                <h3 class="listing-card__title">Milanese Articulated Gauntlet</h3>
+                <p class="listing-card__origin">Milan, c. 1480</p>
+                <div class="listing-card__estimate">
+                  <span class="listing-card__estimate-label">Estimate</span>
+                  <span class="listing-card__estimate-value">£62,000 – £85,000</span>
+                </div>
+                <div class="listing-card__timer" data-end="2025-04-29T18:00:00Z" aria-live="polite">
+                  <span class="listing-card__timer-label">Bidding closes in</span>
+                  <span class="listing-card__timer-value" id="timer-0049">Calculating...</span>
+                </div>
+                <span class="listing-card__cta">Bid Now <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </article>
+
+          <article class="listing-card fade-in" aria-label="Lot 0050 — George III Marquetry Table">
+            <a href="product.html" class="listing-card__link">
+              <div class="listing-card__image listing-card__image--table"></div>
+              <div class="listing-card__body">
+                <div class="listing-card__meta">
+                  <span class="listing-card__lot">Lot 0050</span>
+                  <span class="listing-card__era-tag">Georgian England</span>
+                </div>
+                <h3 class="listing-card__title">George III Marquetry Table</h3>
+                <p class="listing-card__origin">London, c. 1790</p>
+                <div class="listing-card__estimate">
+                  <span class="listing-card__estimate-label">Estimate</span>
+                  <span class="listing-card__estimate-value">£38,000 – £55,000</span>
+                </div>
+                <div class="listing-card__timer" data-end="2025-05-06T18:00:00Z" aria-live="polite">
+                  <span class="listing-card__timer-label">Bidding closes in</span>
+                  <span class="listing-card__timer-value" id="timer-0050">Calculating...</span>
+                </div>
+                <span class="listing-card__cta">Bid Now <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </article>
+
+        </div>
+        <div class="listings__footer fade-in">
+          <a href="collection.html" class="btn btn--secondary">View All Listings</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ TESTIMONIALS ═══════════════════════════════ -->
+    <section class="testimonials" aria-label="Collector Testimonials">
+      <div class="container">
+        <div class="testimonials__inner fade-in">
+          <div class="testimonials__quote-mark" aria-hidden="true">"</div>
+          <div class="testimonials__carousel" id="testimonials-carousel">
+            <blockquote class="testimonial active" aria-label="Testimonial from H.M., Geneva">
+              <p class="testimonial__text">Ormecia does not merely sell objects — they restore one's relationship with history. The provenance documentation for the Tang dynasty horse I acquired was more thorough than anything I have encountered in forty years of collecting.</p>
+              <footer class="testimonial__footer">
+                <cite class="testimonial__cite">H.M. — Geneva, Private Collection</cite>
+              </footer>
+            </blockquote>
+            <blockquote class="testimonial" aria-label="Testimonial from D.R., New York" hidden>
+              <p class="testimonial__text">I have worked with the great auction houses of London and New York. None approach the discretion, scholarship, and singular aesthetic sense that defines every interaction with Ormecia. They are in a category of their own.</p>
+              <footer class="testimonial__footer">
+                <cite class="testimonial__cite">D.R. — New York, Family Estate</cite>
+              </footer>
+            </blockquote>
+            <blockquote class="testimonial" aria-label="Testimonial from A.K., Dubai" hidden>
+              <p class="testimonial__text">The Mughal court dagger arrived within museum-standard transit casing, with a 47-page provenance dossier. This is the standard I expect of cultural stewardship. Ormecia sets an entirely different precedent.</p>
+              <footer class="testimonial__footer">
+                <cite class="testimonial__cite">A.K. — Dubai, Heritage Foundation</cite>
+              </footer>
+            </blockquote>
+          </div>
+          <nav class="testimonials__nav" aria-label="Testimonial Navigation">
+            <button class="testimonials__dot active" data-index="0" aria-label="View testimonial 1" aria-current="true"></button>
+            <button class="testimonials__dot" data-index="1" aria-label="View testimonial 2"></button>
+            <button class="testimonials__dot" data-index="2" aria-label="View testimonial 3"></button>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ AUTHENTICATION ═══════════════════════════════ -->
+    <section class="authentication" id="authentication" aria-labelledby="auth-heading">
+      <div class="container">
+        <div class="authentication__layout">
+          <div class="authentication__content fade-in">
+            <p class="section-label">Authenticity Guaranteed</p>
+            <h2 class="authentication__title" id="auth-heading">The Ormecia Authentication Standard</h2>
+            <p class="authentication__body">
+              Every artifact in our collection carries an Ormecia Authentication Certificate — a legally binding document issued after a minimum 90-day verification process conducted by our independent panel of international scholars.
+            </p>
+            <ul class="authentication__list" role="list">
+              <li class="authentication__item">
+                <span class="authentication__item-marker" aria-hidden="true">◆</span>
+                Metallurgical &amp; Material Analysis
+              </li>
+              <li class="authentication__item">
+                <span class="authentication__item-marker" aria-hidden="true">◆</span>
+                Carbon Dating &amp; Dendrochronology
+              </li>
+              <li class="authentication__item">
+                <span class="authentication__item-marker" aria-hidden="true">◆</span>
+                Stylistic &amp; Art Historical Review
+              </li>
+              <li class="authentication__item">
+                <span class="authentication__item-marker" aria-hidden="true">◆</span>
+                Complete Chain of Provenance Documentation
+              </li>
+              <li class="authentication__item">
+                <span class="authentication__item-marker" aria-hidden="true">◆</span>
+                Digital Certificate with Blockchain Registration
+              </li>
+            </ul>
+          </div>
+          <div class="authentication__certificate fade-in" aria-label="Sample Ormecia Certificate">
+            <div class="certificate">
+              <div class="certificate__header">
+                <p class="certificate__brand">Ormecia</p>
+                <p class="certificate__sub">Certificate of Authenticity</p>
+              </div>
+              <div class="certificate__seal" aria-hidden="true">◈</div>
+              <div class="certificate__body">
+                <div class="certificate__row">
+                  <span class="certificate__key">Object</span>
+                  <span class="certificate__val">The Medici Ceremonial Ewer</span>
+                </div>
+                <div class="certificate__row">
+                  <span class="certificate__key">Origin</span>
+                  <span class="certificate__val">Florence, c. 1465</span>
+                </div>
+                <div class="certificate__row">
+                  <span class="certificate__key">Classification</span>
+                  <span class="certificate__val">Authentic — Italian Renaissance</span>
+                </div>
+                <div class="certificate__row">
+                  <span class="certificate__key">Certificate No.</span>
+                  <span class="certificate__val">ORM-2024-0047</span>
+                </div>
+                <div class="certificate__row">
+                  <span class="certificate__key">Blockchain Ref.</span>
+                  <span class="certificate__val">0x3a4f…c9d2</span>
+                </div>
+              </div>
+              <div class="certificate__footer">
+                <div class="certificate__sig-line" aria-hidden="true"></div>
+                <p class="certificate__sig-name">Dr. Elara Montague, FSA</p>
+                <p class="certificate__sig-title">Chief Curator, Ormecia Fine Arts</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ PRIVATE CLIENT ═══════════════════════════════ -->
+    <section class="private-client" id="private-client" aria-labelledby="pc-heading">
+      <div class="private-client__inner fade-in">
+        <div class="private-client__content">
+          <p class="section-label">For Collectors of Distinction</p>
+          <h2 class="private-client__title" id="pc-heading">The Ormecia<br>Private Client Service</h2>
+          <p class="private-client__body">Reserved for collectors seeking objects not publicly listed. Our Private Client Service provides discreet access to the most exceptional artifacts in our portfolio — including pieces pending authentication, estate consignments, and objects acquired through closed negotiations.</p>
+          <div class="private-client__form-wrap">
+            <form class="invite-form" id="invite-form" novalidate aria-label="Private Client Invitation Request">
+              <div class="invite-form__field">
+                <label class="invite-form__label" for="invite-name">Full Name</label>
+                <input class="invite-form__input" type="text" id="invite-name" name="name" autocomplete="name" placeholder="Your full name" required />
+              </div>
+              <div class="invite-form__field">
+                <label class="invite-form__label" for="invite-email">Email Address</label>
+                <input class="invite-form__input" type="email" id="invite-email" name="email" autocomplete="email" placeholder="Your private email" required />
+              </div>
+              <div class="invite-form__field">
+                <label class="invite-form__label" for="invite-interest">Area of Collection</label>
+                <select class="invite-form__input invite-form__select" id="invite-interest" name="interest">
+                  <option value="" disabled selected>Select your primary interest</option>
+                  <option value="classical">Classical Antiquity</option>
+                  <option value="renaissance">Renaissance &amp; Baroque</option>
+                  <option value="orient">Imperial Orient</option>
+                  <option value="islamic">Islamic Golden Age</option>
+                  <option value="victorian">Victorian &amp; Georgian</option>
+                  <option value="precolumbian">Pre-Columbian</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn--primary invite-form__submit" id="invite-submit">Request Private Access</button>
+              <p class="invite-form__disclaimer">All inquiries are handled with strict confidentiality. Your information is never shared.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__wordmark" aria-label="Ormecia Home">Ormecia</a>
+          <p class="footer__brand-desc">A private institution for rare antiques and heritage masterpieces. Est. MCMXLVII.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer Navigation">
+          <div class="footer__nav-col">
+            <p class="footer__nav-heading">Collections</p>
+            <ul role="list">
+              <li><a href="collection.html" class="footer__nav-link">Renaissance Masters</a></li>
+              <li><a href="collection.html" class="footer__nav-link">Imperial Orient</a></li>
+              <li><a href="collection.html" class="footer__nav-link">Victorian Grandeur</a></li>
+              <li><a href="collection.html" class="footer__nav-link">Classical Antiquity</a></li>
+              <li><a href="collection.html" class="footer__nav-link">Islamic Golden Age</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-col">
+            <p class="footer__nav-heading">Services</p>
+            <ul role="list">
+              <li><a href="#provenance" class="footer__nav-link">Provenance</a></li>
+              <li><a href="#authentication" class="footer__nav-link">Authentication</a></li>
+              <li><a href="#private-client" class="footer__nav-link">Private Client</a></li>
+              <li><a href="#" class="footer__nav-link">Estate Consignment</a></li>
+              <li><a href="#" class="footer__nav-link">Museum Loans</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-col">
+            <p class="footer__nav-heading">Institution</p>
+            <ul role="list">
+              <li><a href="#" class="footer__nav-link">Archives</a></li>
+              <li><a href="#" class="footer__nav-link">Terms of Acquisition</a></li>
+              <li><a href="#" class="footer__nav-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer__nav-link">Contact Curator</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">© MMXXIV Ormecia Fine Arts. All Rights Reserved. Registered in Geneva, Switzerland.</p>
+        <p class="footer__locations">Geneva · London · Florence · New York · Dubai</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

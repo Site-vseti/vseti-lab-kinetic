@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en" data-theme="light" data-astro-cid-5tcejxga> <head>
+<meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script>
+  document.documentElement.classList.add('js');
+  try { var t = localStorage.getItem('vitrine-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script><title>How Vitrine was built — Parable build guide</title><meta name="description" content="A build guide for Vitrine: the idea, the Astro stack, the gallery-wall parallax and the SVG floor-plan navigator, the details that matter, and how to ship it on GitHub Pages."><meta name="robots" content="index,follow"><meta name="theme-color" content="#f5f3ee"><meta name="color-scheme" content="light dark"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='4' width='24' height='24' fill='none' stroke='%233b4de0' stroke-width='3'/%3E%3Crect x='11' y='11' width='10' height='10' fill='%233b4de0'/%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/vitrine/_astro/guide.DTdV4DMV.css">
+<style>.doc[data-astro-cid-5tcejxga]{width:min(100% - 2.4rem,820px);margin:2.4rem auto 5rem;position:relative;z-index:1}.doc-back[data-astro-cid-5tcejxga]{display:inline-flex;align-items:center;gap:.4rem;color:var(--dim);text-decoration:none;font-size:.86rem;margin-bottom:1.6rem}.doc-back[data-astro-cid-5tcejxga]:hover{color:var(--ink)}.doc[data-astro-cid-5tcejxga] h1[data-astro-cid-5tcejxga]{font-size:clamp(2.2rem,5vw,3.4rem);margin:.4rem 0 .3rem}.doc[data-astro-cid-5tcejxga] .lede[data-astro-cid-5tcejxga]{margin-bottom:2.4rem}.doc[data-astro-cid-5tcejxga] h2[data-astro-cid-5tcejxga]{font-size:clamp(1.4rem,3vw,1.9rem);margin:2.6rem 0 .6rem}.doc[data-astro-cid-5tcejxga] p[data-astro-cid-5tcejxga]{color:var(--dim);margin:.7rem 0}.doc[data-astro-cid-5tcejxga] p[data-astro-cid-5tcejxga] strong[data-astro-cid-5tcejxga]{color:var(--ink);font-weight:600}.doc[data-astro-cid-5tcejxga] ul[data-astro-cid-5tcejxga]{color:var(--dim);padding-left:1.1rem;margin:.7rem 0}.doc[data-astro-cid-5tcejxga] li[data-astro-cid-5tcejxga]{margin:.35rem 0}.doc[data-astro-cid-5tcejxga] li[data-astro-cid-5tcejxga] strong[data-astro-cid-5tcejxga]{color:var(--ink)}pre[data-astro-cid-5tcejxga]{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;overflow-x:auto;margin:1rem 0}code[data-astro-cid-5tcejxga]{font-family:var(--font-m);font-size:.82rem}pre[data-astro-cid-5tcejxga] code[data-astro-cid-5tcejxga]{color:var(--ink);line-height:1.6}.tag-row[data-astro-cid-5tcejxga]{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0}.tag-row[data-astro-cid-5tcejxga] span[data-astro-cid-5tcejxga]{font-family:var(--font-m);font-size:.72rem;padding:.3rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--dim)}.callout[data-astro-cid-5tcejxga]{border-left:3px solid var(--accent);background:color-mix(in oklab,var(--cobalt) 6%,transparent);padding:.9rem 1.1rem;border-radius:0 10px 10px 0;margin:1.4rem 0}.callout[data-astro-cid-5tcejxga] p[data-astro-cid-5tcejxga]{margin:0;color:var(--ink)}
+</style></head> <body data-astro-cid-5tcejxga> <div class="film" aria-hidden="true" data-astro-cid-5tcejxga></div> <a class="skip" href="#main" data-astro-cid-5tcejxga>Skip to content</a> <main class="doc" id="main" data-astro-cid-5tcejxga> <a class="doc-back" href="/vitrine/" data-astro-cid-5tcejxga>← Back to Vitrine</a> <p class="eyebrow mono" data-astro-cid-5tcejxga>[ Parable build guide ]</p> <h1 data-astro-cid-5tcejxga>How Vitrine was built</h1> <p class="lede" data-astro-cid-5tcejxga>A temporary exhibition, hung on the web. The signature is a pair:
+<strong data-astro-cid-5tcejxga>gallery-wall parallax</strong> — framed works drifting at different depths as you
+    scroll, like walking past a hung wall — and an <strong data-astro-cid-5tcejxga>SVG floor plan that is also the
+    navigation</strong>, with a visitor dot that keeps your place.</p> <div class="tag-row" data-astro-cid-5tcejxga> <span data-astro-cid-5tcejxga>Astro 5 · static output</span><span data-astro-cid-5tcejxga>zero client framework</span><span data-astro-cid-5tcejxga>inline SVG paintings</span><span data-astro-cid-5tcejxga>Playfair Display / Inter / Space Mono</span><span data-astro-cid-5tcejxga>light + dark</span><span data-astro-cid-5tcejxga>reduced-motion aware</span> </div> <h2 data-astro-cid-5tcejxga>The idea</h2> <p data-astro-cid-5tcejxga>Museums already solved this layout problem on real walls: big type on the title wall, works
+    in a deliberate order, a plan by the door, a label beside every frame. Vitrine borrows the
+    whole system. The exhibition is fictional — eleven invented painters converging on one blue —
+    but every convention is real: wall text written in curatorial voice, plaques with medium and
+    lender, room numerals, timed entry.</p> <p data-astro-cid-5tcejxga>The one thing a web page has that a wall doesn't is scroll. So scroll became the walk:
+    works hang at different depths and drift past each other as you move, and the floor plan
+    tracks which room you're standing in.</p> <h2 data-astro-cid-5tcejxga>The stack</h2> <p data-astro-cid-5tcejxga>An Astro 5 project that renders to plain static HTML — no client framework, no islands.
+    The paintings are inline SVG (an <code data-astro-cid-5tcejxga>Artwork.astro</code> component with ten hand-drawn
+    variants), the plan is inline SVG, and all interactivity is one vanilla script inlined into
+    the page. Astro earns its keep as a templating layer: the works are a data array in
+    frontmatter, so a wall is a <code data-astro-cid-5tcejxga>map()</code> and a plaque is a component slot, and the
+    whole show rebuilds from data.</p> <p data-astro-cid-5tcejxga>Type is Playfair Display — a didone with real wall-text authority — with Inter for body and
+    Space Mono for everything a museum sets in small caps: dates, mediums, lenders, room names.</p> <h2 data-astro-cid-5tcejxga>Signature technique — the wall that walks with you</h2> <p data-astro-cid-5tcejxga>Each framed work — and each room's giant watermark numeral, hung deepest of all — carries a
+<code data-astro-cid-5tcejxga>data-depth</code> between −0.06 and +0.08. On scroll, the element is offset by its
+    distance from the viewport's centre times that depth — positive depths drift down as you
+    approach (hung close), negative drift up (hung deep). The trick that keeps
+    it honest: <strong data-astro-cid-5tcejxga>measure layout from <code data-astro-cid-5tcejxga>offsetTop</code>, not
+<code data-astro-cid-5tcejxga>getBoundingClientRect()</code></strong>. Rects include the transform you just applied,
+    which feeds back into the next frame; offset chains never do.</p> <pre data-astro-cid-5tcejxga><code>const measure = () => {
+  for (const w of works) {
+    let y = 0, n = w.el;
+    while (n) { y += n.offsetTop; n = n.offsetParent; }
+    w.mid = y + w.el.offsetHeight / 2;   // layout truth — transforms can't pollute it
+  }
+};
+const drift = () => {
+  const mid = scrollY + innerHeight / 2;
+  for (const w of works)
+    w.el.style.transform =
+      'translate3d(0,' + ((mid - w.mid) * w.depth).toFixed(1) + 'px,0)';
+};</code></pre> <p data-astro-cid-5tcejxga>Writes are batched through one <code data-astro-cid-5tcejxga>requestAnimationFrame</code> per scroll event, and the
+    set is re-measured on resize and after webfonts load (fonts change layout height).</p> <p data-astro-cid-5tcejxga>The floor plan is the same idea in reverse. Each room on the SVG plan is a real
+<code data-astro-cid-5tcejxga>&lt;a href="#room-i"&gt;</code> — keyboard-focusable, functional with JavaScript
+    disabled. JS upgrades it: smooth scroll, and an <code data-astro-cid-5tcejxga>IntersectionObserver</code> whose
+<code data-astro-cid-5tcejxga>rootMargin: '-35% 0px -55% 0px'</code> collapses the viewport to a band across its
+    middle, so whichever room section crosses that band is "where you are". The visitor dot walks
+    the plan to match via a CSS transition on its transform.</p> <h2 data-astro-cid-5tcejxga>Details that matter</h2> <ul data-astro-cid-5tcejxga> <li data-astro-cid-5tcejxga><strong data-astro-cid-5tcejxga>The paintings keep their pigment.</strong> Theme tokens flip the walls, frames
+      and mats between the daylit gallery and the evening hang — but the SVG works use fixed
+      colours. The lighting changes; the paintings don't.</li> <li data-astro-cid-5tcejxga><strong data-astro-cid-5tcejxga>Content is never hidden without JS.</strong> Reveals and the hero rise are gated
+      behind a <code data-astro-cid-5tcejxga>.js</code> class set synchronously in <code data-astro-cid-5tcejxga>&lt;head&gt;</code>. No
+      JavaScript, no blank page — and the plan still navigates, because its rooms are anchors.</li> <li data-astro-cid-5tcejxga><strong data-astro-cid-5tcejxga>Reduced motion stands still.</strong> Under <code data-astro-cid-5tcejxga>prefers-reduced-motion</code>
+the parallax loop never starts, reveals resolve instantly, the dot's pulse ring is removed,
+      and plan navigation scrolls without animation. Everything works; nothing drifts.</li> <li data-astro-cid-5tcejxga><strong data-astro-cid-5tcejxga>Base-path discipline.</strong> Every internal link goes through
+<code data-astro-cid-5tcejxga>import.meta.env.BASE_URL</code>, so the site works at
+<code data-astro-cid-5tcejxga>/vitrine/</code> on GitHub Pages and at <code data-astro-cid-5tcejxga>/</code> in dev without edits.</li> <li data-astro-cid-5tcejxga><strong data-astro-cid-5tcejxga>Plaques are alt text done twice.</strong> The visible plaque says what a label
+      says (artist, title, medium, lender); each SVG's <code data-astro-cid-5tcejxga>aria-label</code> says what a
+      visitor sees. Different jobs, both done.</li> </ul> <div class="callout" data-astro-cid-5tcejxga><p data-astro-cid-5tcejxga>The timed-entry form is a demo — it validates and confirms in place but
+    books nothing. Wire it to a ticketing service or your own endpoint before selling entry to an
+    exhibition that exists.</p></div> <h2 data-astro-cid-5tcejxga>Ship it on GitHub Pages</h2> <p data-astro-cid-5tcejxga>The Astro config sets <code data-astro-cid-5tcejxga>base: '/vitrine'</code> and builds into <code data-astro-cid-5tcejxga>./docs</code>, so
+    Pages can serve straight from the main branch with no action or workflow.</p> <pre data-astro-cid-5tcejxga><code>npm run build          # writes the static site to ./docs
+git add -A && git commit -m "build"
+gh repo create bswxyz/vitrine --public --source . --push
+gh api --method POST /repos/bswxyz/vitrine/pages \
+  -f 'source[branch]=main' -f 'source[path]=/docs'</code></pre> <p data-astro-cid-5tcejxga>The empty <code data-astro-cid-5tcejxga>public/.nojekyll</code> ships with the build and keeps Pages from running
+    the output through Jekyll.</p> <a class="doc-back" href="/vitrine/" style="margin-top:2.6rem" data-astro-cid-5tcejxga>← Back to Vitrine</a> </main> </body></html>

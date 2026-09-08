@@ -350,6 +350,37 @@ html.rm .statement .big .w,html.rm .contact .bigline .w{--w:650!important}
 
 /* --- переключатели тебиз и языка в шапке --- */
 .hdr-tools{display:flex;align-items:center;gap:8px}
+.abtn span{font-family:var(--disp);font-weight:700;font-size:13px;line-height:1;letter-spacing:.01em}
+#hc[aria-pressed="true"]{border-color:var(--gold);color:var(--gold)}
+body{zoom:var(--fs,1)}
+@media (max-width:760px){.abtn{width:36px;height:36px}}
+
+/* режим для слабовидящих: убираем фотофоны и полупрозрачность, поднимаем контраст */
+html.hc{--bg:#000;--bg2:#000;--ink:#fff;--mute:#fff;--dim:#e6e6e6;--tif:#ffe14d;--tif2:#ffe14d;
+--gold:#ffe14d;--gold2:#ffe14d;--line:#fff;--g1:#000;--g2:#000;--g3:#000}
+html.hc.light{--bg:#fff;--bg2:#fff;--ink:#000;--mute:#000;--dim:#1a1a1a;--tif:#7a4d00;--tif2:#7a4d00;
+--gold:#7a4d00;--gold2:#7a4d00;--line:#000;--g1:#fff;--g2:#fff;--g3:#fff}
+html.hc body{background:var(--bg);color:var(--ink)}
+html.hc .hero-bg,html.hc .hero-veil,html.hc .ghost,html.hc .sec-bg,html.hc .bokeh,html.hc .depth{display:none!important}
+html.hc .svc-sec::before,html.hc .svc-sec::after{display:none!important}
+html.hc *{text-shadow:none!important;box-shadow:none!important;backdrop-filter:none!important}
+html.hc .btn,html.hc .tbtn,html.hc .card,html.hc .c,html.hc .tile,html.hc .rev,html.hc .plan{
+border:2px solid var(--line)!important;background:var(--bg)!important;color:var(--ink)!important}
+html.hc .btn-gold{background:var(--gold)!important;color:var(--bg)!important;border-color:var(--gold)!important}
+html.hc a{text-decoration:underline}
+html.hc .nav a,html.hc .brand,html.hc .btn{text-decoration:none}
+html.hc :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+html.hc p,html.hc li,html.hc .lead,html.hc .about,html.hc small,html.hc .cap small,
+html.hc .eyebrow,html.hc .t,html.hc .a,html.hc .lbl,html.hc .n,html.hc blockquote{color:var(--ink)!important;opacity:1!important}
+html.hc .chip,html.hc .pill,html.hc .tag,html.hc .bot,html.hc .badge,html.hc .step,html.hc .s,html.hc .sec-head>div{
+border-color:var(--gold)!important;color:var(--ink)!important}
+html.hc [class*="chip"],html.hc [class*="tag"],html.hc [class*="pill"],html.hc [class*="badge"]{
+border:2px solid var(--gold)!important;background:var(--bg)!important;color:var(--ink)!important;opacity:1!important}
+html.hc .card,html.hc .c,html.hc .tile,html.hc .rev,html.hc .plan{border-width:2px!important;border-color:var(--gold)!important}
+html.hc body :where(p,span,li,small,em,b,strong,h1,h2,h3,h4,figcaption,blockquote,td,th,div){
+color:var(--ink)!important;opacity:1!important}
+html.hc .tif,html.hc .gold,html.hc .eyebrow,html.hc .eyebrow *{color:var(--gold)!important;opacity:1!important}
+html.hc .btn-gold,html.hc .btn-gold *{color:var(--bg)!important}
 .tbtn{width:40px;height:40px;border-radius:999px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);transition:border-color .3s,color .3s,background .3s}
 .tbtn:hover{border-color:var(--tif);color:var(--tif)}
 .tbtn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -637,7 +668,7 @@ html.light .proc{background:var(--bg2)}
 html.light .case{background:rgba(255,255,255,.85)}
 
 </style>
-<script>try{var _t=localStorage.getItem('vseti-theme');if(_t==='light')document.documentElement.classList.add('light');}catch(e){}</script>
+<script>try{var _t=localStorage.getItem('vseti-theme');if(_t==='light')document.documentElement.classList.add('light');if(localStorage.getItem('vseti-hc')==='1')document.documentElement.classList.add('hc');var _f=[.9,1,1.15,1.3,1.5][parseInt(localStorage.getItem('vseti-fs'),10)];if(_f)document.documentElement.style.setProperty('--fs',_f);}catch(e){}</script>
 <link rel="alternate" hreflang="ru" href="https://vseti-site.ru/">
 <link rel="alternate" hreflang="en" href="https://vseti-site.ru/en/">
 <link rel="alternate" hreflang="uz" href="https://vseti-site.ru/uz/">
@@ -734,6 +765,11 @@ html.light .case{background:rgba(255,255,255,.85)}
         <a href="/zh/">中文 <small>ZH</small></a>
       </div>
     </div>
+    <button class="tbtn abtn" id="fsdown" type="button" aria-label="Кичирээк" title="Кичирээк"><span>А−</span></button>
+    <button class="tbtn abtn" id="fsup" type="button" aria-label="Чоңураак" title="Чоңураак"><span>А+</span></button>
+    <button class="tbtn" id="hc" type="button" aria-label="Начар көргөндөр үчүн" title="Начар көргөндөр үчүн" aria-pressed="false">
+      <svg viewBox="0 0 24 24"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+    </button>
     <button class="tbtn" id="theme" type="button" aria-label="Ачык же күңүрт тема" title="Ачык же күңүрт тема">
       <svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
       <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/></svg>
@@ -1362,6 +1398,27 @@ var tb=document.getElementById('theme');
 if(tb) tb.addEventListener('click',function(){
   var light=document.documentElement.classList.toggle('light');
   try{localStorage.setItem('vseti-theme',light?'light':'dark');}catch(e){}
+});
+
+/* --- размер текста и режим для слабовидящих --- */
+var FS=[.9,1,1.15,1.3,1.5], fsi=1;
+var ZOOM_OK=(window.CSS&&CSS.supports&&CSS.supports('zoom','1.2'));
+function applyFs(){document.documentElement.style.setProperty('--fs',FS[fsi]);
+  /* старый Firefox не знает zoom — тогда тянем хотя бы шрифт */
+  if(!ZOOM_OK)document.documentElement.style.fontSize=(16*FS[fsi])+'px';
+  try{localStorage.setItem('vseti-fs',String(fsi));}catch(e){}
+  var d=document.getElementById('fsdown'),u=document.getElementById('fsup');
+  if(d)d.disabled=(fsi===0); if(u)u.disabled=(fsi===FS.length-1);}
+try{var _f=parseInt(localStorage.getItem('vseti-fs'),10);if(!isNaN(_f)&&_f>=0&&_f<FS.length)fsi=_f;}catch(e){}
+applyFs();
+var fu=document.getElementById('fsup'),fd=document.getElementById('fsdown');
+if(fu)fu.addEventListener('click',function(){if(fsi<FS.length-1){fsi++;applyFs();}});
+if(fd)fd.addEventListener('click',function(){if(fsi>0){fsi--;applyFs();}});
+var hc=document.getElementById('hc');
+if(hc)hc.addEventListener('click',function(){
+  var on=document.documentElement.classList.toggle('hc');
+  hc.setAttribute('aria-pressed',on?'true':'false');
+  try{localStorage.setItem('vseti-hc',on?'1':'0');}catch(e){}
 });
 
 /* --- выпадающий список языков --- */

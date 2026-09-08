@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="L'Étoile Story - Learn about our legacy, Michelin-star recognition, our Executive Chef, and our pursuit of culinary perfection.">
+    <title>Our Story | L'Étoile Restaurant</title>
+    
+    <!-- Premium Inline SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23C9A227'>★</text></svg>">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <!-- About Page Specific Video Modal Styles -->
+    <style>
+        .video-modal-content {
+            width: 90%;
+            max-width: 900px;
+            background: #000;
+            border: 1px solid var(--gold-border);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.9);
+            position: relative;
+            aspect-ratio: 16/9;
+        }
+        
+        .video-modal-content video {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+    
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-about-content" style="position:absolute; left:-9999px; background:var(--primary-gold); color:var(--bg-dark); padding:0.5rem 1rem; z-index:10000;" onfocus="this.style.left='10px'" onblur="this.style.left='-9999px'">Skip to Content</a>
+
+    <!-- Header / Navbar -->
+    <header role="banner">
+        <div class="logo">
+            <a href="../index.html" aria-label="L'Étoile Home">L'ÉTOILE<span>.</span></a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation">
+            <a href="../index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html" class="active">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="reservation.html">Reservation</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="javascript:void(0)" class="btn-gold nav-reserve-btn">Reserve A Table</a>
+            <button class="menu-toggle" id="mobile-menu-btn" aria-haspopup="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-nav" role="navigation" aria-label="Mobile Navigation">
+        <a href="../index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html" class="active">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reservation.html">Reservation</a>
+        <a href="contact.html">Contact</a>
+        <a href="reservation.html" class="btn-gold" style="margin-top: 2rem;">Reserve A Table</a>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <main id="main-about-content">
+        
+        <!-- Luxury Hero Section -->
+        <section class="hero-section flex-center" aria-label="About Page Header">
+            <!-- Parallax Background Image -->
+            <div class="hero-bg-wrapper parallax-img-wrapper">
+                <img src="../assets/images/hero_bg.jpg" alt="Dimly lit interior dining area of L'Étoile restaurant">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <!-- Hero Content -->
+            <div class="hero-content container gsap-reveal-element" style="margin-top: 80px;">
+                <!-- Breadcrumbs -->
+                <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                    <a href="../index.html">Home</a> &nbsp;/&nbsp; <span style="color: var(--primary-gold);">About</span>
+                </nav>
+                <h1 class="hero-title" style="font-size: 4rem; margin-bottom: 1rem;">Our Story</h1>
+                <p class="hero-subtitle" style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">A timeless legacy of gastronomy, Michelin stars, and curated fine dining.</p>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator gsap-reveal-element" role="presentation">
+                <div class="scroll-indicator-mouse" style="width: 16px; height: 26px; border-radius: 8px; padding-top: 3px;">
+                    <div class="scroll-indicator-wheel" style="width: 3px; height: 6px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurant Story Section -->
+        <section class="section-padding container story-container" aria-label="Brand Philosophy">
+            <div class="story-text-col gsap-fade-in">
+                <span class="subtitle-gold">Gastronomic Vision</span>
+                <h2>The Pursuit of Culinary Perfection</h2>
+                <p>
+                    L'Étoile represents the culmination of a decade-long search for gastronomic absolute. Founded in 2001, we set out to transcend traditional fine-dining boundaries, merging classic French foundational techniques with local, seasonal ingredients and modern sensory concepts.
+                </p>
+                <p>
+                    To us, a dish is more than taste—it is a visual composition, a balance of temperatures, and a tactile memory. We treat our kitchen as a research workshop where ingredients are examined, honored, and prepared to reveal their deepest flavor profiles.
+                </p>
+                <p>
+                    From sourcing rare ingredients from organic artisans to designing custom tableware, every detail at L'Étoile is deliberately curated to provide an unforgettable Michelin-level dining experience.
+                </p>
+            </div>
+            <div class="story-img-col parallax-img-wrapper">
+                <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Exquisite culinary dish prepared by our chefs">
+            </div>
+        </section>
+
+        <!-- Interactive Timeline Section -->
+        <section class="section-padding section-bordered" aria-label="Milestones Timeline">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="subtitle-gold">Chronology</span>
+                    <h2 class="section-title">Our Historic Milestones</h2>
+                </div>
+                
+                <div class="timeline-container">
+                    <!-- Vertical Timeline Lines -->
+                    <div class="timeline-line"></div>
+                    <div class="timeline-line-active" id="timeline-active-line"></div>
+                    
+                    <!-- Milestone 1: 2001 (Left) -->
+                    <div class="timeline-item">
+                        <div class="timeline-col">
+                            <div class="timeline-card">
+                                <span class="timeline-year">2001</span>
+                                <h3>L'Étoile is Founded</h3>
+                                <p>Our doors opened in a historical 19th-century salon, carrying a small 8-table configuration dedicated to pure seasonal French dining.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-dot" aria-label="Year 2001 dot"></div>
+                        <div class="timeline-col timeline-col-empty"></div>
+                    </div>
+                    
+                    <!-- Milestone 2: 2005 (Right) -->
+                    <div class="timeline-item">
+                        <div class="timeline-col timeline-col-empty"></div>
+                        <div class="timeline-dot" aria-label="Year 2005 dot"></div>
+                        <div class="timeline-col">
+                            <div class="timeline-card">
+                                <span class="timeline-year">2005</span>
+                                <h3>First Signature Menu</h3>
+                                <p>Introduced our signature A5 Wagyu and Caviar progressions, establishing our name among city culinary critics.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3: 2010 (Left) -->
+                    <div class="timeline-item">
+                        <div class="timeline-col">
+                            <div class="timeline-card">
+                                <span class="timeline-year">2010</span>
+                                <h3>Michelin Star Recognition</h3>
+                                <p>Awarded our first Michelin Star. The guide praised our 'impeccable execution, texture play, and absolute ingredient focus.'</p>
+                            </div>
+                        </div>
+                        <div class="timeline-dot" aria-label="Year 2010 dot"></div>
+                        <div class="timeline-col timeline-col-empty"></div>
+                    </div>
+
+                    <!-- Milestone 4: 2015 (Right) -->
+                    <div class="timeline-item">
+                        <div class="timeline-col timeline-col-empty"></div>
+                        <div class="timeline-dot" aria-label="Year 2015 dot"></div>
+                        <div class="timeline-col">
+                            <div class="timeline-card">
+                                <span class="timeline-year">2015</span>
+                                <h3>Architectural Expansion</h3>
+                                <p>Renovated our dining halls, incorporating a contemporary minimalist design, private glass wine cellar, and chef's counter.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 5: 2020 (Left) -->
+                    <div class="timeline-item">
+                        <div class="timeline-col">
+                            <div class="timeline-card">
+                                <span class="timeline-year">2020</span>
+                                <h3>Chef Jean-Pierre Joins</h3>
+                                <p>Renowned French Culinary Director Jean-Pierre Laurent joined, bringing his avant-garde aesthetic and organic sourcing network.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-dot" aria-label="Year 2020 dot"></div>
+                        <div class="timeline-col timeline-col-empty"></div>
+                    </div>
+
+                    <!-- Milestone 6: 2026 (Right) -->
+                    <div class="timeline-item">
+                        <div class="timeline-col timeline-col-empty"></div>
+                        <div class="timeline-dot" aria-label="Year 2026 dot"></div>
+                        <div class="timeline-col">
+                            <div class="timeline-card">
+                                <span class="timeline-year">Present</span>
+                                <h3>Global Gastronomy Standard</h3>
+                                <p>Boasting multi-star recognition, L'Étoile stands as a premium dining destination welcoming travelers from across the globe.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet the Executive Chef Section -->
+        <section class="section-padding container story-container" aria-label="Executive Chef Profile">
+            <div class="story-img-col parallax-img-wrapper" style="border:1px solid var(--gold-border); padding:10px; background:var(--bg-secondary); height: 550px;">
+                <img class="shimmer-placeholder" src="../assets/images/chef_exec.jpg" alt="Chef Jean-Pierre styling a signature main plate in white kitchen coat">
+            </div>
+            <div class="story-text-col gsap-fade-in">
+                <span class="subtitle-gold">Master Culinary Craftsman</span>
+                <h2>Chef Jean-Pierre Laurent</h2>
+                <div class="chef-recommendation-quote">
+                    "A Michelin plate is not merely food; it is an emotional conversation between the kitchen and the guest. We cook to provoke memory, joy, and sensory wonder."
+                </div>
+                <p style="color:var(--text-muted); margin-bottom:1.5rem;">
+                    Born in Lyon, France, Chef Jean-Pierre Laurent trained under classic culinary icons before exploring modern gastronomy in Tokyo and San Francisco. With over 25 years of experience, he brings a unique approach to L'Étoile, prioritizing flavor contrast and pure organic sourcing.
+                </p>
+                <p style="color:var(--text-muted); margin-bottom:2rem;">
+                    Jean-Pierre has received numerous international accolades, including 'Chef of the Decade' by the Gastronomy Board and holds three lifetime Michelin star distinctions.
+                </p>
+                <div style="display: flex; gap: 3rem; border-top: 1px solid var(--glass-border); padding-top: 1.5rem;">
+                    <div>
+                        <span style="display:block; font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; color:var(--text-muted); margin-bottom:2px;">Awards Held</span>
+                        <span class="font-numbers" style="color:var(--primary-gold); font-weight:600; font-size:1.1rem;">3 Michelin Stars</span>
+                    </div>
+                    <div>
+                        <span style="display:block; font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; color:var(--text-muted); margin-bottom:2px;">Signature Style</span>
+                        <span style="color:var(--text-white); font-weight:500; font-size:1.1rem;">Modern French-Japanese Fusion</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kitchen Experience Gallery Section -->
+        <section class="section-padding section-bordered" aria-label="Kitchen Experience Gallery">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="subtitle-gold">Inside L'Atelier</span>
+                    <h2 class="section-title">The Culinary Experience</h2>
+                </div>
+                
+                <div class="kitchen-gallery-grid gsap-stagger-grid">
+                    <!-- Item 1: Kitchen (Wide) -->
+                    <div class="gallery-item gi-wide">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Fine dining kitchen preparation and line cooks">
+                        <div class="gallery-item-trigger" tabindex="0" role="button" aria-label="Enlarge image of Kitchen Line Cooks" data-img="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" data-caption="Kitchen Line Prep">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>Kitchen Atelier</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2: Fresh Ingredients (Tall) -->
+                    <div class="gallery-item gi-tall">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Fresh organic vegetables and herbs sourced locally">
+                        <div class="gallery-item-trigger" tabindex="0" role="button" aria-label="Enlarge image of Fresh Ingredients" data-img="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80" data-caption="Fresh Locally Sourced Ingredients">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>Organic Sourcing</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Cooking Process -->
+                    <div class="gallery-item">
+                        <img class="shimmer-placeholder" src="../assets/images/dish_wagyu.jpg" alt="Chef plating wagyu beef with microgreens">
+                        <div class="gallery-item-trigger" tabindex="0" role="button" aria-label="Enlarge image of Chef plating signature Wagyu" data-img="../assets/images/dish_wagyu.jpg" data-caption="Signature Dish Plating">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>Precise Plating</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Restaurant Team -->
+                    <div class="gallery-item">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80" alt="Kitchen crew standing together inside restaurant">
+                        <div class="gallery-item-trigger" tabindex="0" role="button" aria-label="Enlarge image of L'Étoile culinary crew" data-img="https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=1200&q=80" data-caption="Our Dedicated Culinary Team">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>The Team</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Luxury Dining (Wide) -->
+                    <div class="gallery-item gi-wide">
+                        <img class="shimmer-placeholder" src="../assets/images/hero_bg.jpg" alt="Elegantly set dining table with fine wine glasses and white tablecloths">
+                        <div class="gallery-item-trigger" tabindex="0" role="button" aria-label="Enlarge image of Dining Room" data-img="../assets/images/hero_bg.jpg" data-caption="Frosted Glass & Golden Ambiance">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>Luxury Dining Room</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Philosophy Section -->
+        <section class="section-padding container" aria-label="Core Philosophy Values">
+            <div class="section-title-wrapper">
+                <span class="subtitle-gold">Core Values</span>
+                <h2 class="section-title">Our Culinary Philosophy</h2>
+            </div>
+            
+            <div class="philosophy-grid gsap-stagger-grid">
+                <!-- Card 1: Fresh Ingredients -->
+                <div class="philosophy-card glass-panel">
+                    <i class="fa-solid fa-leaf"></i>
+                    <h3>Organic Sourcing</h3>
+                    <p>Sourcing directly from organic farms, biodynamic orchards, and local day-boat fishermen who respect the natural lifecycle.</p>
+                </div>
+                
+                <!-- Card 2: Craftsmanship -->
+                <div class="philosophy-card glass-panel">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>Absolute Precision</h3>
+                    <p>Every temperature, cut, and seasoning is controlled meticulously to respect classic gastronomy fundamentals.</p>
+                </div>
+
+                <!-- Card 3: Sustainability -->
+                <div class="philosophy-card glass-panel">
+                    <i class="fa-solid fa-seedling"></i>
+                    <h3>Zero-Waste Goal</h3>
+                    <p>Engaging in micro-composting and zero-waste fermentation programs, respecting the planet as much as our ingredients.</p>
+                </div>
+
+                <!-- Card 4: Customer Experience -->
+                <div class="philosophy-card glass-panel">
+                    <i class="fa-solid fa-bell"></i>
+                    <h3>Bespoke Service</h3>
+                    <p>Recognizing the distinct desires of every visitor, customizing flavor profiles and pairings to match personal tastes.</p>
+                </div>
+
+                <!-- Card 5: Innovation -->
+                <div class="philosophy-card glass-panel">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h3>Sensory Innovation</h3>
+                    <p>Utilizing modern elements—aromatic vapors, temperature layering, and custom tableware—to engage all five senses.</p>
+                </div>
+
+                <!-- Card 6: Tradition -->
+                <div class="philosophy-card glass-panel">
+                    <i class="fa-solid fa-landmark"></i>
+                    <h3>French Foundations</h3>
+                    <p>Honoring classic stock reductions, pastry laminations, and kitchen brigade hierarchy established in French history.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Recognition Section -->
+        <section class="section-padding section-bordered" aria-label="Awards and Recognitions">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <span class="subtitle-gold">Acclaim</span>
+                    <h2 class="section-title">Awards & Honors</h2>
+                </div>
+                
+                <div class="recognition-grid gsap-stagger-grid">
+                    <!-- Award 1 -->
+                    <div class="recognition-card glass-panel">
+                        <div class="recognition-icon-wrap"><i class="fa-solid fa-star"></i></div>
+                        <h3>Michelin Guide</h3>
+                        <p>Three Michelin Star distinction for exceptional cuisine, worth a special journey.</p>
+                    </div>
+                    
+                    <!-- Award 2 -->
+                    <div class="recognition-card glass-panel">
+                        <div class="recognition-icon-wrap"><i class="fa-solid fa-trophy"></i></div>
+                        <h3>Best Fine Dining</h3>
+                        <p>Ranked #12 on the World's 50 Best Restaurants list for absolute design and taste balance.</p>
+                    </div>
+
+                    <!-- Award 3 -->
+                    <div class="recognition-card glass-panel">
+                        <div class="recognition-icon-wrap"><i class="fa-solid fa-user-tie"></i></div>
+                        <h3>Wine Excellence</h3>
+                        <p>Awarded 'Grand Award' by Wine Spectator for holding a collection of over 20,000 vintage bottles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Counter Section -->
+        <section class="section-padding container" aria-label="Restaurant Statistics">
+            <div class="stats-grid">
+                <!-- Stat 1 -->
+                <div class="stat-card glass-panel">
+                    <div class="stat-number" data-target="25" data-suffix="+">0</div>
+                    <div class="stat-label">Years Excellence</div>
+                </div>
+                <!-- Stat 2 -->
+                <div class="stat-card glass-panel">
+                    <div class="stat-number" data-target="120" data-suffix="+">0</div>
+                    <div class="stat-label">Signature Recipes</div>
+                </div>
+                <!-- Stat 3 -->
+                <div class="stat-card glass-panel">
+                    <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                    <div class="stat-label">Professional Staff</div>
+                </div>
+                <!-- Stat 4 -->
+                <div class="stat-card glass-panel">
+                    <div class="stat-number" data-target="15" data-suffix="+">0</div>
+                    <div class="stat-label">Global Awards</div>
+                </div>
+                <!-- Stat 5 -->
+                <div class="stat-card glass-panel">
+                    <div class="stat-number" data-target="4.9" data-decimal="true" data-suffix="★">0</div>
+                    <div class="stat-label">Google Rating</div>
+                </div>
+                <!-- Stat 6 -->
+                <div class="stat-card glass-panel">
+                    <div class="stat-number" data-target="5000" data-suffix="+">0</div>
+                    <div class="stat-label">Happy Guests</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Behind The Scenes Video Section -->
+        <section class="section-padding container" aria-label="Behind the Scenes Cinematic Video">
+            <div class="section-title-wrapper">
+                <span class="subtitle-gold">Behind The Scenes</span>
+                <h2 class="section-title">The Cinematic Culinary Art</h2>
+            </div>
+            
+            <div class="video-cover-card" style="position: relative; height: 500px; overflow: hidden; border: 1px solid var(--glass-border);" id="bts-cover-card">
+                <img src="../assets/images/hero_bg.jpg" alt="Video cover layout" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;">
+                <button class="play-btn-circle" id="play-video-btn" aria-label="Play Behind The Scenes Video">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+                <div style="position: absolute; bottom: 30px; left: 30px; z-index: 2;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">L'Atelier de L'Étoile</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">A cinematic look inside our kitchens, plating precision, and staff dedication.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet Our Team Section -->
+        <section class="section-padding container" aria-label="Culinary Brigade Team">
+            <div class="section-title-wrapper">
+                <span class="subtitle-gold">The Brigade</span>
+                <h2 class="section-title">Meet Our Master Minds</h2>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Team 1 -->
+                <article class="team-card">
+                    <div class="team-img-wrapper">
+                        <img class="shimmer-placeholder" src="../assets/images/chef_exec.jpg" alt="Executive Chef Jean-Pierre Laurent">
+                        <div class="team-hover-socials">
+                            <a href="javascript:void(0)" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="javascript:void(0)" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Jean-Pierre Laurent</h3>
+                        <span class="team-role">Executive Chef</span>
+                    </div>
+                </article>
+                
+                <!-- Team 2 -->
+                <article class="team-card">
+                    <div class="team-img-wrapper">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Sous Chef Amandine Dubois">
+                        <div class="team-hover-socials">
+                            <a href="javascript:void(0)" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="javascript:void(0)" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Amandine Dubois</h3>
+                        <span class="team-role">Sous Chef</span>
+                    </div>
+                </article>
+
+                <!-- Team 3 -->
+                <article class="team-card">
+                    <div class="team-img-wrapper">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Pastry Chef Marc-Antoine Villon">
+                        <div class="team-hover-socials">
+                            <a href="javascript:void(0)" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="javascript:void(0)" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Marc-Antoine Villon</h3>
+                        <span class="team-role">Pastry Chef</span>
+                    </div>
+                </article>
+
+                <!-- Team 4 -->
+                <article class="team-card">
+                    <div class="team-img-wrapper">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Sommelier Eléonore de Saint-Exupéry">
+                        <div class="team-hover-socials">
+                            <a href="javascript:void(0)" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="javascript:void(0)" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Eléonore de Saint-Ex</h3>
+                        <span class="team-role">Sommelier</span>
+                    </div>
+                </article>
+
+                <!-- Team 5 -->
+                <article class="team-card">
+                    <div class="team-img-wrapper">
+                        <img class="shimmer-placeholder" src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80" alt="Restaurant Manager François Beaumont">
+                        <div class="team-hover-socials">
+                            <a href="javascript:void(0)" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="javascript:void(0)" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">François Beaumont</h3>
+                        <span class="team-role">Maître D'</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section-padding container" aria-label="Guest Testimonials Review Slider">
+            <div class="section-title-wrapper">
+                <span class="subtitle-gold">Accolades</span>
+                <h2 class="section-title">Critical Endorsements</h2>
+            </div>
+            
+            <div class="swiper testimonials-slider">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide testimonial-slide-content">
+                        <div class="testimonial-quote-icon">
+                            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "A masterclass in restraint, texture, and visual balance. The Saffron Risotto is a revelation of saffron complexity, and the Wagnerian Wagyu course lingers long after the meal finishes."
+                        </p>
+                        <div class="testimonial-rating" aria-label="Rating: 5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="testimonial-author">Le Monde Gastronomique</h4>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide testimonial-slide-content">
+                        <div class="testimonial-quote-icon">
+                            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Dining at L'Étoile is immersive theatre. The visual beauty of their plates matches the understated, quiet elegance of their frosted-glass interior."
+                        </p>
+                        <div class="testimonial-rating" aria-label="Rating: 5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="testimonial-author">Vogue Living</h4>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Reservation CTA -->
+        <section class="section-padding flex-center reservation-cta-section" aria-label="Reservation Call To Action">
+            <div class="parallax-img-wrapper hero-bg-wrapper">
+                <img src="../assets/images/hero_bg.jpg" alt="Luxury fine dining hall environment">
+                <div class="bg-overlay"></div>
+            </div>
+            
+            <div class="container content gsap-fade-in">
+                <span class="subtitle-gold">Secure A Dining Table</span>
+                <h2>Experience Culinary Grandeur</h2>
+                <p>
+                    Reservations are highly recommended. Walk-ins are accommodated based on availability. For group dining and private ateliers, please contact our events conciergerie.
+                </p>
+                <a href="javascript:void(0)" class="btn-gold btn-filled">Make A Reservation</a>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Global Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3>L'ÉTOILE<span>.</span></h3>
+                    <p>Where absolute culinary standards meet contemporary spatial design. Enjoy curated gastronomy in the heart of the city.</p>
+                    <div class="footer-socials">
+                        <a href="javascript:void(0)" aria-label="L'Étoile Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0)" aria-label="L'Étoile Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0)" aria-label="L'Étoile Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0)" aria-label="L'Étoile TripAdvisor"><i class="fa-brands fa-tripadvisor" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4>Discover</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="menu.html">Our Menu</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="javascript:void(0)">The Atelier</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-hours">
+                    <h4>Opening Hours</h4>
+                    <p>Monday - Friday<br><span style="color: var(--text-white);">17:00 - 23:00</span></p>
+                    <p>Saturday - Sunday<br><span style="color: var(--text-white);">12:00 - 23:30</span></p>
+                </div>
+                <div class="footer-col footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to receive menus, private tastings, and chef announcements.</p>
+                    <form class="newsletter-form" aria-label="Newsletter Subscription Form">
+                        <input type="email" placeholder="Your Email Address" aria-label="Email address for newsletter" required>
+                        <button type="submit">Join</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 L'Étoile Restaurant. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="javascript:void(0)">Privacy Policy</a>
+                    <a href="javascript:void(0)">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Popup Lightbox Modal -->
+    <div class="lightbox-modal" id="video-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="video-title">
+        <button class="lightbox-close-btn" id="video-lightbox-close-btn" aria-label="Close Video Overlay"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <div class="video-modal-content">
+            <h2 id="video-title" style="position: absolute; left: -9999px;">Behind the Scenes Video</h2>
+            <video id="bts-video" controls playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-chef-preparing-a-fresh-vegetable-salad-32860-large.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Gallery Full Size Image Lightbox Modal -->
+    <div class="lightbox-modal" id="gallery-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="gallery-lightbox-title">
+        <button class="lightbox-close-btn" id="gallery-lightbox-close-btn" aria-label="Close Gallery Image Modal"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <div class="lightbox-content-box" style="max-width: 800px;">
+            <div class="lightbox-img-col" style="flex:1; height: 500px;">
+                <img id="gallery-lightbox-img" src="" alt="Enlarged gallery item">
+            </div>
+            <div class="lightbox-body-details" style="flex:none; width: 100%; padding: 1.5rem; background: var(--bg-secondary); text-align:center;">
+                <h3 id="gallery-lightbox-title" style="font-family: var(--font-headings); font-size:1.4rem; font-weight:400; color:var(--text-white);">Caption</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Library Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+    
+    <!-- Inline-free local interactive script for Play and Gallery Lightbox -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Play Button for behind the scenes video
+            const playBtn = document.getElementById('play-video-btn');
+            const videoLightbox = document.getElementById('video-lightbox');
+            const closeBtn = document.getElementById('video-lightbox-close-btn');
+            const videoEl = document.getElementById('bts-video');
+
+            if (playBtn && videoLightbox) {
+                playBtn.addEventListener('click', () => {
+                    videoLightbox.classList.add('open');
+                    videoLightbox.setAttribute('aria-hidden', 'false');
+                    if (videoEl) videoEl.play();
+                    if (window.lenis) window.lenis.stop();
+                    if (closeBtn) closeBtn.focus();
+                });
+
+                const closeVideoLightbox = () => {
+                    videoLightbox.classList.remove('open');
+                    videoLightbox.setAttribute('aria-hidden', 'true');
+                    if (videoEl) {
+                        videoEl.pause();
+                        videoEl.currentTime = 0;
+                    }
+                    if (window.lenis) window.lenis.start();
+                    playBtn.focus();
+                };
+
+                closeBtn.addEventListener('click', closeVideoLightbox);
+                videoLightbox.addEventListener('click', (e) => {
+                    if (e.target === videoLightbox) closeVideoLightbox();
+                });
+
+                window.addEventListener('keydown', (e) => {
+                    if (e.key === "Escape" && videoLightbox.classList.contains('open')) {
+                        closeVideoLightbox();
+                    }
+                });
+            }
+            
+            // 2. Kitchen Experience lightbox links
+            const galleryItems = document.querySelectorAll('.gallery-item-trigger');
+            const galleryLightbox = document.getElementById('gallery-lightbox');
+            const galleryCloseBtn = document.getElementById('gallery-lightbox-close-btn');
+            const galleryImg = document.getElementById('gallery-lightbox-img');
+            const galleryTitle = document.getElementById('gallery-lightbox-title');
+
+            if (galleryItems.length > 0 && galleryLightbox && galleryImg) {
+                let currentGalleryIndex = 0;
+
+                const openGalleryLightbox = (index) => {
+                    currentGalleryIndex = index;
+                    const trigger = galleryItems[index];
+                    const imgUrl = trigger.getAttribute('data-img');
+                    const caption = trigger.getAttribute('data-caption');
+
+                    galleryImg.src = imgUrl;
+                    galleryImg.alt = caption;
+                    if (galleryTitle) galleryTitle.innerText = caption;
+
+                    galleryLightbox.classList.add('open');
+                    galleryLightbox.setAttribute('aria-hidden', 'false');
+                    if (window.lenis) window.lenis.stop();
+                    if (galleryCloseBtn) galleryCloseBtn.focus();
+                };
+
+                const closeGalleryLightbox = () => {
+                    galleryLightbox.classList.remove('open');
+                    galleryLightbox.setAttribute('aria-hidden', 'true');
+                    if (window.lenis) window.lenis.start();
+                    galleryItems[currentGalleryIndex].focus();
+                };
+
+                galleryItems.forEach((item, index) => {
+                    item.addEventListener('click', () => openGalleryLightbox(index));
+                    item.addEventListener('keydown', (e) => {
+                        if (e.key === "Enter") openGalleryLightbox(index);
+                    });
+                });
+
+                if (galleryCloseBtn) galleryCloseBtn.addEventListener('click', closeGalleryLightbox);
+                galleryLightbox.addEventListener('click', (e) => {
+                    if (e.target === galleryLightbox) closeGalleryLightbox();
+                });
+
+                window.addEventListener('keydown', (e) => {
+                    if (!galleryLightbox.classList.contains('open')) return;
+                    if (e.key === "Escape") closeGalleryLightbox();
+                    if (e.key === "ArrowLeft") {
+                        let prev = currentGalleryIndex - 1;
+                        if (prev < 0) prev = galleryItems.length - 1;
+                        openGalleryLightbox(prev);
+                    }
+                    if (e.key === "ArrowRight") {
+                        let next = currentGalleryIndex + 1;
+                        if (next >= galleryItems.length) next = 0;
+                        openGalleryLightbox(next);
+                    }
+                });
+            }
+
+            // 3. Testimonials Swiper Carousel
+            if (typeof Swiper !== 'undefined') {
+                new Swiper('.testimonials-slider', {
+                    loop: true,
+                    speed: 1000,
+                    autoplay: {
+                        delay: 6000,
+                        disableOnInteraction: false
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    },
+                    effect: 'fade',
+                    fadeEffect: {
+                        crossFade: true
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

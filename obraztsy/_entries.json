@@ -1019,6 +1019,39 @@
   "source": "https://github.com/Julio-Sabino25/Loja-de-moveis"
  },
  {
+  "id": "cls-imperial-palace-hotel",
+  "name": "Hotel Imperial Palace (pooranjoyb)",
+  "genre": "Отель-дворец / дворянская гостиница",
+  "structure": "Многостраничный сайт роскошного дворцового отеля с фотографиями индийского дворца-резиденции (купола, аркады, колоннады), глубоким бордовым (#8d0003) фирменным цветом, галереей номеров и кухни, разделом истории отеля.",
+  "zip": "https://github.com/pooranjoyb/Hotel_ImperialPalace/archive/refs/heads/master.zip",
+  "demo": "https://pooranjoyb.github.io/Hotel_ImperialPalace/",
+  "license": "GPL-3.0",
+  "attribution": false,
+  "source": "https://github.com/pooranjoyb/Hotel_ImperialPalace"
+ },
+ {
+  "id": "cls-royal-bistro",
+  "name": "Royal Bistro",
+  "genre": "Ресторан высокой кухни",
+  "structure": "Одностраничный сайт-визитка премиального бистро на чёрном фоне с золотыми (#d4af37) акцентами и засечками Playfair Display: статистика заведения, фирменные блюда, интерьерная галерея, отзывы гостей, бронирование стола и раздел «шеф-повара».",
+  "zip": "https://github.com/shreya1729-png/royal-bistro/archive/refs/heads/main.zip",
+  "demo": "https://shreya1729-png.github.io/royal-bistro/",
+  "license": "MIT",
+  "attribution": false,
+  "source": "https://github.com/shreya1729-png/royal-bistro"
+ },
+ {
+  "id": "cls-theatre-apollon",
+  "name": "Divadlo Apollon (KNXKO)",
+  "genre": "Театр",
+  "structure": "Многостраничный сайт драматического театра: чёрный фон с золотым акцентом (#ECBB4C), шрифт с засечками book-antiqua, драматичные чёрно-белые фотографии актёров и сцены, разделы репертуара, афиши, фотогалереи и билетного магазина.",
+  "zip": "https://github.com/KNXKO/HTML_TheatreApollon/archive/refs/heads/main.zip",
+  "demo": "",
+  "license": "MIT",
+  "attribution": false,
+  "source": "https://github.com/KNXKO/HTML_TheatreApollon"
+ },
+ {
   "id": "our-elinarihter",
   "name": "Элина Рихтер — певица",
   "genre": "Личный сайт артиста",

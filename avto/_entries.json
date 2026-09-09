@@ -1,0 +1,4397 @@
+[
+ {
+  "id": "av-a-porsche-911",
+  "name": "Porsche 911 — конфигуратор",
+  "genre": "Автопроизводитель",
+  "structure": "Конфигуратор Porsche 911 с плавным 3D-вращением модели, живой сменой цвета кузова и материалов в реальном времени.",
+  "live": "https://www.porsche.com/international/models/911/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-porsche-taycan",
+  "name": "Porsche Taycan",
+  "genre": "Автопроизводитель",
+  "structure": "Страница электрического Taycan со скролл-анимацией разгона, крупными видео-кадрами и параллакс-переходами между разделами.",
+  "live": "https://www.porsche.com/usa/models/taycan/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-porsche-main",
+  "name": "Porsche — главная",
+  "genre": "Автопроизводитель",
+  "structure": "Флагманский сайт бренда с кинематографичными полноэкранными видео и плавными переходами между моделями при скролле.",
+  "live": "https://www.porsche.com/international/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-ferrari",
+  "name": "Ferrari",
+  "genre": "Суперкары",
+  "structure": "Официальный сайт Ferrari с крупной фотографией моделей, эффектными переходами и разделами гоночной команды Formula 1.",
+  "live": "https://www.ferrari.com/en-EN",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-lamborghini",
+  "name": "Lamborghini",
+  "genre": "Суперкары",
+  "structure": "Агрессивная типографика и полноэкранные видео с ускорениями моделей, острые угловые анимации при наведении.",
+  "live": "https://www.lamborghini.com/en-en",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-bugatti",
+  "name": "Bugatti",
+  "genre": "Гиперкары",
+  "structure": "Люксовый минимализм с крупными студийными фото и видео гиперкаров, плавные fade-переходы между разделами.",
+  "live": "https://www.bugatti.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-koenigsegg",
+  "name": "Koenigsegg",
+  "genre": "Гиперкары",
+  "structure": "Шведский гиперкар-бренд с детальными инженерными анимациями узлов машины и скролл-раскрытием технологий.",
+  "live": "https://www.koenigsegg.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-pagani",
+  "name": "Pagani",
+  "genre": "Гиперкары",
+  "structure": "Витиеватый арт-дизайн с рукописной типографикой и крупными макро-кадрами карбоновых деталей автомобилей.",
+  "live": "https://www.pagani.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-mclaren",
+  "name": "McLaren",
+  "genre": "Суперкары",
+  "structure": "Динамичные видео-фоны и скролл-сторителлинг о гоночном наследии McLaren с плавной сменой моделей.",
+  "live": "https://cars.mclaren.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-rimac",
+  "name": "Rimac Automobili",
+  "genre": "Электромобили/гиперкары",
+  "structure": "Хорватский электрогиперкар-бренд с футуристичным 3D-интерфейсом и анимированными графиками мощности батареи.",
+  "live": "https://www.rimac-automobili.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-lucid",
+  "name": "Lucid Motors",
+  "genre": "Электромобили",
+  "structure": "Чистый минималистичный дизайн с крупными 3D-рендерами Lucid Air и плавной прокруткой технических характеристик.",
+  "live": "https://www.lucidmotors.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-polestar",
+  "name": "Polestar",
+  "genre": "Электромобили",
+  "structure": "Скандинавский минимализм: чёрно-белая палитра, крупные видео электромобилей и лаконичная скролл-анимация.",
+  "live": "https://www.polestar.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-tesla",
+  "name": "Tesla",
+  "genre": "Электромобили",
+  "structure": "Флагманский сайт Tesla с крупными фото-панелями моделей и мгновенными переходами между конфигурациями.",
+  "live": "https://www.tesla.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-genesis",
+  "name": "Genesis",
+  "genre": "Премиум",
+  "structure": "Корейский премиум-бренд с плавной 3D-визуализацией моделей и изящными скролл-переходами в духе арт-галереи.",
+  "live": "https://www.genesis.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-nio",
+  "name": "NIO",
+  "genre": "Электромобили Китай",
+  "structure": "Китайский EV-бренд с футуристичным дизайном сайта, анимацией смены батарей (Battery Swap) и 3D-показом кабины.",
+  "live": "https://www.nio.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-zeekr",
+  "name": "Zeekr",
+  "genre": "Электромобили Китай",
+  "structure": "Премиальный китайский EV-бренд Geely с крупными 3D-рендерами и плавной скролл-анимацией интерьера.",
+  "live": "https://www.zeekr.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-xpeng",
+  "name": "XPeng",
+  "genre": "Электромобили Китай",
+  "structure": "Технологичный сайт с анимацией автопилота и летающих автомобилей XPeng, интерактивные 3D-модели.",
+  "live": "https://www.xpeng.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-liauto",
+  "name": "Li Auto",
+  "genre": "Электромобили Китай",
+  "structure": "Китайский бренд семейных электрокроссоверов с крупными видео салона и плавной прокруткой функций.",
+  "live": "https://www.lixiang.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-byd",
+  "name": "BYD Global",
+  "genre": "Электромобили Китай",
+  "structure": "Глобальный сайт крупнейшего китайского EV-производителя с анимированной линейкой моделей и скролл-эффектами.",
+  "live": "https://www.bydglobal.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-denza",
+  "name": "Denza",
+  "genre": "Электромобили Китай премиум",
+  "structure": "Премиальный суббренд BYD и Mercedes с изысканным 3D-показом интерьера и плавными переходами между сериями.",
+  "live": "https://www.denza.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-avatr",
+  "name": "Avatr",
+  "genre": "Электромобили Китай",
+  "structure": "Футуристичный EV-бренд Changan-Huawei с киберпанк-эстетикой сайта и анимированными неоновыми акцентами.",
+  "live": "https://www.avatr.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-voyah",
+  "name": "Voyah",
+  "genre": "Электромобили Китай",
+  "structure": "Премиальный электробренд Dongfeng с плавной 3D-презентацией моделей и крупными видео-заставками.",
+  "live": "https://www.voyah.com.cn",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-hiphi",
+  "name": "HiPhi",
+  "genre": "Электромобили Китай",
+  "structure": "Люксовый EV-бренд Human Horizons с акцентом на анимацию открывающихся дверей-крыльев и футуристичный интерфейс.",
+  "live": "https://www.hiphi.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-leapmotor",
+  "name": "Leapmotor",
+  "genre": "Электромобили Китай",
+  "structure": "Молодой китайский EV-бренд (в альянсе со Stellantis) с яркой анимацией моделей и скролл-сторителлингом.",
+  "live": "https://www.leapmotor.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-hongqi",
+  "name": "Hongqi",
+  "genre": "Премиум Китай",
+  "structure": "Флагманский китайский премиум-бренд FAW с богатой 3D-визуализацией лимузинов и парадной эстетикой сайта.",
+  "live": "https://www.hongqi-auto.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-gordonmurray",
+  "name": "Gordon Murray Automotive",
+  "genre": "Суперкары",
+  "structure": "Инженерный сайт легендарного конструктора F1 с детальной 3D-разборкой суперкара T.50 по деталям.",
+  "live": "https://www.gordonmurrayautomotive.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-czinger",
+  "name": "Czinger",
+  "genre": "Гиперкары",
+  "structure": "Хайтек гиперкар с тандемной посадкой, сайт показывает 3D-печать деталей и анимацию аэродинамики.",
+  "live": "https://czinger.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-ssc",
+  "name": "SSC North America",
+  "genre": "Гиперкары",
+  "structure": "Американский гиперкар-бренд рекордов скорости с динамичными видео разгона и скролл-статистикой рекордов.",
+  "live": "https://www.sscnorthamerica.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-hennessey",
+  "name": "Hennessey Performance",
+  "genre": "Гиперкары/тюнинг",
+  "structure": "Тюнинг-ателье и гиперкар Venom с агрессивным видео-контентом заездов и анимированными цифрами мощности.",
+  "live": "https://hennesseyperformance.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-apollo",
+  "name": "Apollo Automobil",
+  "genre": "Гиперкары",
+  "structure": "Немецкий гиперкар-бутик с драматичными студийными кадрами и плавной скролл-анимацией модели IE.",
+  "live": "https://apollo-automobil.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-zenvo",
+  "name": "Zenvo Automotive",
+  "genre": "Гиперкары",
+  "structure": "Датский гиперкар-бренд с кинематографичным видео-фоном и анимацией уникальной коробки передач Clutchless.",
+  "live": "https://www.zenvoautomotive.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-wmotors",
+  "name": "W Motors",
+  "genre": "Суперкары",
+  "structure": "Ближневосточный суперкар-бренд (Lykan Hypersport) с роскошной тёмной эстетикой и плавными переходами кадров.",
+  "live": "https://www.wmotors.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-praga",
+  "name": "Praga",
+  "genre": "Трек-кары",
+  "structure": "Чешский трек-кар бренд с динамичной анимацией болида Bohema и видео-фонами гоночных трасс.",
+  "live": "https://pragaglobal.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-devel",
+  "name": "Devel Motors",
+  "genre": "Гиперкары",
+  "structure": "Дубайский экстремальный гиперкар Devel Sixteen с шокирующими цифрами мощности и агрессивным видео-дизайном.",
+  "live": "https://develmotors.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-vector",
+  "name": "Vector Motors",
+  "genre": "Суперкары",
+  "structure": "Возрождённый американский суперкар-бренд 80-х с ретро-футуристичным дизайном сайта и анимацией силуэта.",
+  "live": "https://www.vectormotors.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-rezvani",
+  "name": "Rezvani Motors",
+  "genre": "Суперкары/внедорожники",
+  "structure": "Калифорнийский бутик-бренд военного дизайна (Tank, Vengeance) с тёмной темой и резкими анимациями наведения.",
+  "live": "https://www.rezvanimotors.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-radical",
+  "name": "Radical Motorsport",
+  "genre": "Трек-кары",
+  "structure": "Британский производитель трековых болидов с галереей моторспорта и динамичными видео на треке.",
+  "live": "https://www.radicalmotorsport.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-ariel",
+  "name": "Ariel Motor",
+  "genre": "Спорткары",
+  "structure": "Культовый британский Ariel Atom без кузова — сайт с открытой инженерной эстетикой и видео экстремальных заездов.",
+  "live": "https://www.arielmotor.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-caterham",
+  "name": "Caterham Cars",
+  "genre": "Спорткары",
+  "structure": "Классический лёгкий родстер Caterham Seven с конфигуратором цвета и минималистичной скролл-анимацией.",
+  "live": "https://www.caterhamcars.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-morgan",
+  "name": "Morgan Motor Company",
+  "genre": "Ретро-спорткары",
+  "structure": "Ручная сборка деревянных шасси — сайт сочетает винтажную эстетику с плавной современной скролл-анимацией.",
+  "live": "https://www.morgan-motor.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-donkervoort",
+  "name": "Donkervoort",
+  "genre": "Спорткары",
+  "structure": "Голландский лёгкий трековый спорткар с индустриальным дизайном сайта и детальными 3D-кадрами карбона.",
+  "live": "https://www.donkervoort.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-bac",
+  "name": "BAC Mono",
+  "genre": "Монокары",
+  "structure": "Британский однокресельный трек-кар Mono с чистым инженерным дизайном и анимацией сборки шасси.",
+  "live": "https://www.bac-mono.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-tvr",
+  "name": "TVR",
+  "genre": "Спорткары",
+  "structure": "Возрождённый культовый британский спорткар-бренд с ретро-агрессивным дизайном и видео двигателя V8.",
+  "live": "https://www.tvr.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-noble",
+  "name": "Noble Cars",
+  "genre": "Суперкары",
+  "structure": "Британский нишевый суперкар-бренд ручной сборки с лаконичным сайтом и крупными фото трековых заездов.",
+  "live": "https://www.noblecars.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-ultima",
+  "name": "Ultima Sports",
+  "genre": "Суперкары",
+  "structure": "Британский суперкар-кит-кар с рекордами разгона, сайт с динамичными видео на драг-стрипе.",
+  "live": "https://www.ultimasports.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-saleen",
+  "name": "Saleen",
+  "genre": "Суперкары/тюнинг",
+  "structure": "Американский тюнинг-суперкар-бренд (S7, Mustang) с агрессивной чёрно-жёлтой темой и видео гонок.",
+  "live": "https://www.saleen.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-detomaso",
+  "name": "De Tomaso",
+  "genre": "Суперкары",
+  "structure": "Возрождённый итало-американский бренд P72 с ретро-элегантным дизайном и плавной анимацией линий кузова.",
+  "live": "https://www.detomaso-automobili.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-wiesmann",
+  "name": "Wiesmann",
+  "genre": "Спорткары",
+  "structure": "Немецкий бутик-спорткар с фирменной эмблемой горгульи, элегантный сайт с плавными переходами фото.",
+  "live": "https://www.wiesmann.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-spyker",
+  "name": "Spyker",
+  "genre": "Спорткары",
+  "structure": "Голландский авиационно-вдохновлённый спорткар-бренд с ажурными деталями интерьера крупным планом.",
+  "live": "https://www.spykercars.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-astonmartin",
+  "name": "Aston Martin",
+  "genre": "Люкс-спорткары",
+  "structure": "Британский люкс-бренд Джеймса Бонда с кинематографичными видео-фонами и элегантными переходами моделей.",
+  "live": "https://www.astonmartin.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-bentley",
+  "name": "Bentley",
+  "genre": "Люкс",
+  "structure": "Британская роскошь с детальными кадрами кожи и дерева салона, плавная скролл-презентация моделей.",
+  "live": "https://www.bentleymotors.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-maserati",
+  "name": "Maserati",
+  "genre": "Люкс-спорткары",
+  "structure": "Итальянский люкс-бренд с трезубцем, элегантный видео-контент и звук выхлопа как часть UX.",
+  "live": "https://www.maserati.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-alfaromeo",
+  "name": "Alfa Romeo",
+  "genre": "Спорткары",
+  "structure": "Итальянский спортивный бренд со страстным красным акцентом и динамичными видео дорожных испытаний.",
+  "live": "https://www.alfaromeo.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-cupra",
+  "name": "Cupra",
+  "genre": "Спортивный суббренд",
+  "structure": "Дерзкий испанский спортивный суббренд SEAT с медным акцентом и резкой геометричной анимацией сайта.",
+  "live": "https://www.cupraofficial.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-ds",
+  "name": "DS Automobiles",
+  "genre": "Премиум Франция",
+  "structure": "Французский премиум-бренд с изысканной парижской эстетикой и плавными переходами интерьерных деталей.",
+  "live": "https://www.dsautomobiles.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-peugeot",
+  "name": "Peugeot",
+  "genre": "Массовый премиум",
+  "structure": "Французский бренд со львом, современный сайт с чёткой сеткой моделей и плавной скролл-анимацией.",
+  "live": "https://www.peugeot.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-renault",
+  "name": "Renault",
+  "genre": "Массовый",
+  "structure": "Французский автопроизводитель с ярким жёлтым акцентом и анимированными переходами электромоделей.",
+  "live": "https://www.renault.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-skoda",
+  "name": "Skoda",
+  "genre": "Массовый",
+  "structure": "Чешский бренд группы VW с чистым скандинавским минимализмом и плавной прокруткой линейки моделей.",
+  "live": "https://www.skoda-auto.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-volkswagen",
+  "name": "Volkswagen",
+  "genre": "Массовый",
+  "structure": "Глобальный сайт VW с крупными видео электромобилей ID. и плавными fade-переходами между разделами.",
+  "live": "https://www.volkswagen.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-audi",
+  "name": "Audi",
+  "genre": "Премиум",
+  "structure": "Немецкий премиум-бренд с фирменными светодиодными анимациями фар и чёткой сеткой конфигуратора.",
+  "live": "https://www.audi.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-cadillac",
+  "name": "Cadillac",
+  "genre": "Люкс США",
+  "structure": "Американский люкс-бренд с футуристичным дизайном электро-линейки Celestiq и крупными 3D-рендерами.",
+  "live": "https://www.cadillac.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-chevrolet",
+  "name": "Chevrolet",
+  "genre": "Массовый США",
+  "structure": "Американский масс-бренд с ярким видео-контентом Corvette и пикапов, динамичная скролл-презентация.",
+  "live": "https://www.chevrolet.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-dodge",
+  "name": "Dodge",
+  "genre": "Масл-кары",
+  "structure": "Американский маслкар-бренд с агрессивным звуком двигателя в видео и мощной чёрно-красной эстетикой.",
+  "live": "https://www.dodge.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-jeep",
+  "name": "Jeep",
+  "genre": "Внедорожники",
+  "structure": "Легендарный внедорожный бренд с атмосферными видео бездорожья и плавной параллакс-прокруткой.",
+  "live": "https://www.jeep.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-landrover",
+  "name": "Land Rover",
+  "genre": "Премиум внедорожники",
+  "structure": "Британский премиум-внедорожный бренд с кинематографичными кадрами природы и плавными переходами моделей.",
+  "live": "https://www.landrover.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-jaguar",
+  "name": "Jaguar",
+  "genre": "Люкс/ребрендинг",
+  "structure": "Британский люкс-бренд после смелого ребрендинга — авангардный арт-дизайн сайта и яркая графика.",
+  "live": "https://www.jaguar.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-fiat",
+  "name": "Fiat",
+  "genre": "Массовый Италия",
+  "structure": "Итальянский городской бренд с жизнерадостной палитрой и лёгкой скролл-анимацией электро-500.",
+  "live": "https://www.fiat.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-abarth",
+  "name": "Abarth",
+  "genre": "Спортивный суббренд",
+  "structure": "Спортивный суббренд Fiat со скорпионом, дерзкий дизайн с динамичным звуком выхлопа на сайте.",
+  "live": "https://www.abarth.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-kia",
+  "name": "Kia",
+  "genre": "Массовый/дизайн",
+  "structure": "Корейский бренд с наградным дизайном EV9 и плавной 3D-презентацией электромобилей.",
+  "live": "https://www.kia.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-subaru",
+  "name": "Subaru",
+  "genre": "Полный привод",
+  "structure": "Японский бренд полного привода с атмосферными видео раллийных традиций и активного отдыха.",
+  "live": "https://www.subaru.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-mazda",
+  "name": "Mazda",
+  "genre": "Дизайн Kodo",
+  "structure": "Японский бренд с философией дизайна Kodo, элегантные плавные линии кузова показаны крупным планом.",
+  "live": "https://www.mazda.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-mitsubishi",
+  "name": "Mitsubishi Motors",
+  "genre": "Внедорожники",
+  "structure": "Японский внедорожный бренд с динамичными видео езды по бездорожью и чёткой сеткой моделей.",
+  "live": "https://www.mitsubishi-motors.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-suzuki",
+  "name": "Suzuki",
+  "genre": "Компактные",
+  "structure": "Японский бренд компактных авто и мотоциклов с живой энергичной цветовой палитрой сайта.",
+  "live": "https://www.globalsuzuki.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-honda",
+  "name": "Honda",
+  "genre": "Массовый/технологии",
+  "structure": "Глобальный сайт Honda с разделами мобильности будущего и плавной анимацией линейки моделей.",
+  "live": "https://global.honda",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-acura",
+  "name": "Acura",
+  "genre": "Премиум Honda",
+  "structure": "Премиальный суббренд Honda с динамичным спортивным видео-контентом и технологичной сеткой сайта.",
+  "live": "https://www.acura.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-infiniti",
+  "name": "Infiniti",
+  "genre": "Премиум Nissan",
+  "structure": "Премиальный суббренд Nissan с элегантными плавными изгибами кузова, показанными в макро-кадрах.",
+  "live": "https://www.infiniti.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-lexus",
+  "name": "Lexus",
+  "genre": "Премиум Toyota",
+  "structure": "Премиальный бренд Toyota с фирменной прецизионной анимацией граней кузова и звуковым дизайном.",
+  "live": "https://www.lexus.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-nissan",
+  "name": "Nissan Global",
+  "genre": "Массовый",
+  "structure": "Глобальный сайт Nissan с разделами GT-R и электро-Ariya, плавные переходы между линейками.",
+  "live": "https://www.nissan-global.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-toyota-gr",
+  "name": "Toyota Gazoo Racing (GR)",
+  "genre": "Гоночный суббренд",
+  "structure": "Гоночный суббренд Toyota GR с динамичным видео ралли и гонок, энергичная спортивная эстетика.",
+  "live": "https://gr-global.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-ineos",
+  "name": "Ineos Grenadier",
+  "genre": "Внедорожники",
+  "structure": "Британский внедорожник в духе классического Defender, брутальный индустриальный дизайн сайта.",
+  "live": "https://www.ineosgrenadier.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-fisker",
+  "name": "Fisker",
+  "genre": "Электромобили США",
+  "structure": "Американский EV-стартап с калифорнийским минимализмом и крупными 3D-рендерами электро-Ocean.",
+  "live": "https://www.fiskerinc.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-vinfast",
+  "name": "VinFast",
+  "genre": "Электромобили Вьетнам",
+  "structure": "Вьетнамский EV-бренд с современным международным дизайном сайта и плавной презентацией линейки VF.",
+  "live": "https://vinfastauto.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-togg",
+  "name": "Togg",
+  "genre": "Электромобили Турция",
+  "structure": "Первый турецкий национальный электромобильный бренд с технологичным футуристичным дизайном сайта.",
+  "live": "https://www.togg.com.tr",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-xiaomi-ev",
+  "name": "Xiaomi EV (SU7)",
+  "genre": "Электромобили Китай",
+  "structure": "Электромобиль Xiaomi SU7 на сайте с чистым техно-минимализмом и плавной 3D-анимацией характеристик.",
+  "live": "https://www.xiaomiev.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-a-afeela",
+  "name": "Sony Honda Afeela",
+  "genre": "Электромобили-концепт",
+  "structure": "Совместный концепт Sony и Honda с акцентом на развлекательные технологии, футуристичный UI сайта.",
+  "live": "https://www.afeela.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-zeekr",
+  "name": "Zeekr — глобальный сайт",
+  "genre": "Китайский премиум-EV бренд Geely",
+  "structure": "3D-конфигуратор моделей, полноэкранное видео и плавный скролл-сторителлинг о технологиях бренда.",
+  "live": "https://www.zeekrlife.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-lynkco",
+  "name": "Lynk & Co — глобальный сайт",
+  "genre": "Китайский автопроизводитель (Geely)",
+  "structure": "Дерзкий дизайн с крупной типографикой, параллакс-сторителлинг и 3D-обзор автомобилей при скролле.",
+  "live": "https://www.lynkco.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-xpeng",
+  "name": "Xpeng — официальный сайт",
+  "genre": "Китайский производитель EV и роботакси",
+  "structure": "Технологичный дизайн с 3D-моделями, анимацией автопилота и интерактивными сравнениями комплектаций.",
+  "live": "https://www.xiaopeng.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-liauto",
+  "name": "Li Auto — официальный сайт",
+  "genre": "Китайский производитель гибридных EV (Li.auto)",
+  "structure": "Крупные видео-герои, плавная прокрутка и интерактивный конфигуратор семейных электромобилей.",
+  "live": "https://www.li.auto",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-byd-com",
+  "name": "BYD — сайт byd.com",
+  "genre": "Крупнейший китайский производитель EV",
+  "structure": "Альтернативный домен BYD с анимированными баннерами и интерактивным подбором модели.",
+  "live": "https://www.byd.com/en",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-yangwang",
+  "name": "Yangwang — официальный сайт",
+  "genre": "Суперлюксовый бренд BYD",
+  "structure": "Кинематографичное видео, 3D-демонстрация внедорожных технологий U8 и сложная анимация прокрутки.",
+  "live": "https://www.yangwangauto.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-aito",
+  "name": "Aito (问界) — официальный сайт",
+  "genre": "EV-бренд Seres при технологиях Huawei",
+  "structure": "Хай-тек интерфейс с 3D-обзором салона, видео о системе HarmonyOS в машине и плавным скроллом.",
+  "live": "https://aito.auto/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-luxeed",
+  "name": "Luxeed (智界) — официальный сайт",
+  "genre": "EV-бренд Chery и Huawei",
+  "structure": "Премиальный сторителлинг с 3D-конфигуратором седана S7 и анимированными спецификациями.",
+  "live": "https://www.luxeed.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-onvo",
+  "name": "Onvo (乐道) — официальный сайт",
+  "genre": "Семейный EV-бренд NIO",
+  "structure": "Мягкий 3D-дизайн, интерактивный подбор комплектации и анимация батарейного свопа.",
+  "live": "https://www.onvo.cn",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-firefly",
+  "name": "Firefly — официальный сайт",
+  "genre": "Компактный EV-бренд NIO",
+  "structure": "Яркий плейфул-дизайн с 3D-вращением модели и анимированными микровзаимодействиями.",
+  "live": "https://www.firefly-auto.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-tank",
+  "name": "Tank (GWM) — официальный сайт",
+  "genre": "Внедорожный бренд Great Wall Motors",
+  "structure": "Брутальный дизайн с 3D-моделями рамных внедорожников и видео off-road сторителлингом.",
+  "live": "https://www.gwm-tank.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-geely-galaxy",
+  "name": "Geely Galaxy — официальный сайт",
+  "genre": "Суббренд Geely по new energy vehicles",
+  "structure": "Космическая тема, анимированные созвездия моделей и 3D-конфигуратор при скролле.",
+  "live": "https://galaxy.geely.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-wey",
+  "name": "Wey — официальный сайт",
+  "genre": "Премиум-бренд Great Wall Motors",
+  "structure": "Стильная 3D-презентация интерьеров и плавная анимация при переключении моделей Coffee.",
+  "live": "https://www.wey.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-chery-intl",
+  "name": "Chery — международный сайт",
+  "genre": "Китайский автопроизводитель",
+  "structure": "Глобальная витрина модельного ряда Chery с интерактивной картой рынков присутствия.",
+  "live": "https://www.cheryinternational.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-chery-com",
+  "name": "Chery — сайт chery.com",
+  "genre": "Китайский автопроизводитель",
+  "structure": "Корпоративный сайт бренда с разделами по технологиям и экспортным рынкам.",
+  "live": "https://www.chery.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-exeed",
+  "name": "Exeed — официальный сайт",
+  "genre": "Премиум-бренд Chery для экспорта",
+  "structure": "Глянцевая презентация кроссоверов с анимированными баннерами и 3D-обзором салона.",
+  "live": "https://www.exeedcars.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-jetour",
+  "name": "Jetour — глобальный сайт",
+  "genre": "Экспортный SUV-бренд Chery",
+  "structure": "Приключенческая тематика, крупные видео-герои и карта присутствия в 45+ странах.",
+  "live": "https://jetourglobal.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-omoda",
+  "name": "Omoda — международный сайт",
+  "genre": "Экспортный бренд Chery (Omoda&Jaecoo)",
+  "structure": "Динамичный дизайн для молодой аудитории с анимированными разделами о технологиях.",
+  "live": "https://www.omodajaecoo.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-jaecoo",
+  "name": "Jaecoo — международный сайт",
+  "genre": "Внедорожный экспортный бренд Chery",
+  "structure": "Раздел глобального сайта с акцентом на дизайн внедорожников и путешествия.",
+  "live": "https://www.omodajaecoo.com/global/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-icar",
+  "name": "iCaur (iCar) — глобальный сайт",
+  "genre": "EV-бренд Chery для экспорта",
+  "structure": "Ретро-футуристичный дизайн с 3D-моделями и анимацией культового кузова.",
+  "live": "https://www.icaurglobal.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-haval",
+  "name": "Haval — глобальный сайт",
+  "genre": "SUV-бренд Great Wall Motors",
+  "structure": "Раздел на портале GWM с 3D-обзором кроссоверов и видео о безопасности.",
+  "live": "https://www.gwm-global.com/brands/haval/haval-global.html",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-gwm-global",
+  "name": "Great Wall Motors — глобальный сайт",
+  "genre": "Китайский автопроизводитель, материнская компания Haval/Tank/Ora",
+  "structure": "Мультибрендовый портал с анимированными переходами между Haval, Tank, Ora и Wey.",
+  "live": "https://www.gwm-global.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-gwm-cn",
+  "name": "Great Wall Motors — китайский сайт",
+  "genre": "Китайский автопроизводитель (внутренний рынок)",
+  "structure": "Корпоративный китайский сайт GWM с разделами инвесторам и по производству.",
+  "live": "https://www.gwm.com.cn",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-ora",
+  "name": "Ora (Euler) — глобальный сайт",
+  "genre": "Женственный EV-бренд Great Wall Motors",
+  "structure": "Пастельная палитра, плавная анимация карточек моделей и лайфстайл-фото.",
+  "live": "https://www.ora-global.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-geely",
+  "name": "Geely — официальный сайт",
+  "genre": "Крупный китайский автомобильный холдинг",
+  "structure": "Корпоративный сайт с интерактивной картой глобальных брендов холдинга (Volvo, Zeekr, Lynk&Co и др.).",
+  "live": "https://www.geely.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-changan",
+  "name": "Changan — глобальный сайт",
+  "genre": "Китайский автопроизводитель",
+  "structure": "Портал с разделами по брендам Changan, Deepal, Avatr и анимированной картой экспорта.",
+  "live": "https://www.globalchangan.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-deepal",
+  "name": "Deepal — глобальный сайт",
+  "genre": "EV-бренд Changan",
+  "structure": "Страница на портале Changan с 3D-обзором электромобилей и видео о технологиях.",
+  "live": "https://www.globalchangan.com/deepal.html",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-faw-cn",
+  "name": "FAW — официальный сайт группы",
+  "genre": "Один из крупнейших автоконцернов Китая",
+  "structure": "Корпоративный сайт группы FAW (Hongqi, Bestune) с историей бренда с 1953 года.",
+  "live": "https://www.faw.com.cn",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-gac-global",
+  "name": "GAC Motor — глобальный сайт",
+  "genre": "Китайский автопроизводитель",
+  "structure": "Экспортный портал GAC с анимированными баннерами моделей Trumpchi/GAC.",
+  "live": "https://www.gac-global.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-gacmotor",
+  "name": "GAC Motor (Trumpchi) — сайт",
+  "genre": "Китайский автопроизводитель",
+  "structure": "Модельный ряд Trumpchi с интерактивными карточками и видео о заводах.",
+  "live": "https://www.gacmotor.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-aion",
+  "name": "Aion — официальный сайт",
+  "genre": "EV-бренд GAC",
+  "structure": "Китайский сайт EV-суббренда Aion с 3D-рендерами и анимацией зарядки.",
+  "live": "https://www.aion.com.cn",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-dongfeng",
+  "name": "Dongfeng Motor — официальный сайт",
+  "genre": "Один из крупнейших автоконцернов Китая",
+  "structure": "Корпоративный портал группы Dongfeng со списком брендов и разделом экспорта.",
+  "live": "https://www.dfmc.com.cn",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-dongfeng-global",
+  "name": "Dongfeng — международный сайт",
+  "genre": "Один из крупнейших автоконцернов Китая",
+  "structure": "Экспортная версия сайта с картой присутствия на зарубежных рынках.",
+  "live": "https://www.dongfeng-global.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-forthing",
+  "name": "Forthing (Fengxing) — официальный сайт",
+  "genre": "Бренд Dongfeng для семейных авто",
+  "structure": "Дружелюбный дизайн модельного ряда с анимированными баннерами акций.",
+  "live": "https://www.forthingmotor.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-mg-uk",
+  "name": "MG Motor — сайт Великобритания",
+  "genre": "Китайский бренд MG (SAIC) на экспортном рынке",
+  "structure": "Локализованная витрина MG с конфигуратором и анимацией моделей ZS/4/HS.",
+  "live": "https://www.mg.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-mg-eu",
+  "name": "MG Motor Europe — официальный сайт",
+  "genre": "Китайский бренд MG (SAIC) в Европе",
+  "structure": "Общеевропейский портал с выбором страны и анимированными карточками EV-линейки.",
+  "live": "https://www.mgmotor.eu",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-saicmg",
+  "name": "MG (SAIC Motor) — китайский сайт",
+  "genre": "Исторический британский бренд под управлением SAIC",
+  "structure": "Китайская версия сайта MG с разделами по спортивному наследию бренда.",
+  "live": "https://www.saicmg.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-roewe",
+  "name": "Roewe — официальный сайт",
+  "genre": "Китайский бренд SAIC Motor",
+  "structure": "Модельный ряд Roewe с плавной анимацией и видео об интеллектуальных системах.",
+  "live": "https://www.roewe.com.cn",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-wuling",
+  "name": "Wuling — официальный сайт",
+  "genre": "Массовый китайский бренд SGMW",
+  "structure": "Народный бренд с яркими карточками бюджетных EV, включая культовый Hongguang Mini.",
+  "live": "https://www.wuling.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-wuling-global",
+  "name": "Wuling — глобальный сайт",
+  "genre": "Массовый китайский бренд SGMW (экспорт)",
+  "structure": "Экспортная версия с картой присутствия Wuling в Юго-Восточной Азии и Латинской Америке.",
+  "live": "https://www.wuling-global.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-sgmw",
+  "name": "SGMW — официальный сайт",
+  "genre": "СП GM-SAIC-Wuling",
+  "structure": "Корпоративный портал альянса, объединяющего бренды Wuling и Baojun.",
+  "live": "https://www.sgmw.com.cn",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-baojun",
+  "name": "Baojun — официальный сайт",
+  "genre": "Бюджетный бренд SGMW",
+  "structure": "Раздел портала SGMW с карточками моделей Baojun и анимированными акциями.",
+  "live": "https://www.sgmw.com.cn/baojun",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-bestune",
+  "name": "Bestune — официальный сайт",
+  "genre": "Массовый бренд FAW",
+  "structure": "Современный дизайн модельного ряда Bestune с анимацией смарт-салона.",
+  "live": "https://www.faw-bestune.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-kaiyi",
+  "name": "Kaiyi Auto — глобальный сайт",
+  "genre": "Экспортно-ориентированный китайский бренд",
+  "structure": "Портал с картой из 57 рынков присутствия и анимированной презентацией SUV/EV линейки.",
+  "live": "https://www.kaiyiglobal.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-livan",
+  "name": "Livan Auto — официальный сайт",
+  "genre": "Бренд Geely-Qianli (бывший Lifan)",
+  "structure": "Свежий ребрендинг с анимированными карточками моделей и видео о новой платформе.",
+  "live": "https://www.livanauto.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-soueast",
+  "name": "Soueast Motor — официальный сайт",
+  "genre": "Китайский автопроизводитель (Fujian)",
+  "structure": "Модельный ряд кроссоверов с анимацией при скролле и видео о заводах.",
+  "live": "https://www.soueast-motor.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-skywell",
+  "name": "Skywell (Skyworth Auto) — сайт UK",
+  "genre": "NEV-бренд Skyworth для экспорта",
+  "structure": "Локализованный сайт с 3D-обзором электромобилей и анимированными разделами о батареях.",
+  "live": "https://www.skywell-uk.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-seres",
+  "name": "Seres — официальный сайт",
+  "genre": "Китайский производитель EV, партнёр Huawei",
+  "structure": "Корпоративный сайт группы Seres с историей перехода от Sokon к EV-производству.",
+  "live": "https://www.seres.cn",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-neta",
+  "name": "Neta (Hozon Auto) — официальный сайт",
+  "genre": "Китайский EV-бренд, активный экспортёр",
+  "structure": "Технологичная витрина с анимированными карточками моделей и картой экспорта в Азию и Латам.",
+  "live": "https://www.hozonauto.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-jac",
+  "name": "JAC Motors — официальный сайт",
+  "genre": "Китайский автопроизводитель (коммерческий и легковой транспорт)",
+  "structure": "Корпоративный сайт с разделами по грузовикам, легковым авто и экспортным рынкам.",
+  "live": "https://www.jac.com.cn",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-jacmotors-global",
+  "name": "JAC Motors — международный сайт",
+  "genre": "Китайский автопроизводитель (экспорт)",
+  "structure": "Глобальная версия с выбором страны и анимированными баннерами внедорожников.",
+  "live": "https://www.jacmotors.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-foton",
+  "name": "Foton — официальный сайт",
+  "genre": "Крупнейший производитель коммерческого транспорта Китая",
+  "structure": "Промышленный дизайн с разделами по грузовикам, автобусам и пикапам, анимированные баннеры.",
+  "live": "https://www.foton.com.cn",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-sinotruk",
+  "name": "Sinotruk — официальный сайт",
+  "genre": "Китайский производитель грузовиков",
+  "structure": "Индустриальный сайт с 3D-моделями тяжёлых грузовиков и картой дилеров по миру.",
+  "live": "https://www.sinotruk.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-shacman",
+  "name": "Shacman — официальный сайт",
+  "genre": "Китайский производитель грузовой техники",
+  "structure": "Экспортно-ориентированный сайт с видео о грузовиках и картой присутствия в 100+ странах.",
+  "live": "https://www.shacman.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-maxus",
+  "name": "Maxus (SAIC) — глобальный сайт",
+  "genre": "Коммерческий и LCV-бренд SAIC для экспорта",
+  "structure": "Международный портал с анимированными карточками фургонов и пикапов Maxus.",
+  "live": "https://en.saicmaxus.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-jmc",
+  "name": "JMC — официальный сайт",
+  "genre": "Китайский производитель пикапов и коммерческого транспорта",
+  "structure": "Сайт альянса JMC-Ford с разделами по пикапам Vigus и коммерческим фургонам.",
+  "live": "https://www.jmc.com.cn",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-china-car-export",
+  "name": "China Car Export — платформа экспорта авто",
+  "genre": "B2B-экспортёр китайских автомобилей",
+  "structure": "Каталог новых и подержанных китайских авто на экспорт с анимированными карточками моделей.",
+  "live": "https://www.china-car-export.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-autocango",
+  "name": "AutoCango — экспорт подержанных авто",
+  "genre": "Платформа экспорта б/у автомобилей из Китая",
+  "structure": "Маркетплейс с фильтрами по маркам и странам, карточки авто с фото и анимацией загрузки.",
+  "live": "https://www.autocango.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-chinaautoex",
+  "name": "ChinaAutoGlobal (chinaautoex.com)",
+  "genre": "B2B-платформа экспорта китайских авто",
+  "structure": "Оптовая витрина для дилеров с разделами по новым и подержанным авто, спецтехнике и запчастям.",
+  "live": "https://chinaautoex.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-portauto",
+  "name": "Port Auto — лицензированный экспортёр авто",
+  "genre": "Экспортёр из Ханчжоу (Zeekr, Lynk&Co, Geely, BYD, GAC)",
+  "structure": "B2B-портал с прозрачным прайсом FOB и анимированной подачей брендового ассортимента.",
+  "live": "https://www.portauto.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-bymotorcar",
+  "name": "ByMotorcar — экспорт авто из Китая",
+  "genre": "B2B-экспортёр EV и бензиновых авто",
+  "structure": "Оптовый каталог 50+ брендов с прямыми ценами от завода и удобным сравнением моделей.",
+  "live": "https://bymotorcar.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-autofromchina",
+  "name": "AutoFromChina — экспортный маркетплейс",
+  "genre": "Экспортёр новых, б/у авто, EV и грузовиков",
+  "structure": "Широкий каталог с разбивкой по типам транспорта и анимированными баннерами акций.",
+  "live": "https://www.autofromchina.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-chinaexportauto",
+  "name": "ChinaExportAuto — платформа продажи авто",
+  "genre": "Международная площадка продажи китайских авто",
+  "structure": "Каталог проверенных по 168 пунктам б/у авто с калькулятором доставки по миру.",
+  "live": "https://chinaexportauto.com/en/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-autoinchina",
+  "name": "Auto In China — экспортёр EV и SUV",
+  "genre": "Поставщик китайских EV/SUV/гибридов на экспорт",
+  "structure": "Витрина с фильтрами по типу кузова и энергоустановке, анимированные карточки моделей.",
+  "live": "https://www.auto-in-china.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-gcarexport",
+  "name": "GCarExport — экспорт подержанных авто",
+  "genre": "Топ-20 поставщик б/у авто и запчастей из Китая",
+  "structure": "Универсальный маркетплейс экспортных услуг с калькулятором логистики.",
+  "live": "https://gcarexport.com/",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-evb2b",
+  "name": "EV-B2B — импорт электромобилей из Китая",
+  "genre": "B2B-платформа поставки китайских EV",
+  "structure": "Специализированный маркетплейс только по электромобилям с фильтрами по запасу хода и цене.",
+  "live": "https://www.ev-b2b.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-dongchedi",
+  "name": "Dongchedi (懂车帝) — автомобильный портал",
+  "genre": "Крупнейший китайский агрегатор авто-контента (ByteDance)",
+  "structure": "Богатый интерактивный портал с видеообзорами, live-трансляциями и 3D-конфигураторами моделей.",
+  "live": "https://www.dongchedi.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-autohome",
+  "name": "Autohome (汽车之家) — автопортал",
+  "genre": "Крупнейший в Китае автомобильный портал и агрегатор",
+  "structure": "Огромная база моделей с калькуляторами, live-трансляциями презентаций и анимированными баннерами.",
+  "live": "https://www.autohome.com.cn",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-yiche",
+  "name": "Yiche (易车) — автомобильный портал",
+  "genre": "Китайский автопортал и агрегатор объявлений",
+  "structure": "Новостной и каталожный портал с интерактивными рейтингами и видеообзорами моделей.",
+  "live": "https://www.yiche.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-che168",
+  "name": "Che168 (汽车之家 б/у авто) — маркетплейс",
+  "genre": "Крупнейшая площадка объявлений подержанных авто в Китае",
+  "structure": "Маркетплейс б/у авто с картой дилеров и анимированными карточками объявлений.",
+  "live": "https://www.che168.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-guazi",
+  "name": "Guazi (瓜子二手车) — маркетплейс б/у авто",
+  "genre": "Один из крупнейших сервисов купли-продажи б/у авто в Китае",
+  "structure": "C2C/B2C платформа с ярким брендингом, включая экспортный раздел en.guazi.com.",
+  "live": "https://www.guazi.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-bitauto",
+  "name": "Bitauto — автомобильный медиапортал",
+  "genre": "Китайский автопортал и агрегатор новостей",
+  "structure": "Портал с обзорами и глобальным разделом новостей китайских брендов на экспорт.",
+  "live": "https://www.bitauto.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-gasgoo",
+  "name": "Gasgoo — B2B автопром-платформа",
+  "genre": "Индустриальный B2B портал автокомпонентов и техники Китая",
+  "structure": "Отраслевой маркетплейс для поставщиков и байеров с каталогом производителей и техники.",
+  "live": "https://www.gasgoo.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-gzucar",
+  "name": "GZUcar — экспорт авто из Гуанчжоу",
+  "genre": "B2B-экспортёр китайских авто",
+  "structure": "Каталог с гидом по экспорту и анимированными карточками моделей популярных китайских марок.",
+  "live": "https://gzucar.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-b-launch",
+  "name": "Launch — B2B-поставщик авто из Китая",
+  "genre": "Сорсинг и экспорт авто для дилеров и дистрибьюторов",
+  "structure": "Комплексный B2B-сервис от подбора до логистики с наглядными кейсами поставок.",
+  "live": "https://hnlaunchcar.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-westmotors",
+  "name": "West Motors",
+  "genre": "Привоз авто из Китая, Кореи, США, Европы и ОАЭ",
+  "structure": "Крупный мультистрановый импортёр с филиалами в Москве, Питере и Краснодаре, отдельные каталоги по странам на сайте.",
+  "live": "https://westmotors.ru/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-japantransit",
+  "name": "Япония Транзит",
+  "genre": "Привоз авто с аукционов Японии, Кореи и Китая",
+  "structure": "Компания с офисом в Москве, продаёт авто с азиатских аукционов ниже рыночных цен по РФ, есть страницы по городам.",
+  "live": "https://japantransit.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-antaresjp",
+  "name": "Antares",
+  "genre": "Привоз авто из Японии и Китая под заказ",
+  "structure": "Даёт доступ к японским аукционам и китайским автосалонам, каталог под заказ, филиалы по регионам (Иркутск и др.).",
+  "live": "https://antaresjp.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-importex",
+  "name": "Импортэкс",
+  "genre": "Растаможка и импорт авто из Китая и Кореи под ключ",
+  "structure": "Занимается расчётом пошлин, подготовкой документов и получением ПТС, доставка по всей России без посредников.",
+  "live": "https://importex.pro/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-kitajrulit",
+  "name": "Китай Рулит",
+  "genre": "Привоз новых авто из Китая под заказ",
+  "structure": "Продаёт новые китайские автомобили популярных брендов с доставкой в Россию и страны СНГ под ключ.",
+  "live": "https://kitaj-rulit.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-chinaimportcars",
+  "name": "China Import Cars",
+  "genre": "Привоз авто из Китая с шоурумом в Москве",
+  "structure": "Живой шоурум в Москве, менеджеры в мессенджерах, гарантия и фиксация цены по договору.",
+  "live": "https://chinaimportcars.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-moscowavtohous",
+  "name": "Автохаус",
+  "genre": "Привоз авто из Китая и Европы под заказ",
+  "structure": "Московская компания, привозит авто под заказ с полной растаможкой и доставкой в Москву.",
+  "live": "https://moscow-avtohous.ru/order",
+  "ours": false,
+  "note": "с сервера не открылся, код 401",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-deliverycar",
+  "name": "DeliveryCar",
+  "genre": "Привоз авто из Китая под заказ",
+  "structure": "Каталог с ценами и подробной информацией по каждому авто, доставка под ключ в Россию.",
+  "live": "https://xn----7sbabfcdkq3ametlwhb8bth.xn--p1ai/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-priorityauto",
+  "name": "Priority Auto",
+  "genre": "Привоз авто из Китая с расчётом реальной стоимости",
+  "structure": "Публикует кейсы доставки (например Haval в Екатеринбург) и статьи о реальной стоимости растаможки.",
+  "live": "https://priority-auto.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-asiaexpressauto",
+  "name": "Asia Express Auto",
+  "genre": "Привоз авто из Китая под ключ",
+  "structure": "Большой онлайн-каталог, полный цикл — подбор, проверка комплектации, покупка, логистика и таможня.",
+  "live": "https://asiaexpressauto.ru/china/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-sferacar",
+  "name": "СфераКар",
+  "genre": "Привоз авто из Японии, Кореи, Китая и Европы",
+  "structure": "Мультистрановый импортёр с офисами в Хабаровске, Владивостоке, Краснодаре и Москве, отдельные страницы по странам и городам.",
+  "live": "https://sferacar.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-kimuracars",
+  "name": "KimuraCars",
+  "genre": "Привоз авто из Китая под заказ с доставкой и растаможкой",
+  "structure": "Позволяет заключить договор и выбрать вариант авто под заказ из имеющихся предложений с помощью специалиста.",
+  "live": "https://kimuracars.com/china/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-youcarexport",
+  "name": "YoucarExport",
+  "genre": "Привоз авто из Кореи",
+  "structure": "Быстро находит автомобили на корейских аукционных площадках и оформляет растаможку.",
+  "live": "https://youcarexport.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-gtkauto",
+  "name": "ГТК Авто",
+  "genre": "Привоз авто из Европы, ОАЭ, США, Китая и Кореи",
+  "structure": "Работает с 2013 года, эксперты проверяют авто по 50+ параметрам перед выкупом.",
+  "live": "https://gtk-auto.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-jpkorea",
+  "name": "JPKorea",
+  "genre": "Привоз авто из Кореи под заказ",
+  "structure": "Каталог корейских авто под заказ с ценами и характеристиками для покупателей из РФ.",
+  "live": "https://jpkorea.ru/auto/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-pakdv",
+  "name": "PAKDV.RU",
+  "genre": "Привоз авто с аукционов Японии, США, Кореи и Китая",
+  "structure": "Международная компания, покупает и доставляет в Россию легковые авто, мотоциклы и спецтехнику.",
+  "live": "https://pakdv.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-vladdiler",
+  "name": "Владдилер",
+  "genre": "Привоз авто из Японии, Кореи и Китая во Владивосток",
+  "structure": "Подбор, покупка и доставка авто в РФ, отдельные страницы под каждый город доставки, включая СПб.",
+  "live": "https://vladdiler.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-japanlifeauto",
+  "name": "Japan Life Auto",
+  "genre": "Привоз авто из Японии во Владивосток",
+  "structure": "Специализируется на прозрачном подборе авто без скрытых комиссий.",
+  "live": "https://japanlife-auto.ru/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-vtransim",
+  "name": "VTransim",
+  "genre": "Аукционы Японии — привоз авто под заказ",
+  "structure": "Обеспечивает охраняемое хранение авто в порту Владивостока с подробной фотофиксацией.",
+  "live": "https://vtransim.ru/",
+  "ours": false,
+  "note": "с сервера не открылся, код 468",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-auction25",
+  "name": "Аукцион 25",
+  "genre": "Привоз авто из Кореи и с аукционов Японии",
+  "structure": "Работает во Владивостоке, варианты конструктора и распила под полную и неполную пошлину.",
+  "live": "https://auction25.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-alsawabiauto",
+  "name": "Al-Sawabi Auto",
+  "genre": "Привоз авто из ОАЭ",
+  "structure": "На рынке доставки авто из ОАЭ более 12 лет, офис в Москве, работает под полную пошлину и конструктором.",
+  "live": "https://al-sawabiauto.com/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-rtucargo",
+  "name": "RTUCargo",
+  "genre": "Привоз авто из ОАЭ под ключ",
+  "structure": "Оформляет документы и доставляет авто морем из Дубая, Абу-Даби и Шарджи.",
+  "live": "https://rtucargo.com/emirates-russia/avto-iz-oae-dubaj-v-rossiyu-pod-klyuch/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-worldautogroup",
+  "name": "World Auto Group (WAG)",
+  "genre": "Привоз авто из ОАЭ под заказ",
+  "structure": "Готовы отправить сотрудника осмотреть авто в Дубае лично и оценить риски перед покупкой.",
+  "live": "https://worldautogroup.ru/uae",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-1kargo",
+  "name": "1Kargo",
+  "genre": "Привоз авто из ОАЭ и Китая под заказ",
+  "structure": "Подбирает, проверяет, выкупает и привозит авто под заказ в Москву, СПб и другие города РФ.",
+  "live": "https://1kargo.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-carsdubai",
+  "name": "Cars-Dubai",
+  "genre": "Привоз авто из Дубая под ключ",
+  "structure": "Быстрая доставка от 30 дней по всей России, работа с официальными дилерами Дубая.",
+  "live": "https://cars-dubai.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-advanceshipping",
+  "name": "Advance Shipping",
+  "genre": "Привоз авто из ОАЭ и США",
+  "structure": "Доставляет любые авто из ОАЭ — легковые, грузовые, мотоциклы, спецтехнику и премиум-модели.",
+  "live": "https://advanceshipping.ru/dostavka_avtomobiley_iz_v_oae/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-radissongarage",
+  "name": "Radisson Garage",
+  "genre": "Привоз авто из ОАЭ, Германии и США",
+  "structure": "Опыт участия в аукционах IAAI, Manheim и Copart, доставка в Москву и СПб.",
+  "live": "https://radissongarage.ru/dubai",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-tamozhennyybroker",
+  "name": "Аристократ Карго",
+  "genre": "Импорт авто и растаможка под ключ за сутки",
+  "structure": "Полный комплекс доставки и растаможки авто под ключ со сроком от 2 до 4 дней.",
+  "live": "https://tamozhennyy.broker/import-avto",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-sttuningspb",
+  "name": "СТ.Тюнинг",
+  "genre": "Привоз премиум-авто из-за границы под ключ",
+  "structure": "Специализация на премиум-сегменте (BMW, Mercedes, Porsche, Range Rover), офисы в Москве и СПб.",
+  "live": "https://sttuningspb.ru/import",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-afpodbor",
+  "name": "АФ Подбор",
+  "genre": "Покупка авто из-за границы под ключ с гарантией",
+  "structure": "Берёт на себя выбор, проверку, доставку и растаможку, получение ЭПТС и СБКТС.",
+  "live": "https://afpodbor.ru/carorder",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-autonazakaz",
+  "name": "Авто-на-Заказ",
+  "genre": "Привоз авто из Европы под ключ",
+  "structure": "Продажа европейских авто на заказ с доставкой и растаможкой в Россию.",
+  "live": "https://auto-na-zakaz.ru/avto-iz-evropy/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-novosibauto",
+  "name": "Заказ авто Новосибирск",
+  "genre": "Привоз авто из Японии, Китая и Кореи под ключ",
+  "structure": "Новосибирская компания с договором и гарантией на заказ авто из трёх стран.",
+  "live": "https://xn--90afzfcbabndu.xn--p1ai/zakaz-avto-iz-japonii-kitaya-korei",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-gepards",
+  "name": "Гепард-С",
+  "genre": "Привоз авто из Китая в Новосибирск",
+  "structure": "На рынке более 15 лет, доставка за 20 дней с полной пошлиной, офис на ул. Гоголя.",
+  "live": "https://gepard-s.ru/content/avtomobili-iz-kitaya",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-chiauto",
+  "name": "CHI AUTO",
+  "genre": "Автосалон с привозом авто из Китая",
+  "structure": "Собственные сток-ярды в Маньчжурии позволяют фиксировать цену, авто в наличии и под заказ в Новосибирске.",
+  "live": "https://chi-auto.ru/autoorder",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-avadge",
+  "name": "AVADGE",
+  "genre": "Доставка авто под ключ из Европы и Азии",
+  "structure": "Мониторит рынки разных стран, берёт на себя документы, осмотры и доставку.",
+  "live": "https://avadge.com/services/turnkey-delivery/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-avtotraderrus",
+  "name": "АвтоТрейдер.рус",
+  "genre": "Подбор и импорт авто из Европы под ключ",
+  "structure": "Полный цикл выбора и ввоза авто со всего мира с растаможкой в России.",
+  "live": "https://avtotrader-rus.com/europe",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-gateauto",
+  "name": "GATE",
+  "genre": "Доставка авто из Европы под ключ",
+  "structure": "Доставка за 3-4 недели с гарантией чистоты сделки и официальной растаможкой, Москва.",
+  "live": "https://gateauto.ru/dostavka-auto-europe/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-weoneauto",
+  "name": "WEONEAUTO",
+  "genre": "Привоз авто из Европы под заказ",
+  "structure": "Подбор по параметрам, включая аукционные авто, осмотр, покупка и доставка в Россию.",
+  "live": "https://weoneauto.ru/services/avto-iz-evropy/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-vanavto",
+  "name": "ВанАвто",
+  "genre": "Привоз авто из Европы под ключ по России",
+  "structure": "Подбор и доставка по единому договору в любой город РФ, срок 20-60 дней.",
+  "live": "https://vanavto.ru/europe/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-myautocom",
+  "name": "MyAutoCom",
+  "genre": "Привоз авто из Европы, США, Кореи и Китая",
+  "structure": "15 лет опыта, прямая работа с крупными европейскими и американскими аукционами.",
+  "live": "https://myautocom.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-autocapital",
+  "name": "AutoCapital",
+  "genre": "Импорт авто из США, Европы, Китая и Кореи",
+  "structure": "Доставка под заказ без посредников с растаможкой в России.",
+  "live": "https://autocapital.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-sbcargo",
+  "name": "SB Cargo",
+  "genre": "Привоз авто из США под заказ",
+  "structure": "Помощь в покупке на американских аукционах, доставке и растаможке.",
+  "live": "https://sbcargo.ru/auto/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-emotors",
+  "name": "Expert Motors",
+  "genre": "Привоз авто из США под заказ",
+  "structure": "Лицензированный американский автодилер с собственной логистикой и работой со всеми аукционами США.",
+  "live": "https://emotors.org/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-ajm",
+  "name": "AJM",
+  "genre": "Привоз авто из США под ключ",
+  "structure": "Оформили более 3000 авто под ключ — от подбора за рубежом до доставки и постановки на учёт.",
+  "live": "https://ajm.ru/usa/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-topautostore",
+  "name": "Top Auto Store",
+  "genre": "Привоз авто из США под ключ",
+  "structure": "Доставка авто из Америки в Россию под ключ с оформлением документов.",
+  "live": "https://top-auto-store.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-labtd",
+  "name": "LAB-TD",
+  "genre": "Привоз авто из Китая под ключ в Краснодаре",
+  "structure": "Возит любую машину, легально купленную в Китае, оформляет СБКТС и ЭПТС без субподряда.",
+  "live": "https://krasnodar.lab-td.ru/zakaz-avto/zakaz-avto-iz-kitaya/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-avtohod",
+  "name": "Автоход.рф",
+  "genre": "Привоз авто из Китая по городам России",
+  "structure": "Заказ китайских авто с доставкой в Краснодар, Казань и другие города РФ.",
+  "live": "https://xn--80aeg3baww.xn--p1ai/krasnodar/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-autocom23",
+  "name": "Автоком",
+  "genre": "Привоз авто из Китая под заказ в Краснодарском крае",
+  "structure": "Лицензированная компания, продаёт новые заводские и подержанные авто с внутреннего рынка Китая.",
+  "live": "https://autocom23.ru/cars-sale/sale-chinese-cars",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-eurocarsto",
+  "name": "Еврокарс",
+  "genre": "Привоз авто из Китая под заказ в Краснодаре",
+  "structure": "Подбор китайских авто под конкретный бюджет клиента.",
+  "live": "https://eurocarsto.ru/uslugi/avtomobili-pod-zakaz-iz-kitaja/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-ohotaauto",
+  "name": "Ohota-Auto",
+  "genre": "Привоз авто из Китая с выгодой",
+  "structure": "Позиционируется как выгода более 500 тысяч рублей по сравнению с рынком РФ.",
+  "live": "https://ohota-auto.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-autogarant24",
+  "name": "AutoGarant24",
+  "genre": "Привоз авто из Китая под ключ",
+  "structure": "Официально зарегистрированное юрлицо, организует перевозку авто из Китая более 15 лет.",
+  "live": "https://autogarant24-import.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-autogolder",
+  "name": "AUTOGOLDER",
+  "genre": "Привоз авто из Китая под заказ в СПб",
+  "structure": "Долгий опыт ввоза авто в Россию, консультирует по всем этапам сделки.",
+  "live": "https://autogolder.ru/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-gaztormoz",
+  "name": "GazTormoz",
+  "genre": "Привоз авто из Китая под заказ",
+  "structure": "Организует полное таможенное оформление и доставку авто из Китая под ключ.",
+  "live": "https://gaztormoz.ru/catalog/china",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-estransit",
+  "name": "EStransit",
+  "genre": "Привоз авто из Кореи и Японии",
+  "structure": "Сопровождение от проверки лота и участия в аукционе до доставки, растаможки и постановки на учёт во Владивостоке.",
+  "live": "https://korea.estransit.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-jplife",
+  "name": "Japan Life",
+  "genre": "Привоз авто из Японии и Кореи под полную пошлину",
+  "structure": "Клиент получает уже растаможенный авто, готовый к постановке на учёт, филиалы в Хабаровске, Иркутске, Красноярске.",
+  "live": "https://jplife.ru/korea/habarovsk/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-luxonicauto",
+  "name": "Luxonica Auto",
+  "genre": "Привоз авто из Японии, Кореи и Китая",
+  "structure": "Организует выкуп, доставку во Владивосток или Хабаровск, растаможку и оформление.",
+  "live": "https://luxonicauto.com/khabarovskregion",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-trustencar",
+  "name": "Trust-Encar",
+  "genre": "Официальный представитель Encar в России",
+  "structure": "Более 100 000 авто под заказ из Кореи, представительства в Хабаровске, Владивостоке и Москве.",
+  "live": "https://trust-encar.ru/catalog/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-severdv",
+  "name": "СЕВЕР ДВ",
+  "genre": "Привоз авто из Японии под договор",
+  "structure": "Персональный менеджер 24/7 и фиксированная комиссия по договору, работает по всей стране.",
+  "live": "https://severdv.online/korea/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-primautodealer",
+  "name": "Прим Автодилер",
+  "genre": "Привоз авто из Китая под заказ",
+  "structure": "Полный цикл услуг — от подбора авто в наличии или на заводе до отправки в город клиента.",
+  "live": "https://prim-autodealer.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-zeecar",
+  "name": "Zeecar",
+  "genre": "Привоз премиальных авто из Китая",
+  "structure": "Основана в 2022 году в Москве, даёт прямой доступ к премиальным китайским авто, сервис и детейлинг.",
+  "live": "https://zeecar.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-usedautobank",
+  "name": "UsedAutoBank",
+  "genre": "Европейский автоаукцион для покупки авто в РФ",
+  "structure": "Покупка авто из Германии, Франции, Швейцарии, Литвы и других стран ЕС с консультацией по доставке и растаможке.",
+  "live": "https://www.usedautobank.com/ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-firstautobroker",
+  "name": "FirstAutoBroker",
+  "genre": "Растаможка авто под ключ с калькулятором",
+  "structure": "Онлайн-калькулятор стоимости растаможки авто в России.",
+  "live": "https://firstautobroker.ru/customs_ru/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-terminalzm",
+  "name": "Terminal ZM",
+  "genre": "Таможенный брокер, оформление авто под ключ",
+  "structure": "Лицензированный таможенный брокер в Зеленограде, работает с физлицами и юрлицами.",
+  "live": "https://terminalzm.ru/rastamozhka-avto/europe/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-rusautoimport",
+  "name": "Русский Авто Импорт",
+  "genre": "Параллельный импорт авто под ключ",
+  "structure": "Настроила цикл параллельного импорта машин с таможенным оформлением и сертификацией.",
+  "live": "https://rus-auto-import.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-ucsol",
+  "name": "UCSOL",
+  "genre": "Растаможка авто для юрлиц и ИП",
+  "structure": "Оформление на всех российских таможенных постах для юридических лиц.",
+  "live": "https://ucsol.ru/rastamozhka/avto/yuridicheskoe-litso-ip",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-alberani",
+  "name": "Альберани Логистикс",
+  "genre": "Международная перевозка автомобилей",
+  "structure": "Организует перевозку авто по всему миру с растаможкой в России.",
+  "live": "https://www.alberani.ru/perevozka-avto/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-greatsgallery",
+  "name": "GREATS",
+  "genre": "Привоз и подбор авто из любой страны мира",
+  "structure": "Автосалон в Москве, доставка авто в РФ и Казахстан, полное сопровождение сделки.",
+  "live": "https://greats.gallery/services/buy-car/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-autoportpremium",
+  "name": "Автопорт Премиум",
+  "genre": "Привоз премиум-авто из Японии, Кореи и Китая",
+  "structure": "Более 10 000 привезённых авто за 25 лет работы на рынке.",
+  "live": "https://autoport-premium.ru/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-jptrade",
+  "name": "JPTrade",
+  "genre": "Привоз авто из Китая под ключ по договору",
+  "structure": "Доставка авто из Китая на выгодных условиях, фиксация цены по договору.",
+  "live": "https://jptrade.ru/chinacar/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-emotorscorp",
+  "name": "E-Motors",
+  "genre": "Привоз авто из Японии под заказ в СПб",
+  "structure": "Гарантирует соответствие авто описанию в аукционном листе и правильное оформление.",
+  "live": "https://e-motorscorp.com/sankt-peterburg/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-placeauto",
+  "name": "Place Auto",
+  "genre": "Привоз авто с аукционов под заказ под ключ",
+  "structure": "Индивидуальный подбор и привоз авто с проверенных надёжных аукционов.",
+  "live": "https://place-auto.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-youmeco",
+  "name": "Youmeco",
+  "genre": "Привоз авто из Японии в СПб",
+  "structure": "Заказ японских авто с доставкой в Санкт-Петербург.",
+  "live": "https://youmeco.ru/sankt-peterburg/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-f5avto",
+  "name": "F5 AVTO",
+  "genre": "Привоз авто из Кореи, Китая и ОАЭ в Казани",
+  "structure": "Выгода до 30% от цены в РФ, оформление ПТС и растаможка, доставка от 10 дней.",
+  "live": "https://xn--80aaagkscw6aak8a.xn--p1ai/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-horgosauto",
+  "name": "Horgos Auto",
+  "genre": "Привоз авто из Китая под ключ в Казани",
+  "structure": "Поставка новых авто и с пробегом из Китая, подбор, проверка, выкуп и доставка по всей России.",
+  "live": "https://horgos-auto.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-autoexportrb",
+  "name": "Авто-Экспорт.рф",
+  "genre": "Привоз авто из Китая в Уфу",
+  "structure": "Доставка в Казань, Челябинск, Екатеринбург и другие города РФ, офис в Уфе.",
+  "live": "https://autoexportrb.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-avtoimport1",
+  "name": "АвтоИмпорт1",
+  "genre": "Привоз авто из Китая под заказ в Казани",
+  "structure": "Заказ авто из Китая с доставкой в Казань и другие города.",
+  "live": "https://avtoimport1.ru/china/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-bestchinacars",
+  "name": "BestChinaCars.Ru",
+  "genre": "Привоз авто из Китая под заказ и в наличии",
+  "structure": "Есть авто в наличии со склада в Москве, доставка от 30 дней при наличии в Китае.",
+  "live": "https://bestchinacars.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-whitebrokerdv",
+  "name": "White Broker",
+  "genre": "Таможенный брокер во Владивостоке",
+  "structure": "Растаможка авто из Японии, Китая и Кореи под ключ — от документов до выдачи авто и ЭПТС.",
+  "live": "https://whitebrokerdv.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-vlbbroker",
+  "name": "VLB Broker",
+  "genre": "Растаможка автомобилей во Владивостоке",
+  "structure": "Оформление за 2-4 дня: декларация, СВХ, СБКТС, ЭПТС, установка ЭРА-ГЛОНАСС.",
+  "live": "https://vlb-broker.ru/uslugi/tamozhennoe-oformlenie-avtomobiley/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-rdsavto",
+  "name": "RDS-avto",
+  "genre": "Таможенное оформление авто в порту Владивостока",
+  "structure": "Работает с автомобилями и мототехникой, прибывающими в порт Владивостока.",
+  "live": "https://rds-avto.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-vladtrek",
+  "name": "Владтрек",
+  "genre": "Официальный таможенный представитель по авто",
+  "structure": "Растаможка автомобилей во Владивостоке.",
+  "live": "https://vladtrek.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-noharaauto",
+  "name": "Nohara Auto",
+  "genre": "Привоз авто из Японии под заказ",
+  "structure": "Фиксированная комиссия 58 000 руб., полное сопровождение покупки и 2 недели бесплатного хранения во Владивостоке.",
+  "live": "https://noharaauto.com/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-jidocar",
+  "name": "JidoCar",
+  "genre": "Привоз авто из Японии, Кореи и Китая в Иркутск",
+  "structure": "На рынке с 2018 года, через компанию прошло более 10 000 авто.",
+  "live": "https://jidocar.ru/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-asiaimportauto",
+  "name": "Asia Import Auto",
+  "genre": "Привоз авто из Японии, Кореи и Китая под ключ",
+  "structure": "Доставка в Иркутск и города Сибири за 15-30 дней с фиксированной комиссией 50 000 руб.",
+  "live": "https://asiaimportauto.ru/",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-c-encarmsk",
+  "name": "Encar Москва",
+  "genre": "Официальный представитель Encar — авто из Кореи",
+  "structure": "Каталог обновляется ежедневно, цены указаны со всеми расходами включая растаможку и доставку в Москву.",
+  "live": "https://encar.msk.ru/",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-autoru",
+  "name": "Авто.ру",
+  "genre": "классифайд",
+  "structure": "Крупнейший российский классифайд по продаже новых и подержанных автомобилей с каталогом, оценкой и историей авто.",
+  "live": "https://auto.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-drom",
+  "name": "Дром",
+  "genre": "классифайд",
+  "structure": "Один из старейших автомобильных порталов-классифайдов с объявлениями, форумами и журналом.",
+  "live": "https://drom.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-avito",
+  "name": "Авито",
+  "genre": "классифайд",
+  "structure": "Крупнейшая универсальная доска объявлений с отдельным мощным разделом автомобилей.",
+  "live": "https://avito.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 429",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-carprice",
+  "name": "CarPrice",
+  "genre": "сервис выкупа",
+  "structure": "Онлайн-аукцион и сервис срочного выкупа автомобилей с пробегом.",
+  "live": "https://carprice.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-autoteka",
+  "name": "Автотека",
+  "genre": "сервис проверки авто",
+  "structure": "Сервис проверки истории автомобиля по VIN и госномеру от группы Авито.",
+  "live": "https://autoteka.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-amru",
+  "name": "Am.ru",
+  "genre": "классифайд/новости",
+  "structure": "Автомобильный портал с объявлениями, новостями рынка и обзорами моделей.",
+  "live": "https://am.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-quto",
+  "name": "Quto",
+  "genre": "классифайд/каталог",
+  "structure": "Каталог и агрегатор объявлений с подбором авто по параметрам и ценами дилеров.",
+  "live": "https://quto.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-drive2",
+  "name": "Drive2",
+  "genre": "комьюнити",
+  "structure": "Крупнейшее автомобильное сообщество-блог с бортжурналами владельцев.",
+  "live": "https://drive2.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-avtocod",
+  "name": "Автокод",
+  "genre": "сервис проверки авто",
+  "structure": "Сервис проверки автомобиля по госбазам перед покупкой (ДТП, залоги, штрафы).",
+  "live": "https://avtocod.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-carsru",
+  "name": "Cars.ru",
+  "genre": "классифайд",
+  "structure": "Агрегатор объявлений о продаже новых и подержанных автомобилей по России.",
+  "live": "https://cars.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-rolf",
+  "name": "Рольф",
+  "genre": "автосалон",
+  "structure": "Крупнейшая в России дилерская группа с широкой сетью автоцентров и своим трейд-ин.",
+  "live": "https://rolf.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-avtomir",
+  "name": "Автомир",
+  "genre": "автосалон",
+  "structure": "Федеральная дилерская сеть, представляющая десятки марок в разных регионах России.",
+  "live": "https://avtomir.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-major",
+  "name": "Мэйджор Авто",
+  "genre": "автосалон",
+  "structure": "Крупный московский дилерский холдинг с салонами премиальных и китайских марок.",
+  "live": "https://major-auto.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-avilon",
+  "name": "Авилон",
+  "genre": "автосалон",
+  "structure": "Премиальная дилерская группа Москвы, официальный дилер люксовых и китайских брендов.",
+  "live": "https://avilon.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-asc",
+  "name": "АвтоСпецЦентр",
+  "genre": "автосалон",
+  "structure": "Один из крупнейших дилерских холдингов России, здесь — сайт дилерского центра Chery.",
+  "live": "https://asc-chery.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-keyauto",
+  "name": "КлючАвто",
+  "genre": "автосалон",
+  "structure": "Сеть дилерских центров юга России с каталогом более 30 автомобильных брендов.",
+  "live": "https://keyauto.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-tts",
+  "name": "ТрансТехСервис",
+  "genre": "автосалон",
+  "structure": "Крупный дилерский холдинг Татарстана с сетью автоцентров разных марок.",
+  "live": "https://tts.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-favorit",
+  "name": "Фаворит Моторс",
+  "genre": "автосалон",
+  "structure": "Московская дилерская группа с автосалонами массовых и китайских марок.",
+  "live": "https://favorit-motors.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-atlantm",
+  "name": "Атлант-М",
+  "genre": "автосалон",
+  "structure": "Международный автомобильный холдинг с сетью дилерских центров в России и Беларуси.",
+  "live": "https://atlant-m.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-sim",
+  "name": "СИМ",
+  "genre": "автосалон",
+  "structure": "Группа компаний с дилерскими центрами в Москве и области, работает с китайскими и корейскими марками.",
+  "live": "https://sim-auto.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-genser",
+  "name": "Дженсер",
+  "genre": "автосалон",
+  "structure": "Московская сеть автоцентров и техцентров, дилер европейских и азиатских брендов.",
+  "live": "https://genser.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-avtodom",
+  "name": "Автодом",
+  "genre": "автосалон",
+  "structure": "Дилерская сеть Москвы и Санкт-Петербурга, представляющая BMW, Mercedes-Benz, Lamborghini и другие марки.",
+  "live": "https://avtodom.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-barsavto",
+  "name": "Барс Авто",
+  "genre": "автосалон",
+  "structure": "Казанская группа компаний, официальный дилер Geely, Jetour, Belgee и других китайских брендов.",
+  "live": "https://barsavto.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-freshauto",
+  "name": "Fresh Auto",
+  "genre": "автосалон/выкуп",
+  "structure": "Крупная сеть автосалонов с подержанными автомобилями, выкупом и трейд-ин.",
+  "live": "https://fresh-auto.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-avtoruss",
+  "name": "АвтоРусь",
+  "genre": "автосалон",
+  "structure": "Дилерская группа с салонами китайских марок (Tank, Exeed, Omoda) в нескольких регионах.",
+  "live": "https://avtoruss.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-maximum",
+  "name": "Максимум Авто",
+  "genre": "автосалон",
+  "structure": "Дилерская сеть Санкт-Петербурга, представляющая Jaecoo, Omoda, Exeed и другие бренды.",
+  "live": "https://maximum-auto.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-panavto",
+  "name": "ПанАвто",
+  "genre": "автосалон",
+  "structure": "Московский дилерский холдинг, официальный дилер Hongqi и других марок.",
+  "live": "https://panavto.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-borishof",
+  "name": "БорисХоф",
+  "genre": "автосалон",
+  "structure": "Московская дилерская группа, работает с китайскими марками Exeed, Belgee и другими.",
+  "live": "https://borishof.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-yugavto",
+  "name": "Юг-Авто",
+  "genre": "автосалон",
+  "structure": "Региональный дилерский холдинг юга России, официальный дилер Livan и других марок.",
+  "live": "https://yug-avto.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-alarmmotors",
+  "name": "Аларм-Моторс",
+  "genre": "автосалон",
+  "structure": "Дилерская группа Санкт-Петербурга, официальный дилер Tank и других китайских брендов.",
+  "live": "https://alarm-motors.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-csmotors",
+  "name": "ЦС-Моторс",
+  "genre": "автосалон",
+  "structure": "Дилерский холдинг, представляющий Tank и другие марки в нескольких регионах.",
+  "live": "https://cs-motors.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 301",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-avtogermes",
+  "name": "АвтоГермес",
+  "genre": "автосалон",
+  "structure": "Московская дилерская группа с салонами массовых и премиальных марок, лизинговые программы.",
+  "live": "https://avtogermes.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-avtoliga",
+  "name": "Автолига",
+  "genre": "автосалон",
+  "structure": "Дилерская сеть, официальный дилер Belgee и других брендов в нескольких городах.",
+  "live": "https://avtoliga-belgee.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-haval",
+  "name": "Haval",
+  "genre": "марка в РФ",
+  "structure": "Официальный российский сайт китайской марки Haval с модельным рядом и поиском дилеров.",
+  "live": "https://haval.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-chery",
+  "name": "Chery",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт Chery в России с каталогом моделей, ценами и дилерской сетью.",
+  "live": "https://chery.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-exeed",
+  "name": "Exeed",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт премиального суббренда Chery для российского рынка.",
+  "live": "https://exeed.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-jetour",
+  "name": "Jetour",
+  "genre": "марка в РФ",
+  "structure": "Официальный дистрибьюторский сайт марки Jetour, включая модели, выпускаемые на Автоторе.",
+  "live": "https://jetour-ru.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-omoda",
+  "name": "Omoda",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт бренда Omoda в России с более чем 190 дилерскими центрами.",
+  "live": "https://omoda.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-jaecoo",
+  "name": "Jaecoo",
+  "genre": "марка в РФ",
+  "structure": "Официальный российский сайт нового суббренда Chery — внедорожников Jaecoo.",
+  "live": "https://jaecoo.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-geely",
+  "name": "Geely",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт эксклюзивного дистрибьютора Geely в России.",
+  "live": "https://www.geely-motors.com",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-changan",
+  "name": "Changan",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт марки Changan в России с модельным рядом 2026 года.",
+  "live": "https://changanauto.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-tank",
+  "name": "Tank",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт внедорожного бренда Tank (Great Wall Motors) в России.",
+  "live": "https://tank.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-belgee",
+  "name": "Belgee",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт белорусско-китайского бренда Belgee на базе технологий Geely.",
+  "live": "https://belgee.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-solaris",
+  "name": "Solaris",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт российского автобренда Solaris, выпускаемого заводом АГР в Санкт-Петербурге.",
+  "live": "https://solaris.auto",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-lada",
+  "name": "Lada",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт АвтоВАЗа и марки Lada с полным модельным рядом и конфигуратором.",
+  "live": "https://lada.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-uaz",
+  "name": "УАЗ",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт Ульяновского автозавода с внедорожниками и коммерческим транспортом.",
+  "live": "https://uaz.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-moskvich",
+  "name": "Москвич",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт возрождённого бренда Москвич с электромобилями и кроссоверами.",
+  "live": "https://moskvich.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-evolute",
+  "name": "Evolute",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт российского бренда электромобилей и гибридов Evolute.",
+  "live": "https://www.evolute.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-livan",
+  "name": "Livan",
+  "genre": "марка в РФ",
+  "structure": "Официальный российский сайт бренда Livan, альянса Geely и Lifan.",
+  "live": "https://livan-motors.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-kaiyi",
+  "name": "Kaiyi",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт дистрибьютора китайской марки Kaiyi в России.",
+  "live": "https://kaiyi-auto.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-swm",
+  "name": "SWM",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт дистрибьютора итало-китайской марки SWM в России.",
+  "live": "https://swm-auto.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-hongqi",
+  "name": "Hongqi",
+  "genre": "марка в РФ",
+  "structure": "Официальный российский сайт премиальной китайской марки Hongqi.",
+  "live": "https://hongqi.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-voyah",
+  "name": "Voyah",
+  "genre": "марка в РФ",
+  "structure": "Официальный российский сайт премиальных электромобилей и гибридов Voyah.",
+  "live": "https://voyah.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-europlan",
+  "name": "Европлан",
+  "genre": "сервис лизинга",
+  "structure": "Лидер рынка автолизинга в России для физических и юридических лиц.",
+  "live": "https://europlan.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-delimobil",
+  "name": "Делимобиль",
+  "genre": "сервис автопроката",
+  "structure": "Крупнейший в России поминутный каршеринг с десятками тысяч автомобилей.",
+  "live": "https://delimobil.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-belkacar",
+  "name": "BelkaCar",
+  "genre": "сервис автопроката",
+  "structure": "Каршеринговый сервис Москвы и других городов с посуточной и поминутной арендой.",
+  "live": "https://belkacar.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-reso",
+  "name": "РЕСО-Гарантия",
+  "genre": "сервис страхования",
+  "structure": "Один из крупнейших страховщиков России, включая автострахование ОСАГО и КАСКО.",
+  "live": "https://reso.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-ingos",
+  "name": "Ингосстрах",
+  "genre": "сервис страхования",
+  "structure": "Крупная федеральная страховая компания с продуктами автострахования.",
+  "live": "https://ingos.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-alfastrah",
+  "name": "АльфаСтрахование",
+  "genre": "сервис страхования",
+  "structure": "Федеральный страховщик с онлайн-оформлением ОСАГО и КАСКО для автовладельцев.",
+  "live": "https://alfastrahovanie.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-rgs",
+  "name": "Росгосстрах",
+  "genre": "сервис страхования",
+  "structure": "Один из старейших страховщиков России с широкой линейкой автострахования.",
+  "live": "https://rgs.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-rosbankavto",
+  "name": "Росбанк Авто",
+  "genre": "сервис автокредита",
+  "structure": "Автокредитное подразделение Росбанка с онлайн-заявкой и партнёрскими автосалонами.",
+  "live": "https://rosbank-avto.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-afpodbor",
+  "name": "Auto Fact (автоподбор)",
+  "genre": "сервис автоподбора",
+  "structure": "Сеть экспертов по подбору и проверке автомобилей перед покупкой в 19 городах России.",
+  "live": "https://afpodbor.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-rentmotors",
+  "name": "Rentmotors",
+  "genre": "сервис автопроката",
+  "structure": "Сервис долгосрочной и краткосрочной аренды автомобилей по России.",
+  "live": "https://rentmotors.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-sberleasing",
+  "name": "Сбер Лизинг",
+  "genre": "сервис лизинга",
+  "structure": "Лизинговая компания группы Сбербанк с программами автолизинга для бизнеса.",
+  "live": "https://www.sberleasing.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-sogaz",
+  "name": "СОГАЗ",
+  "genre": "сервис страхования",
+  "structure": "Один из крупнейших страховщиков России с продуктами автострахования для физлиц и бизнеса.",
+  "live": "https://sogaz.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-vsk",
+  "name": "ВСК",
+  "genre": "сервис страхования",
+  "structure": "Федеральная страховая компания с автострахованием ОСАГО, КАСКО и помощью на дороге.",
+  "live": "https://vsk.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-renins",
+  "name": "Ренессанс страхование",
+  "genre": "сервис страхования",
+  "structure": "Крупный страховщик с цифровыми сервисами оформления автополисов.",
+  "live": "https://renins.com",
+  "ours": false,
+  "note": "с сервера не открылся, код 403",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-farpost",
+  "name": "Farpost",
+  "genre": "классифайд",
+  "structure": "Крупнейший классифайд Дальнего Востока России с обширным разделом автомобилей.",
+  "live": "https://farpost.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-gaz",
+  "name": "ГАЗ",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт Горьковского автозавода — коммерческий транспорт и легковые автомобили.",
+  "live": "https://gaz.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-sollers",
+  "name": "Соллерс",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт российского автопроизводителя коммерческой техники и легковых автомобилей.",
+  "live": "https://sollers-auto.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-aurus",
+  "name": "Aurus",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт российского люксового автомобильного бренда Aurus.",
+  "live": "https://aurus-cars.com",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-kamaz",
+  "name": "КамАЗ",
+  "genre": "марка в РФ",
+  "structure": "Официальный сайт крупнейшего российского производителя грузовых автомобилей.",
+  "live": "https://kamaz.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-avtospot",
+  "name": "Autospot",
+  "genre": "классифайд",
+  "structure": "Агрегатор автосалонов и дилерских центров с картой и рейтингами.",
+  "live": "https://autospot.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-rossko",
+  "name": "Росско",
+  "genre": "автосалон",
+  "structure": "Санкт-петербургская дилерская группа с автосалонами массовых и китайских марок.",
+  "live": "https://rossko.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 500",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-zetta",
+  "name": "Zetta Страхование",
+  "genre": "сервис страхования",
+  "structure": "Страховая компания с продуктами ОСАГО и КАСКО для автовладельцев.",
+  "live": "https://zetta.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-vtbleasing",
+  "name": "ВТБ Лизинг",
+  "genre": "сервис лизинга",
+  "structure": "Лизинговая компания группы ВТБ с программами автолизинга для бизнеса.",
+  "live": "https://vtb-leasing.ru",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-balticleasing",
+  "name": "Балтийский лизинг",
+  "genre": "сервис лизинга",
+  "structure": "Федеральная лизинговая компания с большой долей автотранспорта в портфеле.",
+  "live": "https://baltlease.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-sberauto",
+  "name": "СберАвто",
+  "genre": "классифайд",
+  "structure": "Маркетплейс подержанных и новых автомобилей от группы Сбербанк с проверкой и доставкой.",
+  "live": "https://sberauto.com",
+  "ours": false,
+  "note": "с сервера не открылся, код 000",
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-yandexdrive",
+  "name": "Яндекс Драйв",
+  "genre": "сервис автопроката",
+  "structure": "Один из крупнейших каршерингов России от Яндекса с поминутной арендой.",
+  "live": "https://drive.yandex.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-d-sovcomleasing",
+  "name": "Совкомбанк Лизинг",
+  "genre": "сервис лизинга",
+  "structure": "Лизинговая компания банковской группы Совкомбанк с автолизингом для бизнеса.",
+  "live": "https://sovcombank-leasing.ru",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-redbullracing",
+  "name": "Red Bull Racing",
+  "genre": "Формула-1 команда",
+  "structure": "Сайт F1-команды со скролл-сторителлингом: болид собирается по частям и вращается в 3D при прокрутке страницы.",
+  "live": "https://www.redbullracing.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-ferrari",
+  "name": "Ferrari",
+  "genre": "Суперкары, официальный сайт бренда",
+  "structure": "Интерактивный 3D-конфигуратор моделей с плавным вращением кузова и параллакс-анимацией деталей при наведении.",
+  "live": "https://www.ferrari.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-ferrarif1",
+  "name": "Ferrari Formula 1",
+  "genre": "Формула-1 команда",
+  "structure": "Раздел про команду Ferrari F1 с видео-фоном болида и GSAP-анимацией появления карточек пилотов при скролле.",
+  "live": "https://www.ferrari.com/en-EN/formula1",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-mclaren",
+  "name": "McLaren Automotive",
+  "genre": "Суперкары",
+  "structure": "3D-конфигуратор Artura/Senna с покадровым вращением модели и кинетическими переходами между цветами и опциями.",
+  "live": "https://www.mclaren.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-mclarenracing",
+  "name": "McLaren Racing",
+  "genre": "Формула-1 команда",
+  "structure": "Сайт гоночной команды с параллакс-скроллом и анимированной сборкой болида из отдельных элементов на главной.",
+  "live": "https://www.mclaren.com/racing",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-mercedesamgf1",
+  "name": "Mercedes-AMG PETRONAS F1",
+  "genre": "Формула-1 команда",
+  "structure": "Скролл-сторителлинг с плавными переходами между секциями и анимацией углеродных деталей болида крупным планом.",
+  "live": "https://www.mercedesamgf1.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-astonmartinf1",
+  "name": "Aston Martin Aramco F1",
+  "genre": "Формула-1 команда",
+  "structure": "Тёмный дизайн с кинетическими градиентами британского зелёного цвета и плавной анимацией появления блоков при скролле.",
+  "live": "https://www.astonmartinf1.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-williamsracing",
+  "name": "Williams Racing",
+  "genre": "Формула-1 команда",
+  "structure": "Сайт команды с видео-заставками болида в движении и плавными GSAP-переходами между разделами.",
+  "live": "https://www.williamsracing.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-haasf1",
+  "name": "Haas F1 Team",
+  "genre": "Формула-1 команда",
+  "structure": "Динамичный сайт с крупными видео болида на треке и анимированными счётчиками статистики команды.",
+  "live": "https://www.haasf1team.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-vcarb",
+  "name": "Visa Cash App RB",
+  "genre": "Формула-1 команда",
+  "structure": "Яркий брендированный сайт с анимированными неоновыми акцентами и плавным скролл-раскрытием карточек болида.",
+  "live": "https://www.visacashapprb.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-stakef1",
+  "name": "Stake F1 Team (Sauber)",
+  "genre": "Формула-1 команда",
+  "structure": "Сайт команды с крупным героем-видео болида и анимацией смены слайдов на главной странице.",
+  "live": "https://www.stakef1team.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-f1official",
+  "name": "Formula 1 официальный сайт",
+  "genre": "Формула-1, чемпионат",
+  "structure": "Официальный портал F1 с интерактивными турнирными таблицами и анимированными переходами между гонками сезона.",
+  "live": "https://www.f1.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-mercedesamg",
+  "name": "Mercedes-AMG",
+  "genre": "Спортивные автомобили",
+  "structure": "Сайт производителя с 3D-вращением моделей AMG и анимацией разгона в видео-заставках.",
+  "live": "https://www.mercedes-amg.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-fiawec",
+  "name": "FIA World Endurance Championship",
+  "genre": "Гонки на выносливость (Ле-Ман)",
+  "structure": "Сайт чемпионата WEC с анимированной картой трасс и плавным появлением карточек гоночных прототипов Hypercar при скролле.",
+  "live": "https://www.fiawec.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-lemans",
+  "name": "24 часа Ле-Мана",
+  "genre": "Легендарная гонка на выносливость",
+  "structure": "Официальный сайт легендарной гонки с видео-героем трассы и кинетической типографикой в заголовках разделов.",
+  "live": "https://www.lemans.org",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-lemansclassic",
+  "name": "Le Mans Classic",
+  "genre": "Фестиваль ретро-автоспорта",
+  "structure": "Сайт фестиваля классических гонок с анимированной галереей ретро-болидов и плавными переходами между эпохами.",
+  "live": "https://www.lemansclassic.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-tgr",
+  "name": "Toyota Gazoo Racing",
+  "genre": "Автоспорт (WRC, Ле-Ман)",
+  "structure": "Сайт гоночного подразделения Toyota с покадровой анимацией машины в прыжке на ралли и параллакс-скроллом.",
+  "live": "https://toyotagazooracing.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-wrc",
+  "name": "World Rally Championship",
+  "genre": "Ралли, чемпионат мира",
+  "structure": "Официальный сайт WRC с анимированными картами этапов и динамичными видео-переходами между гонками.",
+  "live": "https://www.wrc.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-nascar",
+  "name": "NASCAR",
+  "genre": "Кольцевые гонки США",
+  "structure": "Крупный портал с анимированными live-таймингами гонок и кинетическими баннерами болидов на овальных трассах.",
+  "live": "https://www.nascar.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-formulae",
+  "name": "Формула E",
+  "genre": "Электрический автоспорт",
+  "structure": "Сайт чемпионата с неоновой анимацией электро-болидов и плавными переходами между городскими трассами сезона.",
+  "live": "https://www.fiaformulae.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-indycar",
+  "name": "IndyCar",
+  "genre": "Гонки открытых колёс США",
+  "structure": "Сайт серии IndyCar с анимированной 3D-моделью болида на главной и динамичными видео обгонов.",
+  "live": "https://www.indycar.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-imsa",
+  "name": "IMSA WeatherTech Championship",
+  "genre": "Спортпрототипы, гонки на выносливость",
+  "structure": "Портал серии IMSA с анимированной сеткой гоночных классов и плавным скролл-раскрытием карточек команд.",
+  "live": "https://www.imsa.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-goodwood",
+  "name": "Goodwood Festival of Speed",
+  "genre": "Автомобильный фестиваль",
+  "structure": "Сайт легендарного фестиваля с видео-заездом по знаменитому подъёму на холм и кинетической анимацией афиш.",
+  "live": "https://www.goodwood.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-silverstone",
+  "name": "Silverstone Circuit",
+  "genre": "Автодром, дом британской Ф1",
+  "structure": "Сайт трассы с интерактивной анимированной картой круга Silverstone и плавными переходами между секциями событий.",
+  "live": "https://www.silverstone.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-petersen",
+  "name": "Petersen Automotive Museum",
+  "genre": "Автомобильный музей",
+  "structure": "Сайт музея в Лос-Анджелесе с 3D-облётом культового здания и анимированной галереей экспонатов при скролле.",
+  "live": "https://www.petersen.org",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-pebblebeach",
+  "name": "Pebble Beach Concours d'Elegance",
+  "genre": "Выставка классических автомобилей",
+  "structure": "Сайт элитного конкурса ретро-автомобилей с плавной галереей фотографий и кинетическими переходами между годами.",
+  "live": "https://www.pebblebeachconcours.net",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-retromobile",
+  "name": "Rétromobile",
+  "genre": "Парижская выставка классики",
+  "structure": "Сайт парижской ретро-выставки с анимированным переключением экспонентов и параллакс-фоном классических авто.",
+  "live": "https://www.retromobile.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-daytona",
+  "name": "Daytona International Speedway",
+  "genre": "Легендарный овальный автодром",
+  "structure": "Сайт трассы Daytona с видео-героем гонки NASCAR и анимированной 3D-схемой трибун стадиона.",
+  "live": "https://www.daytonainternationalspeedway.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-singer",
+  "name": "Singer Vehicle Design",
+  "genre": "Рестомод Porsche 911",
+  "structure": "Сайт культового рестомод-ателье с покадровой анимацией сборки Porsche 911 из отдельных деталей на скролле.",
+  "live": "https://www.singervehicledesign.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-brabus",
+  "name": "Brabus",
+  "genre": "Тюнинг-ателье (Mercedes)",
+  "structure": "Сайт немецкого тюнинг-ателье с 3D-вращением моделей и анимированным раскрытием карбоновых обвесов при наведении.",
+  "live": "https://www.brabus.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-mansory",
+  "name": "Mansory",
+  "genre": "Люксовый тюнинг-ателье",
+  "structure": "Портфолио тюнинг-студии с крупными видео-роликами доработанных суперкаров и плавными переходами между проектами.",
+  "live": "https://www.mansory.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-ruf",
+  "name": "RUF Automobile",
+  "genre": "Автопроизводитель на базе Porsche",
+  "structure": "Сайт немецкого автопроизводителя с анимированной сборкой шасси CTR из отдельных узлов при скролле страницы.",
+  "live": "https://www.ruf-automobile.de",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-kahndesign",
+  "name": "Kahn Design",
+  "genre": "Люксовый тюнинг и рестомод",
+  "structure": "Сайт британского ателье с галереей проектов на плавной карусельной анимации и параллакс-эффектом фото.",
+  "live": "https://www.kahndesign.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-libertywalk",
+  "name": "Liberty Walk",
+  "genre": "Widebody-тюнинг",
+  "structure": "Сайт японского widebody-ателье с анимированными до/после слайдерами и видео дрифт-роликами доработанных машин.",
+  "live": "https://www.libertywalk.co.jp",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-priordesign",
+  "name": "Prior Design",
+  "genre": "Аэродинамический тюнинг",
+  "structure": "Портфолио немецкого тюнинг-ателье с 3D-эффектом наведения на обвесы и плавной анимацией смены проектов.",
+  "live": "https://www.prior-design.de",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-novitec",
+  "name": "Novitec",
+  "genre": "Тюнинг суперкаров (Ferrari, Lamborghini)",
+  "structure": "Сайт ателье с покадровой 360°-прокруткой доработанных суперкаров и анимированными спецификациями при скролле.",
+  "live": "https://www.novitec.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-techart",
+  "name": "TechArt",
+  "genre": "Тюнинг Porsche",
+  "structure": "Сайт немецкого ателье по доработке Porsche с 3D-конфигуратором и плавным вращением модели вокруг оси.",
+  "live": "https://www.techart.de",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-hennessey",
+  "name": "Hennessey Performance",
+  "genre": "Тюнинг и гипертюнинг мощности",
+  "structure": "Сайт американского тюнинг-дома с видео разгонных заездов и кинетической анимацией цифр мощности при скролле.",
+  "live": "https://www.hennesseyperformance.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-icon4x4",
+  "name": "ICON 4x4",
+  "genre": "Рестомод внедорожников",
+  "structure": "Сайт американской студии рестомодов с анимированной галереей проектов Bronco/FJ и плавными переходами фото до/после.",
+  "live": "https://www.icon4x4.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-ringbrothers",
+  "name": "Ring Brothers",
+  "genre": "Рестомод американских маслкаров",
+  "structure": "Сайт студии рестомодов маслкаров с крупными видео-роликами сборки кастомных Mustang и Camaro.",
+  "live": "https://www.ringbrothers.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-overfinch",
+  "name": "Overfinch",
+  "genre": "Тюнинг Range Rover",
+  "structure": "Сайт британского ателье с плавным 3D-вращением доработанных Range Rover и анимированными панелями материалов салона.",
+  "live": "https://www.overfinch.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-startech",
+  "name": "Startech",
+  "genre": "Тюнинг Land Rover",
+  "structure": "Сайт немецкого тюнинг-ателье с анимированной конфигурацией обвесов и плавными переходами между линейками моделей.",
+  "live": "https://www.startech.de",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-lumma",
+  "name": "Lumma Design",
+  "genre": "Широкий тюнинг-обвес",
+  "structure": "Сайт ателье с галереей проектов на fade-анимации и крупными фото доработанных кузовов при скролле.",
+  "live": "https://www.lumma-design.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-doluck",
+  "name": "Do-Luck",
+  "genre": "Японский спортивный тюнинг",
+  "structure": "Сайт японской тюнинг-студии с анимированными карточками проектов Nissan/Toyota и плавной галереей деталей.",
+  "live": "https://www.do-luck.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-develsixteen",
+  "name": "Devel Sixteen",
+  "genre": "Гиперкар-концепт",
+  "structure": "Сайт гиперкара Devel Sixteen с видео-фоном мотора V16 и кинетической анимацией цифр мощности 5000 л.с.",
+  "live": "https://www.develmotors.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-vossen",
+  "name": "Vossen Wheels",
+  "genre": "Колёсные диски, 3D-конфигуратор",
+  "structure": "Сайт производителя дисков с 3D-конфигуратором: диск вращается и подбирается под модель авто в реальном времени.",
+  "live": "https://www.vossenwheels.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-bbs",
+  "name": "BBS Wheels",
+  "genre": "Колёсные диски",
+  "structure": "Сайт немецкого производителя дисков с анимированным 360°-просмотром моделей и плавными hover-эффектами карточек.",
+  "live": "https://www.bbs.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-brembo",
+  "name": "Brembo",
+  "genre": "Тормозные системы",
+  "structure": "Сайт производителя тормозов с анимацией разреза суппорта и плавной 3D-визуализацией работы тормозного диска.",
+  "live": "https://www.brembo.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-akrapovic",
+  "name": "Akrapovič",
+  "genre": "Спортивные выхлопные системы",
+  "structure": "Сайт производителя выхлопов с анимацией титановых труб, вспыхивающих искрами при hover, и звуковыми роликами.",
+  "live": "https://www.akrapovic.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-recaro",
+  "name": "Recaro Automotive",
+  "genre": "Спортивные сиденья",
+  "structure": "Сайт производителя ковшеобразных сидений с 3D-вращением модели кресла и анимированным подбором тканей.",
+  "live": "https://www.recaro-automotive.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-bilstein",
+  "name": "Bilstein",
+  "genre": "Спортивная подвеска",
+  "structure": "Сайт производителя амортизаторов с анимацией сжатия/отбоя стойки в разрезе и плавной 3D-визуализацией устройства.",
+  "live": "https://www.bilstein.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-ohlins",
+  "name": "Öhlins",
+  "genre": "Гоночная подвеска",
+  "structure": "Сайт шведского производителя подвески с анимированным разрезом амортизатора и плавным скроллом по линейке продуктов.",
+  "live": "https://www.ohlins.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-forgeline",
+  "name": "Forgeline Wheels",
+  "genre": "Кованые диски",
+  "structure": "Сайт производителя кованых дисков с 3D-конфигуратором цвета и отделки диска в реальном времени.",
+  "live": "https://www.forgeline.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-enkei",
+  "name": "Enkei Wheels",
+  "genre": "Колёсные диски",
+  "structure": "Сайт японского производителя дисков с анимированной галереей моделей и плавным зумом на структуру литья.",
+  "live": "https://www.enkei.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-pirelli",
+  "name": "Pirelli",
+  "genre": "Шины, партнёр Ф1",
+  "structure": "Сайт шинного бренда и техпартнёра Ф1 с анимацией протектора шины и видео-роликами гоночных заездов.",
+  "live": "https://www.pirelli.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-michelin",
+  "name": "Michelin",
+  "genre": "Шины, Ле-Ман",
+  "structure": "Сайт производителя шин с анимированной 3D-моделью протектора и плавным скролл-сторителлингом о технологиях.",
+  "live": "https://www.michelin.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-lotus",
+  "name": "Lotus Cars",
+  "genre": "Спорткары",
+  "structure": "Сайт Lotus с 3D-конфигуратором Emira и анимированными переходами между вариантами окраски кузова.",
+  "live": "https://www.lotuscars.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-mcmurtry",
+  "name": "McMurtry Automotive",
+  "genre": "Электрический спидкар с вентилятором прижима",
+  "structure": "Сайт бренда McMurtry Spéirling с анимацией работы вентилятора аэродинамического прижима и видео рекордных заездов на холм.",
+  "live": "https://www.mcmurtry.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-delorean",
+  "name": "DeLorean Motor Company",
+  "genre": "Возрождённый культовый бренд",
+  "structure": "Сайт возрождённого бренда DeLorean с анимацией открывающихся дверей типа gullwing и ретро-футуристичным дизайном.",
+  "live": "https://www.delorean.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-hyundai",
+  "name": "Hyundai N",
+  "genre": "Спортивная суб-марка Hyundai",
+  "structure": "Раздел Hyundai N с анимацией дрифтующего Ioniq 5 N и кинетическими переходами между спортивными режимами.",
+  "live": "https://www.hyundai.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-fisker",
+  "name": "Fisker",
+  "genre": "Электромобили",
+  "structure": "Сайт бренда с анимированным 3D-конфигуратором Ocean и плавными переходами между экстерьерными опциями.",
+  "live": "https://www.fisker.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-porsche",
+  "name": "Porsche",
+  "genre": "Спортивные автомобили",
+  "structure": "Флагманский сайт Porsche с продвинутым 3D-конфигуратором 911 и покадровой анимацией сборки модели из деталей при скролле.",
+  "live": "https://www.porsche.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-mbclassic",
+  "name": "Mercedes-Benz Classic",
+  "genre": "Классические автомобили Mercedes",
+  "structure": "Архивный сайт Mercedes-Benz Classic с анимированной хронологией моделей и плавной галереей винтажных фото.",
+  "live": "https://www.mercedes-benz-classic.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-activetheory",
+  "name": "Active Theory",
+  "genre": "Digital-студия, WebGL-проекты",
+  "structure": "Портфолио студии с автомобильными WebGL-кейсами: 3D-модели машин разлетаются на детали при скролле страницы.",
+  "live": "https://www.activetheory.net",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-resn",
+  "name": "RESN",
+  "genre": "Digital-студия, интерактив",
+  "structure": "Портфолио новозеландской студии с игровыми 3D/WebGL-кейсами для автобрендов и плавной физикой взаимодействия.",
+  "live": "https://www.resn.co.nz",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-unit9",
+  "name": "UNIT9",
+  "genre": "Продакшн-студия, интерактив",
+  "structure": "Портфолио студии с кейсами для автопроизводителей: интерактивные 3D-конфигураторы и WebGL-сторителлинг.",
+  "live": "https://www.unit9.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-akqa",
+  "name": "AKQA",
+  "genre": "Digital-агентство",
+  "structure": "Портфолио агентства с автомобильными кейсами: анимированные лендинги запуска моделей с покадровым скроллом.",
+  "live": "https://www.akqa.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-breel",
+  "name": "B-Reel",
+  "genre": "Креативная студия, WebGL",
+  "structure": "Портфолио студии с интерактивными автомобильными проектами на Three.js и плавной кинетической анимацией сцен.",
+  "live": "https://www.b-reel.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-locomotive",
+  "name": "Locomotive",
+  "genre": "Digital-студия (создатели Locomotive Scroll)",
+  "structure": "Портфолио студии — авторов библиотеки плавного скролла Locomotive Scroll, используемой в автомобильных спецпроектах.",
+  "live": "https://locomotive.ca",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-basementstudio",
+  "name": "Basement Studio",
+  "genre": "WebGL-студия",
+  "structure": "Портфолио студии с фирменным сложным Three.js/WebGL интерактивом, применяемым в том числе для автомобильных брендов.",
+  "live": "https://basement.studio",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-hellomonday",
+  "name": "Hello Monday",
+  "genre": "Креативная студия",
+  "structure": "Портфолио студии с кинетическими автомобильными кейсами и плавными переходами между 3D-сценами при скролле.",
+  "live": "https://www.hellomonday.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-ultranoir",
+  "name": "Ultra Noir",
+  "genre": "WebGL/3D студия",
+  "structure": "Портфолио студии с фотореалистичными 3D-рендерами и WebGL-анимацией автомобилей в движении.",
+  "live": "https://www.ultranoir.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-e-redbull",
+  "name": "Red Bull",
+  "genre": "Бренд-медиа, спецпроекты",
+  "structure": "Сайт бренда с анимированными спецпроектами про автоспорт и параллакс-скроллом видео экстремальных заездов.",
+  "live": "https://www.redbull.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-iaai",
+  "name": "IAAI",
+  "genre": "Аукцион",
+  "structure": "Американский аукцион повреждённых и подержанных авто от страховых компаний, с живыми онлайн-торгами.",
+  "live": "https://www.iaai.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-manheim",
+  "name": "Manheim",
+  "genre": "Аукцион",
+  "structure": "Крупнейший в США оптовый автоаукцион для дилеров, с современной торговой платформой OVE.",
+  "live": "https://www.manheim.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-openlane",
+  "name": "OPENLANE (ADESA)",
+  "genre": "Аукцион",
+  "structure": "Обновлённый бренд ADESA — цифровая B2B-платформа оптовых автоаукционов Северной Америки и Европы.",
+  "live": "https://www.openlane.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-bat",
+  "name": "Bring a Trailer",
+  "genre": "Аукцион",
+  "structure": "Культовый американский аукцион коллекционных и редких автомобилей с живым сообществом комментаторов.",
+  "live": "https://bringatrailer.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-carsandbids",
+  "name": "Cars & Bids",
+  "genre": "Аукцион",
+  "structure": "Аукцион современных и энтузиастских авто, основанный Дагом Демуро, с ярким видео-контентом.",
+  "live": "https://carsandbids.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-rmsothebys",
+  "name": "RM Sotheby's",
+  "genre": "Аукцион",
+  "structure": "Один из главных мировых аукционных домов классических и коллекционных автомобилей, партнёр Sotheby's.",
+  "live": "https://rmsothebys.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-bonhamscars",
+  "name": "Bonhams Cars",
+  "genre": "Аукцион",
+  "structure": "Автомобильное подразделение аукционного дома Bonhams с элегантными карточками лотов и историей провенанса.",
+  "live": "https://cars.bonhams.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-gooding",
+  "name": "Gooding & Company",
+  "genre": "Аукцион",
+  "structure": "Бутиковый аукционный дом коллекционных автомобилей, известный по торгам Pebble Beach и Amelia Island.",
+  "live": "https://www.goodingco.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-barrettjackson",
+  "name": "Barrett-Jackson",
+  "genre": "Аукцион",
+  "structure": "Знаменитый телевизионный автоаукцион США с зрелищными живыми торгами классики и мускул-каров.",
+  "live": "https://www.barrett-jackson.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-mecum",
+  "name": "Mecum Auctions",
+  "genre": "Аукцион",
+  "structure": "Крупнейший в мире аукцион коллекционных автомобилей по числу лотов, с насыщенным медиаформатом.",
+  "live": "https://www.mecum.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-collectingcars",
+  "name": "Collecting Cars",
+  "genre": "Аукцион",
+  "structure": "Онлайн-аукцион коллекционных и спортивных авто из Великобритании с международной аудиторией.",
+  "live": "https://collectingcars.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-themarket",
+  "name": "The Market by Bonhams",
+  "genre": "Аукцион",
+  "structure": "Онлайн-платформа аукционных торгов классических авто, связанная с домом Bonhams.",
+  "live": "https://themarket.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-copart",
+  "name": "Copart",
+  "genre": "Аукцион",
+  "structure": "Гигант онлайн-аукционов повреждённых и утилизационных авто, основной источник машин на экспорт из США.",
+  "live": "https://www.copart.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-catawiki",
+  "name": "Catawiki",
+  "genre": "Аукцион",
+  "structure": "Европейский онлайн-аукцион коллекционных вещей с отдельным разделом ретро- и спортивных авто.",
+  "live": "https://www.catawiki.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-bca",
+  "name": "BCA (British Car Auctions)",
+  "genre": "Аукцион",
+  "structure": "Крупнейший в Великобритании и Европе оптовый автоаукцион для дилеров и лизинговых компаний.",
+  "live": "https://www.bca.co.uk",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-adesaca",
+  "name": "ADESA Canada",
+  "genre": "Аукцион",
+  "structure": "Канадское подразделение сети оптовых автоаукционов ADESA с физическими и онлайн-торгами.",
+  "live": "https://www.adesa.ca",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-manheimuk",
+  "name": "Manheim UK",
+  "genre": "Аукцион",
+  "structure": "Британское подразделение Manheim — сеть оптовых автоаукционов для дилеров Великобритании.",
+  "live": "https://www.manheim.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-copartuk",
+  "name": "Copart UK",
+  "genre": "Аукцион",
+  "structure": "Британская площадка сети Copart для торгов повреждёнными и подержанными автомобилями.",
+  "live": "https://www.copart.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-beforward",
+  "name": "BE FORWARD",
+  "genre": "Экспортёр",
+  "structure": "Японский экспортёр подержанных авто с гигантским каталогом и доставкой по всему миру.",
+  "live": "https://www.beforward.jp",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-sbtjapan",
+  "name": "SBT Japan",
+  "genre": "Экспортёр",
+  "structure": "Один из старейших японских экспортёров б/у автомобилей, отправляет машины более чем в 100 стран.",
+  "live": "https://www.sbtjapan.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-japanesecartrade",
+  "name": "Japanese Car Trade",
+  "genre": "Экспортёр",
+  "structure": "Японская экспортная площадка подержанных авто с прямым доступом к аукционным лотам страны.",
+  "live": "https://www.japanesecartrade.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-tcv",
+  "name": "TCV (tc-v.com)",
+  "genre": "Площадка",
+  "structure": "Крупный японский портал экспортных объявлений подержанных авто от дилеров-экспортёров.",
+  "live": "https://www.tc-v.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-goonetexchange",
+  "name": "Goo-net Exchange",
+  "genre": "Экспортёр",
+  "structure": "Экспортная витрина японского портала Goo-net с сертифицированными подержанными автомобилями.",
+  "live": "https://www.goo-net-exchange.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-encar",
+  "name": "Encar",
+  "genre": "Площадка",
+  "structure": "Крупнейший корейский маркетплейс подержанных авто с детальными фотоотчётами и историей машины.",
+  "live": "https://www.encar.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-kcar",
+  "name": "KCar",
+  "genre": "Площадка",
+  "structure": "Корейская площадка объявлений и экспорта подержанных автомобилей.",
+  "live": "https://www.kcar.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-autowini",
+  "name": "AutoWini",
+  "genre": "Экспортёр",
+  "structure": "Корейская B2B-платформа экспорта подержанных авто с прямыми контактами дилеров.",
+  "live": "https://www.autowini.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-carsensor",
+  "name": "Carsensor",
+  "genre": "Площадка",
+  "structure": "Один из крупнейших японских порталов объявлений о продаже новых и подержанных авто.",
+  "live": "https://www.carsensor.net",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-goonet",
+  "name": "Goo-net",
+  "genre": "Площадка",
+  "structure": "Японский автомобильный портал объявлений и сервисов, база для экспортных площадок Goo.",
+  "live": "https://www.goonet.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-japanpartner",
+  "name": "Japan Partner",
+  "genre": "Экспортёр",
+  "structure": "Дубайский экспортёр японских автомобилей с локальным шоурумом и доставкой в страны Персидского залива.",
+  "live": "https://www.japan-partner.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-mobilede",
+  "name": "Mobile.de",
+  "genre": "Площадка",
+  "structure": "Крупнейший в Германии и Европе маркетплейс новых и подержанных автомобилей.",
+  "live": "https://www.mobile.de",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-autoscout24",
+  "name": "AutoScout24",
+  "genre": "Площадка",
+  "structure": "Один из ведущих европейских автомобильных маркетплейсов с продвинутым поиском по параметрам.",
+  "live": "https://www.autoscout24.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-carwow",
+  "name": "Carwow",
+  "genre": "Площадка",
+  "structure": "Британский сервис онлайн-покупки новых авто с прямыми предложениями от дилеров и живыми обзорами.",
+  "live": "https://www.carwow.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-cinch",
+  "name": "Cinch",
+  "genre": "Площадка",
+  "structure": "Онлайн-ритейлер подержанных авто в Великобритании с доставкой на дом и гарантией.",
+  "live": "https://www.cinch.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-cazoo",
+  "name": "Cazoo",
+  "genre": "Площадка",
+  "structure": "Британский онлайн-сервис продажи подержанных авто с современным цифровым сервисом покупки.",
+  "live": "https://www.cazoo.co.uk",
+  "ours": false,
+  "note": "отвечает 429 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-carvana",
+  "name": "Carvana",
+  "genre": "Площадка",
+  "structure": "Американский онлайн-ритейлер подержанных авто, известный фирменными башнями-автоматами выдачи машин.",
+  "live": "https://www.carvana.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-carfax",
+  "name": "Carfax",
+  "genre": "Сервис",
+  "structure": "Сервис проверки истории автомобиля по VIN, стандарт индустрии в США и Канаде.",
+  "live": "https://www.carfax.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-edmunds",
+  "name": "Edmunds",
+  "genre": "Площадка",
+  "structure": "Американский автомобильный портал с обзорами, ценами и продажей новых и подержанных авто.",
+  "live": "https://www.edmunds.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-kbb",
+  "name": "Kelley Blue Book",
+  "genre": "Площадка",
+  "structure": "Американский эталон оценки стоимости авто (KBB Value) с маркетплейсом объявлений.",
+  "live": "https://www.kbb.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-autotrader",
+  "name": "Autotrader",
+  "genre": "Площадка",
+  "structure": "Крупнейший американский маркетплейс объявлений о продаже новых и подержанных авто.",
+  "live": "https://www.autotrader.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-truecar",
+  "name": "TrueCar",
+  "genre": "Площадка",
+  "structure": "Американская платформа прозрачного ценообразования при покупке новых авто у дилеров.",
+  "live": "https://www.truecar.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-hemmings",
+  "name": "Hemmings",
+  "genre": "Площадка",
+  "structure": "Легендарный американский журнал и маркетплейс классических и коллекционных автомобилей.",
+  "live": "https://www.hemmings.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-classicdriver",
+  "name": "Classic Driver",
+  "genre": "Площадка",
+  "structure": "Международная площадка премиальных классических и коллекционных авто с журнальным стилем подачи.",
+  "live": "https://www.classicdriver.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-carandclassic",
+  "name": "Car & Classic",
+  "genre": "Площадка",
+  "structure": "Британский маркетплейс классических и олдтаймерных автомобилей с собственными онлайн-аукционами.",
+  "live": "https://www.carandclassic.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-autotraderuk",
+  "name": "Autotrader UK",
+  "genre": "Площадка",
+  "structure": "Ведущий британский маркетплейс объявлений о продаже новых и подержанных авто.",
+  "live": "https://www.autotrader.co.uk",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-motors",
+  "name": "Motors.co.uk",
+  "genre": "Площадка",
+  "structure": "Британский автомобильный маркетплейс объявлений от дилеров и частных продавцов.",
+  "live": "https://www.motors.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-heycar",
+  "name": "Heycar",
+  "genre": "Площадка",
+  "structure": "Европейский маркетплейс сертифицированных подержанных авто, поддержанный автопроизводителями.",
+  "live": "https://www.heycar.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-vavato",
+  "name": "Vavato",
+  "genre": "Площадка",
+  "structure": "Бельгийская онлайн-аукционная площадка авто и техники для частных лиц и бизнеса.",
+  "live": "https://www.vavato.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-cargurus",
+  "name": "CarGurus",
+  "genre": "Площадка",
+  "structure": "Крупный американский автомобильный маркетплейс с алгоритмом оценки справедливости цены (Deal Rating).",
+  "live": "https://www.cargurus.com",
+  "ours": false,
+  "note": "отвечает 406 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-kavak",
+  "name": "Kavak",
+  "genre": "Площадка",
+  "structure": "Латиноамериканский единорог онлайн-продажи подержанных авто с полным циклом сертификации.",
+  "live": "https://www.kavak.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-motorway",
+  "name": "Motorway",
+  "genre": "Площадка",
+  "structure": "Британский сервис продажи авто дилерам через мгновенный онлайн-аукцион для частных владельцев.",
+  "live": "https://www.motorway.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-webuyanycar",
+  "name": "We Buy Any Car",
+  "genre": "Сервис",
+  "structure": "Крупнейший в Великобритании сервис быстрого выкупа автомобилей у населения.",
+  "live": "https://www.webuyanycar.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-maersk",
+  "name": "Maersk",
+  "genre": "Логистика",
+  "structure": "Крупнейший в мире контейнерный морской перевозчик, ключевой оператор в цепочках доставки авто.",
+  "live": "https://www.maersk.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-msc",
+  "name": "MSC",
+  "genre": "Логистика",
+  "structure": "Второй по величине в мире контейнерный морской перевозчик с обширной сетью маршрутов.",
+  "live": "https://www.msc.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-cmacgm",
+  "name": "CMA CGM",
+  "genre": "Логистика",
+  "structure": "Французская судоходная группа, один из мировых лидеров контейнерных морских перевозок.",
+  "live": "https://www.cma-cgm.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-wallenius",
+  "name": "Wallenius Wilhelmsen",
+  "genre": "Логистика",
+  "structure": "Норвежско-шведский оператор ро-ро линий, крупнейший в мире морской перевозчик автомобилей.",
+  "live": "https://www.walleniuswilhelmsen.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-nykline",
+  "name": "NYK Line",
+  "genre": "Логистика",
+  "structure": "Японская судоходная группа с крупным флотом автовозов, обслуживающая мировую торговлю авто.",
+  "live": "https://www.nykline.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-kline",
+  "name": "K Line",
+  "genre": "Логистика",
+  "structure": "Японский судоходный оператор с собственным парком ро-ро судов для перевозки автомобилей.",
+  "live": "https://www.kline.co.jp",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-grimaldi",
+  "name": "Grimaldi Group",
+  "genre": "Логистика",
+  "structure": "Итальянская судоходная группа, ведущий оператор ро-ро линий Европа–Африка–Америка.",
+  "live": "https://www.grimaldi.napoli.it",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-eukor",
+  "name": "EUKOR Car Carriers",
+  "genre": "Логистика",
+  "structure": "Южнокорейский оператор автовозов, один из крупнейших мировых перевозчиков готовых автомобилей.",
+  "live": "https://www.eukor.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-glovis",
+  "name": "Hyundai Glovis",
+  "genre": "Логистика",
+  "structure": "Логистическое подразделение Hyundai с собственным флотом автовозов и сетью дистрибуции.",
+  "live": "https://www.glovis.net",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-sallaum",
+  "name": "Sallaum Lines",
+  "genre": "Логистика",
+  "structure": "Ливанский оператор ро-ро линий, специализирующийся на перевозке авто в Африку и Ближний Восток.",
+  "live": "https://www.sallaumlines.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-easyhaul",
+  "name": "EasyHaul",
+  "genre": "Логистика",
+  "structure": "Международный брокер морской и контейнерной доставки автомобилей по всему миру.",
+  "live": "https://www.easyhaul.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-montway",
+  "name": "Montway Auto Transport",
+  "genre": "Логистика",
+  "structure": "Один из крупнейших брокеров автоперевозок по США с онлайн-калькулятором стоимости.",
+  "live": "https://www.montway.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-hoegh",
+  "name": "Höegh Autoliners",
+  "genre": "Логистика",
+  "structure": "Норвежский оператор автовозов, специализирующийся на перевозке легковых и спецтехники морем.",
+  "live": "https://hoeghautoliners.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-fesco",
+  "name": "FESCO",
+  "genre": "Логистика",
+  "structure": "Крупнейший российский транспортный холдинг с портом во Владивостоке — ключевой узел доставки авто из Азии.",
+  "live": "https://www.fescoshipping.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-shiply",
+  "name": "Shiply",
+  "genre": "Логистика",
+  "structure": "Маркетплейс перевозок, где перевозчики авто и грузов конкурируют ставками за заказ.",
+  "live": "https://www.shiply.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-autoshippers",
+  "name": "Autoshippers",
+  "genre": "Логистика",
+  "structure": "Британский брокер международной перевозки автомобилей морем и контейнерами.",
+  "live": "https://www.autoshippers.co.uk",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-uship",
+  "name": "uShip",
+  "genre": "Логистика",
+  "structure": "Американский маркетплейс грузоперевозок, включая доставку автомобилей, с торгами перевозчиков.",
+  "live": "https://www.uship.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-shipacar",
+  "name": "ShipACar",
+  "genre": "Логистика",
+  "structure": "Брокер автоперевозок с онлайн-расчётом стоимости доставки машины по США и за рубеж.",
+  "live": "https://www.shipacar.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-kuehnenagel",
+  "name": "Kuehne+Nagel",
+  "genre": "Логистика",
+  "structure": "Швейцарский логистический гигант с решениями для морских и контейнерных автоперевозок.",
+  "live": "https://www.kuehne-nagel.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-alfuttaim",
+  "name": "Al-Futtaim Automotive",
+  "genre": "Экспортёр",
+  "structure": "Крупный дилерский и дистрибьюторский конгломерат ОАЭ, официальный представитель множества автобрендов.",
+  "live": "https://www.alfuttaim.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-dubicars",
+  "name": "Dubicars",
+  "genre": "Площадка",
+  "structure": "Ведущий маркетплейс новых и подержанных авто в ОАЭ с экспортными опциями.",
+  "live": "https://www.dubicars.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-yallamotor",
+  "name": "YallaMotor",
+  "genre": "Площадка",
+  "structure": "Крупный автомобильный портал Ближнего Востока с ценами, обзорами и маркетплейсом.",
+  "live": "https://www.yallamotor.com",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-emiratesauction",
+  "name": "Emirates Auction",
+  "genre": "Аукцион",
+  "structure": "Официальный аукционный дом ОАЭ, включая государственные и частные торги автомобилями.",
+  "live": "https://www.emiratesauction.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-opensooq",
+  "name": "OpenSooq",
+  "genre": "Площадка",
+  "structure": "Крупный ближневосточный портал объявлений, включая обширный раздел продажи авто.",
+  "live": "https://www.opensooq.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-dubizzle",
+  "name": "Dubizzle",
+  "genre": "Площадка",
+  "structure": "Ведущая доска объявлений ОАЭ с одним из крупнейших в регионе разделов автомобилей.",
+  "live": "https://www.dubizzle.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-carswitch",
+  "name": "CarSwitch",
+  "genre": "Площадка",
+  "structure": "Дубайский сервис купли-продажи подержанных авто с инспекцией и полным сопровождением сделки.",
+  "live": "https://www.carswitch.com",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-myauto",
+  "name": "MyAuto.ge",
+  "genre": "Площадка",
+  "structure": "Крупнейший грузинский автомобильный маркетплейс, ключевая площадка реэкспорта праворульных авто.",
+  "live": "https://www.myauto.ge",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-kolesa",
+  "name": "Kolesa.kz",
+  "genre": "Площадка",
+  "structure": "Крупнейший казахстанский автомобильный маркетплейс объявлений и цен.",
+  "live": "https://www.kolesa.kz",
+  "ours": false,
+  "size_mb": 0
+ },
+ {
+  "id": "av-f-lalafo",
+  "name": "Lalafo.kg",
+  "genre": "Площадка",
+  "structure": "Ведущая киргизская доска объявлений с крупным разделом купли-продажи автомобилей.",
+  "live": "https://www.lalafo.kg",
+  "ours": false,
+  "note": "отвечает 403 нашему серверу",
+  "size_mb": 0
+ }
+]

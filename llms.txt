@@ -44,5 +44,6 @@
 - https://vseti-site.ru/az/ — Azərbaycanca
 - https://vseti-site.ru/zh/ — 中文
 - https://vseti-site.ru/oferta.html — оферта
+- https://vseti-site.ru/oplata.html — онлайн-оплата услуг через ЮKassa
 - https://vseti-site.ru/politika.html — политика обработки персональных данных
 - https://vseti-site.ru/rekvizity.html — реквизиты

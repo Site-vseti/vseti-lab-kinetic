@@ -46,7 +46,7 @@ main li{margin:0 0 8px}
 .note{font-size:14.5px;color:var(--mute)}
 /* форма ЮKassa светлая — кладём её на белую карточку, чтобы стили конструктора читались */
 .paycard{background:#fff;color:#000;border-radius:18px;padding:clamp(18px,4vw,32px);margin:8px 0 26px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
-.paycard .ym-input{color:#000}
+.paycard .ym-input,.paycard .ym-textarea{color:#000}
 .ftr{padding:30px var(--pad) 30px;border-top:1px solid var(--line);background:var(--g2);font-size:13.5px;color:var(--mute)}
 .ftr .wrap{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
 .ftr a{color:var(--mute)}
@@ -84,6 +84,7 @@ main li{margin:0 0 8px}
     <div class="ym-block-title">О покупателе</div>
     <input name="custName" class="ym-input" placeholder="ФИО" type="text" value="">
     <input class="ym-input" name="email" placeholder="Телефон или Email для чека" type="text">
+    <textarea class="ym-textarea" name="orderDetails" placeholder="Комментарий: за что оплата или номер счёта" value=""></textarea>
 </div>
 
 <div class="ym-hidden-inputs">

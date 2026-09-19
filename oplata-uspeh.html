@@ -61,8 +61,8 @@ main li{margin:0 0 8px}
 </header>
 
 <main>
-  <h1>Спасибо, оплата прошла</h1>
-  <p>Деньги поступили, электронный чек придёт на указанный телефон или почту.</p>
+  <h1 id="st">Спасибо, оплата прошла</h1>
+  <p id="sm">Деньги поступили, электронный чек придёт на указанный телефон или почту.</p>
   <p>Мы свяжемся с вами в течение рабочего дня. Если удобнее написать самим — <a href="https://t.me/vseti_agency_bot">бот в Telegram</a> или site_vseti@mail.ru.</p>
   <p><a href="index.html">← Вернуться на главную</a></p>
 </main>
@@ -74,5 +74,18 @@ main li{margin:0 0 8px}
   </div>
 </footer>
 
+<script>
+(function(){
+  var p=new URLSearchParams(location.search),id=p.get('id'),test=p.get('test');
+  if(!id)return;
+  fetch('https://api.vseti-site.ru/pay/status?id='+encodeURIComponent(id)+(test?'&test='+encodeURIComponent(test):''))
+  .then(function(r){return r.json();}).then(function(d){
+    if(!d.ok)return;
+    var h=document.getElementById('st'),m=document.getElementById('sm');
+    if(d.status==='canceled'){h.textContent='Оплата не прошла';m.innerHTML='Деньги не списаны. Попробуйте ещё раз на <a href="oplata.html">странице оплаты</a> или другой картой.';}
+    else if(d.status==='pending'){h.textContent='Ждём подтверждения банка';m.textContent='Обычно это занимает до минуты. Когда платёж пройдёт, чек придёт на указанный телефон или почту.';}
+  }).catch(function(){});
+})();
+</script>
 </body>
 </html>

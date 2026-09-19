@@ -47,6 +47,17 @@ main li{margin:0 0 8px}
 /* форма ЮKassa светлая — кладём её на белую карточку, чтобы стили конструктора читались */
 .paycard{background:#fff;color:#000;border-radius:18px;padding:clamp(18px,4vw,32px);margin:8px 0 26px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
 .paycard .ym-input,.paycard .ym-textarea{color:#000}
+.pf[hidden]{display:none}
+.pf{display:flex;flex-direction:column;gap:14px}
+.pf label{display:flex;flex-direction:column;gap:6px;font-size:14.5px;font-weight:600;color:#123}
+.pf label span{font-weight:400;color:#667}
+.pf input{font:inherit;font-size:17px;padding:12px 14px;border:1px solid #c9d3d2;border-radius:10px;color:#000;background:#fff}
+.pf input:focus{outline:2px solid #3fd6c9;border-color:#3fd6c9}
+.pf button{font:inherit;font-weight:700;font-size:17px;padding:14px 18px;border:0;border-radius:12px;background:#1b524c;color:#fff;cursor:pointer}
+.pf button:disabled{opacity:.6;cursor:wait}
+.pf-err{color:#b00020;font-size:14.5px;margin:0!important}
+.alt{margin:0 0 22px}
+.alt summary{cursor:pointer;color:var(--mute);font-size:14.5px;margin-bottom:10px}
 .ftr{padding:30px var(--pad) 30px;border-top:1px solid var(--line);background:var(--g2);font-size:13.5px;color:var(--mute)}
 .ftr .wrap{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
 .ftr a{color:var(--mute)}
@@ -63,9 +74,22 @@ main li{margin:0 0 8px}
 
 <main>
   <h1>Оплата услуг</h1>
-  <p>Введите сумму из счёта или договорённости с менеджером и контакт для чека. Оплата проходит на защищённой странице ЮKassa — картой, через СБП или другим доступным способом.</p>
+  <p>Введите сумму из счёта или договорённости с менеджером и контакт для чека. Данные карты вводятся прямо здесь, в защищённом окне ЮKassa — уходить с сайта не нужно.</p>
 
-  <div class="paycard">
+  <div class="paycard" id="paycard">
+    <form id="payForm" class="pf" novalidate>
+      <label>Сумма, ₽<input id="pfSum" name="amount" type="number" min="1" max="500000" step="0.01" inputmode="decimal" placeholder="0,00" required></label>
+      <label>Почта или телефон для чека<input id="pfContact" name="contact" type="text" autocomplete="email" placeholder="name@mail.ru или +7 900 000-00-00" required></label>
+      <label>Комментарий <span>(за что оплата или номер счёта)</span><input id="pfComment" name="comment" type="text" maxlength="90"></label>
+      <button id="pfBtn" type="submit">Перейти к оплате картой</button>
+      <p id="pfErr" class="pf-err" role="alert" hidden></p>
+    </form>
+    <div id="payment-form"></div>
+  </div>
+
+  <details class="alt">
+    <summary>Другой способ: оплата на странице ЮKassa (карта, СБП)</summary>
+    <div class="paycard">
 <link rel="stylesheet" href="https://yookassa.ru/integration/simplepay/css/yookassa_construct_form.css?v=1.35.0">
 <form class="yoomoney-payment-form" action="https://yookassa.ru/integration/simplepay/payment" method="post" accept-charset="utf-8" >
 <div class="ym-products ym-display-none">
@@ -102,9 +126,11 @@ main li{margin:0 0 8px}
 </div>
 <input name="shopId" type="hidden" value="1462151"></form>
 <script src="https://yookassa.ru/integration/simplepay/js/yookassa_construct_form.js?v=1.35.0"></script>
-  </div>
+    </div>
+  </details>
 
-  <p class="note">Нажимая «Заплатить», вы принимаете условия <a href="oferta.html">публичной оферты</a>. Электронный чек придёт на указанный телефон или почту. Вопросы по оплате и возвратам — site_vseti@mail.ru.</p>
+
+  <p class="note">Оплачивая, вы принимаете условия <a href="oferta.html">публичной оферты</a>. Электронный чек придёт на указанный телефон или почту. Вопросы по оплате и возвратам — site_vseti@mail.ru.</p>
 </main>
 
 <footer class="ftr">
@@ -114,5 +140,48 @@ main li{margin:0 0 8px}
   </div>
 </footer>
 
+<script>
+(function(){
+  var API='https://api.vseti-site.ru/pay';
+  var test=new URLSearchParams(location.search).get('test');
+  var q=test?('?test='+encodeURIComponent(test)):'';
+  var WIDGET=['https://yookassa.ru/checkout-widget/v1/checkout-widget.js','https://static.yoomoney.ru/checkout-client/checkout-widget.js'];
+  var form=document.getElementById('payForm'),btn=document.getElementById('pfBtn'),err=document.getElementById('pfErr');
+  function fail(t){err.textContent=t;err.hidden=false;btn.disabled=false;btn.textContent='Перейти к оплате картой';}
+  function loadWidget(i,cb){
+    if(window.YooMoneyCheckoutWidget)return cb(true);
+    if(i>=WIDGET.length)return cb(false);
+    var sc=document.createElement('script');sc.src=WIDGET[i];
+    sc.onload=function(){cb(!!window.YooMoneyCheckoutWidget);};
+    sc.onerror=function(){loadWidget(i+1,cb);};
+    document.head.appendChild(sc);
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();err.hidden=true;
+    var sum=form.amount.value.replace(',','.'),contact=form.contact.value.trim();
+    if(!(parseFloat(sum)>=1))return fail('Укажите сумму от 1 ₽');
+    if(contact.length<5)return fail('Укажите почту или телефон для чека');
+    btn.disabled=true;btn.textContent='Готовим оплату…';
+    fetch(API+'/create'+q,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({amount:sum,contact:contact,comment:form.comment.value})})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(!d.ok)return fail(d.error||'Не удалось создать платёж');
+      loadWidget(0,function(ok){
+        if(!ok)return fail('Окно оплаты не загрузилось. Воспользуйтесь способом ниже.');
+        form.hidden=true;
+        var ret='https://vseti-site.ru/oplata-uspeh.html?id='+d.id+(test?'&test='+encodeURIComponent(test):'');
+        new window.YooMoneyCheckoutWidget({
+          confirmation_token:d.token,
+          return_url:ret,
+          customization:{colors:{control_primary:'#1b524c'}},
+          error_callback:function(){form.hidden=false;fail('Ошибка платёжного окна, попробуйте ещё раз.');}
+        }).render('payment-form');
+      });
+    })
+    .catch(function(){fail('Нет связи с платёжным сервисом, попробуйте ещё раз.');});
+  });
+})();
+</script>
 </body>
 </html>

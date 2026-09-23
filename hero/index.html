@@ -154,4 +154,5 @@ document.querySelectorAll('[data-glow],[data-glow2]').forEach(el=>{
   // разовая волна при появлении экрана
   new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){on();setTimeout(off,1600)}}),{threshold:.5}).observe(host);
 });
-</script></body></html>
+</script><script src="../assets/tap-hover.js" defer></script>
+</body></html>

@@ -216,4 +216,5 @@ function build(hostId,dotId,kind){
     [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===cur))}
   draw();setInterval(()=>{cur=(cur+1)%CH.length;draw()},2600)}
 build('e1','d1','ring');build('e2','d2','stack');
-</script></body></html>
+</script><script src="../assets/tap-hover.js" defer></script>
+</body></html>

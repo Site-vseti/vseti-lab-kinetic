@@ -186,4 +186,5 @@ document.querySelectorAll('[data-glow]').forEach(el=>{
   el.addEventListener('mouseenter',on);el.addEventListener('mouseleave',off);el.addEventListener('touchstart',on,{passive:true});
   new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){on();setTimeout(off,1800)}}),{threshold:.5}).observe(el);
 });
-</script></body></html>
+</script><script src="../assets/tap-hover.js" defer></script>
+</body></html>

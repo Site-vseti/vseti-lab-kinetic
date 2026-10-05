@@ -78,7 +78,7 @@ main li{margin:0 0 8px}
 (function(){
   var p=new URLSearchParams(location.search),id=p.get('id'),test=p.get('test');
   if(!id)return;
-  fetch('https://api.vseti-site.ru/pay/status?id='+encodeURIComponent(id)+(test?'&test='+encodeURIComponent(test):''))
+  fetch('https://rinazolotareva.ru/vseti-api/pay/status?id='+encodeURIComponent(id)+(test?'&test='+encodeURIComponent(test):''))
   .then(function(r){return r.json();}).then(function(d){
     if(!d.ok)return;
     var h=document.getElementById('st'),m=document.getElementById('sm');

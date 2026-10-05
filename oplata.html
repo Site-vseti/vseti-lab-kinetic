@@ -74,9 +74,22 @@ main li{margin:0 0 8px}
 
 <main>
   <h1>Оплата услуг</h1>
-  <p>Введите сумму из счёта или договорённости с менеджером и контакт для чека. Оплата проходит на защищённой странице ЮKassa — картой или через СБП.</p>
+  <p>Введите сумму из счёта или договорённости с менеджером и контакт для чека. Данные карты вводятся прямо здесь, в защищённом окне ЮKassa — уходить с сайта не нужно.</p>
 
-  <div class="paycard">
+  <div class="paycard" id="paycard">
+    <form id="payForm" class="pf" novalidate>
+      <label>Сумма, ₽<input id="pfSum" name="amount" type="number" min="1" max="500000" step="0.01" inputmode="decimal" placeholder="0,00" required></label>
+      <label>Почта или телефон для чека<input id="pfContact" name="contact" type="text" autocomplete="email" placeholder="name@mail.ru или +7 900 000-00-00" required></label>
+      <label>Комментарий <span>(за что оплата или номер счёта)</span><input id="pfComment" name="comment" type="text" maxlength="90"></label>
+      <button id="pfBtn" type="submit">Перейти к оплате картой</button>
+      <p id="pfErr" class="pf-err" role="alert" hidden></p>
+    </form>
+    <div id="payment-form"></div>
+  </div>
+
+  <details class="alt">
+    <summary>Другой способ: оплата на странице ЮKassa (карта, СБП)</summary>
+    <div class="paycard">
 <link rel="stylesheet" href="https://yookassa.ru/integration/simplepay/css/yookassa_construct_form.css?v=1.35.0">
 <form class="yoomoney-payment-form" action="https://yookassa.ru/integration/simplepay/payment" method="post" accept-charset="utf-8" >
 <div class="ym-products ym-display-none">
@@ -113,19 +126,6 @@ main li{margin:0 0 8px}
 </div>
 <input name="shopId" type="hidden" value="1462151"></form>
 <script src="https://yookassa.ru/integration/simplepay/js/yookassa_construct_form.js?v=1.35.0"></script>
-  </div>
-
-  <details class="alt">
-    <summary>Другой способ: ввести данные карты прямо на этой странице</summary>
-    <div class="paycard" id="paycard">
-      <form id="payForm" class="pf" novalidate>
-        <label>Сумма, ₽<input id="pfSum" name="amount" type="number" min="1" max="500000" step="0.01" inputmode="decimal" placeholder="0,00" required></label>
-        <label>Почта или телефон для чека<input id="pfContact" name="contact" type="text" autocomplete="email" placeholder="name@mail.ru или +7 900 000-00-00" required></label>
-        <label>Комментарий <span>(за что оплата или номер счёта)</span><input id="pfComment" name="comment" type="text" maxlength="90"></label>
-        <button id="pfBtn" type="submit">Перейти к оплате картой</button>
-        <p id="pfErr" class="pf-err" role="alert" hidden></p>
-      </form>
-      <div id="payment-form"></div>
     </div>
   </details>
 
@@ -169,7 +169,7 @@ main li{margin:0 0 8px}
     .then(function(d){
       if(!d.ok)return fail(d.error||'Не удалось создать платёж');
       loadWidget(0,function(ok){
-        if(!ok)return fail('Окно оплаты не загрузилось. Воспользуйтесь формой выше.');
+        if(!ok)return fail('Окно оплаты не загрузилось. Воспользуйтесь способом ниже.');
         form.hidden=true;
         var ret='https://vseti-site.ru/oplata-uspeh.html?id='+d.id+(test?'&test='+encodeURIComponent(test):'');
         new window.YooMoneyCheckoutWidget({
@@ -180,7 +180,7 @@ main li{margin:0 0 8px}
         }).render('payment-form');
       });
     })
-    .catch(function(){fail('Нет связи с платёжным сервисом. Воспользуйтесь формой выше.');});
+    .catch(function(){fail('Нет связи с платёжным сервисом. Попробуйте ещё раз или воспользуйтесь способом ниже.');});
   });
 })();
 </script>

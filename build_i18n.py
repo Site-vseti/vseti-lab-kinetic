@@ -20,7 +20,7 @@ CYR = re.compile(r'[А-Яа-яЁё]')
 
 # строки, которые НЕ переводятся: имена собственные, бренды, названия языков,
 # инициалы плиток и служебный алфавит анимации
-KEEP = set(['ВСЕТИ', 'в', 'и', 'сети', 'в сети', 'в сети.', 'Русский', 'English', 'Oʻzbekcha', 'Тоҷикӣ', 'Кыргызча', 'Azərbaycanca', '中文', 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЫЭЮЯ', 'ЭР', 'РЗ', 'КП', 'ЕГ', 'КГ', 'ИН', 'СН', 'ЦД', 'БП', 'TG', 'MAX', 'VK', 'Яндекс', 'Google', 'ChatGPT', 'Алиса', 'Gemini', 'Perplexity', 'Claude', 'DeepSeek', 'Grok', 'GigaChat', 'Copilot', 'Bing', 'GPTBot', 'Telegram', 'ВКонтакте', 'ЮKassa', 'СБП', 'Schema.org', 'llms.txt', 'robots.txt', 'Элина Рихтер', 'Рина Золотарёва', 'Сонник', 'Крестецкая строчка', 'БП24', 'Цена Дня · WB', 'ЕГРН: план квартиры', 'site_vseti@mail.ru', '@vseti_agency_bot · @vseti_site',
+KEEP = set(['ВСЕТИ', 'в', 'и', 'сети', 'в сети', 'в сети.', 'Русский', 'English', 'Oʻzbekcha', 'Тоҷикӣ', 'Кыргызча', 'Azərbaycanca', '中文', 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЫЭЮЯ', 'ЭР', 'РЗ', 'КП', 'ЕГ', 'КГ', 'ИН', 'СН', 'ЦД', 'БП', 'TG', 'MAX', 'VK', 'Яндекс', 'Google', 'ChatGPT', 'Алиса', 'Gemini', 'Perplexity', 'Claude', 'DeepSeek', 'Grok', 'GigaChat', 'Copilot', 'Bing', 'GPTBot', 'Telegram', 'ВКонтакте', 'ЮKassa', 'СБП', 'Schema.org', 'llms.txt', 'robots.txt', 'Элина Рихтер', 'Рина Золотарёва', 'Сонник', 'Крестецкая строчка', 'БП24', 'Цена Дня · WB', 'ЕГРН: план квартиры', 'site-vseti@yandex.ru', '@vseti_agency_bot · @vseti_site',
 # инициалы и имена в отзывах: как и на плитках кейсов, они не переводятся
 'ИК', 'ДШ', 'МЛ', 'АТ', 'ОГ', 'СБ',
 'Ирина Ковалёва', 'Денис Шилов', 'Марина Лебедева', 'Алексей Тарасов', 'Ольга Гурьева', 'Сергей Бушуев'])
@@ -145,7 +145,7 @@ def translate_html(src, table, code, htmllang, name):
     ld = {"@context": "https://schema.org", "@type": "ProfessionalService",
           "@id": "https://vseti-site.ru/#org", "name": "в сети", "url": url,
           "logo": "https://vseti-site.ru/assets/logo.png", "description": desc,
-          "email": "site_vseti@mail.ru", "telephone": "+79119261617",
+          "email": "site-vseti@yandex.ru", "telephone": "+79119261617",
           "priceRange": "35000-120000 RUB",
           "address": {"@type": "PostalAddress", "addressCountry": "RU", "addressLocality": "Izhevsk"},
           "areaServed": [{"@type": "Country", "name": "Russia"}],

@@ -68,7 +68,7 @@ translations = [
 "Rusiyada hamıda problemsiz açılır",
 "Yandeks və Google axtarışına uyğunlaşdırma",
 "@vseti_site · keyslər, tövsiyələr, xəbərlər",
-"© 2026 «в сети» · site_vseti@mail.ru",
+"© 2026 «в сети» · site-vseti@yandex.ru",
 "Həm saytda, həm kanallarda ödəniş qəbulu",
 "Aparılma: 6 yeniləmə/ay + kontent",
 "<b>İcma</b> — kontent və aksiyalar",

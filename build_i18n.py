@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Сборка языковых версий сайта агентства «в сети».
+"""Сборка языковых версий сайта агентства «всети».
 Строки берутся из index.html (тексты, атрибуты, строковые литералы в скриптах),
 переводы — из i18n/<код>.json вида {"русская строка": "перевод"}.
 Запуск: python3 build_i18n.py extract   — обновить i18n/ru.json
@@ -20,7 +20,7 @@ CYR = re.compile(r'[А-Яа-яЁё]')
 
 # строки, которые НЕ переводятся: имена собственные, бренды, названия языков,
 # инициалы плиток и служебный алфавит анимации
-KEEP = set(['ВСЕТИ', 'в', 'и', 'сети', 'в сети', 'в сети.', 'всети', 'Русский', 'English', 'Oʻzbekcha', 'Тоҷикӣ', 'Кыргызча', 'Azərbaycanca', '中文', 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЫЭЮЯ', 'ЭР', 'РЗ', 'КП', 'ЕГ', 'КГ', 'ИН', 'СН', 'ЦД', 'БП', 'TG', 'MAX', 'VK', 'Яндекс', 'Google', 'ChatGPT', 'Алиса', 'Gemini', 'Perplexity', 'Claude', 'DeepSeek', 'Grok', 'GigaChat', 'Copilot', 'Bing', 'GPTBot', 'Telegram', 'ВКонтакте', 'ЮKassa', 'СБП', 'Schema.org', 'llms.txt', 'robots.txt', 'Элина Рихтер', 'Рина Золотарёва', 'МТК «Восток-Авто»', 'Сонник', 'Крестецкая строчка', 'БП24', 'Цена Дня · WB', 'ЕГРН: план квартиры', 'site-vseti@yandex.ru', '@vseti_agency_bot · @vseti_site',
+KEEP = set(['ВСЕТИ', 'в', 'и', 'сети', 'всети', 'всети.', 'Русский', 'English', 'Oʻzbekcha', 'Тоҷикӣ', 'Кыргызча', 'Azərbaycanca', '中文', 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЫЭЮЯ', 'ЭР', 'РЗ', 'КП', 'ЕГ', 'КГ', 'ИН', 'СН', 'ЦД', 'БП', 'TG', 'MAX', 'VK', 'Яндекс', 'Google', 'ChatGPT', 'Алиса', 'Gemini', 'Perplexity', 'Claude', 'DeepSeek', 'Grok', 'GigaChat', 'Copilot', 'Bing', 'GPTBot', 'Telegram', 'ВКонтакте', 'ЮKassa', 'СБП', 'Schema.org', 'llms.txt', 'robots.txt', 'Элина Рихтер', 'Рина Золотарёва', 'МТК «Восток-Авто»', 'Сонник', 'Крестецкая строчка', 'БП24', 'Цена Дня · WB', 'ЕГРН: план квартиры', 'site-vseti@yandex.ru', '@vseti_agency_bot · @vseti_site',
 # инициалы и имена в отзывах: как и на плитках кейсов, они не переводятся
 'ИК', 'ДШ', 'МЛ', 'АТ', 'ОГ', 'СБ',
 'Ирина Ковалёва', 'Денис Шилов', 'Марина Лебедева', 'Алексей Тарасов', 'Ольга Гурьева', 'Сергей Бушуев'])
@@ -129,11 +129,11 @@ def translate_html(src, table, code, htmllang, name):
     # заголовок и описание уже переведены — на них и строим Open Graph и Schema.org
     t = re.search(r'<title>(.*?)</title>', src, flags=re.S)
     d = re.search(r'<meta name="description" content="([^"]*)"', src)
-    title = t.group(1).strip() if t else 'в сети'
+    title = t.group(1).strip() if t else 'всети'
     desc = d.group(1).strip() if d else ''
     url = 'https://vseti-site.ru/%s/' % code
     og = ('<meta property="og:type" content="website">\n'
-          '<meta property="og:site_name" content="в сети">\n'
+          '<meta property="og:site_name" content="всети">\n'
           '<meta property="og:title" content="%s">\n'
           '<meta property="og:description" content="%s">\n'
           '<meta property="og:url" content="%s">\n'
@@ -143,7 +143,7 @@ def translate_html(src, table, code, htmllang, name):
           '<meta name="twitter:description" content="%s">\n'
           '<meta name="twitter:image" content="https://vseti-site.ru/assets/logo.png">\n') % (title, desc, url, title, desc)
     ld = {"@context": "https://schema.org", "@type": "ProfessionalService",
-          "@id": "https://vseti-site.ru/#org", "name": "в сети", "url": url,
+          "@id": "https://vseti-site.ru/#org", "name": "всети", "url": url,
           "logo": "https://vseti-site.ru/assets/logo.png", "description": desc,
           "email": "site-vseti@yandex.ru", "telephone": "+79119261617",
           "priceRange": "14990-120000 RUB",

@@ -272,7 +272,10 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 .plan li{padding-left:22px;position:relative}
 .plan li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1px;background:var(--tif)}
 .plan .btn{margin-top:auto;justify-content:center}
-@media (max-width:960px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
+.plans-wrap{container:plans/inline-size}
+.plans{grid-template-columns:repeat(4,1fr)}
+@container plans (max-width:1239px){.plans{grid-template-columns:repeat(2,1fr)}}
+@container plans (max-width:659px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
 
 /* faq */
 .faq{max-width:860px;margin-inline:auto}
@@ -546,6 +549,22 @@ html.ld-pre .hdr .bname.in{opacity:1;transition:opacity .7s ease}
 .plan .pr small{white-space:nowrap}
 .plan .mo{white-space:normal}
 .plan .mo b{color:var(--ink);font-weight:600;white-space:nowrap}
+/* --- 4 тарифа: цена подгоняется под ширину карточки, «Модернизация» первая и выделена, строки цен ровные --- */
+.plan{container-type:inline-size}
+.plan .pr{font-size:clamp(1rem,12cqw,3.2rem)}
+html[lang="en"] .plan .pr{font-size:clamp(1rem,10cqw,3.2rem)}
+html[lang="az"] .plan .pr,html[lang="ky"] .plan .pr,html[lang="uz"] .plan .pr{font-size:clamp(1rem,10.5cqw,3.2rem)}
+.plan .nm{overflow-wrap:break-word}
+.plan li b{color:var(--ink);font-weight:600}
+.plan li,.plan .mo{text-wrap:pretty}
+.plan .old.sp{display:none}
+.plan.feat{border-color:rgba(132,244,234,.6);background:linear-gradient(170deg,rgba(27,82,76,.6),rgba(14,51,47,.35));box-shadow:0 0 0 1px rgba(132,244,234,.22) inset}
+@container plans (min-width:1240px){
+  .plan .old.sp{display:inline-block;visibility:hidden}
+  .plan .nm{font-size:13px;letter-spacing:.14em;line-height:1.35;min-height:2.7em}
+}
+@container (max-width:200px){.plan .nm{font-size:10px;letter-spacing:.04em}}
+@container plans (min-width:660px) and (max-width:1239px){@container (max-width:420px){.plan .nm{line-height:1.35;min-height:2.7em}}}
 
 /* --- FAQ: заголовок с бегущим светом, крестик без мигающей палочки --- */
 .faqhead{font-family:var(--disp);font-variation-settings:"wght" 800;font-size:clamp(1.9rem,5vw,4.2rem);line-height:1.12;letter-spacing:-.02em;text-align:left;margin:14px 0 26px}
@@ -698,6 +717,7 @@ html.light .cmp2 .mk.yes{background:rgba(12,125,116,.1);border-color:rgba(12,125
 html.light .cmp2 .rw.on .mk.yes{box-shadow:0 0 22px -6px rgba(12,125,116,.6)}
 html.light .plan{background:linear-gradient(170deg,rgba(255,255,255,.92),rgba(233,246,244,.7))}
 html.light .plan.hit{border-color:rgba(138,106,18,.5);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85))}
+html.light .plan.feat{border-color:var(--tif);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85));box-shadow:0 0 0 1px rgba(12,125,116,.28) inset}
 html.light .plan:hover{border-color:var(--tif);background:linear-gradient(165deg,#fff,rgba(223,242,239,.95));box-shadow:0 26px 60px -20px rgba(12,125,116,.6)}
 html.light .plan:hover .pr{text-shadow:0 0 18px rgba(12,125,116,.45)}
 html.light .plan .stamp{color:#fff;background:var(--gold2)}
@@ -757,7 +777,7 @@ html.light .case{background:rgba(255,255,255,.85)}
  "description": "«в сети» veb-agentligi: mijozlar va neyrotarmoqlar — ChatGPT, Alice, Gemini — topadigan saytlarni qayta dizayn qilamiz. Schema.org, llms.txt, botlar, onlayn yozilish.",
  "email": "site-vseti@yandex.ru",
  "telephone": "+79119261617",
- "priceRange": "35000-120000 RUB",
+ "priceRange": "14990-120000 RUB",
  "address": {
   "@type": "PostalAddress",
   "addressCountry": "RU",
@@ -963,7 +983,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="stats">
       <div class="s rv"><div class="n"><span data-count="0">0</span></div><p class="t">Google vositasi bilan saytni tekshirishda xato</p></div>
       <div class="s rv"><div class="n"><i><span data-count="9">0</span></i><small>/9</small></div><p class="t">qidiruv va AI-botlar sahifani toʻliq oladi</p></div>
-      <div class="s rv"><div class="n"><span data-count="14">0</span><small>kun</small></div><p class="t">minimal ishga tushirish muddati — «Start» tarifi</p></div>
+      <div class="s rv"><div class="n"><span data-count="14">0</span><small>kun</small></div><p class="t">minimal ishga tushirish muddati — «Noldan sayt» tarifi</p></div>
       <div class="s rv"><div class="n"><i><span data-count="24">0</span></i><small>/7</small></div><p class="t">siz band boʻlganingizda bot mijozlarga javob beradi</p></div>
     </div>
   </div>
@@ -1082,14 +1102,20 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="h2 split-ln"><span class="ln"><span>Shaffof</span></span><span class="ln"><span><span class="gold">narx</span></span></span></h2></div>
       <p class="lead rv">Loyihaning belgilangan narxi + oylik yuritish. Yashirin toʻlovlarsiz.</p>
     </div>
-    <div class="plans">
+    <div class="plans-wrap"><div class="plans">
+      <div class="plan feat rv">
+        <div class="nm">Saytingizni modernizatsiya qilish</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">14 990 ₽<small>bir marta</small></div>
+        <ul><li><b>Dizaynni oʻzimiz tanlaymiz va tayyor saytni topshiramiz</b></li><li>Istalgan ekranga moslashuvchan</li><li>Och va tund mavzu</li><li>Himoyalangan ulanish va tezlik</li><li>Yandex va Google qidiruvi uchun sozlash</li><li>Neyrotarmoq javoblari uchun sozlash</li></ul>
+        <a class="btn btn-gold magnetic" href="#contact">Buyurtma <span class="arr">→</span></a>
+      </div>
       <div class="plan rv">
-        <span class="stamp">−30%</span>
-        <div class="nm">Start</div>
-        <div class="old"><i>50 000</i> ₽</div>
-        <div class="pr">35 000 ₽<small>bir marta</small></div>
+        <div class="nm">Noldan sayt</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">35 000 ₽ dan<small>bir marta</small></div>
         <div class="mo">Yuritish <b>6 000 ₽/oy</b> — zarur boʻlganda</div>
-        <ul><li>7 sahifagacha moslashuvchan sayt</li><li>Och va tund mavzu</li><li>Himoyalangan ulanish va tezlik</li><li>Yandex va Google qidiruvi uchun sozlash</li><li>Neyrotarmoq javoblari uchun sozlash</li><li>Bildirishnomali soʻrov formasi</li><li>Yuritish: oyiga 2 yangilanish</li></ul>
+        <ul><li><b>Dizayn va kontentni oʻzingiz tanlaysiz</b></li><li>7 sahifagacha moslashuvchan sayt</li><li>Och va tund mavzu</li><li>Himoyalangan ulanish va tezlik</li><li>Yandex va Google qidiruvi uchun sozlash</li><li>Neyrotarmoq javoblari uchun sozlash</li><li>Bildirishnomali soʻrov formasi</li><li>Yuritish: oyiga 2 yangilanish</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Buyurtma <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
@@ -1099,7 +1125,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="old"><i>100 000</i> ₽</div>
         <div class="pr">60 000 ₽<small>bir marta</small></div>
         <div class="mo">Yuritish <b>12 000 ₽/oy</b> — zarur boʻlganda</div>
-        <ul><li>«Start» tarifidagi hammasi</li><li>15 sahifagacha</li><li>AI-qidiruvga toʻliq tayyorgarlik</li><li>Onlayn yozilish / kalkulyator</li><li>Soʻrovlar uchun Telegram-bot</li><li>Bandlik svetofori</li><li>Yuritish: oyiga 6 yangilanish + kontent</li><li>Pozitsiyalar boʻyicha oylik hisobot</li></ul>
+        <ul><li>«Noldan sayt» tarifidagi hammasi</li><li>15 sahifagacha</li><li>AI-qidiruvga toʻliq tayyorgarlik</li><li>Onlayn yozilish / kalkulyator</li><li>Soʻrovlar uchun Telegram-bot</li><li>Bandlik svetofori</li><li>Yuritish: oyiga 6 yangilanish + kontent</li><li>Pozitsiyalar boʻyicha oylik hisobot</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Buyurtma <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
@@ -1111,7 +1137,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <ul><li>«Biznes» tarifidagi hammasi</li><li>Sahifalar boʻyicha cheklovsiz</li><li>AI-qidiruvga toʻliq tayyorgarlik</li><li>Telegram-kanal + MAX botlari</li><li>SMM: VK + Telegram</li><li>Stories-shablonlar va postlar</li><li>Cheklovsiz yuritish</li><li>Shaxsiy menejer</li><li>Ustuvor 24/7 qoʻllab-quvvatlash</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Buyurtma <span class="arr">→</span></a>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -1123,7 +1149,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="faqhead" id="faqHead">Tez-tez soʻraladigan savollar</h2></div>
     </div>
     <div class="faq">
-      <details class="rv"><summary>Qayta dizayn qancha vaqt oladi? <i></i></summary><div class="a">«Start» tarifi — 14 kundan, «Biznes» — 21 kundan, «Hammasi kiritilgan» — 30 kundan. Muddatlar shartnomada belgilanadi. Bizning aybimiz bilan kechikish — obuna toʻlovidan kompensatsiya.</div></details>
+      <details class="rv"><summary>Qayta dizayn qancha vaqt oladi? <i></i></summary><div class="a">«Noldan sayt» tarifi — 14 kundan, «Biznes» — 21 kundan, «Hammasi kiritilgan» — 30 kundan. Muddatlar shartnomada belgilanadi. Bizning aybimiz bilan kechikish — obuna toʻlovidan kompensatsiya.</div></details>
       <details class="rv"><summary>AI-qidiruv nima va u menga nima uchun kerak? <i></i></summary><div class="a">Tobora koʻproq odamlar qidiruv tizimidan emas, neyrotarmoqdan soʻraydi: ChatGPT, Alice, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok. Neyrotarmoq saytlardagi maʼlumotlar asosida javob beradi. Saytingizga maxsus kod va sozlamalarni joylaymiz — ular orqali AI-botlar uni topadi, toʻliq oʻqiydi va foydalanuvchiga javobingizni taqdim etadi. Bunsiz neyrotarmoqdan soʻragan auditoriya uchun biznesingiz umuman mavjud emas.</div></details>
       <details class="rv"><summary>Saytim allaqachon bor — qayta dizayn kerakmi? <i></i></summary><div class="a">Har doim ham emas. Bepul auditdan boshlaymiz: tezlik, telefonda qulaylik, qidiruv, neyrotarmoqlar uchun koʻrinuvchanlik. Agar sayt texnik jihatdan sogʻlom boʻlsa — toʻliq qayta dizaynsiz nuqtali sozlash mumkin. Nima kerak, nima kerak emasligini ochiq aytamiz.</div></details>
       <details class="rv"><summary>Natija kafolati bormi? <i></i></summary><div class="a">Texnik sifatni kafolatlaymiz va buni shartnomada mustahkamlaymiz: sayt tez yuklanadi, istalgan telefonda toʻgʻri ochiladi, tezlik koʻrsatkichlari yashil zonada, qidiruv va AI-botlar sahifani toʻliq oladi va siz kimligingizni, nima qilishingizni toʻgʻri tushunadi. Shu paytdan boshlab sayt qidiruv natijalarida koʻrina boshlaydi. Qidiruvdagi aniq oʻrin va neyrotarmoqlar javoblaridagi tilga olinish bozor va raqobatchilarga bogʻliq — buni hech kim vaʼda qilmaydi, biz ham qilmaymiz.</div></details>

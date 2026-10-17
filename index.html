@@ -283,7 +283,10 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 .plan li{padding-left:22px;position:relative}
 .plan li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1px;background:var(--tif)}
 .plan .btn{margin-top:auto;justify-content:center}
-@media (max-width:960px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
+.plans-wrap{container:plans/inline-size}
+.plans{grid-template-columns:repeat(4,1fr)}
+@container plans (max-width:1239px){.plans{grid-template-columns:repeat(2,1fr)}}
+@container plans (max-width:659px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
 
 /* faq */
 .faq{max-width:860px;margin-inline:auto}
@@ -557,6 +560,22 @@ html.ld-pre .hdr .bname.in{opacity:1;transition:opacity .7s ease}
 .plan .pr small{white-space:nowrap}
 .plan .mo{white-space:normal}
 .plan .mo b{color:var(--ink);font-weight:600;white-space:nowrap}
+/* --- 4 тарифа: цена подгоняется под ширину карточки, «Модернизация» первая и выделена, строки цен ровные --- */
+.plan{container-type:inline-size}
+.plan .pr{font-size:clamp(1rem,12cqw,3.2rem)}
+html[lang="en"] .plan .pr{font-size:clamp(1rem,10cqw,3.2rem)}
+html[lang="az"] .plan .pr,html[lang="ky"] .plan .pr,html[lang="uz"] .plan .pr{font-size:clamp(1rem,10.5cqw,3.2rem)}
+.plan .nm{overflow-wrap:break-word}
+.plan li b{color:var(--ink);font-weight:600}
+.plan li,.plan .mo{text-wrap:pretty}
+.plan .old.sp{display:none}
+.plan.feat{border-color:rgba(132,244,234,.6);background:linear-gradient(170deg,rgba(27,82,76,.6),rgba(14,51,47,.35));box-shadow:0 0 0 1px rgba(132,244,234,.22) inset}
+@container plans (min-width:1240px){
+  .plan .old.sp{display:inline-block;visibility:hidden}
+  .plan .nm{font-size:13px;letter-spacing:.14em;line-height:1.35;min-height:2.7em}
+}
+@container (max-width:200px){.plan .nm{font-size:10px;letter-spacing:.04em}}
+@container plans (min-width:660px) and (max-width:1239px){@container (max-width:420px){.plan .nm{line-height:1.35;min-height:2.7em}}}
 
 /* --- FAQ: заголовок с бегущим светом, крестик без мигающей палочки --- */
 .faqhead{font-family:var(--disp);font-variation-settings:"wght" 800;font-size:clamp(1.9rem,5vw,4.2rem);line-height:1.12;letter-spacing:-.02em;text-align:left;margin:14px 0 26px}
@@ -709,6 +728,7 @@ html.light .cmp2 .mk.yes{background:rgba(12,125,116,.1);border-color:rgba(12,125
 html.light .cmp2 .rw.on .mk.yes{box-shadow:0 0 22px -6px rgba(12,125,116,.6)}
 html.light .plan{background:linear-gradient(170deg,rgba(255,255,255,.92),rgba(233,246,244,.7))}
 html.light .plan.hit{border-color:rgba(138,106,18,.5);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85))}
+html.light .plan.feat{border-color:var(--tif);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85));box-shadow:0 0 0 1px rgba(12,125,116,.28) inset}
 html.light .plan:hover{border-color:var(--tif);background:linear-gradient(165deg,#fff,rgba(223,242,239,.95));box-shadow:0 26px 60px -20px rgba(12,125,116,.6)}
 html.light .plan:hover .pr{text-shadow:0 0 18px rgba(12,125,116,.45)}
 html.light .plan .stamp{color:#fff;background:var(--gold2)}
@@ -751,7 +771,7 @@ html.light .case{background:rgba(255,255,255,.85)}
  "description": "Веб-агентство «в сети»: редизайн сайтов и подготовка к поиску в нейросетях, онлайн-запись, чат-боты, каналы и приём оплаты.",
  "email": "site-vseti@yandex.ru",
  "telephone": "+79119261617",
- "priceRange": "35000-120000 RUB",
+ "priceRange": "14990-120000 RUB",
  "founder": {
   "@type": "Person",
   "name": "Золотарев Юрий Николаевич"
@@ -800,8 +820,19 @@ html.light .case{background:rgba(255,255,255,.85)}
   "itemListElement": [
    {
     "@type": "Offer",
-    "name": "Старт — сайт и подготовка к поиску",
+    "name": "Модернизация вашего сайта — дизайн подбираем сами и отдаём готовый сайт",
+    "price": "14990",
+    "priceCurrency": "RUB"
+   },
+   {
+    "@type": "Offer",
+    "name": "Сайт с нуля — дизайн и наполнение выбирает заказчик, цена от 35 000 ₽",
     "price": "35000",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": "35000",
+     "priceCurrency": "RUB"
+    },
     "priceCurrency": "RUB"
    },
    {
@@ -848,7 +879,7 @@ html.light .case{background:rgba(255,255,255,.85)}
    "name": "Сколько времени займёт редизайн?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Тариф «Старт» — от 14 дней, «Бизнес» — от 21 дня, «Всё включено» — от 30 дней. Сроки фиксируются в договоре."
+    "text": "Тариф «Сайт с нуля» — от 14 дней, «Бизнес» — от 21 дня, «Всё включено» — от 30 дней. Сроки фиксируются в договоре."
    }
   },
   {
@@ -1081,7 +1112,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="stats">
       <div class="s rv"><div class="n"><span data-count="0">0</span></div><p class="t">ошибок при проверке сайта инструментом Google</p></div>
       <div class="s rv"><div class="n"><i><span data-count="9">0</span></i><small>/9</small></div><p class="t">поисковых и AI-ботов получают страницу целиком</p></div>
-      <div class="s rv"><div class="n"><span data-count="14">0</span><small>дней</small></div><p class="t">минимальный срок запуска — тариф «Старт»</p></div>
+      <div class="s rv"><div class="n"><span data-count="14">0</span><small>дней</small></div><p class="t">минимальный срок запуска — тариф «Сайт с нуля»</p></div>
       <div class="s rv"><div class="n"><i><span data-count="24">0</span></i><small>/7</small></div><p class="t">бот отвечает клиентам, когда вы заняты</p></div>
     </div>
   </div>
@@ -1200,14 +1231,20 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="h2 split-ln"><span class="ln"><span>Прозрачная</span></span><span class="ln"><span><span class="gold">стоимость</span></span></span></h2></div>
       <p class="lead rv">Фиксированная цена проекта + ежемесячное ведение. Без скрытых платежей.</p>
     </div>
-    <div class="plans">
+    <div class="plans-wrap"><div class="plans">
+      <div class="plan feat rv">
+        <div class="nm">Модернизация вашего сайта</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">14 990 ₽<small>разово</small></div>
+        <ul><li><b>Дизайн подбираем сами и отдаём готовый сайт</b></li><li>Адаптивный под любой экран</li><li>Светлая и тёмная тема</li><li>Защищённое соединение и скорость</li><li>Настройка под поиск Яндекса и Google</li><li>Настройка под ответы нейросетей</li></ul>
+        <a class="btn btn-gold magnetic" href="#contact">Заказать <span class="arr">→</span></a>
+      </div>
       <div class="plan rv">
-        <span class="stamp">−30%</span>
-        <div class="nm">Старт</div>
-        <div class="old"><i>50 000</i> ₽</div>
-        <div class="pr">35 000 ₽<small>разово</small></div>
+        <div class="nm">Сайт с нуля</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">от 35 000 ₽<small>разово</small></div>
         <div class="mo">Ведение <b>6 000 ₽/мес</b> — при необходимости</div>
-        <ul><li>Адаптивный сайт до 7 страниц</li><li>Светлая и тёмная тема</li><li>Защищённое соединение и скорость</li><li>Настройка под поиск Яндекса и Google</li><li>Настройка под ответы нейросетей</li><li>Форма заявки с уведомлением</li><li>Ведение: 2 обновления/мес</li></ul>
+        <ul><li><b>Дизайн и наполнение выбираете вы</b></li><li>Адаптивный сайт до 7 страниц</li><li>Светлая и тёмная тема</li><li>Защищённое соединение и скорость</li><li>Настройка под поиск Яндекса и Google</li><li>Настройка под ответы нейросетей</li><li>Форма заявки с уведомлением</li><li>Ведение: 2 обновления/мес</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Заказать <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
@@ -1217,7 +1254,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="old"><i>100 000</i> ₽</div>
         <div class="pr">60 000 ₽<small>разово</small></div>
         <div class="mo">Ведение <b>12 000 ₽/мес</b> — при необходимости</div>
-        <ul><li>Всё из тарифа Старт</li><li>До 15 страниц</li><li>Полная подготовка к AI-поиску</li><li>Онлайн-запись / калькулятор</li><li>Telegram-бот для заявок</li><li>Светофор загруженности</li><li>Ведение: 6 обновлений/мес + контент</li><li>Отчёт по позициям ежемесячно</li></ul>
+        <ul><li>Всё из тарифа «Сайт с нуля»</li><li>До 15 страниц</li><li>Полная подготовка к AI-поиску</li><li>Онлайн-запись / калькулятор</li><li>Telegram-бот для заявок</li><li>Светофор загруженности</li><li>Ведение: 6 обновлений/мес + контент</li><li>Отчёт по позициям ежемесячно</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Заказать <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
@@ -1229,7 +1266,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <ul><li>Всё из тарифа Бизнес</li><li>Без ограничений по страницам</li><li>Полная подготовка к AI-поиску</li><li>Telegram-канал + боты MAX</li><li>SMM: ВК + Telegram</li><li>Сторис-шаблоны и посты</li><li>Ведение без ограничений</li><li>Выделенный менеджер</li><li>Приоритетная поддержка 24/7</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Заказать <span class="arr">→</span></a>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -1241,7 +1278,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="faqhead" id="faqHead">Часто задаваемые вопросы</h2></div>
     </div>
     <div class="faq">
-      <details class="rv"><summary>Сколько времени займёт редизайн? <i></i></summary><div class="a">Тариф «Старт» — от 14 дней, «Бизнес» — от 21 дня, «Всё включено» — от 30 дней. Сроки фиксируются в договоре. Задержка по нашей вине — компенсация из абонентской платы.</div></details>
+      <details class="rv"><summary>Сколько времени займёт редизайн? <i></i></summary><div class="a">Тариф «Сайт с нуля» — от 14 дней, «Бизнес» — от 21 дня, «Всё включено» — от 30 дней. Сроки фиксируются в договоре. Задержка по нашей вине — компенсация из абонентской платы.</div></details>
       <details class="rv"><summary>Что такое AI-поиск и зачем он мне? <i></i></summary><div class="a">Всё больше людей спрашивают не поисковик, а нейросеть: ChatGPT, Алису, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok. Нейросеть отвечает по данным с сайтов. Мы прописываем на вашем сайте специальные коды и настройки, по которым AI-боты находят его, читают целиком и подставляют ваш ответ пользователю. Без этого для той аудитории, которая спрашивает у нейросети, вашего бизнеса просто не существует.</div></details>
       <details class="rv"><summary>У меня уже есть сайт — нужен ли редизайн? <i></i></summary><div class="a">Не всегда. Начнём с бесплатного аудита: скорость, удобство на телефоне, поиск, видимость для нейросетей. Если сайт технически здоров — возможна точечная настройка без полного редизайна. Честно скажем, что нужно, а что — нет.</div></details>
       <details class="rv"><summary>Есть ли гарантии результата? <i></i></summary><div class="a">Гарантируем техническое качество и закрепляем его в договоре: сайт быстро грузится, ровно открывается на любом телефоне, показатели скорости в зелёной зоне, поисковые и AI-боты получают страницу целиком и правильно понимают, кто вы и что делаете. С этого момента сайт начинает показываться в выдаче. Конкретные места в поиске и упоминания в ответах нейросетей зависят от рынка и конкурентов — их не обещает никто, и мы тоже не будем.</div></details>

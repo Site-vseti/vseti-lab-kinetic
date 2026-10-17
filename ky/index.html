@@ -272,7 +272,10 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 .plan li{padding-left:22px;position:relative}
 .plan li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1px;background:var(--tif)}
 .plan .btn{margin-top:auto;justify-content:center}
-@media (max-width:960px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
+.plans-wrap{container:plans/inline-size}
+.plans{grid-template-columns:repeat(4,1fr)}
+@container plans (max-width:1239px){.plans{grid-template-columns:repeat(2,1fr)}}
+@container plans (max-width:659px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
 
 /* faq */
 .faq{max-width:860px;margin-inline:auto}
@@ -546,6 +549,22 @@ html.ld-pre .hdr .bname.in{opacity:1;transition:opacity .7s ease}
 .plan .pr small{white-space:nowrap}
 .plan .mo{white-space:normal}
 .plan .mo b{color:var(--ink);font-weight:600;white-space:nowrap}
+/* --- 4 тарифа: цена подгоняется под ширину карточки, «Модернизация» первая и выделена, строки цен ровные --- */
+.plan{container-type:inline-size}
+.plan .pr{font-size:clamp(1rem,12cqw,3.2rem)}
+html[lang="en"] .plan .pr{font-size:clamp(1rem,10cqw,3.2rem)}
+html[lang="az"] .plan .pr,html[lang="ky"] .plan .pr,html[lang="uz"] .plan .pr{font-size:clamp(1rem,10.5cqw,3.2rem)}
+.plan .nm{overflow-wrap:break-word}
+.plan li b{color:var(--ink);font-weight:600}
+.plan li,.plan .mo{text-wrap:pretty}
+.plan .old.sp{display:none}
+.plan.feat{border-color:rgba(132,244,234,.6);background:linear-gradient(170deg,rgba(27,82,76,.6),rgba(14,51,47,.35));box-shadow:0 0 0 1px rgba(132,244,234,.22) inset}
+@container plans (min-width:1240px){
+  .plan .old.sp{display:inline-block;visibility:hidden}
+  .plan .nm{font-size:13px;letter-spacing:.14em;line-height:1.35;min-height:2.7em}
+}
+@container (max-width:200px){.plan .nm{font-size:10px;letter-spacing:.04em}}
+@container plans (min-width:660px) and (max-width:1239px){@container (max-width:420px){.plan .nm{line-height:1.35;min-height:2.7em}}}
 
 /* --- FAQ: заголовок с бегущим светом, крестик без мигающей палочки --- */
 .faqhead{font-family:var(--disp);font-variation-settings:"wght" 800;font-size:clamp(1.9rem,5vw,4.2rem);line-height:1.12;letter-spacing:-.02em;text-align:left;margin:14px 0 26px}
@@ -698,6 +717,7 @@ html.light .cmp2 .mk.yes{background:rgba(12,125,116,.1);border-color:rgba(12,125
 html.light .cmp2 .rw.on .mk.yes{box-shadow:0 0 22px -6px rgba(12,125,116,.6)}
 html.light .plan{background:linear-gradient(170deg,rgba(255,255,255,.92),rgba(233,246,244,.7))}
 html.light .plan.hit{border-color:rgba(138,106,18,.5);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85))}
+html.light .plan.feat{border-color:var(--tif);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85));box-shadow:0 0 0 1px rgba(12,125,116,.28) inset}
 html.light .plan:hover{border-color:var(--tif);background:linear-gradient(165deg,#fff,rgba(223,242,239,.95));box-shadow:0 26px 60px -20px rgba(12,125,116,.6)}
 html.light .plan:hover .pr{text-shadow:0 0 18px rgba(12,125,116,.45)}
 html.light .plan .stamp{color:#fff;background:var(--gold2)}
@@ -757,7 +777,7 @@ html.light .case{background:rgba(255,255,255,.85)}
  "description": "«в сети» веб-агенттиги: кардарлар жана нейрожелилер — ChatGPT, Алиса, Gemini — таба турган сайттардын редизайны. Schema.org, llms.txt, боттор, онлайн-жазылуу.",
  "email": "site-vseti@yandex.ru",
  "telephone": "+79119261617",
- "priceRange": "35000-120000 RUB",
+ "priceRange": "14990-120000 RUB",
  "address": {
   "@type": "PostalAddress",
   "addressCountry": "RU",
@@ -963,7 +983,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="stats">
       <div class="s rv"><div class="n"><span data-count="0">0</span></div><p class="t">сайтты Google куралы менен текшергенде ката</p></div>
       <div class="s rv"><div class="n"><i><span data-count="9">0</span></i><small>/9</small></div><p class="t">издөө жана AI-боттору баракты толугу менен алышат</p></div>
-      <div class="s rv"><div class="n"><span data-count="14">0</span><small>күн</small></div><p class="t">минималдуу чыгаруу мөөнөтү — «Старт» тарифи</p></div>
+      <div class="s rv"><div class="n"><span data-count="14">0</span><small>күн</small></div><p class="t">минималдуу чыгаруу мөөнөтү — «Нөлдөн сайт» тарифи</p></div>
       <div class="s rv"><div class="n"><i><span data-count="24">0</span></i><small>/7</small></div><p class="t">бот сиз бош эмес кезде кардарларга жооп берет</p></div>
     </div>
   </div>
@@ -1082,14 +1102,20 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="h2 split-ln"><span class="ln"><span>Ачык-айкын</span></span><span class="ln"><span><span class="gold">нарк</span></span></span></h2></div>
       <p class="lead rv">Долбоордун белгиленген баасы + айлык жүргүзүү. Жашыруун төлөмдөрсүз.</p>
     </div>
-    <div class="plans">
+    <div class="plans-wrap"><div class="plans">
+      <div class="plan feat rv">
+        <div class="nm">Сайтыңызды модернизациялоо</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">14 990 ₽<small>бир жолу</small></div>
+        <ul><li><b>Дизайнды өзүбүз тандайбыз жана даяр сайтты тапшырабыз</b></li><li>Каалаган экранга ыңгайлашкан</li><li>Ачык жана күңүрт тема</li><li>Корголгон туташуу жана ылдамдык</li><li>Яндекс менен Google издөөсүнө тууралоо</li><li>Нейрожелилердин жоопторуна тууралоо</li></ul>
+        <a class="btn btn-gold magnetic" href="#contact">Тапшыруу <span class="arr">→</span></a>
+      </div>
       <div class="plan rv">
-        <span class="stamp">−30%</span>
-        <div class="nm">Старт</div>
-        <div class="old"><i>50 000</i> ₽</div>
-        <div class="pr">35 000 ₽<small>бир жолу</small></div>
+        <div class="nm">Нөлдөн сайт</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">35 000 ₽ дан<small>бир жолу</small></div>
         <div class="mo">Жүргүзүү <b>6 000 ₽/ай</b> — керек болсо</div>
-        <ul><li>7 барака чейин адаптивдүү сайт</li><li>Ачык жана күңүрт тема</li><li>Корголгон туташуу жана ылдамдык</li><li>Яндекс менен Google издөөсүнө тууралоо</li><li>Нейрожелилердин жоопторуна тууралоо</li><li>Билдирүүлүү өтүнмө формасы</li><li>Жүргүзүү: айына 2 жаңылоо</li></ul>
+        <ul><li><b>Дизайнды жана мазмунду өзүңүз тандайсыз</b></li><li>7 барака чейин адаптивдүү сайт</li><li>Ачык жана күңүрт тема</li><li>Корголгон туташуу жана ылдамдык</li><li>Яндекс менен Google издөөсүнө тууралоо</li><li>Нейрожелилердин жоопторуна тууралоо</li><li>Билдирүүлүү өтүнмө формасы</li><li>Жүргүзүү: айына 2 жаңылоо</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Тапшыруу <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
@@ -1099,7 +1125,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="old"><i>100 000</i> ₽</div>
         <div class="pr">60 000 ₽<small>бир жолу</small></div>
         <div class="mo">Жүргүзүү <b>12 000 ₽/ай</b> — керек болсо</div>
-        <ul><li>«Старт» тарифинин баары</li><li>15 баракка чейин</li><li>AI-издөөгө толук даярдоо</li><li>Онлайн-жазылуу / калькулятор</li><li>Өтүнмөлөр үчүн Telegram-бот</li><li>Жүктөлүү светофору</li><li>Жүргүзүү: айына 6 жаңылоо + контент</li><li>Позициялар боюнча ай сайын отчёт</li></ul>
+        <ul><li>«Нөлдөн сайт» тарифинин баары</li><li>15 баракка чейин</li><li>AI-издөөгө толук даярдоо</li><li>Онлайн-жазылуу / калькулятор</li><li>Өтүнмөлөр үчүн Telegram-бот</li><li>Жүктөлүү светофору</li><li>Жүргүзүү: айына 6 жаңылоо + контент</li><li>Позициялар боюнча ай сайын отчёт</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Тапшыруу <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
@@ -1111,7 +1137,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <ul><li>«Бизнес» тарифинин баары</li><li>Барактар боюнча чектөөсүз</li><li>AI-издөөгө толук даярдоо</li><li>Telegram-канал + MAX боттору</li><li>SMM: ВК + Telegram</li><li>Сторис-үлгүлөр жана посттор</li><li>Чектөөсүз жүргүзүү</li><li>Дайындалган менеджер</li><li>Артыкчылыктуу колдоо 24/7</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Тапшыруу <span class="arr">→</span></a>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -1123,7 +1149,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="faqhead" id="faqHead">Көп берилүүчү суроолор</h2></div>
     </div>
     <div class="faq">
-      <details class="rv"><summary>Редизайн канча убакыт алат? <i></i></summary><div class="a">«Старт» тарифи — 14 күндөн баштап, «Бизнес» — 21 күндөн баштап, «Баары кирет» — 30 күндөн баштап. Мөөнөттөр келишимде бекитилет. Биздин күнөөбүздөн болгон кечигүү үчүн — абоненттик төлөмдөн компенсация.</div></details>
+      <details class="rv"><summary>Редизайн канча убакыт алат? <i></i></summary><div class="a">«Нөлдөн сайт» тарифи — 14 күндөн баштап, «Бизнес» — 21 күндөн баштап, «Баары кирет» — 30 күндөн баштап. Мөөнөттөр келишимде бекитилет. Биздин күнөөбүздөн болгон кечигүү үчүн — абоненттик төлөмдөн компенсация.</div></details>
       <details class="rv"><summary>AI-издөө деген эмне жана ал мага эмне үчүн керек? <i></i></summary><div class="a">Улам көбүрөөк адамдар издөө системасынан эмес, нейрожелиден сурашат: ChatGPT, Алиса, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok. Нейрожели сайттардагы маалыматтар боюнча жооп берет. Биз сиздин сайтыңызга атайын коддорду жана тууралоолорду жазабыз, алар аркылуу AI-боттор аны табат, толугу менен окуйт жана колдонуучуга жообуңузду көрсөтөт. Мунусуз нейрожелиден сураган аудитория үчүн сиздин бизнесиңиз жөн эле жок.</div></details>
       <details class="rv"><summary>Менде сайт бар — редизайн керекпи? <i></i></summary><div class="a">Ар дайым эмес. Акысыз аудиттен баштайбыз: ылдамдык, телефондо ыңгайлуулук, издөө, нейрожелилер үчүн көрүнүү. Эгер сайт техникалык жактан ден соолугу чың болсо — толук редизайнсыз точкалуу тууралоо мүмкүн. Эмне керек, эмне керек эместигин чынын айтабыз.</div></details>
       <details class="rv"><summary>Натыйжага кепилдик барбы? <i></i></summary><div class="a">Техникалык сапатты кепилдейбиз жана аны келишимде бекитебиз: сайт тез жүктөлөт, кайсы гана телефондо да туура ачылат, ылдамдык көрсөткүчтөрү жашыл зонада, издөө жана AI-боттор баракты толугу менен алып, ким экениңизди жана эмне кылганыңызды туура түшүнөт. Ушул учурдан баштап сайт издөө натыйжаларында көрүнө баштайт. Издөөдөгү так орундар жана нейрожелилердин жоопторундагы эскерүүлөр рынокко жана атаандаштарга байланыштуу — аны эч ким убада кылбайт, биз да кылбайбыз.</div></details>

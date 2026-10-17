@@ -272,7 +272,10 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 .plan li{padding-left:22px;position:relative}
 .plan li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1px;background:var(--tif)}
 .plan .btn{margin-top:auto;justify-content:center}
-@media (max-width:960px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
+.plans-wrap{container:plans/inline-size}
+.plans{grid-template-columns:repeat(4,1fr)}
+@container plans (max-width:1239px){.plans{grid-template-columns:repeat(2,1fr)}}
+@container plans (max-width:659px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
 
 /* faq */
 .faq{max-width:860px;margin-inline:auto}
@@ -546,6 +549,22 @@ html.ld-pre .hdr .bname.in{opacity:1;transition:opacity .7s ease}
 .plan .pr small{white-space:nowrap}
 .plan .mo{white-space:normal}
 .plan .mo b{color:var(--ink);font-weight:600;white-space:nowrap}
+/* --- 4 тарифа: цена подгоняется под ширину карточки, «Модернизация» первая и выделена, строки цен ровные --- */
+.plan{container-type:inline-size}
+.plan .pr{font-size:clamp(1rem,12cqw,3.2rem)}
+html[lang="en"] .plan .pr{font-size:clamp(1rem,10cqw,3.2rem)}
+html[lang="az"] .plan .pr,html[lang="ky"] .plan .pr,html[lang="uz"] .plan .pr{font-size:clamp(1rem,10.5cqw,3.2rem)}
+.plan .nm{overflow-wrap:break-word}
+.plan li b{color:var(--ink);font-weight:600}
+.plan li,.plan .mo{text-wrap:pretty}
+.plan .old.sp{display:none}
+.plan.feat{border-color:rgba(132,244,234,.6);background:linear-gradient(170deg,rgba(27,82,76,.6),rgba(14,51,47,.35));box-shadow:0 0 0 1px rgba(132,244,234,.22) inset}
+@container plans (min-width:1240px){
+  .plan .old.sp{display:inline-block;visibility:hidden}
+  .plan .nm{font-size:13px;letter-spacing:.14em;line-height:1.35;min-height:2.7em}
+}
+@container (max-width:200px){.plan .nm{font-size:10px;letter-spacing:.04em}}
+@container plans (min-width:660px) and (max-width:1239px){@container (max-width:420px){.plan .nm{line-height:1.35;min-height:2.7em}}}
 
 /* --- FAQ: заголовок с бегущим светом, крестик без мигающей палочки --- */
 .faqhead{font-family:var(--disp);font-variation-settings:"wght" 800;font-size:clamp(1.9rem,5vw,4.2rem);line-height:1.12;letter-spacing:-.02em;text-align:left;margin:14px 0 26px}
@@ -698,6 +717,7 @@ html.light .cmp2 .mk.yes{background:rgba(12,125,116,.1);border-color:rgba(12,125
 html.light .cmp2 .rw.on .mk.yes{box-shadow:0 0 22px -6px rgba(12,125,116,.6)}
 html.light .plan{background:linear-gradient(170deg,rgba(255,255,255,.92),rgba(233,246,244,.7))}
 html.light .plan.hit{border-color:rgba(138,106,18,.5);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85))}
+html.light .plan.feat{border-color:var(--tif);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85));box-shadow:0 0 0 1px rgba(12,125,116,.28) inset}
 html.light .plan:hover{border-color:var(--tif);background:linear-gradient(165deg,#fff,rgba(223,242,239,.95));box-shadow:0 26px 60px -20px rgba(12,125,116,.6)}
 html.light .plan:hover .pr{text-shadow:0 0 18px rgba(12,125,116,.45)}
 html.light .plan .stamp{color:#fff;background:var(--gold2)}
@@ -757,7 +777,7 @@ html.light .case{background:rgba(255,255,255,.85)}
  "description": "网络工作室«в сети»：网站改版，让客户和AI都能找到您——ChatGPT、Alice、Gemini。Schema.org、llms.txt、机器人、在线预约。",
  "email": "site-vseti@yandex.ru",
  "telephone": "+79119261617",
- "priceRange": "35000-120000 RUB",
+ "priceRange": "14990-120000 RUB",
  "address": {
   "@type": "PostalAddress",
   "addressCountry": "RU",
@@ -963,7 +983,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="stats">
       <div class="s rv"><div class="n"><span data-count="0">0</span></div><p class="t">个错误（Google工具检测）</p></div>
       <div class="s rv"><div class="n"><i><span data-count="9">0</span></i><small>/9</small></div><p class="t">搜索引擎和AI机器人能获取完整页面</p></div>
-      <div class="s rv"><div class="n"><span data-count="14">0</span><small>天</small></div><p class="t">最短上线周期——「起步」套餐</p></div>
+      <div class="s rv"><div class="n"><span data-count="14">0</span><small>天</small></div><p class="t">最短上线周期——「从零开始建站」套餐</p></div>
       <div class="s rv"><div class="n"><i><span data-count="24">0</span></i><small>/7</small></div><p class="t">您忙碌时，机器人会代为回复客户</p></div>
     </div>
   </div>
@@ -1082,14 +1102,20 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="h2 split-ln"><span class="ln"><span>透明</span></span><span class="ln"><span><span class="gold">定价</span></span></span></h2></div>
       <p class="lead rv">项目一口价+每月维护费。没有隐藏收费。</p>
     </div>
-    <div class="plans">
+    <div class="plans-wrap"><div class="plans">
+      <div class="plan feat rv">
+        <div class="nm">升级改造您的网站</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">14 990 ₽<small>一次性</small></div>
+        <ul><li><b>设计由我们挑选，交付给您一个现成的网站</b></li><li>适配任何屏幕</li><li>浅色和深色主题</li><li>加密连接与速度</li><li>针对Yandex和Google搜索优化</li><li>针对AI回答做优化配置</li></ul>
+        <a class="btn btn-gold magnetic" href="#contact">立即咨询 <span class="arr">→</span></a>
+      </div>
       <div class="plan rv">
-        <span class="stamp">−30%</span>
-        <div class="nm">起步</div>
-        <div class="old"><i>50 000</i> ₽</div>
-        <div class="pr">35 000 ₽<small>一次性</small></div>
+        <div class="nm">从零开始建站</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">35 000 ₽起<small>一次性</small></div>
         <div class="mo">维护 <b>6 000 ₽/月</b> ——按需提供</div>
-        <ul><li>响应式网站，最多7个页面</li><li>浅色和深色主题</li><li>加密连接与速度</li><li>针对Yandex和Google搜索优化</li><li>针对AI回答做优化配置</li><li>带通知提醒的申请表单</li><li>维护：每月2次更新</li></ul>
+        <ul><li><b>设计和内容由您自行选择</b></li><li>响应式网站，最多7个页面</li><li>浅色和深色主题</li><li>加密连接与速度</li><li>针对Yandex和Google搜索优化</li><li>针对AI回答做优化配置</li><li>带通知提醒的申请表单</li><li>维护：每月2次更新</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">立即咨询 <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
@@ -1099,7 +1125,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="old"><i>100 000</i> ₽</div>
         <div class="pr">60 000 ₽<small>一次性</small></div>
         <div class="mo">维护 <b>12 000 ₽/月</b> ——按需提供</div>
-        <ul><li>包含「起步」套餐全部内容</li><li>最多15个页面</li><li>全面适配AI搜索</li><li>在线预约／费用计算器</li><li>用于接单的Telegram机器人</li><li>忙闲状态提示</li><li>维护：每月6次更新+内容</li><li>每月提供排名报告</li></ul>
+        <ul><li>包含「从零开始建站」套餐全部内容</li><li>最多15个页面</li><li>全面适配AI搜索</li><li>在线预约／费用计算器</li><li>用于接单的Telegram机器人</li><li>忙闲状态提示</li><li>维护：每月6次更新+内容</li><li>每月提供排名报告</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">立即咨询 <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
@@ -1111,7 +1137,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <ul><li>包含「商务」套餐全部内容</li><li>页面数量不限</li><li>全面适配AI搜索</li><li>Telegram频道+MAX机器人</li><li>SMM：ВК+Telegram</li><li>故事模板与帖子</li><li>维护不限次数</li><li>专属客户经理</li><li>24/7优先支持</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">立即咨询 <span class="arr">→</span></a>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -1123,7 +1149,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="faqhead" id="faqHead">常见问题</h2></div>
     </div>
     <div class="faq">
-      <details class="rv"><summary>改版需要多长时间？ <i></i></summary><div class="a">「起步」套餐最快14天，「商务」套餐最快21天，「全包」套餐最快30天。工期写入合同。若因我方原因延误，将从服务费中赔偿。</div></details>
+      <details class="rv"><summary>改版需要多长时间？ <i></i></summary><div class="a">「从零开始建站」套餐最快14天，「商务」套餐最快21天，「全包」套餐最快30天。工期写入合同。若因我方原因延误，将从服务费中赔偿。</div></details>
       <details class="rv"><summary>什么是AI搜索？我为什么需要它？ <i></i></summary><div class="a">越来越多的人不再问搜索引擎，而是问AI：ChatGPT、Alice、Gemini、GigaChat、DeepSeek、Perplexity、Claude、Grok。AI根据网站数据来回答。我们在您的网站上设置专门的代码和参数，让AI机器人能找到网站、完整读取内容，并把您的答案呈现给用户。没有这些设置，对于向AI提问的这部分受众来说，您的业务根本不存在。</div></details>
       <details class="rv"><summary>我已经有网站了，还需要改版吗？ <i></i></summary><div class="a">不一定。我们先做免费诊断：速度、手机端体验、搜索、AI可见度。如果网站技术上没问题，可以只做局部优化，不必整体改版。需要什么、不需要什么，我们都会如实告知。</div></details>
       <details class="rv"><summary>有没有效果保证？ <i></i></summary><div class="a">我们保证技术质量，并写入合同：网站加载快，在任何手机上显示都正常，速度指标处于绿色区间，搜索引擎和AI机器人能完整获取页面，正确理解您是谁、做什么。从这时起，网站开始出现在搜索结果中。具体排名和AI回答中的提及取决于市场和竞争对手——没有人能保证，我们也不会承诺。</div></details>

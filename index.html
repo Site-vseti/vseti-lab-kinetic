@@ -766,6 +766,61 @@ html.light .payfirst b{color:#6f5410}
 @media (max-width:900px){.payfirst{margin-bottom:calc(12px*var(--hs,1));border-radius:18px}}
 @media (max-width:900px) and (max-height:720px){.payfirst{margin-bottom:8px}.payfirst span{font-size:13px}}
 @media (min-width:901px) and (max-height:820px){.payfirst{margin-bottom:10px}}
+/* --- vs: comparison table, cards on narrow containers --- */
+.vs-wrap{container:vs/inline-size;max-width:1100px;margin-inline:auto}
+.vs-box{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(165deg,rgba(27,82,76,.45),rgba(14,51,47,.25))}
+.vs{width:100%;border-collapse:collapse;table-layout:fixed;font-size:15px;line-height:1.35}
+.vs col.c0{width:21%}.vs col.c1{width:27%}
+.vs th,.vs td{padding:14px 14px;text-align:center;vertical-align:middle;border-top:1px solid rgba(132,244,234,.1);color:var(--mute);overflow-wrap:anywhere}
+.vs thead th{border-top:0;background:rgba(7,26,24,.45);font-family:var(--disp);font-weight:normal;font-variation-settings:"wght" 500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);padding:15px 12px}
+.vs thead th.us{color:var(--tif)}
+.vs tbody th{text-align:left;font-weight:500;color:var(--ink);padding-left:clamp(14px,1.8vw,22px)}
+.vs thead th:first-child{text-align:left;padding-left:clamp(14px,1.8vw,22px)}
+.vs td.us,.vs thead th.us{background:rgba(132,244,234,.09)}
+.vs td.us{color:var(--ink);font-weight:500}
+.vs td.na{color:var(--dim)}
+.vs .lb{display:none}
+.vs .big{display:block;font-family:var(--disp);font-variation-settings:"wght" 700;font-weight:normal;font-size:1.45em;letter-spacing:-.02em;line-height:1.1;color:var(--gold2);white-space:nowrap}
+.vs small{display:block;margin-top:4px;font-size:.88em;color:var(--mute);font-weight:400}
+.vs .ck{display:inline-block;position:relative;width:20px;height:20px;border-radius:50%;vertical-align:-5px;margin-right:8px;flex:none}
+.vs .ck.y{background:var(--tif)}
+.vs .ck.y::before{content:"";position:absolute;left:7px;top:3px;width:5px;height:10px;border-right:2px solid #052422;border-bottom:2px solid #052422;transform:rotate(40deg)}
+.vs .ck.n{border:1.5px solid #e08080}
+.vs .ck.n::before,.vs .ck.n::after{content:"";position:absolute;left:4px;top:8.5px;width:9px;height:1.6px;background:#e08080}
+.vs .ck.n::before{transform:rotate(45deg)}.vs .ck.n::after{transform:rotate(-45deg)}
+.vs .ck:has(+ .sr){margin-right:0}
+.vs-note{margin:14px 4px 0;font-size:13px;color:var(--dim)}
+@container vs (max-width:859px){
+ .vs-box{max-width:680px;margin-inline:auto}
+ .vs,.vs tbody,.vs tr,.vs th,.vs td{display:block}
+ .vs thead{display:none}
+ .vs tr{padding:16px 16px 10px;border-top:1px solid var(--line)}
+ .vs tbody tr:first-child{border-top:0}
+ .vs tbody th{padding:0 0 8px;font-family:var(--disp);font-variation-settings:"wght" 600;font-weight:normal;font-size:15px;line-height:1.3;color:var(--tif)}
+ .vs td{display:grid;grid-template-columns:116px minmax(0,1fr);gap:10px;align-items:baseline;padding:9px 10px;margin-top:6px;border-top:0;border-radius:12px;text-align:left}
+ .vs td.us{background:rgba(132,244,234,.12)}
+ .vs .lb{display:block;font-family:var(--disp);font-size:9.5px;letter-spacing:.02em;text-transform:uppercase;color:var(--tif);overflow-wrap:anywhere}
+ .vs td.na .lb,.vs td:not(.us) .lb{color:var(--dim)}
+ .vs td.us .lb{color:var(--tif)}
+ .vs .v{display:block;min-width:0}
+ .vs .big{display:inline;font-size:1.25em}
+ .vs small{display:inline;margin:0 0 0 8px}
+}
+@container vs (max-width:319px){
+ .vs td{grid-template-columns:1fr;gap:2px}
+ .vs tr{padding:14px 12px 8px}
+}
+html.light .vs-box{background:linear-gradient(165deg,rgba(255,255,255,.92),rgba(233,246,244,.75))}
+html.light .vs thead th{background:rgba(255,255,255,.75)}
+html.light .vs td.us,html.light .vs thead th.us{background:rgba(12,125,116,.09)}
+html.light .vs th,html.light .vs td{border-top-color:rgba(9,86,79,.14)}
+html.light .vs .ck.y::before{border-color:#fff}
+html.light .vs .ck.n{border-color:#c33}html.light .vs .ck.n::before,html.light .vs .ck.n::after{background:#c33}
+@container vs (max-width:859px){html.light .vs td.us{background:rgba(12,125,116,.1)}}
+@media (max-width:520px){html[lang="ky"][data-fs="1.3"] #vs .h2,html[lang="ky"][data-fs="1.5"] #vs .h2{font-size:1.5rem}}
+html.hc .vs-box{border:2px solid var(--line)!important;background:var(--bg)!important}
+html.hc .vs td.us,html.hc .vs thead th.us{background:var(--bg)!important;outline:2px solid var(--gold);outline-offset:-2px}
+html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
 </style>
 <script>try{var _t=localStorage.getItem('vseti-theme');if(_t==='light')document.documentElement.classList.add('light');if(localStorage.getItem('vseti-hc')==='1')document.documentElement.classList.add('hc');var _f=[.9,1,1.15,1.3,1.5][parseInt(localStorage.getItem('vseti-fs'),10)];if(_f){document.documentElement.style.setProperty('--fs',_f);document.documentElement.setAttribute('data-fs',String(_f));}}catch(e){}</script>
 <script type="application/ld+json">
@@ -1275,6 +1330,33 @@ html.light .payfirst b{color:#6f5410}
         <a class="btn btn-ghost magnetic" href="#contact">Заказать <span class="arr">→</span></a>
       </div>
     </div></div>
+  </div>
+</section>
+
+<!-- СРАВНЕНИЕ ВАРИАНТОВ -->
+<section class="sec" id="vs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">сравнение вариантов</p>
+        <h2 class="h2 split-ln"><span class="ln"><span>Сравнение</span></span><span class="ln"><span><span class="gold">вариантов</span></span></span></h2></div>
+      <p class="lead rv">Что вы получаете у агентства, у фрилансера, в конструкторе — и что у вас сейчас.</p>
+    </div>
+    <div class="vs-wrap rv"><div class="vs-box">
+      <table class="vs">
+        <colgroup><col class="c0"><col class="c1"><col><col><col></colgroup>
+        <thead><tr><th scope="col">Что важно</th><th scope="col" class="us">всети</th><th scope="col">Фрилансер</th><th scope="col">Конструктор</th><th scope="col">Старый сайт</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Цена</th><td class="us"><span class="lb">всети</span><span class="v"><b class="big">14 990 ₽</b><small>сайт с нуля — от 35 000 ₽</small></span></td><td><span class="lb">Фрилансер</span><span class="v">4–40 тыс. ₽</span></td><td><span class="lb">Конструктор</span><span class="v">500–1 500 ₽ в месяц и ваше время</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">уже есть</span></td></tr>
+          <tr><th scope="row">Срок</th><td class="us"><span class="lb">всети</span><span class="v">Сайт уже готов, запуск за час</span></td><td><span class="lb">Фрилансер</span><span class="v">по договорённости</span></td><td><span class="lb">Конструктор</span><span class="v">зависит от вас</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">—</span></td></tr>
+          <tr><th scope="row">Готовый сайт до оплаты</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Сначала сайт, потом оплата</span></td><td><span class="lb">Фрилансер</span><span class="v"><i class="ck n" aria-hidden="true"></i><span class="sr">Нет</span></span></td><td><span class="lb">Конструктор</span><span class="v"><i class="ck n" aria-hidden="true"></i><span class="sr">Нет</span></span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">—</span></td></tr>
+          <tr><th scope="row">Находят Алиса и ИИ-поиск</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Алиса, Яндекс, ChatGPT, Gemini</span></td><td><span class="lb">Фрилансер</span><span class="v">отдельная услуга</span></td><td><span class="lb">Конструктор</span><span class="v">настраиваете сами</span></td><td><span class="lb">Старый сайт</span><span class="v"><i class="ck n" aria-hidden="true"></i><span class="sr">Нет</span></span></td></tr>
+          <tr><th scope="row">Онлайн-запись на приём</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Есть, со светофором занятости</span></td><td><span class="lb">Фрилансер</span><span class="v">отдельная доработка</span></td><td><span class="lb">Конструктор</span><span class="v">подключаете сами</span></td><td><span class="lb">Старый сайт</span><span class="v"><i class="ck n" aria-hidden="true"></i>только форма обратной связи</span></td></tr>
+          <tr><th scope="row">Поддержка</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Telegram и MAX</span></td><td><span class="lb">Фрилансер</span><span class="v">как договоритесь</span></td><td><span class="lb">Конструктор</span><span class="v">справка платформы</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">—</span></td></tr>
+          <tr><th scope="row">Кто делает</th><td class="us"><span class="lb">всети</span><span class="v">Агентство, всё под ключ</span></td><td><span class="lb">Фрилансер</span><span class="v">один исполнитель</span></td><td><span class="lb">Конструктор</span><span class="v">вы сами</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">—</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="vs-note">Цены фрилансеров и конструкторов — ориентиры по открытым предложениям рынка.</p></div>
   </div>
 </section>
 

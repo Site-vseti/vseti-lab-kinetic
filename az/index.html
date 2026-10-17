@@ -272,7 +272,10 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 .plan li{padding-left:22px;position:relative}
 .plan li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1px;background:var(--tif)}
 .plan .btn{margin-top:auto;justify-content:center}
-@media (max-width:960px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
+.plans-wrap{container:plans/inline-size}
+.plans{grid-template-columns:repeat(4,1fr)}
+@container plans (max-width:1239px){.plans{grid-template-columns:repeat(2,1fr)}}
+@container plans (max-width:659px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
 
 /* faq */
 .faq{max-width:860px;margin-inline:auto}
@@ -546,6 +549,22 @@ html.ld-pre .hdr .bname.in{opacity:1;transition:opacity .7s ease}
 .plan .pr small{white-space:nowrap}
 .plan .mo{white-space:normal}
 .plan .mo b{color:var(--ink);font-weight:600;white-space:nowrap}
+/* --- 4 тарифа: цена подгоняется под ширину карточки, «Модернизация» первая и выделена, строки цен ровные --- */
+.plan{container-type:inline-size}
+.plan .pr{font-size:clamp(1rem,12cqw,3.2rem)}
+html[lang="en"] .plan .pr{font-size:clamp(1rem,10cqw,3.2rem)}
+html[lang="az"] .plan .pr,html[lang="ky"] .plan .pr,html[lang="uz"] .plan .pr{font-size:clamp(1rem,10.5cqw,3.2rem)}
+.plan .nm{overflow-wrap:break-word}
+.plan li b{color:var(--ink);font-weight:600}
+.plan li,.plan .mo{text-wrap:pretty}
+.plan .old.sp{display:none}
+.plan.feat{border-color:rgba(132,244,234,.6);background:linear-gradient(170deg,rgba(27,82,76,.6),rgba(14,51,47,.35));box-shadow:0 0 0 1px rgba(132,244,234,.22) inset}
+@container plans (min-width:1240px){
+  .plan .old.sp{display:inline-block;visibility:hidden}
+  .plan .nm{font-size:13px;letter-spacing:.14em;line-height:1.35;min-height:2.7em}
+}
+@container (max-width:200px){.plan .nm{font-size:10px;letter-spacing:.04em}}
+@container plans (min-width:660px) and (max-width:1239px){@container (max-width:420px){.plan .nm{line-height:1.35;min-height:2.7em}}}
 
 /* --- FAQ: заголовок с бегущим светом, крестик без мигающей палочки --- */
 .faqhead{font-family:var(--disp);font-variation-settings:"wght" 800;font-size:clamp(1.9rem,5vw,4.2rem);line-height:1.12;letter-spacing:-.02em;text-align:left;margin:14px 0 26px}
@@ -698,6 +717,7 @@ html.light .cmp2 .mk.yes{background:rgba(12,125,116,.1);border-color:rgba(12,125
 html.light .cmp2 .rw.on .mk.yes{box-shadow:0 0 22px -6px rgba(12,125,116,.6)}
 html.light .plan{background:linear-gradient(170deg,rgba(255,255,255,.92),rgba(233,246,244,.7))}
 html.light .plan.hit{border-color:rgba(138,106,18,.5);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85))}
+html.light .plan.feat{border-color:var(--tif);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85));box-shadow:0 0 0 1px rgba(12,125,116,.28) inset}
 html.light .plan:hover{border-color:var(--tif);background:linear-gradient(165deg,#fff,rgba(223,242,239,.95));box-shadow:0 26px 60px -20px rgba(12,125,116,.6)}
 html.light .plan:hover .pr{text-shadow:0 0 18px rgba(12,125,116,.45)}
 html.light .plan .stamp{color:#fff;background:var(--gold2)}
@@ -757,7 +777,7 @@ html.light .case{background:rgba(255,255,255,.85)}
  "description": "«в сети» veb-agentliyi: müştərilərin və neyroşəbəkələrin — ChatGPT, Alice, Gemini — tapdığı saytların redizaynı. Schema.org, llms.txt, botlar, onlayn qeydiyyat.",
  "email": "site-vseti@yandex.ru",
  "telephone": "+79119261617",
- "priceRange": "35000-120000 RUB",
+ "priceRange": "14990-120000 RUB",
  "address": {
   "@type": "PostalAddress",
   "addressCountry": "RU",
@@ -963,7 +983,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="stats">
       <div class="s rv"><div class="n"><span data-count="0">0</span></div><p class="t">Google alətilə saytı yoxlayarkən səhv</p></div>
       <div class="s rv"><div class="n"><i><span data-count="9">0</span></i><small>/9</small></div><p class="t">axtarış və AI-botları səhifəni tam əldə edir</p></div>
-      <div class="s rv"><div class="n"><span data-count="14">0</span><small>gün</small></div><p class="t">minimal işə salma müddəti — «Start» tarifi</p></div>
+      <div class="s rv"><div class="n"><span data-count="14">0</span><small>gün</small></div><p class="t">minimal işə salma müddəti — «Sıfırdan sayt» tarifi</p></div>
       <div class="s rv"><div class="n"><i><span data-count="24">0</span></i><small>/7</small></div><p class="t">siz məşğul olanda bot müştərilərə cavab verir</p></div>
     </div>
   </div>
@@ -1082,14 +1102,20 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="h2 split-ln"><span class="ln"><span>Şəffaf</span></span><span class="ln"><span><span class="gold">qiymət</span></span></span></h2></div>
       <p class="lead rv">Layihənin sabit qiyməti + aylıq aparılma. Gizli ödənişlər yoxdur.</p>
     </div>
-    <div class="plans">
+    <div class="plans-wrap"><div class="plans">
+      <div class="plan feat rv">
+        <div class="nm">Saytınızın modernləşdirilməsi</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">14 990 ₽<small>bir dəfə</small></div>
+        <ul><li><b>Dizaynı özümüz seçirik və hazır saytı təhvil veririk</b></li><li>İstənilən ekrana adaptiv</li><li>Açıq və tünd tema</li><li>Qorunan bağlantı və sürət</li><li>Yandex və Google axtarışına uyğunlaşdırma</li><li>Neyroşəbəkə cavablarına uyğunlaşdırma</li></ul>
+        <a class="btn btn-gold magnetic" href="#contact">Sifariş et <span class="arr">→</span></a>
+      </div>
       <div class="plan rv">
-        <span class="stamp">−30%</span>
-        <div class="nm">Start</div>
-        <div class="old"><i>50 000</i> ₽</div>
-        <div class="pr">35 000 ₽<small>bir dəfə</small></div>
+        <div class="nm">Sıfırdan sayt</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">35 000 ₽-dən<small>bir dəfə</small></div>
         <div class="mo">Aparılma <b>6 000 ₽/ay</b> — zərurət olduqda</div>
-        <ul><li>7 səhifəyə qədər adaptiv sayt</li><li>Açıq və tünd tema</li><li>Qorunan bağlantı və sürət</li><li>Yandex və Google axtarışına uyğunlaşdırma</li><li>Neyroşəbəkə cavablarına uyğunlaşdırma</li><li>Bildirişli müraciət forması</li><li>Aparılma: 2 yeniləmə/ay</li></ul>
+        <ul><li><b>Dizaynı və məzmunu siz seçirsiniz</b></li><li>7 səhifəyə qədər adaptiv sayt</li><li>Açıq və tünd tema</li><li>Qorunan bağlantı və sürət</li><li>Yandex və Google axtarışına uyğunlaşdırma</li><li>Neyroşəbəkə cavablarına uyğunlaşdırma</li><li>Bildirişli müraciət forması</li><li>Aparılma: 2 yeniləmə/ay</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Sifariş et <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
@@ -1099,7 +1125,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="old"><i>100 000</i> ₽</div>
         <div class="pr">60 000 ₽<small>bir dəfə</small></div>
         <div class="mo">Aparılma <b>12 000 ₽/ay</b> — zərurət olduqda</div>
-        <ul><li>Start tarifindən hər şey</li><li>15 səhifəyə qədər</li><li>AI-axtarışa tam hazırlıq</li><li>Onlayn qeydiyyat / kalkulyator</li><li>Müraciətlər üçün Telegram-bot</li><li>Yüklənmə svetoforu</li><li>Aparılma: 6 yeniləmə/ay + kontent</li><li>Aylıq mövqe hesabatı</li></ul>
+        <ul><li>«Sıfırdan sayt» tarifindən hər şey</li><li>15 səhifəyə qədər</li><li>AI-axtarışa tam hazırlıq</li><li>Onlayn qeydiyyat / kalkulyator</li><li>Müraciətlər üçün Telegram-bot</li><li>Yüklənmə svetoforu</li><li>Aparılma: 6 yeniləmə/ay + kontent</li><li>Aylıq mövqe hesabatı</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Sifariş et <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
@@ -1111,7 +1137,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <ul><li>Biznes tarifindən hər şey</li><li>Səhifə sayına məhdudiyyət yoxdur</li><li>AI-axtarışa tam hazırlıq</li><li>Telegram-kanal + MAX botları</li><li>SMM: ВК + Telegram</li><li>Stories-şablonları və postlar</li><li>Məhdudiyyətsiz aparılma</li><li>Ayrılmış menecer</li><li>24/7 prioritet dəstək</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Sifariş et <span class="arr">→</span></a>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -1123,7 +1149,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="faqhead" id="faqHead">Tez-tez verilən suallar</h2></div>
     </div>
     <div class="faq">
-      <details class="rv"><summary>Redizayn nə qədər vaxt aparacaq? <i></i></summary><div class="a">«Start» tarifi — 14 gündən, «Biznes» — 21 gündən, «Hər şey daxildir» — 30 gündən. Müddətlər müqavilədə təsbit olunur. Bizim təqsirimizdən yaranan gecikmə — abunə haqqından kompensasiya.</div></details>
+      <details class="rv"><summary>Redizayn nə qədər vaxt aparacaq? <i></i></summary><div class="a">«Sıfırdan sayt» tarifi — 14 gündən, «Biznes» — 21 gündən, «Hər şey daxildir» — 30 gündən. Müddətlər müqavilədə təsbit olunur. Bizim təqsirimizdən yaranan gecikmə — abunə haqqından kompensasiya.</div></details>
       <details class="rv"><summary>AI-axtarış nədir və mənə nə üçün lazımdır? <i></i></summary><div class="a">Getdikcə daha çox insan axtarış sisteminə deyil, neyroşəbəkəyə sual verir: ChatGPT, Alice, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok. Neyroşəbəkə saytlardakı məlumatlar əsasında cavab verir. Saytınızda xüsusi kodlar və tənzimləmələr qururuq ki, AI-botlar onu tapsın, tam oxusun və istifadəçiyə cavabınızı təqdim etsin. Bu olmasa, neyroşəbəkədən soruşan auditoriya üçün biznesiniz sadəcə mövcud deyil.</div></details>
       <details class="rv"><summary>Artıq saytım var — redizayn lazımdırmı? <i></i></summary><div class="a">Həmişə yox. Pulsuz auditlə başlayırıq: sürət, telefonda rahatlıq, axtarış, neyroşəbəkələr üçün görünürlük. Sayt texniki cəhətdən sağlamdırsa — tam redizayn etmədən nöqtəvi tənzimləmə mümkündür. Nəyin lazım olduğunu, nəyin lazım olmadığını dürüst deyəcəyik.</div></details>
       <details class="rv"><summary>Nəticəyə zəmanət varmı? <i></i></summary><div class="a">Texniki keyfiyyətə zəmanət veririk və bunu müqavilədə təsbit edirik: sayt tez yüklənir, istənilən telefonda düzgün açılır, sürət göstəriciləri yaşıl zonadadır, axtarış və AI-botları səhifəni tam alır və kim olduğunuzu, nə etdiyinizi düzgün anlayır. Bu andan sayt axtarış nəticələrində görünməyə başlayır. Axtarışdakı konkret yerlər və neyroşəbəkə cavablarında qeyd olunma bazardan və rəqiblərdən asılıdır — bunu heç kim vəd etmir, biz də etməyəcəyik.</div></details>

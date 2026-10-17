@@ -146,7 +146,7 @@ def translate_html(src, table, code, htmllang, name):
           "@id": "https://vseti-site.ru/#org", "name": "в сети", "url": url,
           "logo": "https://vseti-site.ru/assets/logo.png", "description": desc,
           "email": "site-vseti@yandex.ru", "telephone": "+79119261617",
-          "priceRange": "35000-120000 RUB",
+          "priceRange": "14990-120000 RUB",
           "address": {"@type": "PostalAddress", "addressCountry": "RU", "addressLocality": "Izhevsk"},
           "areaServed": [{"@type": "Country", "name": "Russia"}],
           "knowsLanguage": ["ru", "en", "uz", "tg", "ky", "az", "zh"],

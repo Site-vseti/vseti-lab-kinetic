@@ -272,7 +272,10 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 .plan li{padding-left:22px;position:relative}
 .plan li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1px;background:var(--tif)}
 .plan .btn{margin-top:auto;justify-content:center}
-@media (max-width:960px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
+.plans-wrap{container:plans/inline-size}
+.plans{grid-template-columns:repeat(4,1fr)}
+@container plans (max-width:1239px){.plans{grid-template-columns:repeat(2,1fr)}}
+@container plans (max-width:659px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
 
 /* faq */
 .faq{max-width:860px;margin-inline:auto}
@@ -546,6 +549,22 @@ html.ld-pre .hdr .bname.in{opacity:1;transition:opacity .7s ease}
 .plan .pr small{white-space:nowrap}
 .plan .mo{white-space:normal}
 .plan .mo b{color:var(--ink);font-weight:600;white-space:nowrap}
+/* --- 4 тарифа: цена подгоняется под ширину карточки, «Модернизация» первая и выделена, строки цен ровные --- */
+.plan{container-type:inline-size}
+.plan .pr{font-size:clamp(1rem,12cqw,3.2rem)}
+html[lang="en"] .plan .pr{font-size:clamp(1rem,10cqw,3.2rem)}
+html[lang="az"] .plan .pr,html[lang="ky"] .plan .pr,html[lang="uz"] .plan .pr{font-size:clamp(1rem,10.5cqw,3.2rem)}
+.plan .nm{overflow-wrap:break-word}
+.plan li b{color:var(--ink);font-weight:600}
+.plan li,.plan .mo{text-wrap:pretty}
+.plan .old.sp{display:none}
+.plan.feat{border-color:rgba(132,244,234,.6);background:linear-gradient(170deg,rgba(27,82,76,.6),rgba(14,51,47,.35));box-shadow:0 0 0 1px rgba(132,244,234,.22) inset}
+@container plans (min-width:1240px){
+  .plan .old.sp{display:inline-block;visibility:hidden}
+  .plan .nm{font-size:13px;letter-spacing:.14em;line-height:1.35;min-height:2.7em}
+}
+@container (max-width:200px){.plan .nm{font-size:10px;letter-spacing:.04em}}
+@container plans (min-width:660px) and (max-width:1239px){@container (max-width:420px){.plan .nm{line-height:1.35;min-height:2.7em}}}
 
 /* --- FAQ: заголовок с бегущим светом, крестик без мигающей палочки --- */
 .faqhead{font-family:var(--disp);font-variation-settings:"wght" 800;font-size:clamp(1.9rem,5vw,4.2rem);line-height:1.12;letter-spacing:-.02em;text-align:left;margin:14px 0 26px}
@@ -698,6 +717,7 @@ html.light .cmp2 .mk.yes{background:rgba(12,125,116,.1);border-color:rgba(12,125
 html.light .cmp2 .rw.on .mk.yes{box-shadow:0 0 22px -6px rgba(12,125,116,.6)}
 html.light .plan{background:linear-gradient(170deg,rgba(255,255,255,.92),rgba(233,246,244,.7))}
 html.light .plan.hit{border-color:rgba(138,106,18,.5);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85))}
+html.light .plan.feat{border-color:var(--tif);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85));box-shadow:0 0 0 1px rgba(12,125,116,.28) inset}
 html.light .plan:hover{border-color:var(--tif);background:linear-gradient(165deg,#fff,rgba(223,242,239,.95));box-shadow:0 26px 60px -20px rgba(12,125,116,.6)}
 html.light .plan:hover .pr{text-shadow:0 0 18px rgba(12,125,116,.45)}
 html.light .plan .stamp{color:#fff;background:var(--gold2)}
@@ -757,7 +777,7 @@ html.light .case{background:rgba(255,255,255,.85)}
  "description": "Агентии веб «в сети»: бозтарроҳии сомонаҳое, ки мизоҷон ва шабакаҳои нейронӣ — ChatGPT, Алиса, Gemini меёбанд. Schema.org, llms.txt, ботҳо, сабти онлайн.",
  "email": "site-vseti@yandex.ru",
  "telephone": "+79119261617",
- "priceRange": "35000-120000 RUB",
+ "priceRange": "14990-120000 RUB",
  "address": {
   "@type": "PostalAddress",
   "addressCountry": "RU",
@@ -963,7 +983,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="stats">
       <div class="s rv"><div class="n"><span data-count="0">0</span></div><p class="t">хато ҳангоми санҷиши сомона бо абзори Google</p></div>
       <div class="s rv"><div class="n"><i><span data-count="9">0</span></i><small>/9</small></div><p class="t">ҷустуҷӯгарҳо ва ботҳои ҲС саҳифаро пурра мегиранд</p></div>
-      <div class="s rv"><div class="n"><span data-count="14">0</span><small>рӯз</small></div><p class="t">мӯҳлати ҳадди ақали оғоз — тарифи «Старт»</p></div>
+      <div class="s rv"><div class="n"><span data-count="14">0</span><small>рӯз</small></div><p class="t">мӯҳлати ҳадди ақали оғоз — тарифи «Сомона аз сифр»</p></div>
       <div class="s rv"><div class="n"><i><span data-count="24">0</span></i><small>/7</small></div><p class="t">бот вақте ки шумо машғул ҳастед, ба мизоҷон ҷавоб медиҳад</p></div>
     </div>
   </div>
@@ -1082,14 +1102,20 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="h2 split-ln"><span class="ln"><span>Арзиши</span></span><span class="ln"><span><span class="gold">шаффоф</span></span></span></h2></div>
       <p class="lead rv">Нархи собити лоиҳа + пуштибонии ҳармоҳа. Бидуни пардохтҳои пинҳонӣ.</p>
     </div>
-    <div class="plans">
+    <div class="plans-wrap"><div class="plans">
+      <div class="plan feat rv">
+        <div class="nm">Навсозии сомонаи шумо</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">14 990 ₽<small>якдафъагӣ</small></div>
+        <ul><li><b>Тарҳро худамон интихоб мекунем ва сомонаи тайёрро месупорем</b></li><li>Мутобиқ ба ҳар экран</li><li>Мавзӯи равшан ва торик</li><li>Пайвасти муҳофизатшуда ва суръат</li><li>Танзим барои ҷустуҷӯи Яндекс ва Google</li><li>Танзим барои ҷавобҳои шабакаҳои нейронӣ</li></ul>
+        <a class="btn btn-gold magnetic" href="#contact">Фармоед <span class="arr">→</span></a>
+      </div>
       <div class="plan rv">
-        <span class="stamp">−30%</span>
-        <div class="nm">Старт</div>
-        <div class="old"><i>50 000</i> ₽</div>
-        <div class="pr">35 000 ₽<small>якдафъагӣ</small></div>
+        <div class="nm">Сомона аз сифр</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">аз 35 000 ₽<small>якдафъагӣ</small></div>
         <div class="mo">Пуштибонӣ <b>6 000 ₽/моҳ</b> — дар сурати зарурат</div>
-        <ul><li>Сомонаи адаптивӣ то 7 саҳифа</li><li>Мавзӯи равшан ва торик</li><li>Пайвасти муҳофизатшуда ва суръат</li><li>Танзим барои ҷустуҷӯи Яндекс ва Google</li><li>Танзим барои ҷавобҳои шабакаҳои нейронӣ</li><li>Шакли дархост бо огоҳинома</li><li>Пуштибонӣ: 2 навсозӣ/моҳ</li></ul>
+        <ul><li><b>Тарҳ ва мундариҷаро худатон интихоб мекунед</b></li><li>Сомонаи адаптивӣ то 7 саҳифа</li><li>Мавзӯи равшан ва торик</li><li>Пайвасти муҳофизатшуда ва суръат</li><li>Танзим барои ҷустуҷӯи Яндекс ва Google</li><li>Танзим барои ҷавобҳои шабакаҳои нейронӣ</li><li>Шакли дархост бо огоҳинома</li><li>Пуштибонӣ: 2 навсозӣ/моҳ</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Фармоед <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
@@ -1099,7 +1125,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="old"><i>100 000</i> ₽</div>
         <div class="pr">60 000 ₽<small>якдафъагӣ</small></div>
         <div class="mo">Пуштибонӣ <b>12 000 ₽/моҳ</b> — дар сурати зарурат</div>
-        <ul><li>Ҳама аз тарифи Старт</li><li>То 15 саҳифа</li><li>Омодагии пурра ба ҷустуҷӯи ҲС</li><li>Сабти онлайн / ҳисобкунак</li><li>Боти Telegram барои дархостҳо</li><li>Чароғаки бандубаст</li><li>Пуштибонӣ: 6 навсозӣ/моҳ + мундариҷа</li><li>Ҳисобот оид ба мавқеъҳо ҳармоҳа</li></ul>
+        <ul><li>Ҳама аз тарифи «Сомона аз сифр»</li><li>То 15 саҳифа</li><li>Омодагии пурра ба ҷустуҷӯи ҲС</li><li>Сабти онлайн / ҳисобкунак</li><li>Боти Telegram барои дархостҳо</li><li>Чароғаки бандубаст</li><li>Пуштибонӣ: 6 навсозӣ/моҳ + мундариҷа</li><li>Ҳисобот оид ба мавқеъҳо ҳармоҳа</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Фармоед <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
@@ -1111,7 +1137,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <ul><li>Ҳама аз тарифи Бизнес</li><li>Бидуни маҳдудият аз рӯи саҳифаҳо</li><li>Омодагии пурра ба ҷустуҷӯи ҲС</li><li>Канали Telegram + ботҳои MAX</li><li>SMM: ВК + Telegram</li><li>Қолабҳои сторис ва постҳо</li><li>Пуштибонӣ бидуни маҳдудият</li><li>Менеҷери ҷудогона</li><li>Дастгирии афзалиятнок 24/7</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Фармоед <span class="arr">→</span></a>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -1123,7 +1149,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="faqhead" id="faqHead">Саволҳои зуд-зуд пурсидашаванда</h2></div>
     </div>
     <div class="faq">
-      <details class="rv"><summary>Бозтарроҳӣ чанд вақт мегирад? <i></i></summary><div class="a">Тарифи «Старт» — аз 14 рӯз, «Бизнес» — аз 21 рӯз, «Ҳама дохил» — аз 30 рӯз. Мӯҳлатҳо дар шартнома муайян карда мешаванд. Таъхир аз айби мо — ҷуброн аз ҳаққи обуна.</div></details>
+      <details class="rv"><summary>Бозтарроҳӣ чанд вақт мегирад? <i></i></summary><div class="a">Тарифи «Сомона аз сифр» — аз 14 рӯз, «Бизнес» — аз 21 рӯз, «Ҳама дохил» — аз 30 рӯз. Мӯҳлатҳо дар шартнома муайян карда мешаванд. Таъхир аз айби мо — ҷуброн аз ҳаққи обуна.</div></details>
       <details class="rv"><summary>Ҷустуҷӯи ҲС чист ва он ба ман барои чӣ лозим аст? <i></i></summary><div class="a">Рӯзафзун одамон на аз ҷустуҷӯгар, балки аз шабакаи нейронӣ мепурсанд: ChatGPT, Алиса, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok. Шабакаи нейронӣ бо маълумоти сомонаҳо ҷавоб медиҳад. Мо дар сомонаи шумо кодҳо ва танзимоти махсус мегузорем, ки тавассути онҳо ботҳои ҲС онро меёбанд, пурра мехонанд ва ҷавоби шуморо ба корбар пешниҳод мекунанд. Бидуни ин барои аудиторияе, ки аз шабакаи нейронӣ мепурсад, бизнеси шумо вуҷуд надорад.</div></details>
       <details class="rv"><summary>Ман аллакай сомона дорам — оё бозтарроҳӣ лозим аст? <i></i></summary><div class="a">На ҳамеша. Аз аудити ройгон сар мекунем: суръат, қулай будан дар телефон, ҷустуҷӯ, намоёнӣ барои шабакаҳои нейронӣ. Агар сомона аз ҷиҳати техникӣ солим бошад — танзими нуқтагӣ бидуни бозтарроҳии пурра мумкин аст. Ростқавлона мегӯем, ки чӣ лозим асту чӣ не.</div></details>
       <details class="rv"><summary>Оё кафолати натиҷа ҳаст? <i></i></summary><div class="a">Сифати техникиро кафолат медиҳем ва онро дар шартнома мустаҳкам мекунем: сомона зуд бор мешавад, дар ҳар телефон дуруст кушода мешавад, нишондиҳандаҳои суръат дар минтақаи сабз ҳастанд, ҷустуҷӯгарҳо ва ботҳои ҲС саҳифаро пурра мегиранд ва дуруст мефаҳманд, ки шумо кистед ва чӣ мекунед. Аз ҳамин лаҳза сомона дар натиҷаҳои ҷустуҷӯ намоён мешавад. Ҷойҳои мушаххас дар ҷустуҷӯ ва зикр дар ҷавобҳои шабакаҳои нейронӣ аз бозор ва рақибон вобастаанд — инро ҳеҷ кас ваъда намедиҳад, мо ҳам не.</div></details>

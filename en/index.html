@@ -272,7 +272,10 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 .plan li{padding-left:22px;position:relative}
 .plan li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1px;background:var(--tif)}
 .plan .btn{margin-top:auto;justify-content:center}
-@media (max-width:960px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
+.plans-wrap{container:plans/inline-size}
+.plans{grid-template-columns:repeat(4,1fr)}
+@container plans (max-width:1239px){.plans{grid-template-columns:repeat(2,1fr)}}
+@container plans (max-width:659px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
 
 /* faq */
 .faq{max-width:860px;margin-inline:auto}
@@ -546,6 +549,22 @@ html.ld-pre .hdr .bname.in{opacity:1;transition:opacity .7s ease}
 .plan .pr small{white-space:nowrap}
 .plan .mo{white-space:normal}
 .plan .mo b{color:var(--ink);font-weight:600;white-space:nowrap}
+/* --- 4 тарифа: цена подгоняется под ширину карточки, «Модернизация» первая и выделена, строки цен ровные --- */
+.plan{container-type:inline-size}
+.plan .pr{font-size:clamp(1rem,12cqw,3.2rem)}
+html[lang="en"] .plan .pr{font-size:clamp(1rem,10cqw,3.2rem)}
+html[lang="az"] .plan .pr,html[lang="ky"] .plan .pr,html[lang="uz"] .plan .pr{font-size:clamp(1rem,10.5cqw,3.2rem)}
+.plan .nm{overflow-wrap:break-word}
+.plan li b{color:var(--ink);font-weight:600}
+.plan li,.plan .mo{text-wrap:pretty}
+.plan .old.sp{display:none}
+.plan.feat{border-color:rgba(132,244,234,.6);background:linear-gradient(170deg,rgba(27,82,76,.6),rgba(14,51,47,.35));box-shadow:0 0 0 1px rgba(132,244,234,.22) inset}
+@container plans (min-width:1240px){
+  .plan .old.sp{display:inline-block;visibility:hidden}
+  .plan .nm{font-size:13px;letter-spacing:.14em;line-height:1.35;min-height:2.7em}
+}
+@container (max-width:200px){.plan .nm{font-size:10px;letter-spacing:.04em}}
+@container plans (min-width:660px) and (max-width:1239px){@container (max-width:420px){.plan .nm{line-height:1.35;min-height:2.7em}}}
 
 /* --- FAQ: заголовок с бегущим светом, крестик без мигающей палочки --- */
 .faqhead{font-family:var(--disp);font-variation-settings:"wght" 800;font-size:clamp(1.9rem,5vw,4.2rem);line-height:1.12;letter-spacing:-.02em;text-align:left;margin:14px 0 26px}
@@ -698,6 +717,7 @@ html.light .cmp2 .mk.yes{background:rgba(12,125,116,.1);border-color:rgba(12,125
 html.light .cmp2 .rw.on .mk.yes{box-shadow:0 0 22px -6px rgba(12,125,116,.6)}
 html.light .plan{background:linear-gradient(170deg,rgba(255,255,255,.92),rgba(233,246,244,.7))}
 html.light .plan.hit{border-color:rgba(138,106,18,.5);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85))}
+html.light .plan.feat{border-color:var(--tif);background:linear-gradient(170deg,rgba(255,255,255,.98),rgba(223,242,239,.85));box-shadow:0 0 0 1px rgba(12,125,116,.28) inset}
 html.light .plan:hover{border-color:var(--tif);background:linear-gradient(165deg,#fff,rgba(223,242,239,.95));box-shadow:0 26px 60px -20px rgba(12,125,116,.6)}
 html.light .plan:hover .pr{text-shadow:0 0 18px rgba(12,125,116,.45)}
 html.light .plan .stamp{color:#fff;background:var(--gold2)}
@@ -757,7 +777,7 @@ html.light .case{background:rgba(255,255,255,.85)}
  "description": "Web agency «в сети»: redesigning sites that clients and AI find — ChatGPT, Alice, Gemini. Schema.org, llms.txt, bots, online booking.",
  "email": "site-vseti@yandex.ru",
  "telephone": "+79119261617",
- "priceRange": "35000-120000 RUB",
+ "priceRange": "14990-120000 RUB",
  "address": {
   "@type": "PostalAddress",
   "addressCountry": "RU",
@@ -963,7 +983,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <div class="stats">
       <div class="s rv"><div class="n"><span data-count="0">0</span></div><p class="t">errors when checking the site with Google's tool</p></div>
       <div class="s rv"><div class="n"><i><span data-count="9">0</span></i><small>/9</small></div><p class="t">search engines and AI bots get the full page</p></div>
-      <div class="s rv"><div class="n"><span data-count="14">0</span><small>days</small></div><p class="t">minimum launch time — &quot;Start&quot; plan</p></div>
+      <div class="s rv"><div class="n"><span data-count="14">0</span><small>days</small></div><p class="t">minimum launch time — &quot;Website from scratch&quot; plan</p></div>
       <div class="s rv"><div class="n"><i><span data-count="24">0</span></i><small>/7</small></div><p class="t">the bot answers clients when you're busy</p></div>
     </div>
   </div>
@@ -1082,14 +1102,20 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="h2 split-ln"><span class="ln"><span>Transparent</span></span><span class="ln"><span><span class="gold">pricing</span></span></span></h2></div>
       <p class="lead rv">Fixed project price + monthly maintenance. No hidden fees.</p>
     </div>
-    <div class="plans">
+    <div class="plans-wrap"><div class="plans">
+      <div class="plan feat rv">
+        <div class="nm">Modernization of your site</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">14 990 ₽<small>one-time</small></div>
+        <ul><li><b>We choose the design ourselves and hand over a finished site</b></li><li>Responsive on any screen</li><li>Light and dark theme</li><li>Secure connection and speed</li><li>Optimization for Yandex and Google search</li><li>Optimized for AI answers</li></ul>
+        <a class="btn btn-gold magnetic" href="#contact">Order <span class="arr">→</span></a>
+      </div>
       <div class="plan rv">
-        <span class="stamp">−30%</span>
-        <div class="nm">Start</div>
-        <div class="old"><i>50 000</i> ₽</div>
-        <div class="pr">35 000 ₽<small>one-time</small></div>
+        <div class="nm">Website from scratch</div>
+        <div class="old sp" aria-hidden="true">&nbsp;</div>
+        <div class="pr">from 35 000 ₽<small>one-time</small></div>
         <div class="mo">Maintenance <b>6 000 ₽/mo</b> — if needed</div>
-        <ul><li>Responsive site, up to 7 pages</li><li>Light and dark theme</li><li>Secure connection and speed</li><li>Optimization for Yandex and Google search</li><li>Optimized for AI answers</li><li>Request form with notifications</li><li>Maintenance: 2 updates/mo</li></ul>
+        <ul><li><b>You choose the design and the content</b></li><li>Responsive site, up to 7 pages</li><li>Light and dark theme</li><li>Secure connection and speed</li><li>Optimization for Yandex and Google search</li><li>Optimized for AI answers</li><li>Request form with notifications</li><li>Maintenance: 2 updates/mo</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Order <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
@@ -1099,7 +1125,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <div class="old"><i>100 000</i> ₽</div>
         <div class="pr">60 000 ₽<small>one-time</small></div>
         <div class="mo">Maintenance <b>12 000 ₽/mo</b> — if needed</div>
-        <ul><li>Everything in the Start plan</li><li>Up to 15 pages</li><li>Full AI-search readiness</li><li>Online booking / calculator</li><li>Telegram bot for requests</li><li>Load indicator</li><li>Maintenance: 6 updates/mo + content</li><li>Monthly ranking report</li></ul>
+        <ul><li>Everything in the &quot;Website from scratch&quot; plan</li><li>Up to 15 pages</li><li>Full AI-search readiness</li><li>Online booking / calculator</li><li>Telegram bot for requests</li><li>Load indicator</li><li>Maintenance: 6 updates/mo + content</li><li>Monthly ranking report</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Order <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
@@ -1111,7 +1137,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <ul><li>Everything in the Business plan</li><li>No limit on pages</li><li>Full AI-search readiness</li><li>Telegram channel + MAX bots</li><li>SMM: VK + Telegram</li><li>Story templates and posts</li><li>Unlimited maintenance</li><li>Dedicated manager</li><li>Priority support 24/7</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Order <span class="arr">→</span></a>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -1123,7 +1149,7 @@ html.light .case{background:rgba(255,255,255,.85)}
         <h2 class="faqhead" id="faqHead">Frequently asked questions</h2></div>
     </div>
     <div class="faq">
-      <details class="rv"><summary>How long will the redesign take? <i></i></summary><div class="a">The &quot;Start&quot; plan — from 14 days, &quot;Business&quot; — from 21 days, &quot;All Inclusive&quot; — from 30 days. Deadlines are fixed in the contract. A delay on our part is compensated from the monthly fee.</div></details>
+      <details class="rv"><summary>How long will the redesign take? <i></i></summary><div class="a">The &quot;Website from scratch&quot; plan — from 14 days, &quot;Business&quot; — from 21 days, &quot;All Inclusive&quot; — from 30 days. Deadlines are fixed in the contract. A delay on our part is compensated from the monthly fee.</div></details>
       <details class="rv"><summary>What is AI search and why do I need it? <i></i></summary><div class="a">More and more people don't ask a search engine — they ask an AI assistant: ChatGPT, Alice, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok. The AI answers using data from websites. We add special code and settings to your site so AI bots can find it, read it in full, and use your content in their answer. Without this, for the audience that asks AI, your business simply doesn't exist.</div></details>
       <details class="rv"><summary>I already have a site — do I need a redesign? <i></i></summary><div class="a">Not always. We start with a free audit: speed, mobile usability, search, AI visibility. If the site is technically sound, targeted fixes may work without a full redesign. We'll tell you honestly what's needed and what isn't.</div></details>
       <details class="rv"><summary>Do you guarantee results? <i></i></summary><div class="a">We guarantee technical quality and put it in the contract: the site loads fast, displays correctly on any phone, speed scores stay in the green zone, and search engines and AI bots get the full page and correctly understand who you are and what you do. From that point the site starts appearing in search results. Exact rankings and mentions in AI answers depend on the market and competitors — no one promises those, and neither do we.</div></details>

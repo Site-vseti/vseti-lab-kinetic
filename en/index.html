@@ -398,6 +398,38 @@ html.light .tbtn .moon{display:none}
 .lang .list a[aria-current]{color:var(--tif)}
 @media (max-width:900px){.hdr-tools .lang>button span.nm{display:none}.lang>button{padding:0 12px}}
 
+/* --- логотип в шапке: единая надпись «в сети» одного цвета (бирюзовый акцент --tif), по высоте вровень с эмблемой --- */
+.hdr .brand{gap:14px;flex:none}
+.hdr .brand .bname{display:block;position:relative;top:-.09em;font-size:var(--bf);font-weight:700;font-variation-settings:"wght" 700;line-height:44px;height:44px;letter-spacing:.02em;white-space:nowrap;color:var(--tif)}
+/* пока надпись собирается из пыли, DOM-текст скрыт (assets/logo-dust.js); запасной таймер вернёт его, даже если скрипт не сработал */
+html.ld-pre .hdr .bname{opacity:0;animation:ld-safe .01s 9s forwards}
+html.ld-pre .hdr .bname.in{opacity:1;transition:opacity .7s ease}
+@keyframes ld-safe{to{opacity:1}}
+.ld-canvas{position:fixed;left:0;top:0;pointer-events:none;z-index:600;transition:opacity .9s ease}
+.ld-canvas.out{opacity:0}
+/* ширина надписи ~4,1 кегля. Когда на шапку не хватает места, сначала уходит кнопка заявки
+   (в русской, английской и китайской версиях ниже 1420px, в остальных подписи длиннее: ниже 1700px), потом всё меню уходит в бургер.
+   Пороги и кегль считаются по ширине области шапки без полей (container query), поэтому работают и при увеличенном шрифте (body{zoom}); ширина = окно минус 2 поля */
+.hdr{container:hdr / inline-size}
+.hdr .brand{--bf:clamp(44px,calc((100cqw - 900px) / 4.12),64px)}
+@container hdr (max-width:1277px){.hdr .btn{display:none}.nav a{padding:10px 10px}}
+@container hdr (max-width:1539px){html:not([lang="ru"]):not([lang="en"]):not([lang="zh-Hans"]) .hdr .btn{display:none}html:not([lang="ru"]):not([lang="en"]):not([lang="zh-Hans"]) .nav a{padding:10px 10px}}
+@container hdr (max-width:1079px){.hdr .brand{--bf:64px}.nav{display:none}.burger{display:grid}}
+@container hdr (max-width:684px){.hdr .brand{--bf:clamp(40px,calc((100cqw - 370px) / 4.12),64px)}}
+/* телефон: первая строка — эмблема, надпись и бургер, вторая — кнопки языка, размера текста, контраста и теwe (при прокрутке вторая строка прячется) */
+@media (max-width:640px){
+  .hdr .brand{--bf:clamp(34px,calc((100cqw - 135px) / 4.3),64px)}
+  .hdr{flex-wrap:wrap;row-gap:0;padding-top:8px;padding-bottom:8px}
+  .hdr-tools{display:contents}
+  .hdr .brand,.burger{order:0}
+  .hdr::after{content:"";order:1;flex:0 0 100%;height:0}
+  .lang,.tbtn{order:2;margin-top:6px}
+  .tbtn,.abtn{width:32px;height:32px}
+  .lang>button{height:32px;padding:0 10px}
+  .lang .list{right:auto;left:0}
+  .hdr.scrolled .lang,.hdr.scrolled .tbtn{display:none}
+}
+
 /* --- первый экран: вариант C, всё по центру --- */
 .hero .wrap{text-align:center;display:grid;justify-items:center}
 .hero .eyebrow{justify-content:center}
@@ -740,8 +772,10 @@ html.light .case{background:rgba(255,255,255,.85)}
   <div class="skip">click to skip</div>
 </div>
 
+<script src="../assets/logo-dust.js"></script>
+
 <header class="hdr" id="hdr">
-  <a class="brand" href="#top"><img id="hlogo" src="../assets/logo.png" alt="в сети"><b>в <i>сети</i></b></a>
+  <a class="brand" href="#top"><img id="hlogo" src="../assets/logo.png" alt="в сети"><b class="bname">в сети</b></a>
   <nav class="nav" aria-label="Sections">
     <a href="#svc"><span data-t="Services">Services</span></a>
     <a href="#proof"><span data-t="AI search">AI search</span></a>
@@ -1635,7 +1669,7 @@ if(lf) lf.addEventListener('submit',function(e){
       /* сеть не пустила — открываем письмо, чтобы заявка не потерялась */
       say('Couldn\'t send it. Opening your email client — or write to us on Telegram.','bad');
       var body='Name: '+name+'\\nContact: '+contact+'\\nSite or task: '+(task||'—')+'\\n\\nSent from vseti-site.ru';
-      location.href='mailto:site_vseti@mail.ru?subject='+encodeURIComponent('Request from the site — '+name)+'&body='+encodeURIComponent(body);
+      location.href='mailto:site-vseti@yandex.ru?subject='+encodeURIComponent('Request from the site — '+name)+'&body='+encodeURIComponent(body);
     }
   };
   var payload={name:name,contact:contact,message:task,company:trap,t:lopened,

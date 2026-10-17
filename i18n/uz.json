@@ -374,5 +374,21 @@
  "один исполнитель": "bitta ijrochi",
  "вы сами": "oʻzingiz",
  "Цены фрилансеров и конструкторов — ориентиры по открытым предложениям рынка.": "Frilanserlar va konstruktorlar narxlari — ochiq bozor takliflariga asoslangan taxminiy koʻrsatkichlar.",
- "Есть — в тарифе «Бизнес» и выше": "Bor — «Biznes» tarifida va undan yuqorida"
+ "Есть — в тарифе «Бизнес» и выше": "Bor — «Biznes» tarifida va undan yuqorida",
+ "бесплатная проверка": "bepul tekshiruv",
+ "Бесплатно проверим,": "Bepul tekshirib beramiz,",
+ "находит ли ваш сайт Алиса": "Алиса saytingizni topadimi",
+ "Укажите адрес сайта и контакт. В течение дня покажем, видят ли ваш сайт Алиса и ИИ-поиск — и что мешает, если не видят.": "Sayt manzili va kontaktingizni kiriting. Bir kun ichida Алиса va AI-qidiruv saytingizni koʻrishini — koʻrmasa, nima xalaqit berayotganini koʻrsatamiz.",
+ "Проверка в Алисе": "Алиса orqali tekshiruv",
+ "Это бесплатно.": "Bu bepul.",
+ "Адрес сайта": "Sayt manzili",
+ "https://ваш-сайт.ru": "https://your-site.com",
+ "Телефон, Telegram или почта": "Telefon, Telegram yoki pochta",
+ "Проверить бесплатно": "Bepul tekshirish",
+ "Данные записываются и хранятся в России.": "Maʼlumotlar Rossiyada yoziladi va saqlanadi.",
+ "Укажите адрес сайта и контакт — иначе мы не сможем проверить и ответить.": "Sayt manzili va kontaktni kiriting — aks holda tekshira olmaymiz va javob bera olmaymiz.",
+ "Укажите адрес сайта, например example.ru.": "Sayt manzilini kiriting, masalan example.ru.",
+ "Заявка у нас. Проверим сайт и ответим в течение дня.": "Soʻrovingiz bizda. Saytni tekshirib, bir kun ichida javob beramiz.",
+ "Отправлено с vseti-site.ru": "vseti-site.ru dan yuborildi",
+ "Ваш контакт": "Kontaktingiz"
 }

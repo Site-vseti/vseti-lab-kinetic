@@ -323,6 +323,11 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 .form .agree{display:flex;align-items:flex-start;gap:10px;margin-top:14px;font-size:13px;line-height:1.45;color:var(--mute);cursor:pointer}
 .form .agree input{width:18px;height:18px;flex:none;margin:1px 0 0;accent-color:var(--tif);cursor:pointer}
 .form .agree a{color:var(--tif);text-decoration:underline}
+.form .agree{text-transform:none;letter-spacing:0}
+.form .agree + .agree{margin-top:10px}
+.form .agree-err{color:#ff9d94;font-size:13px;line-height:1.4;margin:6px 0 0 28px}
+.form .agree input[aria-invalid="true"]{outline:2px solid #ff6b5e;outline-offset:2px}
+@media (pointer:coarse){.form .agree{gap:12px}.form .agree input{width:22px;height:22px}.form .agree-err{margin-left:34px}}
 .lead-msg{font-size:13.5px;margin:12px 0 0;min-height:18px;color:var(--mute)}
 .lead-msg.good{color:var(--tif)}
 .lead-msg.bad{color:#ffb4a2}
@@ -703,6 +708,8 @@ html.light .langs .flags span{background:rgba(12,125,116,.06)}
 html.light .phone{background:linear-gradient(160deg,#0f4a45,#0a302c)}
 html.light .form{background:rgba(255,255,255,.8)}
 html.light .rev{background:rgba(255,255,255,.72)}
+html.light .form .agree-err{color:#b3261e}
+html.light .form .agree input[aria-invalid="true"]{outline-color:#b3261e}
 html.light .form input,html.light .form textarea{background:rgba(255,255,255,.9);color:var(--ink)}
 html.light .form input:focus,html.light .form textarea:focus{background:#fff;border-color:var(--tif)}
 html.light .contact{background:linear-gradient(180deg,var(--bg) 0%,var(--g1) 100%)}
@@ -1150,12 +1157,14 @@ html.light .case{background:rgba(255,255,255,.85)}
         <label for="fc">Kontakt</label><input id="fc" name="contact" autocomplete="tel" placeholder="Telegram yoki telefon" required>
         <label for="fm">Sayt yoki vazifa</label><textarea id="fm" name="message" placeholder="Joriy saytga havola, nimani oʻzgartirmoqchisiz"></textarea>
         <div class="hp" aria-hidden="true"><label for="fcomp">Bu maydonni toʻldirmang</label><input id="fcomp" name="company" tabindex="-1" autocomplete="off"></div>
+        <label class="agree" for="fok"><input type="checkbox" id="fok" name="agree_pd" data-v="soglasie-pd-20261017" aria-describedby="fokHint"><span>Shaxsiy maʼlumotlarimni qayta ishlashga roziman. <a href="../soglasie.html" target="_blank" rel="noopener">Rozilik matni</a> · <a href="../politika.html" target="_blank" rel="noopener">Maxfiylik siyosati</a></span></label>
+        <p class="agree-err" id="fokHint" role="alert" hidden>Shaxsiy maʼlumotlarni qayta ishlashga roziligingizni belgilang — aks holda biz soʻrovni qabul qila olmaymiz.</p>
+        <label class="agree" for="fad"><input type="checkbox" id="fad" name="agree_ads" data-v="soglasie-ads-20261017"><span>Xizmatlar haqida maʼlumot olishga roziman (majburiy emas). <a href="../soglasie-reklama.html" target="_blank" rel="noopener">Rozilik matni</a></span></label>
         <button class="btn btn-gold magnetic" id="leadBtn" type="submit">Soʻrov yuborish <span class="arr">→</span></button>
         <p class="lead-msg" id="leadMsg" role="status" aria-live="polite"></p>
         <a class="btn btn-ghost magnetic" id="leadMax" href="https://max.ru/id183474446770_4_bot" target="_blank" rel="noopener" style="margin-top:12px;width:100%;justify-content:center">MAXda yozish <span class="arr">→</span></a>
         <a class="btn btn-ghost magnetic" id="leadTg" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener" style="margin-top:8px;width:100%;justify-content:center">Tezroq — Telegram orqali <span class="arr">→</span></a>
-        <label class="agree" for="fok"><input type="checkbox" id="fok" name="agree"><span>Men shaxsiy maʼlumotlarimni qayta ishlashga rozilik bildiraman — <a href="../politika.html">siyosat</a>.</span></label>
-        <p class="fine">Soʻrov bizga darhol yetib boradi — bir kun ichida javob beramiz. Messenjer qulayroq boʻlsa, Telegramga yozing. Maʼlumotlar uchinchi shaxslarga berilmaydi.</p>
+        <p class="fine">Soʻrov bizga darhol yetib boradi — bir kun ichida javob beramiz. Messenjer qulayroq boʻlsa, Telegram yoki MAX orqali yozing. Maʼlumotlar Rossiyada yoziladi va saqlanadi.</p>
       </form>
     </div>
   </div>
@@ -1168,7 +1177,7 @@ html.light .case{background:rgba(255,255,255,.85)}
     <a class="brand" href="#top"><img src="../assets/logo_alpha.png" alt="" width="32" height="32" style="width:32px;height:32px"><b>в<i>сети</i></b></a>
     <span>Biznesingiz — в сети. Hammasi koʻradi.</span>
     <span>2021 yildan beri ishlaymiz · © 2026 «в сети» · site-vseti@yandex.ru</span>
-    <span><a href="../oferta.html">Oferta</a> · <a href="../politika.html">Maxfiylik siyosati</a> · <a href="../rekvizity.html">Rekvizitlar</a> · <a href="../oplata.html">Toʻlov</a></span>
+    <span><a href="../oferta.html">Oferta</a> · <a href="../politika.html">Maxfiylik siyosati</a> · <a href="../soglasie.html">Maʼlumotlarni qayta ishlashga rozilik</a> · <a href="../rekvizity.html">Rekvizitlar</a> · <a href="../oplata.html">Toʻlov</a></span>
   </div>
 </footer>
 
@@ -1671,40 +1680,56 @@ if(box){
 /* --- заявка: уходит на наш приёмник, оттуда сразу нам в Telegram --- */
 var LEAD_URL='https://rinazolotareva.ru/vseti-api/';
 var lf=document.getElementById('leadForm'), lopened=Date.now();
+(function(){ var a=document.getElementById('fok'), h=document.getElementById('fokHint');
+  if(a&&h) a.addEventListener('change',function(){ if(a.checked){ h.hidden=true; a.removeAttribute('aria-invalid'); } }); })();
 if(lf) lf.addEventListener('submit',function(e){
   e.preventDefault();
   var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var name=v('fn'), contact=v('fc'), task=v('fm'), trap=v('fcomp');
   var msg=document.getElementById('leadMsg'), btn=document.getElementById('leadBtn');
-  var ok=document.getElementById('fok');
+  var agree=document.getElementById('fok'), adv=document.getElementById('fad'), hint=document.getElementById('fokHint');
   var say=function(t,cls){ if(msg){ msg.textContent=t; msg.className='lead-msg '+(cls||''); } };
+  if(hint) hint.hidden=true;
+  if(agree) agree.removeAttribute('aria-invalid');
   if(!name||!contact){ say('Ism va kontaktni toʻldiring — aks holda javob bera olmaymiz.','bad'); return; }
-  if(ok&&!ok.checked){ say('Maʼlumotlarni qayta ishlashga roziligingizni belgilang — aks holda biz soʻrovni qabul qilishga haqli emasmiz.','bad'); return; }
+  /* согласие на ПДн: галочка не стоит заранее; без неё заявка не уходит */
+  if(!agree||!agree.checked){
+    say('','');
+    if(hint) hint.hidden=false;
+    if(agree){ agree.setAttribute('aria-invalid','true'); agree.focus(); }
+    return;
+  }
+  var consent={pd:true,pd_v:agree.getAttribute('data-v')||'',ads:!!(adv&&adv.checked),ads_v:adv?(adv.getAttribute('data-v')||''):''};
   if(btn){ btn.disabled=true; }
   say('Yuborilmoqda…','');
-  var done=function(ok,err){
+  var done=function(sent,err){
     if(btn){ btn.disabled=false; }
-    if(ok){
+    if(sent){
       lf.reset(); lopened=Date.now();
       say('Soʻrovingiz bizda. Bir kun ichida javob beramiz.','good');
+    } else if(err==='consent'){
+      /* сервер не принял согласие (например, страница устарела): письмом не обходим */
+      say('Rozilikni yozib boʻlmadi. Sahifani yangilang va belgini qaytadan qoʻying.','bad');
     } else {
       /* сеть не пустила — открываем письмо, чтобы заявка не потерялась */
       say('Yuborib boʻlmadi. Xatni ochamiz — yoki bizga Telegramga yozing.','bad');
-      var body='Ism: '+name+'\\nAloqa: '+contact+'\\nSayt yoki vazifa: '+(task||'—')+'\\n\\nvseti-site.ru dan yuborildi';
+      var body='Ism: '+name+'\\nAloqa: '+contact+'\\nSayt yoki vazifa: '+(task||'—')+'\n\nConsent PD: yes ('+consent.pd_v+'); ads: '+(consent.ads?'yes':'no')+'\\n\\nvseti-site.ru dan yuborildi';
       location.href='mailto:site-vseti@yandex.ru?subject='+encodeURIComponent('Saytdan soʻrov — '+name)+'&body='+encodeURIComponent(body);
     }
   };
   var payload={name:name,contact:contact,message:task,company:trap,t:lopened,
-               lang:(document.documentElement.getAttribute('lang')||'ru')};
+               lang:(document.documentElement.getAttribute('lang')||'ru'),
+               page:location.pathname,form:'leadForm',consent:consent};
+  var tk=new URLSearchParams(location.search).get('test'); if(tk) payload.test=tk;
   try{
     var xhr=new XMLHttpRequest();
     xhr.open('POST',LEAD_URL,true);
     xhr.timeout=15000;
     xhr.setRequestHeader('Content-Type','application/json');
     xhr.onload=function(){
-      var ok=false;
-      try{ ok=(xhr.status===200)&&JSON.parse(xhr.responseText).ok===true; }catch(_e){}
-      done(ok);
+      var sent=false, code='';
+      try{ var j=JSON.parse(xhr.responseText); sent=(xhr.status===200)&&j.ok===true; code=j.error||''; }catch(_e){}
+      done(sent,code);
     };
     xhr.onerror=function(){ done(false); };
     xhr.ontimeout=function(){ done(false); };

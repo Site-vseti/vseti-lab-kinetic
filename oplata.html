@@ -56,6 +56,13 @@ main li{margin:0 0 8px}
 .pf button{font:inherit;font-weight:700;font-size:17px;padding:14px 18px;border:0;border-radius:12px;background:#1b524c;color:#fff;cursor:pointer}
 .pf button:disabled{opacity:.6;cursor:wait}
 .pf-err{color:#b00020;font-size:14.5px;margin:0!important}
+.pf label.agree{flex-direction:row;align-items:flex-start;gap:10px;font-size:14px;font-weight:400;line-height:1.45;color:#234;cursor:pointer}
+.pf label.agree span{font-weight:400;color:#234}
+.pf label.agree a,.paycard .agree-box a{color:#1b524c;text-decoration:underline}
+.pf input[type=checkbox]{flex:none;width:20px;height:20px;padding:0;margin:1px 0 0;accent-color:#1b524c;cursor:pointer}
+.pf input[type=checkbox][aria-invalid="true"]{outline:2px solid #b00020;outline-offset:2px}
+.agree-box{display:flex;flex-direction:column;gap:12px;margin:0 0 14px}
+@media (pointer:coarse){.pf input[type=checkbox]{width:24px;height:24px}}
 .alt{margin:0 0 22px}
 .alt summary{cursor:pointer;color:var(--mute);font-size:14.5px;margin-bottom:10px}
 .ftr{padding:30px var(--pad) 30px;border-top:1px solid var(--line);background:var(--g2);font-size:13.5px;color:var(--mute)}
@@ -81,6 +88,9 @@ main li{margin:0 0 8px}
       <label>Сумма, ₽<input id="pfSum" name="amount" type="number" min="1" max="500000" step="0.01" inputmode="decimal" placeholder="0,00" required></label>
       <label>Почта или телефон для чека<input id="pfContact" name="contact" type="text" autocomplete="email" placeholder="name@mail.ru или +7 900 000-00-00" required></label>
       <label>Комментарий <span>(за что оплата или номер счёта)</span><input id="pfComment" name="comment" type="text" maxlength="90"></label>
+      <label class="agree" for="pfOk"><input type="checkbox" id="pfOk" data-v="soglasie-pd-20261017" aria-describedby="pfOkHint"><span>Согласен на обработку персональных данных. <a href="soglasie.html" target="_blank" rel="noopener">Текст согласия</a> · <a href="politika.html" target="_blank" rel="noopener">Политика</a></span></label>
+      <p id="pfOkHint" class="pf-err" role="alert" hidden>Отметьте согласие на обработку персональных данных — без него мы не можем принять оплату.</p>
+      <label class="agree" for="pfAd"><input type="checkbox" id="pfAd" data-v="soglasie-ads-20261017"><span>Согласен получать информацию об услугах (необязательно). <a href="soglasie-reklama.html" target="_blank" rel="noopener">Текст согласия</a></span></label>
       <button id="pfBtn" type="submit">Перейти к оплате картой</button>
       <p id="pfErr" class="pf-err" role="alert" hidden></p>
     </form>
@@ -90,6 +100,11 @@ main li{margin:0 0 8px}
   <details class="alt">
     <summary>Другой способ: оплата на странице ЮKassa (карта, СБП)</summary>
     <div class="paycard">
+      <div class="agree-box pf">
+        <label class="agree" for="altOk"><input type="checkbox" id="altOk" data-v="soglasie-pd-20261017" aria-describedby="altHint"><span>Согласен на обработку персональных данных. <a href="soglasie.html" target="_blank" rel="noopener">Текст согласия</a> · <a href="politika.html" target="_blank" rel="noopener">Политика</a></span></label>
+        <p id="altHint" class="pf-err" role="alert" hidden>Отметьте согласие на обработку персональных данных — без него мы не можем принять оплату.</p>
+        <label class="agree" for="altAd"><input type="checkbox" id="altAd" data-v="soglasie-ads-20261017"><span>Согласен получать информацию об услугах (необязательно). <a href="soglasie-reklama.html" target="_blank" rel="noopener">Текст согласия</a></span></label>
+      </div>
 <link rel="stylesheet" href="https://yookassa.ru/integration/simplepay/css/yookassa_construct_form.css?v=1.35.0">
 <form class="yoomoney-payment-form" action="https://yookassa.ru/integration/simplepay/payment" method="post" accept-charset="utf-8" >
 <div class="ym-products ym-display-none">
@@ -143,7 +158,16 @@ main li{margin:0 0 8px}
 <script>
 (function(){
   var API='https://rinazolotareva.ru/vseti-api/pay';
+  var CONSENT_URL='https://rinazolotareva.ru/vseti-api/consent';
   var test=new URLSearchParams(location.search).get('test');
+  var ctest=new URLSearchParams(location.search).get('ctest');   /* метка тестового согласия, как у формы заявки */
+  /* что отмечено и какие тексты видел человек: пишется на reg.ru (Россия) отдельной записью */
+  function consentBody(form,contact,ok,ad){
+    var b={form:form,contact:contact,page:location.pathname,lang:'ru',
+           consent:{pd:true,pd_v:ok.getAttribute('data-v')||'',ads:!!ad.checked,ads_v:ad.getAttribute('data-v')||''}};
+    if(ctest) b.test=ctest;
+    return JSON.stringify(b);
+  }
   var q=test?('?test='+encodeURIComponent(test)):'';
   var WIDGET=['https://yookassa.ru/checkout-widget/v1/checkout-widget.js','https://static.yoomoney.ru/checkout-client/checkout-widget.js'];
   var form=document.getElementById('payForm'),btn=document.getElementById('pfBtn'),err=document.getElementById('pfErr');
@@ -161,10 +185,20 @@ main li{margin:0 0 8px}
     var sum=form.amount.value.replace(',','.'),contact=form.contact.value.trim();
     if(!(parseFloat(sum)>=1))return fail('Укажите сумму от 1 ₽');
     if(contact.length<5)return fail('Укажите почту или телефон для чека');
+    var okEl=document.getElementById('pfOk'),adEl=document.getElementById('pfAd'),hintEl=document.getElementById('pfOkHint');
+    hintEl.hidden=true;okEl.removeAttribute('aria-invalid');
+    if(!okEl.checked){hintEl.hidden=false;okEl.setAttribute('aria-invalid','true');okEl.focus();return;}
     btn.disabled=true;btn.textContent='Готовим оплату…';
     var ac=window.AbortController?new AbortController():null;if(ac)setTimeout(function(){ac.abort();},15000);
-    fetch(API+'/create'+q,{method:'POST',signal:ac?ac.signal:undefined,headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({amount:sum,contact:contact,comment:form.comment.value})})
+    /* сначала записываем согласие (reg.ru, Россия), потом создаём платёж */
+    fetch(CONSENT_URL,{method:'POST',signal:ac?ac.signal:undefined,headers:{'Content-Type':'application/json'},
+      body:consentBody('payForm',contact,okEl,adEl)})
+    .then(function(r){return r.json();})
+    .then(function(c){
+      if(!c||!c.ok){var e=new Error('consent');e.consent=true;throw e;}
+      return fetch(API+'/create'+q,{method:'POST',signal:ac?ac.signal:undefined,headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({amount:sum,contact:contact,comment:form.comment.value})});
+    })
     .then(function(r){return r.json();})
     .then(function(d){
       if(!d.ok)return fail(d.error||'Не удалось создать платёж');
@@ -180,8 +214,31 @@ main li{margin:0 0 8px}
         }).render('payment-form');
       });
     })
-    .catch(function(){fail('Нет связи с платёжным сервисом. Попробуйте ещё раз или воспользуйтесь способом ниже.');});
+    .catch(function(e){fail(e&&e.consent?'Не удалось записать согласие. Обновите страницу и попробуйте ещё раз.':'Нет связи с платёжным сервисом. Попробуйте ещё раз или воспользуйтесь способом ниже.');});
   });
+  document.getElementById('pfOk').addEventListener('change',function(){
+    if(this.checked){document.getElementById('pfOkHint').hidden=true;this.removeAttribute('aria-invalid');}});
+
+  /* запасная форма ЮKassa: без отметки не пускаем, при отправке пишем согласие (sendBeacon переживает переход) */
+  var alt=document.querySelector('.yoomoney-payment-form'),altOk=document.getElementById('altOk'),
+      altAd=document.getElementById('altAd'),altHint=document.getElementById('altHint'),altSent=0;
+  if(alt&&altOk){
+    var gate=function(e){
+      if(e.type==='click'&&!(e.target.closest&&e.target.closest('.ym-btn-pay')))return;
+      altHint.hidden=true;altOk.removeAttribute('aria-invalid');
+      if(!altOk.checked){
+        e.preventDefault();e.stopImmediatePropagation();
+        altHint.hidden=false;altOk.setAttribute('aria-invalid','true');altOk.focus();return;
+      }
+      if(Date.now()-altSent<5000)return;
+      altSent=Date.now();
+      var c=alt.elements['email'];
+      try{navigator.sendBeacon(CONSENT_URL,new Blob([consentBody('payAlt',((c&&c.value)||'').trim()||'—',altOk,altAd)],{type:'text/plain'}));}catch(_e){}
+    };
+    alt.addEventListener('click',gate,true);
+    alt.addEventListener('submit',gate,true);
+    altOk.addEventListener('change',function(){if(this.checked){altHint.hidden=true;this.removeAttribute('aria-invalid');}});
+  }
 })();
 </script>
 </body>

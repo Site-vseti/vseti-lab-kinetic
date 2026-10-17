@@ -390,5 +390,15 @@
  "Укажите адрес сайта, например example.ru.": "Sayt manzilini kiriting, masalan example.ru.",
  "Заявка у нас. Проверим сайт и ответим в течение дня.": "Soʻrovingiz bizda. Saytni tekshirib, bir kun ichida javob beramiz.",
  "Отправлено с vseti-site.ru": "vseti-site.ru dan yuborildi",
- "Ваш контакт": "Kontaktingiz"
+ "Ваш контакт": "Kontaktingiz",
+ "Сайт на нашей платформе": "Bizning platformadagi sayt",
+ "в месяц": "oyiga",
+ "Размещение и поддержка": "Joylashtirish va qoʻllab-quvvatlash",
+ "Быстрая загрузка": "Tez yuklanish",
+ "Защищённое соединение": "Himoyalangan ulanish",
+ "Регулярная проверка сайта": "Saytni muntazam tekshirish",
+ "Проверка, что сайт находят Алиса и ИИ-поиск": "Алиса va AI-qidiruv saytni topishini tekshirish",
+ "Поможем внести правки — фото, цены": "Tahrirlarni kiritishga yordam beramiz — rasmlar, narxlar",
+ "Техподдержка 24/7 — бот отвечает круглосуточно, специалист — в рабочее время": "24/7 texnik yordam — bot kecha-kunduz javob beradi, mutaxassis — ish vaqtida",
+ "Подключить": "Ulash"
 }

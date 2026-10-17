@@ -146,15 +146,36 @@ def translate_html(src, table, code, htmllang, name):
           "@id": "https://vseti-site.ru/#org", "name": "всети", "url": url,
           "logo": "https://vseti-site.ru/assets/logo.png", "description": desc,
           "email": "site-vseti@yandex.ru", "telephone": "+79119261617",
-          "priceRange": "14990-120000 RUB",
+          "priceRange": "599-120000 RUB",
           "address": {"@type": "PostalAddress", "addressCountry": "RU", "addressLocality": "Izhevsk"},
           "areaServed": [{"@type": "Country", "name": "Russia"}],
           "knowsLanguage": ["ru", "en", "uz", "tg", "ky", "az", "zh"],
           "sameAs": ["https://t.me/vseti_site", "https://max.ru/id183474446770_4_bot"],
           "inLanguage": htmllang}
+    cat = offer_catalog(table)
+    if cat:
+        ld["hasOfferCatalog"] = cat
     block = og + '<script type="application/ld+json">\n' + json.dumps(ld, ensure_ascii=False, indent=1) + '\n</script>\n'
     src = src.replace('</head>', block + '</head>', 1)
     return src
+
+# тарифы для Schema.org: (ключ названия в словаре, цена, вид цены)
+OFFERS = [('Модернизация вашего сайта', '14990', ''), ('Сайт с нуля', '35000', 'min'), ('Бизнес', '60000', ''),
+          ('Всё включено', '120000', ''), ('Сайт на нашей платформе', '599', 'month')]
+
+def offer_catalog(table):
+    items = []
+    for key, price, kind in OFFERS:
+        nm = table.get(key)
+        if not nm:
+            return None
+        o = {"@type": "Offer", "name": nm, "price": price, "priceCurrency": "RUB"}
+        if kind == 'min':
+            o["priceSpecification"] = {"@type": "PriceSpecification", "minPrice": price, "priceCurrency": "RUB"}
+        if kind == 'month':
+            o["priceSpecification"] = {"@type": "UnitPriceSpecification", "price": price, "priceCurrency": "RUB", "unitCode": "MON"}
+        items.append(o)
+    return {"@type": "OfferCatalog", "name": table.get('Услуги') or 'Services', "itemListElement": items}
 
 def hreflangs():
     tags = ['<link rel="alternate" hreflang="ru" href="https://vseti-site.ru/">']

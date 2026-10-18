@@ -356,7 +356,6 @@
  "зависит от вас": "sizga bogʻliq",
  "Готовый сайт до оплаты": "Toʻlovdan oldin tayyor sayt",
  "Сначала сайт, потом оплата": "Avval sayt, keyin toʻlov",
- "Нет": "Yoʻq",
  "Находят Алиса и ИИ-поиск": "Алиса va AI-qidiruv topadi",
  "Алиса, Яндекс, ChatGPT, Gemini": "Алиса, Яндекс, ChatGPT, Gemini",
  "отдельная услуга": "alohida xizmat",
@@ -372,7 +371,7 @@
  "Агентство, всё под ключ": "Agentlik, hammasi kalit topshirish asosida",
  "один исполнитель": "bitta ijrochi",
  "вы сами": "oʻzingiz",
- "Цены фрилансеров и конструкторов — ориентиры по открытым предложениям рынка.": "Frilanserlar va konstruktorlar narxlari — ochiq bozor takliflariga asoslangan taxminiy koʻrsatkichlar.",
+ "Фрилансеры и конструкторы: цены и условия — ориентиры по открытым предложениям рынка, октябрь 2026; у отдельных исполнителей и платформ они могут отличаться.": "Frilanserlar va konstruktorlar: narxlar va shartlar — 2026-yil oktabrdagi ochiq bozor takliflariga asoslangan taxminiy koʻrsatkichlar; ayrim ijrochi va platformalarda boshqacha boʻlishi mumkin.",
  "Есть — в тарифе «Бизнес» и выше": "Bor — «Biznes» tarifida va undan yuqorida",
  "бесплатная проверка": "bepul tekshiruv",
  "Бесплатно проверим,": "Bepul tekshirib beramiz,",
@@ -402,5 +401,7 @@
  "Подключить": "Ulash",
  "Работаем с НДС": "QQS bilan ishlaymiz",
  "Оплата по счёту для организаций и ИП": "Tashkilotlar va yakka tartibdagi tadbirkorlar uchun hisob boʻyicha toʻlov",
- "Договор и счёт": "Shartnoma va hisob"
+ "Договор и счёт": "Shartnoma va hisob",
+ "обычно нет": "odatda yoʻq",
+ "Модернизация сайта": "Saytni modernizatsiya qilish"
 }

@@ -114,12 +114,11 @@ main li{margin:0 0 8px}
 
 <main>
   <h1>Оплата услуг</h1>
-  <p>Выберите услугу — сразу откроется страница оплаты ЮKassa с готовой суммой: банковская карта или СБП. Электронный чек ЮKassa отправит на почту.</p>
+  <p>Выберите услугу — сразу откроется страница оплаты ЮKassa с готовой суммой: банковская карта или СБП. Электронный чек ЮKassa отправит на указанную почту.</p>
 
   <div class="paycard" id="paycard">
     <form id="payForm" class="pf" novalidate>
-      <label>Почта или телефон для чека<input id="pfContact" name="contact" type="text" autocomplete="email" placeholder="name@mail.ru" required></label>
-      <p id="pfPhoneHint" class="hint" role="status" hidden>ЮKassa отправляет чек на почту. По телефону чек может не прийти — лучше укажите почту.</p>
+      <label>Почта для чека<input id="pfContact" name="contact" type="email" inputmode="email" autocomplete="email" placeholder="name@mail.ru" required></label>
       <label class="agree" for="pfOk"><input type="checkbox" id="pfOk" data-v="soglasie-pd-20261017" aria-describedby="pfOkHint"><span>Согласен на обработку персональных данных. <a href="soglasie.html" target="_blank" rel="noopener">Текст согласия</a> · <a href="politika.html" target="_blank" rel="noopener">Политика</a></span></label>
       <p id="pfOkHint" class="pf-err" role="alert" hidden>Отметьте согласие на обработку персональных данных — без него мы не можем принять оплату.</p>
       <label class="agree" for="pfAd"><input type="checkbox" id="pfAd" data-v="soglasie-ads-20261018"><span>Согласен получать информацию об услугах (необязательно). <a href="soglasie-reklama.html" target="_blank" rel="noopener">Текст согласия</a></span></label>
@@ -173,7 +172,7 @@ main li{margin:0 0 8px}
 <div class="ym-customer-info">
     <div class="ym-block-title">О покупателе</div>
     <input name="custName" class="ym-input" placeholder="ФИО" type="text" value="">
-    <input class="ym-input" name="email" placeholder="Телефон или Email для чека" type="text">
+    <input class="ym-input" name="email" placeholder="Email для чека" type="text">
     <textarea class="ym-textarea" name="orderDetails" placeholder="Комментарий: за что оплата или номер счёта" value=""></textarea>
 </div>
 
@@ -202,7 +201,7 @@ main li{margin:0 0 8px}
 
 <footer class="ftr">
   <div class="wrap">
-    <span>© 2026 «всети» · site-vseti@yandex.ru</span>
+    <span>© «всети» · site-vseti@yandex.ru</span>
     <span><a href="oferta.html">Оферта</a> · <a href="politika.html">Политика ПДн</a> · <a href="rekvizity.html">Реквизиты</a></span>
   </div>
 </footer>
@@ -223,7 +222,7 @@ main li{margin:0 0 8px}
   }
   var q=test?('?test='+encodeURIComponent(test)):'';
   function $(id){return document.getElementById(id);}
-  var contactEl=$('pfContact'),okEl=$('pfOk'),adEl=$('pfAd'),okHint=$('pfOkHint'),err=$('pfErr'),phoneHint=$('pfPhoneHint'),
+  var contactEl=$('pfContact'),okEl=$('pfOk'),adEl=$('pfAd'),okHint=$('pfOkHint'),err=$('pfErr'),
       note=$('pickNote'),payNow=$('payNow'),otherBox=$('otherBox'),otherBtn=$('svcOther'),sumEl=$('pfSum'),cmtEl=$('pfComment'),goBtn=$('pfBtn'),
       btns=[].slice.call(document.querySelectorAll('.svc-btn[data-sum]'));
   var busy=false,picked=null;
@@ -237,19 +236,12 @@ main li{margin:0 0 8px}
     });
     if(on&&btn){btn._t=btn.innerHTML;btn.textContent='Готовим оплату…';}
   }
-  /* почта или телефон: то же правило, что и на сервере */
+  /* только почта: чек от ЮKassa уходит на электронную почту */
   function validContact(v){
     v=v.trim();
-    if(/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v))return v;
-    var d=v.replace(/\D/g,'');
-    if((d.length===11&&(d[0]==='7'||d[0]==='8'))||(d.length===10&&d[0]==='9'))return v;
-    return '';
+    return /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(v)?v:'';
   }
-  contactEl.addEventListener('input',function(){
-    var v=contactEl.value.trim();
-    phoneHint.hidden=!(v&&v.indexOf('@')<0&&/^[+\d\s()-]{5,}$/.test(v));
-    if(v)err.hidden=true;
-  });
+  contactEl.addEventListener('input',function(){if(contactEl.value.trim())err.hidden=true;});
   okEl.addEventListener('change',function(){if(this.checked){okHint.hidden=true;this.removeAttribute('aria-invalid');}});
 
   /* кнопка услуги или «Другая сумма» -> согласие (reg.ru) -> платёж -> страница оплаты ЮKassa */
@@ -258,7 +250,7 @@ main li{margin:0 0 8px}
     err.hidden=true;okHint.hidden=true;okEl.removeAttribute('aria-invalid');
     var contact=validContact(contactEl.value);
     if(!(amount>=1&&amount<=500000)){showErr('Укажите сумму от 1 до 500\u00a0000 ₽');sumEl.focus();return;}
-    if(!contact){showErr('Укажите почту или телефон для чека — на него придёт чек');contactEl.focus();contactEl.scrollIntoView({block:'center'});return;}
+    if(!contact){showErr('Укажите почту для чека — на неё придёт чек');contactEl.focus();contactEl.scrollIntoView({block:'center'});return;}
     if(!okEl.checked){okHint.hidden=false;okEl.setAttribute('aria-invalid','true');okEl.focus();return;}
     setBusy(true,btn);
     var ac=window.AbortController?new AbortController():null;if(ac)setTimeout(function(){ac.abort();},20000);

@@ -567,6 +567,10 @@ html[lang="az"] .plan .pr,html[lang="ky"] .plan .pr,html[lang="uz"] .plan .pr{fo
 @container plans (min-width:660px) and (max-width:1239px){@container (max-width:420px){.plan .nm{line-height:1.35;min-height:2.7em}}}
 
 /* --- plan-host: platform hosting tariff, full-width card under the four plans --- */
+.plans-note{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 18px;margin:26px 0 0;font-size:15px;color:var(--mute);text-align:center}
+.plans-note .nds{display:inline-block;font-weight:600;color:var(--tif);border:1px solid var(--line);border-radius:999px;padding:3px 14px}
+.plans-note a{color:var(--tif);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.plans-note a:hover{text-decoration:none}
 .plan.plan-host{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr);gap:6px 36px;align-items:center;border-color:rgba(232,199,102,.4)}
 .plan.plan-host .ph-main{display:flex;flex-direction:column;gap:6px}
 .plan.plan-host .nm{min-height:0}
@@ -1087,7 +1091,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <label for="as">Sayt manzili</label><input id="as" name="site" inputmode="url" autocomplete="url" autocapitalize="none" spellcheck="false" placeholder="https://your-site.com" required>
         <label for="ac">Telefon, Telegram yoki pochta</label><input id="ac" name="contact" autocomplete="tel" placeholder="Kontaktingiz" required>
         <div class="hp" aria-hidden="true"><label for="acomp">Bu maydonni toʻldirmang</label><input id="acomp" name="company" tabindex="-1" autocomplete="off"></div>
-        <label class="agree" for="aok"><input type="checkbox" id="aok" name="agree_pd" data-v="soglasie-pd-20261017" aria-describedby="aokHint"><span>Shaxsiy maʼlumotlarimni qayta ishlashga roziman. <a href="../soglasie.html" target="_blank" rel="noopener">Rozilik matni</a> · <a href="../politika.html" target="_blank" rel="noopener">Maxfiylik siyosati</a></span></label>
+        <label class="agree" for="aok"><input type="checkbox" id="aok" name="agree_pd" data-v="soglasie-pd-20261018" aria-describedby="aokHint"><span>Shaxsiy maʼlumotlarimni qayta ishlashga roziman. <a href="../soglasie.html" target="_blank" rel="noopener">Rozilik matni</a> · <a href="../politika.html" target="_blank" rel="noopener">Maxfiylik siyosati</a></span></label>
         <p class="agree-err" id="aokHint" role="alert" hidden>Shaxsiy maʼlumotlarni qayta ishlashga roziligingizni belgilang — aks holda biz soʻrovni qabul qila olmaymiz.</p>
         <label class="agree" for="aad"><input type="checkbox" id="aad" name="agree_ads" data-v="soglasie-ads-20261018"><span>Xizmatlar haqida maʼlumot olishga roziman (majburiy emas). <a href="../soglasie-reklama.html" target="_blank" rel="noopener">Rozilik matni</a></span></label>
         <button class="btn btn-gold magnetic" id="aliceBtn" type="submit">Bepul tekshirish <span class="arr">→</span></button>
@@ -1319,6 +1323,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <a class="btn btn-ghost magnetic" href="#contact">Ulash <span class="arr">→</span></a>
       </div>
     </div></div>
+    <p class="plans-note rv"><span class="nds">QQS bilan ishlaymiz</span><span>Tashkilotlar va yakka tartibdagi tadbirkorlar uchun hisob boʻyicha toʻlov</span><a href="../oplata.html#invoice">Shartnoma va hisob</a></p>
   </div>
 </section>
 
@@ -1391,7 +1396,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <label for="fc">Kontakt</label><input id="fc" name="contact" autocomplete="tel" placeholder="Telegram yoki telefon" required>
         <label for="fm">Sayt yoki vazifa</label><textarea id="fm" name="message" placeholder="Joriy saytga havola, nimani oʻzgartirmoqchisiz"></textarea>
         <div class="hp" aria-hidden="true"><label for="fcomp">Bu maydonni toʻldirmang</label><input id="fcomp" name="company" tabindex="-1" autocomplete="off"></div>
-        <label class="agree" for="fok"><input type="checkbox" id="fok" name="agree_pd" data-v="soglasie-pd-20261017" aria-describedby="fokHint"><span>Shaxsiy maʼlumotlarimni qayta ishlashga roziman. <a href="../soglasie.html" target="_blank" rel="noopener">Rozilik matni</a> · <a href="../politika.html" target="_blank" rel="noopener">Maxfiylik siyosati</a></span></label>
+        <label class="agree" for="fok"><input type="checkbox" id="fok" name="agree_pd" data-v="soglasie-pd-20261018" aria-describedby="fokHint"><span>Shaxsiy maʼlumotlarimni qayta ishlashga roziman. <a href="../soglasie.html" target="_blank" rel="noopener">Rozilik matni</a> · <a href="../politika.html" target="_blank" rel="noopener">Maxfiylik siyosati</a></span></label>
         <p class="agree-err" id="fokHint" role="alert" hidden>Shaxsiy maʼlumotlarni qayta ishlashga roziligingizni belgilang — aks holda biz soʻrovni qabul qila olmaymiz.</p>
         <label class="agree" for="fad"><input type="checkbox" id="fad" name="agree_ads" data-v="soglasie-ads-20261018"><span>Xizmatlar haqida maʼlumot olishga roziman (majburiy emas). <a href="../soglasie-reklama.html" target="_blank" rel="noopener">Rozilik matni</a></span></label>
         <button class="btn btn-gold magnetic" id="leadBtn" type="submit">Soʻrov yuborish <span class="arr">→</span></button>

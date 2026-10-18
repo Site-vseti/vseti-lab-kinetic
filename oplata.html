@@ -119,7 +119,7 @@ main li{margin:0 0 8px}
   <div class="paycard" id="paycard">
     <form id="payForm" class="pf" novalidate>
       <label>Почта для чека<input id="pfContact" name="contact" type="email" inputmode="email" autocomplete="email" placeholder="name@mail.ru" required></label>
-      <label class="agree" for="pfOk"><input type="checkbox" id="pfOk" data-v="soglasie-pd-20261017" aria-describedby="pfOkHint"><span>Согласен на обработку персональных данных. <a href="soglasie.html" target="_blank" rel="noopener">Текст согласия</a> · <a href="politika.html" target="_blank" rel="noopener">Политика</a></span></label>
+      <label class="agree" for="pfOk"><input type="checkbox" id="pfOk" data-v="soglasie-pd-20261018" aria-describedby="pfOkHint"><span>Согласен на обработку персональных данных. <a href="soglasie.html" target="_blank" rel="noopener">Текст согласия</a> · <a href="politika.html" target="_blank" rel="noopener">Политика</a></span></label>
       <p id="pfOkHint" class="pf-err" role="alert" hidden>Отметьте согласие на обработку персональных данных — без него мы не можем принять оплату.</p>
       <label class="agree" for="pfAd"><input type="checkbox" id="pfAd" data-v="soglasie-ads-20261018"><span>Согласен получать информацию об услугах (необязательно). <a href="soglasie-reklama.html" target="_blank" rel="noopener">Текст согласия</a></span></label>
 
@@ -151,7 +151,7 @@ main li{margin:0 0 8px}
     <summary>Страница оплаты не открывается? Запасной способ — форма ЮKassa (карта, СБП)</summary>
     <div class="paycard">
       <div class="agree-box pf">
-        <label class="agree" for="altOk"><input type="checkbox" id="altOk" data-v="soglasie-pd-20261017" aria-describedby="altHint"><span>Согласен на обработку персональных данных. <a href="soglasie.html" target="_blank" rel="noopener">Текст согласия</a> · <a href="politika.html" target="_blank" rel="noopener">Политика</a></span></label>
+        <label class="agree" for="altOk"><input type="checkbox" id="altOk" data-v="soglasie-pd-20261018" aria-describedby="altHint"><span>Согласен на обработку персональных данных. <a href="soglasie.html" target="_blank" rel="noopener">Текст согласия</a> · <a href="politika.html" target="_blank" rel="noopener">Политика</a></span></label>
         <p id="altHint" class="pf-err" role="alert" hidden>Отметьте согласие на обработку персональных данных — без него мы не можем принять оплату.</p>
         <label class="agree" for="altAd"><input type="checkbox" id="altAd" data-v="soglasie-ads-20261018"><span>Согласен получать информацию об услугах (необязательно). <a href="soglasie-reklama.html" target="_blank" rel="noopener">Текст согласия</a></span></label>
       </div>
@@ -195,6 +195,41 @@ main li{margin:0 0 8px}
   </details>
 
 
+
+  <section class="invoice" id="invoice" aria-labelledby="invH">
+    <h2 id="invH">Оплата по счёту для организаций и ИП</h2>
+    <p class="nds">Работаем с НДС</p>
+    <p>Если удобнее платить безналично, пришлём договор и счёт. Оставьте заявку: название организации или ИП, ИНН, услугу и контакт; реквизиты можно приложить файлом.</p>
+    <button type="button" class="btn-inv" id="invBtn" aria-expanded="false" aria-controls="invCard">Договор и счёт</button>
+    <div class="paycard" id="invCard" hidden>
+      <form id="invForm" class="pf" novalidate>
+        <label>Организация или ИП<input id="invOrg" name="org" type="text" maxlength="200" autocomplete="organization" placeholder="ООО «Ромашка»" required></label>
+        <label>ИНН<input id="invInn" name="inn" type="text" inputmode="numeric" maxlength="12" autocomplete="off" placeholder="10 или 12 цифр" required></label>
+        <label>За какую услугу
+          <select id="invSvc" name="service" required>
+            <option value="">Выберите услугу</option>
+            <option>Модернизация вашего сайта — 14 990 ₽</option>
+            <option>Сайт с нуля — от 35 000 ₽</option>
+            <option>Бизнес — 60 000 ₽</option>
+            <option>Всё включено — 120 000 ₽</option>
+            <option>Сайт на нашей платформе — 599 ₽/мес</option>
+            <option>Другое — опишу в комментарии</option>
+          </select>
+        </label>
+        <label>Контакт <span>(почта, телефон или ник в Telegram)</span><input id="invContact" name="contact" type="text" maxlength="200" autocomplete="email" required></label>
+        <label>Комментарий <span>(необязательно)</span><textarea id="invMsg" name="message" maxlength="1000"></textarea></label>
+        <label>Реквизиты файлом <span>(необязательно: PDF, DOC, DOCX, JPG, PNG, до 5 МБ)</span><input id="invFile" name="file" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"></label>
+        <input id="invHp" name="hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <label class="agree" for="invOk"><input type="checkbox" id="invOk" data-v="soglasie-pd-20261018" aria-describedby="invOkHint"><span>Согласен на обработку персональных данных. <a href="soglasie.html" target="_blank" rel="noopener">Текст согласия</a> · <a href="politika.html" target="_blank" rel="noopener">Политика</a></span></label>
+        <p id="invOkHint" class="pf-err" role="alert" hidden>Отметьте согласие на обработку персональных данных — без него мы не можем принять заявку.</p>
+        <label class="agree" for="invAd"><input type="checkbox" id="invAd" data-v="soglasie-ads-20261018"><span>Согласен получать информацию об услугах (необязательно). <a href="soglasie-reklama.html" target="_blank" rel="noopener">Текст согласия</a></span></label>
+        <button id="invSend" type="submit">Отправить заявку на договор и счёт</button>
+        <p id="invErr" class="pf-err" role="alert" hidden></p>
+        <p id="invDone" class="pf-ok" role="status" hidden></p>
+        <p class="hint">Данные записываются и хранятся в России.</p>
+      </form>
+    </div>
+  </section>
 
   <p class="note">Оплачивая, вы принимаете условия <a href="oferta.html">публичной оферты</a>. Электронный чек ЮKassa отправляет на почту. Вопросы по оплате и возвратам — site-vseti@yandex.ru.</p>
 </main>
@@ -300,6 +335,63 @@ main li{margin:0 0 8px}
       note.textContent='Сумма '+fmt(ps)+'\u00a0₽ подставлена. Укажите почту для чека и нажмите «Перейти к оплате».';note.hidden=false;
     }
   }
+
+  /* ---- Оплата по счёту: договор и счёт (организация или ИП) ---- */
+  var INVOICE_URL='https://rinazolotareva.ru/vseti-api/invoice';
+  var invBtn=$('invBtn'),invCard=$('invCard'),invForm=$('invForm');
+  function innValid(v){
+    if(!/^(\d{10}|\d{12})$/.test(v))return false;
+    var d=v.split('').map(Number);
+    function chk(w,n){var s=0;for(var i=0;i<w.length;i++)s+=w[i]*d[i];return (s%11)%10===d[n];}
+    return v.length===10?chk([2,4,10,3,5,9,4,6,8],9):(chk([7,2,4,10,3,5,9,4,6,8],10)&&chk([3,7,2,4,10,3,5,9,4,6,8],11));
+  }
+  function openInv(scroll){
+    invCard.hidden=false;invBtn.setAttribute('aria-expanded','true');
+    if(scroll)invCard.scrollIntoView({block:'start',behavior:'smooth'});
+    $('invOrg').focus({preventScroll:true});
+  }
+  invBtn.addEventListener('click',function(){if(invCard.hidden)openInv(false);else{invCard.hidden=true;invBtn.setAttribute('aria-expanded','false');}});
+  if(location.hash==='#invoice')openInv(true);
+  window.addEventListener('hashchange',function(){if(location.hash==='#invoice')openInv(true);});
+  var invErr=$('invErr'),invDone=$('invDone'),invSend=$('invSend'),invOk=$('invOk'),invOkHint=$('invOkHint');
+  function invFail(t,el){invErr.textContent=t;invErr.hidden=false;if(el)el.focus();}
+  invOk.addEventListener('change',function(){if(this.checked){invOkHint.hidden=true;this.removeAttribute('aria-invalid');}});
+  var INV_ERR={consent:'Не удалось записать согласие. Обновите страницу и попробуйте ещё раз.',rate:'Слишком много заявок с вашего адреса. Попробуйте через час или напишите нам: site-vseti@yandex.ru.',
+    inn:'Проверьте ИНН: 10 цифр у организации, 12 у ИП.',org:'Укажите название организации или ИП.',service:'Выберите услугу.',contact:'Укажите контакт: почту, телефон или ник в Telegram.',
+    file_type:'Файл не подошёл: нужен PDF, DOC, DOCX, JPG или PNG.',file_size:'Файл больше 5 МБ. Приложите файл поменьше или отправьте реквизиты в чат.',
+    file:'Не удалось принять файл, попробуйте ещё раз.',disabled:'Приём заявок на договор и счёт пока не открыт. Напишите нам: site-vseti@yandex.ru.'};
+  invForm.addEventListener('submit',function(e){
+    e.preventDefault();invErr.hidden=true;invDone.hidden=true;invOkHint.hidden=true;invOk.removeAttribute('aria-invalid');
+    var org=$('invOrg').value.trim(),inn=$('invInn').value.replace(/\s+/g,''),svc=$('invSvc').value,contact=$('invContact').value.trim(),
+        msg=$('invMsg').value.trim(),file=$('invFile').files[0];
+    if(org.length<2)return invFail(INV_ERR.org,$('invOrg'));
+    if(!innValid(inn))return invFail(INV_ERR.inn,$('invInn'));
+    if(!svc)return invFail(INV_ERR.service,$('invSvc'));
+    if(contact.length<3)return invFail(INV_ERR.contact,$('invContact'));
+    if(file){
+      var ext=(file.name.split('.').pop()||'').toLowerCase();
+      if(['pdf','doc','docx','jpg','jpeg','png'].indexOf(ext)<0)return invFail(INV_ERR.file_type,$('invFile'));
+      if(file.size>5*1024*1024)return invFail(INV_ERR.file_size,$('invFile'));
+    }
+    if(!invOk.checked){invOkHint.hidden=false;invOk.setAttribute('aria-invalid','true');invOk.focus();return;}
+    var fd=new FormData();
+    var pl={org:org,inn:inn,service:svc,contact:contact,message:msg,hp:$('invHp').value,page:location.pathname,lang:'ru',
+            consent:{pd:true,pd_v:invOk.getAttribute('data-v')||'',ads:!!$('invAd').checked,ads_v:$('invAd').getAttribute('data-v')||''}};
+    if(ctest)pl.test=ctest;
+    fd.append('payload',JSON.stringify(pl));
+    if(file)fd.append('file',file,file.name);
+    invSend.disabled=true;var t0=invSend.textContent;invSend.textContent='Отправляем…';
+    var ac=window.AbortController?new AbortController():null;if(ac)setTimeout(function(){ac.abort();},60000);
+    fetch(INVOICE_URL,{method:'POST',body:fd,signal:ac?ac.signal:undefined})
+    .then(function(r){return r.json().catch(function(){return {};});})
+    .then(function(d){
+      invSend.disabled=false;invSend.textContent=t0;
+      if(!d||!d.ok)return invFail(INV_ERR[d&&d.error]||'Не получилось отправить заявку. Попробуйте ещё раз или напишите нам: site-vseti@yandex.ru.');
+      invForm.reset();
+      invDone.textContent='Заявка'+(d.id?' №'+d.id:'')+' принята. Пришлём договор и счёт на указанный контакт — отвечаем в течение рабочего дня.';invDone.hidden=false;
+    })
+    .catch(function(){invSend.disabled=false;invSend.textContent=t0;invFail('Нет связи. Попробуйте ещё раз или напишите нам: site-vseti@yandex.ru.');});
+  });
 
   /* запасная форма ЮKassa: без отметки не пускаем, при отправке пишем согласие (sendBeacon переживает переход) */
   var alt=document.querySelector('.yoomoney-payment-form'),altOk=document.getElementById('altOk'),

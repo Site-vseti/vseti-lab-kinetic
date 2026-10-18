@@ -113,6 +113,7 @@ def translate_html(src, table, code, htmllang, name):
     src = re.sub(r'url\(assets/', 'url(../assets/', src)
     for pg in ('oferta.html', 'politika.html', 'rekvizity.html', 'oplata.html', 'soglasie.html', 'soglasie-reklama.html'):
         src = src.replace('href="%s"' % pg, 'href="../%s"' % pg)
+    src = src.replace('href="oplata.html#invoice"', 'href="../oplata.html#invoice"')
     # канонический адрес и Open Graph — свои у каждой версии
     src = src.replace('<link rel="canonical" href="https://vseti-site.ru/">',
                       '<link rel="canonical" href="https://vseti-site.ru/%s/">' % code, 1)

@@ -356,7 +356,6 @@
  "зависит от вас": "sizdən asılıdır",
  "Готовый сайт до оплаты": "Ödənişdən əvvəl hazır sayt",
  "Сначала сайт, потом оплата": "Əvvəl sayt, sonra ödəniş",
- "Нет": "Xeyr",
  "Находят Алиса и ИИ-поиск": "Алиса və AI-axtarış tapır",
  "Алиса, Яндекс, ChatGPT, Gemini": "Алиса, Яндекс, ChatGPT, Gemini",
  "отдельная услуга": "ayrıca xidmət",
@@ -372,7 +371,7 @@
  "Агентство, всё под ключ": "Agentlik, hər şey açar təslim",
  "один исполнитель": "tək icraçı",
  "вы сами": "özünüz",
- "Цены фрилансеров и конструкторов — ориентиры по открытым предложениям рынка.": "Frilanserlərin və konstruktorların qiymətləri — açıq bazar təkliflərinə əsaslanan təxmini göstəricilərdir.",
+ "Фрилансеры и конструкторы: цены и условия — ориентиры по открытым предложениям рынка, октябрь 2026; у отдельных исполнителей и платформ они могут отличаться.": "Frilanserlər və konstruktorlar: qiymətlər və şərtlər — 2026-cı ilin oktyabrında açıq bazar təkliflərinə əsaslanan təxmini göstəricilərdir; ayrı-ayrı icraçılarda və platformalarda fərqli ola bilər.",
  "Есть — в тарифе «Бизнес» и выше": "Var — «Biznes» tarifində və daha yuxarıda",
  "бесплатная проверка": "pulsuz yoxlama",
  "Бесплатно проверим,": "Pulsuz yoxlayacağıq,",
@@ -402,5 +401,7 @@
  "Подключить": "Qoşul",
  "Работаем с НДС": "ƏDV ilə işləyirik",
  "Оплата по счёту для организаций и ИП": "Təşkilatlar və fərdi sahibkarlar üçün hesab üzrə ödəniş",
- "Договор и счёт": "Müqavilə və hesab"
+ "Договор и счёт": "Müqavilə və hesab",
+ "обычно нет": "adətən yoxdur",
+ "Модернизация сайта": "Saytın modernləşdirilməsi"
 }

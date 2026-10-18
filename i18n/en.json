@@ -356,7 +356,6 @@
  "зависит от вас": "depends on you",
  "Готовый сайт до оплаты": "Finished site before payment",
  "Сначала сайт, потом оплата": "Site first, payment after",
- "Нет": "No",
  "Находят Алиса и ИИ-поиск": "Found by Alice and AI search",
  "Алиса, Яндекс, ChatGPT, Gemini": "Алиса, Яндекс, ChatGPT, Gemini",
  "отдельная услуга": "a separate service",
@@ -372,7 +371,7 @@
  "Агентство, всё под ключ": "An agency, everything turnkey",
  "один исполнитель": "a single contractor",
  "вы сами": "you do it yourself",
- "Цены фрилансеров и конструкторов — ориентиры по открытым предложениям рынка.": "Freelancer and site-builder prices are guidelines based on open market offers.",
+ "Фрилансеры и конструкторы: цены и условия — ориентиры по открытым предложениям рынка, октябрь 2026; у отдельных исполнителей и платформ они могут отличаться.": "Freelancers and site builders: prices and terms are guidelines based on open market offers, October 2026; individual providers and platforms may differ.",
  "Есть — в тарифе «Бизнес» и выше": "Yes — in the Business plan and above",
  "бесплатная проверка": "free check",
  "Бесплатно проверим,": "We'll check for free",
@@ -402,5 +401,7 @@
  "Подключить": "Connect",
  "Работаем с НДС": "We work with VAT",
  "Оплата по счёту для организаций и ИП": "Pay by invoice for companies and sole proprietors",
- "Договор и счёт": "Contract and invoice"
+ "Договор и счёт": "Contract and invoice",
+ "обычно нет": "usually not",
+ "Модернизация сайта": "Site modernization"
 }

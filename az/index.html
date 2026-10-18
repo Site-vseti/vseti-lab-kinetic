@@ -212,6 +212,11 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 .step h3{font-family:var(--disp);font-variation-settings:"wght" 600;font-size:clamp(1.6rem,2.6vw,2.4rem);letter-spacing:-.02em;line-height:1.05;margin-bottom:16px}
 .step p{color:var(--mute);max-width:36ch}
 .step .lbl{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--tif);margin-bottom:14px}
+/* текущий шаг подсвечен (класс on ставит скрипт по прокрутке) */
+.step,.step .big{transition:border-color .5s var(--ease),color .5s var(--ease),-webkit-text-stroke-color .5s var(--ease),text-shadow .5s var(--ease)}
+.step.on{border-left-color:var(--tif)}
+.step.on .big{color:rgba(132,244,234,.16);-webkit-text-stroke-color:var(--tif);text-shadow:0 0 18px rgba(132,244,234,.55),0 0 46px rgba(132,244,234,.3)}
+@media (min-width:900px) and (orientation:portrait){.proc-pin{height:auto;display:block}.proc-wrap{height:auto;padding:clamp(90px,12vw,150px) 0}.proc .sec-head{margin-bottom:50px}.proc-track{flex-direction:column;gap:60px;padding-left:var(--pad);padding-right:var(--pad)}.step{width:auto;max-width:760px;min-height:0;padding-top:110px}.step .big{font-size:6.5rem}}
 .proc .sec-head{padding:0;margin-bottom:clamp(24px,4vh,50px)}
 @media (max-width:899px){.morph-pin{height:auto;min-height:0;padding:54px var(--pad) 46px}
 .proc-pin{height:auto;display:block}.proc-wrap{height:auto;padding:clamp(90px,12vw,150px) 0}.proc .sec-head{margin-bottom:50px}.proc-track{flex-direction:column;gap:60px;padding-left:var(--pad);padding-right:var(--pad)}.step{width:auto;min-height:0;padding-top:110px}.step .big{font-size:6.5rem}}
@@ -737,6 +742,7 @@ html.light .proof .p::after{background:radial-gradient(circle,rgba(12,125,116,.1
 html.light .morph{background:linear-gradient(180deg,var(--bg) 0%,var(--g1) 50%,var(--bg) 100%)}
 html.light .mghost{-webkit-text-stroke:2px rgba(9,86,79,.26)}
 html.light .step .big{-webkit-text-stroke:1px rgba(9,86,79,.35)}
+html.light .step.on .big{color:rgba(12,125,116,.1);-webkit-text-stroke-color:var(--tif);text-shadow:0 0 16px rgba(12,125,116,.35)}
 html.light .case .shot{background:#dceceb}
 html.light .cmp2{background:linear-gradient(165deg,rgba(255,255,255,.9),rgba(233,246,244,.75))}
 html.light .cmp2 .hd{background:rgba(255,255,255,.7)}
@@ -1598,14 +1604,33 @@ if(hasGsap && !RM){
 
   // process horizontal (desktop only)
   const mm=gsap.matchMedia();
-  mm.add('(min-width: 900px)',()=>{
+  mm.add('(min-width: 900px) and (orientation: landscape)',()=>{
     const track=$('#procTrack'), pin=$('#procPin');
     const dist=()=>Math.max(0,track.scrollWidth-innerWidth+parseFloat(getComputedStyle(track).paddingLeft)*1.5);
     gsap.to(track,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:pin,start:'top top',end:()=>'+='+dist(),pin:true,scrub:.8,invalidateOnRefresh:true,anticipatePin:1}});
   });
-  mm.add('(max-width: 899px)',()=>{
+  mm.add('(max-width: 899px), (orientation: portrait)',()=>{
     $$('.step').forEach(s=>gsap.fromTo(s,{y:40,opacity:0},{y:0,opacity:1,duration:1,ease:'expo.out',scrollTrigger:{trigger:s,start:'top 85%',once:true}}));
   });
+  // текущий шаг светится: ближайший к середине экрана (по горизонтали — когда шаги едут вбок)
+  (()=>{
+    const steps=$$('#how .step'), sec=$('#how'), H=matchMedia('(min-width: 900px) and (orientation: landscape)');
+    if(!steps.length) return;
+    let n=0, cur=null;
+    gsap.ticker.add(()=>{
+      if(++n%4) return;
+      const r=sec.getBoundingClientRect();
+      if(r.bottom<0||r.top>innerHeight) return;
+      let best=null, bd=1e9;
+      steps.forEach(s=>{
+        const b=s.getBoundingClientRect();
+        if(b.right<0||b.left>innerWidth||b.bottom<0||b.top>innerHeight) return;
+        const d=H.matches?Math.abs(b.left+b.width*.4-innerWidth*.5):Math.abs(b.top+b.height*.5-innerHeight*.5);
+        if(d<bd){bd=d;best=s;}
+      });
+      if(best!==cur){steps.forEach(s=>s.classList.toggle('on',s===best));cur=best;}
+    });
+  })();
 
   // morph pinned section
   const mword=$('#mword'), msub=$('#msub'), mghost=$('#mghost');

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Оплата прошла — всети</title>
 <link rel="icon" href="assets/logo.png">
+<script>try{var _t=localStorage.getItem('vseti-theme');if(_t==='light')document.documentElement.classList.add('light');if(localStorage.getItem('vseti-hc')==='1')document.documentElement.classList.add('hc');var _f=[.9,1,1.15,1.3,1.5][parseInt(localStorage.getItem('vseti-fs'),10)];if(_f){document.documentElement.style.setProperty('--fs',_f);}}catch(e){}</script>
 <meta name="robots" content="noindex">
 <style>
 @font-face{font-family:'Roboto Flex';font-style:normal;font-weight:100 1000;font-stretch: 25% 151%;font-display:swap;src:url(assets/fonts/RobotoFlex-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
@@ -23,6 +24,10 @@
   --body:'Roboto Flex',system-ui,sans-serif;
   --pad:clamp(20px,5vw,80px);
 }
+html.light{--tif:#0c7d74;--tif2:#0a6a63;--g1:#dff2ef;--g2:#e9f6f4;--g3:#f3fbfa;--gold:#8a6a12;--gold2:#7a5d0f;--bg:#f4fbfa;--bg2:#e9f6f4;--ink:#07211f;--mute:rgba(7,33,31,.68);--dim:rgba(7,33,31,.42);--line:rgba(9,86,79,.2)}
+html.hc{--bg:#000;--bg2:#000;--ink:#fff;--mute:#fff;--dim:#e6e6e6;--tif:#ffe14d;--tif2:#ffe14d;--g2:#000}
+html.hc.light{--bg:#fff;--bg2:#fff;--ink:#000;--mute:#000;--dim:#1a1a1a;--tif:#7a4d00;--tif2:#7a4d00;--g2:#fff}
+body{zoom:var(--fs,1)}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--bg);color:var(--ink)}
 body{font-family:var(--body);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -62,7 +67,8 @@ main li{margin:0 0 8px}
 
 <main>
   <h1 id="st">Спасибо, оплата прошла</h1>
-  <p id="sm">Деньги поступили, электронный чек придёт на указанный телефон или почту.</p>
+  <p id="sm">Деньги поступили, электронный чек ЮKassa отправит на указанную почту.</p>
+  <p id="again" hidden><a href="oplata.html">← Вернуться к оплате</a></p>
   <p>Мы свяжемся с вами в течение рабочего дня. Если удобнее написать самим — <a href="https://t.me/vseti_agency_bot">бот в Telegram</a> или site-vseti@yandex.ru.</p>
   <p><a href="index.html">← Вернуться на главную</a></p>
 </main>
@@ -76,15 +82,26 @@ main li{margin:0 0 8px}
 
 <script>
 (function(){
-  var p=new URLSearchParams(location.search),id=p.get('id'),test=p.get('test');
-  if(!id)return;
-  fetch('https://rinazolotareva.ru/vseti-api/pay/status?id='+encodeURIComponent(id)+(test?'&test='+encodeURIComponent(test):''))
-  .then(function(r){return r.json();}).then(function(d){
-    if(!d.ok)return;
-    var h=document.getElementById('st'),m=document.getElementById('sm');
-    if(d.status==='canceled'){h.textContent='Оплата не прошла';m.innerHTML='Деньги не списаны. Попробуйте ещё раз на <a href="oplata.html">странице оплаты</a> или другой картой.';}
-    else if(d.status==='pending'){h.textContent='Ждём подтверждения банка';m.textContent='Обычно это занимает до минуты. Когда платёж пройдёт, чек придёт на указанный телефон или почту.';}
-  }).catch(function(){});
+  /* o — метка заказа из адреса возврата со страницы оплаты ЮKassa; id — прежний переход из окна ввода карты */
+  var p=new URLSearchParams(location.search),id=p.get('id'),o=p.get('o'),test=p.get('test');
+  if(!id&&!o)return;
+  var h=document.getElementById('st'),m=document.getElementById('sm'),again=document.getElementById('again');
+  if(o){h.textContent='Проверяем оплату…';m.textContent='Сверяем платёж с ЮKassa, это займёт несколько секунд.';}
+  function set(t,x,retry){h.textContent=t;m.innerHTML=x;again.hidden=!retry;}
+  var tries=0;
+  function check(){
+    var url='https://rinazolotareva.ru/vseti-api/pay/status?'+(o?'o='+encodeURIComponent(o):'id='+encodeURIComponent(id))+(test?'&test='+encodeURIComponent(test):'');
+    fetch(url).then(function(r){return r.json();}).then(function(d){
+      if(!d.ok){if(o)set('Не удалось проверить оплату','Если деньги списались, чек придёт на почту. Если сомневаетесь — напишите нам: site-vseti@yandex.ru.',true);return;}
+      if(d.status==='succeeded')set('Спасибо, оплата прошла','Деньги поступили, электронный чек ЮKassa отправит на указанную почту.',false);
+      else if(d.status==='canceled')set('Оплата не прошла','Деньги не списаны. Попробуйте ещё раз на <a href="oplata.html">странице оплаты</a> или другим способом, например СБП.',true);
+      else{
+        set('Ждём подтверждения банка','Обычно это занимает до минуты. Когда платёж пройдёт, чек придёт на почту. Если вы закрыли оплату, не завершив её, — <a href="oplata.html">вернитесь к оплате</a>.',false);
+        if(++tries<8)setTimeout(check,4000);
+      }
+    }).catch(function(){if(o)set('Не удалось проверить оплату','Если деньги списались, чек придёт на почту. Если сомневаетесь — напишите нам: site-vseti@yandex.ru.',true);});
+  }
+  check();
 })();
 </script>
 </body>

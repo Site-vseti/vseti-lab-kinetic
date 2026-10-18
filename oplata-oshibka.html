@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Оплата не прошла — всети</title>
 <link rel="icon" href="assets/logo.png">
+<script>try{var _t=localStorage.getItem('vseti-theme');if(_t==='light')document.documentElement.classList.add('light');if(localStorage.getItem('vseti-hc')==='1')document.documentElement.classList.add('hc');var _f=[.9,1,1.15,1.3,1.5][parseInt(localStorage.getItem('vseti-fs'),10)];if(_f){document.documentElement.style.setProperty('--fs',_f);}}catch(e){}</script>
 <meta name="robots" content="noindex">
 <style>
 @font-face{font-family:'Roboto Flex';font-style:normal;font-weight:100 1000;font-stretch: 25% 151%;font-display:swap;src:url(assets/fonts/RobotoFlex-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
@@ -23,6 +24,10 @@
   --body:'Roboto Flex',system-ui,sans-serif;
   --pad:clamp(20px,5vw,80px);
 }
+html.light{--tif:#0c7d74;--tif2:#0a6a63;--g1:#dff2ef;--g2:#e9f6f4;--g3:#f3fbfa;--gold:#8a6a12;--gold2:#7a5d0f;--bg:#f4fbfa;--bg2:#e9f6f4;--ink:#07211f;--mute:rgba(7,33,31,.68);--dim:rgba(7,33,31,.42);--line:rgba(9,86,79,.2)}
+html.hc{--bg:#000;--bg2:#000;--ink:#fff;--mute:#fff;--dim:#e6e6e6;--tif:#ffe14d;--tif2:#ffe14d;--g2:#000}
+html.hc.light{--bg:#fff;--bg2:#fff;--ink:#000;--mute:#000;--dim:#1a1a1a;--tif:#7a4d00;--tif2:#7a4d00;--g2:#fff}
+body{zoom:var(--fs,1)}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--bg);color:var(--ink)}
 body{font-family:var(--body);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}

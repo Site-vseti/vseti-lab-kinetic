@@ -1988,20 +1988,27 @@ if(lf) lf.addEventListener('submit',function(e){
                lang:(document.documentElement.getAttribute('lang')||'ru'),
                page:location.pathname,form:'leadForm',consent:consent};
   var tk=new URLSearchParams(location.search).get('test'); if(tk) payload.test=tk;
-  try{
-    var xhr=new XMLHttpRequest();
-    xhr.open('POST',LEAD_URL,true);
-    xhr.timeout=15000;
-    xhr.setRequestHeader('Content-Type','application/json');
-    xhr.onload=function(){
-      var sent=false, code='';
-      try{ var j=JSON.parse(xhr.responseText); sent=(xhr.status===200)&&j.ok===true; code=j.error||''; }catch(_e){}
-      done(sent,code);
-    };
-    xhr.onerror=function(){ done(false); };
-    xhr.ontimeout=function(){ done(false); };
-    xhr.send(JSON.stringify(payload));
-  }catch(_e){ done(false); }
+  /* долгий ответ или сбой связи — повтор с тем же rid: посредник второй раз заявку не записывает, а отвечает её номером */
+  payload.rid=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():(Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,12));
+  var waits=[15000,15000,20000], n=0;
+  var once=function(){
+    try{
+      var xhr=new XMLHttpRequest(), again=function(){ if(++n<waits.length) setTimeout(once,1000); else done(false); };
+      xhr.open('POST',LEAD_URL,true);
+      xhr.timeout=waits[n];
+      xhr.setRequestHeader('Content-Type','application/json');
+      xhr.onload=function(){
+        if(xhr.status===0||xhr.status>=500){ again(); return; }
+        var sent=false, code='';
+        try{ var j=JSON.parse(xhr.responseText); sent=(xhr.status===200)&&j.ok===true; code=j.error||''; }catch(_e){}
+        done(sent,code);
+      };
+      xhr.onerror=again;
+      xhr.ontimeout=again;
+      xhr.send(JSON.stringify(payload));
+    }catch(_e){ done(false); }
+  };
+  once();
 });
 
 /* --- проверка в Алисе: та же дорога, что у форwe заявки, тип «alice» + адрес siteа --- */
@@ -2047,20 +2054,27 @@ if(af) af.addEventListener('submit',function(e){
                lang:(document.documentElement.getAttribute('lang')||'ru'),
                page:location.pathname,form:'aliceForm',consent:consent};
   var tk=new URLSearchParams(location.search).get('test'); if(tk) payload.test=tk;
-  try{
-    var xhr=new XMLHttpRequest();
-    xhr.open('POST',LEAD_URL,true);
-    xhr.timeout=15000;
-    xhr.setRequestHeader('Content-Type','application/json');
-    xhr.onload=function(){
-      var sent=false, code='';
-      try{ var j=JSON.parse(xhr.responseText); sent=(xhr.status===200)&&j.ok===true; code=j.error||''; }catch(_e){}
-      done(sent,code);
-    };
-    xhr.onerror=function(){ done(false); };
-    xhr.ontimeout=function(){ done(false); };
-    xhr.send(JSON.stringify(payload));
-  }catch(_e){ done(false); }
+  /* долгий ответ или сбой связи — повтор с тем же rid: посредник второй раз заявку не записывает, а отвечает её номером */
+  payload.rid=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():(Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,12));
+  var waits=[15000,15000,20000], n=0;
+  var once=function(){
+    try{
+      var xhr=new XMLHttpRequest(), again=function(){ if(++n<waits.length) setTimeout(once,1000); else done(false); };
+      xhr.open('POST',LEAD_URL,true);
+      xhr.timeout=waits[n];
+      xhr.setRequestHeader('Content-Type','application/json');
+      xhr.onload=function(){
+        if(xhr.status===0||xhr.status>=500){ again(); return; }
+        var sent=false, code='';
+        try{ var j=JSON.parse(xhr.responseText); sent=(xhr.status===200)&&j.ok===true; code=j.error||''; }catch(_e){}
+        done(sent,code);
+      };
+      xhr.onerror=again;
+      xhr.ontimeout=again;
+      xhr.send(JSON.stringify(payload));
+    }catch(_e){ done(false); }
+  };
+  once();
 });
 
 /* --- карусель телефонов: Telegram / MAX / ВContactе --- */

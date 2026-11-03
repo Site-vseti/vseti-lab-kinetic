@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const password = document.getElementById("passwordInput").value;
 
     try {
-      const res = await fetch("https://fakestoreapi.com/auth/login", {
+      const res = await fetch("data:,", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

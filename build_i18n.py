@@ -146,12 +146,11 @@ def translate_html(src, table, code, htmllang, name):
     ld = {"@context": "https://schema.org", "@type": "ProfessionalService",
           "@id": "https://vseti-site.ru/#org", "name": "всети", "url": url,
           "logo": "https://vseti-site.ru/assets/logo.png", "description": desc,
-          "email": "site-vseti@yandex.ru", "telephone": "+79119261617",
+          "email": "site-vseti@yandex.ru",
           "priceRange": "599-120000 RUB",
-          "address": {"@type": "PostalAddress", "addressCountry": "RU", "addressLocality": "Izhevsk"},
           "areaServed": [{"@type": "Country", "name": "Russia"}],
           "knowsLanguage": ["ru", "en", "uz", "tg", "ky", "az", "zh"],
-          "sameAs": ["https://t.me/vseti_site", "https://max.ru/id183474446770_4_bot"],
+          "sameAs": ["https://t.me/vseti_site"],
           "inLanguage": htmllang}
     cat = offer_catalog(table)
     if cat:

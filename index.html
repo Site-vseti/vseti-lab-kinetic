@@ -997,21 +997,9 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
  "url": "https://vseti-site.ru/",
  "logo": "https://vseti-site.ru/assets/logo.png",
  "image": "https://vseti-site.ru/assets/logo.png",
- "description": "Веб-агентство «всети»: редизайн сайтов и подготовка к поиску в нейросетях, онлайн-запись, чат-боты, каналы и приём оплаты.",
+ "description": "Веб-агентство «всети»: редизайн сайтов и подготовка к поиску в нейросетях, онлайн-запись, чат-боты и каналы.",
  "email": "site-vseti@yandex.ru",
- "telephone": "+79119261617",
  "priceRange": "599-120000 RUB",
- "founder": {
-  "@type": "Person",
-  "name": "Золотарев Юрий Николаевич"
- },
- "address": {
-  "@type": "PostalAddress",
-  "addressCountry": "RU",
-  "addressLocality": "Ижевск",
-  "postalCode": "426073",
-  "streetAddress": "ул. Молодёжная, д. 81, кв. 68"
- },
  "areaServed": [
   {
    "@type": "Country",
@@ -1026,18 +1014,6 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
   "ky",
   "az",
   "zh"
- ],
- "identifier": [
-  {
-   "@type": "PropertyValue",
-   "name": "ИНН",
-   "value": "183474446770"
-  },
-  {
-   "@type": "PropertyValue",
-   "name": "ОГРНИП",
-   "value": "320183200041847"
-  }
  ],
  "hasOfferCatalog": {
   "@type": "OfferCatalog",
@@ -1095,8 +1071,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
  },
  "sameAs": [
   "https://t.me/vseti_site",
-  "https://t.me/vseti_agency_bot",
-  "https://max.ru/id183474446770_4_bot"
+  "https://t.me/vseti_agency_bot"
  ],
  "@context": "https://schema.org"
 }
@@ -1280,7 +1255,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
   <button class="pd-x" type="button" id="promoX" aria-label="Закрыть">×</button>
   <h3 id="promoH">Апгрейд вашего сайта: показ — бесплатно, забрать — 9 990 ₽</h3>
   <p>Пришлите ссылку на ваш сайт — мы бесплатно соберём его новую версию и покажем вам по ссылке. Понравится — забираете её в показанном виде за 9 990 ₽, перенос на ваш домен сделаем вместе. Не понравится — ничего не платите.</p>
-  <p class="pd-terms"><a href="oferta.html" target="_blank" rel="noopener">Условия — в оферте</a></p>
+  <p class="pd-terms">Цены носят информационный характер и не являются публичной офертой (ст. 437 ГК РФ). Условия — в договоре.</p>
   <div class="pd-btns"><a class="btn btn-gold" href="#contact" data-upgrade>Прислать ссылку <span class="arr">→</span></a><a class="btn btn-ghost" href="#plans" id="promoMore">Что входит</a></div>
   <span hidden id="promoPrefill">Хочу посмотреть новую версию моего сайта. Мой сайт: </span>
 </dialog>
@@ -1322,14 +1297,10 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <h3>Проверка в Алисе</h3>
         <p>Это бесплатно.</p>
         <label for="as">Адрес сайта</label><input id="as" name="site" inputmode="url" autocomplete="url" autocapitalize="none" spellcheck="false" placeholder="https://ваш-сайт.ru" required>
-        <label for="ac">Телефон, Telegram или почта</label><input id="ac" name="contact" autocomplete="tel" placeholder="Ваш контакт" required>
         <div class="hp" aria-hidden="true"><label for="acomp">Не заполняйте это поле</label><input id="acomp" name="company" tabindex="-1" autocomplete="off"></div>
-        <label class="agree" for="aok"><input type="checkbox" id="aok" name="agree_pd" data-v="soglasie-pd-20261018" aria-describedby="aokHint"><span>Согласен на обработку персональных данных. <a href="soglasie.html" target="_blank" rel="noopener">Текст согласия</a> · <a href="politika.html" target="_blank" rel="noopener">Политика</a></span></label>
-        <p class="agree-err" id="aokHint" role="alert" hidden>Отметьте согласие на обработку персональных данных — без него мы не можем принять заявку.</p>
-        <label class="agree" for="aad"><input type="checkbox" id="aad" name="agree_ads" data-v="soglasie-ads-20261018"><span>Согласен получать информацию об услугах (необязательно). <a href="soglasie-reklama.html" target="_blank" rel="noopener">Текст согласия</a></span></label>
         <button class="btn btn-gold magnetic" id="aliceBtn" type="submit">Проверить бесплатно <span class="arr">→</span></button>
         <p class="lead-msg" id="aliceMsg" role="status" aria-live="polite"></p>
-        <p class="fine">Заявки и согласия хранятся в России, на хостинге в Москве.</p>
+        <p class="fine">Нужен только адрес сайта — личные данные не нужны.</p>
       </form>
       <div class="alice-rep" id="aliceRep" hidden aria-live="polite" aria-busy="false">
         <div class="ar-load" id="arLoad" hidden><i class="ar-spin" aria-hidden="true"></i><span>Проверяем сайт…</span></div>
@@ -1529,7 +1500,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <div class="pr">9 990 ₽<small>разово</small></div>
         <div class="mo">Поддержка <b>599 ₽/мес</b> — размещение и правки</div>
         <p class="fit">Подойдёт, если сайт уже есть и его нужно обновить без хлопот.</p>
-        <p class="txt">Мы бесплатно собираем новую версию вашего сайта по нашему стандарту и показываем по ссылке. Понравится — забираете её в показанном виде за 9 990 ₽, не понравится — ничего не платите. Без согласований и правок — поэтому быстро и недорого. <a href="oferta.html" target="_blank" rel="noopener">Условия — в оферте</a></p>
+        <p class="txt">Мы бесплатно собираем новую версию вашего сайта по нашему стандарту и показываем по ссылке. Понравится — забираете её в показанном виде за 9 990 ₽, не понравится — ничего не платите. Без согласований и правок — поэтому быстро и недорого. Цены носят информационный характер и не являются публичной офертой (ст. 437 ГК РФ). Условия — в договоре.</p>
         <a class="btn btn-gold magnetic" href="#contact" data-upgrade>Прислать ссылку на сайт <span class="arr">→</span></a>
       </div>
       <div class="get">
@@ -1585,7 +1556,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <a class="btn btn-ghost magnetic" href="#contact">Подключить <span class="arr">→</span></a>
       </div>
     </div></div>
-    <p class="plans-note rv"><span class="nds">Работаем с НДС</span><span>Оплата по счёту для организаций и ИП</span><a href="oplata.html#invoice">Договор и счёт</a></p>
+    <p class="plans-note rv"><span class="nds">Работаем с НДС</span><span>Цены носят информационный характер и не являются публичной офертой (ст. 437 ГК РФ). Условия — в договоре.</span></p>
   </div>
 </section>
 
@@ -1646,27 +1617,16 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <div class="clinks">
           <a class="rv" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener"><span>Бот — быстрая заявка<small>@vseti_agency_bot · бот отвечает сразу</small></span><span class="arr">→</span></a>
           <a class="rv" href="https://t.me/vseti_site" target="_blank" rel="noopener"><span>Канал «всети»<small>@vseti_site · кейсы, советы, новости</small></span><span class="arr">→</span></a>
-          <a class="rv" href="https://max.ru/id183474446770_4_bot" target="_blank" rel="noopener"><span>Бот в MAX<small>заявка прямо в мессенджере</small></span><span class="arr">→</span></a>
-          <a class="rv" href="mailto:site-vseti@yandex.ru"><span>site-vseti@yandex.ru<small>почта · договор, бриф, документы</small></span><span class="arr">→</span></a>
-          <a class="rv" href="oplata.html"><span>Оплата услуг<small>онлайн через ЮKassa · чек на почту</small></span><span class="arr">→</span></a>
+          <a class="rv" href="mailto:site-vseti@yandex.ru"><span>site-vseti@yandex.ru<small>почта · ответим в течение дня</small></span><span class="arr">→</span></a>
         </div>
       </div>
-      <form class="form rv" id="leadForm" method="post" novalidate>
-        <h3>Оставить заявку</h3>
-        <p>Напишем в удобный мессенджер или на почту.</p>
-        <label for="fn">Имя</label><input id="fn" name="name" autocomplete="name" placeholder="Как к вам обращаться" required>
-        <label for="fc">Контакт</label><input id="fc" name="contact" autocomplete="tel" placeholder="Telegram или телефон" required>
-        <label for="fm">Сайт или задача</label><textarea id="fm" name="message" placeholder="Ссылка на текущий сайт, что хочется изменить"></textarea>
-        <div class="hp" aria-hidden="true"><label for="fcomp">Не заполняйте это поле</label><input id="fcomp" name="company" tabindex="-1" autocomplete="off"></div>
-        <label class="agree" for="fok"><input type="checkbox" id="fok" name="agree_pd" data-v="soglasie-pd-20261018" aria-describedby="fokHint"><span>Согласен на обработку персональных данных. <a href="soglasie.html" target="_blank" rel="noopener">Текст согласия</a> · <a href="politika.html" target="_blank" rel="noopener">Политика</a></span></label>
-        <p class="agree-err" id="fokHint" role="alert" hidden>Отметьте согласие на обработку персональных данных — без него мы не можем принять заявку.</p>
-        <label class="agree" for="fad"><input type="checkbox" id="fad" name="agree_ads" data-v="soglasie-ads-20261018"><span>Согласен получать информацию об услугах (необязательно). <a href="soglasie-reklama.html" target="_blank" rel="noopener">Текст согласия</a></span></label>
-        <button class="btn btn-gold magnetic" id="leadBtn" type="submit">Отправить заявку <span class="arr">→</span></button>
-        <p class="lead-msg" id="leadMsg" role="status" aria-live="polite"></p>
-        <a class="btn btn-ghost magnetic" id="leadMax" href="https://max.ru/id183474446770_4_bot" target="_blank" rel="noopener" style="margin-top:12px;width:100%;justify-content:center">Написать в MAX <span class="arr">→</span></a>
-        <a class="btn btn-ghost magnetic" id="leadTg" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener" style="margin-top:8px;width:100%;justify-content:center">Быстрее — в Telegram <span class="arr">→</span></a>
-        <p class="fine">Заявка уходит нам сразу — отвечаем в течение дня. Если удобнее мессенджер, напишите в Telegram или MAX. Заявки и согласия хранятся в России, на хостинге в Москве.</p>
-      </form>
+      <div class="form rv" id="writeUs">
+        <h3>Написать нам</h3>
+        <p>Пришлите ссылку на ваш сайт или расскажите о задаче — ответим в течение дня.</p>
+        <a class="btn btn-gold magnetic" href="mailto:site-vseti@yandex.ru" style="width:100%;justify-content:center">Написать на почту <span class="arr">→</span></a>
+        <a class="btn btn-ghost magnetic" id="leadTg" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener" style="margin-top:10px;width:100%;justify-content:center">Написать в Telegram <span class="arr">→</span></a>
+        <p class="fine">На сайте мы не собираем личные данные: вы пишете нам сами — на почту или в Telegram.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1678,7 +1638,6 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
     <a class="brand" href="#top"><img src="assets/logo_alpha-64.webp" alt="" width="32" height="32" style="width:32px;height:32px"><b><i>всети</i></b></a>
     <span>Ваш бизнес всети. Видят все.</span>
     <span>© «всети» · site-vseti@yandex.ru</span>
-    <span><a href="oferta.html">Оферта</a> · <a href="politika.html">Политика ПДн</a> · <a href="soglasie.html">Согласие на обработку ПДн</a> · <a href="rekvizity.html">Реквизиты</a> · <a href="oplata.html">Оплата</a></span>
   </div>
 </footer>
 
@@ -2213,13 +2172,7 @@ if(lf) lf.addEventListener('submit',function(e){
   if(agree) agree.removeAttribute('aria-invalid');
   if(!name||!contact){ say('Заполните имя и контакт — иначе мы не сможем ответить.','bad'); return; }
   /* согласие на ПДн: галочка не стоит заранее; без неё заявка не уходит */
-  if(!agree||!agree.checked){
-    say('','');
-    if(hint) hint.hidden=false;
-    if(agree){ agree.setAttribute('aria-invalid','true'); agree.focus(); }
-    return;
-  }
-  var consent={pd:true,pd_v:agree.getAttribute('data-v')||'',ads:!!(adv&&adv.checked),ads_v:adv?(adv.getAttribute('data-v')||''):''};
+  var consent=null;
   if(btn){ btn.disabled=true; }
   say('Отправляем…','');
   var done=function(sent,err){
@@ -2311,7 +2264,7 @@ var AL_BOTS={YandexBot:'Яндекс и Алиса',Googlebot:'Google',bingbot:'
 var AL_SKIP='Не проверяли — сайт не открылся';
 var AL_SR={y:'Есть: ',n:'Нет: ',s:'Не проверили: '};
 var AL_SUM={all:'Всё в порядке: нам здесь нечего исправлять',most:'Почти всё в порядке — есть что подтянуть',half:'Алиса и нейросети найдут вас не всегда — есть что исправить',low:'Алисе и нейросетям будет трудно вас найти',down:'Сайт по этому адресу не открылся — Алиса и нейросети его не увидят'};
-var AL_FAIL={later:'Не успели проверить сейчас — пришлём отчёт на ваш контакт',forbidden:'Этот адрес мы проверить не можем — укажите адрес вашего сайта в интернете. Заявка у нас, ответим на ваш контакт'};
+var AL_FAIL={later:'Не успели проверить сейчас — попробуйте ещё раз через минуту',forbidden:'Этот адрес мы проверить не можем — укажите адрес вашего сайта в интернете. Заявка у нас, ответим на ваш контакт'};
 /* какая из фраз «не прошло» подходит к значению, которое вернул сервер */
 function alKey(code,v){
   v=String(v==null?'':v);
@@ -2387,7 +2340,7 @@ if(af) af.addEventListener('submit',function(e){
   var say=function(t,cls){ if(msg){ msg.textContent=t; msg.className='lead-msg '+(cls||''); } };
   if(hint) hint.hidden=true;
   if(agree) agree.removeAttribute('aria-invalid');
-  if(!site||contact.length<3){ say('Укажите адрес сайта и контакт — иначе мы не сможем проверить и ответить.','bad'); return; }
+  if(!site){ say('Укажите адрес сайта, например example.ru.','bad'); return; }
   if(!/^(?:https?:\/\/)?[\p{L}\p{N}][\p{L}\p{N}.-]*\.[\p{L}\p{N}-]{2,}(?::\d{1,5})?(?:[\/?#]\S*)?$/iu.test(site)){ say('Укажите адрес сайта, например example.ru.','bad'); return; }
   if(!agree||!agree.checked){
     say('','');
@@ -2481,7 +2434,6 @@ if(host&&dots){
 }
 })();
 </script>
-<script>(function(){try{var q=new URLSearchParams(location.search);var s=q.get('utm_source')||q.get('s')||'';var i=new Image();i.src='https://rinazolotareva.ru/vseti-api/hit?p='+encodeURIComponent(location.pathname)+'&s='+encodeURIComponent(s)+'&r='+encodeURIComponent(document.referrer)+'&_='+Date.now();}catch(e){}})();</script>
 <script src="assets/tap-hover.js" defer></script>
 <script src="assets/mesh-flow.js" defer></script>
 <script>

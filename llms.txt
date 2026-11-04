@@ -10,7 +10,6 @@
 Телефон: +7 911 926-16-17
 Телеграм-канал: https://t.me/vseti_site
 Бот для заявки: https://t.me/vseti_agency_bot
-Юридическое лицо: ИП Золотарев Юрий Николаевич, ИНН 183474446770, ОГРНИП 320183200041847
 География работы: вся Россия и зарубежные заказчики, работа удалённая.
 
 ## Услуги
@@ -45,9 +44,3 @@
 - https://vseti-site.ru/ky/ — Кыргызча
 - https://vseti-site.ru/az/ — Azərbaycanca
 - https://vseti-site.ru/zh/ — 中文
-- https://vseti-site.ru/oferta.html — оферта
-- https://vseti-site.ru/oplata.html — онлайн-оплата услуг через ЮKassa; оплата по счёту для организаций и ИП (договор и счёт), работаем с НДС
-- https://vseti-site.ru/politika.html — политика обработки персональных данных
-- https://vseti-site.ru/soglasie.html — согласие на обработку персональных данных
-- https://vseti-site.ru/soglasie-reklama.html — согласие на получение информации об услугах
-- https://vseti-site.ru/rekvizity.html — реквизиты

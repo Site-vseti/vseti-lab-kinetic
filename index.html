@@ -896,6 +896,34 @@ html.light .vs .ck.n{border-color:#c33}html.light .vs .ck.n::before,html.light .
 @container alice (max-width:479px){.alice .form{padding:22px 18px}.alice .form input{padding:12px 13px;font-size:15px}.alice .form .btn{padding-inline:18px;white-space:normal;text-align:left}}
 @container alice (max-width:359px){.alice .form{padding:20px 16px}.alice .form input{padding:11px 12px;font-size:14px}}
 html.light .alice{background:linear-gradient(180deg,var(--bg) 0%,var(--g1) 55%,var(--bg) 100%)}
+/* --- alice: отчёт проверки прямо под формой --- */
+.alice-rep{grid-column:1/-1;min-width:0;border:1px solid var(--line);border-radius:26px;padding:clamp(18px,3vw,30px);background:rgba(7,26,24,.45);backdrop-filter:blur(8px)}
+.alice-rep[hidden],.alice-rep [hidden]{display:none!important}
+.ar-load{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--mute)}
+.ar-spin{flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--tif);animation:arspin .9s linear infinite}
+@keyframes arspin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.ar-spin{animation:none;border-top-color:var(--tif);border-right-color:var(--tif)}}
+.ar-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-bottom:18px}
+.ar-score{flex:none;font-family:var(--disp);font-variation-settings:"wght" 700;font-size:clamp(1.9rem,6vw,2.9rem);line-height:1;color:var(--gold2);white-space:nowrap}
+.ar-score small{font-size:.38em;color:var(--mute);margin:0 .35em}
+.ar-sum{flex:1 1 220px;min-width:0;font-size:16px;line-height:1.45;color:var(--ink);overflow-wrap:anywhere}
+.ar-list{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;margin:0 0 22px;padding:0}
+.ar-list li{display:flex;align-items:flex-start;gap:12px;min-width:0;font-size:15px;line-height:1.45;color:var(--ink);overflow-wrap:anywhere}
+.ar-list .mk{flex:none;width:22px;height:22px;margin-top:1px;border-radius:50%;display:grid;place-items:center;font-size:13px;line-height:1;font-weight:700}
+.ar-list li.y .mk{background:rgba(132,244,234,.16);color:var(--tif)}
+.ar-list li.n .mk{background:rgba(255,157,148,.16);color:#ff9d94}
+.ar-list li.s{color:var(--mute)}
+.ar-list li.s .mk{background:rgba(255,255,255,.06);color:var(--mute)}
+.ar-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.ar-cta .btn{max-width:100%;white-space:normal;text-align:left}
+.ar-cta .ar-note{flex:1 1 200px;min-width:0;margin:0;font-size:13.5px;color:var(--mute)}
+.ar-fail{margin:0;font-size:15px;line-height:1.5;color:var(--ink);overflow-wrap:anywhere}
+@container alice (max-width:859px){.ar-list{grid-template-columns:minmax(0,1fr)}}
+@container alice (max-width:479px){.alice-rep{padding:18px 16px;border-radius:22px}.ar-cta .btn{padding-inline:18px}}
+html.light .alice-rep{background:rgba(255,255,255,.8)}
+html.light .ar-list li.n .mk{background:rgba(179,38,30,.1);color:#b3261e}
+html.light .ar-list li.y .mk{background:rgba(12,125,116,.12)}
+html.light .ar-list li.s .mk{background:rgba(7,33,31,.06)}
 html.hc .vs-box{border:2px solid var(--line)!important;background:var(--bg)!important}
 html.hc .vs td.us,html.hc .vs thead th.us{background:var(--bg)!important;outline:2px solid var(--gold);outline-offset:-2px}
 html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
@@ -1229,8 +1257,8 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
     <div class="alice-wrap"><div class="alice-grid">
       <div class="alice-txt">
         <p class="eyebrow">бесплатная проверка</p>
-        <h2 class="h2 alice-h rv"><span class="al1">Бесплатно проверим,</span> <span class="gold al2">находит ли ваш сайт Алиса</span></h2>
-        <p class="lead rv">Укажите адрес сайта и контакт. В течение дня покажем, видят ли ваш сайт Алиса и ИИ-поиск — и что мешает, если не видят.</p>
+        <h2 class="h2 alice-h rv"><span class="al1">Бесплатно проверим,</span> <span class="gold al2">найдёт ли ваш сайт Алиса</span></h2>
+        <p class="lead rv">Укажите адрес сайта — за минуту покажем, открыт ли он Алисе, Яндексу и нейросетям и что мешает его найти. Отчёт — сразу на экране</p>
       </div>
       <form class="form rv" id="aliceForm" method="post" novalidate>
         <h3>Проверка в Алисе</h3>
@@ -1245,6 +1273,15 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <p class="lead-msg" id="aliceMsg" role="status" aria-live="polite"></p>
         <p class="fine">Заявки и согласия хранятся в России, на хостинге в Москве.</p>
       </form>
+      <div class="alice-rep" id="aliceRep" hidden aria-live="polite" aria-busy="false">
+        <div class="ar-load" id="arLoad" hidden><i class="ar-spin" aria-hidden="true"></i><span>Проверяем сайт…</span></div>
+        <p class="ar-fail" id="arFail" hidden></p>
+        <div id="arDone" hidden>
+          <div class="ar-head"><div class="ar-score"><span id="arN">0</span><small>из</small><span id="arM">0</span></div><p class="ar-sum" id="arSum"></p></div>
+          <ul class="ar-list" id="arList"></ul>
+        </div>
+        <div class="ar-cta" id="arCta" hidden><a class="btn btn-gold magnetic" href="#offer">Исправим это — тариф «Готовый сайт» за 9 990 ₽ <span class="arr">→</span></a></div>
+      </div>
     </div></div>
   </div>
 </section>
@@ -2169,10 +2206,120 @@ if(lf) lf.addEventListener('submit',function(e){
   once();
 });
 
-/* --- проверка в Алисе: та же дорога, что у формы заявки, тип «alice» + адрес сайта --- */
+/* --- проверка в Алисе: заявка уходит как раньше (тип «alice» + адрес сайта); потом страница просит посредника проверить сайт
+       по номеру заявки и rid (POST …/check) и рисует отчёт под формой. Сервер отдаёт только коды и значения — все фразы ниже. --- */
+var AL_TEXT={
+ open:{ok:'Сайт открывается',
+  bad:{dns:'Сайт по этому адресу не найден — проверьте, как написан адрес',
+       timeout:'Сайт не ответил вовремя — робот не станет ждать и уйдёт',
+       conn:'Не получилось соединиться с сайтом — он недоступен или у него сломана защита соединения',
+       e403:'Сайт не пустил нашу проверку (ошибка {v}) — похоже, он закрыт от роботов',
+       e404:'По этому адресу страницы нет (ошибка {v})',
+       e5xx:'Сайт отвечает ошибкой сервера ({v}) — посетители и роботы видят сбой',
+       blocked:'Сайт отправляет на закрытый адрес — такой сайт проверить нельзя',
+       redirects:'Сайт гоняет по кругу переадресациями — робот запутается',
+       _:'Сайт не открылся'}},
+ https:{ok:'Соединение защищено (https) — браузеры не пугают посетителей',
+  bad:{ssl:'У сайта неисправна защита соединения — браузеры предупреждают посетителей об опасности',
+       _:'Сайт открывается без защиты — браузеры пишут «Не защищено», и часть посетителей уходит'}},
+ speed:{ok:'Сайт отвечает быстро — за {v} с',
+  bad:{_:'Сайт отвечает медленно — {v} с: посетители и роботы не любят ждать'}},
+ robots:{ok:'Сайт открыт для робота Яндекса, Google и нейросетей',
+  bad:{ya:'Сайт закрыт для робота Яндекса — Алиса его не увидит',
+       some:'Сайт закрыт для: {names} — они не смогут его прочитать',
+       unk:'Не удалось прочитать правила для роботов — сайт не ответил',
+       _:'Сайт закрыт для части роботов'}},
+ text:{ok:'Роботу Яндекса страница отдаёт текст — есть что читать и показывать в ответах',
+  bad:{short:'Роботу Яндекса страница отдаёт почти пустое место ({v} знаков): текст появляется только в браузере, читать нечего',
+       http:'Сайт не отдаёт страницу роботу Яндекса (ошибка {v})',
+       timeout:'Сайт не ответил роботу Яндекса вовремя',
+       _:'Не удалось получить текст страницы для робота Яндекса'}},
+ meta:{ok:'У страницы есть название и описание — по ним сайт показывают в поиске',
+  bad:{title:'У страницы нет описания — поисковик подставит случайный кусок текста',
+       desc:'У страницы нет названия — в поиске она будет выглядеть безымянной',
+       none:'У страницы нет ни названия, ни описания — в поиске она будет выглядеть безымянной',
+       _:'У страницы нет названия или описания'}},
+ mobile:{ok:'Сайт подстраивается под экран телефона',
+  bad:{_:'Сайт не подстраивается под телефон — на смартфоне мелко и неудобно'}},
+ org:{ok:'Поисковикам сообщены название компании, чем она занимается и где находится',
+  bad:{_:'Поисковикам не сказано, что это за компания, чем она занимается и где находится'}},
+ sitemap:{ok:'Есть карта сайта — роботу проще найти все страницы',
+  bad:{unk:'Не удалось проверить карту сайта — сайт не ответил',
+       _:'Нет карты сайта — роботу сложнее найти все страницы'}},
+ phone:{ok:'Телефон на странице есть',
+  bad:{_:'На странице не нашли телефон — клиенту не по чему позвонить'}}
+};
+var AL_BOTS={YandexBot:'Яндекс и Алиса',Googlebot:'Google',bingbot:'Bing',GPTBot:'ChatGPT','OAI-SearchBot':'поиск ChatGPT',ClaudeBot:'Claude',PerplexityBot:'Perplexity'};
+var AL_SKIP='Не проверяли — сайт не открылся';
+var AL_SR={y:'Есть: ',n:'Нет: ',s:'Не проверили: '};
+var AL_SUM={all:'Всё в порядке: нам здесь нечего исправлять',most:'Почти всё в порядке — есть что подтянуть',half:'Алиса и нейросети найдут вас не всегда — есть что исправить',low:'Алисе и нейросетям будет трудно вас найти',down:'Сайт по этому адресу не открылся — Алиса и нейросети его не увидят'};
+var AL_FAIL={later:'Не успели проверить сейчас — пришлём отчёт на ваш контакт',forbidden:'Этот адрес мы проверить не можем — укажите адрес вашего сайта в интернете. Заявка у нас, ответим на ваш контакт'};
+/* какая из фраз «не прошло» подходит к значению, которое вернул сервер */
+function alKey(code,v){
+  v=String(v==null?'':v);
+  if(code==='open'){ if(/^(dns|timeout|blocked|redirects)$/.test(v)) return v; if(/^40[13]$/.test(v)) return 'e403'; if(/^(404|410)$/.test(v)) return 'e404'; if(/^5\d\d$/.test(v)) return 'e5xx'; if(/^(ssl|conn|empty|reset|err)$/.test(v)) return 'conn'; return '_'; }
+  if(code==='https') return v==='ssl'?'ssl':'_';
+  if(code==='robots') return v==='?'?'unk':(v.indexOf('YandexBot')>-1?'ya':(v?'some':'_'));
+  if(code==='text') return /^\d+$/.test(v)?'short':(/^http\d+$/.test(v)?'http':(v==='timeout'?'timeout':'_'));
+  if(code==='meta') return /^(title|desc|none)$/.test(v)?v:'_';
+  if(code==='sitemap') return v==='?'?'unk':'_';
+  return '_';
+}
+function alPhrase(it){
+  var d=AL_TEXT[it.c]; if(!d) return '';
+  var v=String(it.v==null?'':it.v), t=it.ok?d.ok:(d.bad[alKey(it.c,v)]||d.bad._||'');
+  if(it.c==='speed') v=Math.max(0.1,parseFloat(v)||0.1).toFixed(1).replace('.',',');   /* секунды: «0,2», не меньше 0,1 */
+  var names=v.split(',').map(function(n){return AL_BOTS[n]||n;}).filter(Boolean).join(', ');
+  return t.replace('{names}',names).replace('{v}',v.replace(/^http/,''));
+}
 var af=document.getElementById('aliceForm'), aopened=Date.now();
 (function(){ var a=document.getElementById('aok'), h=document.getElementById('aokHint');
   if(a&&h) a.addEventListener('change',function(){ if(a.checked){ h.hidden=true; a.removeAttribute('aria-invalid'); } }); })();
+/* отчёт под формой: state — load | fail | done */
+function alShow(state,data){
+  var rep=document.getElementById('aliceRep'); if(!rep) return;
+  var $a=function(id){return document.getElementById(id);};
+  rep.hidden=false; rep.setAttribute('aria-busy',state==='load'?'true':'false');
+  $a('arLoad').hidden=state!=='load'; $a('arFail').hidden=state!=='fail'; $a('arDone').hidden=state!=='done'; $a('arCta').hidden=true;
+  if(state==='fail'){ $a('arFail').textContent=data; $a('arCta').hidden=true; }
+  if(state==='done'){
+    var r=data, down=r.status==='down', list=$a('arList'), n=Math.max(0,Math.min(99,Number(r.passed)||0)), m=Math.max(0,Math.min(99,Number(r.total)||0));
+    list.textContent='';
+    (r.items||[]).slice(0,12).forEach(function(it){
+      if(!it||!AL_TEXT[it.c]) return;
+      var skipped=String(it.v)==='-';
+      if(down&&it.c!=='open') return;                      /* сайт не открылся — остальное смысла не имеет */
+      var li=document.createElement('li'), mk=document.createElement('span'), sr=document.createElement('span'), tx=document.createElement('span');
+      li.className=skipped?'s':(it.ok?'y':'n');
+      mk.className='mk'; mk.setAttribute('aria-hidden','true'); mk.textContent=skipped?'–':(it.ok?'✓':'✕');
+      sr.style.cssText='position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap';
+      sr.textContent=skipped?AL_SR.s:(it.ok?AL_SR.y:AL_SR.n);
+      tx.appendChild(sr); tx.appendChild(document.createTextNode(skipped?AL_SKIP:alPhrase(it)));
+      li.appendChild(mk); li.appendChild(tx); list.appendChild(li);
+    });
+    $a('arN').textContent=n; $a('arM').textContent=m;
+    $a('arSum').textContent=down?AL_SUM.down:(n>=m?AL_SUM.all:(n/m>=0.8?AL_SUM.most:(n/m>=0.5?AL_SUM.half:AL_SUM.low)));
+    $a('arCta').hidden=!down&&n>=m;
+  }
+  try{ rep.scrollIntoView({behavior:RM?'auto':'smooth',block:'nearest'}); }catch(_e){}
+}
+/* запрос проверки: ждём до 20 с; не ответила — cb(null,код) */
+function alCheck(id,rid,cb){
+  var fin=false, end=function(r,code){ if(fin) return; fin=true; cb(r,code); };
+  try{
+    var x=new XMLHttpRequest();
+    x.open('POST',LEAD_URL+'check',true);
+    x.timeout=20000;
+    x.setRequestHeader('Content-Type','application/json');
+    x.onload=function(){
+      var j=null; try{ j=JSON.parse(x.responseText); }catch(_e){}
+      end((x.status===200&&j&&j.ok===true&&j.items&&j.items.length)?j:null,(j&&j.error)||'');
+    };
+    x.onerror=function(){ end(null,''); };
+    x.ontimeout=function(){ end(null,''); };
+    x.send(JSON.stringify({id:id,rid:rid}));
+  }catch(_e){ end(null,''); }
+}
 if(af) af.addEventListener('submit',function(e){
   e.preventDefault();
   var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
@@ -2193,12 +2340,23 @@ if(af) af.addEventListener('submit',function(e){
   var consent={pd:true,pd_v:agree.getAttribute('data-v')||'',ads:!!(adv&&adv.checked),ads_v:adv?(adv.getAttribute('data-v')||''):''};
   if(btn){ btn.disabled=true; }
   say('Отправляем…','');
-  var done=function(sent,err){
-    if(btn){ btn.disabled=false; }
+  var rep=document.getElementById('aliceRep'); if(rep) rep.hidden=true;      /* прошлый отчёт убираем */
+  var rid=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():(Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,12));
+  var done=function(sent,err,id){
     if(sent){
       af.reset(); aopened=Date.now();
-      say('Заявка у нас. Проверим сайт и ответим в течение дня.','good');
-    } else if(err==='consent'){
+      say('Заявка у нас.','good');
+      if(!id){ if(btn) btn.disabled=false; alShow('fail',AL_FAIL.later); return; }
+      alShow('load');                                                            /* «Проверяем сайт…» */
+      alCheck(id,rid,function(r,code){
+        if(btn) btn.disabled=false;
+        if(r) alShow('done',r);
+        else alShow('fail',code==='forbidden'?AL_FAIL.forbidden:AL_FAIL.later);
+      });
+      return;
+    }
+    if(btn){ btn.disabled=false; }
+    if(err==='consent'){
       say('Не удалось записать согласие. Обновите страницу и отметьте галочку ещё раз.','bad');
     } else if(err==='site'){
       say('Укажите адрес сайта, например example.ru.','bad');
@@ -2213,7 +2371,7 @@ if(af) af.addEventListener('submit',function(e){
                page:location.pathname,form:'aliceForm',consent:consent};
   var tk=new URLSearchParams(location.search).get('test'); if(tk) payload.test=tk;
   /* долгий ответ или сбой связи — повтор с тем же rid: посредник второй раз заявку не записывает, а отвечает её номером */
-  payload.rid=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():(Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,12));
+  payload.rid=rid;
   var waits=[15000,15000,20000], n=0;
   var once=function(){
     try{
@@ -2223,9 +2381,9 @@ if(af) af.addEventListener('submit',function(e){
       xhr.setRequestHeader('Content-Type','application/json');
       xhr.onload=function(){
         if(xhr.status===0||xhr.status>=500){ again(); return; }
-        var sent=false, code='';
-        try{ var j=JSON.parse(xhr.responseText); sent=(xhr.status===200)&&j.ok===true; code=j.error||''; }catch(_e){}
-        done(sent,code);
+        var sent=false, code='', id=0;
+        try{ var j=JSON.parse(xhr.responseText); sent=(xhr.status===200)&&j.ok===true; code=j.error||''; id=parseInt(j.id,10)||0; }catch(_e){}
+        done(sent,code,id);
       };
       xhr.onerror=again;
       xhr.ontimeout=again;

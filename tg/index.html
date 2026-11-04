@@ -284,6 +284,36 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 @container plans (max-width:1239px){.plans{grid-template-columns:repeat(2,1fr)}}
 @container plans (max-width:659px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
 
+/* пешниҳоди махсус 9 990 и стикер */
+.offer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:18px 40px;margin:0 0 22px;padding:38px 36px}
+.offer .badge{position:static;justify-self:start;margin-bottom:6px}
+.offer .fit,.plan .fit{color:var(--ink);font-size:15px;margin-top:10px}
+.offer .txt{color:var(--mute);font-size:15px;margin:10px 0 18px;max-width:46ch}
+.offer .get{margin:0}
+.offer .get-h{font-family:var(--disp);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--tif);margin:0 0 14px}
+.offer ul.ck2{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px;color:var(--ink);font-size:15px}
+.offer ul.ck2 li{padding-left:28px;position:relative}
+.offer ul.ck2 li::before{content:"";position:absolute;left:2px;top:.28em;width:7px;height:12px;border:solid var(--gold2);border-width:0 2px 2px 0;transform:rotate(45deg);background:none}
+.offer .btn{justify-self:start;margin-top:4px}
+@container plans (max-width:899px){.offer{grid-template-columns:minmax(0,1fr);padding:30px 24px}}
+@container plans (max-width:479px){.offer ul.ck2{grid-template-columns:minmax(0,1fr)}}
+html.light .offer ul.ck2 li::before{border-color:#8a6a12}
+.promo-stk{position:absolute;z-index:6;top:112px;right:var(--pad);display:flex;flex-direction:column;align-items:center;gap:2px;max-width:190px;padding:14px 18px 15px;border:0;border-radius:18px;cursor:pointer;text-align:center;color:#1b1300;background:linear-gradient(135deg,var(--gold2),var(--gold));box-shadow:0 14px 40px rgba(0,0,0,.35);transform:rotate(4deg);transition:transform .3s var(--ease)}
+.promo-stk:hover,.promo-stk:focus-visible{transform:rotate(0) scale(1.04)}
+.promo-stk .ps-a{font-family:var(--disp);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.promo-stk b{font-family:var(--disp);font-size:26px;line-height:1.05;letter-spacing:-.02em}
+.promo-stk .ps-t{font-size:13px;line-height:1.25}
+@media (max-width:1239px){.promo-stk{position:relative;top:auto;right:auto;display:inline-flex;flex-direction:row;flex-wrap:wrap;align-items:baseline;justify-content:flex-start;gap:2px 10px;max-width:100%;margin:0 0 16px;padding:9px 16px;transform:none;text-align:left}.promo-stk b{font-size:20px}}
+.promo-dlg{max-width:min(520px,calc(100vw - 32px));border:1px solid var(--line);border-radius:24px;padding:30px 28px 26px;background:var(--bg2);color:var(--ink)}
+.promo-dlg::backdrop{background:rgba(0,0,0,.6)}
+.promo-dlg h3{font-family:var(--disp);font-size:clamp(1.4rem,4vw,1.9rem);line-height:1.15;margin:0 0 14px}
+.promo-dlg p{color:var(--mute);font-size:16px;line-height:1.5;margin:0 0 20px}
+.promo-dlg .pd-terms{margin:-8px 0 18px;font-size:14px}.promo-dlg .pd-terms a,.offer .txt a{color:var(--tif);text-decoration:underline}
+.promo-dlg .pd-btns{display:flex;flex-wrap:wrap;gap:12px}
+.promo-dlg .pd-x{position:absolute;top:12px;right:14px;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:var(--ink);font-size:22px;cursor:pointer}
+html.light .promo-dlg{background:#fff}
+@media (max-width:760px){.promo-stk{margin-top:10px}}
+
 /* faq */
 .faq{max-width:860px;margin-inline:auto}
 .faq details{border-top:1px solid var(--line)}
@@ -1037,6 +1067,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
   <div class="hero-veil"></div>
   <div class="ghost" id="ghost" aria-hidden="true">ВСЕТИ</div>
   <div class="wrap">
+    <button class="promo-stk hero-in" type="button" id="promoStk" aria-haspopup="dialog"><span class="ps-a">пешниҳоди махсус</span><b>9 990 ₽</b><span class="ps-t">Тамошои версияи нави сомонаи шумо — ройгон</span></button>
     <p class="eyebrow hero-in">агентии веб «всети»</p>
     <div class="payfirst hero-in"><b>Аввал сомона — баъд пардохт</b><span>Сомонаро пешакӣ месозем — пас аз дидани тайёраш пардохт мекунед</span></div>
     <h1 class="h1" id="h1">
@@ -1059,6 +1090,15 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
     <div class="ai-chips"><span>Яндекс</span><span>Google</span><span>ChatGPT</span><span>Алиса</span><span>Gemini</span><span>DeepSeek</span><span>GigaChat</span></div>
   </div>
 </section>
+
+<dialog class="promo-dlg" id="promoDlg" aria-labelledby="promoH">
+  <button class="pd-x" type="button" id="promoX" aria-label="Пӯшидан">×</button>
+  <h3 id="promoH">Навсозии сомонаи шумо: тамошо — ройгон, гирифтан — 9 990 ₽</h3>
+  <p>Пайванди сомонаи худро фиристед — мо версияи нави онро ройгон месозем ва тавассути пайванд нишон медиҳем. Писанд ояд — онро ба ҳамон шакл ба 9 990 ₽ мегиред, интиқол ба домени шуморо якҷоя мекунем. Писанд наояд — ҳеҷ чиз намепардозед.</p>
+  <p class="pd-terms"><a href="../oferta.html" target="_blank" rel="noopener">Шартҳо — дар оферта</a></p>
+  <div class="pd-btns"><a class="btn btn-gold" href="#contact" data-upgrade>Фиристодани пайванд <span class="arr">→</span></a><a class="btn btn-ghost" href="#plans" id="promoMore">Чӣ дохил мешавад</a></div>
+  <span hidden id="promoPrefill">Мехоҳам версияи нави сомонаамро бинам. Сомонаи ман: </span>
+</dialog>
 
 <!-- MARQUEE -->
 <div class="marq" aria-hidden="true">
@@ -1289,20 +1329,38 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <h2 class="h2 split-ln"><span class="ln"><span>Арзиши</span></span><span class="ln"><span><span class="gold">шаффоф</span></span></span></h2></div>
       <p class="lead rv">Нархи собити лоиҳа + пуштибонии ҳармоҳа. Бидуни пардохтҳои пинҳонӣ.</p>
     </div>
-    <div class="plans-wrap"><div class="plans">
+    <div class="plans-wrap"><div class="plan hit offer rv" id="offer">
+      <div>
+        <span class="badge">пешниҳоди махсус</span>
+        <div class="nm">Сайти тайёр</div>
+        <div class="pr">9 990 ₽<small>якдафъагӣ</small></div>
+        <div class="mo">Дастгирӣ <b>599 ₽/моҳ</b> — ҷойгиркунӣ ва таҳрирҳо</div>
+        <p class="fit">Мувофиқ аст, агар сайт аллакай мавҷуд бошад ва онро бе ташвиш навсозӣ кардан лозим бошад.</p>
+        <p class="txt">Мо версияи нави сомонаи шуморо мувофиқи стандарти худ ройгон месозем ва тавассути пайванд нишон медиҳем. Писанд ояд — онро ба ҳамон шакле, ки нишон дода шуд, ба 9 990 ₽ мегиред, писанд наояд — ҳеҷ чиз намепардозед. Бе мувофиқа ва ислоҳот — барои ҳамин зуд ва арзон. <a href="../oferta.html" target="_blank" rel="noopener">Шартҳо — дар оферта</a></p>
+        <a class="btn btn-gold magnetic" href="#contact" data-upgrade>Пайванди сайтро фиристед <span class="arr">→</span></a>
+      </div>
+      <div class="get">
+        <p class="get-h">Чӣ ба даст меоред</p>
+        <ul class="ck2"><li>Тарҳи муосир мувофиқи стандарти «всети»</li><li>Аз телефон ва компютер қулай</li><li>Мавзӯи равшан ва торик</li><li>Тугмаҳои «шрифт калонтар / хурдтар»</li><li>Боркунии зуд</li><li>Танзимот барои Алиса, ChatGPT, Яндекс ва Google</li><li>Пайвасти муҳофизатшуда</li><li>7 забон</li><li>Харита ва масир то шумо</li><li>Дархостҳо ва сабти ном — фавран ба почтаи шумо</li><li>Шарҳҳо аз Яндекс Карта дар сайт</li><li>Кӯмак дар интиқол ба домени шумо</li></ul>
+      </div>
+    </div>
+    <div class="plans">
       <div class="plan feat rv">
         <div class="nm">Навсозии сомонаи шумо</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">14 990 ₽<small>якдафъагӣ</small></div>
-        <ul><li><b>Тарҳро худамон интихоб мекунем ва сомонаи тайёрро месупорем</b></li><li>Мутобиқ ба ҳар экран</li><li>Мавзӯи равшан ва торик</li><li>Пайвасти муҳофизатшуда ва суръат</li><li>Танзим барои ҷустуҷӯи Яндекс ва Google</li><li>Танзим барои ҷавобҳои шабакаҳои нейронӣ</li></ul>
+        <div class="mo">Пуштибонӣ <b>1 000 ₽/моҳ</b> — дар сурати зарурат</div>
+        <p class="fit">Мувофиқ аст, агар хоҳед сайтро бо хоҳишҳои худ навсозӣ кунед.</p>
+        <ul><li><b>Сайти шуморо мувофиқи хоҳишҳои шумо навсозӣ мекунем</b></li><li>Мутобиқ ба ҳар экран</li><li>Мавзӯи равшан ва торик</li><li>Пайвасти муҳофизатшуда ва суръат</li><li>Танзим барои ҷустуҷӯи Яндекс ва Google</li><li>Танзим барои ҷавобҳои шабакаҳои нейронӣ</li><li>Пуштибонӣ: 2 навсозӣ/моҳ</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Фармоед <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
         <div class="nm">Сомона аз сифр</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">аз 35 000 ₽<small>якдафъагӣ</small></div>
-        <div class="mo">Пуштибонӣ <b>6 000 ₽/моҳ</b> — дар сурати зарурат</div>
-        <ul><li><b>Тарҳ ва мундариҷаро худатон интихоб мекунед</b></li><li>Сомонаи адаптивӣ то 7 саҳифа</li><li>Мавзӯи равшан ва торик</li><li>Пайвасти муҳофизатшуда ва суръат</li><li>Танзим барои ҷустуҷӯи Яндекс ва Google</li><li>Танзим барои ҷавобҳои шабакаҳои нейронӣ</li><li>Шакли дархост бо огоҳинома</li><li>Пуштибонӣ: 2 навсозӣ/моҳ</li></ul>
+        <div class="mo">Пуштибонӣ <b>1 000 ₽/моҳ</b> — дар сурати зарурат</div>
+        <p class="fit">Мувофиқ аст, агар сайт набошад ё кӯҳнаи он дигар мувофиқ набошад.</p>
+        <ul><li><b>Тамоми маълумотро аз сифр ҷамъ мекунем, тарҳро шумо интихоб мекунед</b></li><li>Сомонаи адаптивӣ то 7 саҳифа</li><li>Мавзӯи равшан ва торик</li><li>Пайвасти муҳофизатшуда ва суръат</li><li>Танзим барои ҷустуҷӯи Яндекс ва Google</li><li>Танзим барои ҷавобҳои шабакаҳои нейронӣ</li><li>Шакли дархост бо огоҳинома</li><li>Пуштибонӣ: 2 навсозӣ/моҳ</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Фармоед <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
@@ -1310,7 +1368,8 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <div class="nm">Бизнес</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">60 000 ₽<small>якдафъагӣ</small></div>
-        <div class="mo">Пуштибонӣ <b>12 000 ₽/моҳ</b> — дар сурати зарурат</div>
+        <div class="mo">Пуштибонӣ <b>2 000 ₽/моҳ</b> — дар сурати зарурат</div>
+        <p class="fit">Мувофиқ аст, агар мизоҷон худашон ба қабул сабт шаванд.</p>
         <ul><li>Ҳама аз тарифи «Сомона аз сифр»</li><li>То 15 саҳифа</li><li>Омодагии пурра ба ҷустуҷӯи ҲС</li><li>Сабти онлайн / ҳисобкунак</li><li>Боти Telegram барои дархостҳо</li><li>Чароғаки бандубаст</li><li>Пуштибонӣ: 6 навсозӣ/моҳ + мундариҷа</li><li>Ҳисобот оид ба мавқеъҳо ҳармоҳа</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Фармоед <span class="arr">→</span></a>
       </div>
@@ -1318,7 +1377,8 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <div class="nm">Ҳама дохил</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">120 000 ₽<small>якдафъагӣ</small></div>
-        <div class="mo">Пуштибонӣ — дар сурати зарурат</div>
+        <div class="mo">Пуштибонӣ <b>4 000 ₽/моҳ</b> — дар сурати зарурат</div>
+        <p class="fit">Мувофиқ аст, агар инчунин пешбурди сайт лозим бошад.</p>
         <ul><li>Ҳама аз тарифи Бизнес</li><li>Бидуни маҳдудият аз рӯи саҳифаҳо</li><li>Омодагии пурра ба ҷустуҷӯи ҲС</li><li>Канали Telegram + ботҳои MAX</li><li>SMM: ВК + Telegram</li><li>Қолабҳои сторис ва постҳо</li><li>Пуштибонӣ бидуни маҳдудият</li><li>Менеҷери ҷудогона</li><li>Дастгирии техникӣ: бот шабонарӯзӣ, мутахассис — дар вақти корӣ</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Фармоед <span class="arr">→</span></a>
       </div>
@@ -1349,7 +1409,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <colgroup><col class="c0"><col class="c1"><col><col><col></colgroup>
         <thead><tr><th scope="col">Чӣ муҳим аст</th><th scope="col" class="us">всети</th><th scope="col">Фрилансер</th><th scope="col">Конструктор</th><th scope="col">Сомонаи кӯҳна</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Нарх</th><td class="us"><span class="lb">всети</span><span class="v">Навсозии сомона <b class="big">14 990 ₽</b><small>сомона аз сифр — аз 35 000 ₽</small></span></td><td><span class="lb">Фрилансер</span><span class="v">4–40 ҳазор ₽</span></td><td><span class="lb">Конструктор</span><span class="v">дар як моҳ 500–1 500 ₽ ва вақти шумо</span></td><td class="na"><span class="lb">Сомонаи кӯҳна</span><span class="v">аллакай ҳаст</span></td></tr>
+          <tr><th scope="row">Нарх</th><td class="us"><span class="lb">всети</span><span class="v">Сайти тайёр <b class="big">9 990 ₽</b><small>мувофиқи хоҳишҳои шумо — 14 990 ₽, сайт аз сифр — аз 35 000 ₽</small></span></td><td><span class="lb">Фрилансер</span><span class="v">4–40 ҳазор ₽</span></td><td><span class="lb">Конструктор</span><span class="v">дар як моҳ 500–1 500 ₽ ва вақти шумо</span></td><td class="na"><span class="lb">Сомонаи кӯҳна</span><span class="v">аллакай ҳаст</span></td></tr>
           <tr><th scope="row">Мӯҳлат</th><td class="us"><span class="lb">всети</span><span class="v">Сомонаи тайёрро дар як соат оғоз мекунем, сомонаи нав аз сифр — аз 14 рӯз</span></td><td><span class="lb">Фрилансер</span><span class="v">аз рӯи созиш</span></td><td><span class="lb">Конструктор</span><span class="v">аз шумо вобаста аст</span></td><td class="na"><span class="lb">Сомонаи кӯҳна</span><span class="v">—</span></td></tr>
           <tr><th scope="row">Сомонаи тайёр пеш аз пардохт</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Аввал сомона, баъд пардохт</span></td><td><span class="lb">Фрилансер</span><span class="v"><i class="ck n" aria-hidden="true"></i>одатан не</span></td><td><span class="lb">Конструктор</span><span class="v"><i class="ck n" aria-hidden="true"></i>одатан не</span></td><td class="na"><span class="lb">Сомонаи кӯҳна</span><span class="v">—</span></td></tr>
           <tr><th scope="row">Алиса ва ҷустуҷӯи ҲС меёбанд</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Алиса, Яндекс, ChatGPT, Gemini</span></td><td><span class="lb">Фрилансер</span><span class="v">хизмати алоҳида</span></td><td><span class="lb">Конструктор</span><span class="v">худатон танзим мекунед</span></td><td><span class="lb">Сомонаи кӯҳна</span><span class="v"><i class="ck n" aria-hidden="true"></i>одатан не</span></td></tr>
@@ -1980,7 +2040,7 @@ if(lf) lf.addEventListener('submit',function(e){
     } else {
       /* сеть не пустила — открываем письмо, чтобы заявка не потерялась */
       say('Фиристодан муяссар нашуд. Номаро мекушоем — ё ба мо дар Telegram нависед.','bad');
-      var body=['Ном: '+name,'Тамос: '+contact,'Сомона ё вазифа: '+(task||'—'),'','Consent PD: yes ('+consent.pd_v+'); ads: '+(consent.ads?'yes':'no'),'','Фиристода шуд аз vseti-site.ru'].join('\n');
+      var body=['Ном: '+name,'Тамос: '+contact,'Сайт ё вазифа: '+(task||'—'),'','Consent PD: yes ('+consent.pd_v+'); ads: '+(consent.ads?'yes':'no'),'','Фиристода шуд аз vseti-site.ru'].join('\n');
       location.href='mailto:site-vseti@yandex.ru?subject='+encodeURIComponent('Дархост аз сомона — '+name)+'&body='+encodeURIComponent(body);
     }
   };
@@ -2046,7 +2106,7 @@ if(af) af.addEventListener('submit',function(e){
       say('Суроғаи сомонаро нависед, масалан example.ru.','bad');
     } else {
       say('Фиристодан муяссар нашуд. Номаро мекушоем — ё ба мо дар Telegram нависед.','bad');
-      var body=['Санҷиш дар Алиса','Суроғаи сомона: '+site,'Тамос: '+contact,'','Consent PD: yes ('+consent.pd_v+'); ads: '+(consent.ads?'yes':'no'),'','Фиристода шуд аз vseti-site.ru'].join('\n');
+      var body=['Санҷиш дар Алиса','Суроғаи сайт: '+site,'Тамос: '+contact,'','Consent PD: yes ('+consent.pd_v+'); ads: '+(consent.ads?'yes':'no'),'','Фиристода шуд аз vseti-site.ru'].join('\n');
       location.href='mailto:site-vseti@yandex.ru?subject='+encodeURIComponent('Санҷиш дар Алиса — '+site)+'&body='+encodeURIComponent(body);
     }
   };
@@ -2110,5 +2170,23 @@ if(host&&dots){
 <script>(function(){try{var q=new URLSearchParams(location.search);var s=q.get('utm_source')||q.get('s')||'';var i=new Image();i.src='https://rinazolotareva.ru/vseti-api/hit?p='+encodeURIComponent(location.pathname)+'&s='+encodeURIComponent(s)+'&r='+encodeURIComponent(document.referrer)+'&_='+Date.now();}catch(e){}})();</script>
 <script src="../assets/tap-hover.js" defer></script>
 <script src="../assets/mesh-flow.js" defer></script>
+<script>
+(function(){
+  var d=document.getElementById('promoDlg'),s=document.getElementById('promoStk');
+  if(!d||!s) return;
+  function close(){ if(d.open) d.close(); }
+  s.addEventListener('click',function(){ if(d.showModal) d.showModal(); else location.hash='#offer'; });
+  document.getElementById('promoX').addEventListener('click',close);
+  d.addEventListener('click',function(e){ if(e.target===d) close(); });
+  document.getElementById('promoMore').addEventListener('click',function(e){ e.preventDefault(); close(); var o=document.getElementById('offer'); if(o) o.scrollIntoView({behavior:'smooth',block:'start'}); });
+  document.querySelectorAll('[data-upgrade]').forEach(function(a){ a.addEventListener('click',function(e){
+    e.preventDefault(); close();
+    var fm=document.getElementById('fm'), pre=(document.getElementById('promoPrefill')||{}).textContent||'';
+    if(fm && fm.value.indexOf(pre.trim())<0) fm.value=pre+fm.value;
+    var c=document.getElementById('contact'); if(c) c.scrollIntoView({behavior:'smooth',block:'start'});
+    setTimeout(function(){ if(fm){ fm.focus({preventScroll:true}); fm.setSelectionRange(fm.value.length,fm.value.length);} },700);
+  }); });
+})();
+</script>
 </body>
 </html>

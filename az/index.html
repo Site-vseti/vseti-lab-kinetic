@@ -284,6 +284,36 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 @container plans (max-width:1239px){.plans{grid-template-columns:repeat(2,1fr)}}
 @container plans (max-width:659px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
 
+/* xüsusi təklif 9 990 и стикер */
+.offer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:18px 40px;margin:0 0 22px;padding:38px 36px}
+.offer .badge{position:static;justify-self:start;margin-bottom:6px}
+.offer .fit,.plan .fit{color:var(--ink);font-size:15px;margin-top:10px}
+.offer .txt{color:var(--mute);font-size:15px;margin:10px 0 18px;max-width:46ch}
+.offer .get{margin:0}
+.offer .get-h{font-family:var(--disp);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--tif);margin:0 0 14px}
+.offer ul.ck2{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px;color:var(--ink);font-size:15px}
+.offer ul.ck2 li{padding-left:28px;position:relative}
+.offer ul.ck2 li::before{content:"";position:absolute;left:2px;top:.28em;width:7px;height:12px;border:solid var(--gold2);border-width:0 2px 2px 0;transform:rotate(45deg);background:none}
+.offer .btn{justify-self:start;margin-top:4px}
+@container plans (max-width:899px){.offer{grid-template-columns:minmax(0,1fr);padding:30px 24px}}
+@container plans (max-width:479px){.offer ul.ck2{grid-template-columns:minmax(0,1fr)}}
+html.light .offer ul.ck2 li::before{border-color:#8a6a12}
+.promo-stk{position:absolute;z-index:6;top:112px;right:var(--pad);display:flex;flex-direction:column;align-items:center;gap:2px;max-width:190px;padding:14px 18px 15px;border:0;border-radius:18px;cursor:pointer;text-align:center;color:#1b1300;background:linear-gradient(135deg,var(--gold2),var(--gold));box-shadow:0 14px 40px rgba(0,0,0,.35);transform:rotate(4deg);transition:transform .3s var(--ease)}
+.promo-stk:hover,.promo-stk:focus-visible{transform:rotate(0) scale(1.04)}
+.promo-stk .ps-a{font-family:var(--disp);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.promo-stk b{font-family:var(--disp);font-size:26px;line-height:1.05;letter-spacing:-.02em}
+.promo-stk .ps-t{font-size:13px;line-height:1.25}
+@media (max-width:1239px){.promo-stk{position:relative;top:auto;right:auto;display:inline-flex;flex-direction:row;flex-wrap:wrap;align-items:baseline;justify-content:flex-start;gap:2px 10px;max-width:100%;margin:0 0 16px;padding:9px 16px;transform:none;text-align:left}.promo-stk b{font-size:20px}}
+.promo-dlg{max-width:min(520px,calc(100vw - 32px));border:1px solid var(--line);border-radius:24px;padding:30px 28px 26px;background:var(--bg2);color:var(--ink)}
+.promo-dlg::backdrop{background:rgba(0,0,0,.6)}
+.promo-dlg h3{font-family:var(--disp);font-size:clamp(1.4rem,4vw,1.9rem);line-height:1.15;margin:0 0 14px}
+.promo-dlg p{color:var(--mute);font-size:16px;line-height:1.5;margin:0 0 20px}
+.promo-dlg .pd-terms{margin:-8px 0 18px;font-size:14px}.promo-dlg .pd-terms a,.offer .txt a{color:var(--tif);text-decoration:underline}
+.promo-dlg .pd-btns{display:flex;flex-wrap:wrap;gap:12px}
+.promo-dlg .pd-x{position:absolute;top:12px;right:14px;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:var(--ink);font-size:22px;cursor:pointer}
+html.light .promo-dlg{background:#fff}
+@media (max-width:760px){.promo-stk{margin-top:10px}}
+
 /* faq */
 .faq{max-width:860px;margin-inline:auto}
 .faq details{border-top:1px solid var(--line)}
@@ -1037,6 +1067,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
   <div class="hero-veil"></div>
   <div class="ghost" id="ghost" aria-hidden="true">ВСЕТИ</div>
   <div class="wrap">
+    <button class="promo-stk hero-in" type="button" id="promoStk" aria-haspopup="dialog"><span class="ps-a">xüsusi təklif</span><b>9 990 ₽</b><span class="ps-t">Saytınızın yeni versiyasına baxış — pulsuz</span></button>
     <p class="eyebrow hero-in">«всети» veb-agentliyi</p>
     <div class="payfirst hero-in"><b>Əvvəl sayt — sonra ödəniş</b><span>Saytı əvvəlcədən hazırlayırıq — hazır olanı gördükdən sonra ödəyirsiniz</span></div>
     <h1 class="h1" id="h1">
@@ -1059,6 +1090,15 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
     <div class="ai-chips"><span>Yandex</span><span>Google</span><span>ChatGPT</span><span>Alice</span><span>Gemini</span><span>DeepSeek</span><span>GigaChat</span></div>
   </div>
 </section>
+
+<dialog class="promo-dlg" id="promoDlg" aria-labelledby="promoH">
+  <button class="pd-x" type="button" id="promoX" aria-label="Bağla">×</button>
+  <h3 id="promoH">Saytınızın yenilənməsi: baxış — pulsuz, götürmək — 9 990 ₽</h3>
+  <p>Saytınızın keçidini göndərin — onun yeni versiyasını pulsuz hazırlayıb keçid vasitəsilə göstərəcəyik. Bəyənsəniz — onu göstərildiyi kimi 9 990 ₽-ə alırsınız, domeninizə köçürməni birlikdə edəcəyik. Bəyənməsəniz — heç nə ödəmirsiniz.</p>
+  <p class="pd-terms"><a href="../oferta.html" target="_blank" rel="noopener">Şərtlər — ofertada</a></p>
+  <div class="pd-btns"><a class="btn btn-gold" href="#contact" data-upgrade>Linki göndərin <span class="arr">→</span></a><a class="btn btn-ghost" href="#plans" id="promoMore">Nələr daxildir</a></div>
+  <span hidden id="promoPrefill">Saytımın yeni versiyasını görmək istəyirəm. Saytım: </span>
+</dialog>
 
 <!-- MARQUEE -->
 <div class="marq" aria-hidden="true">
@@ -1289,20 +1329,38 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <h2 class="h2 split-ln"><span class="ln"><span>Şəffaf</span></span><span class="ln"><span><span class="gold">qiymət</span></span></span></h2></div>
       <p class="lead rv">Layihənin sabit qiyməti + aylıq aparılma. Gizli ödənişlər yoxdur.</p>
     </div>
-    <div class="plans-wrap"><div class="plans">
+    <div class="plans-wrap"><div class="plan hit offer rv" id="offer">
+      <div>
+        <span class="badge">xüsusi təklif</span>
+        <div class="nm">Hazır sayt</div>
+        <div class="pr">9 990 ₽<small>bir dəfə</small></div>
+        <div class="mo">Dəstək <b>599 ₽/ay</b> — yerləşdirmə və düzəlişlər</div>
+        <p class="fit">Uyğundur, əgər sayt artıq var və onu narahatlıq çəkmədən yeniləmək lazımdırsa.</p>
+        <p class="txt">Saytınızın yeni versiyasını standartımıza uyğun pulsuz hazırlayır və keçid vasitəsilə göstəririk. Bəyənsəniz — onu göstərildiyi kimi 9 990 ₽-ə alırsınız, bəyənməsəniz — heç nə ödəmirsiniz. Razılaşdırma və düzəlişlər olmadan — buna görə sürətli və sərfəlidir. <a href="../oferta.html" target="_blank" rel="noopener">Şərtlər — ofertada</a></p>
+        <a class="btn btn-gold magnetic" href="#contact" data-upgrade>Saytın linkini göndərin <span class="arr">→</span></a>
+      </div>
+      <div class="get">
+        <p class="get-h">Nə əldə edirsiniz</p>
+        <ul class="ck2"><li>«всети» standartına uyğun müasir dizayn</li><li>Telefondan və kompüterdən rahatdır</li><li>Açıq və tünd tema</li><li>«Şrift böyük / kiçik» düymələri</li><li>Sürətli yüklənmə</li><li>Alice, ChatGPT, Yandex və Google üçün quraşdırma</li><li>Qorunan bağlantı</li><li>7 dil</li><li>Sizə xəritə və marşrut</li><li>Müraciətlər və qeydiyyat — birbaşa sizin poçtunuza</li><li>Saytda Yandex Maps rəyləri</li><li>Sizin domeninizə köçürməkdə kömək</li></ul>
+      </div>
+    </div>
+    <div class="plans">
       <div class="plan feat rv">
         <div class="nm">Saytınızın modernləşdirilməsi</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">14 990 ₽<small>bir dəfə</small></div>
-        <ul><li><b>Dizaynı özümüz seçirik və hazır saytı təhvil veririk</b></li><li>İstənilən ekrana adaptiv</li><li>Açıq və tünd tema</li><li>Qorunan bağlantı və sürət</li><li>Yandex və Google axtarışına uyğunlaşdırma</li><li>Neyroşəbəkə cavablarına uyğunlaşdırma</li></ul>
+        <div class="mo">Aparılma <b>1 000 ₽/ay</b> — zərurət olduqda</div>
+        <p class="fit">Uyğundur, əgər saytı öz istəyinizə uyğun yeniləmək istəyirsinizsə.</p>
+        <ul><li><b>Saytınızı istəyinizə uyğun yeniləyirik</b></li><li>İstənilən ekrana adaptiv</li><li>Açıq və tünd tema</li><li>Qorunan bağlantı və sürət</li><li>Yandex və Google axtarışına uyğunlaşdırma</li><li>Neyroşəbəkə cavablarına uyğunlaşdırma</li><li>Aparılma: 2 yeniləmə/ay</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Sifariş et <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
         <div class="nm">Sıfırdan sayt</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">35 000 ₽-dən<small>bir dəfə</small></div>
-        <div class="mo">Aparılma <b>6 000 ₽/ay</b> — zərurət olduqda</div>
-        <ul><li><b>Dizaynı və məzmunu siz seçirsiniz</b></li><li>7 səhifəyə qədər adaptiv sayt</li><li>Açıq və tünd tema</li><li>Qorunan bağlantı və sürət</li><li>Yandex və Google axtarışına uyğunlaşdırma</li><li>Neyroşəbəkə cavablarına uyğunlaşdırma</li><li>Bildirişli müraciət forması</li><li>Aparılma: 2 yeniləmə/ay</li></ul>
+        <div class="mo">Aparılma <b>1 000 ₽/ay</b> — zərurət olduqda</div>
+        <p class="fit">Uyğundur, əgər saytınız yoxdursa və ya köhnəsi artıq yararlı deyilsə.</p>
+        <ul><li><b>Bütün məlumatı sıfırdan toplayırıq, dizaynı siz seçirsiniz</b></li><li>7 səhifəyə qədər adaptiv sayt</li><li>Açıq və tünd tema</li><li>Qorunan bağlantı və sürət</li><li>Yandex və Google axtarışına uyğunlaşdırma</li><li>Neyroşəbəkə cavablarına uyğunlaşdırma</li><li>Bildirişli müraciət forması</li><li>Aparılma: 2 yeniləmə/ay</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Sifariş et <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
@@ -1310,7 +1368,8 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <div class="nm">Biznes</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">60 000 ₽<small>bir dəfə</small></div>
-        <div class="mo">Aparılma <b>12 000 ₽/ay</b> — zərurət olduqda</div>
+        <div class="mo">Aparılma <b>2 000 ₽/ay</b> — zərurət olduqda</div>
+        <p class="fit">Uyğundur, əgər müştərilər növbəyə özləri yazılmalıdırsa.</p>
         <ul><li>«Sıfırdan sayt» tarifindən hər şey</li><li>15 səhifəyə qədər</li><li>AI-axtarışa tam hazırlıq</li><li>Onlayn qeydiyyat / kalkulyator</li><li>Müraciətlər üçün Telegram-bot</li><li>Yüklənmə svetoforu</li><li>Aparılma: 6 yeniləmə/ay + kontent</li><li>Aylıq mövqe hesabatı</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Sifariş et <span class="arr">→</span></a>
       </div>
@@ -1318,7 +1377,8 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <div class="nm">Hər şey daxildir</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">120 000 ₽<small>bir dəfə</small></div>
-        <div class="mo">Aparılma — zərurət olduqda</div>
+        <div class="mo">Aparılma <b>4 000 ₽/ay</b> — zərurət olduqda</div>
+        <p class="fit">Uyğundur, əgər həmçinin saytın təbliği lazımdırsa.</p>
         <ul><li>Biznes tarifindən hər şey</li><li>Səhifə sayına məhdudiyyət yoxdur</li><li>AI-axtarışa tam hazırlıq</li><li>Telegram-kanal + MAX botları</li><li>SMM: ВК + Telegram</li><li>Stories-şablonları və postlar</li><li>Məhdudiyyətsiz aparılma</li><li>Ayrılmış menecer</li><li>Texniki dəstək: bot günün istənilən vaxtı, mütəxəssis — iş saatlarında</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Sifariş et <span class="arr">→</span></a>
       </div>
@@ -1349,7 +1409,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <colgroup><col class="c0"><col class="c1"><col><col><col></colgroup>
         <thead><tr><th scope="col">Nə vacibdir</th><th scope="col" class="us">всети</th><th scope="col">Frilanser</th><th scope="col">Konstruktor</th><th scope="col">Köhnə sayt</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Qiymət</th><td class="us"><span class="lb">всети</span><span class="v">Saytın modernləşdirilməsi <b class="big">14 990 ₽</b><small>sıfırdan sayt — 35 000 ₽-dən</small></span></td><td><span class="lb">Frilanser</span><span class="v">4–40 min ₽</span></td><td><span class="lb">Konstruktor</span><span class="v">ayda 500–1 500 ₽ və sizin vaxtınız</span></td><td class="na"><span class="lb">Köhnə sayt</span><span class="v">artıq var</span></td></tr>
+          <tr><th scope="row">Qiymət</th><td class="us"><span class="lb">всети</span><span class="v">Hazır sayt <b class="big">9 990 ₽</b><small>istəyinizə uyğun — 14 990 ₽, sıfırdan sayt — 35 000 ₽-dən</small></span></td><td><span class="lb">Frilanser</span><span class="v">4–40 min ₽</span></td><td><span class="lb">Konstruktor</span><span class="v">ayda 500–1 500 ₽ və sizin vaxtınız</span></td><td class="na"><span class="lb">Köhnə sayt</span><span class="v">artıq var</span></td></tr>
           <tr><th scope="row">Müddət</th><td class="us"><span class="lb">всети</span><span class="v">Hazır saytı bir saata işə salırıq, sıfırdan yeni sayt — 14 gündən</span></td><td><span class="lb">Frilanser</span><span class="v">razılaşma ilə</span></td><td><span class="lb">Konstruktor</span><span class="v">sizdən asılıdır</span></td><td class="na"><span class="lb">Köhnə sayt</span><span class="v">—</span></td></tr>
           <tr><th scope="row">Ödənişdən əvvəl hazır sayt</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Əvvəl sayt, sonra ödəniş</span></td><td><span class="lb">Frilanser</span><span class="v"><i class="ck n" aria-hidden="true"></i>adətən yoxdur</span></td><td><span class="lb">Konstruktor</span><span class="v"><i class="ck n" aria-hidden="true"></i>adətən yoxdur</span></td><td class="na"><span class="lb">Köhnə sayt</span><span class="v">—</span></td></tr>
           <tr><th scope="row">Alice və AI-axtarış tapır</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Alice, Yandex, ChatGPT, Gemini</span></td><td><span class="lb">Frilanser</span><span class="v">ayrıca xidmət</span></td><td><span class="lb">Konstruktor</span><span class="v">özünüz tənzimləyirsiniz</span></td><td><span class="lb">Köhnə sayt</span><span class="v"><i class="ck n" aria-hidden="true"></i>adətən yoxdur</span></td></tr>
@@ -2047,7 +2107,7 @@ if(af) af.addEventListener('submit',function(e){
     } else {
       say('Göndərmək alınmadı. Poçt klientini açırıq — və ya bizə Telegram-da yazın.','bad');
       var body=['Alice üzrə yoxlama','Saytın ünvanı: '+site,'Əlaqə: '+contact,'','Consent PD: yes ('+consent.pd_v+'); ads: '+(consent.ads?'yes':'no'),'','vseti-site.ru-dan göndərilib'].join('\n');
-      location.href='mailto:site-vseti@yandex.ru?subject='+encodeURIComponent('Alice üzrə yoxlama — '+site)+'&body='+encodeURIComponent(body);
+      location.href='mailto:site-vseti@yandex.ru?subject='+encodeURIComponent('Alice-də yoxlama — '+site)+'&body='+encodeURIComponent(body);
     }
   };
   var payload={name:'',contact:contact,message:'',site:site,kind:'alice',company:trap,t:aopened,
@@ -2110,5 +2170,23 @@ if(host&&dots){
 <script>(function(){try{var q=new URLSearchParams(location.search);var s=q.get('utm_source')||q.get('s')||'';var i=new Image();i.src='https://rinazolotareva.ru/vseti-api/hit?p='+encodeURIComponent(location.pathname)+'&s='+encodeURIComponent(s)+'&r='+encodeURIComponent(document.referrer)+'&_='+Date.now();}catch(e){}})();</script>
 <script src="../assets/tap-hover.js" defer></script>
 <script src="../assets/mesh-flow.js" defer></script>
+<script>
+(function(){
+  var d=document.getElementById('promoDlg'),s=document.getElementById('promoStk');
+  if(!d||!s) return;
+  function close(){ if(d.open) d.close(); }
+  s.addEventListener('click',function(){ if(d.showModal) d.showModal(); else location.hash='#offer'; });
+  document.getElementById('promoX').addEventListener('click',close);
+  d.addEventListener('click',function(e){ if(e.target===d) close(); });
+  document.getElementById('promoMore').addEventListener('click',function(e){ e.preventDefault(); close(); var o=document.getElementById('offer'); if(o) o.scrollIntoView({behavior:'smooth',block:'start'}); });
+  document.querySelectorAll('[data-upgrade]').forEach(function(a){ a.addEventListener('click',function(e){
+    e.preventDefault(); close();
+    var fm=document.getElementById('fm'), pre=(document.getElementById('promoPrefill')||{}).textContent||'';
+    if(fm && fm.value.indexOf(pre.trim())<0) fm.value=pre+fm.value;
+    var c=document.getElementById('contact'); if(c) c.scrollIntoView({behavior:'smooth',block:'start'});
+    setTimeout(function(){ if(fm){ fm.focus({preventScroll:true}); fm.setSelectionRange(fm.value.length,fm.value.length);} },700);
+  }); });
+})();
+</script>
 </body>
 </html>

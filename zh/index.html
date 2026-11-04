@@ -284,6 +284,36 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 @container plans (max-width:1239px){.plans{grid-template-columns:repeat(2,1fr)}}
 @container plans (max-width:659px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
 
+/* 特别优惠 9 990 и стикер */
+.offer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:18px 40px;margin:0 0 22px;padding:38px 36px}
+.offer .badge{position:static;justify-self:start;margin-bottom:6px}
+.offer .fit,.plan .fit{color:var(--ink);font-size:15px;margin-top:10px}
+.offer .txt{color:var(--mute);font-size:15px;margin:10px 0 18px;max-width:46ch}
+.offer .get{margin:0}
+.offer .get-h{font-family:var(--disp);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--tif);margin:0 0 14px}
+.offer ul.ck2{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px;color:var(--ink);font-size:15px}
+.offer ul.ck2 li{padding-left:28px;position:relative}
+.offer ul.ck2 li::before{content:"";position:absolute;left:2px;top:.28em;width:7px;height:12px;border:solid var(--gold2);border-width:0 2px 2px 0;transform:rotate(45deg);background:none}
+.offer .btn{justify-self:start;margin-top:4px}
+@container plans (max-width:899px){.offer{grid-template-columns:minmax(0,1fr);padding:30px 24px}}
+@container plans (max-width:479px){.offer ul.ck2{grid-template-columns:minmax(0,1fr)}}
+html.light .offer ul.ck2 li::before{border-color:#8a6a12}
+.promo-stk{position:absolute;z-index:6;top:112px;right:var(--pad);display:flex;flex-direction:column;align-items:center;gap:2px;max-width:190px;padding:14px 18px 15px;border:0;border-radius:18px;cursor:pointer;text-align:center;color:#1b1300;background:linear-gradient(135deg,var(--gold2),var(--gold));box-shadow:0 14px 40px rgba(0,0,0,.35);transform:rotate(4deg);transition:transform .3s var(--ease)}
+.promo-stk:hover,.promo-stk:focus-visible{transform:rotate(0) scale(1.04)}
+.promo-stk .ps-a{font-family:var(--disp);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.promo-stk b{font-family:var(--disp);font-size:26px;line-height:1.05;letter-spacing:-.02em}
+.promo-stk .ps-t{font-size:13px;line-height:1.25}
+@media (max-width:1239px){.promo-stk{position:relative;top:auto;right:auto;display:inline-flex;flex-direction:row;flex-wrap:wrap;align-items:baseline;justify-content:flex-start;gap:2px 10px;max-width:100%;margin:0 0 16px;padding:9px 16px;transform:none;text-align:left}.promo-stk b{font-size:20px}}
+.promo-dlg{max-width:min(520px,calc(100vw - 32px));border:1px solid var(--line);border-radius:24px;padding:30px 28px 26px;background:var(--bg2);color:var(--ink)}
+.promo-dlg::backdrop{background:rgba(0,0,0,.6)}
+.promo-dlg h3{font-family:var(--disp);font-size:clamp(1.4rem,4vw,1.9rem);line-height:1.15;margin:0 0 14px}
+.promo-dlg p{color:var(--mute);font-size:16px;line-height:1.5;margin:0 0 20px}
+.promo-dlg .pd-terms{margin:-8px 0 18px;font-size:14px}.promo-dlg .pd-terms a,.offer .txt a{color:var(--tif);text-decoration:underline}
+.promo-dlg .pd-btns{display:flex;flex-wrap:wrap;gap:12px}
+.promo-dlg .pd-x{position:absolute;top:12px;right:14px;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:var(--ink);font-size:22px;cursor:pointer}
+html.light .promo-dlg{background:#fff}
+@media (max-width:760px){.promo-stk{margin-top:10px}}
+
 /* faq */
 .faq{max-width:860px;margin-inline:auto}
 .faq details{border-top:1px solid var(--line)}
@@ -1037,6 +1067,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
   <div class="hero-veil"></div>
   <div class="ghost" id="ghost" aria-hidden="true">ВСЕТИ</div>
   <div class="wrap">
+    <button class="promo-stk hero-in" type="button" id="promoStk" aria-haspopup="dialog"><span class="ps-a">特别优惠</span><b>9 990 ₽</b><span class="ps-t">免费预览您网站的新版本</span></button>
     <p class="eyebrow hero-in">网络工作室«всети»</p>
     <div class="payfirst hero-in"><b>先看网站，后付款</b><span>我们提前做好网站——看到成品后再付款</span></div>
     <h1 class="h1" id="h1">
@@ -1059,6 +1090,15 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
     <div class="ai-chips"><span>Yandex</span><span>Google</span><span>ChatGPT</span><span>Alice</span><span>Gemini</span><span>DeepSeek</span><span>GigaChat</span></div>
   </div>
 </section>
+
+<dialog class="promo-dlg" id="promoDlg" aria-labelledby="promoH">
+  <button class="pd-x" type="button" id="promoX" aria-label="关闭">×</button>
+  <h3 id="promoH">网站升级：预览免费，取走 9 990 ₽</h3>
+  <p>发来您网站的链接——我们免费制作它的新版本并通过链接展示给您。满意的话，按展示的样子以 9 990 ₽ 取走，我们一起把它迁移到您的域名。不满意，您无需支付任何费用。</p>
+  <p class="pd-terms"><a href="../oferta.html" target="_blank" rel="noopener">条件见公开要约</a></p>
+  <div class="pd-btns"><a class="btn btn-gold" href="#contact" data-upgrade>发送链接 <span class="arr">→</span></a><a class="btn btn-ghost" href="#plans" id="promoMore">包含内容</a></div>
+  <span hidden id="promoPrefill">我想看看我网站的新版本。我的网站： </span>
+</dialog>
 
 <!-- MARQUEE -->
 <div class="marq" aria-hidden="true">
@@ -1289,20 +1329,38 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <h2 class="h2 split-ln"><span class="ln"><span>透明</span></span><span class="ln"><span><span class="gold">定价</span></span></span></h2></div>
       <p class="lead rv">项目一口价+每月维护费。没有隐藏收费。</p>
     </div>
-    <div class="plans-wrap"><div class="plans">
+    <div class="plans-wrap"><div class="plan hit offer rv" id="offer">
+      <div>
+        <span class="badge">特别优惠</span>
+        <div class="nm">成品网站</div>
+        <div class="pr">9 990 ₽<small>一次性</small></div>
+        <div class="mo">支持 <b>599 ₽/月</b> — 展示位和修改</div>
+        <p class="fit">如果您的网站已经存在，并且只需轻松更新，则适合选择。</p>
+        <p class="txt">我们按照自己的标准免费制作您网站的新版本，并通过链接向您展示。满意的话，按展示的样子以 9 990 ₽ 取走；不满意，您无需支付任何费用。无需反复沟通和修改——因此又快又实惠。 <a href="../oferta.html" target="_blank" rel="noopener">条件见公开要约</a></p>
+        <a class="btn btn-gold magnetic" href="#contact" data-upgrade>发送网站链接 <span class="arr">→</span></a>
+      </div>
+      <div class="get">
+        <p class="get-h">您将获得</p>
+        <ul class="ck2"><li>符合«всети»标准的现代设计</li><li>手机和电脑均可轻松使用</li><li>浅色和深色主题</li><li>«字体放大 / 缩小»按钮</li><li>加载快速</li><li>Alice、ChatGPT、Yandex 和 Google 的设置</li><li>加密连接</li><li>7 种语言</li><li>地图和前往您的路线</li><li>询盘和预约 — 直接发送到您的邮箱</li><li>网站上展示 Yandex Maps 评价</li><li>协助迁移到您的域名</li></ul>
+      </div>
+    </div>
+    <div class="plans">
       <div class="plan feat rv">
         <div class="nm">升级改造您的网站</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">14 990 ₽<small>一次性</small></div>
-        <ul><li><b>设计由我们挑选，交付给您一个现成的网站</b></li><li>适配任何屏幕</li><li>浅色和深色主题</li><li>加密连接与速度</li><li>针对Yandex和Google搜索优化</li><li>针对AI回答做优化配置</li></ul>
+        <div class="mo">维护 <b>1 000 ₽/月</b> ——按需提供</div>
+        <p class="fit">如果您希望按照自己的想法更新网站，则适合选择。</p>
+        <ul><li><b>按照您的要求更新您的网站</b></li><li>适配任何屏幕</li><li>浅色和深色主题</li><li>加密连接与速度</li><li>针对Yandex和Google搜索优化</li><li>针对AI回答做优化配置</li><li>维护：每月2次更新</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">立即咨询 <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
         <div class="nm">从零开始建站</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">35 000 ₽起<small>一次性</small></div>
-        <div class="mo">维护 <b>6 000 ₽/月</b> ——按需提供</div>
-        <ul><li><b>设计和内容由您自行选择</b></li><li>响应式网站，最多7个页面</li><li>浅色和深色主题</li><li>加密连接与速度</li><li>针对Yandex和Google搜索优化</li><li>针对AI回答做优化配置</li><li>带通知提醒的申请表单</li><li>维护：每月2次更新</li></ul>
+        <div class="mo">维护 <b>1 000 ₽/月</b> ——按需提供</div>
+        <p class="fit">如果没有网站，或旧网站已不适用，则适合选择。</p>
+        <ul><li><b>我们从零开始收集全部信息，设计由您选择</b></li><li>响应式网站，最多7个页面</li><li>浅色和深色主题</li><li>加密连接与速度</li><li>针对Yandex和Google搜索优化</li><li>针对AI回答做优化配置</li><li>带通知提醒的申请表单</li><li>维护：每月2次更新</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">立即咨询 <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
@@ -1310,7 +1368,8 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <div class="nm">商务</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">60 000 ₽<small>一次性</small></div>
-        <div class="mo">维护 <b>12 000 ₽/月</b> ——按需提供</div>
+        <div class="mo">维护 <b>2 000 ₽/月</b> ——按需提供</div>
+        <p class="fit">如果客户需要自行预约，则适合选择。</p>
         <ul><li>包含「从零开始建站」套餐全部内容</li><li>最多15个页面</li><li>全面适配AI搜索</li><li>在线预约／费用计算器</li><li>用于接单的Telegram机器人</li><li>忙闲状态提示</li><li>维护：每月6次更新+内容</li><li>每月提供排名报告</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">立即咨询 <span class="arr">→</span></a>
       </div>
@@ -1318,7 +1377,8 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <div class="nm">全包</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">120 000 ₽<small>一次性</small></div>
-        <div class="mo">维护——按需提供</div>
+        <div class="mo">维护 <b>4 000 ₽/月</b> ——按需提供</div>
+        <p class="fit">如果还需要推广，则适合选择。</p>
         <ul><li>包含「商务」套餐全部内容</li><li>页面数量不限</li><li>全面适配AI搜索</li><li>Telegram频道+MAX机器人</li><li>SMM：ВК+Telegram</li><li>故事模板与帖子</li><li>维护不限次数</li><li>专属客户经理</li><li>技术支持：机器人全天候，专员在工作时间</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">立即咨询 <span class="arr">→</span></a>
       </div>
@@ -1349,7 +1409,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <colgroup><col class="c0"><col class="c1"><col><col><col></colgroup>
         <thead><tr><th scope="col">关注点</th><th scope="col" class="us">всети</th><th scope="col">自由职业者</th><th scope="col">建站平台</th><th scope="col">旧网站</th></tr></thead>
         <tbody>
-          <tr><th scope="row">价格</th><td class="us"><span class="lb">всети</span><span class="v">网站升级改造 <b class="big">14 990 ₽</b><small>从零建站——35 000 ₽起</small></span></td><td><span class="lb">自由职业者</span><span class="v">4千–4万 ₽</span></td><td><span class="lb">建站平台</span><span class="v">每月500–1 500 ₽，外加您自己的时间</span></td><td class="na"><span class="lb">旧网站</span><span class="v">已有</span></td></tr>
+          <tr><th scope="row">价格</th><td class="us"><span class="lb">всети</span><span class="v">成品网站 <b class="big">9 990 ₽</b><small>按您的要求定制 — 14 990 ₽，从零开始建站 — 35 000 ₽起</small></span></td><td><span class="lb">自由职业者</span><span class="v">4千–4万 ₽</span></td><td><span class="lb">建站平台</span><span class="v">每月500–1 500 ₽，外加您自己的时间</span></td><td class="na"><span class="lb">旧网站</span><span class="v">已有</span></td></tr>
           <tr><th scope="row">工期</th><td class="us"><span class="lb">всети</span><span class="v">现成网站一小时内上线，从零新建的网站——14天起</span></td><td><span class="lb">自由职业者</span><span class="v">按约定</span></td><td><span class="lb">建站平台</span><span class="v">取决于您</span></td><td class="na"><span class="lb">旧网站</span><span class="v">—</span></td></tr>
           <tr><th scope="row">付款前先看成品</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>先看网站，后付款</span></td><td><span class="lb">自由职业者</span><span class="v"><i class="ck n" aria-hidden="true"></i>通常没有</span></td><td><span class="lb">建站平台</span><span class="v"><i class="ck n" aria-hidden="true"></i>通常没有</span></td><td class="na"><span class="lb">旧网站</span><span class="v">—</span></td></tr>
           <tr><th scope="row">Alice和AI搜索能找到</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Alice、Yandex、ChatGPT、Gemini</span></td><td><span class="lb">自由职业者</span><span class="v">需另外付费</span></td><td><span class="lb">建站平台</span><span class="v">需自行设置</span></td><td><span class="lb">旧网站</span><span class="v"><i class="ck n" aria-hidden="true"></i>通常没有</span></td></tr>
@@ -1980,7 +2040,7 @@ if(lf) lf.addEventListener('submit',function(e){
     } else {
       /* сеть не пустила — открываем письмо, чтобы заявка не потерялась */
       say('发送失败。正在为您打开邮件——或者请在Telegram联系我们。','bad');
-      var body=['姓名： '+name,'联系方式: '+contact,'网站或需求: '+(task||'—'),'','Consent PD: yes ('+consent.pd_v+'); ads: '+(consent.ads?'yes':'no'),'','发送自 vseti-site.ru'].join('\n');
+      var body=['姓名： '+name,'联系方式: '+contact,'网站或任务: '+(task||'—'),'','Consent PD: yes ('+consent.pd_v+'); ads: '+(consent.ads?'yes':'no'),'','发送自 vseti-site.ru'].join('\n');
       location.href='mailto:site-vseti@yandex.ru?subject='+encodeURIComponent('来自网站的申请—— '+name)+'&body='+encodeURIComponent(body);
     }
   };
@@ -2047,7 +2107,7 @@ if(af) af.addEventListener('submit',function(e){
     } else {
       say('发送失败。正在为您打开邮件——或者请在Telegram联系我们。','bad');
       var body=['Alice检测','网站地址: '+site,'联系方式: '+contact,'','Consent PD: yes ('+consent.pd_v+'); ads: '+(consent.ads?'yes':'no'),'','发送自 vseti-site.ru'].join('\n');
-      location.href='mailto:site-vseti@yandex.ru?subject='+encodeURIComponent('Alice检测 — '+site)+'&body='+encodeURIComponent(body);
+      location.href='mailto:site-vseti@yandex.ru?subject='+encodeURIComponent('在 Alice 中检查 — '+site)+'&body='+encodeURIComponent(body);
     }
   };
   var payload={name:'',contact:contact,message:'',site:site,kind:'alice',company:trap,t:aopened,
@@ -2110,5 +2170,23 @@ if(host&&dots){
 <script>(function(){try{var q=new URLSearchParams(location.search);var s=q.get('utm_source')||q.get('s')||'';var i=new Image();i.src='https://rinazolotareva.ru/vseti-api/hit?p='+encodeURIComponent(location.pathname)+'&s='+encodeURIComponent(s)+'&r='+encodeURIComponent(document.referrer)+'&_='+Date.now();}catch(e){}})();</script>
 <script src="../assets/tap-hover.js" defer></script>
 <script src="../assets/mesh-flow.js" defer></script>
+<script>
+(function(){
+  var d=document.getElementById('promoDlg'),s=document.getElementById('promoStk');
+  if(!d||!s) return;
+  function close(){ if(d.open) d.close(); }
+  s.addEventListener('click',function(){ if(d.showModal) d.showModal(); else location.hash='#offer'; });
+  document.getElementById('promoX').addEventListener('click',close);
+  d.addEventListener('click',function(e){ if(e.target===d) close(); });
+  document.getElementById('promoMore').addEventListener('click',function(e){ e.preventDefault(); close(); var o=document.getElementById('offer'); if(o) o.scrollIntoView({behavior:'smooth',block:'start'}); });
+  document.querySelectorAll('[data-upgrade]').forEach(function(a){ a.addEventListener('click',function(e){
+    e.preventDefault(); close();
+    var fm=document.getElementById('fm'), pre=(document.getElementById('promoPrefill')||{}).textContent||'';
+    if(fm && fm.value.indexOf(pre.trim())<0) fm.value=pre+fm.value;
+    var c=document.getElementById('contact'); if(c) c.scrollIntoView({behavior:'smooth',block:'start'});
+    setTimeout(function(){ if(fm){ fm.focus({preventScroll:true}); fm.setSelectionRange(fm.value.length,fm.value.length);} },700);
+  }); });
+})();
+</script>
 </body>
 </html>

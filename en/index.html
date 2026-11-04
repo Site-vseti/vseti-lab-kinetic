@@ -284,6 +284,36 @@ html.light .svc .c:hover{background:linear-gradient(165deg,rgba(132,244,234,.45)
 @container plans (max-width:1239px){.plans{grid-template-columns:repeat(2,1fr)}}
 @container plans (max-width:659px){.plans{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
 
+/* special offer 9 990 и стикер */
+.offer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:18px 40px;margin:0 0 22px;padding:38px 36px}
+.offer .badge{position:static;justify-self:start;margin-bottom:6px}
+.offer .fit,.plan .fit{color:var(--ink);font-size:15px;margin-top:10px}
+.offer .txt{color:var(--mute);font-size:15px;margin:10px 0 18px;max-width:46ch}
+.offer .get{margin:0}
+.offer .get-h{font-family:var(--disp);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--tif);margin:0 0 14px}
+.offer ul.ck2{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px;color:var(--ink);font-size:15px}
+.offer ul.ck2 li{padding-left:28px;position:relative}
+.offer ul.ck2 li::before{content:"";position:absolute;left:2px;top:.28em;width:7px;height:12px;border:solid var(--gold2);border-width:0 2px 2px 0;transform:rotate(45deg);background:none}
+.offer .btn{justify-self:start;margin-top:4px}
+@container plans (max-width:899px){.offer{grid-template-columns:minmax(0,1fr);padding:30px 24px}}
+@container plans (max-width:479px){.offer ul.ck2{grid-template-columns:minmax(0,1fr)}}
+html.light .offer ul.ck2 li::before{border-color:#8a6a12}
+.promo-stk{position:absolute;z-index:6;top:112px;right:var(--pad);display:flex;flex-direction:column;align-items:center;gap:2px;max-width:190px;padding:14px 18px 15px;border:0;border-radius:18px;cursor:pointer;text-align:center;color:#1b1300;background:linear-gradient(135deg,var(--gold2),var(--gold));box-shadow:0 14px 40px rgba(0,0,0,.35);transform:rotate(4deg);transition:transform .3s var(--ease)}
+.promo-stk:hover,.promo-stk:focus-visible{transform:rotate(0) scale(1.04)}
+.promo-stk .ps-a{font-family:var(--disp);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.promo-stk b{font-family:var(--disp);font-size:26px;line-height:1.05;letter-spacing:-.02em}
+.promo-stk .ps-t{font-size:13px;line-height:1.25}
+@media (max-width:1239px){.promo-stk{position:relative;top:auto;right:auto;display:inline-flex;flex-direction:row;flex-wrap:wrap;align-items:baseline;justify-content:flex-start;gap:2px 10px;max-width:100%;margin:0 0 16px;padding:9px 16px;transform:none;text-align:left}.promo-stk b{font-size:20px}}
+.promo-dlg{max-width:min(520px,calc(100vw - 32px));border:1px solid var(--line);border-radius:24px;padding:30px 28px 26px;background:var(--bg2);color:var(--ink)}
+.promo-dlg::backdrop{background:rgba(0,0,0,.6)}
+.promo-dlg h3{font-family:var(--disp);font-size:clamp(1.4rem,4vw,1.9rem);line-height:1.15;margin:0 0 14px}
+.promo-dlg p{color:var(--mute);font-size:16px;line-height:1.5;margin:0 0 20px}
+.promo-dlg .pd-terms{margin:-8px 0 18px;font-size:14px}.promo-dlg .pd-terms a,.offer .txt a{color:var(--tif);text-decoration:underline}
+.promo-dlg .pd-btns{display:flex;flex-wrap:wrap;gap:12px}
+.promo-dlg .pd-x{position:absolute;top:12px;right:14px;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:var(--ink);font-size:22px;cursor:pointer}
+html.light .promo-dlg{background:#fff}
+@media (max-width:760px){.promo-stk{margin-top:10px}}
+
 /* faq */
 .faq{max-width:860px;margin-inline:auto}
 .faq details{border-top:1px solid var(--line)}
@@ -1037,6 +1067,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
   <div class="hero-veil"></div>
   <div class="ghost" id="ghost" aria-hidden="true">ВСЕТИ</div>
   <div class="wrap">
+    <button class="promo-stk hero-in" type="button" id="promoStk" aria-haspopup="dialog"><span class="ps-a">special offer</span><b>9 990 ₽</b><span class="ps-t">Preview of your website’s new version — free</span></button>
     <p class="eyebrow hero-in">«всети» web agency</p>
     <div class="payfirst hero-in"><b>Site first — payment later</b><span>We build the site in advance — you pay once you've seen it finished</span></div>
     <h1 class="h1" id="h1">
@@ -1059,6 +1090,15 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
     <div class="ai-chips"><span>Yandex</span><span>Google</span><span>ChatGPT</span><span>Alice</span><span>Gemini</span><span>DeepSeek</span><span>GigaChat</span></div>
   </div>
 </section>
+
+<dialog class="promo-dlg" id="promoDlg" aria-labelledby="promoH">
+  <button class="pd-x" type="button" id="promoX" aria-label="Close">×</button>
+  <h3 id="promoH">Your website upgrade: the preview is free, taking it costs 9 990 ₽</h3>
+  <p>Send us a link to your website — we will build its new version for free and show it to you by link. If you like it, take it as shown for 9 990 ₽, and we will move it to your domain together. If not, you pay nothing.</p>
+  <p class="pd-terms"><a href="../oferta.html" target="_blank" rel="noopener">Terms are in the offer</a></p>
+  <div class="pd-btns"><a class="btn btn-gold" href="#contact" data-upgrade>Send a link <span class="arr">→</span></a><a class="btn btn-ghost" href="#plans" id="promoMore">What's included</a></div>
+  <span hidden id="promoPrefill">I would like to see a new version of my website. My website: </span>
+</dialog>
 
 <!-- MARQUEE -->
 <div class="marq" aria-hidden="true">
@@ -1289,20 +1329,38 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <h2 class="h2 split-ln"><span class="ln"><span>Transparent</span></span><span class="ln"><span><span class="gold">pricing</span></span></span></h2></div>
       <p class="lead rv">Fixed project price + monthly maintenance. No hidden fees.</p>
     </div>
-    <div class="plans-wrap"><div class="plans">
+    <div class="plans-wrap"><div class="plan hit offer rv" id="offer">
+      <div>
+        <span class="badge">special offer</span>
+        <div class="nm">Ready-made website</div>
+        <div class="pr">9 990 ₽<small>one-time</small></div>
+        <div class="mo">Support <b>599 ₽/month</b> — placement and edits</div>
+        <p class="fit">Suitable if your website already exists and needs updating without hassle.</p>
+        <p class="txt">We build a new version of your website for free, to our standard, and show it to you by link. If you like it, take it as shown for 9 990 ₽; if not, you pay nothing. No approvals or revisions — that is why it is fast and affordable. <a href="../oferta.html" target="_blank" rel="noopener">Terms are in the offer</a></p>
+        <a class="btn btn-gold magnetic" href="#contact" data-upgrade>Send a link to the website <span class="arr">→</span></a>
+      </div>
+      <div class="get">
+        <p class="get-h">What you get</p>
+        <ul class="ck2"><li>Modern design per the «всети» standard</li><li>Convenient on phone and computer</li><li>Light and dark theme</li><li>Buttons “larger / smaller font”</li><li>Fast loading</li><li>Setup for Alice, ChatGPT, Yandex and Google</li><li>Secure connection</li><li>7 languages</li><li>Map and directions to you</li><li>Leads and bookings — sent straight to your email</li><li>Yandex Maps reviews on the website</li><li>Help with moving to your domain</li></ul>
+      </div>
+    </div>
+    <div class="plans">
       <div class="plan feat rv">
         <div class="nm">Modernization of your site</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">14 990 ₽<small>one-time</small></div>
-        <ul><li><b>We choose the design ourselves and hand over a finished site</b></li><li>Responsive on any screen</li><li>Light and dark theme</li><li>Secure connection and speed</li><li>Optimization for Yandex and Google search</li><li>Optimized for AI answers</li></ul>
+        <div class="mo">Maintenance <b>1 000 ₽/month</b> — if needed</div>
+        <p class="fit">Suitable if you want to update your website according to your wishes.</p>
+        <ul><li><b>We update your website to your wishes</b></li><li>Responsive on any screen</li><li>Light and dark theme</li><li>Secure connection and speed</li><li>Optimization for Yandex and Google search</li><li>Optimized for AI answers</li><li>Maintenance: 2 updates/mo</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Order <span class="arr">→</span></a>
       </div>
       <div class="plan rv">
         <div class="nm">Website from scratch</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">from 35 000 ₽<small>one-time</small></div>
-        <div class="mo">Maintenance <b>6 000 ₽/mo</b> — if needed</div>
-        <ul><li><b>You choose the design and the content</b></li><li>Responsive site, up to 7 pages</li><li>Light and dark theme</li><li>Secure connection and speed</li><li>Optimization for Yandex and Google search</li><li>Optimized for AI answers</li><li>Request form with notifications</li><li>Maintenance: 2 updates/mo</li></ul>
+        <div class="mo">Maintenance <b>1 000 ₽/month</b> — if needed</div>
+        <p class="fit">Suitable if you have no website or the old one no longer works for you.</p>
+        <ul><li><b>We gather all the information from scratch, you choose the design</b></li><li>Responsive site, up to 7 pages</li><li>Light and dark theme</li><li>Secure connection and speed</li><li>Optimization for Yandex and Google search</li><li>Optimized for AI answers</li><li>Request form with notifications</li><li>Maintenance: 2 updates/mo</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Order <span class="arr">→</span></a>
       </div>
       <div class="plan hit rv">
@@ -1310,7 +1368,8 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <div class="nm">Business</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">60 000 ₽<small>one-time</small></div>
-        <div class="mo">Maintenance <b>12 000 ₽/mo</b> — if needed</div>
+        <div class="mo">Maintenance <b>2 000 ₽/month</b> — if needed</div>
+        <p class="fit">Suitable if clients need to book appointments themselves.</p>
         <ul><li>Everything in the &quot;Website from scratch&quot; plan</li><li>Up to 15 pages</li><li>Full AI-search readiness</li><li>Online booking / calculator</li><li>Telegram bot for requests</li><li>Load indicator</li><li>Maintenance: 6 updates/mo + content</li><li>Monthly ranking report</li></ul>
         <a class="btn btn-gold magnetic" href="#contact">Order <span class="arr">→</span></a>
       </div>
@@ -1318,7 +1377,8 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <div class="nm">All Inclusive</div>
         <div class="old sp" aria-hidden="true">&nbsp;</div>
         <div class="pr">120 000 ₽<small>one-time</small></div>
-        <div class="mo">Maintenance — if needed</div>
+        <div class="mo">Maintenance <b>4 000 ₽/month</b> — if needed</div>
+        <p class="fit">Suitable if you also need promotion.</p>
         <ul><li>Everything in the Business plan</li><li>No limit on pages</li><li>Full AI-search readiness</li><li>Telegram channel + MAX bots</li><li>SMM: VK + Telegram</li><li>Story templates and posts</li><li>Unlimited maintenance</li><li>Dedicated manager</li><li>Tech support: a bot around the clock, a specialist during working hours</li></ul>
         <a class="btn btn-ghost magnetic" href="#contact">Order <span class="arr">→</span></a>
       </div>
@@ -1349,7 +1409,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <colgroup><col class="c0"><col class="c1"><col><col><col></colgroup>
         <thead><tr><th scope="col">What matters</th><th scope="col" class="us">всети</th><th scope="col">Freelancer</th><th scope="col">Site builder</th><th scope="col">Old site</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Price</th><td class="us"><span class="lb">всети</span><span class="v">Site modernization <b class="big">14 990 ₽</b><small>site from scratch — from 35 000 ₽</small></span></td><td><span class="lb">Freelancer</span><span class="v">4–40 thousand ₽</span></td><td><span class="lb">Site builder</span><span class="v">500–1 500 ₽ a month plus your time</span></td><td class="na"><span class="lb">Old site</span><span class="v">you already have it</span></td></tr>
+          <tr><th scope="row">Price</th><td class="us"><span class="lb">всети</span><span class="v">Ready-made website <b class="big">9 990 ₽</b><small>tailored to your wishes — 14 990 ₽, website from scratch — from 35 000 ₽</small></span></td><td><span class="lb">Freelancer</span><span class="v">4–40 thousand ₽</span></td><td><span class="lb">Site builder</span><span class="v">500–1 500 ₽ a month plus your time</span></td><td class="na"><span class="lb">Old site</span><span class="v">you already have it</span></td></tr>
           <tr><th scope="row">Timeline</th><td class="us"><span class="lb">всети</span><span class="v">We launch a ready site within an hour, a new one from scratch — from 14 days</span></td><td><span class="lb">Freelancer</span><span class="v">as agreed</span></td><td><span class="lb">Site builder</span><span class="v">depends on you</span></td><td class="na"><span class="lb">Old site</span><span class="v">—</span></td></tr>
           <tr><th scope="row">Finished site before payment</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Site first, payment after</span></td><td><span class="lb">Freelancer</span><span class="v"><i class="ck n" aria-hidden="true"></i>usually not</span></td><td><span class="lb">Site builder</span><span class="v"><i class="ck n" aria-hidden="true"></i>usually not</span></td><td class="na"><span class="lb">Old site</span><span class="v">—</span></td></tr>
           <tr><th scope="row">Found by Alice and AI search</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Alice, Yandex, ChatGPT, Gemini</span></td><td><span class="lb">Freelancer</span><span class="v">a separate service</span></td><td><span class="lb">Site builder</span><span class="v">you set it up yourself</span></td><td><span class="lb">Old site</span><span class="v"><i class="ck n" aria-hidden="true"></i>usually not</span></td></tr>
@@ -1980,7 +2040,7 @@ if(lf) lf.addEventListener('submit',function(e){
     } else {
       /* сеть не пустила — открываем письмо, чтобы заявка не потерялась */
       say('Couldn\'t send it. Opening your email client — or write to us on Telegram.','bad');
-      var body=['Name: '+name,'Contact: '+contact,'Site or task: '+(task||'—'),'','Consent PD: yes ('+consent.pd_v+'); ads: '+(consent.ads?'yes':'no'),'','Sent from vseti-site.ru'].join('\n');
+      var body=['Name: '+name,'Contact: '+contact,'Website or task: '+(task||'—'),'','Consent PD: yes ('+consent.pd_v+'); ads: '+(consent.ads?'yes':'no'),'','Sent from vseti-site.ru'].join('\n');
       location.href='mailto:site-vseti@yandex.ru?subject='+encodeURIComponent('Request from the site — '+name)+'&body='+encodeURIComponent(body);
     }
   };
@@ -2046,8 +2106,8 @@ if(af) af.addEventListener('submit',function(e){
       say('Enter a site address, for example example.ru.','bad');
     } else {
       say('Couldn\'t send it. Opening your email client — or write to us on Telegram.','bad');
-      var body=['Alice check','Site address: '+site,'Contact: '+contact,'','Consent PD: yes ('+consent.pd_v+'); ads: '+(consent.ads?'yes':'no'),'','Sent from vseti-site.ru'].join('\n');
-      location.href='mailto:site-vseti@yandex.ru?subject='+encodeURIComponent('Alice check — '+site)+'&body='+encodeURIComponent(body);
+      var body=['Alice check','Website address: '+site,'Contact: '+contact,'','Consent PD: yes ('+consent.pd_v+'); ads: '+(consent.ads?'yes':'no'),'','Sent from vseti-site.ru'].join('\n');
+      location.href='mailto:site-vseti@yandex.ru?subject='+encodeURIComponent('Check in Alice — '+site)+'&body='+encodeURIComponent(body);
     }
   };
   var payload={name:'',contact:contact,message:'',site:site,kind:'alice',company:trap,t:aopened,
@@ -2110,5 +2170,23 @@ if(host&&dots){
 <script>(function(){try{var q=new URLSearchParams(location.search);var s=q.get('utm_source')||q.get('s')||'';var i=new Image();i.src='https://rinazolotareva.ru/vseti-api/hit?p='+encodeURIComponent(location.pathname)+'&s='+encodeURIComponent(s)+'&r='+encodeURIComponent(document.referrer)+'&_='+Date.now();}catch(e){}})();</script>
 <script src="../assets/tap-hover.js" defer></script>
 <script src="../assets/mesh-flow.js" defer></script>
+<script>
+(function(){
+  var d=document.getElementById('promoDlg'),s=document.getElementById('promoStk');
+  if(!d||!s) return;
+  function close(){ if(d.open) d.close(); }
+  s.addEventListener('click',function(){ if(d.showModal) d.showModal(); else location.hash='#offer'; });
+  document.getElementById('promoX').addEventListener('click',close);
+  d.addEventListener('click',function(e){ if(e.target===d) close(); });
+  document.getElementById('promoMore').addEventListener('click',function(e){ e.preventDefault(); close(); var o=document.getElementById('offer'); if(o) o.scrollIntoView({behavior:'smooth',block:'start'}); });
+  document.querySelectorAll('[data-upgrade]').forEach(function(a){ a.addEventListener('click',function(e){
+    e.preventDefault(); close();
+    var fm=document.getElementById('fm'), pre=(document.getElementById('promoPrefill')||{}).textContent||'';
+    if(fm && fm.value.indexOf(pre.trim())<0) fm.value=pre+fm.value;
+    var c=document.getElementById('contact'); if(c) c.scrollIntoView({behavior:'smooth',block:'start'});
+    setTimeout(function(){ if(fm){ fm.focus({preventScroll:true}); fm.setSelectionRange(fm.value.length,fm.value.length);} },700);
+  }); });
+})();
+</script>
 </body>
 </html>

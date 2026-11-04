@@ -371,6 +371,30 @@ html.light .stk-back{background:linear-gradient(135deg,#f1fbf9,#cdebe7)}
 .promo-dlg .pd-btns{display:flex;flex-wrap:wrap;gap:12px}
 .promo-dlg .pd-x{position:absolute;top:12px;right:14px;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:var(--ink);font-size:22px;cursor:pointer}
 html.light .promo-dlg{background:#fff}
+.promo-dlg{position:fixed;inset:0;margin:auto;width:min(760px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain;padding:34px 34px 28px;border:2px solid transparent;border-radius:28px;background:linear-gradient(var(--bg2),var(--bg2)) padding-box,linear-gradient(135deg,var(--gold2),var(--tif) 50%,var(--gold)) border-box;box-shadow:0 30px 80px -20px rgba(0,0,0,.7),0 0 0 6px rgba(232,199,102,.12),0 0 60px -10px rgba(232,199,102,.45)}
+html.light .promo-dlg{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#e4bb40,#18a89c 50%,#c9a227) border-box;box-shadow:0 30px 70px -24px rgba(60,45,0,.45),0 0 0 6px rgba(201,162,39,.12)}
+.promo-dlg[open]{animation:pd-in .35s var(--ease)}
+@keyframes pd-in{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+.promo-dlg .pd-badge{position:static;display:inline-block;margin:0 0 12px}
+.promo-dlg .pd-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:0 0 14px}
+.promo-dlg .pd-price>b{font-family:var(--disp);font-size:clamp(2rem,6vw,2.6rem);line-height:1;color:var(--gold2)}
+.promo-dlg .pd-price span{color:var(--mute);font-size:15px}.promo-dlg .pd-price span b{color:var(--ink)}
+html.light .promo-dlg .pd-price>b{color:#8a6a12}
+.promo-dlg .pd-get{margin:0 0 20px;padding:18px 20px;border:1px solid var(--line);border-radius:18px}
+.promo-dlg .get-h{font-family:var(--disp);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--tif);margin:0 0 12px}
+.promo-dlg ul.ck2{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 22px;color:var(--ink);font-size:14.5px}
+.promo-dlg ul.ck2 li{padding-left:26px;position:relative}
+.promo-dlg ul.ck2 li::before{content:"";position:absolute;left:2px;top:.28em;width:7px;height:12px;border:solid var(--gold2);border-width:0 2px 2px 0;transform:rotate(45deg)}
+html.light .promo-dlg ul.ck2 li::before{border-color:#8a6a12}
+@media (max-width:600px){.promo-dlg{padding:28px 20px 22px}.promo-dlg ul.ck2{grid-template-columns:minmax(0,1fr)}}
+.form .btn-ghost{margin-top:10px}
+.form .wu-err{color:#ff9d94;font-size:13px;margin:10px 0 0}
+.form .wu-ok{color:var(--tif);font-size:14px;margin:12px 0 0}
+html.light .form .wu-err{color:#b3261e}
+.promo-dlg .pd-x{width:42px;height:42px;font-size:26px;line-height:1;background:rgba(255,255,255,.08);border:1px solid var(--line);z-index:2}
+.promo-dlg .pd-x:hover{background:rgba(255,255,255,.16)}
+html.light .promo-dlg .pd-x{background:rgba(0,0,0,.05)}
+@media (max-width:640px){.hero .cta{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;width:100%;max-width:340px;margin-left:auto;margin-right:auto}.hero .cta .btn{width:100%;justify-content:center}}
 @media (max-width:760px){.promo-stk{margin-top:10px}}
 
 /* faq */
@@ -1124,7 +1148,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
       <svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
       <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/></svg>
     </button>
-    <a class="btn btn-gold magnetic" href="#contact">Discuss a project <span class="arr">→</span></a>
+    <a class="btn btn-gold magnetic" href="#writeUs">Discuss a project <span class="arr">→</span></a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
   </div>
 </header>
@@ -1147,7 +1171,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
   <div class="hero-veil"></div>
   <div class="ghost" id="ghost" aria-hidden="true">ВСЕТИ</div>
   <div class="wrap">
-    <button class="promo-stk hero-in" type="button" id="promoStk" aria-haspopup="dialog" aria-label="Special offer: 9 990 ₽. New website: look first — pay later"><span class="ps-a">special offer</span><b>9 990 ₽</b><span class="ps-t">New website: look first — pay later</span></button>
+    <button class="promo-stk hero-in" type="button" id="promoStk" aria-haspopup="dialog" aria-label="Special offer: 9,990 ₽. Website first, payment later"><span class="ps-a">special offer</span><b>9 990 ₽</b><span class="ps-t">Site first, payment after</span></button>
     <p class="eyebrow hero-in">«всети» web agency</p>
     <div class="payfirst hero-in"><b>Site first — payment later</b><span>We build the site in advance — you pay once you've seen it finished</span></div>
     <h1 class="h1" id="h1">
@@ -1161,7 +1185,9 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
     </div>
     <p class="lead hero-in">Redesign and AI-search readiness: you're found on Yandex and Google — and in answers from ChatGPT, Alice, Gemini, DeepSeek, GigaChat.</p>
     <div class="cta hero-in">
-      <a class="btn btn-gold magnetic" href="#contact">Discuss a project <span class="arr">→</span></a>
+      <a class="btn btn-gold magnetic" href="#writeUs">Discuss a project <span class="arr">→</span></a>
+      <a class="btn btn-ghost magnetic" href="mailto:site-vseti@yandex.ru">Send an email</a>
+      <a class="btn btn-ghost magnetic" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener">Write on Telegram</a>
       <a class="btn btn-ghost magnetic" href="#cases">View case studies</a>
     </div>
   </div>
@@ -1173,11 +1199,17 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
 
 <dialog class="promo-dlg" id="promoDlg" aria-labelledby="promoH">
   <button class="pd-x" type="button" id="promoX" aria-label="Close">×</button>
-  <h3 id="promoH">Your website upgrade: the preview is free, taking it costs 9 990 ₽</h3>
+  <span class="badge pd-badge">special offer</span>
+  <h3 id="promoH">Site first, payment after</h3>
+  <div class="pd-price"><b>9 990 ₽</b><span>one-time · Support <b>599 ₽/month</b> — placement and edits</span></div>
   <p>Send us a link to your website — we will build its new version for free and show it to you by link. If you like it, take it as shown for 9 990 ₽, and we will move it to your domain together. If not, you pay nothing.</p>
+  <div class="pd-get">
+    <p class="get-h">What you get</p>
+        <ul class="ck2"><li>Modern design per the «всети» standard</li><li>Convenient on phone and computer</li><li>Light and dark theme</li><li>Buttons “larger / smaller font”</li><li>Fast loading</li><li>Setup for Alice, ChatGPT, Yandex and Google</li><li>Secure connection</li><li>7 languages</li><li>Map and directions to you</li><li>Leads and bookings — sent straight to your email</li><li>Yandex Maps reviews on the website</li><li>Move to your domain — included in the price</li><li>Or a new domain in the .ru or .рф zone for 1 year — as a gift, registered in your name; renewal — at the registrar's price</li></ul>
+  </div>
   <p class="pd-terms">Prices are for information only and are not a public offer (Article 437 of the Civil Code of the Russian Federation). Terms are set out in the contract.</p>
-  <div class="pd-btns"><a class="btn btn-gold" href="#contact" data-upgrade>Send a link <span class="arr">→</span></a><a class="btn btn-ghost" href="#plans" id="promoMore">What's included</a></div>
-  <span hidden id="promoPrefill">I would like to see a new version of my website. My website: </span>
+  <div class="pd-btns"><a class="btn btn-gold" href="#writeUs" data-upgrade>Send a link <span class="arr">→</span></a><a class="btn btn-ghost" href="#plans" id="promoMore">Compare plans</a></div>
+  <span hidden id="promoPrefill">I'd like to see a new version of my website.</span>
 </dialog>
 
 <!-- MARQUEE -->
@@ -1421,7 +1453,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <div class="mo">Support <b>599 ₽/month</b> — placement and edits</div>
         <p class="fit">Suitable if your website already exists and needs updating without hassle.</p>
         <p class="txt">We build a new version of your website for free, to our standard, and show it to you by link. If you like it, take it as shown for 9 990 ₽; if not, you pay nothing. No approvals or revisions — that is why it is fast and affordable. Prices are for information only and are not a public offer (Article 437 of the Civil Code of the Russian Federation). Terms are set out in the contract.</p>
-        <a class="btn btn-gold magnetic" href="#contact" data-upgrade>Send a link to the website <span class="arr">→</span></a>
+        <a class="btn btn-gold magnetic" href="#writeUs" data-upgrade>Send a link to the website <span class="arr">→</span></a>
       </div>
       <div class="get">
         <p class="get-h">What you get</p>
@@ -1498,7 +1530,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
           <tr><th scope="row">Finished site before payment</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Site first, payment after</span></td><td><span class="lb">Freelancer</span><span class="v"><i class="ck n" aria-hidden="true"></i>usually not</span></td><td><span class="lb">Site builder</span><span class="v"><i class="ck n" aria-hidden="true"></i>usually not</span></td><td class="na"><span class="lb">Old site</span><span class="v">—</span></td></tr>
           <tr><th scope="row">Found by Alice and AI search</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Alice, Yandex, ChatGPT, Gemini</span></td><td><span class="lb">Freelancer</span><span class="v">a separate service</span></td><td><span class="lb">Site builder</span><span class="v">you set it up yourself</span></td><td><span class="lb">Old site</span><span class="v"><i class="ck n" aria-hidden="true"></i>usually not</span></td></tr>
           <tr><th scope="row">Online booking</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Yes — in the Business plan and above</span></td><td><span class="lb">Freelancer</span><span class="v">a separate add-on</span></td><td><span class="lb">Site builder</span><span class="v">you connect it yourself</span></td><td><span class="lb">Old site</span><span class="v"><i class="ck n" aria-hidden="true"></i>only a contact form</span></td></tr>
-          <tr><th scope="row">Support</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Telegram and MAX</span></td><td><span class="lb">Freelancer</span><span class="v">as you agree</span></td><td><span class="lb">Site builder</span><span class="v">platform help pages</span></td><td class="na"><span class="lb">Old site</span><span class="v">—</span></td></tr>
+          <tr><th scope="row">Support</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Telegram and email</span></td><td><span class="lb">Freelancer</span><span class="v">as you agree</span></td><td><span class="lb">Site builder</span><span class="v">platform help pages</span></td><td class="na"><span class="lb">Old site</span><span class="v">—</span></td></tr>
           <tr><th scope="row">Who does the work</th><td class="us"><span class="lb">всети</span><span class="v">An agency, everything turnkey</span></td><td><span class="lb">Freelancer</span><span class="v">a single contractor</span></td><td><span class="lb">Site builder</span><span class="v">you do it yourself</span></td><td class="na"><span class="lb">Old site</span><span class="v">—</span></td></tr>
         </tbody>
       </table>
@@ -1543,9 +1575,15 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
       <div class="form rv" id="writeUs">
         <h3>Write to us</h3>
         <p>Send us a link to your website or tell us about your task — we will reply within a day.</p>
-        <a class="btn btn-gold magnetic" href="mailto:site-vseti@yandex.ru" style="width:100%;justify-content:center">Send an email <span class="arr">→</span></a>
-        <a class="btn btn-ghost magnetic" id="leadTg" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener" style="margin-top:10px;width:100%;justify-content:center">Write on Telegram <span class="arr">→</span></a>
-        <p class="fine">We do not collect personal data on this website: you write to us yourself — by email or on Telegram.</p>
+        <label for="wuSite">Your website address</label>
+        <input id="wuSite" type="text" inputmode="url" placeholder="e.g. mysite.ru" autocomplete="off">
+        <label for="wuMsg">Your question or task</label>
+        <textarea id="wuMsg" placeholder="What would you like to do with your website"></textarea>
+        <p class="wu-err" id="wuErr" hidden>Enter your website address or a question</p>
+        <button class="btn btn-gold magnetic" type="button" id="wuTg">Send via Telegram <span class="arr">→</span></button>
+        <button class="btn btn-ghost magnetic" type="button" id="wuMail">Send by email <span class="arr">→</span></button>
+        <p class="wu-ok" id="wuOk" hidden>Request text copied: paste it into the chat with the bot and send.</p>
+        <p class="fine">The site stores and sends nothing: the button opens your Telegram or email with the request text ready — you send it yourself.</p>
       </div>
     </div>
   </div>
@@ -2348,23 +2386,49 @@ if(host&&dots){
 }
 })();
 </script>
+<script>
+(function(){
+  var tg=document.getElementById('wuTg'), ml=document.getElementById('wuMail'); if(!tg||!ml) return;
+  var site=document.getElementById('wuSite'), msg=document.getElementById('wuMsg'), err=document.getElementById('wuErr'), ok=document.getElementById('wuOk');
+  function text(){
+    var s=site.value.trim(), m=msg.value.trim();
+    err.hidden=!!(s||m); if(!s&&!m){ site.focus(); return null; }
+    return ['Request from vseti-site.ru', s?'Website: '+s:'', m?'Question: '+m:''].filter(Boolean).join('\n');
+  }
+  function copy(v){
+    if(navigator.clipboard&&window.isSecureContext) return navigator.clipboard.writeText(v).catch(function(){ old(v); });
+    old(v); return Promise.resolve();
+  }
+  function old(v){ var a=document.createElement('textarea'); a.value=v; a.setAttribute('readonly',''); a.style.cssText='position:fixed;left:-9999px'; document.body.appendChild(a); a.select(); try{document.execCommand('copy')}catch(e){} a.remove(); }
+  tg.addEventListener('click',function(){
+    var v=text(); if(!v) return;
+    copy(v); ok.hidden=false;
+    var w=window.open('https://t.me/vseti_agency_bot','_blank');
+    if(w) w.opener=null; else location.href='https://t.me/vseti_agency_bot';
+  });
+  ml.addEventListener('click',function(){
+    var v=text(); if(!v) return; ok.hidden=true;
+    location.href='mailto:site-vseti@yandex.ru?subject='+encodeURIComponent('Request from vseti-site.ru')+'&body='+encodeURIComponent(v);
+  });
+})();
+</script>
 <script src="../assets/tap-hover.js" defer></script>
 <script src="../assets/mesh-flow.js" defer></script>
 <script>
 (function(){
   var d=document.getElementById('promoDlg'),s=document.getElementById('promoStk');
   if(!d||!s) return;
+  (function nb(n){ if(n.nodeType===3) n.nodeValue=n.nodeValue.replace(/(\d) (\d{3})/g,'$1\u00a0$2').replace(/ ₽/g,'\u00a0₽'); else n.childNodes.forEach(nb); })(d);
   function close(){ if(d.open) d.close(); }
   s.addEventListener('click',function(){ if(d.showModal) d.showModal(); else location.hash='#offer'; });
   document.getElementById('promoX').addEventListener('click',close);
   d.addEventListener('click',function(e){ if(e.target===d) close(); });
-  document.getElementById('promoMore').addEventListener('click',function(e){ e.preventDefault(); close(); var o=document.getElementById('offer'); if(o) o.scrollIntoView({behavior:'smooth',block:'start'}); });
+  document.getElementById('promoMore').addEventListener('click',function(e){ e.preventDefault(); close(); });
   document.querySelectorAll('[data-upgrade]').forEach(function(a){ a.addEventListener('click',function(e){
     e.preventDefault(); close();
-    var fm=document.getElementById('fm'), pre=(document.getElementById('promoPrefill')||{}).textContent||'';
-    if(fm && fm.value.indexOf(pre.trim())<0) fm.value=pre+fm.value;
-    var c=document.getElementById('contact'); if(c) c.scrollIntoView({behavior:'smooth',block:'start'});
-    setTimeout(function(){ if(fm){ fm.focus({preventScroll:true}); fm.setSelectionRange(fm.value.length,fm.value.length);} },700);
+    var fm=document.getElementById('wuMsg'), pre=((document.getElementById('promoPrefill')||{}).textContent||'').trim();
+    if(fm && pre && fm.value.indexOf(pre)<0) fm.value=pre+(fm.value?' '+fm.value:'');
+    setTimeout(function(){ var s=document.getElementById('wuSite'); if(s) s.focus({preventScroll:true}); },1500);
   }); });
 })();
 </script>

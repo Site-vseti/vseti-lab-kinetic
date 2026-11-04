@@ -563,7 +563,7 @@ html.ld-pre .hdr .bname.in{opacity:1;transition:opacity .7s ease}
  .hero .eyebrow{margin-bottom:12px}
 }
 
-/* --- плашки «0 xato» / «9 из 9»: подъём и свечение ×2 --- */
+/* --- плашки «0 ₽ — ko‘rsatish» / «5 из 5»: подъём и свечение ×2 --- */
 .proof .p{cursor:default;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;
   transition:transform .42s var(--ease),box-shadow .42s,border-color .42s,background .42s}
 .proof .p:hover{transform:translateY(-9px);border-color:var(--tif);background:linear-gradient(160deg,rgba(132,244,234,.3),rgba(14,51,47,.25));box-shadow:0 0 90px -6px rgba(132,244,234,1),0 18px 70px -6px rgba(132,244,234,.9),0 0 0 2px rgba(132,244,234,.9) inset}
@@ -1113,8 +1113,8 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
     <p class="sub rv">Odamlar ChatGPT va boshqa neyrotarmoqlardan — Alice, Gemini, GigaChat, DeepSeek, Perplexity, Claude, Grok — soʻraydi: «atrofda qanday notarius bor», «yaxshi stomatologiya qayerda». Neyrotarmoq saytlardagi maʼlumotlar asosida javob beradi — lekin faqat neyrotarmoq tushunadigan saytlar asosida.</p>
     <div class="proof">
       <div class="p rv">
-        <div class="n"><span data-count="0">0</span><small>xato</small></div>
-        <p class="t">2026-yil 18-oktabrda Schema.org belgilash validatori bu sahifada birorta ham xato topmadi. Demak, qidiruv tizimlari va neyrotarmoqlar <b>kimligingizni, qayeringizni va nima qilishingizni tushunadi</b> — va biznesingizni boshqasi bilan aralashtirmaydi.</p>
+        <div class="n"><span data-count="0">0</span><small>₽ — ko‘rsatish</small></div>
+        <p class="t">Saytingizning yangi versiyasini bepul tayyorlab, havola orqali ko‘rsatamiz. Siz <b>avval natijani ko‘rasiz</b> — va faqat yoqsa, to‘laysiz.</p>
       </div>
       <div class="p rv">
         <div class="n"><span data-count="5">0</span><small>5 ta botdan</small></div>
@@ -1208,7 +1208,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
 <section class="sec quiet">
   <div class="wrap">
     <div class="stats">
-      <div class="s rv"><div class="n"><span data-count="0">0</span></div><p class="t">sahifa belgilashida xato — Schema.org tekshiruvi, 18.10.2026</p></div>
+      <div class="s rv"><div class="n"><span data-count="7">0</span><small>til</small></div><p class="t">saytda: mijoz siz haqingizda ona tilida o‘qiydi — «Tayyor sayt» tarifi</p></div>
       <div class="s rv"><div class="n"><i><span data-count="5">0</span></i><small>/5</small></div><p class="t">qidiruv va AI-botlar sahifani toʻliq oladi — tekshiruv 18.10.2026</p></div>
       <div class="s rv"><div class="n"><span data-count="14">0</span><small>kun</small></div><p class="t">noldan yangi saytning minimal muddati — «Noldan sayt» tarifi</p></div>
       <div class="s rv"><div class="n"><i><span data-count="24">0</span></i><small>/7</small></div><p class="t">siz band boʻlganingizda bot mijozlarga javob beradi</p></div>
@@ -1818,7 +1818,7 @@ if(hc)hc.addEventListener('click',function(){
   try{localStorage.setItem('vseti-hc',on?'1':'0');}catch(e){}
 });
 
-/* --- выпадающий список языков --- */
+/* --- выпадающий список til --- */
 var lg=document.getElementById('lang');
 if(lg){
   var lb=lg.querySelector('button');

@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>всети — веб-агентство. Ваш бизнес всети. Видят все.</title>
-<meta name="description" content="Веб-агентство «всети»: редизайн сайтов, которые находят клиенты и нейросети — ChatGPT, Алиса, Gemini. Schema.org, llms.txt, боты, онлайн-запись.">
+<title>Всети — веб-агентство. Ваш бизнес всети. Видят все.</title>
+<meta name="description" content="Веб-агентство «Всети»: редизайн сайтов, которые находят клиенты и нейросети — ChatGPT, Алиса, Gemini. Schema.org, llms.txt, боты, онлайн-запись.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="всети">
-<meta property="og:title" content="всети — сайты, которые находят клиенты и нейросети">
+<meta property="og:site_name" content="Всети">
+<meta property="og:title" content="Всети — сайты, которые находят клиенты и нейросети">
 <meta property="og:description" content="Редизайн сайта и подготовка к поиску в нейросетях: вас находят в Яндексе, Google и в ответах ChatGPT, Алисы, Gemini. Онлайн-запись, боты, каналы, оплата, шесть языков.">
 <meta property="og:url" content="https://vseti-site.ru/">
 <meta property="og:image" content="https://vseti-site.ru/assets/logo.png">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="всети — сайты, которые находят клиенты и нейросети">
-<meta name="twitter:description" content="Редизайн и подготовка к ИИ-поиску, боты, каналы и оплата. Веб-агентство «всети».">
+<meta name="twitter:title" content="Всети — сайты, которые находят клиенты и нейросети">
+<meta name="twitter:description" content="Редизайн и подготовка к ИИ-поиску, боты, каналы и оплата. Веб-агентство «Всети».">
 <meta name="twitter:image" content="https://vseti-site.ru/assets/logo.png">
 <link rel="canonical" href="https://vseti-site.ru/">
 <link rel="icon" href="assets/favicon-64.png">
@@ -387,6 +387,17 @@ html.light .promo-dlg{background:linear-gradient(#fff,#fff) padding-box,linear-g
 .promo-dlg[open]{animation:pd-in .35s var(--ease)}
 @keyframes pd-in{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
 .promo-dlg .pd-badge{position:static;display:inline-block;margin:0 0 12px}
+/* слово «спецпредложение» в окне светится */
+.promo-dlg .pd-badge{padding:7px 14px;border-radius:999px;background:linear-gradient(120deg,var(--gold2),var(--gold));color:#1b1300;font-family:var(--disp);font-variation-settings:"wght" 650;font-size:12px;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 0 14px 2px rgba(232,199,102,.55),0 0 0 1px rgba(255,255,255,.35) inset;text-shadow:0 0 8px rgba(255,251,230,.9)}
+@keyframes pd-glow{0%,100%{box-shadow:0 0 10px 1px rgba(232,199,102,.45),0 0 0 1px rgba(255,255,255,.35) inset;filter:brightness(1)}50%{box-shadow:0 0 26px 7px rgba(232,199,102,.85),0 0 0 1px rgba(255,255,255,.6) inset;filter:brightness(1.12)}}
+@media (prefers-reduced-motion:no-preference){.promo-dlg[open] .pd-badge{animation:pd-glow 2.2s ease-in-out infinite}}
+html.light .promo-dlg .pd-badge{background:linear-gradient(120deg,#f8e08f,#e4bb40);color:#2b1d00}
+/* «Сравнить тарифы» — в правом нижнем углу, симметрично «Прислать ссылку» */
+.promo-dlg .pd-btns{justify-content:space-between}
+.promo-dlg .pd-btns #promoMore{margin-left:auto}
+.promo-dlg .pd-btns .em{margin-right:8px;font-size:1.15em;line-height:1}
+/* длинные пункты списка — на всю ширину, чтобы в двух колонках не было пустот */
+.promo-dlg ul.ck2 li.full,.offer ul.ck2 li.full{grid-column:1/-1}
 .promo-dlg .pd-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:0 0 14px}
 .promo-dlg .pd-price>b{font-family:var(--disp);font-size:clamp(2rem,6vw,2.6rem);line-height:1;color:var(--gold2)}
 .promo-dlg .pd-price span{color:var(--mute);font-size:15px}.promo-dlg .pd-price span b{color:var(--ink)}
@@ -537,7 +548,7 @@ html.light .tbtn .moon{display:none}
 .lang .list a[aria-current]{color:var(--tif)}
 @media (max-width:900px){.hdr-tools .lang>button span.nm{display:none}.lang>button{padding:0 12px}}
 
-/* --- логотип в шапке: единая надпись «всети» (одно слово) одного цвета (бирюзовый акцент --tif), по высоте вровень с эмблемой --- */
+/* --- логотип в шапке: единая надпись «Всети» (одно слово) одного цвета (бирюзовый акцент --tif), по высоте вровень с эмблемой --- */
 .hdr .brand{gap:14px;flex:none}
 .hdr .brand .bname{display:block;position:relative;top:-.09em;font-size:var(--bf);font-weight:700;font-variation-settings:"wght" 700;line-height:44px;height:44px;letter-spacing:.02em;white-space:nowrap;color:var(--tif)}
 /* пока надпись собирается из пыли, DOM-текст скрыт (assets/logo-dust.js); запасной таймер вернёт его, даже если скрипт не сработал */
@@ -555,8 +566,12 @@ html.ld-pre .hdr .bname.in{opacity:1;transition:opacity .7s ease}
 .hdr{container:hdr / inline-size}
 .hdr .brand{--bf:clamp(44px,calc((100cqw - 900px) / 4.12),64px)}
 @container hdr (max-width:1277px){.hdr .btn{display:none}.nav a{padding:10px 10px}}
+/* русская, английская и китайская версии: кнопка заявки остаётся, шапка сжимается (масштаб 110–125% на ноутбуке) */
+@container hdr (max-width:1277px){html:is([lang="ru"],[lang="en"],[lang="zh-Hans"]) .hdr .btn{display:flex;padding:10px 14px;font-size:13.5px}html:is([lang="ru"],[lang="en"],[lang="zh-Hans"]) .hdr .btn .arr{display:none}html:is([lang="ru"],[lang="en"],[lang="zh-Hans"]) .nav a{padding:10px 8px}html:is([lang="ru"],[lang="en"],[lang="zh-Hans"]) .hdr .brand{--bf:clamp(40px,calc((100cqw - 980px) / 4.12),64px)}}
 @container hdr (max-width:1539px){html:not([lang="ru"]):not([lang="en"]):not([lang="zh-Hans"]) .hdr .btn{display:none}html:not([lang="ru"]):not([lang="en"]):not([lang="zh-Hans"]) .nav a{padding:10px 10px}}
 @container hdr (max-width:1079px){.hdr .brand{--bf:64px}.nav{display:none}.burger{display:grid}}
+@container hdr (max-width:1079px){html:is([lang="ru"],[lang="en"],[lang="zh-Hans"]) .hdr .brand{--bf:clamp(40px,calc((100cqw - 560px) / 7.5),64px)}}
+@container hdr (max-width:829px){html:is([lang="ru"],[lang="en"],[lang="zh-Hans"]) .hdr .btn{display:none}}
 @container hdr (max-width:684px){.hdr .brand{--bf:clamp(16px,calc((100cqw - 370px) / 4.12),64px)}}
 /* телефон: первая строка — эмблема, надпись и бургер, вторая — кнопки языка, размера текста, контраста и темы (при прокрутке вторая строка прячется) */
 @media (max-width:640px){
@@ -1016,12 +1031,12 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
 {
  "@type": ["ProfessionalService", "LocalBusiness"],
  "@id": "https://vseti-site.ru/#org",
- "name": "всети",
- "alternateName": "Веб-агентство «всети»",
+ "name": "Всети",
+ "alternateName": "Веб-агентство «Всети»",
  "url": "https://vseti-site.ru/",
  "logo": "https://vseti-site.ru/assets/logo.png",
  "image": "https://vseti-site.ru/assets/logo.png",
- "description": "Веб-агентство «всети»: редизайн сайтов и подготовка к поиску в нейросетях, онлайн-запись, чат-боты и каналы.",
+ "description": "Веб-агентство «Всети»: редизайн сайтов и подготовка к поиску в нейросетях, онлайн-запись, чат-боты и каналы.",
  "email": "site-vseti@yandex.ru",
  "priceRange": "599-120000 RUB",
  "areaServed": [
@@ -1105,7 +1120,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
  "@type": "WebSite",
  "@id": "https://vseti-site.ru/#site",
  "url": "https://vseti-site.ru/",
- "name": "всети — веб-агентство",
+ "name": "Всети — веб-агентство",
  "inLanguage": "ru",
  "publisher": {
   "@id": "https://vseti-site.ru/#org"
@@ -1195,7 +1210,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
 <script src="assets/logo-dust.js"></script>
 
 <header class="hdr" id="hdr">
-  <a class="brand" href="#top"><img id="hlogo" src="assets/logo-256.webp" alt="всети"><b class="bname">всети</b></a>
+  <a class="brand" href="#top"><img id="hlogo" src="assets/logo-256.webp" alt="Всети"><b class="bname">Всети</b></a>
   <nav class="nav" aria-label="Разделы">
     <a href="#svc"><span data-t="Услуги">Услуги</span></a>
     <a href="#proof"><span data-t="ИИ-поиск">ИИ-поиск</span></a>
@@ -1252,7 +1267,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
   <div class="ghost" id="ghost" aria-hidden="true">ВСЕТИ</div>
   <div class="wrap">
     <button class="promo-stk hero-in" type="button" id="promoStk" aria-haspopup="dialog" aria-label="Спецпредложение: 9 990 ₽. Сначала сайт, потом оплата"><span class="ps-a">спецпредложение</span><b>9 990 ₽</b><span class="ps-t">Сначала сайт, потом оплата</span></button>
-    <p class="eyebrow hero-in">веб-агентство «всети»</p>
+    <p class="eyebrow hero-in">веб-агентство «Всети»</p>
     <div class="payfirst hero-in"><b>Сначала сайт — потом оплата</b><span>Делаем сайт заранее — платите, когда увидели готовый</span></div>
     <h1 class="h1" id="h1">
       <span class="ln"><span>Делаем сайты,</span></span>
@@ -1261,7 +1276,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
     </h1>
     <div class="hline hero-in">
       <div class="phrase" id="phrase">Все находят вас</div>
-      <div class="mark" data-orbit><div class="halo"></div><img class="lg" src="assets/logo_alpha-1024.webp" alt="всети" width="250" height="250"></div>
+      <div class="mark" data-orbit><div class="halo"></div><img class="lg" src="assets/logo_alpha-1024.webp" alt="Всети" width="250" height="250"></div>
     </div>
     <p class="lead hero-in">Редизайн и подготовка к ИИ-поиску: вас находят в Яндексе и Google — и в ответах ChatGPT, Алисы, Gemini, DeepSeek, GigaChat.</p>
     <div class="cta hero-in">
@@ -1285,10 +1300,10 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
   <p>Пришлите ссылку на ваш сайт — мы бесплатно соберём его новую версию и покажем вам по ссылке. Понравится — забираете её в показанном виде за 9 990 ₽, перенос на ваш домен сделаем вместе. Не понравится — ничего не платите.</p>
   <div class="pd-get">
     <p class="get-h">Что вы получаете</p>
-        <ul class="ck2"><li>Современный дизайн по стандарту «всети»</li><li>Удобно с телефона и компьютера</li><li>Светлая и тёмная тема</li><li>Кнопки «шрифт крупнее / мельче»</li><li>Быстрая загрузка</li><li>Настройка для Алисы, ChatGPT, Яндекса и Google</li><li>Защищённое соединение</li><li>7 языков</li><li>Карта и маршрут до вас</li><li>Заявки и запись — сразу вам на почту</li><li>Отзывы с Яндекс Карт на сайте</li><li>Перенос на ваш домен — входит в цену</li><li>Или новый домен в зоне .ru или .рф на 1 год — в подарок, оформляем на вас; продление — по цене регистратора</li></ul>
+        <ul class="ck2"><li class="full">Современный дизайн по стандарту «Всети»</li><li class="full">Вас находят Алиса, ChatGPT, Яндекс, Google, DeepSeek и Gemini — сайт настроен под них</li><li class="full">Удобно с телефона, компьютера и планшета — адаптирован под iPhone и Android</li><li>Кнопки «шрифт крупнее / мельче»</li><li>Светлая и тёмная тема</li><li>Быстрая загрузка</li><li>Защищённое соединение</li><li>Карта и маршрут до вас</li><li>Отзывы с Яндекс Карт на сайте</li><li>Автоперевод сайта на 7 языков</li><li>Заявки и запись — сразу вам на почту</li><li>Перенос на ваш домен — входит в цену</li><li>Новый домен в подарок, оформляем на вас</li></ul>
   </div>
   <p class="pd-terms">Цены носят информационный характер и не являются публичной офертой (ст. 437 ГК РФ). Условия — в договоре.</p>
-  <div class="pd-btns"><a class="btn btn-gold" href="#writeUs" data-upgrade>Прислать ссылку <span class="arr">→</span></a><a class="btn btn-ghost" href="#plans" id="promoMore">Сравнить тарифы</a></div>
+  <div class="pd-btns"><a class="btn btn-gold" href="#writeUs" data-upgrade><span class="em" aria-hidden="true">👆</span>Прислать ссылку</a><a class="btn btn-ghost" href="#plans" id="promoMore"><span class="em" aria-hidden="true">📊</span>Сравнить тарифы</a></div>
   <span hidden id="promoPrefill">Хочу посмотреть новую версию моего сайта.</span>
 </dialog>
 
@@ -1465,7 +1480,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
 <section class="sec" id="cmp">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">почему «всети»</p>
+      <div><p class="eyebrow">почему «Всети»</p>
         <h2 class="h2 split-ln"><span class="ln"><span>Обычный сайт</span></span><span class="ln"><span>и сайт <span class="tif">от нас</span></span></span></h2></div>
       <p class="lead rv">Сравниваем с типовым сайтом, каким его делают сейчас: он есть, он открывается — и на этом всё.</p>
     </div>
@@ -1537,7 +1552,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
       </div>
       <div class="get">
         <p class="get-h">Что вы получаете</p>
-        <ul class="ck2"><li>Современный дизайн по стандарту «всети»</li><li>Удобно с телефона и компьютера</li><li>Светлая и тёмная тема</li><li>Кнопки «шрифт крупнее / мельче»</li><li>Быстрая загрузка</li><li>Настройка для Алисы, ChatGPT, Яндекса и Google</li><li>Защищённое соединение</li><li>7 языков</li><li>Карта и маршрут до вас</li><li>Заявки и запись — сразу вам на почту</li><li>Отзывы с Яндекс Карт на сайте</li><li>Перенос на ваш домен — входит в цену</li><li>Или новый домен в зоне .ru или .рф на 1 год — в подарок, оформляем на вас; продление — по цене регистратора</li></ul>
+        <ul class="ck2"><li class="full">Современный дизайн по стандарту «Всети»</li><li class="full">Вас находят Алиса, ChatGPT, Яндекс, Google, DeepSeek и Gemini — сайт настроен под них</li><li class="full">Удобно с телефона, компьютера и планшета — адаптирован под iPhone и Android</li><li>Кнопки «шрифт крупнее / мельче»</li><li>Светлая и тёмная тема</li><li>Быстрая загрузка</li><li>Защищённое соединение</li><li>Карта и маршрут до вас</li><li>Отзывы с Яндекс Карт на сайте</li><li>Автоперевод сайта на 7 языков</li><li>Заявки и запись — сразу вам на почту</li><li>Перенос на ваш домен — входит в цену</li><li>Новый домен в подарок, оформляем на вас</li></ul>
       </div>
     </div>
     <div class="plans">
@@ -1603,15 +1618,15 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
     <div class="vs-wrap rv"><div class="vs-box">
       <table class="vs">
         <colgroup><col class="c0"><col class="c1"><col><col><col></colgroup>
-        <thead><tr><th scope="col">Что важно</th><th scope="col" class="us">всети</th><th scope="col">Фрилансер</th><th scope="col">Конструктор</th><th scope="col">Старый сайт</th></tr></thead>
+        <thead><tr><th scope="col">Что важно</th><th scope="col" class="us">Всети</th><th scope="col">Фрилансер</th><th scope="col">Конструктор</th><th scope="col">Старый сайт</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Цена</th><td class="us"><span class="lb">всети</span><span class="v">Готовый сайт <b class="big">9 990 ₽</b><small>под ваши пожелания — 14 990 ₽, сайт с нуля — от 35 000 ₽</small></span></td><td><span class="lb">Фрилансер</span><span class="v">4–40 тыс. ₽</span></td><td><span class="lb">Конструктор</span><span class="v">500–1 500 ₽ в месяц и ваше время</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">уже есть</span></td></tr>
-          <tr><th scope="row">Срок</th><td class="us"><span class="lb">всети</span><span class="v">Готовый сайт ставим за час, новый с нуля — от 14 дней</span></td><td><span class="lb">Фрилансер</span><span class="v">по договорённости</span></td><td><span class="lb">Конструктор</span><span class="v">зависит от вас</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">—</span></td></tr>
-          <tr><th scope="row">Готовый сайт до оплаты</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Сначала сайт, потом оплата</span></td><td><span class="lb">Фрилансер</span><span class="v"><i class="ck n" aria-hidden="true"></i>обычно нет</span></td><td><span class="lb">Конструктор</span><span class="v"><i class="ck n" aria-hidden="true"></i>обычно нет</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">—</span></td></tr>
-          <tr><th scope="row">Находят Алиса и ИИ-поиск</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Алиса, Яндекс, ChatGPT, Gemini</span></td><td><span class="lb">Фрилансер</span><span class="v">отдельная услуга</span></td><td><span class="lb">Конструктор</span><span class="v">настраиваете сами</span></td><td><span class="lb">Старый сайт</span><span class="v"><i class="ck n" aria-hidden="true"></i>обычно нет</span></td></tr>
-          <tr><th scope="row">Онлайн-запись на приём</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Есть — в тарифе «Бизнес» и выше</span></td><td><span class="lb">Фрилансер</span><span class="v">отдельная доработка</span></td><td><span class="lb">Конструктор</span><span class="v">подключаете сами</span></td><td><span class="lb">Старый сайт</span><span class="v"><i class="ck n" aria-hidden="true"></i>только форма обратной связи</span></td></tr>
-          <tr><th scope="row">Поддержка</th><td class="us"><span class="lb">всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Telegram и почта</span></td><td><span class="lb">Фрилансер</span><span class="v">как договоритесь</span></td><td><span class="lb">Конструктор</span><span class="v">справка платформы</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">—</span></td></tr>
-          <tr><th scope="row">Кто делает</th><td class="us"><span class="lb">всети</span><span class="v">Агентство, всё под ключ</span></td><td><span class="lb">Фрилансер</span><span class="v">один исполнитель</span></td><td><span class="lb">Конструктор</span><span class="v">вы сами</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">—</span></td></tr>
+          <tr><th scope="row">Цена</th><td class="us"><span class="lb">Всети</span><span class="v">Готовый сайт <b class="big">9 990 ₽</b><small>под ваши пожелания — 14 990 ₽, сайт с нуля — от 35 000 ₽</small></span></td><td><span class="lb">Фрилансер</span><span class="v">4–40 тыс. ₽</span></td><td><span class="lb">Конструктор</span><span class="v">500–1 500 ₽ в месяц и ваше время</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">уже есть</span></td></tr>
+          <tr><th scope="row">Срок</th><td class="us"><span class="lb">Всети</span><span class="v">Готовый сайт ставим за час, новый с нуля — от 14 дней</span></td><td><span class="lb">Фрилансер</span><span class="v">по договорённости</span></td><td><span class="lb">Конструктор</span><span class="v">зависит от вас</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">—</span></td></tr>
+          <tr><th scope="row">Готовый сайт до оплаты</th><td class="us"><span class="lb">Всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Сначала сайт, потом оплата</span></td><td><span class="lb">Фрилансер</span><span class="v"><i class="ck n" aria-hidden="true"></i>обычно нет</span></td><td><span class="lb">Конструктор</span><span class="v"><i class="ck n" aria-hidden="true"></i>обычно нет</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">—</span></td></tr>
+          <tr><th scope="row">Находят Алиса и ИИ-поиск</th><td class="us"><span class="lb">Всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Алиса, Яндекс, ChatGPT, Gemini</span></td><td><span class="lb">Фрилансер</span><span class="v">отдельная услуга</span></td><td><span class="lb">Конструктор</span><span class="v">настраиваете сами</span></td><td><span class="lb">Старый сайт</span><span class="v"><i class="ck n" aria-hidden="true"></i>обычно нет</span></td></tr>
+          <tr><th scope="row">Онлайн-запись на приём</th><td class="us"><span class="lb">Всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Есть — в тарифе «Бизнес» и выше</span></td><td><span class="lb">Фрилансер</span><span class="v">отдельная доработка</span></td><td><span class="lb">Конструктор</span><span class="v">подключаете сами</span></td><td><span class="lb">Старый сайт</span><span class="v"><i class="ck n" aria-hidden="true"></i>только форма обратной связи</span></td></tr>
+          <tr><th scope="row">Поддержка</th><td class="us"><span class="lb">Всети</span><span class="v"><i class="ck y" aria-hidden="true"></i>Telegram и почта</span></td><td><span class="lb">Фрилансер</span><span class="v">как договоритесь</span></td><td><span class="lb">Конструктор</span><span class="v">справка платформы</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">—</span></td></tr>
+          <tr><th scope="row">Кто делает</th><td class="us"><span class="lb">Всети</span><span class="v">Агентство, всё под ключ</span></td><td><span class="lb">Фрилансер</span><span class="v">один исполнитель</span></td><td><span class="lb">Конструктор</span><span class="v">вы сами</span></td><td class="na"><span class="lb">Старый сайт</span><span class="v">—</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -1648,7 +1663,7 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
         <p class="lead rv" style="margin-bottom:34px">Бесплатный аудит сайта: покажем, что видят поисковики и нейросети, а что — нет. Ответим в течение дня.</p>
         <div class="clinks">
           <a class="rv" href="https://t.me/vseti_agency_bot" target="_blank" rel="noopener"><span>Бот — быстрая заявка<small>@vseti_agency_bot · бот отвечает сразу</small></span><span class="arr">→</span></a>
-          <a class="rv" href="https://t.me/vseti_site" target="_blank" rel="noopener"><span>Канал «всети»<small>@vseti_site · кейсы, советы, новости</small></span><span class="arr">→</span></a>
+          <a class="rv" href="https://t.me/vseti_site" target="_blank" rel="noopener"><span>Канал «Всети»<small>@vseti_site · кейсы, советы, новости</small></span><span class="arr">→</span></a>
           <a class="rv" href="mailto:site-vseti@yandex.ru"><span>site-vseti@yandex.ru<small>почта · ответим в течение дня</small></span><span class="arr">→</span></a>
         </div>
       </div>
@@ -1673,9 +1688,9 @@ html.hc .vs th,html.hc .vs td{border-top:1px solid var(--line)!important}
 
 <footer class="ftr">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="assets/logo_alpha-64.webp" alt="" width="32" height="32" style="width:32px;height:32px"><b><i>всети</i></b></a>
+    <a class="brand" href="#top"><img src="assets/logo_alpha-64.webp" alt="" width="32" height="32" style="width:32px;height:32px"><b><i>Всети</i></b></a>
     <span>Ваш бизнес всети. Видят все.</span>
-    <span>© «всети» · site-vseti@yandex.ru</span>
+    <span>© «Всети» · site-vseti@yandex.ru</span>
   </div>
 </footer>
 
